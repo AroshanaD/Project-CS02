@@ -6,29 +6,68 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>HomePage</title>
         <link rel = "stylesheet" href = "style.css">
     </head>
     <body>
-        <nav>
-            <ul>
-                <li> <a href="main_page.php"><img src = "http://localhost/project/HTML%20files/icons/home-run.png" id = "home-button"></a></li>
-                <li> <a href="about_us.html">About Us</a></li>
-                <li> <a href="contact_us.html">Contact Us</a></li>
-                <li> <a href="login_register.php">Patients</a></li>
-                <li> <a href="#">Doctors</a></li>
-                <li> <a href="#">Lab</a></li>
-                <li> <a href="#">Pharmacy</a></li>
-                <li id = "sub-menu"> Staff
-                    <div id = "staff">
-                    <ul>
-                    <li> <a href="#">Receptionist</a></li>
-                    <li> <a href="supervisor.php">Supervisor</a></li>
-                    </ul>
-                    </div>
-                </li>
-                <li> <a href="appointments.php">Appointments</a></li>
-            </ul>
-        </nav>
+        <ul>
+            <li class = "col-1"><a class="active" href="main_page.php"> <img src="icons/home.png"></a></li>
+            <li class = "col-2"><a href="#">About Us</a></li>
+            <li class = "col-2"><a href="#">Contact Us</a></li>
+            <li class = "col-2"><a href="#">Appointments</a></li>
+            <li class = "col-2"><a href="#">Doctor Schedule</a></li>
+        </ul>
+
+        <div class = "row">
+            <div class = "col-4">
+                <div class = "block-0">
+                    <img src="icons/patient.png">
+                    <a href="#">Patient</a>
+                </div>
+            </div>
+            <div class = "col-4">
+                <div class = "block-0">
+                    <img src="icons/doctor.png">
+                    <a href="#">Doctor</a>
+                </div>
+            </div>
+            <div class = "col-4">
+                <div class = "block-0">
+                    <img src="icons/receptionist.png">
+                    <a href="#">Receptionist</a>
+                </div>
+            </div>
+            <div class = "col-4">
+                <div class = "block-0">
+                    <img src="icons/lab.png">
+                    <a href="#">Lab Technician</a>
+                </div>
+            </div>
+            <div class = "col-4">
+                <div class = "block-0">
+                    <img src="icons/pharmacy.png">
+                    <a href="#">Pharmacist</a>
+                </div>
+            </div>
+            <div class = "col-4">
+                <div class = "block-0">
+                    <img src="icons/admin.png">
+                    <a href="#">Supervisor</a>
+                </div>
+            </div>
+        </div>
+        <div class = "row">
+            <div class = "col-6">
+                <div class = "block-1">
+                    About Us
+                </div>
+            </div>
+            <div class = "col-6">
+                <div class = "block-1">
+                    Contact Us
+                </div>
+            </div>
+        </div>
     </body>
 </html>
