@@ -1,0 +1,1 @@
+This is the second year group project for CS02 group. Implementation of a Hospital management system with a doctor appointment system.
