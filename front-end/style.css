@@ -7,9 +7,13 @@
     color: black;
 }
 
+body{
+  background-color: cornsilk;
+}
+
 @media only screen and (max-width: 768px) {
   [class*="col-"] {
-    width: 100%;
+    width: 50%;
   }
 
   .block-0{
@@ -19,6 +23,11 @@
   .block-1{
     height: fit-content;
   }
+
+  nav.li{
+    float: none;
+  }
+
 }
 
 @media only screen and (min-width: 768px) {
@@ -37,6 +46,7 @@
 }
 
 [class*="col-"] {
+  display: block;
   float: left;
   padding-left: 5px;
   padding-right: 5px;
@@ -63,7 +73,8 @@ ul {
 li {
   float: left;
   border-right:1px solid #bbb;
-  font-size: 1.5rem;
+  font-size: max(1.3vw,20px);
+  min-width: max-content;
 }
 
 li a {
@@ -74,8 +85,9 @@ li a {
   text-decoration: none;
 }
 
-li a:hover:not(.active) {
-  background-color: rgb(137, 253, 172);
+li a:hover {
+  background-color: bisque;
+  color: black;
 }
 
 .active {
@@ -86,12 +98,12 @@ li a:hover:not(.active) {
   height: 200px;
   padding: 20px 5px;
   align-items: center;
-  font-size: 2.5rem;
   text-align: center;
 }
 
 .block-0{
   background-color: rgb(94, 168, 131);
+  font-size: max(2vw,25px);
 }
 
 .block-0 a {
@@ -99,11 +111,27 @@ li a:hover:not(.active) {
   text-decoration: none;
 }
 
+.block-0:hover{
+  background-color: ivory;
+}
+
 .block-1{
   background-color: #333;
   color: rgb(255, 255, 255);
-  font-size: 1.5rem;
-  padding: 25px;
+  font-size: max(1.4vw,20px);
+  padding: 40px;
   text-align: left;
-  height: 320px;
+  height: inherit;
+  min-height: 320px;
+  max-height: 320px;
+  overflow: hidden;
+}
+
+h{
+  color: white;
+}
+
+p{
+  color: rgb(194, 221, 245);
+  font-size: max(1.2vw,18px);
 }
