@@ -18,12 +18,12 @@
     require_once('controllers/'.$controller_name.'.php');
     $controller = new $controller_name;
 
-    /*if(isset($url_segments[4])){
+    if(isset($url_segments[4])){
         $controller_method = $url_segments[4];
     }
     else{
         $controller_method = 'index';
-    }*/
+    }
 
     /*while(isset($url_segments[$i])){
         $method_param += $url_segments[$i];

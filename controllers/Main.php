@@ -1,6 +1,6 @@
 <?php
 
-    class Main extends Controller{
+    class Main extends Controllers{
         public function __construct(){
 
         }
