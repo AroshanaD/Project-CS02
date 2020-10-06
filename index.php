@@ -11,7 +11,7 @@
         //print($controller);
     }
     else{
-        $controller_name = 'MainController';
+        $controller_name = 'Main';
         //print('main');
     }
     
