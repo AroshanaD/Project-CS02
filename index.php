@@ -1,6 +1,9 @@
 <?php 
 
     require_once('config/autoload.php');
+    $controller;
+    $controller_method;
+    $parameters = NULL;
 
     $url_segments = explode('/',rtrim($_SERVER['REQUEST_URI'],'/'));
     //print($url_segments);
@@ -20,13 +23,15 @@
 
     if(isset($url_segments[4])){
         $controller_method = $url_segments[4];
+        if(array_slice($url_segments,5) != NULL){
+            $parameters = array_slice($url_segments,5);
+        }
+        else{
+            $parameters = NULL;
+        }
     }
     else{
         $controller_method = 'index';
     }
 
-    /*while(isset($url_segments[$i])){
-        $method_param += $url_segments[$i];
-    }*/
-
-    $controller->$controller_method();
+    $controller->$controller_method($parameters);

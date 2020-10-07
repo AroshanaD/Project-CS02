@@ -1,5 +1,5 @@
 <?php
-    class Manage_inven extends CI_controller{
+    class Manage_inven extends Controllers{
         public function __construct(){
             parent::__construct();
 

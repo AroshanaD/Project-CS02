@@ -1,19 +1,6 @@
-<?php
-    session_start();
-?>
-
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>HomePage</title>
-        <link rel = "stylesheet" href = "files/style.css">
-    </head>
-    <body>
         <nav>
             <ul>
-                <li class = "col-1"><a class="active" href="main_page.php"> <img src="icons/home.png"></a></li>
+                <li class = "col-1"><a class="active" href=<?php echo(Router::site_url().'/main')?>> <img src="files/icons/home.png"></a></li>
                 <li class = "col-2"><a href="#">About Us</a></li>
                 <li class = "col-2"><a href="#">Contact Us</a></li>
                 <li class = "col-2"><a href="#">Appointments</a></li>
@@ -23,37 +10,37 @@
         <div class = "row">
             <div class = "col-4">
                 <div class = "block-0">
-                    <a href="#"><img src="icons/patient.png"></a>
-                    <a href="#">Patient</a>
+                    <a href=<?php echo(Router::site_url().'/users/index/patient')?>><img src=<?php echo(Router::base_url().'/files/icons/patient.png')?>></a>
+                    <a href=<?php echo(Router::site_url().'/index.php/users/index/patient')?>>Patient</a>
                 </div>
             </div>
             <div class = "col-4">
                 <div class = "block-0">
-                    <a href="#"><img src="icons/doctor.png"></a>
+                    <a href="#"><img src=<?php echo(Router::base_url().'files/icons/doctor.png')?>></a>
                     <a href="#">Doctor</a>
                 </div>
             </div>
             <div class = "col-4">
                 <div class = "block-0">
-                    <a href="#"><img src="icons/receptionist.png"></a>
+                    <a href="#"><img src="files/icons/receptionist.png"></a>
                     <a href="#">Receptionist</a>
                 </div>
             </div>
             <div class = "col-4">
                 <div class = "block-0">
-                    <a href="#"><img src="icons/lab.png"></a>
+                    <a href="#"><img src="files/icons/lab.png"></a>
                     <a href="#">Lab Technician</a>
                 </div>
             </div>
             <div class = "col-4">
                 <div class = "block-0">
-                    <a href="#"><img src="icons/pharmacy.png"></a>
+                    <a href="#"><img src="files/icons/pharmacy.png"></a>
                     <a href="#">Pharmacist</a>
                 </div>
             </div>
             <div class = "col-4">
                 <div class = "block-0">
-                    <a href="#"><img src="icons/admin.png"></a>
+                    <a href="#"><img src="files/icons/admin.png"></a>
                     <a href="#">Supervisor</a>
                 </div>
             </div>
