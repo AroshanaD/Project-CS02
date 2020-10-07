@@ -5,10 +5,9 @@
 
             $this->load->database();
             $this->load->helper('url');
-           // $this->load->model('Reg_Model');
             $this->load->helper(array('form'));
             $this->load->library(array('form_validation'));
-            $this->load->library('pdf');
+
         }
         public function inventoryManage(){
             $this->load->view('manage_inventory');
