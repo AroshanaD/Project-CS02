@@ -1,11 +1,3 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <title>Login/Register</title>
-        <link href="<?php echo base_url();?>files/style.css" rel="stylesheet" type="text/css"/>
-        <link href="<?php echo base_url();?>files/pharmasist.css" rel="stylesheet" type="text/css"/>
-    </head>
     <body>
         <nav>
             <ul>

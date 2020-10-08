@@ -8,6 +8,6 @@
         }
         public function index($user_type){
             $this->load('views','header');
-            $this->load('views',$user_type[0]);
+            $this->load('views',$user_type);
         }
     }

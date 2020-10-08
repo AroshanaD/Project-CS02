@@ -1,4 +1,4 @@
-    <nav>
+<nav>
             <ul>
                 <li class = "col-1"><a class="active" href=<?php echo(Router::site_url().'/main')?>> <img src=<?php echo(Router::base_url().'/files/icons/home.png')?>></a></li>
                 <li class = "col-2"><a href="#">About Us</a></li>

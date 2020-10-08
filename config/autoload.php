@@ -2,7 +2,7 @@
 
     class Autoload{
 
-        static $autoload_array = array('core/Controllers','core/Models','config/database','config/router');
+        static $autoload_array = array('core/Controllers','core/Models','config/database','config/router','helpers/db_helper');
 
         public function __construct(){
 

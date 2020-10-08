@@ -14,7 +14,7 @@
         //print($controller);
     }
     else{
-        $controller_name = 'Main';
+        $controller_name = 'Login';
         //print('main');
     }
     
