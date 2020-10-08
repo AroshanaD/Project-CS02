@@ -135,3 +135,49 @@ p{
   color: rgb(194, 221, 245);
   font-size: max(1.2vw,18px);
 }
+
+.text-area{
+  height: 400px;
+  width: 400px;
+}
+
+[class*="box-"] {
+  padding: 50px 5px;
+  margin-top: 25px;
+  margin-bottom: 10px;
+  margin-right: 25px;
+  margin-left: 25px;
+  align-items: center;
+  text-align: center;
+}
+
+.box-0{
+  height: 1000px;
+  background-color: rgb(94, 168, 131);
+  font-size: max(2vw,25px);
+}
+
+.box-0 a {
+  display: block;
+  text-decoration: none;
+}
+
+.box-1{
+  height: 500px;
+  background-color: rgb(94, 168, 131);
+  font-size: max(2vw,25px);
+}
+
+.button1{
+  background-color: #0f0f0f; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 8px;
+  display: inline-block;
+  font-size: 20px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
