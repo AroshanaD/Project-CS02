@@ -27,12 +27,12 @@
                 <input type="text" class = "input" name="fullName" placeholder="Enter Full Name" required>
                 <input type="text" class = "input" name="age" placeholder="Enter Age" required>
                 <br>
-                <input type="checkbox" id="sex1" name="sex1" value="male">
-                    <label for="sex1"> Male</label>
-                    <input type="checkbox" id="sex2" name="sex2" value="Female">
-                    <label for="sex2"> Female</label>
-                    <input type="checkbox" id="sex3" name="sex3" value="Other">
-                    <label for="sex3"> Other</label>
+                <input type="checkbox" id="gender1" name="gender1" value="Male">
+                    <label for="gender1"> Male</label>
+                    <input type="checkbox" id="gender2" name="gender2" value="Female">
+                    <label for="gender2"> Female</label>
+                    <input type="checkbox" id="gender3" name="gender3" value="Other">
+                    <label for="gender3"> Other</label>
                     <input type="text" class = "input" name="contactNO" placeholder="Enter Contact No" required>
                     <input type="text" class = "input" name="email" placeholder="Enter Email" required>
                 <h2>Test Details</h2>
