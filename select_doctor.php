@@ -8,38 +8,29 @@
     <body>
         <div class="container-small">Hospital Management System</div>
         <div class="container-grid">
-            <div class="form-name">Select Doctor</div>
-            <div class="table-box">
-                <table class="reg-table">
-                    <tr>
-                        <th>No.</th>
-                        <th>Name</th>
-                        <th>Specialization</th>
-                        <th>Charges (Rs)</th>
-                        <th>Select</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>Dasun Aroshana</td>
-                        <td>Cardiologist</td>
-                        <td>2000</td>
-                        <td><a href="#">Select</a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#">Select</a></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><a href="#">Select</a></td>
-                    </tr>
-                </table>
+            <div class="doctor-card">
+                <div class="card-details">
+                    <img src="doctor (2).png">
+                    Dr. Dasun Thanura Aroshana
+                </div>
+                <div class="card-details">
+                    Cardiologist
+                </div>
+                <div>
+                    <input type="submit" value="Channel Now" class="channel-btn">
+                </div>
+            </div>
+            <div class="doctor-card">
+                <div class="card-details">
+                    <img src="doctor (2).png">
+                    Dr. Dasun Thanura Aroshana
+                </div>
+                <div class="card-details">
+                    Cardiologist
+                </div>
+                <div>
+                    <input type="submit" value="Channel Now" class="channel-btn">
+                </div>
             </div>
         </div>
     </body>

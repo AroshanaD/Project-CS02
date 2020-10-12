@@ -434,7 +434,10 @@ p{
     width: inherit;
     display: grid;
     place-items: center;
-    padding: 5px 10px 5px 10px;
+    background-color: rgb(212, 181, 0);
+    margin: 20px 0px;
+    color: rgb(13, 2, 66);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
 }
 
 .container-grid > .form-name{
@@ -445,7 +448,7 @@ p{
 .table-box{
     display: flex;
     flex-wrap: nowrap;
-    margin: 10px 20px 10px 20px;
+    margin: 10px 0px 10px 0px;
     padding: 30px;
     width: fit-content;
     background-color: #00000030;
@@ -475,4 +478,68 @@ p{
 
 .reg-table tr:nth-child(odd){
     background-color: blanchedalmond;
+}
+
+.doctor-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: black;
+    border-width: 1px;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px 15px;
+    align-items: flex-end;
+    margin-bottom: 5px;
+}
+
+.card-details{
+    width: 400px;
+    font-size: 20px;
+    font-weight: bold;
+    border-right: thin solid black;
+    padding: 0px 10px 0px 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.doctor-card > .card-details > img{
+    border-radius: 20%;
+    border-width: 2px;
+    border-color: black;
+}
+
+.channel-btn{
+    background-color: mediumturquoise;
+    font-size: 20px;
+    font-weight: bold;
+    width: 160px;
+    border: none;
+    padding: 6px 10px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    margin-left: 10px;
+    margin-bottom: 10px;
+    width: auto;
+}
+
+@media (max-width:768px){
+    .card-details{
+        width: fit-content;
+    }
+    .channel-btn{
+        width: inherit;
+    }
+}
+
+@media (max-width:600px){
+    .card-details{
+        font-size: 18px;
+        width: fit-content;
+    }
+    .channel-btn{
+        width: inherit;
+        font-size: 18px;
+    }
 }
