@@ -26,7 +26,7 @@
             <th></th>
             <th></th>
             <th></th>
-            <th><input type="submit" value="Select"></th>
+            <th><a href="#" class="button-normal">Select</a></th>
         </tr>
     </table>
     </div>

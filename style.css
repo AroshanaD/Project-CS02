@@ -300,7 +300,7 @@ p{
 }
 
 .form-name{
-    width: 300px;
+    width: 340px;
     background-color: white;
     margin: 20px 10px 0px 15px;
     padding: 5px;
@@ -313,10 +313,10 @@ p{
 .form-box{
     display: flex;
     flex-wrap: wrap;
-    width: 300px;
+    width: 340px;
     background-color: rgb(212, 181, 0);
     margin: 40px 10px 0px 15px;
-    padding: 10px;
+    padding: 10px 10px 20px 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
     justify-content: space-evenly;
     justify-items: start;
@@ -324,7 +324,7 @@ p{
 
 .label{
     justify-self: flex-start;
-    width: 260px;
+    width: 280px;
     margin: 10px 20px 0px 0px;
     font-size: 18px;
     font-weight: bold;
@@ -332,7 +332,7 @@ p{
 
 .input > input{
     margin: 10px 20px 0px 20px;
-    width: 260px;
+    width: 280px;
     height: 24px;
     border-width: medium;
     border-style: solid;
@@ -399,6 +399,17 @@ p{
     height: 24px;
 }
 
+.appointment > form > .form-box > .input > select{
+    margin: 10px 20px 0px 20px;
+    border-width: thin;
+    border-style: solid;
+    width: 280px;
+    height: 35px;
+    padding: 5px;
+    border-width: medium;
+    border-style: solid;
+}
+
 @media (max-width:768px){
     .register > form > .form-box{
         width: 500px;
@@ -417,4 +428,51 @@ p{
     .register > .form-name{
         width: 300px;
     }
+}
+
+.container-grid{
+    width: inherit;
+    display: grid;
+    place-items: center;
+    padding: 5px 10px 5px 10px;
+}
+
+.container-grid > .form-name{
+    background-color: black;
+    color: white;
+}
+
+.table-box{
+    display: flex;
+    flex-wrap: nowrap;
+    margin: 10px 20px 10px 20px;
+    padding: 30px;
+    width: fit-content;
+    background-color: #00000030;
+    justify-content: space-evenly;
+    border-collapse: collapse;
+    
+}
+
+.reg-table th, .reg-table td{
+    padding: 5px 20px 5px 20px;
+    font-size: max(1.2vw,14px);
+    font-weight: bold;
+    width: fit-content;
+}
+
+.reg-table tr{
+    height: 30px;
+    background-color: white;
+}
+
+.reg-table th{
+    background-color: rgb(212, 181, 0);
+    font-weight: bolder;
+    font-size: max(1.4vw,16px);
+    color:#fff;
+}
+
+.reg-table tr:nth-child(odd){
+    background-color: blanchedalmond;
 }
