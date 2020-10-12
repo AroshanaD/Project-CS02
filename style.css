@@ -203,6 +203,7 @@ p{
     font-size: 18px;
     font-weight: bold;
     font-family:Roboto;
+    padding: 10px;
     background-color: white;
     color: rgb(0, 0, 0);
     justify-self: center;
@@ -291,13 +292,18 @@ p{
 .databoard{
     display: -ms-flexbox;
     display: flex;
+    flex-wrap: wrap;
     margin-top: 10px;
     background-color: #00000060;
+    justify-content: space-evenly;
 }
 
 .data-card{
-    flex-basis: 50%;
+    flex-basis: 42%;
+    min-width: 380px;
     padding: 10px 30px;
+    margin-top: 10px;
+    margin-bottom: 10px;
     color: #000000;
     background-color: white;
     font-size: 20px;
