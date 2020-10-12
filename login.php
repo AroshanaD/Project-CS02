@@ -6,6 +6,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+        <div class="container-small">Hospital Management System</div>
         <div class="container">
             <div class="form-box">
                 <div class="form-name">Login</div>
@@ -23,6 +24,8 @@
                             <div class="input">
                                 <input type="password" name="passowrd" required>
                             </div>
+                            <p><a href="#">Forget password?</a></p>
+                            <p><a href="#">Not already an user</a></p>
                         </div>
                             <div class="btn-area"><input type="submit" value="Login" class="submit-btn"></div>
                     </form>
