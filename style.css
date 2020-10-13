@@ -492,14 +492,14 @@ p{
     border-right: none;
     padding: 10px 15px;
     align-items: flex-end;
-    margin-bottom: 5px;
+    margin: 5px 0px;
+    background-color: white;
 }
 
 .card-details{
     width: 400px;
     font-size: 20px;
     font-weight: bold;
-    border-right: thin solid black;
     padding: 0px 10px 0px 10px;
     margin-bottom: 10px;
     text-align: center;
@@ -541,5 +541,82 @@ p{
     .channel-btn{
         width: inherit;
         font-size: 18px;
+    }
+}
+
+.schedule-card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    border-bottom: black;
+    border-width: 1px;
+    border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    padding: 10px 15px;
+    align-items: flex-end;
+    margin: 5px 0px;
+    background-color: white;
+}
+
+.schedule-card > .card-details{
+    width: 200px;
+    margin-bottom: 0px;
+}
+
+.schedule-card > div > .channel-btn{
+    margin-bottom: 0;
+    align-self: start;
+}
+
+.doctor-card-large{
+    width: inherit;
+    display: flex;
+    flex-wrap: wrap;
+    border: 2px solid rgb(0, 0, 0);
+    padding: 15px 15px;
+    margin: 5px 0px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    color: rgb(0, 0, 0);
+    align-items: baseline;
+}
+
+.doctor-card-large > .card-details{
+    width: fit-content;
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+.doctor-card-large > .card-details > div{
+    padding-top: 5px;
+    padding-right: 5px;
+    background-color: lightgray;
+    font-family: 'Segoe UI';
+    font-size: 22px;
+    color: rgb(18, 0, 105);
+}
+
+@media (max-width: 768px){
+    .doctor-card-large{
+        max-width: inherit;
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .doctor-card-large > .card-details{
+        font-size: 16px;
+        font-weight: bold;
+    }
+
+    .doctor-card-large > .card-details > div{
+        font-size: 18px;
+        font-weight: bolder;
+    }
+
+    .doctor-card-large > .card-details > img{
+        width: 30px;
+        height: 30px;
     }
 }
