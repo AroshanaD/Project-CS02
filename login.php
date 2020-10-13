@@ -8,10 +8,10 @@
     <body>
         <div class="container-small">Hospital Management System</div>
         <div class="container">
-            <div class="form-box">
+            <div class="form-container">
                 <div class="form-name">Login</div>
-                    <form class="login">
-                        <div class="form-login">
+                    <form>
+                        <div class="form-box">
                             <div class="label">
                                 <label for="id">User ID</label>
                             </div>
@@ -27,7 +27,7 @@
                             <p><a href="#">Forget password?</a></p>
                             <p><a href="#">Not already an user</a></p>
                         </div>
-                            <div class="btn-area"><input type="submit" value="Login" class="submit-btn"></div>
+                        <div class="btn-area"><input type="submit" value="Login" class="submit-btn"></div>
                     </form>
                 </div>
             </div>
