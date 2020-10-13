@@ -55,7 +55,6 @@
                 </a>
             </div>
             <div class="col-6">
-                <a href="#">
                     <div class="task-card">
                         <p>
                             <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-shop-window" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -64,7 +63,12 @@
                         </p>
                         View Statistics
                     </div>
-                </a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#">Monthly</a></li>
+                            <li><a href="#">Yearly</a></li>
+                        </ul>
+                    </div>
             </div>
         </div>
     </body>
