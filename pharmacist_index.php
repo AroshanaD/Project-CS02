@@ -42,7 +42,6 @@
         </div>
         <div class="taskboard">
             <div class="col-6">
-                <a href="#">
                     <div class="task-card">
                         <p>
                             <svg width="2.5em" height="2.5em" viewBox="0 0 16 16" class="bi bi-people" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -51,7 +50,12 @@
                         </p>
                         Manage Inventory
                     </div>
-                </a>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href="#">Update Inventory</a></li>
+                            <li><a href="#">View Inventory</a></li>
+                        </ul>
+                    </div>
             </div>
             <div class="col-6">
                 <a href="#">
