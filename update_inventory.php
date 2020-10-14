@@ -18,7 +18,7 @@
                         <button type = "button" id = "add-button" class = "toggle-button" onclick="location.href='add_inventory.php';">Add </button>
                         <button type = "button" id = "update-button" class = "toggle-button" onclick="location.href='update_inventory.php';">Update/Remove </button>
                     </div>
-                    <form>
+                    <form action ="#" method = "POST">
                         <div class="form-box">
                             <div class="label">
                                 <label for="med_id">Medicine Id</label>
