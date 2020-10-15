@@ -6,7 +6,7 @@ body{
     line-height: 1.5;
     color: #212121;
     text-align: left;
-    background-color: #94d4ff;
+    background-color: #d4eeff;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -23,6 +23,10 @@ p{
     [class*="col-"]{
         width: 50%;
     }
+}
+
+input:focus{
+    outline: none;
 }
 
 @media only screen and (min-width: 768px) {
@@ -358,7 +362,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     width: 340px;
-    background-color: rgb(212, 181, 0);
+    background-color: rgb(255, 238, 212);
     margin: 40px 10px 0px 15px;
     padding: 10px 10px 20px 10px;
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
@@ -380,6 +384,9 @@ p{
     height: 24px;
     border-width: medium;
     border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .btn-area{
@@ -447,6 +454,9 @@ p{
     border-style: solid;
     width: 300px;
     height: 24px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
 .appointment > form > .form-box > .input > select{
@@ -798,4 +808,54 @@ p{
 #piechart-2{
     flex-basis: 45%;
     padding: 10px;
+}
+
+.container-search{
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.search-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding: 5px;
+    align-self: center;
+    border: medium solid #00000060;
+    border-radius: 35px;
+    background-color: rgb(236, 235, 235);
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+}
+
+.search-item > input{
+    width: 123px;
+    height: 20px;
+    margin: 5px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 20px;
+    background-color: #0000002f;
+    
+}
+
+.search-btn{
+    width: 100px;
+    height: inherit;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 10px;
+    border: 2px solid #00000060;
+    border-radius: 20px;
+    background-color: rgb(177, 182, 255);
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+}
+
+.search-item > input:hover,.search-btn:hover{
+    opacity: 0.6;
 }
