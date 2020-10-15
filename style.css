@@ -1,4 +1,4 @@
-body{
+body {
     margin: 0;
     font-family: Roboto;
     font-size: 1rem;
@@ -6,41 +6,69 @@ body{
     line-height: 1.5;
     color: #212121;
     text-align: left;
-    background-color: #94d4ff;
+    background-color: #d4eeff;
     padding-left: 10px;
     padding-right: 10px;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-p{
+p {
     margin-bottom: 0;
 }
 
-@media (max-width:768px){
-    [class*="col-"]{
+@media (max-width:768px) {
+    [class*="col-"] {
         width: 50%;
     }
 }
 
+input:focus {
+    outline: none;
+}
+
 @media only screen and (min-width: 768px) {
-    .col-1 {width: 8.33%;}
-    .col-2 {width: 16.66%;}
-    .col-3 {width: 25%;}
-    .col-4 {width: 33.33%;}
-    .col-5 {width: 41.66%;}
-    .col-6 {width: 50%;}
-    .col-7 {width: 58.33%;}
-    .col-8 {width: 66.66%;}
-    .col-9 {width: 75%;}
-    .col-10 {width: 83.33%;}
-    .col-11 {width: 91.66%;}
-    .col-12 {width: 100%;}
-  }
-  
-  [class*="col-"] {
+    .col-1 {
+        width: 8.33%;
+    }
+    .col-2 {
+        width: 16.66%;
+    }
+    .col-3 {
+        width: 25%;
+    }
+    .col-4 {
+        width: 33.33%;
+    }
+    .col-5 {
+        width: 41.66%;
+    }
+    .col-6 {
+        width: 50%;
+    }
+    .col-7 {
+        width: 58.33%;
+    }
+    .col-8 {
+        width: 66.66%;
+    }
+    .col-9 {
+        width: 75%;
+    }
+    .col-10 {
+        width: 83.33%;
+    }
+    .col-11 {
+        width: 91.66%;
+    }
+    .col-12 {
+        width: 100%;
+    }
+}
+
+[class*="col-"] {
     display: block;
     float: left;
     padding-top: 5px;
@@ -48,15 +76,15 @@ p{
     background-color: #00000060;
     place-items: center;
     flex: content;
-  }
-  
+}
+
 .row::after {
     content: "";
     clear: both;
     display: table;
 }
 
-.container{
+.container {
     position: relative;
     width: 100%;
     display: flex;
@@ -65,22 +93,22 @@ p{
     margin: 0;
 }
 
-.avatar{
+.avatar {
     border-radius: 50%;
     width: 50px;
 }
 
-.avatar-small{
+.avatar-small {
     border-radius: 50%;
     width: 30px;
 }
 
-.avatar-larger{
+.avatar-larger {
     border-radius: 50%;
     width: 80px;
 }
 
-.button-medium{
+.button-medium {
     color: black;
     border: 2px solid black;
     border-radius: 50px;
@@ -90,13 +118,13 @@ p{
     text-decoration: none;
 }
 
-.button-medium:hover{
+.button-medium:hover {
     opacity: 0.5;
     text-decoration: none;
     border-radius: 50px;
 }
 
-.button-normal{
+.button-normal {
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
     padding: 10px 15px;
@@ -105,7 +133,7 @@ p{
     text-decoration: none;
 }
 
-.button-normal:hover{
+.button-normal:hover {
     opacity: 0.5;
     text-decoration: none;
 }
@@ -122,28 +150,28 @@ p{
     background-color: #00000060;
     text-decoration: none;
     justify-content: space-between;
-  }
+}
 
-.nav-item{
+.nav-item {
     padding: 10px 30px;
     color: #000000;
     background-color: white;
     font-size: 20px;
     font-weight: bold;
-    font-family:Roboto;
+    font-family: Roboto;
     text-decoration: none;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-.nav-item:hover{
+.nav-item:hover {
     background-color: #b4ccfff5;
 }
 
-.nav-item a{
+.nav-item a {
     color: #000;
 }
 
-.container-small{
+.container-small {
     padding-left: 0;
     padding-top: 10px;
     padding-bottom: 10px;
@@ -152,20 +180,20 @@ p{
     background-color: white;
     font-size: 20px;
     font-weight: bold;
-    font-family:Roboto;
+    font-family: Roboto;
     color: black;
 }
 
-.profile-card{
+.profile-card {
     display: grid;
     background-color: #00000060;
     height: fit-content;
 }
 
-.profile-card-name{
+.profile-card-name {
     font-size: 20px;
     font-weight: bold;
-    font-family:Roboto;
+    font-family: Roboto;
     color: white;
     position: absolute;
     align-self: start;
@@ -173,11 +201,11 @@ p{
     margin-left: 20px;
 }
 
-.profile-card-details{
+.profile-card-details {
     width: 50%;
     font-size: 18px;
     font-weight: bold;
-    font-family:Roboto;
+    font-family: Roboto;
     padding: 10px;
     background-color: white;
     color: rgb(0, 0, 0);
@@ -185,57 +213,57 @@ p{
     padding-left: 10px;
     margin-top: 50px;
     margin-bottom: 20px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
 }
 
-@media (max-width:768px){
-    .profile-card-details{
+@media (max-width:768px) {
+    .profile-card-details {
         width: 80%;
         justify-self: left;
         margin-left: 10%;
     }
 }
 
-.profile-card-btn{
+.profile-card-btn {
     justify-self: end;
     margin-bottom: 10px;
     margin-right: 10px;
 }
 
-.field{
+.field {
     margin-bottom: 5px;
 }
 
-.taskboard{
+.taskboard {
     display: flex;
     flex-wrap: wrap;
     background-color: #00000050;
     margin-top: 10px;
 }
 
-.task-card{
+.task-card {
     width: 44vw;
     min-height: 140px;
     text-align: center;
-    margin: 10px 0 10px 0; 
+    margin: 10px 0 10px 0;
     background-color: rgb(212, 173, 0);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     justify-content: space-evenly;
     font-size: 20px;
     font-weight: bold;
-    font-family:Roboto;
+    font-family: Roboto;
     color: black;
     padding-top: 0.5px;
 }
 
-.taskboard > .col-6{
+.taskboard>.col-6 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     position: relative;
 }
 
-.dropdown-content{
+.dropdown-content {
     width: 44vw;
     display: none;
     position: relative;
@@ -244,10 +272,10 @@ p{
     margin: 5px 0;
     font-weight: bold;
     z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
 }
 
-.dropdown-content > ul > li{
+.dropdown-content>ul>li {
     width: inherit;
     height: 40px;
     font-weight: bolder;
@@ -258,29 +286,29 @@ p{
     padding-top: 10px;
 }
 
-.dropdown-content > ul > li > a{
+.dropdown-content>ul>li>a {
     color: white;
 }
 
-.dropdown-content > ul > li:hover{
+.dropdown-content>ul>li:hover {
     background-color: rgb(255, 255, 255);
 }
 
-.dropdown-content > ul > li:hover a{
+.dropdown-content>ul>li:hover a {
     color: black;
 }
 
-.taskboard > .col-6:hover .dropdown-content{
+.taskboard>.col-6:hover .dropdown-content {
     display: block;
 }
 
-.dropdown{
+.dropdown {
     width: inherit;
     position: relative;
     display: inline-block;
 }
 
-.dropdown-item{
+.dropdown-item {
     display: none;
     position: absolute;
     background-color: #ffffff;
@@ -289,26 +317,26 @@ p{
     font-weight: bold;
     color: rgb(255, 255, 255);
     z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
     right: 0;
 }
 
-.dropdown:hover .dropdown-item{
+.dropdown:hover .dropdown-item {
     display: block;
 }
 
-.dropdown-item > ul > li{
+.dropdown-item>ul>li {
     width: inherit;
     text-decoration: none;
     margin: 10px;
     text-align: center;
 }
 
-.dropdown-item > ul > li:hover{
+.dropdown-item>ul>li:hover {
     background-color: rgba(0, 0, 0, 0.7);
 }
 
-.databoard{
+.databoard {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
@@ -317,7 +345,7 @@ p{
     justify-content: space-evenly;
 }
 
-.data-card{
+.data-card {
     flex-basis: 42%;
     min-width: 380px;
     padding: 10px 30px;
@@ -328,22 +356,22 @@ p{
     font-size: 20px;
     font-weight: bold;
     text-decoration: none;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
 }
 
-.form-container{
+.form-container {
     display: grid;
     position: absolute;
     width: max-content;
     height: fit-content;
     padding: 10px;
     background-color: #00000060;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     justify-items: center;
     margin-bottom: 20px;
 }
 
-.form-name{
+.form-name {
     width: 340px;
     background-color: white;
     margin: 20px 10px 0px 15px;
@@ -354,19 +382,19 @@ p{
     box-shadow: 0px 8px 16px 0px rgba(212, 196, 196, 0.3);
 }
 
-.form-box{
+.form-box {
     display: flex;
     flex-wrap: wrap;
     width: 340px;
-    background-color: rgb(212, 181, 0);
+    background-color: rgb(255, 238, 212);
     margin: 40px 10px 0px 15px;
     padding: 10px 10px 20px 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     justify-content: space-evenly;
     justify-items: start;
 }
 
-.label{
+.label {
     justify-self: flex-start;
     width: 280px;
     margin: 10px 20px 0px 0px;
@@ -374,22 +402,25 @@ p{
     font-weight: bold;
 }
 
-.input > input{
+.input>input {
     margin: 10px 20px 0px 20px;
     width: 280px;
     height: 24px;
     border-width: medium;
     border-style: solid;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
-.btn-area{
+.btn-area {
     display: flex;
     width: inherit;
     margin: 10px 10px 0px 15px;
     justify-content: space-between;
 }
 
-.submit-btn{
+.submit-btn {
     width: 200px;
     position: relative;
     color: rgb(255, 255, 255);
@@ -399,57 +430,60 @@ p{
     opacity: 1;
     text-decoration: none;
     align-self: center;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
 }
 
-.submit-btn:hover{
+.submit-btn:hover {
     opacity: 0.8;
 }
 
-.form-box > p{
+.form-box>p {
     padding-left: 20px;
 }
 
-.form-box > p > a{
+.form-box>p>a {
     color: black;
     font-size: 15px;
     text-decoration: none;
     font-weight: bold;
 }
 
-.register > form > .form-box > .radio-btn{
+.register>form>.form-box>.radio-btn {
     padding: 10px 0px 10px 0px;
     font-weight: bold;
 }
 
-.register > form > .form-box{
+.register>form>.form-box {
     width: 600px;
 }
 
-.register > .form-name{
+.register>.form-name {
     width: 600px;
 }
 
-.register > form > .form-box > .label{
+.register>form>.form-box>.label {
     align-self: flex-start;
     font-size: 16px;
     width: 180px;
 }
 
-.register > form > .form-box > .input > input{
+.register>form>.form-box>.input>input {
     border-width: thin;
     width: 300px;
 }
 
-.register > form > .form-box > .input > select{
+.register>form>.form-box>.input>select {
     margin: 10px 20px 0px 20px;
     border-width: thin;
     border-style: solid;
     width: 300px;
     height: 24px;
+    border-top: none;
+    border-left: none;
+    border-right: none;
 }
 
-.appointment > form > .form-box > .input > select{
+.appointment>form>.form-box>.input>select {
     margin: 10px 20px 0px 20px;
     border-width: thin;
     border-style: solid;
@@ -460,42 +494,40 @@ p{
     border-style: solid;
 }
 
-@media (max-width:768px){
-    .register > form > .form-box{
+@media (max-width:768px) {
+    .register>form>.form-box {
         width: 500px;
     }
-
-    .register > .form-name{
+    .register>.form-name {
         width: 500px;
     }
 }
 
-@media (max-width:600px){
-    .register > form > .form-box{
+@media (max-width:600px) {
+    .register>form>.form-box {
         width: 300px;
     }
-
-    .register > .form-name{
+    .register>.form-name {
         width: 300px;
     }
 }
 
-.container-grid{
+.container-grid {
     width: inherit;
     display: grid;
     place-items: center;
     background-color: rgb(212, 181, 0);
     margin: 20px 0px;
     color: rgb(13, 2, 66);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
 }
 
-.container-grid > .form-name{
+.container-grid>.form-name {
     background-color: black;
     color: white;
 }
 
-.table-box{
+.table-box {
     display: flex;
     flex-wrap: nowrap;
     margin: 10px 0px 10px 0px;
@@ -504,33 +536,33 @@ p{
     background-color: #00000030;
     justify-content: space-evenly;
     border-collapse: collapse;
-    
 }
 
-.reg-table th, .reg-table td{
+.reg-table th,
+.reg-table td {
     padding: 5px 20px 5px 20px;
-    font-size: max(1.2vw,14px);
+    font-size: max(1.2vw, 14px);
     font-weight: bold;
     width: fit-content;
 }
 
-.reg-table tr{
+.reg-table tr {
     height: 30px;
     background-color: white;
 }
 
-.reg-table th{
+.reg-table th {
     background-color: rgb(212, 181, 0);
     font-weight: bolder;
-    font-size: max(1.4vw,16px);
-    color:#fff;
+    font-size: max(1.4vw, 16px);
+    color: #fff;
 }
 
-.reg-table tr:nth-child(odd){
+.reg-table tr:nth-child(odd) {
     background-color: blanchedalmond;
 }
 
-.doctor-card{
+.doctor-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -546,7 +578,7 @@ p{
     background-color: white;
 }
 
-.card-details{
+.card-details {
     width: 400px;
     font-size: 20px;
     font-weight: bold;
@@ -555,46 +587,46 @@ p{
     text-align: center;
 }
 
-.doctor-card > .card-details > img{
+.doctor-card>.card-details>img {
     border-radius: 20%;
     border-width: 2px;
     border-color: black;
 }
 
-.channel-btn{
+.channel-btn {
     background-color: mediumturquoise;
     font-size: 20px;
     font-weight: bold;
     width: 160px;
     border: none;
     padding: 6px 10px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     margin-left: 10px;
     margin-bottom: 10px;
     width: auto;
 }
 
-@media (max-width:768px){
-    .card-details{
+@media (max-width:768px) {
+    .card-details {
         width: fit-content;
     }
-    .channel-btn{
+    .channel-btn {
         width: inherit;
     }
 }
 
-@media (max-width:600px){
-    .card-details{
+@media (max-width:600px) {
+    .card-details {
         font-size: 18px;
         width: fit-content;
     }
-    .channel-btn{
+    .channel-btn {
         width: inherit;
         font-size: 18px;
     }
 }
 
-.schedule-card{
+.schedule-card {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -610,17 +642,17 @@ p{
     background-color: white;
 }
 
-.schedule-card > .card-details{
+.schedule-card>.card-details {
     width: 200px;
     margin-bottom: 0px;
 }
 
-.schedule-card > div > .channel-btn{
+.schedule-card>div>.channel-btn {
     margin-bottom: 0;
     align-self: start;
 }
 
-.doctor-card-large{
+.doctor-card-large {
     width: inherit;
     display: flex;
     flex-wrap: wrap;
@@ -628,18 +660,18 @@ p{
     padding: 15px 15px;
     margin: 5px 0px;
     background-color: rgb(255, 255, 255);
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     color: rgb(0, 0, 0);
     align-items: baseline;
 }
 
-.doctor-card-large > .card-details{
+.doctor-card-large>.card-details {
     width: fit-content;
     font-weight: bolder;
     font-size: 20px;
 }
 
-.doctor-card-large > .card-details > div{
+.doctor-card-large>.card-details>div {
     padding-top: 5px;
     padding-right: 5px;
     background-color: lightgray;
@@ -648,30 +680,27 @@ p{
     color: rgb(18, 0, 105);
 }
 
-@media (max-width: 768px){
-    .doctor-card-large{
+@media (max-width: 768px) {
+    .doctor-card-large {
         max-width: inherit;
         font-size: 16px;
         font-weight: bold;
     }
-
-    .doctor-card-large > .card-details{
+    .doctor-card-large>.card-details {
         font-size: 16px;
         font-weight: bold;
     }
-
-    .doctor-card-large > .card-details > div{
+    .doctor-card-large>.card-details>div {
         font-size: 18px;
         font-weight: bolder;
     }
-
-    .doctor-card-large > .card-details > img{
+    .doctor-card-large>.card-details>img {
         width: 30px;
         height: 30px;
     }
 }
 
-.card-container{
+.card-container {
     display: flex;
     flex-wrap: wrap;
     width: inherit;
@@ -680,7 +709,7 @@ p{
     justify-content: space-between;
 }
 
-.card-medium{
+.card-medium {
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
@@ -688,11 +717,11 @@ p{
     margin: 10px 5px 10px 5px;
     padding: 10px;
     background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     justify-content: space-between;
 }
 
-.card-small{
+.card-small {
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
@@ -700,57 +729,61 @@ p{
     margin: 10px 5px;
     padding: 10px;
     background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     justify-content: space-between;
 }
 
-.card-medium > div, .card-small > div{
+.card-medium>div,
+.card-small>div {
     width: inherit;
     font-size: 20px;
     font-weight: bolder;
     color: navy;
 }
 
-@media (max-width:900px){
-    .card-medium{
+@media (max-width:900px) {
+    .card-medium {
         width: 400px;
     }
-    .card-small{
+    .card-small {
         width: 200px;
     }
-    .card-medium > div, .card-small{
+    .card-medium>div,
+    .card-small {
         font-size: 18px;
     }
 }
 
-@media (max-width:768px){
-    .card-medium{
-        width: inherit ;
-    }
-    .card-small{
+@media (max-width:768px) {
+    .card-medium {
         width: inherit;
     }
-    .card-medium > div, .card-small > div{
+    .card-small {
+        width: inherit;
+    }
+    .card-medium>div,
+    .card-small>div {
         font-size: 16px;
         font-weight: bold;
     }
-    .card-large > .card-details{
+    .card-large>.card-details {
         flex-basis: 28%;
     }
 }
 
-.card-medium > .card-details, .card-small > .card-details{
+.card-medium>.card-details,
+.card-small>.card-details {
     background-color: lightgray;
     font-size: 16px;
     padding: 10px 0px 10px 0px;
     color: black;
 }
 
-.card-medium > .card-details{
+.card-medium>.card-details {
     width: inherit;
 }
 
-.card-large{
+.card-large {
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
@@ -758,44 +791,121 @@ p{
     margin: 10px 5px 10px 5px;
     padding: 10px;
     background-color: black;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     justify-content: space-between;
     color: white;
 }
 
-.card-large > .card-details{
+.card-large>.card-details {
     background-color: rgba(255, 255, 255, 0.2);
     font-size: 16px;
     flex-basis: 31%;
     padding: 10px 0px 10px 0px;
 }
 
-.card-large > div{
+.card-large>div {
     width: inherit;
     font-size: 20px;
     font-weight: bolder;
 }
 
-.statistic-card{
+.statistic-card {
     width: inherit;
     display: flex;
     margin: 10px 5px 10px 5px;
     background-color: #00000060;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     justify-content: space-evenly;
 }
 
-#chart_div{
+#chart_div {
     width: 90vw;
     padding: 10px;
 }
 
-#piechart-1{
+#piechart-1 {
     flex-basis: 45%;
     padding: 10px;
 }
 
-#piechart-2{
+#piechart-2 {
     flex-basis: 45%;
     padding: 10px;
+}
+
+.container-search {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    justify-content: flex-start;
+    margin-top: 10px;
+    padding: 5px;
+    align-self: center;
+    border: medium solid #00000060;
+    border-radius: 35px;
+    background-color: rgb(236, 235, 235);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+    margin-bottom: 10px;
+}
+
+.site-search>input {
+    width: 123px;
+    height: 20px;
+    margin: 5px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 20px;
+    background-color: #0000002f;
+}
+
+.search-btn {
+    width: 100px;
+    height: inherit;
+    margin-top: 20px;
+    margin-left: 5px;
+    padding: 10px;
+    border: 2px solid #00000060;
+    border-radius: 20px;
+    background-color: rgb(177, 182, 255);
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
+}
+
+.search-item>input:hover,
+.search-btn:hover {
+    opacity: 0.6;
+}
+
+.container-2 {
+    display: grid;
+    position: relative;
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    background-color: #00000060;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
+    margin: 20px 10px 0px 15px;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
+.site-search button {
+    background-color: #131516;
+    color: #f2f2f2;
+    float: inline-end;
+    padding: 5px 10px;
+    border-radius: 50px;
+    margin-top: 10px;
+    margin-right: 16px;
+    font-size: 12px;
+    border: rgb(20, 22, 24);
+    cursor: pointer;
 }
