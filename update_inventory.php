@@ -4,7 +4,6 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <!--link rel="stylesheet" href="pharmasist.css"-->
     </head>
 
     <body>
@@ -14,10 +13,6 @@
                     
                 <div class="register">
                     <div class="form-name">Update Inventory</div>
-                    <div class = "btn-area">
-                        <button type = "button" id = "add-button" class = "toggle-button" onclick="location.href='add_inventory.php';">Add </button>
-                        <button type = "button" id = "update-button" class = "toggle-button" onclick="location.href='update_inventory.php';">Update/Remove </button>
-                    </div>
                     <form action ="#" method = "POST">
                         <div class="form-box">
                             <div class="label">
@@ -46,7 +41,6 @@
                             </div>
                             
                             <div class="btn-area">
-                                <input type="submit" value="Search" class="inventory-btn">
                                 <input type="submit" value="Update" class="inventory-btn">
                                 <input type="submit" value="Delete" class="inventory-btn">
                             </div>
