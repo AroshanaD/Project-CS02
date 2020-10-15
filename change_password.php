@@ -13,8 +13,8 @@
             <div class="form-container">
                     
                 <div class="register">
-                    <div class="form-name">Change Details</div>
-                    <div class = "btn-area">
+                    <div class="form-name">Change Password</div>
+					<div class = "btn-area">
                         <button type = "button" id = "change-button" class = "toggle-button" onclick="location.href='change_details.php';">Change Details </button>
                         <button type = "button" id = "password-button" class = "toggle-button" onclick="location.href='change_password.php';">Change Password</button>
                     </div>
