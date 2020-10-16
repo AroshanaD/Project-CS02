@@ -9,7 +9,7 @@
 
     <body>
     <div class ="container-small">
-            View Doctor
+            Search Doctor
         </div>  <!--container-small-->
 
         <div class ="container">
@@ -33,18 +33,17 @@
                 </form> 
             </div>      <!--search-bar-->  
                 
-                <tr>
-                    <th>No.</th>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Specialization</th>
-                    <th>Charges</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
+                    <tr>
+                        <th>Appiontment details and Appointment date</th>
+                        <th>View</th>
+                        <th>Cancel</th>
+                    </tr>
+
+                    <tr>
+                        <th><input type="date" id = "day"  placeholder = "Appointment Date" name = "date"><input type="text" id = "detail"  placeholder = "Appointment Details" name = "details"></th>
+                        <th><input type="button" id = "view-button" name = "viewButton" value="View"></th>
+                        <th><input type="button" id = "cancel-button" name = "cancelButton" value="Cancel"></th>
+                    </tr>
                 <tr>
                     <td></td>
                     <td></td>

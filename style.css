@@ -437,7 +437,7 @@ input:focus {
     opacity: 0.8;
 }
 
-.inventory-btn{
+.inventory-btn {
     position: relative;
     color: rgb(255, 255, 255);
     background-color: rgba(0, 0, 0);
@@ -446,7 +446,7 @@ input:focus {
     opacity: 1;
     text-decoration: none;
     align-self: center;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
 }
 
 .form-box>p {
@@ -460,8 +460,8 @@ input:focus {
     font-weight: bold;
 }
 
-.form-box > h1{
-    width:500px;
+.form-box>h1 {
+    width: 500px;
     align-self: center;
 }
 
@@ -929,41 +929,51 @@ input:focus {
 
 [class*="box-"] {
     padding: 50px 5px;
-    margin:0px 10px 10px 15px; 
+    margin: 0px 10px 10px 15px;
     align-items: center;
-    text-align: center;   
+    text-align: center;
 }
 
-.box-0{
+.box-0 {
     height: fit-content;
     background-color: rgb(212, 181, 0);
-    font-size: max(2vw,25px);
-  }
-
-.box-0 > .input{
-        padding-top: 2px;
-        padding-bottom: 2px;
-        padding-left: 5px;
-        padding-right: 5px;
-        width: 300px;
-        height: 20px;
-        margin: 8px 0;
-        position: relative;     
+    font-size: max(2vw, 25px);
 }
 
-.box-container{
+.box-0>.input {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 300px;
+    height: 20px;
+    margin: 8px 0;
+    position: relative;
+}
+
+.box-container {
     display: grid;
     position: absolute;
     width: max-content;
     height: fit-content;
     padding: 10px;
     background-color: #00000060;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.6);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     justify-items: center;
     margin-bottom: 20px;
 }
 
-.box-container > .form-name{
+.box-container>.form-name {
     margin-top: 40px;
     width: 635px;
+}
+
+.site-search>select>option {
+    width: 123px;
+    height: 20px;
+    margin: 5px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 20px;
+    background-color: #0000002f;
 }
