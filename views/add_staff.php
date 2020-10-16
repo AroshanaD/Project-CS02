@@ -3,47 +3,70 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     </head>
+
     <body>
-        <div>
-            <button type="submit" formaction="#">Home</button>
-            <div>Hospital Management System</div>
-        </div>
-        <div>Add Staff</div>
-        <form>
-            <table>
-            <tr>
-            <th><label for="id">User Id</label></th>
-            <th><input type="text" id="id" name="id"></th>
-            </tr>
-            <tr>
-            <th><label for="f_name">First name</label></th>
-            <th><input type="text" id="f_name" name="f_name"></th>
-            </tr>
-            <tr>
-            <th><label for="l_name">Last Name</label></th>
-            <th><input type="text" id="l_name" name="l_name"></th>
-            </tr>
-            <tr>
-            <th><label for="address">Address</label></th>
-            <th><input type="text" id="address" name="address"></th>
-            </tr>
-            <tr>
-            <th><label for="email">Email</label></th>
-            <th><input type="email" id="email" name="email"></th>
-            </tr>
-            <tr>
-            <th><label for="contact">Contact Number</label></th>
-            <th><input type="tel" id="contact" name="contact"></th>
-            </tr>
-            <tr>
-            <th><label for="password">Password</label></th>
-            <th><input type="password" id="password" name="password"></th>
-            </tr>
-            <tr>
-            <th><input type="submit" value="Add"></th>
-            </tr>
-            </table>
-        </form>
+    <div class="container-small">Hospital Management System</div>
+        <div class="container">
+            <div class="form-container">
+                <div class="register">
+                    <div class="form-name">Add Staff Members</div>
+                    
+                    <form action ="#" method = "POST">
+                       <div class="form-box">
+                            <div class="label">
+                                <label for="staff">Staff</label>
+                            </div>
+                            <div class="input">
+                                <select name="staff" required>
+                                    <option value="pharmacist">Pharmacist</option>
+                                    <option value="lab_technician ">Lab technician</option>
+                                    <option value="receptionist">Receptionist</option>
+                                </select>
+                            </div>
+                            <div class="label">
+                                <label for="id">Id</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="id" required>
+                            </div>
+                            <div class="label">
+                                <label for="f_name">First name</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="f_name" required>
+                            </div>
+                            <div class="label">
+                                <label for="l_name">Last name</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="l_name" required>
+                            </div>
+                            <div class="label">
+                                <label for="address">Address</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="address" required>
+                            </div>
+                            <div class="label">
+                                <label for="contact">Contact No</label>
+                            </div>
+                            <div class="input">
+                                <input type="tel" name="contact" required>
+                            </div>
+                            <div class="label">
+                                <label for="email">Email Address</label>
+                            </div>
+                            <div class="input">
+                                <input type="email" name="email" required>
+                            </div>
+                            <div class="btn-area"><input type="submit" value="Add" class="inventory-btn"></div>
+                        </div >
+                    </form>
+                </div>
+            </div>
+        </div> 
     </body>
+
 </html>

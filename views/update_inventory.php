@@ -1,60 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
     <body>
-        <nav>
-            <ul>
-            <li class = "col-1"><a class="active" href="main_page.php"> <img src="icons/home.png"></a></li>
-            <li class = "col-3"><a  href="<?php echo site_url('Manage_inven/inventoryView');?>" >View Inventory</a></li>
-            <li class = "col-3"><a  href="<?php echo site_url('Manage_inven/inventoryUpdate');?>" >Update Inventory</a></li>
-            </ul>
-        </nav>
-
-        <div class = "background">
-          <div id = "form-box">
-            <div class = "button-area">
-              <button type = "button" id = "add-button" class = "toggle-button" onclick="addf()"> Add </button>
-              <button type = "button" id = "update-button" class = "toggle-button" onclick="updatef()"> Update/Remove </button>
+    <div class="container-small">Hospital Management System</div>
+        <div class="container">
+            <div class="form-container">
+                    
+                <div class="register">
+                    <div class="form-name">Update Inventory</div>
+                    <form action ="#" method = "POST">
+                        <div class="form-box">
+                            <div class="label">
+                                <label for="med_id">Medicine Id</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="med_id" required>
+                            </div>
+                            <div class="label">
+                                <label for="med_name">Medicine name</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="med_name" required>
+                            </div>
+                            <div class="label">
+                                <label for="med_description">Description</label>
+                            </div>
+                            <div class="input">
+                                <input type="textarea" name="med_description" required>
+                            </div>
+                            <div class="label">
+                                <label for="med_quantity">Quantity</label>
+                            </div>
+                            <div class="input">
+                                <input type="text" name="med_quantity" required>
+                            </div>
+                            
+                            <div class="btn-area">
+                                <input type="submit" value="Update" class="inventory-btn">
+                                <input type="submit" value="Delete" class="inventory-btn">
+                            </div>
+                        </div>    
+                    </form>
+                </div>                   
             </div>
-            <div id = "addMedicine" class = "input-field">
-              <form action ="#" method = "POST">
-                <input type="text" class = "input" name="medicineId" placeholder="Medicine Id" required>
-                <input type="text" class = "input" name="medicineName" placeholder="Medicine Name" required>
-                <input type="textbox" class = "input" name="description" placeholder="Description" required></br>
-                <input type="text" class = "input" name="quantity" placeholder="Quantity" required>
-                <button name="add" id = "add-medicine" class = "submit-button" >Add</button>
-              </form>
-            </div>
-            <div id = "updateMedicine" class = "input-field">
-              <form  action ="#" method = "POST">
-                <input type="text" class = "input" name="medicineId" placeholder="Medicine Id" required>
-                <input type="text" class = "input" name="medicineName" placeholder="Medicine Name" required>
-                <input type="textbox" class = "input" name="description" placeholder="Description" required></br>
-                <input type="text" class = "input" name="quantity" placeholder="Quantity" required>
-                <button name="update" id = "update-medicine" class = "submit-button" >Update</button></br>
-                <button name="remove" id = "remove-medicine" class = "submit-button" >remove</button>
-              </form>
-            </div>
-          </div>
-        </div>
-      <script>
-        var x = document.getElementById("addMedicine");
-        var y = document.getElementById("updateMedicine");
-
-        function addf(){
-          x.style.left = "0px";
-          y.style.left = "350px";
-          document.getElementById("add-button").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-          document.getElementById("update-button").style.backgroundColor = "transparent";
-          document.getElementById("form-box").style.height = "400px";
-        }
-
-        function updatef(){
-          x.style.left = "-350px";
-          y.style.left = "0px";
-          document.getElementById("update-button").style.backgroundColor = "rgba(0, 0, 0, 0.8)";
-          document.getElementById("add-button").style.backgroundColor = "transparent";
-          document.getElementById("form-box").style.height = "400px";
-        }
-
-      </script>
-      
+        </div> 
     </body>
+
 </html>
