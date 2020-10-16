@@ -34,9 +34,8 @@
             </div>      <!--search-bar-->  
                 
                     <tr>
-                        <th>Appiontment details and Appointment date</th>
-                    
-                        <th><input type="date" id = "day"  placeholder = "Appointment Date" name = "date"><input type="text" id = "detail"  placeholder = "Appointment Details" name = "details"></th>
+                        <th>Appointment date</th>
+                        <th>Appiontment details</th>
                         <th><input type="button" id = "view-button" name = "viewButton" value="View"></th>
                         <th><input type="button" id = "cancel-button" name = "cancelButton" value="Cancel"></th>
                     </tr>
