@@ -35,11 +35,7 @@
                 
                     <tr>
                         <th>Appiontment details and Appointment date</th>
-                        <th>View</th>
-                        <th>Cancel</th>
-                    </tr>
-
-                    <tr>
+                    
                         <th><input type="date" id = "day"  placeholder = "Appointment Date" name = "date"><input type="text" id = "detail"  placeholder = "Appointment Details" name = "details"></th>
                         <th><input type="button" id = "view-button" name = "viewButton" value="View"></th>
                         <th><input type="button" id = "cancel-button" name = "cancelButton" value="Cancel"></th>
@@ -49,18 +45,10 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td><input type="submit" value="Update"></td>
                     <td><input type="submit" value="Delete"></td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
                     <td></td>
                     <td></td>
                     <td></td>

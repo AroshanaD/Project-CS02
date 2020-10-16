@@ -1,41 +1,36 @@
 <!DOCTYPE html>
 <html>
-    <head>
+<title>View</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <nav>
-            <ul>
-            <li class = "col-1"><a class="active" href="main_page.php"> <img src="icons/home.png"></a></li>
-            <li class = "col-3"><a  href="<?php echo site_url('Manage_inven/inventoryView');?>" >View Inventory</a></li>
-            <li class = "col-3"><a  href="<?php echo site_url('Manage_inven/inventoryUpdate');?>" >Update Inventory</a></li>
-            </ul>
-        </nav>
+        <div class ="container-small">
+        Inventory
+        </div>  <!--container-small-->
 
-        <div>
-            <button type="submit" formaction="#">Home</button>
-            <div>Hospital Management System</div>
-        </div>
-        <div>Inventory</div>
-        <div>
-            <form>
-                <table>
-                <tr>
-                <th><label for="id">Id</label></th>
-                <th><input type="text" id="id" name="id"></form></th>
-                </tr>
-                <tr>
-                <th><label for="name">Name</label></th>
-                <th><input type="text" id="name" name="name"></form></th>
-                </tr>
-                <tr>
-                <th><input type="submit" value="Search"></th>
-                </tr>
-                </table>
-            </form>
-        </div>
-            <table>
+
+        <div class ="container">
+        <div class = "container-2">
+        <table class ="reg-table">
+
+            <div class = "search-bar">
+                
+                <form action="#"> 
+                <div class="site-search"> 
+                    <input type="text" placeholder="ID" name="id"> 
+                    </div>      <!--site-search-->  <!--text-->
+                    <div class="site-search"> 
+                    <input type="text" placeholder="Name " name="name"> 
+                    </div>      <!--site-search-->  <!--date-->
+                    <div class="site-search"> 
+                    <button type = "submit">GO</button> 
+                    </div>      <!--site-search-->  <!--btn-->
+                </form> 
+            </div>      <!--search-bar-->  
+        
+            
                 <tr>
                     <th>No.</th>
                     <th>Medicine Id</th>
@@ -48,17 +43,20 @@
                     <th>Delete</th>
                 </tr>
                 <tr>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th></th>
-                    <th><input type="submit" value="Update"></th>
-                    <th><input type="submit" value="Delete"></th>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="submit" value="Update"></td>
+                    <td><input type="submit" value="Delete"></td>
                 </tr>
-            </table>
+            
         </div>
+        </table>
+        </div>      <!--container-2-->
+        </div>      <!--container-->
     </body>
 </html>
