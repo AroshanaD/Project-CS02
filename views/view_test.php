@@ -44,30 +44,24 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="submit" value="Update"></td>
+                        <td><input type="submit" value="Delete"></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="submit" value="Update"></td>
+                        <td><input type="submit" value="Delete"></td>
                     </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td></td>
-                        <td></td>
+                        <td><input type="submit" value="Update"></td>
+                        <td><input type="submit" value="Delete"></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+
                    
                 </table>
             </div> <!--container-2-->
