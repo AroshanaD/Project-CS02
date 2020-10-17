@@ -1038,6 +1038,7 @@ input:focus{
     padding: 20px;
     background-color: rgb(253, 227, 203);
     overflow: hidden;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
 }
 
 .slides{
@@ -1100,6 +1101,7 @@ input:focus{
     background-color: rgb(39, 39, 39);
     font-family: 'Nunito',sans-serif;
     color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
 }
 
 #about-us,#services,#contact-us{
