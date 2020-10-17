@@ -6,7 +6,6 @@ body{
     line-height: 1.5;
     color: #212121;
     text-align: left;
-    background-color: #d4eeff;
 }
 
 a{
@@ -865,12 +864,14 @@ input:focus{
     padding: 2px 10px;
     justify-content: space-between;
     align-items: center;
-    background-color: rgb(252, 237, 217);
-    box-shadow: 0px 2px 16px 0px rgba(0,0,0,0.2);
     color: rgb(61, 61, 61);
     font-family: 'Chilanka',cursive;
     font-size: 30px;
     font-weight: bolder;
+}
+
+.main-nav > div{
+    padding-top: 20px;
 }
 
 @media (max-width:768px){
@@ -878,10 +879,31 @@ input:focus{
         background-color: white;
         box-shadow: none;
     }
+    .main-nav > .logo{
+        margin-right: auto;
+    }
 }
 
-.main-nav > image{
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.3);
+.main-nav > .logo{
+    width: 50px;
+    height: 50px;
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+#c{
+    animation: logo 5s linear;
+}
+
+@keyframes logo{
+    from{
+        transform: rotateZ(0deg);
+        transform-origin: center;
+    }
+    to{
+        transform: rotateZ(-15deg);
+        transform-origin: center;
+    }
 }
 
 .main-button{
@@ -911,6 +933,9 @@ input:focus{
 }
 
 .section > div{
+    font-family: 'Nunito',sans-serif;
+    font-size: 18px;
+    font-weight: bold;
     width: 45vw;
     text-align: justify;
 }
@@ -927,6 +952,7 @@ input:focus{
     }
 
     .section > div{
+        font-size: 16px;
         width: 400px;
     }
 }

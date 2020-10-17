@@ -7,10 +7,43 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
-    <body style="background-color: white;">
+    <body style="background: linear-gradient(rgb(230, 137, 137), #a7ace9);;">
        <div class="main-nav">
            <div class="logo">
-               <img src="logo.svg" style="width: 50px; height: 50px;">
+                <svg width="80px" height="80px" viewBox="0 0 236 246" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <g id="Layer 2">
+                    <g id="Vector" filter="url(#filter0_d)">
+                    <path d="M226.77 226.77L214.32 0H185.18L181.77 5.38L170.3 23.49L144.57 64.13L113.38 113.39L104.12 98.82L82.06 64.13L72.52 49.13L41.28 0H11L0 226.77H32.92V207.55H13.7V190.17H32.92V171H41.4V64.13L52.14 82L71 113.39L95.4 154.13H131.4L155.84 113.39L185.18 64.5L185.4 64.13V226.77H226.77Z" fill="#FF5E03" fill-opacity="0.69"/>
+                    <path d="M184.751 64.2427L184.75 64.2445L155.411 113.133L155.84 113.39L155.411 113.133L131.117 153.63H95.6834L71.4289 113.133L71.4286 113.132L52.5686 81.7425L52.5686 81.7424L41.8286 63.8724L40.9 62.3274V64.13V170.5H32.92H32.42V171V189.67H13.7H13.2V190.17V207.55V208.05H13.7H32.42V226.27H0.524842L11.4763 0.5H41.0054L72.0981 49.3983L72.52 49.13L72.0981 49.3983L81.6381 64.3983L103.698 99.0882L103.698 99.0883L112.958 113.658L113.381 114.323L113.802 113.657L144.992 64.3975L144.6 64.149L144.992 64.3975L170.722 23.7575L182.192 5.64768L182.192 5.64753L185.455 0.5H213.847L226.242 226.27H185.9V64.13V62.3108L184.97 63.8745L184.751 64.2427Z" stroke="black"/>
+                    </g>
+                    <g id="c" filter="url(#filter1_d)">
+                    <path d="M103 111.81C103 152.63 135.11 187.93 181.75 204.81V223.66C105.81 217.44 46.75 169.75 46.75 111.85C46.75 53.95 105.83 6.22 181.77 0V18.85C135.13 35.69 103 71 103 111.81Z" fill="#838BC5"/>
+                    <path d="M102.5 111.81C102.5 152.82 134.673 188.192 181.25 205.16V223.117C105.697 216.726 47.25 169.237 47.25 111.85C47.25 54.4626 105.717 6.93467 181.27 0.543354V18.4993C134.692 35.4285 102.5 70.8101 102.5 111.81Z" stroke="black"/>
+                    </g>
+                    <path id="Vector_2" d="M50.29 170.95H41.4V226.77H50.29V170.95Z" fill="#C1272D"/>
+                    <path id="Vector_3" d="M69.51 190.17H41.4V207.55H69.51V190.17Z" fill="#C1272D"/>
+                    </g>
+                    <defs>
+                    <filter id="filter0_d" x="0" y="0" width="235.77" height="245.77" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                    <feOffset dx="5" dy="15"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                    <filter id="filter1_d" x="46.75" y="0" width="144.02" height="242.66" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+                    <feOffset dx="5" dy="15"/>
+                    <feGaussianBlur stdDeviation="2"/>
+                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
+                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
+                    </filter>
+                    </defs>
+                </svg>
            </div>
            <div>MedCaid Hospitals</div>
            <div>
@@ -188,7 +221,7 @@
                     <path id="Vector_162" d="M825.2 403.4C825.3 403.3 825.4 403.2 825.5 403.1C825.6 403 825.8 403 826 403.1C826.1 403.2 826.1 403.3 826.2 403.4C826.3 403.6 826.6 403.8 826.8 403.8L826.6 404.8L825.2 403.4Z" fill="#727A9C"/>
                     <path id="Vector_163" d="M813.9 383.1C813.9 383.1 831.3 383 827.2 390.4C823.1 397.8 816.7 398.7 816.7 398.7L813.9 383.1Z" fill="#FFB0B1"/>
                     <g id="heart">
-                    <path id="Vector_164" d="M705.9 51.4H705.1C675.3 51.4 648.9 67.2 633.7 90.5C618.5 67.2 592.1 51.4 562.3 51.4H561.5C514.9 51.8 477.3 89.7 477.3 136.3C477.3 164.1 489.5 203.6 513.2 236C558.5 297.9 633.6 352 633.6 352C633.6 352 708.8 297.9 754 236C777.8 203.5 789.9 164.1 789.9 136.3C790 89.8 752.5 51.9 705.9 51.4ZM695.1 240.9C688.1 240.9 681.9 236.6 679.4 230.1H661.6C659.2 230.1 657.1 228.5 656.3 226.3L650.8 209.8L633.5 270.4C632.8 272.8 630.6 274.4 628.1 274.4H627.8C625.2 274.3 623 272.3 622.6 269.8L604.7 162.3L591.6 225.9C591 228.4 588.8 230.1 586.2 230.1H561.1C558 230.2 555.4 227.8 555.3 224.8C555.2 221.7 557.6 219.1 560.6 219C560.8 219 560.9 219 561.1 219H581.8L600.3 133.5C601 130.5 604.1 128.6 607.1 129.4C609.3 129.9 611 131.8 611.3 134L629.6 243.6L645.1 189.4C645.8 187.1 647.9 185.4 650.3 185.4H650.4C652.8 185.4 654.9 186.9 655.7 189.2L665.6 219H679.2C682.1 210.2 691.6 205.4 700.4 208.3C709.2 211.2 714 220.7 711.1 229.5C708.8 236.3 702.4 240.9 695.1 240.9Z" fill="#FF8456"/>
+                    <path id="Vector_164" d="M705.9 51.4H705.1C675.3 51.4 648.9 67.2 633.7 90.5C618.5 67.2 592.1 51.4 562.3 51.4H561.5C514.9 51.8 477.3 89.7 477.3 136.3C477.3 164.1 489.5 203.6 513.2 236C558.5 297.9 633.6 352 633.6 352C633.6 352 708.8 297.9 754 236C777.8 203.5 789.9 164.1 789.9 136.3C790 89.8 752.5 51.9 705.9 51.4ZM695.1 240.9C688.1 240.9 681.9 236.6 679.4 230.1H661.6C659.2 230.1 657.1 228.5 656.3 226.3L650.8 209.8L633.5 270.4C632.8 272.8 630.6 274.4 628.1 274.4H627.8C625.2 274.3 623 272.3 622.6 269.8L604.7 162.3L591.6 225.9C591 228.4 588.8 230.1 586.2 230.1H561.1C558 230.2 555.4 227.8 555.3 224.8C555.2 221.7 557.6 219.1 560.6 219C560.8 219 560.9 219 561.1 219H581.8L600.3 133.5C601 130.5 604.1 128.6 607.1 129.4C609.3 129.9 611 131.8 611.3 134L629.6 243.6L645.1 189.4C645.8 187.1 647.9 185.4 650.3 185.4H650.4C652.8 185.4 654.9 186.9 655.7 189.2L665.6 219H679.2C682.1 210.2 691.6 205.4 700.4 208.3C709.2 211.2 714 220.7 711.1 229.5C708.8 236.3 702.4 240.9 695.1 240.9Z" fill="red"/>
                     </g>
                     </g>
                     <defs>
@@ -266,7 +299,7 @@
           index++;
           if (index > x.length) {index = 1}    
           x[index-1].style.display = "flex";  
-          setTimeout(carousel, 3000);
+          setTimeout(carousel, 4000);
         }
         </script>
 </html>
