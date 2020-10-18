@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src='/project-cs02/files/js/autofill.js' type="text/javascript"></script>
+
     </head>
     <body>
         <div class="container-small">Hospital Management System</div>
@@ -23,9 +26,8 @@
                                 <label for="specialization">Specialization</label>
                             </div>
                             <div class="input">
-                                <select name="specialization" required>
+                                <select name="specialization" id="search_spec" required>
                                     <option value="Any">Any Specialization</option>
-                                    <option value="#">#</option>
                                 </select>
                             </div>
                             <div class="label">

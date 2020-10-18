@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
     </head>
     <body>
         <div class="container-small">Hospital Management System</div>
@@ -11,7 +11,7 @@
             <div class="form-container">
                 <div class="register">
                     <div class="form-name">User Registration</div>
-                    <form>
+                    <form method="post">
                         <div class="form-box">
                             <div class="label">
                                 <label for="id">NIC</label>
