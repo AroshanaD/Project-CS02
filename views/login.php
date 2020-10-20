@@ -28,7 +28,7 @@
                             <p><a href="#">Not already an user</a></p>
                         </div>
                         <div class="btn-area">
-                            <button name="login-submit" class = "submit-btn" >Login</button>
+                            <button type="submit" name="login-submit" class = "submit-btn" >Login</button>
                         </div>
                     </form>
                 </div>

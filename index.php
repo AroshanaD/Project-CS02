@@ -5,16 +5,12 @@
     $controller_method;
 
     $url_segments = explode('/',rtrim($_SERVER['REQUEST_URI'],'/'));
-    //print($url_segments);
-    //print($controller);
 
     if(isset($url_segments[3])){
         $controller_name = ucfirst(explode('?',$url_segments[3])[0]);
-        //print($controller);
     }
     else{
         $controller_name = 'Main';
-        //print('main');
     }
     
     include_once('controllers/'.$controller_name.'.php');

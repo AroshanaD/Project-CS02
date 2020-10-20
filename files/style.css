@@ -379,11 +379,29 @@ input:focus{
     margin: 10px 20px 0px 20px;
     width: 280px;
     height: 24px;
+    padding-left: 30px;
     border-width: medium;
     border-style: solid;
     border-top: none;
     border-left: none;
     border-right: none;
+}
+
+#form-message{
+    margin-top: 10px;
+    padding: 5px 15px 5px 15px;
+    width: inherit;
+    text-align: center;
+    font-family: 'Nunito' sans-serif;
+    font-size: 18px;
+    font-weight: Bold;
+    color: rgb(255, 136, 0);
+    background-color: white;
+}
+
+.input-error{
+    box-shadow: 0 0 3px red;
+    background-color: rgba(255, 0, 0, 0.0.5);
 }
 
 .btn-area{
@@ -447,6 +465,7 @@ input:focus{
 
 .register > form > .form-box > .input > select{
     margin: 10px 20px 0px 20px;
+    padding-left: 30px;
     border-width: thin;
     border-style: solid;
     width: 300px;
