@@ -26,6 +26,9 @@ $(document).ready(function(){
             password : password,
             repassword : repassword,
             submit : submit
+        },function(data){
+            console.log(data);
+            $.post("register/register_user");
         })
     })
 })

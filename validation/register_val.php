@@ -110,7 +110,6 @@
     }
     if($instance->successful == TRUE){
         echo "Successfully registered";
-        header('Location:'.Router::site_url().'/register/register_user');
     }
 
 ?>
