@@ -1,11 +1,11 @@
 <?php
 
-    class Autofill_Data{
+    class validation_helper{
         public function __construct(){
 
         }
 
-        public function get_spec(){
+        public function validate($table,$col,$value){
             $dsn = "mysql:host=localhost;dbname=hospital;charset=utf8mb4";
 		    $user = 'root';
 		    $pass = '';
@@ -18,20 +18,12 @@
 			    $pdo = new PDO($dsn, $user, $pass, $options);
 		    } catch (\PDOException $e) {
 			    throw new \PDOException($e->getMessage(), (int)$e->getCode());
-		    }
-
-            $query = "SELECT name FROM specialization ORDER BY name ASC";
+            }
+            
+            $query = "SELECT count(1) FROM $table where $col = ?";
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
-
-            $result = $stmt->fetchAll();
-            header('Content-Type: application/json');
-            echo json_encode($result);
+            $stmt->execute([$value]);
+            $result = $stmt->fetch();
+            return $result['count(1)'];
         }
-        
     }
-
-$instance = new Autofill_Data;
-$instance->get_spec();
-
-?>
