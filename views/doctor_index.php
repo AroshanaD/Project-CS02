@@ -47,7 +47,7 @@
                 <a href="#">
                     <div class="task-card">
                         <p>
-                            <img src="icons/appoint.png" alt="view appointment">
+                            <img src="icons/day-view.png" alt="view appointment" style="width:50px; height:50px;">
                         </p>
                         View Appointments
                     </div>
@@ -56,7 +56,7 @@
             <div class="col-6">
                     <div class="task-card">
                         <p>
-                        <img src="icons/static.png" alt="view appointment">
+                        <img src="icons/area-chart.png" alt="view statistic" style="width:50px; height:50px;">
                         </p>
                         View Statistics
                     </div>
