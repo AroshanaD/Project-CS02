@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
     </head>
-    <body>
-        <div class="container-small">Hospital Management System</div>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_fill_forms_yltj.png);">
         <div class="container">
             <div class="card-container">
                 <div class="card-medium">
@@ -56,8 +55,9 @@
                     <div class="card-details">
                         Total Amount
                     </div>
+                    <input type="submit" value="Print" class="table-btn">
                 </div>
-                <input type="submit" value="Print" class="submit-btn">
+                
             </div>
         </div>
     </body>

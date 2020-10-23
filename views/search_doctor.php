@@ -3,16 +3,14 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
     </head>
-    <body>
-        <div class="container-small">Hospital Management System</div>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_doctors_hwty.png);">
         <div class="container">
-            <div class="form-container">
-                <div class="appointment">
-                    <div class="form-name">Search Doctor</div>
+            <div class="block">
                     <form>
                         <div class="form-box">
+                            <div class="title">Search Doctor</div>
                             <div class="label">
                                 <label for="doctor">Doctor name</label>
                             </div>
@@ -34,10 +32,10 @@
                             <div class="input">
                                 <input type="date" name="birthday" required>
                             </div>
-                        </div>
+                        
                             <div class="btn-area"><input type="submit" value="Search" class="submit-btn"></div>
-                    </form>
-                </div>
+                        </div>    
+                    </form>    
             </div>
         </div>
     </body>

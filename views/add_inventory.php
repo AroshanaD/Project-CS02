@@ -3,17 +3,15 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
     </head>
 
-    <body>
-    <div class="container-small">Hospital Management System</div>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_medical_care_movn.png);">
         <div class="container">
-            <div class="form-container">
-                <div class="register">
-                    <div class="form-name">Add Inventory</div>
+                <div class="block">
                     <form action ="#" method = "POST">
                        <div class="form-box">
+                           <div class="title">Add Inventory</div>
                             <div class="label">
                                 <label for="med_id">Medicine Id</label>
                             </div>
@@ -38,7 +36,7 @@
                             <div class="input">
                                 <input type="text" name="med_quantity" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="inventory-btn"></div>
+                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
                         </div >
                     </form>
                 </div>

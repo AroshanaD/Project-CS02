@@ -3,10 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
     </head>
-    <body>
-        <div class="container-small">Hospital Management System</div>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_doctor_kw5l.png);">
         <div class="container-grid">
             <div class="doctor-card">
                 <div class="card-details">
@@ -32,6 +31,7 @@
                     <input type="submit" value="Channel Now" class="channel-btn">
                 </div>
             </div>
+            
         </div>
     </body>
 </html>
