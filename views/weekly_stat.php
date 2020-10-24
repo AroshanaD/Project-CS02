@@ -20,10 +20,10 @@
                   </svg>
             </a></li>
         </ul-->
-        <div class="container-small">Yearly statistics</div>
+        <div class="container-small">Weekly statistics</div>
         <div class="statistic-card">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="chart_div"></div>                    
+            <div id="chart_div"></div>          
         </div>
         <div class="statistic-card">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -33,45 +33,32 @@
         </div>
 
         <script>
-            google.charts.load('current', {packages: ['corechart', 'bar']});
-            google.charts.setOnLoadCallback(drawBasic);
+        google.charts.load('current', {packages: ['corechart', 'line']});
+        google.charts.setOnLoadCallback(drawBackgroundColor);
 
-        function drawBasic() {
-
+        function drawBackgroundColor() {
             var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Month');
-            data.addColumn('number', 'No.of Appointments');
+            data.addColumn('number', 'X');
+            data.addColumn('number', 'Appointments');
 
             data.addRows([
-                ['January',50],
-                ['February',35],
-                ['March',56],
-                ['April',30],
-                ['May',24],
-                ['June',60],
-                ['July',40],
-                ['August',44],
-                ['September',55],
-                ['October',45],
-                ['November',34],
-                ['December',62],
+                [1, 10],  [2, 23],  [3, 17],  [4, 18],  [5, 9],
+                [6, 11],  [7, 27], 
             ]);
 
             var options = {
-                title: 'Monthly Statistics',
                 hAxis: {
-                title: 'Month'
+                title: 'Days'
                 },
                 vAxis: {
                 title: 'No.of Appointments'
-                }
+                },
+                backgroundColor: '#f1f8e9'
             };
 
-            var chart = new google.visualization.ColumnChart(
-                document.getElementById('chart_div'));
-
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
             chart.draw(data, options);
-    }
+            }
         </script>
 
         <script>
