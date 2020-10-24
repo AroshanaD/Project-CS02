@@ -150,11 +150,11 @@ p{
   padding-bottom: 10px;
   text-align: center;
   margin-top: 10px;
-  background-color: white;
-  font-size: 20px;
-  font-weight: bold;
+  background-color: transparent;
+  font-size: 50px;
+  font-weight: bolder;
   font-family:Roboto;
-  color: black;
+  color: #c70000;
 }
 
 
@@ -909,6 +909,29 @@ p{
       width: 30px;
       height: 30px;
   }
+}
+
+.statistic-card{
+  width: inherit;
+  display: flex;
+  margin: 10px 5px 10px 5px;
+  background-color: transparent;
+  justify-content: space-evenly;
+}
+
+#chart_div{
+  width: 90vw;
+  padding: 10px;
+}
+
+#piechart-1{
+  flex-basis: 45%;
+  padding: 10px;
+}
+
+#piechart-2{
+  flex-basis: 45%;
+  padding: 10px;
 }
 
 
