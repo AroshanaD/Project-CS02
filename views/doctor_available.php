@@ -16,7 +16,7 @@
         <div class="topic">Search Doctor</div>
             <div class = "search-bar">
                 <form action="#"> 
-                <div class="site-search"> 
+                    <div class="site-search"> 
                     <input type="text" placeholder=" Select Specialization" name="specialization"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
@@ -42,16 +42,16 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td><button type = "t-btn">Update</td>
+                    <td><button type = "t-btn">Delete</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td><button type = "t-btn">Update</td>
+                    <td><button type = "t-btn">Delete</td>
                 </tr>
                     
                 </table>

@@ -47,9 +47,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
-                </tr>
+                    <td><button type = "t-btn">Update</td>
+                    <td><button type = "t-btn">Delete</td>
 
             </table>
             
