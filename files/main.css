@@ -955,35 +955,35 @@ p {
     width: fit-content;
     justify-content: flex-start;
     margin-top: 5px;
-    margin-bottom: 5px;
-    padding: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
     align-self: center;
-    border: medium solid #00000060;
+    border: medium solid rgba(24, 146, 120, 0.712);
     border-radius: 35px;
-    background-color: rgb(236, 235, 235);
+    background-color: rgb(208, 211, 209);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
 }
 
 .site-search>input {
     width: 123px;
     height: 20px;
-    margin: 5px;
+    margin: 5px 20px 5px 10px;
     padding: 10px;
     border-width: 0;
     border-radius: 20px;
-    background-color: #0000002f;
+    background-color: #ddf1def1;
 }
 
 .site-search button {
-    background-color: #131516;
+    background-color: #086146;
     color: #f2f2f2;
     float: inline-end;
     padding: 5px 10px;
     border-radius: 50px;
-    margin-top: 10px;
-    margin-right: 16px;
-    font-size: 12px;
-    border: rgb(20, 22, 24);
+    margin-top: 8px;
+    margin-right: 20px;
+    font-size: 20px;
+    border: rgb(3, 48, 27);
     cursor: pointer;
 }
 
@@ -1016,8 +1016,11 @@ p {
 }
 
 .container-t>.topic {
-    margin-top: 20px;
-    width: 635px;
+    width: 600px;
+    font-size: 24px;
+    font-weight: 700;
     margin-bottom: 25px;
     color: #ff0055;
+    text-transform: uppercase;
+    text-align: center;
 }
