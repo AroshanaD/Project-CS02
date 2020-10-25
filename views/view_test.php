@@ -4,20 +4,18 @@
     <title>View</title>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="main.css">
     </head>
 
-    <body>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/schedule_picture.png);">
      
-        <div class ="container-small">
-            View Lab Tests
-        </div>  <!--container-small-->
-        
         <div class ="container">
-        <div class = "container-2">
+        <div class = "container-t">
         <table class ="reg-table">
-        <div class = "search-bar">  
-        <form action="#"> 
+        <div class="topic">View Lab Tests</div>
+        <div class = "search-bar">
+                
+                <form action="#"> 
                 <div class="site-search"> 
                     <input type="text" placeholder=" Your Test Id" name="id"> 
                     </div>      <!--site-search-->  <!--text-->
@@ -46,24 +44,24 @@
                         <td></td>
                         <td><input type="submit" value="Update"></td>
                         <td><input type="submit" value="Delete"></td>
-                    </tr>
+                </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td><input type="submit" value="Update"></td>
                         <td><input type="submit" value="Delete"></td>
-                    </tr>
+                </tr>
                     <tr>
                         <td></td>
                         <td></td>
                         <td></td>
                         <td><input type="submit" value="Update"></td>
                         <td><input type="submit" value="Delete"></td>
-                    </tr>
-
-                   
+                </tr>
+                    
                 </table>
+               
             </div> <!--container-2-->
         </div><!--container-->
         
