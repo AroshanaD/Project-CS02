@@ -43,7 +43,7 @@
             </div>
         </div>
         <div class="taskboard">
-            <div class="col-6">
+            <div class="col-5">
                 <a href="#">
                     <div class="task-card">
                         <p>
@@ -53,7 +53,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6">
+            <div class="col-5">
                     <div class="task-card">
                         <p>
                         <img src="icons/area-chart.png" alt="view statistic" style="width:50px; height:50px;">

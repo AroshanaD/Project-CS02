@@ -41,7 +41,7 @@
             </div>
         </div>
         <div class="taskboard">
-            <div class="col-6">
+            <div class="col-5">
                     <div class="task-card">
                         <p>
                             <img src="icons/group.png" alt="manage user" style="width:60px; height:60px;">
@@ -55,7 +55,7 @@
                         </ul>
                     </div>
             </div>
-            <div class="col-6">
+            <div class="col-5">
                     <div class="task-card">
                         <p>
                             <img src="icons/in-inventory.png" alt="mange inventory" style="width:50px; height:50px;">
@@ -69,7 +69,7 @@
                         </ul>
                     </div>
             </div>
-            <div class="col-6">
+            <div class="col-5">
                     <div class="task-card">
                         <p>
                             <img src="icons/overtime.png" alt="manage schedule" style="width:50px; height:50px;">
@@ -83,7 +83,7 @@
                         </ul>
                     </div>
             </div>
-            <div class="col-6">
+            <div class="col-5">
                     <div class="task-card">
                         <p>
                             <img src="icons/area-chart.png" alt="view statistic" style="width:50px; height:50px;">

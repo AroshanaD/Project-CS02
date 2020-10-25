@@ -256,6 +256,7 @@ p {
     background-color: rgb(39, 39, 39);
     margin-top: 100px;
     height: 350px;
+    justify-content: space-around;
 }
 
 .task-card {
@@ -275,11 +276,12 @@ p {
     padding-top: 0.5px;
 }
 
-.taskboard>.col-6 {
+.taskboard>.col-5 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     position: relative;
+    background-color: inherit;
 }
 
 .dropdown-content {
@@ -296,13 +298,15 @@ p {
 
 .dropdown-content>ul>li {
     width: inherit;
-    height: 25px;
+    min-width: fit-content;
+    height: fit-content;
     font-weight: bolder;
     text-decoration: none;
     list-style: none;
     text-align: center;
     margin-right: 40px;
     padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .dropdown-content>ul>li>a {
@@ -317,7 +321,7 @@ p {
     color: rgba(189, 186, 186, 0.829);
 }
 
-.taskboard>.col-6:hover .dropdown-content {
+.taskboard>.col-5:hover .dropdown-content {
     display: block;
 }
 

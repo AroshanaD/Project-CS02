@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="taskboard">
-            <div class="col-6">
+            <div class="col-5">
                 <a href="#">
                     <div class="task-card">
                         <p>
@@ -52,7 +52,7 @@
                     </div>
                 </a>
             </div>
-            <div class="col-6">
+            <div class="col-5">
                 <a href="#">
                     <div class="task-card">
                         <p>
