@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/main.css" ?>>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
@@ -47,8 +47,8 @@
            </div>
            <div>MedCaid Hospitals</div>
            <div>
-               <button class="main-button">Register</button>
-               <button class="main-button">Log In</button>
+               <button class="main-button"><a href=<?php echo Router::site_url()."/Login" ?>>Log In</a></button>
+               <button class="main-button"><a href=<?php echo Router::site_url()."/Register" ?>>Register</a></button>
            </div>
        </div>
        <div class="section">
@@ -253,15 +253,15 @@
                 <div class="slider-btn">
                 </div>
                 <div class="slide">
-                    <div><img src="appointment.svg"></div>
+                    <div><img src=<?php echo Router::base_url()."/files/appointment.svg" ?>></div>
                     <div>Online Appointment</div>
                 </div>
                 <div class="slide">
-                    <div><img src="secure_payment.svg"></div>
+                    <div><img src=<?php echo Router::base_url()."/files/secure_payment.svg" ?>></div>
                     <div>Secure Payment</div>
                 </div>
                 <div class="slide">
-                    <div><img src="private_data.svg"></div>
+                    <div><img src=<?php echo Router::base_url()."/files/private_data.svg" ?>></div>
                     <div>Data Privacy</div>
                 </div>
             </div>

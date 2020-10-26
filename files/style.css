@@ -439,12 +439,30 @@ p {
 .input>input {
     margin: 10px 20px 0px 20px;
     width: 280px;
-    height: 30px;
-    border-width: thin;
+    height: 24px;
+    padding-left: 30px;
+    border-width: medium;
     border-style: solid;
 }
 
-.btn-area {
+#form-message{
+    margin-top: 10px;
+    padding: 5px 15px 5px 15px;
+    width: inherit;
+    text-align: center;
+    font-family: 'Nunito' sans-serif;
+    font-size: 18px;
+    font-weight: Bold;
+    color: rgb(115, 81, 209);
+    background-color: white;
+}
+
+.input-error{
+    box-shadow: 0 0 3px red;
+    background-color: rgba(255, 0, 0, 0.0.5);
+}
+
+.btn-area{
     display: flex;
     width: inherit;
     margin: 10px 10px 0px 15px;
@@ -505,6 +523,7 @@ p {
 
 .block>form>.form-box>.input>select {
     margin: 10px 20px 0px 20px;
+    padding-left: 30px;
     border-width: thin;
     border-style: solid;
     border-color: 1px solid #d5dbd9;

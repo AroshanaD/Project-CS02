@@ -6,36 +6,17 @@ class Verify_login extends Models{
         
     }
 
-    public function verify($user_cat,$userid,$userpwd){
-        $query = "SELECT * from patient WHERE id = ?;";
-        $param = array(["s",$user_cat],["s",$userid]);
-        $result = DB_Helper::run_query($query,$param);
-        if($result == "error"){
-            return "error";
+    public function verify($user_cat,$user_id,$user_pwd){
+        $connect = new Database();
+        $pdo = $connect->connect();
+       
+        $query = "SELECT * FROM $user_cat WHERE id = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$user_id]);
+        $result = $stmt->fetch();
+        if(!$result){
+            return "invalid user";
         }
-        else{
-            $row = $result->fetch_assoc();
-            if(empty($row)){
-                return "invalid user";
-            }
-            else{
-                //$password = $userpwd.$row['random_user'];
-                /*if(!password_verify($password,$row['pwd'])){
-                    return "invalid password";
-                }
-                if(password_verify($password,$row['pwd'])){
-                    return "successful";
-                }
-                else{
-                    return "error";
-                }*/
-                if($userpwd != $row['pwd']){
-                    return "invalid password";
-                }
-                else{
-                    return "successful";
-                }
-            }
-        }
+        return $result;
     }
 }

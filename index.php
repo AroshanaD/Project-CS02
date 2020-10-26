@@ -3,35 +3,29 @@
     require_once('config/autoload.php');
     $controller;
     $controller_method;
-    $parameters = NULL;
 
     $url_segments = explode('/',rtrim($_SERVER['REQUEST_URI'],'/'));
-    //print($url_segments);
-    //print($controller);
 
     if(isset($url_segments[3])){
-        $controller_name = ucfirst($url_segments[3]);
-        //print($controller);
+        $controller_name = ucfirst(explode('?',$url_segments[3])[0]);
     }
     else{
-        $controller_name = 'Login';
-        //print('main');
+        $controller_name = 'Main';
     }
     
-    require_once('controllers/'.$controller_name.'.php');
+    include_once('controllers/'.$controller_name.'.php');
     $controller = new $controller_name;
 
     if(isset($url_segments[4])){
-        $controller_method = $url_segments[4];
-        if(array_slice($url_segments,5) != NULL){
-            $parameters = array_slice($url_segments,5);
+        if(preg_match("[^a-zA-Z]",$url_segments[4][0])){
+            $controller_method = 'index';
         }
         else{
-            $parameters = NULL;
+            $controller_method = preg_split("[^a-zA-Z0-9]",$url_segments[4])[0];
         }
     }
     else{
         $controller_method = 'index';
     }
 
-    $controller->$controller_method($parameters);
+    $controller->$controller_method();
