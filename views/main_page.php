@@ -47,8 +47,8 @@
            </div>
            <div>MedCaid Hospitals</div>
            <div>
-               <button class="main-button"><a href=<?php echo Router::site_url()."/Login" ?>>Log In</a></button>
-               <button class="main-button"><a href=<?php echo Router::site_url()."/Register" ?>>Register</a></button>
+                <a href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
+                <a href=<?php echo Router::site_url()."/Register" ?>><button class="main-button">Register</button></a>
            </div>
        </div>
        <div class="section">

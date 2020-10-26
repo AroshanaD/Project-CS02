@@ -28,4 +28,10 @@
         $controller_method = 'index';
     }
 
-    $controller->$controller_method();
+    if(isset($url_segments[5])){
+        $parameters = explode('?',$url_segments[5]);
+        $controller->$controller_method($parameters);
+    }
+    else{
+        $controller->$controller_method();
+    }

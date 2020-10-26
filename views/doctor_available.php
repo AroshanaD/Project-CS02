@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/schedule_picture.png);">
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
     
         <div class ="container">
         <div class = "container-t">

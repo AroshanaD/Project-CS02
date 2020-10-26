@@ -8,7 +8,7 @@
         <script rel="text/javascript" src="/project-cs02/files/js/autofill_sch.js"></script>
     </head>
 
-    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_doctor_kw5l.png);">
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_doctor_kw5l.png'?>);">
         <div class="container">
                 <div class="block">
                     <form action ="#" method = "POST">

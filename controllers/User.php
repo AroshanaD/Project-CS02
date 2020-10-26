@@ -1,10 +1,14 @@
 <?php
 
-    class Login extends Controllers{
+    class User extends Controllers{
         public function __construct(){
         }
         
         public function index(){
+            $this->load('views','login');
+        }
+
+        public function login(){
             $this->load('views','login');
         }
         
@@ -29,17 +33,23 @@
                 else{
                     $user = $model->verify($user_cat,$userid,$userpwd);
                     if($user == "invalid user"){
-                        header('Location:'.Router::site_url().'/login/index/?invalid user');
+                        header('Location:'.Router::site_url().'/user/login/?invalid user');
                     }
                     else{
                         if($user['pwd'] == $userpwd){
-                            $this->load('controllers','Users')->index($user_cat);
+                            $session_inst = new session_helper;
+                            $session_inst->start($user);
+                            $this->dashboard($user_cat);
                         }
                         else{
-                            header('Location:'.Router::site_url().'/login/index/?incorrect password');
+                            header('Location:'.Router::site_url().'/user/login/?incorrect password');
                         }
                     }
                 }
             }
+        }
+
+        public function dashboard($user_type){
+            $this->load('views',$user_type."_index");
         }
     }

@@ -7,7 +7,7 @@
         <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script rel="text/javascript" src="/project-cs02/files/js/validate_form.js"></script>
     </head>
-    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_fill_forms_yltj.png);">
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_fill_forms_yltj.png' ?>);">
         <div class="container">
             <div class="block">
                     <form action=<?php echo Router::site_url()."/register/validate" ?> method="post">
@@ -79,8 +79,8 @@
                         </div>
                             <div class="btn-area"><button type="submit" name="Register" class = "submit-btn" >Register</button></div>
                     </form>
+                    <div id="form-message"></div>
                 </div>
-                <div id="form-message"></div>
             </div>
         </div>
     </body>
