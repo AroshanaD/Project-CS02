@@ -1123,7 +1123,7 @@ p {
     align-self: left;
 }
 
-@@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .mainNav.responsive {
         position: relative;
     }
@@ -1137,4 +1137,55 @@ p {
         display: block;
         text-align: left;
     }
+}
+
+.calendar{
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.calendar-row{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+[class*='calendar-']{
+    font-size: 1.4vw;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+@media screen and (max-width:800px){
+    .calendar-day,.calendar-doctor{
+        font-size: 2vw;
+        width: 10vw;
+    }
+}
+
+@media screen and (min-width:800px){
+    .calendar-day,.calendar-doctor{
+        font-size: 1.4vw;
+        width: 11vw;
+    }
+}
+
+.calendar-day{
+    margin-right: 2px;
+    padding: 4px;
+    background-color: cornflowerblue;
+}
+
+.calendar-doctor{
+    margin-right: 2px;
+    padding: 4px;
+    background-color: cornsilk;
+    font-weight: normal;
 }

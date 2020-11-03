@@ -1,6 +1,6 @@
 <?php
 
-    class Autofill_Data{
+    class autofill_spec{
         public function __construct(){
 
         }
@@ -31,7 +31,7 @@
         
     }
 
-$instance = new Autofill_Data;
+$instance = new autofill_spec;
 $instance->get_spec();
-
+exit;
 ?>
