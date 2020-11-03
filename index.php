@@ -17,12 +17,7 @@
     $controller = new $controller_name;
 
     if(isset($url_segments[4])){
-        if(preg_match("[^a-zA-Z]",$url_segments[4][0])){
-            $controller_method = 'index';
-        }
-        else{
-            $controller_method = preg_split("[^a-zA-Z0-9]",$url_segments[4])[0];
-        }
+        $controller_method = explode('?',$url_segments[4])[0];
     }
     else{
         $controller_method = 'index';

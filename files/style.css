@@ -181,21 +181,20 @@ p {
     color: #c70000;
 }
 
-.profile-card-details {
+.block >.profile-card-details {
     display: flex;
     flex-wrap: wrap;
-    width: 340px;
+    width: 600px;
     background-color: rgb(255, 255, 255);
     margin: 0px 10px 0px 15px;
-    padding: 10px 40px 20px 10px;
+    padding: 10px 50px 20px 10px;
     border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
-    justify-content: space-evenly;
-    justify-items: start;
+    justify-content: space-around;
 }
 
-.block .profile-card-details .title {
-    width: 600px;
+.block > .profile-card-details > .title {
+    flex-basis: 100%;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
@@ -209,27 +208,22 @@ p {
     font-weight: bold;
 }
 
-.block>.profile-card-details {
-    width: 600px;
-}
-
-.block>.profile-card-details>.field {
-    font-family: 'Montserrat', sans-serif;
-    align-self: flex-start;
-    font-size: 13px;
-    font-weight: bold;
-    width: 300px;
-}
-
-.field {
-    justify-self: flex-start;
-    width: 100px;
+.field,.val_field{
+    padding-left: 30px;
     height: 30px;
-    margin: 10px 10px 0px 0px;
-    color: #474545;
-    ;
+    font-family: 'Montserrat', sans-serif;
+    color: #000000;
     font-size: 20px;
-    font-weight: normal;
+    font-weight: bold;
+}
+
+.field{
+    margin-left: 20px;
+    flex-basis: 25%;
+}
+
+.val_field{
+    flex-basis: 50%;
 }
 
 @media (max-width:768px) {
@@ -254,8 +248,9 @@ p {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(39, 39, 39);
-    margin-top: 100px;
-    height: 350px;
+    margin-top: 20px;
+    padding: 20px 0 20px 0;
+    height: fit-content;
     justify-content: space-around;
 }
 
@@ -431,7 +426,6 @@ p {
     height: 30px;
     margin: 20px 20px 0px 10px;
     color: #474545;
-    ;
     font-size: 20px;
     font-weight: normal;
 }
@@ -441,8 +435,8 @@ p {
     width: 280px;
     height: 24px;
     padding-left: 30px;
-    border-width: medium;
-    border-style: solid;
+    border: 1px solid #000;
+    font-weight: bold;
 }
 
 #form-message{
@@ -519,18 +513,17 @@ p {
     background-color: #e6e3e321;
     border-radius: 3px;
     width: 300px;
+    font-weight: bold;
 }
 
 .block>form>.form-box>.input>select {
     margin: 10px 20px 0px 20px;
     padding-left: 30px;
-    border-width: thin;
-    border-style: solid;
-    border-color: 1px solid #d5dbd9;
     background-color: #e6e3e321;
     border-radius: 3px;
-    width: 300px;
+    width: 340px;
     height: 30px;
+    font-weight: bold;
 }
 
 @media (max-width:768px) {

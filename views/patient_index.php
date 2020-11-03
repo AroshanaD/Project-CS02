@@ -5,13 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css"?>>
     </head>
-    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_authentication_fsn5.png);">
-        <!--ul class="nav">
-            <li class="nav-item"><a href="#">
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
+        <ul class="nav">
+            <li class="nav-item"><a href=<?php echo Router::site_url() ?>>
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
                     <path fill-rule="evenodd" d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z"/>
-                  </svg>
+                </svg>
             </a></li>
             <li class="nav-item">
                 <div class="dropdown">
@@ -27,17 +27,17 @@
                         </ul>
                     </div>
             </li>
-        </ul-->
+        </ul>
         <div class="container">
             <div class="block">
                 <div class="profile-card-details">
                     <div class="title">Patient Profile</div>
-                    <div class="field">Name    </div>
-                    <div class="field">Gender </div>
-                    <div class="field">Birthday </div>
-                    <div class="field">Contact </div>
-                    <div class="field">Address </div>
-                    <div class="field">Email   </div>
+                    <div class="field">Name    </div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
+                    <div class="field">Gender </div><div class="val_field"><?php echo $_SESSION['gender']?></div>
+                    <div class="field">Birthday </div><div class="val_field"><?php echo $_SESSION['birthday']?></div>
+                    <div class="field">Contact </div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
+                    <div class="field">Email   </div><div class="val_field"><?php echo $_SESSION['email']?></div>
+                    <div class="field">Address </div><div class="val_field"><?php echo $_SESSION['address']?></div>
                 </div>
             </div>
         </div>
@@ -53,14 +53,14 @@
             <div class="col-5">
                     <div class="task-card">
                         <p>
-                            <img src="icons/book.png" alt="view appointment" style="width:50px; height:50px;">
+                            <img src=<?php echo Router::base_url().'/files/icons/book.png'?> alt="view appointment" style="width:50px; height:50px;">
                         </p>
                         Appointments
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href="#">Make Appointment</a></li>
-                            <li><a href="#">Doctor Schedule</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment'?>>Make Appointment</a></li>
+                            <li><a href=<?php echo Router::site_url().'/doctor_Schedule'?>>Doctor Schedule</a></li>
                         </ul>
                     </div>
             </div>
@@ -68,7 +68,7 @@
                 <a href="#">
                     <div class="task-card">
                         <p>
-                            <img src="icons/test-passed.png" alt="view lab test" style="width:50px; height:50px;">
+                            <img src=<?php echo Router::base_url().'/files/icons/test-passed.png'?> alt="view lab test" style="width:50px; height:50px;">
                         </p>
                         View Lab Test Results
                     </div>

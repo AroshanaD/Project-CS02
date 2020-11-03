@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css' ?>>
     </head>
-    <body  style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_Payments_re_77x0.png);">
+    <body  style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);">
         <div class="container">
                 <div class="block">
                     
-                    <form>
+                    <form method='post' action=<?php echo Router::site_url().'/appointment/receipt' ?>>
                         <div class="form-box">
                             <div class="title">Appointment Form</div>
                             <div class="label">

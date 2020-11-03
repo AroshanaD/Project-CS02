@@ -16,4 +16,8 @@
         public static function site_url(){
             return self::$site_url;
         }
+
+        public static function redirect(){
+            
+        }
     }

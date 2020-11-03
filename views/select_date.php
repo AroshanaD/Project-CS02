@@ -3,13 +3,13 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css"?>>
     </head>
-    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(icons/undraw_calendar_dutt.png);">
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_calendar_dutt.png'?>);">
         <div class="doctor-card-large">
             <div class="card-details">
                 <div>
-                <img src="doctor.png">
+                <img src=<?php echo Router::base_url().'/files/icons/doctor.png' ?> style='width:50px'>
                 Dr.Dasun Thanura Aroshana Wanigabadu
                 </div>
             </div>
@@ -38,7 +38,9 @@
                     Next Number : 1
                 </div>
                 <div class="btn-area">
-                    <input type="submit" value="Book Now" class="channel-btn">
+                    <form method='get' action=<?php echo Router::site_url().'/appointment/fill_form' ?>>
+                        <input type="submit" value="Book Now" class="channel-btn">
+                    </form>
                 </div>
             </div>
             <div class="schedule-card">
@@ -58,7 +60,9 @@
                     Next Number : 1
                 </div>
                 <div class="btn-area">
-                    <input type="submit" value="Book Now" class="channel-btn">
+                    <form method='get' action=<?php echo Router::site_url().'/appointment/fill_form' ?>>
+                        <input type="submit" value="Book Now" class="channel-btn">
+                    </form>
                 </div>
             </div>
         </div>
