@@ -11,7 +11,7 @@
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_doctors_hwty.png'?>);">
         <div class="container">
             <div class="block">
-                    <form method="get" action=<?php echo Router::site_url().'/Appointment/doctors' ?>>
+                    <form method="get" action=<?php echo Router::site_url().'/Appointment/select_doctor' ?>>
                         <div class="form-box">
                             <div class="title">Search Doctor</div>
                             <div class="label">

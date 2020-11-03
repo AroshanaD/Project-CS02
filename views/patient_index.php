@@ -59,8 +59,8 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url().'/Appointment'?>>Make Appointment</a></li>
-                            <li><a href="#">Doctor Schedule</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment'?>>Make Appointment</a></li>
+                            <li><a href=<?php echo Router::site_url().'/doctor_Schedule'?>>Doctor Schedule</a></li>
                         </ul>
                     </div>
             </div>

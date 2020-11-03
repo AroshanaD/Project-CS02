@@ -9,7 +9,7 @@
         <div class="doctor-card-large">
             <div class="card-details">
                 <div>
-                <img src="doctor.png">
+                <img src=<?php echo Router::base_url().'/files/icons/doctor.png' ?> style='width:50px'>
                 Dr.Dasun Thanura Aroshana Wanigabadu
                 </div>
             </div>
@@ -38,7 +38,9 @@
                     Next Number : 1
                 </div>
                 <div class="btn-area">
-                    <input type="submit" value="Book Now" class="channel-btn">
+                    <form method='get' action=<?php echo Router::site_url().'/appointment/fill_form' ?>>
+                        <input type="submit" value="Book Now" class="channel-btn">
+                    </form>
                 </div>
             </div>
             <div class="schedule-card">
@@ -58,7 +60,9 @@
                     Next Number : 1
                 </div>
                 <div class="btn-area">
-                    <input type="submit" value="Book Now" class="channel-btn">
+                    <form method='get' action=<?php echo Router::site_url().'/appointment/fill_form' ?>>
+                        <input type="submit" value="Book Now" class="channel-btn">
+                    </form>
                 </div>
             </div>
         </div>
