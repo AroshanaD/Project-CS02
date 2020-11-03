@@ -5,14 +5,13 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div class="container-small">Hospital Management System</div>
+    <body  style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);">
         <div class="container">
-            <div class="form-container">
-                <div class="register">
-                    <div class="form-name">Appointment Form</div>
+                <div class="block">
+                    
                     <form>
                         <div class="form-box">
+                            <div class="title">Appointment Form</div>
                             <div class="label">
                                 <label for="id">NIC</label>
                             </div>
@@ -70,8 +69,9 @@
                             <div class="radio-btn">
                                 <input type="checkbox" id="agree" name="agree" value="agree" required>
                             </div>
-                        </div>
                             <div class="btn-area"><input type="submit" value="Proceed" class="submit-btn"></div>
+                        </div>
+                            
                     </form>
                 </div>
             </div>

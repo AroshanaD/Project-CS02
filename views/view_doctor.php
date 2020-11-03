@@ -7,18 +7,15 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-    <body>
-    <div class ="container-small">
-            View Doctor
-        </div>  <!--container-small-->
-
-        <div class ="container">
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
+    <div class ="container">
         <div class = "container-2">
         <table class ="reg-table">
+        <div class="title">View Doctor</div>
             <div class = "search-bar">
                 
                 <form action="#"> 
-                <div class="site-search"> 
+                    <div class="site-search"> 
                     <input type="text" placeholder=" Select Specialization" name="specialization"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
@@ -54,8 +51,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td><button type = "t-btn">Update</td>
+                    <td><button type = "t-btn">Delete</td>
                 </tr>
                 <tr>
                     <td></td>
@@ -66,8 +63,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><input type="submit" value="Update"></td>
-                    <td><input type="submit" value="Delete"></td>
+                    <td><button type = "t-btn">Update</td>
+                     <td><button type = "t-btn">Delete</td>
                 </tr>
                     
                 </table>

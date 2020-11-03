@@ -5,8 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
-        <div class="container-small">Hospital Management System</div>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);">
         <div class="container">
             <div class="box-container">
                 <div class="form-name">create bill</div>
@@ -63,7 +62,7 @@
                     </tr>
                         
                 </table><br>
-                <button type="button"  class="submit-btn" id="confirm-button" >Confirm</button>
+                <button type="button"  class="table-btn" id="confirm-button" >Confirm</button>
            </div>
         </div>
     </body>

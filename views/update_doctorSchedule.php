@@ -4,17 +4,14 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
-        <!--link rel="stylesheet" href="pharmasist.css"-->
     </head>
 
-    <body>
-    <div class="container-small">Hospital Management System</div>
+    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_calendar_dutt.png'?>);">
         <div class="container">
-            <div class="form-container">
-                <div class="register">
-                    <div class="form-name">Update Doctor Schedule</div>
+            <div class="block">
                     <form action ="#" method = "POST">
                        <div class="form-box">
+                            <div class="title">Update Doctor Schedule</div>
                             <div class="label">
                                 <label for="doc_id">Doctor Id</label>
                             </div>
@@ -52,13 +49,13 @@
                                 <input type="time" name="sche_time" required>
                             </div>
                             <div class="btn-area">
-                                <input type="submit" value="Update" class="inventory-btn">
-                                <input type="submit" value="Delete" class="inventory-btn">
+                                <input type="submit" value="Update" class="submit-btn">
                             </div>
-
+                            <div class="btn-area">
+                                <input type="submit" value="Delete" class="submit-btn">
+                            </div>
                         </div >
                     </form>
-                </div>
             </div>
         </div> 
     </body>

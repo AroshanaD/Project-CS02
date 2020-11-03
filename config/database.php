@@ -1,19 +1,26 @@
 <?php
     
-class Db{
+class Database{
 
-	public static $db = array(
-		'dsn'	=> '',
-		'hostname' => 'localhost',
-		'username' => 'root',
-		'password' => '',
-		'database' => 'hospital',
-		'dbdriver' => 'mysqli',
-		'dbprefix' => '');
+	public function __construct(){
+		
+	}
 
-	public static function connect(){
-		$connection = new mysqli(self::$db['hostname'],self::$db['username'],self::$db['password'],self::$db['database']);
-		return $connection;
+	public function connect(){
+		$dsn = "mysql:host=localhost;dbname=hospital;charset=utf8mb4";
+		$user = 'root';
+		$pass = '';
+		$options = [
+			PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+			PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+			PDO::ATTR_EMULATE_PREPARES   => false,
+			];
+		try {
+			 $pdo = new PDO($dsn, $user, $pass, $options);
+			 return $pdo;
+		} catch (\PDOException $e) {
+			 throw new \PDOException($e->getMessage(), (int)$e->getCode());
+		}
 	}
 
 }
