@@ -248,8 +248,9 @@ p {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(39, 39, 39);
-    margin-top: 100px;
-    height: 350px;
+    margin-top: 20px;
+    padding: 20px 0 20px 0;
+    height: fit-content;
     justify-content: space-around;
 }
 
@@ -1115,7 +1116,7 @@ p {
     align-self: left;
 }
 
-@@media screen and (max-width: 600px) {
+@media screen and (max-width: 600px) {
     .mainNav.responsive {
         position: relative;
     }
