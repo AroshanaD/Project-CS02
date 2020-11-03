@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css"?>>
     </head>
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
         <!--ul class="nav">
@@ -51,8 +51,9 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href="#">Update Inventory</a></li>
-                            <li><a href="#">View Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/updateMedicine"?>>Update Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/viewMedicine"?>>View Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/addMedicine"?>>Add Inventory</a></li>
                         </ul>
                     </div>
             </div>
@@ -60,7 +61,7 @@
                 <a href="#">
                     <div class="task-card">
                         <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/money.png" alt="create bill'?> style="width:50px; height:50px;">
+                            <img src=<?php echo Router::base_url().'/files/icons/money.png" alt="create bill'?>style="width:50px; height:50px;">
                         </p>
                         Create Bills
                     </div>
