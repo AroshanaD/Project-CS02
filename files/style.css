@@ -248,7 +248,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(39, 39, 39);
-    margin-top: 20px;
+    margin-top: 60px;
     padding: 20px 0 20px 0;
     height: fit-content;
     justify-content: space-around;
@@ -358,7 +358,7 @@ p {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 40px;
     background-color: #000000fd;
     justify-content: space-evenly;
 }

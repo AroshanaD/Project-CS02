@@ -242,8 +242,12 @@
                 </svg>
             </div>
             <div>
-                <button class="main-lbtn">Make Appointment</button>
-                <button class="main-lbtn">Doctor List</button></br></br>
+                <a href=<?php echo Router::site_url().'/appointment' ?>>
+                    <button class="main-lbtn">Make Appointment</button>
+                </a>
+                <a href=<?php echo Router::site_url().'/doctor_schedule' ?>>
+                    <button class="main-lbtn">Doctor List</button></br></br>
+                </a>
                 MedCaid Hospital has been a trusted name in Sri Lankan healthcare for more than seven decades. Since our foundation in 1955, we have built a reputation for regional leadership in medical excellence and innovation, based on a simple philosophy: that improving the health of our community should be driven by passion as well as compassion.
                 MedCaid Hospital offers 260 beds – including 60 in our critical care department – across a range of spacious, modern rooms. We offer the best consultants, specialists and employees, all of whom are dedicated to providing exceptional clinical outcomes and utmost customer satisfaction.
             </div>           
