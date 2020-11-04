@@ -248,7 +248,7 @@ p {
     display: flex;
     flex-wrap: wrap;
     background-color: rgb(39, 39, 39);
-    margin-top: 20px;
+    margin-top: 60px;
     padding: 20px 0 20px 0;
     height: fit-content;
     justify-content: space-around;
@@ -358,7 +358,7 @@ p {
     display: -ms-flexbox;
     display: flex;
     flex-wrap: wrap;
-    margin-top: 10px;
+    margin-top: 40px;
     background-color: #000000fd;
     justify-content: space-evenly;
 }
@@ -981,14 +981,17 @@ p {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
 }
 
-.site-search>input {
-    width: 123px;
-    height: 20px;
+.site-search>input,.site-search>select {
+    width: 130px;
     margin: 5px 20px 5px 10px;
     padding: 10px;
     border-width: 0;
     border-radius: 20px;
     background-color: #ddf1def1;
+}
+
+.site-search>input:focus, .site-search>select:focus{
+    outline: none;
 }
 
 .site-search button {
@@ -1007,16 +1010,6 @@ p {
 .search-item>input:hover,
 .search-btn:hover {
     opacity: 0.6;
-}
-
-.site-search>select>option {
-    width: 123px;
-    height: 20px;
-    margin: 5px;
-    padding: 10px;
-    border-width: 0;
-    border-radius: 20px;
-    background-color: #0000002f;
 }
 
 .container-t {
@@ -1130,4 +1123,55 @@ p {
         display: block;
         text-align: left;
     }
+}
+
+.calendar{
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.calendar-row{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-bottom: 5px;
+}
+
+[class*='calendar-']{
+    font-size: 1.4vw;
+    font-weight: bold;
+    margin-bottom: 2px;
+}
+
+@media screen and (max-width:800px){
+    .calendar-day,.calendar-doctor{
+        font-size: 2vw;
+        width: 10vw;
+    }
+}
+
+@media screen and (min-width:800px){
+    .calendar-day,.calendar-doctor{
+        font-size: 1.4vw;
+        width: 11vw;
+    }
+}
+
+.calendar-day{
+    margin-right: 2px;
+    padding: 4px;
+    background-color: cornflowerblue;
+}
+
+.calendar-doctor{
+    margin-right: 2px;
+    padding: 4px;
+    background-color: cornsilk;
+    font-weight: normal;
 }

@@ -11,44 +11,32 @@
                 <div class="block">
                     <form action=<?php echo Router::site_url()."/Inventory/addMedicine" ?> method="post">
                        <div class="form-box">
-                           <div class="title">Add Inventory</div>
+                           <div class="title">Update Lab Test</div>
                             <div class="label">
-                                <label for="med_id">Medicine Id</label>
+                                <label for="test_id">Test Id</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_id" required>
+                                <input type="text" name="test_id" required>
                             </div>
                             <div class="label">
-                                <label for="med_name">Medicine name</label>
+                                <label for="test_name">Test name</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_name" required>
+                                <input type="text" name="test_name" required>
                             </div>
                             <div class="label">
-                                <label for="med_vendor">Vendor</label>
+                                <label for="test_description">Description</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_vendor" required>
+                                <input type="textarea" name="test_description" required>
                             </div>
                             <div class="label">
-                                <label for="med_description">Description</label>
+                                <label for="test_price">Unit Price</label>
                             </div>
                             <div class="input">
-                                <input type="textarea" name="med_description" required>
+                                <input type="text" name="test_price" required>
                             </div>
-                            <div class="label">
-                                <label for="med_price">Unit Price</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="med_price" required>
-                            </div>
-                            <div class="label">
-                                <label for="med_quantity">Quantity</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="med_quantity" required>
-                            </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div class="btn-area"><input type="submit" value="Update" class="submit-btn"></div>
                         </div >
                     </form>
                 </div>

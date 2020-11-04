@@ -37,6 +37,7 @@
                     }
                     else{
                         if($user['pwd'] == $userpwd){
+                            $user['user_cat'] = $user_cat;
                             $session_inst = new session_helper;
                             $session_inst->start($user);
                             $this->dashboard($user_cat);

@@ -4,7 +4,7 @@
     <title>View</title>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css' ?>>
     </head>
 
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
@@ -42,16 +42,12 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button type = "t-btn">Update</td>
-                    <td><button type = "t-btn">Delete</td>
                 </tr>
                 <tr>
                     <td></td>
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button type = "t-btn">Update</td>
-                    <td><button type = "t-btn">Delete</td>
                 </tr>
                     
                 </table>

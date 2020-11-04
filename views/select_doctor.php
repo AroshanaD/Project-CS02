@@ -16,7 +16,9 @@
                     Cardiologist
                 </div>
                 <div>
-                    <input type="submit" value="Channel Now" class="channel-btn">
+                    <form method='get' action=<?php echo Router::site_url().'/appointment/select_date' ?>>
+                        <input type="submit" value="Channel Now" class="channel-btn">
+                    </form>
                 </div>
             </div>
             <div class="doctor-card">
@@ -28,7 +30,9 @@
                     Cardiologist
                 </div>
                 <div>
-                    <input type="submit" value="Channel Now" class="channel-btn">
+                    <form method='get' action=<?php echo Router::site_url().'/appointment/select_date' ?>>
+                        <input type="submit" value="Channel Now" class="channel-btn">
+                    </form>
                 </div>
             </div>
             

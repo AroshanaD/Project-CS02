@@ -12,25 +12,16 @@
     <div class ="container">
     <div class=container-t>
 
-    <div class="topic">View staff</div>
+    <div class="topic">View Doctor Schedule</div>
     
             <table class ="reg-table">
             <div class = "search-bar">
                 <form action="#"> 
-                    <div class="site-search">
-                        <select name="staff" required>
-                            <option value="" disabled selected hidden>Category</option>
-                            <option value="pharmacist">Pharmacist</option>
-                            <option value="lab_technician ">Lab technician</option>
-                            <option value="receptionist">Receptionist</option>
-                            <option value="receptionist">Supervisor</option>
-                        </select>
-                    </div>
                     <div class="site-search"> 
-                    <input type="text" placeholder=" Id" name="id"> 
+                    <input type="text" placeholder="Doctor Name" name="d_id"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
-                    <input type="text" placeholder=" Name " name="name"> 
+                    <input type="text" placeholder="Specialization Name " name="s_id"> 
                     </div>      <!--site-search-->  <!--date-->
                     <div class="site-search"> 
                     <button type = "submit">Search</button> 
@@ -42,10 +33,9 @@
                 <tr>
                     <th>No.</th>
                     <th>Id</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Email</th>
-                    <th>Contact</th>
+                    <th>Doctor</th>
+                    <th>Date</th>
+                    <th>Time</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
@@ -55,9 +45,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td></td>
-                    <td><a href=<?php echo Router::site_url().'/staff/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
-                    <td><a href=<?php echo Router::site_url().'/staff/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
+                    <td><a href=<?php echo Router::site_url().'/schedules/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
+                    <td><a href=<?php echo Router::site_url().'/schedules/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
 
             </table>
             
