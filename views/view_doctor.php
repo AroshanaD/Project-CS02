@@ -4,19 +4,23 @@
     <title>View</title>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
     </head>
 
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
     <div class ="container">
-        <div class = "container-2">
+        <div class = "container-t">
         <table class ="reg-table">
-        <div class="title">View Doctor</div>
+        <div class="topic">View Doctor</div>
             <div class = "search-bar">
                 
                 <form action="#"> 
                     <div class="site-search"> 
-                    <input type="text" placeholder=" Select Specialization" name="specialization"> 
+                        <select name="specialization" id="search_spec" required>
+                            <option value="" disabled selected hidden>Select Specialization</option>
+                        </select>
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
                     <input type="text" placeholder=" Doctor " name="name"> 
@@ -25,7 +29,7 @@
                     <input type="date" placeholder=" Select Date" name="date"> 
                     </div>      <!--site-search-->
                     <div class="site-search"> 
-                    <button type = "submit">GO</button> 
+                    <button type = "submit">Search</button> 
                     </div>      <!--site-search-->  <!--btn-->
                 </form> 
             </div>      <!--search-bar-->  
@@ -51,20 +55,8 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button type = "t-btn">Update</td>
-                    <td><button type = "t-btn">Delete</td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button type = "t-btn">Update</td>
-                     <td><button type = "t-btn">Delete</td>
+                    <td><a href=<?php echo Router::site_url().'/doctors/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
+                    <td><a href=<?php echo Router::site_url().'/doctors/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
                 </tr>
                     
                 </table>

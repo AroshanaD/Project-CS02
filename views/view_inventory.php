@@ -47,12 +47,10 @@
                     <td></td>
                     <td></td>
                     <td></td>
-                    <td><button type = "t-btn">Update</td>
-                    <td><button type = "t-btn">Delete</td>
+                    <td><a href=<?php echo Router::site_url().'/inventory/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
+                    <td><a href=<?php echo Router::site_url().'/inventory/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
                 </tr>
-            
-        
-        </table>
+            </table>
         </div>      <!--container-2-->
         </div>      <!--container-->
     </body>

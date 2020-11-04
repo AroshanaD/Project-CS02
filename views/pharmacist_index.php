@@ -51,9 +51,8 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/update_medicine"?>>Update Inventory</a></li>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/view_medicine"?>>View Inventory</a></li>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/add_medicine"?>>Add Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/view"?>>View Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/add"?>>Add Inventory</a></li>
                         </ul>
                     </div>
             </div>

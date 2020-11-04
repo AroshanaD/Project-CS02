@@ -12,7 +12,7 @@
                     
                     <form action ="#" method = "POST">
                         <div class="form-box">
-                            <div class="title">Update Inventory</div>
+                            <div class="title">Delete Inventory</div>
                             <div class="label">
                                 <label for="med_id">Medicine Id</label>
                             </div>
@@ -29,29 +29,29 @@
                                 <label for="med_vendor">Vendor</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_vendor" required>
+                                <input type="text" name="med_vendor" disabled>
                             </div>
                             <div class="label">
                                 <label for="med_description">Description</label>
                             </div>
                             <div class="input">
-                                <input type="textarea" name="med_description" required>
+                                <input type="textarea" name="med_description" disabled>
                             </div>
                             <div class="label">
                                 <label for="med_price">Unit Price</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_price" required>
+                                <input type="text" name="med_price" disabled>
                             </div>
                             <div class="label">
                                 <label for="med_quantity">Quantity</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_quantity" required>
+                                <input type="text" name="med_quantity" disabled>
                             </div>
                             
                             <div class="btn-area">
-                                <input type="submit" value="Update" class="submit-btn">
+                                <input type="submit" value="Delete" class="submit-btn">
                             </div>
                         </div>    
                     </form>

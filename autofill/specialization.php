@@ -5,7 +5,7 @@
 
         }
 
-        public function get_sche(){
+        public function get_spec(){
             $dsn = "mysql:host=localhost;dbname=hospital;charset=utf8mb4";
 		    $user = 'root';
 		    $pass = '';
@@ -32,6 +32,6 @@
     }
 
 $instance = new autofill_spec;
-$instance->get_sche();
+$instance->get_spec();
 exit;
 ?>

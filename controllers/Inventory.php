@@ -7,16 +7,20 @@
             $this->load('views','view_inventory');
         }
 
-        public function view_medicine(){
+        public function view(){
             $this->load('views','view_inventory');
         }
 
-        public function add_medicine(){
+        public function add(){
             $this->load('views','add_inventory');
         }
 
-        public function update_medicine(){
+        public function update(){
             $this->load('views','update_inventory');
+        }
+
+        public function delete(){
+            $this->load('views','delete_inventory');
         }
 
         public function create_bill(){
