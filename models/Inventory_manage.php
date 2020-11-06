@@ -14,5 +14,13 @@ class Inventory_manage extends Models{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function add($medId,$medName,$medVendor, $description,$price,$quantity){
+        $connect = new Database();
+        $pdo = $connect->connect();
+        $query="insert into medicine values('$medId','$medName','$medVendor','$description','$price','$quantity')";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+    }
 }
 ?>
