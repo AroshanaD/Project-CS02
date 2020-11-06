@@ -9,7 +9,8 @@
 
         public function view(){
             $model= $this->load('models','Inventory_manage');
-            $_POST['medicine']=$model->view();
+            $result = $model->view();
+            $_POST['medicine']= $result;
             //echo $_POST['medicine'];
             $this->load('views','view_inventory');
         }

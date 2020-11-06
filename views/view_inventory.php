@@ -39,20 +39,20 @@
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
-                <?php
-                foreach($_POST['medicine'] as $row){
-                    echo "<tr>";
-                    echo "<td>".$row->id."</td>";
-                    echo "<td>".$row->name."</td>";
-                    echo "<td>".$row->vendor."</td>";
-                    echo "<td>".$row->description."</td>";
-                    echo "<td>".$row->unit_price."</td>";
-                    echo "<td>".$row->quantity."</td>";
-                    echo "<td></td>";
-                    echo "<td></td>";
-                    echo"</tr>";
-                }
-                ?>
+                <?php if(!empty($_POST['medicine'])):?>
+                    <?php foreach($_POST['medicine'] as $record):?>
+                    <tr>
+                    <td><?php echo $record['id'];?></td>
+                    <td><?php echo ucwords($record['name']);?></td>
+                    <td><?php echo ucwords($record['vendor']);?></td>
+                    <td><?php echo $record['description'];?></td>
+                    <td><?php echo $record['unit_price'];?></td>
+                    <td><?php echo $record['quantity'];?></td>
+                    <td><a href=<?php echo Router::site_url()."/inventory/update"?> style='color:black'><button type = 't-btn'>Update</a></td>
+                    <td><a href=<?php echo Router::site_url()."/inventory/delete"?> style='color:black'><button type = 't-btn'>Delete</a></td>
+                    </tr>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </table>
         </div>      <!--container-2-->
         </div>      <!--container-->

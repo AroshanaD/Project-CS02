@@ -11,7 +11,7 @@ class Inventory_manage extends Models{
         $query = "SELECT * FROM medicine";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
-        $result = $stmt->fetch();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 }
