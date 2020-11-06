@@ -34,7 +34,7 @@
                 <div class="profile-card-details">
                     <div class="title">Pharmacist Profile</div>
                     <div class="field">Name:</div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
-                    <div class="field">Contact :</div><div class="val_field"><?php echo $_SESSION['contact']?></div>
+                    <div class="field">Contact :</div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
                     <div class="field">Email   :</div><div class="val_field"><?php echo $_SESSION['email']?></div>
                     <div class="field">Address :</div><div class="val_field"><?php echo $_SESSION['address']?></div>
                     
