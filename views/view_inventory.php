@@ -29,27 +29,30 @@
         
             
                 <tr>
-                    <th>No.</th>
+                    <!--th>No.</th-->
                     <th>Medicine Id</th>
                     <th>Medicine Name</th>
                     <th>Vendor</th>
                     <th>Description</th>
-                    <th>Quantity</th>
                     <th>Unit Price</th>
+                    <th>Quantity</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href=<?php echo Router::site_url().'/inventory/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
-                    <td><a href=<?php echo Router::site_url().'/inventory/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
-                </tr>
+                <?php
+                foreach($_POST['medicine'] as $row){
+                    echo "<tr>";
+                    echo "<td>".$row->id."</td>";
+                    echo "<td>".$row->name."</td>";
+                    echo "<td>".$row->vendor."</td>";
+                    echo "<td>".$row->description."</td>";
+                    echo "<td>".$row->unit_price."</td>";
+                    echo "<td>".$row->quantity."</td>";
+                    echo "<td></td>";
+                    echo "<td></td>";
+                    echo"</tr>";
+                }
+                ?>
             </table>
         </div>      <!--container-2-->
         </div>      <!--container-->
