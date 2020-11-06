@@ -4,7 +4,7 @@
         }
 
         public function index(){;
-            $this->load('views','view_inventory');
+            $this->load('views','pharmacist_index');
         }
 
         public function view(){
