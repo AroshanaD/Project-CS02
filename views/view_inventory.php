@@ -48,8 +48,8 @@
                     <td><?php echo $record['description'];?></td>
                     <td><?php echo $record['unit_price'];?></td>
                     <td><?php echo $record['quantity'];?></td>
-                    <td><a href=<?php echo Router::site_url()."/inventory/update"?> style='color:black'><button type = 't-btn'>Update</a></td>
-                    <td><a href=<?php echo Router::site_url()."/inventory/delete"?> style='color:black'><button type = 't-btn'>Delete</a></td>
+                    <td><a href=<?php echo Router::site_url()."/inventory/update?id=$record[id]"?> style='color:black'><button type = 't-btn'>Update</a></td>
+                    <td><a href=<?php echo Router::site_url()."/inventory/delete?id=$record[id]"?> style='color:black'><button type = 't-btn'>Delete</a></td>
                     </tr>
                     <?php endforeach; ?>
                 <?php endif; ?>
