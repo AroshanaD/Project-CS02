@@ -11,12 +11,24 @@
             $model= $this->load('models','Inventory_manage');
             $result = $model->view();
             $_POST['medicine']= $result;
-            //echo $_POST['medicine'];
             $this->load('views','view_inventory');
         }
 
         public function add(){
             $this->load('views','add_inventory');
+            $model= $this->load('models','Inventory_manage');
+            if(isset($_POST['addMedicine'])){
+                $medId = $_POST['med_id'];
+                $medName = $_POST['med_name'];
+                $medVendor = $_POST['med_vendor'];
+                $description = $_POST['med_description'];
+                $price = $_POST['med_price'];
+                $quantity = $_POST['med_quantity'];
+
+                $user = $model->add($medId,$medName,$medVendor, $description,$price,$quantity);
+                
+
+            }
         }
 
         public function update(){

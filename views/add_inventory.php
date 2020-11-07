@@ -9,7 +9,7 @@
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_medical_care_movn.png'?>);">
         <div class="container">
                 <div class="block">
-                    <form action=<?php echo Router::site_url()."/Inventory/addMedicine" ?> method="post">
+                    <form action=<?php echo Router::site_url()."/Inventory/add" ?> method="post">
                        <div class="form-box">
                            <div class="title">Add Inventory</div>
                             <div class="label">
@@ -48,7 +48,7 @@
                             <div class="input">
                                 <input type="text" name="med_quantity" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div class="btn-area"><input type="submit" name="addMedicine" value="Add" class="submit-btn"></div>
                         </div >
                     </form>
                 </div>
