@@ -13,18 +13,18 @@
     <div class ="container">
         <div class = "container-t">
         <div class="topic">Inventory</div>
-            <div class = "search-bar">
-                <div class="site-search"> 
+            <div class = "search-bar"> 
+                <div class="site-search">
                     <input id="id" type="text" placeholder="ID" name="id"> 
                 </div>      <!--site-search-->  <!--text-->
                 <div class="site-search"> 
                     <input id="name" type="text" placeholder="Name " name="name"> 
                 </div>      <!--site-search-->  <!--date-->
                 <div class="site-search"> 
-                    <button id="search-btn" type = "submit" style="font-size:18px">Search</button> 
+                    <button id="search-btn" type = "submit"  name="search" style="font-size:18px">Search</button> 
                 </div>      <!--site-search-->  <!--btn-->
-                </form> 
-            </div>      <!--search-bar-->  
+                 
+            </div> <!--search-bar-->  
             <table class ="reg-table">
                 <tr>
                     <!--th>No.</th-->
