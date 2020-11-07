@@ -5,6 +5,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src=<?php echo Router::base_url().'/files/js/view_staff.js'?> type="text/javascript"></script>
+        <script src=<?php echo Router::base_url().'/files/js/search.js'?> type="text/javascript"></script>
     </head>
    
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
@@ -15,25 +18,24 @@
     <div class="topic">View staff</div>
     
             <table class ="reg-table">
+                <div class="site-search">
+                    <select style="border:2px black solid;border-radius:5px;width:300px;height:50px;" id="category" name="staff" required>
+                        <option value="pharmacist">Pharmacist</option>
+                        <option value="lab_technician ">Lab technician</option>
+                        <option value="receptionist">Receptionist</option>
+                        <option value="receptionist">Supervisor</option>
+                    </select>
+                </div>
             <div class = "search-bar">
-                <form action="#"> 
-                    <div class="site-search">
-                        <select name="staff" required>
-                            <option value="" disabled selected hidden>Category</option>
-                            <option value="pharmacist">Pharmacist</option>
-                            <option value="lab_technician ">Lab technician</option>
-                            <option value="receptionist">Receptionist</option>
-                            <option value="receptionist">Supervisor</option>
-                        </select>
-                    </div>
+                <form method="get"> 
                     <div class="site-search"> 
-                    <input type="text" placeholder=" Id" name="id"> 
+                    <input id="id" type="text" placeholder=" Id" name="id"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
-                    <input type="text" placeholder=" Name " name="name"> 
+                    <input id="name" type="text" placeholder=" Name " name="name"> 
                     </div>      <!--site-search-->  <!--date-->
                     <div class="site-search"> 
-                    <button type = "submit">Search</button> 
+                    <button id="search-btn" name="search" type = "submit">Search</button> 
                     </div>      <!--site-search-->  <!--btn-->
                        
                 </form> 
@@ -49,16 +51,6 @@
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><a href=<?php echo Router::site_url().'/staff/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
-                    <td><a href=<?php echo Router::site_url().'/staff/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
-
             </table>
             
         </div>      <!--container-2-->

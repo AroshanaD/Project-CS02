@@ -5,14 +5,12 @@
         }
         
         public function index(){
-            $this->load('views','login');
+            $this->login();
         }
 
         public function login(){
             $this->load('views','login');
-        }
-        
-        public function authenticate(){
+
             $model = $this->load('models','Verify_login');
             if(isset($_POST['login-submit'])){
                 $userid = $_POST['userid'];
@@ -40,6 +38,7 @@
                             $user['user_cat'] = $user_cat;
                             $session_inst = new session_helper;
                             $session_inst->start($user);
+                            header('Location:'.Router::site_url().'/user/dashboard');
                             $this->dashboard($user_cat);
                         }
                         else{
