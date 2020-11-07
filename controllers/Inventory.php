@@ -47,7 +47,8 @@
                 $quantity = $_POST['med_quantity'];
 
                 $user = $model->update($medId,$medName,$medVendor, $description,$price,$quantity);
-                
+                header("Location: ../inventory/view?successfully updated");
+                $this->view();
             }
         }
 
@@ -59,8 +60,10 @@
             $this->load('views','delete_inventory');
 
             if(isset($_POST['deleteMedicine'])){
-                $medId = $_POST['med_id'];
+                $medId = $_POST['id'];
                 $user = $model->delete($medId);
+                header("Location: ../inventory/view?successfully deleted");
+                $this->view();
             }
         }
 
