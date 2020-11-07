@@ -30,5 +30,13 @@
         public function create_bill(){
             $this->load('views','create_bill');
         }
+
+        public function search(){
+            $model = $this->load('models','Inventory_manage');
+            $result = $model->search($_GET['id'],$_GET['name']);
+            print_r(result);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
     }
 ?>

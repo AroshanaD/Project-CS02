@@ -14,5 +14,17 @@ class Inventory_manage extends Models{
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function search($id,$name){
+        $connect = new Database;
+        $pdo = $connect->connect();
+
+        $query = "SELECT * FROM medicine WHERE id = ? OR name = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id,$name]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+
+    }
 }
 ?>

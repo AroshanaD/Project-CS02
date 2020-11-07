@@ -14,10 +14,15 @@ body {
 a {
     color: #003cff;
     text-decoration: none;
+    color: black;
 }
 
 p {
     margin-bottom: 0;
+}
+
+button:focus{
+    outline:none;
 }
 
 @media (max-width:768px) {
@@ -754,13 +759,18 @@ p {
 
 .table-box {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     margin: 10px 0px 10px 0px;
     padding: 30px;
     width: fit-content;
     background-color: #00000030;
     justify-content: space-evenly;
     border-collapse: collapse;
+}
+
+.reg-table{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .reg-table th,
