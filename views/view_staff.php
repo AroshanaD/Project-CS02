@@ -16,9 +16,11 @@
         <div class=container-t>
             <div class="topic">View staff</div>
             <select class="search-bar" id="staff" name="staff" required>
+                <option value="" selected="true" disabled>Select Category</option>
                 <option value="pharmacist">Pharmacist</option>
                 <option value="lab_technician ">Lab technician</option>
-                <option value="receptionist">Receptionist</option>                    <option value="receptionist">Supervisor</option>
+                <option value="receptionist">Receptionist</option>
+                <option value="receptionist">Supervisor</option>
             </select>
             <form method="get" class = "search-bar">
                 <div class="site-search"> 
@@ -38,8 +40,8 @@
                     <th>Id</th>
                     <th>Name</th>
                     <th>Address</th>
-                    <th>Email</th>
                     <th>Contact</th>
+                    <th>Email</th>
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>

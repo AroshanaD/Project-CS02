@@ -980,10 +980,11 @@ button:focus{
 .search-bar {
     display: flex;
     flex-wrap: wrap;
-    width: fit-content;
+    width: 48%;
+    font-size: 16px;
     justify-content: space-between;
-    border: 1px black solid;
-    padding: 5px;
+    border: 2px black solid;
+    padding: 2px;
 }
 
 .site-search>input,.site-search>select {
@@ -1193,6 +1194,7 @@ table>thead, table>tbody{
     width: 100%;
     height: fit-content;
     margin-top: 20px;
+    border: 2px black solid;
 }
 
 thead, tbody{
@@ -1213,15 +1215,30 @@ tr{
 }
 
 td, th{
-    width: 12%;
-    height: fit-content;
+    width: 15%;
     background-color: inherit;
+    padding: 2px;
 }
 
 tr:nth-child(odd) {
-    background-color: blanchedalmond;
+    background-color: aquamarine;
+}
+
+tr:nth-child(even) {
+    background-color: lightblue;
 }
 
 td:nth-child(1),th:nth-child(1){
+    width:4%;
+}
+
+td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child(2){
     width:6%;
 }
+
+.tb-btn{
+    width: 100%;
+    height: 100%;
+    background-color: lightsalmon;
+}
+
