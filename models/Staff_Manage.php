@@ -44,20 +44,46 @@ class Staff_Manage extends Models{
         }
     }
 
-    public function update($medId,$medName,$medVendor, $description,$price,$quantity){
+    public function update_current($category,$id){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query= "update medicine SET id='$medId', name='$medName', vendor='$medVendor', description='$description', unit_price='$price', quantity='$quantity'  where id='".$medId."'";
+
+        $query = "SELECT id,f_name,l_name,address,contact_no,email FROM $category WHERE id=?";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $stmt->execute([$id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
     }
 
-    public function delete($medId){
+    public function update_change($id,$category,$address,$contact,$email){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query = "delete from medicine where id='".$medId."'";
+        $query= "UPDATE $category SET address=?, contact_no=?, email=? WHERE id=?";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $status = $stmt->execute([$address,$contact,$email,$id]);
+
+        if($status == TRUE){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
+    }
+
+    public function delete($category,$id){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "DELETE FROM $category WHERE id=?";
+        $stmt = $pdo->prepare($query);
+        $status = $stmt->execute([$id]);
+
+        if($status == TRUE){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
     }
 }
 ?>

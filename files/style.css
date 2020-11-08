@@ -983,17 +983,18 @@ button:focus{
     width: 48%;
     font-size: 16px;
     justify-content: space-between;
-    border: 2px black solid;
     padding: 2px;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .site-search>input,.site-search>select {
-    width: 130px;
+    width: 180px;
     margin: 5px 20px 5px 10px;
     padding: 10px;
     border-width: 0;
-    border-radius: 20px;
-    background-color: #ddf1def1;
+    background-color: rgb(255, 200, 100);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
 }
 
 .site-search>input:focus, .site-search>select:focus{
@@ -1001,14 +1002,15 @@ button:focus{
 }
 
 .site-search>button {
-    background-color: #a9fce3;
+    background-color: rgb(255, 200, 100);
+    height: inherit;
     color: black;
     padding: 5px 10px;
     margin-top: 5px;
     margin-right: 20px;
     font-size: 16px;
-    border: 2px black solid;
-    border-radius: 15px;
+    border: 1px black solid;
+    box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
 .search-item>input:hover,
@@ -1038,6 +1040,8 @@ button:focus{
     color: #ff0055;
     text-transform: uppercase;
     text-align: center;
+    background-color: lightcyan;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
 .reg-table button {
@@ -1194,7 +1198,8 @@ table>thead, table>tbody{
     width: 100%;
     height: fit-content;
     margin-top: 20px;
-    border: 2px black solid;
+    border: 1px black solid;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
 }
 
 thead, tbody{
@@ -1212,6 +1217,7 @@ tr{
     height: fit-content;
     justify-content: center;
     padding: 5px 0px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
 }
 
 td, th{
@@ -1221,11 +1227,11 @@ td, th{
 }
 
 tr:nth-child(odd) {
-    background-color: aquamarine;
+    background-color: rgb(220, 220, 220);
 }
 
 tr:nth-child(even) {
-    background-color: lightblue;
+    background-color: white;
 }
 
 td:nth-child(1),th:nth-child(1){
@@ -1239,6 +1245,8 @@ td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child
 .tb-btn{
     width: 100%;
     height: 100%;
-    background-color: lightsalmon;
+    background-color: rgb(255, 200, 100);
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 

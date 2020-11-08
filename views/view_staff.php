@@ -20,7 +20,7 @@
                 <option value="pharmacist">Pharmacist</option>
                 <option value="lab_technician ">Lab technician</option>
                 <option value="receptionist">Receptionist</option>
-                <option value="receptionist">Supervisor</option>
+                <option value="supervisor">Supervisor</option>
             </select>
             <form method="get" class = "search-bar">
                 <div class="site-search"> 

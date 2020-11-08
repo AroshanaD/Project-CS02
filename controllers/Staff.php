@@ -48,11 +48,51 @@
         }
 
         public function update(){
+            $model = $this->load('models','Staff_Manage');
+            if(isset($_GET['category']) && $_GET['id']){
+                $category = $_GET['category'];
+                $id = $_GET['id'];
+                $result = $model->update_current($category,$id);
+                $_POST['details'] = $result;
+            }
             $this->load('views','update_staff');
+
+            if(isset($_POST['Update'])){
+                $address = $_POST['address'];
+                $contact = $_POST['contact'];
+                $email = $_POST['email'];
+                $result = $model->update_change($id,$category,$address,$contact,$email);
+
+                if($result == TRUE){
+                    header("Location: ../staff/view?successfully updated");
+                }
+                else{
+                    header("Location: ../staff/view?something went wrong");
+                }
+            }
+
         }
 
         public function delete(){
+            $model = $this->load('models','Staff_Manage');
+            if(isset($_GET['category']) && $_GET['id']){
+                $category = $_GET['category'];
+                $id = $_GET['id'];
+                $result = $model->update_current($category,$id);
+                $_POST['details'] = $result;
+            }
             $this->load('views','delete_staff');
+
+            if(isset($_POST['Delete'])){
+                $result = $model->delete($category,$id);
+
+                if($result == TRUE){
+                    header("Location: ../staff/view?successfully deleted");
+                }
+                else{
+                    header("Location: ../staff/view?something went wrong");
+                }
+            }
         }
 
     }
