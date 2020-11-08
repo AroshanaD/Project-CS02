@@ -36,6 +36,8 @@
 
         public function category(){
             $model = $this->load('models','Staff_Manage');
+
+            $category = $_POST['staff'];
             $result = $model->view($category);
             header('Content-Type: application/json');
             echo json_encode($result);

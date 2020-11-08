@@ -4,11 +4,11 @@ class Staff_Manage extends Models{
 
     }
 
-    public function view($category,$id,$name){
+    public function view($category){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query = "SELECT * FROM $category";
-        
+
+        $query = "SELECT id,f_name,l_name,address,contact_no,email FROM $category";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
