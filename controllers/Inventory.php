@@ -4,14 +4,19 @@
         }
 
         public function index(){;
-            $this->load('views','pharmacist_index');
+            $this->view();
         }
 
         public function view(){
+            $this->load('views','view_inventory');
+        }
+
+        public function get_view(){
             $model= $this->load('models','Inventory_manage');
             $result = $model->view();
-            $_POST['medicine']= $result;
-            $this->load('views','view_inventory');
+            
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function add(){
@@ -38,17 +43,21 @@
             $_POST['medicine']=$result;
             $this->load('views','update_inventory');
 
-            if(isset($_POST['updateMedicine'])){
-                $medId = $_POST['med_id'];
+            if(isset($_POST['Update'])){
                 $medName = $_POST['med_name'];
                 $medVendor = $_POST['med_vendor'];
                 $description = $_POST['med_description'];
                 $price = $_POST['med_price'];
                 $quantity = $_POST['med_quantity'];
 
-                $user = $model->update($medId,$medName,$medVendor, $description,$price,$quantity);
-                header("Location: ../inventory/view?successfully updated");
-                $this->view();
+                $result = $model->update($id,$medName,$medVendor, $description,$price,$quantity);
+
+                if($result ==  TRUE){
+                    header("Location: ../inventory/view?successfully updated");
+                }
+                else{
+                    header("Location: ../inventory/view?something went wrong");
+                }
             }
         }
 
@@ -73,8 +82,9 @@
 
         public function search(){
             $model = $this->load('models','Inventory_manage');
-            $result = $model->search($_GET['id'],$_GET['name']);
-            print_r(result);
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $result = $model->search($id,$name);
             header('Content-Type: application/json');
             echo json_encode($result);
         }

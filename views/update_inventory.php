@@ -18,7 +18,7 @@
                                 <label for="med_id">Medicine Id</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_id" value="<?php echo $record['id'];?>" >
+                                <input type="text" name="med_id" value="<?php echo $record['id'];?>" disabled>
                             </div>
                             <div class="label">
                                 <label for="med_name">Medicine name</label>
@@ -52,7 +52,7 @@
                             </div>
                             
                             <div class="btn-area">
-                                <input type="submit" value="Update" class="submit-btn" name="updateMedicine">
+                                <input type="submit" value="Update" class="submit-btn" name="Update">
                             </div>
                         </div>    
                     </form>
