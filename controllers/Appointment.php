@@ -7,7 +7,7 @@
         }
 
         public function index(){
-            $this->load('views','search_doctor');
+            $this->search_doctor();
         }
 
         public function search_doctor(){

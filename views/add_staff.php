@@ -9,14 +9,14 @@
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_team_ih79.png'?>);">
         <div class="container">
                 <div class="block">
-                    <form action ="#" method = "POST">
+                    <form method = "POST">
                        <div class="form-box">
                            <div class="title">Add Staff Members</div>
                             <div class="label">
                                 <label for="staff">Staff</label>
                             </div>
                             <div class="input">
-                                <select name="staff" required>
+                                <select name="category" required>
                                     <option value="pharmacist">Pharmacist</option>
                                     <option value="lab_technician ">Lab technician</option>
                                     <option value="receptionist">Receptionist</option>
@@ -59,7 +59,7 @@
                             <div class="input">
                                 <input type="email" name="email" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div class="btn-area"><input type="submit" name="Add" value="Add" class="submit-btn"></div>
                         </div >
                     </form>
                 </div>
