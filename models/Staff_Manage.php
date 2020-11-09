@@ -8,20 +8,29 @@ class Staff_Manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT id,f_name,l_name,address,contact_no,email FROM $category";
+        $query = "SELECT id,f_name,l_name,address,contact_no,email FROM $category WHERE deleted='0'";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function search($id,$name){
+    public function search($category,$id,$name){
         $connect = new Database;
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM medicine WHERE id = ? OR name = ?";
+        if($name != null){
+            $name = $name.'%';
+        }
+        else{
+            if($id == null){
+                $name = '%';
+            }
+        }
+
+        $query = "SELECT * FROM $category WHERE id = ? OR f_name LIKE ? OR l_name LIKE ? AND deleted='0'";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$id,$name]);
+        $stmt->execute([$id,$name,$name]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
@@ -74,7 +83,7 @@ class Staff_Manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "DELETE FROM $category WHERE id=?";
+        $query = "UPDATE $category SET deleted='1' WHERE id=?";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$id]);
 

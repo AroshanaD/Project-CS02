@@ -44,7 +44,14 @@
         }
 
         public function search(){
-            
+            $model = $this->load('models','Staff_Manage');
+
+            $category = $_POST['staff'];
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $result = $model->search($category,$id, $name);
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function update(){
