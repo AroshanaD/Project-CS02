@@ -59,7 +59,7 @@
                     </div>
             </div>
             <div class="col-5">
-                <a href=<?php echo Router::site_url().'/doctor_schedule/index' ?>>
+                <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?>>
                     <div class="task-card">
                         <p>
                             <img src=<?php echo Router::base_url().'/files/icons/overtime.png'?> alt="doctor schedule" style="width:50px; height:50px;">
