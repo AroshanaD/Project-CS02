@@ -23,7 +23,7 @@
                 $status = $model->add($id,$f_name,$l_name, $qualifi,$address,$contact,$email,$specialization,$fee);
                 
                 if($result == TRUE){
-                    header("Location: ../doctor/view?successfully updated");
+                    header("Location: ../doctor/view?successfully added");
                 }
                 else{
                     header("Location: ../doctor/view?something went wrong");
@@ -33,8 +33,8 @@
         }
 
         public function view(){
-            $this->load('models;','doctor_manage');
-            $result = $model->view();
+            $model = $this->load('models','doctor_manage');
+            $result = $model->view($specialization);
             $_POST['doctor']= $result;
             $this->load('views','view_doctor');
 
@@ -88,7 +88,7 @@
             }
         }
 
-        public function category(){
+        public function doctors(){
             $model = $this->load('models','doctor_manage');
 
             $category = $_POST['doctor'];

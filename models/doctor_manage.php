@@ -4,7 +4,7 @@ class doctor_manage extends Models{
 
     }
 
-    public function view($category){
+    public function view($specialization){
         $connect = new Database();
         $pdo = $connect->connect();
 
