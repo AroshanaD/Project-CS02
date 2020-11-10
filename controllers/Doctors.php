@@ -47,39 +47,41 @@
             $this->load('views','update_doctor');
 
             if(isset($_POST['Update'])){
+                $qualification = $_POST['qualification'];
+                $fee = $_POST['fee'];
                 $address = $_POST['address'];
                 $contact = $_POST['contact'];
                 $email = $_POST['email'];
                 $fee = $_POST['fee'];
-                $result = $model->update_change($id,$address,$contact,$email);
+                $result = $model->update($id,$qualification,$fee,$address,$contact,$email);
 
                 if($result == TRUE){
-                    header("Location: ../doctor/view?successfully updated");
+                    header("Location: ../../index.php/doctors/view?successfully updated");
                 }
                 else{
-                    header("Location: ../doctor/view?something went wrong");
+                    header("Location: ../../index.php/doctors/view?something went wrong");
                 }
             }
         }
 
         public function delete(){
             $model = $this->load('models','doctor_manage');
-            if(isset($_GET['category']) && $_GET['id']){
-                $category = $_GET['category'];
+            if(isset($_GET['id'])){
                 $id = $_GET['id'];
-                $result = $model->update_current($category,$id);
+                $result = $model->displayById($id);
                 $_POST['details'] = $result;
+                $_POST['details']['id'] = $id;
             }
             $this->load('views','delete_doctor');
 
             if(isset($_POST['Delete'])){
-                $result = $model->delete($category,$id);
+                $result = $model->delete($id);
 
                 if($result == TRUE){
-                    header("Location: ../doctor/view?successfully deleted");
+                    header("Location: ../../index.php/doctors/view?successfully deleted");
                 }
                 else{
-                    header("Location: ../doctor/view?something went wrong");
+                    header("Location: ../../index.php/doctors/view?something went wrong");
                 }
             }
         }

@@ -64,20 +64,32 @@ class doctor_manage extends Models{
         return $result;
     }
 
-    public function update($id,$f_name,$l_name, $qualifi,$address,$contact,$email,$specialization,$fee){
+    public function update($id,$qualification,$fee,$address,$contact,$email){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query= "update doctor SET id='$id', f_name='$f_name',l_name='$l_name', qualification='$qualifi',address='$address',contact='$contact,email='$email',specialization='$specialization',fee='$fee' where id='".$id."'";
+        $query= "UPDATE doctor SET qualification=?,fee=?,address=?,contact_no=?,email=? WHERE id=?";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $status = $stmt->execute([$qualification,$fee,$address,$contact,$email,$id]);
+        if($status == TRUE){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
     }
 
     public function delete($id){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query = "delete from doctor where id='".$id."'";
+        $query = "UPDATE doctor SET deleted='1' WHERE id=?";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $status = $stmt->execute([$id]);
+        if($status == TRUE){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
     }
 }
 ?>
