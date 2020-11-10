@@ -7,7 +7,7 @@
         }
 
         public function specializations(){
-            $model = $this->load('model','Autofill_Data');
+            $model = $this->load('models','Autofill_Data');
             $result = $model->specialization();
 
             header('Content-Type: application/json');
