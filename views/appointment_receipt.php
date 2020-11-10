@@ -6,6 +6,7 @@
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css' ?>>
     </head>
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_fill_forms_yltj.png'?>);">
+    <?php include 'navigation.php';?>
         <div class="container">
             <div class="card-container">
                 <div class="card-medium">

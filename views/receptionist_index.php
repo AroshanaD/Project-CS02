@@ -8,7 +8,8 @@
         <script src=<?php echo Router::base_url().'/files/js/autofill_sche.js'?> type="text/javascript"></script>
         <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
     </head>
-    <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
+    <body style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
+    <?php include 'navigation.php';?>
         <!--ul class="nav">
             <li class="nav-item"><a href="#">
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

@@ -190,20 +190,23 @@ button:focus{
     display: flex;
     flex-wrap: wrap;
     width: 600px;
-    background-color: rgb(255, 255, 255);
+    background-image: linear-gradient(45deg, oldlace, transparent),url(icons/bg-2.jpg);
     margin: 0px 10px 0px 15px;
     padding: 10px 50px 20px 10px;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
     justify-content: space-around;
+    background-size: cover;
+    font: status-bar;
 }
 
 .block > .profile-card-details > .title {
     flex-basis: 100%;
     font-size: 24px;
     font-weight: 700;
-    margin-bottom: 25px;
-    color: #ff0055;
+    margin-top: 50px;
+    margin-bottom: 10px;
+    color: rgb(10, 0, 17);
     text-transform: uppercase;
     text-align: center;
 }
@@ -213,12 +216,20 @@ button:focus{
     font-weight: bold;
 }
 
+.block>.profile-card-details>.field {
+    font-family: 'Montserrat', sans-serif;
+    align-self: flex-start;
+    font-size: 16px;
+    font-weight: bold;
+    width: 300px;
+  }
+
 .field,.val_field{
     padding-left: 30px;
     height: 30px;
     font-family: 'Montserrat', sans-serif;
     color: #000000;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
 }
 
@@ -252,9 +263,9 @@ button:focus{
 .taskboard {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(39, 39, 39);
+    background-color: rgba(13, 0, 130, 0.7);
     margin-top: 60px;
-    padding: 20px 0 20px 0;
+    padding: 50px 0 50px 0;
     height: fit-content;
     justify-content: space-around;
 }
@@ -264,8 +275,8 @@ button:focus{
     min-height: 140px;
     text-align: center;
     margin: 0px 0 10px 0;
-    background-color: rgb(255, 174, 0);
-    border-color: white;
+    background-color: oldlace;
+    border: 5px rgb(255, 175, 0) solid;
     border-radius: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     justify-content: space-evenly;
@@ -281,14 +292,15 @@ button:focus{
     flex-wrap: wrap;
     justify-content: space-evenly;
     position: relative;
-    background-color: inherit;
+    background-color: initial;
 }
 
 .dropdown-content {
     width: 35vw;
     display: none;
     position: relative;
-    background-image: url(icons/2278-light-color-low-poly-background-clip-art.jpg);
+    background-image: url(icons/taskboard-image.jpg);
+    background-size: cover;
     font-size: 16px;
     margin: 5px 0;
     font-weight: bold;
@@ -307,6 +319,7 @@ button:focus{
     margin-right: 40px;
     padding-top: 10px;
     padding-bottom: 10px;
+    background-color: oldlace;
 }
 
 .dropdown-content>ul>li>a {
@@ -318,7 +331,7 @@ button:focus{
 }
 
 .dropdown-content>ul>li:hover a {
-    color: rgba(189, 186, 186, 0.829);
+    color: oldlace;
 }
 
 .taskboard>.col-5:hover .dropdown-content {
@@ -1221,7 +1234,7 @@ tr{
 }
 
 td, th{
-    width: 15%;
+    width: 14%;
     background-color: inherit;
     padding: 2px;
 }
@@ -1254,3 +1267,6 @@ td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
+#sm-td{
+    width: 8%;
+}
