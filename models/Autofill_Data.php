@@ -10,7 +10,7 @@
             $connection = new Database;
             $pdo = $connection->connect();
 
-            $query = "SELECT name FROM specialization ORDER BY name ASC";
+            $query = "SELECT * FROM specialization ORDER BY name ASC";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll();

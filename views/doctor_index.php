@@ -6,7 +6,6 @@
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
     </head>
     <body  style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_doctor_kw5l.png'?>);">
-    <?php include 'navigation.php';?>
         <!--ul class="nav">
             <li class="nav-item"><a href="#">
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
