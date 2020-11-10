@@ -36,7 +36,8 @@ class Inventory_manage extends Models{
     public function add($medId,$medName,$medVendor, $description,$price,$quantity){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query="insert into medicine values('$medId','$medName','$medVendor','$description','$price','$quantity')";
+        $deleted = 0;
+        $query="insert into medicine values('$medId','$medName','$medVendor','$description','$price','$quantity','$deleted')";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
     }
@@ -54,8 +55,8 @@ class Inventory_manage extends Models{
     public function update($medId,$medName,$medVendor, $description,$price,$quantity){
         $connect = new Database();
         $pdo = $connect->connect();
-
-        $query= "UPDATE medicine SET name=?, vendor=?, description=?, unit_price=?, quantity=? WHERE id=?";
+        $deleted = 0;
+        $query= "UPDATE medicine SET name=?, vendor=?, description=?, unit_price=?, quantity=? , deleted='$deleted' WHERE id=?";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$medName,$medVendor, $description,$price,$quantity,$medId]);
 
