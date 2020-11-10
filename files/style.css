@@ -1267,6 +1267,7 @@ td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-#sm-td{
+#doctor-table>td:nth-child(2),#doctor-table> td:nth-child(5),#doctor-table> td:nth-child(8),
+#doctor-table>th:nth-child(2),#doctor-table>th:nth-child(5),#doctor-table>th:nth-child(8){
     width: 8%;
 }

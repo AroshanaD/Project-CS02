@@ -1,8 +1,8 @@
 $(document).ready(function(){
-    $("#staff").change(function(){
+    $("#search_spec").change(function(){
         $.ajax({
-            url: '../../index.php/staff/doctors',
-            data: {staff:$("#staff").val()},
+            url: '../../index.php/doctors/doctors',
+            data: {specialization:$("#search_spec").val()},
             type: 'post',
             success:function(data){
                 var details = data;
@@ -13,31 +13,31 @@ $(document).ready(function(){
 
     $("#search-btn").click(function(){
         $.ajax({
-            url: '../../index.php/staff/search',
-            data: {staff:$("#staff").val(),id:$("#id").val(),name:$("#name").val()},
+            url: '../../index.php/doctors/search',
+            data: {id:$("#id").val(),name:$("#name").val()},
             type: 'post',
             success:function(data){
-                render_details(data);
+                var details = data;
+                render_details(details);
             }
         })
     })
 })
 
-function render_details(data){
+function render_details(details){
 
     $("tbody").empty();
-    var category = $("#staff").val();
 
-    for(var i=0; i<data.length; i++){
-        var get_details = data[i]['id'].concat("&category=",category);
-        var name = data[i]['f_name'].concat(' ',data[i]['l_name']);
-        var update = "<a href=../staff/update?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
-        var dele = "<a href=../staff/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
+    for(var i=0; i<details.length; i++){
+        var get_details = details[i]['id'];
+        var update = "<a href=../doctors/update?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
+        var dele = "<a href=../doctors/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
 
-        var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).text(i+1),
-        $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].f_name.concat(" ",data[i].l_name)),
-        $(`<td>`).text(data[i].address),$(`<td>`).text(data[i].contact_no),
-        $(`<td>`).text(data[i].email),
+        var row = $(`<tr id=${"doctor-table"}>`).append($(`<td>`).text(i+1),
+        $(`<td>`).text(details[i].id),$(`<td>`).text(details[i].f_name.concat(" ",details[i].l_name)),
+        $(`<td>`).text(details[i].specialization),$(`<td>`).text(details[i].fee),
+        $(`<td>`).text(details[i].address),$(`<td>`).text(details[i].email),
+        $(`<td>`).text(details[i].contact_no),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
         $("tbody").append(row);

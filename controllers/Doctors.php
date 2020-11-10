@@ -33,20 +33,16 @@
         }
 
         public function view(){
-            $model = $this->load('models','doctor_manage');
-            $result = $model->view($specialization);
-            $_POST['doctor']= $result;
             $this->load('views','view_doctor');
-
         }
 
         public function update(){
-            $this->load('models','doctor_manage');
-            if(isset($_GET['category']) && $_GET['id']){
-                $category = $_GET['category'];
+            $model = $this->load('models','doctor_manage');
+            if(isset($_GET['id'])){
                 $id = $_GET['id'];
-                $result = $model->update_current($category,$id);
+                $result = $model->displayById($id);
                 $_POST['details'] = $result;
+                $_POST['details']['id'] = $id;
             }
             $this->load('views','update_doctor');
 
@@ -55,7 +51,7 @@
                 $contact = $_POST['contact'];
                 $email = $_POST['email'];
                 $fee = $_POST['fee'];
-                $result = $model->update_change($id,$category,$address,$contact,$email);
+                $result = $model->update_change($id,$address,$contact,$email);
 
                 if($result == TRUE){
                     header("Location: ../doctor/view?successfully updated");
@@ -91,19 +87,18 @@
         public function doctors(){
             $model = $this->load('models','doctor_manage');
 
-            $category = $_POST['doctor'];
-            $result = $model->view($category);
+            $specialization = $_POST['specialization'];
+            $result = $model->view($specialization);
             header('Content-Type: application/json');
             echo json_encode($result);
         }
 
         public function search(){
-            $model = $this->load('models','doctor_manage');
+            $model = $this->load('models','Doctor_manage');
 
-            $category = $_POST['doctor'];
             $id = $_POST['id'];
             $name = $_POST['name'];
-            $result = $model->search($category,$id, $name);
+            $result = $model->search($id, $name);
             header('Content-Type: application/json');
             echo json_encode($result);
         }

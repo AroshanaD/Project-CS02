@@ -8,20 +8,40 @@ class doctor_manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT id,f_name,l_name,qualification,address,contact,email,fee,specialization_id FROM doctor";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        if($specialization == null){
+            $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
+            FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE doctor.deleted='0'";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+        }
+        else{
+            $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
+                FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE specialization.id = ? AND doctor.deleted='0'";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$specialization]);
+        }
+    
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function search($category,$id,$name){
+    public function search($id,$name){
         $connect = new Database;
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM doctor WHERE id = ? OR name = ?";
+        if($name != null){
+            $name = $name.'%';
+        }
+        else{
+            if($id == null){
+                $name = '%';
+            }
+        }
+
+        $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
+                FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE (doctor.deleted='0') AND (doctor.id = ? OR doctor.f_name LIKE ? OR doctor.l_name LIKE ?)";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$id,$name]);
+        $stmt->execute([$id,$name,$name]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
@@ -37,10 +57,10 @@ class doctor_manage extends Models{
     public function displayById($id){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query = "select * from doctor where id='".$id."'";
+        $query = "SELECT f_name,l_name,qualification,specialization_id,fee,contact_no,address,email FROM doctor where id=?";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $stmt->execute([$id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 
