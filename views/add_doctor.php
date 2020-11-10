@@ -48,13 +48,13 @@
                                 <label for="contact">Contact No</label>
                             </div>
                             <div class="input">
-                                <input type="tel" name="contact" required>
+                                <input type="text" name="contact" required>
                             </div>
                             <div class="label">
                                 <label for="email">Email Address</label>
                             </div>
                             <div class="input">
-                                <input type="email" name="email" required>
+                                <input type="text" name="email" required>
                             </div>
                             <div class="label">
                                 <label for="specialization">Specialization</label>
@@ -68,7 +68,7 @@
                                 <label for="fee">Fees</label>
                             </div>
                             <div class="input">
-                                <input type="email" name="fee" required>
+                                <input type="text" name="fee" required>
                             </div>
                             <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
                         </div >

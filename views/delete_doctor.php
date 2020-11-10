@@ -51,13 +51,13 @@
                                 <label for="contact">Contact No</label>
                             </div>
                             <div class="input">
-                                <input type="tel" name="contact" required>
+                                <input type="text" name="contact" required>
                             </div>
                             <div class="label">
                                 <label for="email">Email Address</label>
                             </div>
                             <div class="input">
-                                <input type="email" name="email" required>
+                                <input type="text" name="email" required>
                             </div>
                             <div class="btn-area"><input type="submit" value="Delete" class="submit-btn"></div>
                         </div >
