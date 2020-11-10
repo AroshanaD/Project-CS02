@@ -7,6 +7,7 @@
     </head>
 
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_medical_care_movn.png'?>);">
+    <?php include 'navigation.php';?>
         <div class="container">
                 <div class="block">
                     <form action=<?php echo Router::site_url()."/Inventory/add" ?> method="post">

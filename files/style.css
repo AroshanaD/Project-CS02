@@ -1269,5 +1269,5 @@ td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child
 
 #doctor-table>td:nth-child(2),#doctor-table> td:nth-child(5),#doctor-table> td:nth-child(8),
 #doctor-table>th:nth-child(2),#doctor-table>th:nth-child(5),#doctor-table>th:nth-child(8){
-    width: 8%;
+    width: 9%;
 }
