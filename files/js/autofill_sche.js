@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#search_spec").change(function(){
         $.ajax({
-        url: '../autofill/schedule.php',
+        url: '../Doctor_Schedule/schedules',
         data: {specialization:$("#search_spec").val()},
         type: 'post',
         success:function(data){

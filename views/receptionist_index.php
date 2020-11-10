@@ -3,7 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
+        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src=<?php echo Router::base_url().'/files/js/autofill_sche.js'?> type="text/javascript"></script>
+        <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
     </head>
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
         <!--ul class="nav">
@@ -34,7 +37,7 @@
                 <div class="profile-card-details">
                     <div class="title">Receptionist Profile</div>
                     <div class="field">Name:</div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
-                    <div class="field">Contact:</div><div class="val_field"><?php echo $_SESSION['contact']?></div>
+                    <div class="field">Contact:</div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
                     <div class="field">Email:</div><div class="val_field"><?php echo $_SESSION['email']?></div>
                     <div class="field">Address:</div><div class="val_field"><?php echo $_SESSION['address']?></div>
                 </div>
@@ -50,13 +53,13 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href="#">Make Appointment</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment/search_doctor' ?>>Make Appointment</a></li>
                             <li><a href="#">View Appointments</a></li>
                         </ul>
                     </div>
             </div>
             <div class="col-5">
-                <a href="#">
+                <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?>>
                     <div class="task-card">
                         <p>
                             <img src=<?php echo Router::base_url().'/files/icons/overtime.png'?> alt="doctor schedule" style="width:50px; height:50px;">

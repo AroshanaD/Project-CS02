@@ -61,9 +61,9 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href="#">weekly</a></li>
-                            <li><a href="#">Monthly</a></li>
-                            <li><a href="#">Yearly</a></li>
+                            <li><a href=<?php echo Router::site_url().'/statistics/weekly' ?>>weekly</a></li>
+                            <li><a href=<?php echo Router::site_url().'/statistics/monthly' ?>>Monthly</a></li>
+                            <li><a href=<?php echo Router::site_url().'/statistics/yearly' ?>>Yearly</a></li>
                         </ul>
                     </div>
             </div>

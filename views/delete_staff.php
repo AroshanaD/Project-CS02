@@ -11,12 +11,12 @@
                 <div class="block">
                     <form action ="#" method = "POST">
                        <div class="form-box">
-                           <div class="title">Add Staff Members</div>
+                           <div class="title">Delete Staff Members</div>
                             <div class="label">
                                 <label for="staff">Staff</label>
                             </div>
                             <div class="input">
-                                <select name="staff" required>
+                                <select name="staff" disabled>
                                     <option value="pharmacist">Pharmacist</option>
                                     <option value="lab_technician ">Lab technician</option>
                                     <option value="receptionist">Receptionist</option>
@@ -59,7 +59,7 @@
                             <div class="input">
                                 <input type="email" name="email" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div class="btn-area"><input type="submit" value="Delete" class="submit-btn"></div>
                         </div >
                     </form>
                 </div>

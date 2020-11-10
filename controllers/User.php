@@ -37,6 +37,7 @@
                     }
                     else{
                         if($user['pwd'] == $userpwd){
+                            $user['user_cat'] = $user_cat;
                             $session_inst = new session_helper;
                             $session_inst->start($user);
                             $this->dashboard($user_cat);
@@ -49,7 +50,12 @@
             }
         }
 
-        public function dashboard($user_type){
-            $this->load('views',$user_type."_index");
+        public function dashboard(){
+            if(isset($_SESSION['id'])){
+                $this->load('views',$_SESSION['user_cat']."_index");
+            }
+            else{
+                header('Location:/project-cs02/index.php/user/login?please login');
+            }
         }
     }

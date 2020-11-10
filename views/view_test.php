@@ -4,7 +4,7 @@
     <title>View</title>
     <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
     </head>
 
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
@@ -17,16 +17,13 @@
                 
                 <form action="#"> 
                     <div class="site-search"> 
-                    <input type="text" placeholder=" Your Test Id" name="id"> 
+                    <input type="text" placeholder="Test Id" name="id"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
-                    <input type="date" placeholder=" Date" name="date"> 
+                    <input type="date" placeholder="Test Name" name="name"> 
                     </div>      <!--site-search-->  <!--date-->
                     <div class="site-search"> 
-                    <input type="text" placeholder="Select Your Category " name="category"> 
-                    </div>      <!--site-search-->
-                    <div class="site-search"> 
-                    <button type = "submit">GO</button> 
+                    <button type = "submit">Search</button> 
                     </div>      <!--site-search-->  <!--btn-->
                 </form> 
                 </div>      <!--search-bar-->  
@@ -42,22 +39,8 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><button type = "t-btn">Update</td>
-                        <td><button type = "t-btn">Delete</td>
-                </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type = "t-btn">Update</td>
-                        <td><button type = "t-btn">Delete</td>
-                </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button type = "t-btn">Update</td>
-                        <td><button type = "t-btn">Delete</td>
+                        <td><a href=<?php echo Router::site_url().'/labtest/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
+                        <td><a href=<?php echo Router::site_url().'/labtest/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
                 </tr>
                     
                 </table>

@@ -10,6 +10,10 @@
             $this->load('views','search_doctor');
         }
 
+        public function search_doctor(){
+            $this->load('views','search_doctor');
+        }
+
         public function select_doctor(){
             $this->load('views','select_doctor');
         }
