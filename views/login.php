@@ -8,7 +8,7 @@
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
         <div class="container">
             <div class="block">
-                    <form action=<?php echo Router::site_url()."/user/authenticate" ?> method="post">
+                    <form method="post">
                         <div class="form-box">
                             <div class="title">Login</div>
                             <div class="label">
