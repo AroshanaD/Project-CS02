@@ -6,7 +6,8 @@
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css"?>>
     </head>
     <body style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
-        <ul class="nav">
+    <?php include 'navigation.php';?>
+        <!--ul class="nav">
             <li class="nav-item"><a href=<?php echo Router::site_url() ?>>
                 <svg width="1.5em" height="1.5em" viewBox="0 0 16 16" class="bi bi-house-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z"/>
@@ -27,7 +28,7 @@
                         </ul>
                     </div>
             </li>
-        </ul>
+        </ul-->
         <div class="container">
             <div class="block">
                 <div class="profile-card-details">

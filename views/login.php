@@ -6,6 +6,7 @@
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
     </head>
     <body style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);">
+    <?php include 'navigation.php';?>
         <div class="container">
             <div class="block">
                     <form method="post">
