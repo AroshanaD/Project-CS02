@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-    url: '../autofill/specializations',
+    url: '../../index.php/autofill/specializations',
     type: 'post',
     success:function(data){
 
