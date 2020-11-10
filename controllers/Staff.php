@@ -8,18 +8,98 @@
 
         public function add(){
             $this->load('views','add_staff');
+            $model= $this->load('models','Staff_Manage');
+            if(isset($_POST['Add'])){
+
+                $password = pwd_generator::pwd_gen();
+
+                $user_details = array('category'=>$_POST['category'], 'id'=>$_POST['id'],
+                                'f_name'=>$_POST['f_name'], 'l_name'=>$_POST['l_name'],
+                                'address'=>$_POST['address'], 'contact'=>$_POST['contact'],
+                                'email'=>$_POST['email'],'password'=>$password);
+
+                $status = $model->add($user_details);
+
+                if($status==TRUE){
+                    header("Location: ../staff/add?successfully added ".$user_details['category']);
+                }
+                else{
+                    header("Location: ../staff/add?something went wrong");
+                }
+                
+            }
         }
 
         public function view(){
             $this->load('views','view_staff');
         }
 
+        public function category(){
+            $model = $this->load('models','Staff_Manage');
+
+            $category = $_POST['staff'];
+            $result = $model->view($category);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
+        public function search(){
+            $model = $this->load('models','Staff_Manage');
+
+            $category = $_POST['staff'];
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $result = $model->search($category,$id, $name);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
         public function update(){
+            $model = $this->load('models','Staff_Manage');
+            if(isset($_GET['category']) && $_GET['id']){
+                $category = $_GET['category'];
+                $id = $_GET['id'];
+                $result = $model->update_current($category,$id);
+                $_POST['details'] = $result;
+            }
             $this->load('views','update_staff');
+
+            if(isset($_POST['Update'])){
+                $address = $_POST['address'];
+                $contact = $_POST['contact'];
+                $email = $_POST['email'];
+                $result = $model->update_change($id,$category,$address,$contact,$email);
+
+                if($result == TRUE){
+                    header("Location: ../staff/view?successfully updated");
+                }
+                else{
+                    header("Location: ../staff/view?something went wrong");
+                }
+            }
+
         }
 
         public function delete(){
+            $model = $this->load('models','Staff_Manage');
+            if(isset($_GET['category']) && $_GET['id']){
+                $category = $_GET['category'];
+                $id = $_GET['id'];
+                $result = $model->update_current($category,$id);
+                $_POST['details'] = $result;
+            }
             $this->load('views','delete_staff');
+
+            if(isset($_POST['Delete'])){
+                $result = $model->delete($category,$id);
+
+                if($result == TRUE){
+                    header("Location: ../staff/view?successfully deleted");
+                }
+                else{
+                    header("Location: ../staff/view?something went wrong");
+                }
+            }
         }
 
     }
