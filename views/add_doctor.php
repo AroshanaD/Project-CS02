@@ -1,7 +1,7 @@
 
     <script type="text/javascript" src="/project-cs02/files/js/autofill_spec.js"></script>
 
-    <div style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_doctor_kw5l.png'?>);">
+    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_doctor_kw5l.png'?>); background-repeat: no-repeat;">
         <div class="container">
                 <div class="block">
                     <form action ="#" method = "POST">

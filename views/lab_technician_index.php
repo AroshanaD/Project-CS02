@@ -1,5 +1,5 @@
 
-    <div style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_science_fqhl.png'?>);">
+    <div style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_science_fqhl.png'?>);background-repeat:no-repeat">
         <div class="container">
             <div class="block">
                 <div class="profile-card-details">

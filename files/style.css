@@ -1234,7 +1234,7 @@ tr{
 }
 
 td, th{
-    width: 14%;
+    width: 15%;
     background-color: inherit;
     padding: 2px;
 }
@@ -1252,7 +1252,7 @@ td:nth-child(1),th:nth-child(1){
 }
 
 td:nth-child(2),th:nth-child(2){
-    width:10%;
+    width:8%;
 }
 
 td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child(2){
@@ -1269,5 +1269,5 @@ td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child
 
 #doctor-table>td:nth-child(2),#doctor-table> td:nth-child(5),#doctor-table> td:nth-child(8),
 #doctor-table>th:nth-child(2),#doctor-table>th:nth-child(5),#doctor-table>th:nth-child(8){
-    width: 9%;
+    width: 8%;
 }

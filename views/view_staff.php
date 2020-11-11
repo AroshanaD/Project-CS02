@@ -1,11 +1,11 @@
 
     <script src=<?php echo Router::base_url().'/files/js/staff.js'?> type="text/javascript"></script>
    
-    <div style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);">
+    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
     <div class ="container">
         <div class=container-t>
             <div class="topic">View staff</div>
-            <select class="search-bar" id="staff" name="staff" required>
+            <select class="site-search" style="background-color:rgb(255, 200, 100)" id="staff" name="staff" required>
                 <option value="" selected="true" disabled>Select Category</option>
                 <option value="pharmacist">Pharmacist</option>
                 <option value="lab_technician ">Lab technician</option>

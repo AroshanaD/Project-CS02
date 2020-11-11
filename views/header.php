@@ -12,7 +12,7 @@
     <style>
         .navbar {
             overflow: hidden;
-            background-color:  #ff0055;;
+            background-color:  #4b64fb;;
         }
         
         .navbar a {
@@ -61,59 +61,60 @@
             background-color: #111;
             overflow-x: hidden;
             transition: 0.5s;
-            padding-top: 60px;
+            padding-top: 20px;
         }
         
         .sidebar a {
             padding: 8px 8px 8px 32px;
             text-decoration: none;
-            font-size: 25px;
-            color: #818181;
+            font-size: 16px;
+            color: white;
             display: block;
             transition: 0.3s;
         }
         
         .sidebar a:hover {
-            color: #f1f1f1;
+            color: black;
+            background-color: white;
         }
         
         .sidebar .close_btn {
             position: absolute;
             top: 0;
-            right: 25px;
+            left: auto;
             font-size: 36px;
-            margin-left: 50px;
         }
         
         @media screen and (max-height: 450px) {
             .sidebar{padding-top: 15px;}
-            .sidebar a {font-size: 18px;}
+            .sidebar a {font-size: 14px;}
         }
     </style>
 
     <div class="navbar">
   
         <a href="javascript:void(0)" onclick="openSidebar()" ><img src=<?php echo Router::base_url().'../files/icons/nav.png'?> style="width:30px; height:15px ;margin-top=0px"></a>
-        <a href="javascript:void(0)" onclick="Back()">Go Back</a>
-        <a href="#" class="active">Home</a>
-        <p class="title">MedCaid Hospital</p>
+        <a href=<?php echo Router::site_url().'/main' ?> class="active">Home</a>
+        <a href="javascript:void(0)" onclick="Back()">Back</a>
+        <p class="title" style="font-size:20px; color:white">MedCaid Hospital</p>
   <!--a href="javascript:void(0);" class="icon" onclick="myFunction()"-->
     <!--i class="fa fa-bars"></i-->
         </a>
     </div>
 
     <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="close_btn" onclick="closeSidebar()">&times;</a>
-        <a href="#">Home</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Settings</a>
-        <a href="#">Log Out</a>
-        <a href="javascript:void(0) " onclick="Back()">Go Back</a>
+        <a href="javascript:void(0)" style="font-size:36px; text-align:right; padding-right: 50px" onclick="closeSidebar()">&times;</a>
+        <a href=<?php echo Router::site_url().'/main' ?>>Home</a>
+        <a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a>
+        <a href=<?php echo Router::site_url().'/user/change_password' ?>>Change Password</a>
+        <a href=<?php echo Router::site_url().'/user/change_details' ?>>Change Profile</a>
+        <a href=<?php echo Router::site_url().'/user/logout' ?>>Log Out</a>
+        <a href="javascript:void(0) " onclick="Back()">Back</a>
     </div>
 
     <script>
     function openSidebar() {
-    document.getElementById("sidebar").style.width = "250px";
+    document.getElementById("sidebar").style.width = "200px";
     }
 
     function closeSidebar() {

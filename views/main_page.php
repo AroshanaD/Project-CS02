@@ -49,6 +49,7 @@
            <div>
                 <a href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
                 <a href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
+                <a href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
            </div>
        </div>
        <div class="section">

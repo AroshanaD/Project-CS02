@@ -58,4 +58,28 @@
                 header('Location:/project-cs02/index.php/user/login?please login');
             }
         }
+
+        public function change_password(){
+            if(isset($_SESSION['id'])){
+                $this->load('views','header');
+                $this->load('views','change_password');
+            }
+            else{
+                header('Location:/project-cs02/index.php/user/login?please login');
+            }
+        }
+
+        public function change_details(){
+            if(isset($_SESSION['id'])){
+                $this->load('views','header');
+                $this->load('views','change_details');
+            }
+            else{
+                header('Location:/project-cs02/index.php/user/login?please login');
+            }
+        }
+        public function logout(){
+            session_destroy();
+            header('Location:/project-cs02/index.php/user/login?logout successfully');
+        }
     }

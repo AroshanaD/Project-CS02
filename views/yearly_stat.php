@@ -1,5 +1,5 @@
 
-    <div style="background-image: linear-gradient(to left,  #fec007de, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_visual_data_b1wx.png'?>);">
+    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_visual_data_b1wx.png'?>);background-repeat:no-repeat">
         <div class="container-small">Yearly statistics</div>
         <div class="statistic-card">
             <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
