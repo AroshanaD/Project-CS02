@@ -8,8 +8,7 @@
         <script src=<?php echo Router::base_url().'/files/js/inventory.js'?> type="text/javascript"></script>
     </head>
     
-    <body style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
-    <?php include 'navigation.php';?>     
+    <body style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">    
     <div class ="container">
         <div class = "container-t">
         <div class="topic">Inventory</div>
