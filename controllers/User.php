@@ -39,7 +39,7 @@
                             $session_inst = new session_helper;
                             $session_inst->start($user);
                             header('Location:'.Router::site_url().'/user/dashboard');
-                            $this->dashboard($user_cat);
+                            $this->dashboard();
                         }
                         else{
                             header('Location:'.Router::site_url().'/user/login/?incorrect password');
@@ -51,6 +51,7 @@
 
         public function dashboard(){
             if(isset($_SESSION['id'])){
+                $this->load('views','header');
                 $this->load('views',$_SESSION['user_cat']."_index");
             }
             else{

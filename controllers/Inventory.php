@@ -8,6 +8,7 @@
         }
 
         public function view(){
+            $this->load('views','header');
             $this->load('views','view_inventory');
         }
 
@@ -20,6 +21,7 @@
         }
 
         public function add(){
+            $this->load('views','header');
             $this->load('views','add_inventory');
             $model= $this->load('models','Inventory_manage');
             if(isset($_POST['addMedicine'])){
@@ -41,6 +43,7 @@
             $model= $this->load('models','Inventory_manage');
             $result= $model->displayById($id);
             $_POST['medicine']=$result;
+            $this->load('views','header');
             $this->load('views','update_inventory');
 
             if(isset($_POST['Update'])){
@@ -66,6 +69,7 @@
             $model= $this->load('models','Inventory_manage');
             $result= $model->displayById($id);
             $_POST['medicine']=$result;
+            $this->load('views','header');
             $this->load('views','delete_inventory');
 
             if(isset($_POST['deleteMedicine'])){
@@ -77,6 +81,7 @@
         }
 
         public function create_bill(){
+            $this->load('views','header');
             $this->load('views','create_bill');
         }
 

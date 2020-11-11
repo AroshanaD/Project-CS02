@@ -7,6 +7,7 @@
         }
 
         public function add(){
+            $this->load('views','header');
             $this->load('views','add_staff');
             $model= $this->load('models','Staff_Manage');
             if(isset($_POST['Add'])){
@@ -31,6 +32,7 @@
         }
 
         public function view(){
+            $this->load('views','header');
             $this->load('views','view_staff');
         }
 
@@ -62,6 +64,7 @@
                 $result = $model->update_current($category,$id);
                 $_POST['details'] = $result;
             }
+            $this->load('views','header');
             $this->load('views','update_staff');
 
             if(isset($_POST['Update'])){
@@ -88,6 +91,7 @@
                 $result = $model->update_current($category,$id);
                 $_POST['details'] = $result;
             }
+            $this->load('views','header');
             $this->load('views','delete_staff');
 
             if(isset($_POST['Delete'])){
