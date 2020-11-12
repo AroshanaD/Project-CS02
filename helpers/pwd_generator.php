@@ -12,7 +12,7 @@
                 $randomString .= $characters[$index];
             }
   
-            return $randomString;
+            return hash('SHA256',$randomString);
 
         }
 

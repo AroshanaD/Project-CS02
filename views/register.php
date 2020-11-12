@@ -18,7 +18,7 @@
                                 <label for="id">NIC</label>
                             </div>
                             <div class="input" id="id_f">
-                                <input type="text" id="id" name="id" required>
+                                <input type="text" id="id" name="id" placeholder="ex:199912345678" required>
                             </div>
                             <div class="label" >
                                 <label for="name">First Name</label>
@@ -51,7 +51,7 @@
                                 <label for="contact">Contact</label>
                             </div>
                             <div class="input" id="contact_f">
-                                <input type="tel" id="contact" name="contact" required>
+                                <input type="tel" id="contact" name="contact" placeholder="ex:771234567" required>
                             </div>
                             <div class="label">
                                 <label for="address">Address</label>
@@ -63,7 +63,7 @@
                                 <label for="email">Email</label>
                             </div>
                             <div class="input" id="email_f">
-                                <input type="email" id="email" name="email" required>
+                                <input type="email" id="email" name="email" placeholder="ex:user@domain.com"  required>
                             </div>
                             <div class="label">
                                 <label for="password">Password</label>

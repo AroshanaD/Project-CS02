@@ -40,11 +40,12 @@ class Staff_Manage extends Models{
         $pdo = $connect->connect();
 
         $category = $staff_details['category'];
-        $query="INSERT INTO $category values(?,?,?,?,?,?,?)";
+        $query="INSERT INTO `$category`(`id`, `f_name`, `l_name`, `gender`, `birthday`, `address`, `contact_no`, `email`, `pwd`) VAlUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$staff_details['id'],$staff_details['f_name'],$staff_details['l_name'],
-                        $staff_details['address'],$staff_details['contact'],$staff_details['email'],
-                       $staff_details['password']]);
+                        $staff_details['gender'],$staff_details['birthday'],
+                        $staff_details['address'],$staff_details['contact'],
+                        $staff_details['email'],$staff_details['password']]);
         if($status == TRUE){
             return TRUE;
         }
@@ -57,7 +58,7 @@ class Staff_Manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT id,f_name,l_name,address,contact_no,email FROM $category WHERE id=?";
+        $query = "SELECT id,f_name,l_name,gender,birthday,address,contact_no,email FROM $category WHERE id=?";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
