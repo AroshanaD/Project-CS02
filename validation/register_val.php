@@ -55,6 +55,11 @@
                     $this->contact_err = TRUE;
                     $this->successful = FALSE;
                 }
+                if(!filter_var($email,FILTER_VALIDATE_REGEXP)){
+                    echo "Please enter a valid email!</br>";
+                    $this->email_err = TRUE;
+                    $this->successful = FALSE;
+                }
                 if(!filter_var($email,FILTER_VALIDATE_EMAIL)){
                     echo "Please enter a valid email!</br>";
                     $this->email_err = TRUE;
