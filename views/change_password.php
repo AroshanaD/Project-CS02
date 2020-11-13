@@ -28,7 +28,7 @@
                                 <input type="submit" value="Confirm" class="submit-btn">
                             </div>
                             <div>
-                                <br><a href='change_details.php'>Change Details?</a>
+                                <br><a href='<?php echo Router::site_url()."/User/change_details"?>'>Change Details?</a>
                             </div>
                         </div>    
                     </form>
