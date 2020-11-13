@@ -35,7 +35,7 @@
                                 <input type="submit" value="Confirm" class="submit-btn">
                             </div>
                             <div>
-                                <br><a href='change_password.php'>Change password?</a>
+                                <br><a href='<?php echo Router::site_url()."/User/change_password"?>'>Change password?</a>
                             </div>
                         </div>    
                     </form>
