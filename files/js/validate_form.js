@@ -60,6 +60,9 @@ $(document).ready(function(){
                 type: 'post',
                 success:function(data){
                     if(data['success'] == 1){
+                        id_list.forEach(element => {
+                            $(element).val("");
+                        });
                         $("#form-message").text("Successfully Registered!   Please Use Link Sent To Email To Confirm Registration");
                     }
                     else{

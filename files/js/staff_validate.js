@@ -53,23 +53,30 @@ $(document).ready(function(){
                         id_list.forEach(element => {
                             $(element).val("");
                         });
-                        $("#form-message").text("Successful");
+                        if(submit == Add){
+                            $("#form-message").text("Successfully Added User! Email Sent To User");
+                        }
+                        if(submit == Update){
+                            $("#form-message").text("Successfully Updated User!");
+                        }
                     }
                     else{
-                        var valid_error = false;
-                        if(data['id'] == 1){
-                            id_generate();
-                            valid_error = true;
+                        if(data['validation_success'] == 1){
+                            $("#form-message").text("Couldn't Send Email. Please Verify Email Again");
                         }
-                        if(data['contact'] == 1){
-                            $("#contact").addClass("input-error");
-                            $("<div class='error-message'>Contact Number Already Exist</div>").insertAfter("#contact_f");
-                            valid_error = true;
-                        }
-                        if(data['email'] == 1){
-                            $("#email").addClass("input-error");
-                            $("<div class='error-message'>Email Already Exist</div>").insertAfter("#email_f");
-                            valid_error = true;
+                        else{
+                            if(data['id'] == 1){
+                                $("#id").addClass("input-error");
+                                $("<div class='error-message'>Id Already TAken</div>").insertAfter("#id_f");
+                            }
+                            if(data['contact'] == 1){
+                                $("#contact").addClass("input-error");
+                                $("<div class='error-message'>Contact Number Already Exist</div>").insertAfter("#contact_f");
+                            }
+                            if(data['email'] == 1){
+                                $("#email").addClass("input-error");
+                                $("<div class='error-message'>Email Already Exist</div>").insertAfter("#email_f");
+                            } 
                         }
                     }
                 }
