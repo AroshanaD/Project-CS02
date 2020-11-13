@@ -19,4 +19,14 @@ class Verify_login extends Models{
         }
         return $result;
     }
+
+    public function set_password($id,$category,$password){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "UPDATE $category SET pwd=? WHERE id=?";
+        $stmt = $pdo->prepare($query);
+        $status = $stmt->execute([$password,$id]);
+        return $status;
+    }
 }

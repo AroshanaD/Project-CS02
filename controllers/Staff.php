@@ -26,12 +26,12 @@
             $status = $model->add($user_details);
 
             if($status==TRUE){
-                $mail_sent = $this->send_auth_mail($verification_key,$email,$category);
-                if($email_sent == 'success'){
+                $mail_sent = $this->send_auth_mail($verification_key,$email,$category,$id);
+                if($mail_sent == TRUE){
                     return TRUE;
                 }
                 else{
-                    $model->perma_delete($id);
+                    $model->perma_delete($category,$id);
                     return FALSE;
                 }
             }
@@ -100,9 +100,9 @@
             echo json_encode($invalid_list);
         }
 
-        public function send_auth_mail($verification_key,$email,$category){
+        public function send_auth_mail($verification_key,$email,$category,$id){
             $subject = 'Account Authentication Email';
-            $link = "localhost/project-cs02/index.php/staff/confirm_register?auth_key=".$verification_key."&category=".$category;
+            $link = "Link : localhost/project-cs02/index.php/user/confirm_register?category=".$category."&id=".$id."&auth_key=".$verification_key;
             $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                     <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
@@ -116,12 +116,13 @@
         }
 
         public function confirm_register(){
-            if($_GET['auth_key'] && $_GET['category']){
+            if($_GET['auth_key'] && $_GET['category'] && $_GET['id']){
                 $model = $this->load('models','Staff_Manage');
-                $status = $model->confirm($_GET['auth_key'],$_GET['category']);
+                $status = $model->confirm($_GET['auth_key'],$_GET['category'],$_GET['id']);
                 if($status == TRUE){
-                    $_SESSION['id'] = '0';
-                    header("Location: ../user/change_password");
+                    $_POST['id'] = $_GET['id'];
+                    $_POST['user_cat'] = $_GET['category'];
+                    $this->load('views','set_password');
                 }
                 else{
                     header("Location: ../user/login?confirmation failed");

@@ -19,7 +19,7 @@
 
             if($status == TRUE){
                 $email_sent = $this->send_auth_mail($verification_key,$email);
-                if($email_sent == 'success'){
+                if($email_sent == TRUE){
                     return TRUE;
                 }
                 else{

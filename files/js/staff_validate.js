@@ -53,10 +53,10 @@ $(document).ready(function(){
                         id_list.forEach(element => {
                             $(element).val("");
                         });
-                        if(submit == Add){
+                        if(submit == 'Add'){
                             $("#form-message").text("Successfully Added User! Email Sent To User");
                         }
-                        if(submit == Update){
+                        if(submit == 'Update'){
                             $("#form-message").text("Successfully Updated User!");
                         }
                     }
@@ -106,6 +106,6 @@ function id_generate(){
                  prefix_cat = 'S';
              break;
          }
-         var id = prefix_cat.concat(Math.floor(Math.random() * (1000000000 - 100000000)));
+         var id = prefix_cat.concat(Math.floor(Math.random() * (999999999 - 100000000)));
          $("#id").val(id);
 }

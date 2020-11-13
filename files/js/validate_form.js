@@ -42,7 +42,7 @@ $(document).ready(function(){
             valid = false;
         }
 
-        console.log(valid);
+        //console.log(valid);
 
         if(valid == true){
             $.ajax({

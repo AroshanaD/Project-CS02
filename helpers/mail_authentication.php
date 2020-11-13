@@ -11,7 +11,7 @@ use PHPMailer\PHPMailer\Exception;;
 
             require_once "vendor/autoload.php";
             $mail = new PHPMailer(TRUE);
-                $mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
+                //$mail->SMTPDebug = SMTP::DEBUG_SERVER;                      // Enable verbose debug output
                 $mail->isSMTP();                                            // Send using SMTP
                 $mail->Host       = 'smtp.gmail.com';                    // Set the SMTP server to send through
                 $mail->SMTPAuth   = TRUE;                                   // Enable SMTP authentication
@@ -36,10 +36,10 @@ use PHPMailer\PHPMailer\Exception;;
                 $mail->Body = $body;
             try{
                 $mail->send();
-                return 'success';
+                return TRUE;
             }
             catch(Exception $e){
-                return $mail->ErrorInfo;
+                return FALSE;
             }
         }
     }
