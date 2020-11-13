@@ -10,7 +10,7 @@ class Verify_login extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
        
-        $query = "SELECT * FROM $user_cat WHERE id = ?";
+        $query = "SELECT * FROM $user_cat WHERE id = ? AND verified='1'";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$user_id]);
         $result = $stmt->fetch();
