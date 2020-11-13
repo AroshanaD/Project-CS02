@@ -60,21 +60,26 @@ $(document).ready(function(){
                 type: 'post',
                 success:function(data){
                     if(data['success'] == 1){
-                        $("#form-message").text("Successfully Registered!   Please Use Link Sent To Email To Confirm Registration")
+                        $("#form-message").text("Successfully Registered!   Please Use Link Sent To Email To Confirm Registration");
                     }
                     else{
-                        if(data['id'] == 1){
-                            $("#id").addClass("input-error");
-                            $("<div class='error-message'>Id Already TAken</div>").insertAfter("#id_f");
+                        if(data['validation_success'] == 1){
+                            $("#form-message").text("Couldn't Send Email. Please Verify Email Again");
                         }
-                        if(data['contact'] == 1){
-                            $("#contact").addClass("input-error");
-                            $("<div class='error-message'>Contact Number Already Exist</div>").insertAfter("#contact_f");
+                        else{
+                            if(data['id'] == 1){
+                                $("#id").addClass("input-error");
+                                $("<div class='error-message'>Id Already TAken</div>").insertAfter("#id_f");
+                            }
+                            if(data['contact'] == 1){
+                                $("#contact").addClass("input-error");
+                                $("<div class='error-message'>Contact Number Already Exist</div>").insertAfter("#contact_f");
+                            }
+                            if(data['email'] == 1){
+                                $("#email").addClass("input-error");
+                                $("<div class='error-message'>Email Already Exist</div>").insertAfter("#email_f");
+                            } 
                         }
-                        if(data['email'] == 1){
-                            $("#email").addClass("input-error");
-                            $("<div class='error-message'>Email Already Exist</div>").insertAfter("#email_f");
-                        }  
                     }
                 }
             })

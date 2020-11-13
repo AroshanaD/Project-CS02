@@ -34,7 +34,8 @@
                         header('Location:'.Router::site_url().'/user/login/?invalid user');
                     }
                     else{
-                        if($user['pwd'] == $userpwd){
+                        $userpwd = hash('SHA256',$userpwd);
+                        if($userpwd == $user['pwd']){
                             $user['user_cat'] = $user_cat;
                             $session_inst = new session_helper;
                             $session_inst->start($user);

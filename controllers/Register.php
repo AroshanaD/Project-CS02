@@ -13,9 +13,51 @@
         public function register_user($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password){
             $model = $this->load('models','Register_User');
             $password = hash('SHA256',$password);
-            $verification_key = pwd_generator::pwd_gen();
+            $verification_key = $id.$password;
             $verification_key = hash('SHA256',$verification_key);
-            $model->add($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password,$verification_key);
+            $status = $model->add($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password,$verification_key);
+
+            if($status == TRUE){
+                $email_sent = $this->send_auth_mail($verification_key,$email);
+                if($email_sent == 'success'){
+                    return TRUE;
+                }
+                else{
+                    $model->delete($id);
+                    return FALSE;
+                }
+            }
+            else{
+                return FALSE;
+            }
+        }
+
+        public function send_auth_mail($verification_key,$email){
+            $subject = 'Account Authentication Email';
+            $link = "localhost/project-cs02/index.php/register/confirm_register?auth_key=".$verification_key;
+            $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
+                    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
+                    <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
+                    <h4 style='text-decoration: underline'> Please Use This Email To Confirm Account Registration</h4>
+                    <p> You have registered for Medcaid Hospital Services. Please use the link below to complete the registration.</p>".$link;
+
+            $to = $email;
+            $mail = new mail_authentication();
+            $status = $mail->send_mail($subject,$body,$to);
+            return $status;
+        }
+
+        public function confirm_register(){
+            if($_GET['auth_key']){
+                $model = $this->load('models','Register_User');
+                $status = $model->confirm($_GET['auth_key']);
+                if($status == TRUE){
+                    header("Location: ../user/login?successfully registered please login");
+                }
+                else{
+                    header("Location: ../user/login?confirmation failed");
+                }
+            }
         }
 
         public function validate(){
@@ -34,7 +76,7 @@
 
             $valid = TRUE;
 
-            $invalid_list = array("success"=>FALSE,"id"=>FALSE,"contact"=>FALSE,"email"=>FALSE);
+            $invalid_list = array("success"=>FALSE,"validation_success"=>FALSE,"id"=>FALSE,"contact"=>FALSE,"email"=>FALSE);
             
             if($valid_instance->validate("patient","id",$id) != 0){
                 $invalid_list['id'] = TRUE;
@@ -50,8 +92,10 @@
             }
 
             if($valid == TRUE){
-                $this->register_user($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password);
-                $invalid_list['success'] = TRUE;
+                $invalid_list['validation_success'] = TRUE;
+                $return = $this->register_user($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password);
+
+                $invalid_list['success'] = $return;
             }
             header('Content-Type: application/json');
             echo json_encode($invalid_list);
