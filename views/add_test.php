@@ -2,7 +2,7 @@
     <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_medical_care_movn.png'?>);background-repeat:no-repeat">   
         <div class="container">
                 <div class="block">
-                    <form action=<?php echo Router::site_url()."/Inventory/addMedicine" ?> method="post">
+                    <form method="POST">
                        <div class="form-box">
                            <div class="title">Add Lab Test</div>
                             <div class="label">
@@ -29,7 +29,7 @@
                             <div class="input">
                                 <input type="text" name="test_price" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div class="btn-area"><input type="submit" value="Add" name="Add" class="submit-btn"></div>
                         </div >
                     </form>
                 </div>
