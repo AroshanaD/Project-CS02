@@ -14,32 +14,32 @@
             </div>
         </div>
         <div class="taskboard">
-            <div class="col-5">
-                <div class="task-card">
-                    <p>
-                        <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="manage inventory" style="width:50px; height:50px;">
-                    </p>
-                    <p>
+            <div class="task-card">
+                <p>
+                    <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="manage inventory" style="width:50px; height:50px;">
+                </p>
+                <p>
                             Manage Inventory
-                    </p>
-                   <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/view"?>>View Inventory</a></li>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/add"?>>Add Inventory</a></li>
-                        </ul>
-                    </div> 
-                </div>
-                    
+                </p>
+               <div class="dropdown-content">
+                    <ul>
+                        <li><a href=<?php echo Router::site_url()."/Inventory/view"?>>View Inventory</a></li>
+                        <li><a href=<?php echo Router::site_url()."/Inventory/add"?>>Add Inventory</a></li>
+                    </ul>
+                </div> 
             </div>
-            <div class="col-5">
-                <a href=<?php echo Router::site_url().'/Inventory/create_bill' ?>>
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/money.png'?> alt='create bill'style="width:50px; height:50px;">
-                        </p>
+            <div class="task-card">
+                <p>
+                    <img src=<?php echo Router::base_url().'/files/icons/money.png'?> alt='create bill'style="width:50px; height:50px;">
+                </p>
+                <p>
                         Create Bills
-                    </div>
-                </a>
+                </p>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href=<?php echo Router::site_url()."/Inventory/create_bill"?>>Create Bill</a></li>
+                    </ul>
+                </div> 
             </div>
         </div>
     </body>

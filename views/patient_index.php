@@ -22,32 +22,33 @@
             </div>
         </div>
         <div class="taskboard">
-            <div class="col-5">
+            <div class="task-card">
+                <p>
+                    <img src=<?php echo Router::base_url().'/files/icons/book.png'?> alt="view appointment" style="width:50px; height:50px;">
+                </p>
+                <p>
+                            Appointments
+                </p>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Make Appointment</a></li>
+                        <li><a href=<?php echo Router::site_url().'/doctor_Schedule/index'?>>Doctor Schedule</a></li>
+                    </ul>
+                </div>
+            </div>
                 <div class="task-card">
                     <p>
-                        <img src=<?php echo Router::base_url().'/files/icons/book.png'?> alt="view appointment" style="width:50px; height:50px;">
+                        <img src=<?php echo Router::base_url().'/files/icons/test-passed.png'?> alt="view lab test" style="width:50px; height:50px;">
                     </p>
                     <p>
-                            Appointments
+                        View Lab Test Results
                     </p>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Make Appointment</a></li>
-                            <li><a href=<?php echo Router::site_url().'/doctor_Schedule/index'?>>Doctor Schedule</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Lab Test Results</a></li>
                         </ul>
                     </div>
                 </div>
-            </div>
-            <div class="col-5">
-                <a href="#">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/test-passed.png'?> alt="view lab test" style="width:50px; height:50px;">
-                        </p>
-                        View Lab Test Results
-                    </div>
-                </a>
-            </div>
         </div>
     </body>
 </html>

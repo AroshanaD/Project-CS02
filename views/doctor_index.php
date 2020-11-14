@@ -14,33 +14,32 @@
             </div>
         </div>
         <div class="taskboard">
-            <div class="col-5">
-                <a href="#">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/day-view.png'?> alt="view appointment" style="width:50px; height:50px;">
-                        </p>
-                        <p>
+            <div class="task-card">
+                <p>
+                    <img src=<?php echo Router::base_url().'/files/icons/day-view.png'?> alt="view appointment" style="width:50px; height:50px;">
+                </p>
+                <p>
                             View Appointments
-                        </p>
-                    </div>
-                </a>
+                </p>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href=<?php echo Router::site_url().'/statistics/weekly' ?>>View Appointments</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="col-5">
-                <div class="task-card">
-                    <p>
-                        <img src=<?php echo Router::base_url().'/files/icons/area-chart.png'?> alt="view statistic" style="width:50px; height:50px;">
-                    </p>
-                    <p>
+            <div class="task-card">
+                <p>
+                    <img src=<?php echo Router::base_url().'/files/icons/area-chart.png'?> alt="view statistic" style="width:50px; height:50px;">
+                </p>
+                <p>
                             View Statistics
-                    </p>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url().'/statistics/weekly' ?>>weekly</a></li>
-                            <li><a href=<?php echo Router::site_url().'/statistics/monthly' ?>>Monthly</a></li>
-                            <li><a href=<?php echo Router::site_url().'/statistics/yearly' ?>>Yearly</a></li>
-                        </ul>
-                    </div>
+                </p>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href=<?php echo Router::site_url().'/statistics/weekly' ?>>weekly</a></li>
+                        <li><a href=<?php echo Router::site_url().'/statistics/monthly' ?>>Monthly</a></li>
+                        <li><a href=<?php echo Router::site_url().'/statistics/yearly' ?>>Yearly</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
