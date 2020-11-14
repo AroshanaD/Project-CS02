@@ -8,7 +8,7 @@
                         <input type="text" placeholder="Test Id" name="id"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
-                        <input type="date" placeholder="Test Name" name="name"> 
+                        <input type="text" placeholder="Test Name" name="name"> 
                     </div>      <!--site-search-->  <!--date-->
                         <div class="site-search"> 
                     <button type = "submit" style="font-size:18px">Search</button> 
@@ -16,16 +16,18 @@
                 </div>      <!--search-bar-->  
                 <table class="view-table">
                     <thead>
-                        <tr>
+                        <tr id="test-table">
+                            <th>No.</th>
                             <th>Test ID</th>
-                            <th>Test Date</th>
-                            <th>Test Category</th>
+                            <th>Test Name</th>
+                            <th>Test Description</th>
+                            <th>Test Price</th>
                             <th>Update</th>
                             <th>Delete</th>
                         </tr>
                     </thead>
-                    <tbody>
-
+                    <tbody> 
+                        
                     </tbody>
                 </table>
                     
