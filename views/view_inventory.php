@@ -25,7 +25,7 @@
             </div> <!--search-bar-->  
             <table class ="view-table">
                 <thead>
-                    <tr>
+                    <tr id="inventory-table">
                         <th>No</th>
                         <th>Id</th>
                         <th>Name</th>

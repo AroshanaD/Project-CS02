@@ -19,6 +19,7 @@ a {
 
 p {
     margin-bottom: 0;
+    font-family: monospace;
 }
 
 button:focus{
@@ -265,19 +266,18 @@ button:focus{
     flex-wrap: wrap;
     background-color: rgba(13, 0, 130, 0.7);
     margin-top: 60px;
-    padding: 50px 0 50px 0;
+    padding: 30px 0 30px 0;
     height: fit-content;
     justify-content: space-around;
 }
 
 .task-card {
     align-content: center;
-    width: 35vw;
+    width: 40vw;
     min-height: 140px;
     text-align: center;
     margin: 0px 0 10px 0;
     background-color: oldlace;
-    border: 5px rgb(255, 175, 0) solid;
     border-radius: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     justify-content: space-evenly;
@@ -289,14 +289,6 @@ button:focus{
     padding-bottom: 20px;
 }
 
-.taskboard>.col-5 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    position: relative;
-    background-color: initial;
-}
-
 .dropdown-content {
     width: inherit;
     display: none;
@@ -304,6 +296,7 @@ button:focus{
     background-size: cover;
     font-size: 20px;
     font-weight: bold;
+    font-family: monospace;
     z-index: 1;
 }
 
@@ -380,20 +373,20 @@ button:focus{
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
-    background-color: #000000fd;
     justify-content: space-evenly;
 }
 
 .data-card {
-    flex-basis: 42%;
-    min-width: 380px;
+    flex-basis: 35vw;
+    min-height: 100px;
     padding: 10px 30px;
     margin-top: 10px;
     margin-bottom: 10px;
     color: #000000;
-    background-color: rgb(255, 174, 0);
+    background-color: oldlace;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: monospace;
     text-align: center;
     font-weight: bold;
     text-decoration: none;
@@ -1248,7 +1241,8 @@ tr{
 td, th{
     width: 15%;
     background-color: inherit;
-    padding: 2px;
+    padding: 5px;
+    border-right: 1px black solid;
 }
 
 tr:nth-child(odd) {
@@ -1268,7 +1262,11 @@ td:nth-child(2),th:nth-child(2){
 }
 
 td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child(2){
-    width:6%;
+    width:5%;
+}
+
+td:nth-last-child(1),th:nth-last-child(1){
+    border: none;
 }
 
 .tb-btn{
@@ -1279,7 +1277,20 @@ td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-#doctor-table>td:nth-child(2),#doctor-table> td:nth-child(5),#doctor-table> td:nth-child(8),
-#doctor-table>th:nth-child(2),#doctor-table>th:nth-child(5),#doctor-table>th:nth-child(8){
+#doctor-table>td:nth-child(2),#doctor-table> td:nth-child(8),
+#doctor-table>th:nth-child(2),#doctor-table>th:nth-child(8){
+    width: 8%;
+}
+
+#doctor-table>td:nth-child(4),#doctor-table> th:nth-child(4){
+    width: 10%;
+}
+
+#doctor-table>td:nth-child(5),#doctor-table> th:nth-child(5){
+    width: 6%;
+}
+
+#inventory-table>td:nth-child(6),#inventory-table> td:nth-child(7),
+#inventory-table>th:nth-child(6),#inventory-table>th:nth-child(7){
     width: 8%;
 }
