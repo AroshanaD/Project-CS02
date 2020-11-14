@@ -18,9 +18,10 @@
                         <p>
                             <img src=<?php echo Router::base_url().'/files/icons/group.png'?> alt="manage user" style="width:60px; height:60px;">
                         </p>
-                        Manage Users
-                    </div>
-                    <div class="dropdown-content">
+                        <p>
+                            Manage Users
+                        </p>
+                        <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url()."/staff/add" ?>>Add Staff</a></li>
                             <li><a href=<?php echo Router::site_url()."/staff/view" ?>>View Staff</a></li>
@@ -28,19 +29,22 @@
                             <li><a href=<?php echo Router::site_url()."/doctors/view" ?>>View Doctor</a></li>
                         </ul>
                     </div>
+                    </div>
             </div>
             <div class="col-5">
                     <div class="task-card">
                         <p>
                             <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="mange inventory" style="width:50px; height:50px;">
                         </p>
-                        Manage Inventory
-                    </div>
-                    <div class="dropdown-content">
+                        <p>
+                            Manage Inventory
+                        </p>
+                        <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url()."/inventory/add" ?>>Add Inventory</a></li>
                             <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Inventory</a></li>
                         </ul>
+                    </div>
                     </div>
             </div>
             <div class="col-5">
@@ -48,13 +52,15 @@
                         <p>
                             <img src=<?php echo Router::base_url().'/files/icons/overtime.png'?> alt="manage schedule" style="width:50px; height:50px;">
                         </p>
-                        Manage Schedules
-                    </div>
-                    <div class="dropdown-content">
+                        <p>
+                            Manage Schedules
+                        </p>
+                        <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url()."/schedules/add" ?>>Add Schedules</a></li>
                             <li><a href=<?php echo Router::site_url()."/schedules/view" ?>>View Schedules</a></li>
                         </ul>
+                    </div>
                     </div>
             </div>
             <div class="col-5">
@@ -62,14 +68,16 @@
                         <p>
                             <img src=<?php echo Router::base_url().'/files/icons/area-chart.png'?> alt="view statistic" style="width:50px; height:50px;">
                         </p>
-                        View Statistics
-                    </div>
-                    <div class="dropdown-content">
+                        <p>
+                            View Statistics
+                        </p>
+                        <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a></li>
                             <li><a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a></li>
                             <li><a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a></li>
                         </ul>
+                    </div>
                     </div>
             </div>
         </div>

@@ -106,22 +106,22 @@ class Staff_Manage extends Models{
         $status = $stmt->execute([$id]);
     }
 
-    public function is_verified($category,$id){
+    public function is_verified($verification_key,$category,$id){
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT verified FROM $category WHERE id=?";
+        $query = "SELECT verified FROM $category WHERE id=? AND $verification_key=?";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$id]);
+        $stmt->execute([$id,$verification_key]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function confirm($auth_key,$category,$id){
+    public function confirm($category,$id){
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "UPDATE $category SET verified=1 WHERE id=? AND verification_key=? AND verified=0";
+        $query = "UPDATE $category SET verified=1 WHERE id=? AND verified=0";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$id,$auth_key]);
         return $status;

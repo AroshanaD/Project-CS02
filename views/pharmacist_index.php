@@ -15,18 +15,21 @@
         </div>
         <div class="taskboard">
             <div class="col-5">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="manage inventory" style="width:50px; height:50px;">
-                        </p>
-                        Manage Inventory
-                    </div>
-                    <div class="dropdown-content">
+                <div class="task-card">
+                    <p>
+                        <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="manage inventory" style="width:50px; height:50px;">
+                    </p>
+                    <p>
+                            Manage Inventory
+                    </p>
+                   <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url()."/Inventory/view"?>>View Inventory</a></li>
                             <li><a href=<?php echo Router::site_url()."/Inventory/add"?>>Add Inventory</a></li>
                         </ul>
-                    </div>
+                    </div> 
+                </div>
+                    
             </div>
             <div class="col-5">
                 <a href=<?php echo Router::site_url().'/Inventory/create_bill' ?>>

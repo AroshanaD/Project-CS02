@@ -271,6 +271,7 @@ button:focus{
 }
 
 .task-card {
+    align-content: center;
     width: 35vw;
     min-height: 140px;
     text-align: center;
@@ -285,6 +286,7 @@ button:focus{
     font-family: Roboto;
     color: black;
     padding-top: 0.5px;
+    padding-bottom: 20px;
 }
 
 .taskboard>.col-5 {
@@ -296,16 +298,13 @@ button:focus{
 }
 
 .dropdown-content {
-    width: 35vw;
+    width: inherit;
     display: none;
     position: relative;
-    background-image: url(icons/taskboard-image.jpg);
     background-size: cover;
-    font-size: 16px;
-    margin: 5px 0;
+    font-size: 20px;
     font-weight: bold;
     z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
 }
 
 .dropdown-content>ul>li {
@@ -317,12 +316,12 @@ button:focus{
     list-style: none;
     text-align: center;
     margin-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 5px;
     background-color: oldlace;
 }
 
 .dropdown-content>ul>li>a {
+    width: inherit;
     color: rgb(7, 7, 7);
 }
 
@@ -334,7 +333,11 @@ button:focus{
     color: oldlace;
 }
 
-.taskboard>.col-5:hover .dropdown-content {
+.task-card:hover p{
+    display:none;
+}
+
+.task-card:hover .dropdown-content {
     display: block;
 }
 

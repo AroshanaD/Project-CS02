@@ -87,17 +87,11 @@
         public function confirm_register(){
             if($_GET['auth_key'] && $_GET['category'] && $_GET['id']){
                 $model = $this->load('models','Staff_Manage');
-                $verified = $model->is_verified($_GET['category'],$_GET['id']);
+                $verified = $model->is_verified($_GET['auth_key'],$_GET['category'],$_GET['id']);
                 if($verified['verified'] == 0){
-                    $status = $model->confirm($_GET['auth_key'],$_GET['category'],$_GET['id']);
-                    if($status == TRUE){
-                        $_SESSION['id'] = $_GET['id'];
-                        $_SESSION['user_cat'] = $_GET['category'];
-                        $this->load('views','set_password');
-                    }
-                    else{
-                        header("Location: ../user/login?confirmation failed");
-                    }
+                    $_SESSION['id'] = $_GET['id'];
+                    $_SESSION['user_cat'] = $_GET['category'];
+                    $this->load('views','set_password');
                 }
                 else{
                     header("Location: ../user/login?account already activated");
@@ -110,6 +104,7 @@
             $password = hash('SHA256',$_POST['password']);
             $status = $model->set_password($_SESSION['id'],$_SESSION['user_cat'],$_POST['password']);
             if($status == TRUE){
+                $status = $model->confirm($_SESSION['user_cat'],$_SESSION['id']);
                 session_destroy();
                 header('Location:/project-cs02/index.php/user/login');
                 $this->login();

@@ -23,18 +23,20 @@
                 </a>
             </div>
             <div class="col-5">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/test-passed.png'?> alt="manage user" style="width:60px; height:60px;">
-                        </p>
-                        Lab Tests
-                    </div>
+                <div class="task-card">
+                    <p>
+                        <img src=<?php echo Router::base_url().'/files/icons/test-passed.png'?> alt="manage user" style="width:60px; height:60px;">
+                    </p>
+                    <p>
+                            Lab Tests
+                    </p>
                     <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url()."/labtest/add" ?>>Add Test</a></li>
                             <li><a href=<?php echo Router::site_url()."/labtest/view" ?>>View Test</a></li>
                         </ul>
                     </div>
+                </div>
             </div>
         </div>
     </body>
