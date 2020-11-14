@@ -102,8 +102,9 @@
         public function set_password(){
             $model = $this->load('models','Verify_login');
             $password = hash('SHA256',$_POST['password']);
-            $status = $model->set_password($_SESSION['id'],$_SESSION['user_cat'],$_POST['password']);
+            $status = $model->set_password($_SESSION['id'],$_SESSION['user_cat'],$password);
             if($status == TRUE){
+                $model = $this->load('models','Staff_Manage');
                 $status = $model->confirm($_SESSION['user_cat'],$_SESSION['id']);
                 session_destroy();
                 header('Location:/project-cs02/index.php/user/login');

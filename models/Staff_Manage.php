@@ -110,7 +110,7 @@ class Staff_Manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT verified FROM $category WHERE id=? AND $verification_key=?";
+        $query = "SELECT verified FROM $category WHERE id=? AND verification_key=?";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id,$verification_key]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -123,7 +123,7 @@ class Staff_Manage extends Models{
 
         $query = "UPDATE $category SET verified=1 WHERE id=? AND verified=0";
         $stmt = $pdo->prepare($query);
-        $status = $stmt->execute([$id,$auth_key]);
+        $status = $stmt->execute([$id]);
         return $status;
     }
 }
