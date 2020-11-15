@@ -1306,7 +1306,6 @@ td:nth-last-child(1),th:nth-last-child(1){
 }
 
 #test-table>td:nth-child(5),#test-table>th:nth-child(5),
-#test-table>td:nth-child(6),#test-table>th:nth-child(6),
 #test-table>td:nth-child(2),#test-table>th:nth-child(2){
     width: 10%;
 }
