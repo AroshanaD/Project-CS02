@@ -1000,6 +1000,7 @@ button:focus{
     flex-wrap: wrap;
     width: 48%;
     font-size: 16px;
+    margin: 20px;
     justify-content: space-between;
     padding: 2px;
     border: none;
@@ -1238,7 +1239,7 @@ tr:nth-child(1){
 }
 
 tr:nth-child(odd) {
-    background-color: rgb(184, 202, 199);
+    background-color: #b8cac7;
 }
 
 tr:nth-child(even) {
@@ -1258,4 +1259,8 @@ tr:nth-child(even) {
     margin: 20px;
     overflow-x: auto;
     border: 1px black solid;
+}
+
+select{
+    background-color: #474545;
 }
