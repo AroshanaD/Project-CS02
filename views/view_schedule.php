@@ -14,18 +14,17 @@
     <div class="topic">View Doctor Schedule</div>
     
             <div class = "search-bar">
-                <form action="#"> 
+                
                     <div class="site-search"> 
                     <input type="text" placeholder="Doctor Name" name="d_id"> 
                     </div>      <!--site-search-->  <!--text-->
                     <div class="site-search"> 
-                    <input type="text" placeholder="Specialization Name " name="s_id"> 
+                    <input type="text" placeholder="Specialization" name="s_id"> 
                     </div>      <!--site-search-->  <!--date-->
                     <div class="site-search"> 
                     <button type = "submit">Search</button> 
                     </div>      <!--site-search-->  <!--btn-->
-                       
-                </form> 
+                        
                 </div>      <!--search-bar-->  
                 <table class ="view-table">
                 <thead>
