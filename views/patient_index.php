@@ -13,14 +13,7 @@
                 </div>
             </div>
         </div>
-        <div class="databoard">
-            <div class="data-card">
-                Appointments
-            </div>
-            <div class="data-card">
-                Lab Tests
-            </div>
-        </div>
+        
         <div class="taskboard">
             <div class="task-card">
                 <p>
