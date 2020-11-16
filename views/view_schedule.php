@@ -13,7 +13,6 @@
 
     <div class="topic">View Doctor Schedule</div>
     
-            <table class ="reg-table">
             <div class = "search-bar">
                 <form action="#"> 
                     <div class="site-search"> 
@@ -28,7 +27,8 @@
                        
                 </form> 
                 </div>      <!--search-bar-->  
-            
+                <table class ="view-table">
+                <thead>
                 <tr>
                     <th>No.</th>
                     <th>Id</th>
@@ -38,7 +38,8 @@
                     <th>Update</th>
                     <th>Delete</th>
                 </tr>
-                <tr>
+                </thead>
+                <tbody>
                     <td></td>
                     <td></td>
                     <td></td>
@@ -46,7 +47,7 @@
                     <td></td>
                     <td><a href=<?php echo Router::site_url().'/schedules/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
                     <td><a href=<?php echo Router::site_url().'/schedules/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
-
+                </tbody>
             </table>
             
         </div>      <!--container-2-->
