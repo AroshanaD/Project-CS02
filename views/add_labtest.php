@@ -2,7 +2,7 @@
     <div  style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_science_fqhl.png'?>);background-repeat:no-repeat">
         <div class="container">
                 <div class="block">
-                    <form action ="#" method = "POST">
+                    <form method = "POST">
                        <div class="form-box">
                            <div class="title">Create Lab Test</div>
                             <h1>Patient Details</h1>

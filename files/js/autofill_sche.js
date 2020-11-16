@@ -61,7 +61,7 @@ $(document).ready(function(){
                         array[value].forEach(function(value){
                             doctors = doctors.concat("<div>",value);
                         })
-                        $(".calendar").append("<div class='calendar-doctor' style='background-color:rgb(245, 170, 72);'>".concat(doctors,'</div>'));
+                        $(".calendar").append("<div class='calendar-doctor' style='background-color:oldlace; font-weight:bold;'>".concat(doctors,'</div>'));
                     }
                 })
             })

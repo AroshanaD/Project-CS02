@@ -21,8 +21,8 @@
                 </p>
                 <div class="dropdown-content">
                     <ul>
-                        <li><a href=<?php echo Router::site_url().'/labtest/create_test' ?>> Create Test</a></li>
-                        <li><a href=<?php echo Router::site_url().'/labtest/view_test' ?>> View Test</a></li>
+                        <li><a href=<?php echo Router::site_url().'/patientTest/create_test' ?>> Create Test</a></li>
+                        <li><a href=<?php echo Router::site_url().'/patientTest/view' ?>> View Test</a></li>
                     </ul>
                 </div>
             </div>

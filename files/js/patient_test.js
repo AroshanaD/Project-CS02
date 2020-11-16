@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/labtest/get_view',
+        url: '../../index.php/patientTest/get_view',
         data: {},
         type: 'post',
         success:function(data){
@@ -11,7 +11,7 @@ $(document).ready(function(){
 
     $("#search-btn").click(function(){
         $.ajax({
-            url: '../../index.php/labtest/search',
+            url: '../../index.php/patientTest/search',
             data: {id:$("#id").val(),name:$("#name").val()},
             type: 'post',
             success:function(data){

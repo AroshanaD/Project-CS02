@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>View</title>
+        <title>Doctor Schedule</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
@@ -25,7 +25,7 @@
             </div>    
         </div>
         <div class='container'>
-            <div class='calendar'>
+            <div class='calendar' style="overflow-x:auto">
                 <div class='calendar-row'>
                     <div class='calendar-day'>Time</div>
                     <div class='calendar-day'>Monday</div>

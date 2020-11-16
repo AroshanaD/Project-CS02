@@ -35,7 +35,9 @@ function render_table(data){
 
     for(var i=0; i<data.length; i++){
 
-        var row_id = toString(data[i]['id']);
+        
+        var row_id = data[i]['id'].toString();
+        //console.log(row_id);
         var row_id = row_id.concat("')");
         var func = "selectfunc(".concat(i+1,",","'",row_id);
 
@@ -48,15 +50,15 @@ function render_table(data){
         $(`<td>`).text(data[i].description),$(`<td>`).text(data[i].unit_cost),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
-        $("tbody").append(row);
+        $("table").append(row);
     }
 }
 
 function selectfunc(i,row_id){
-    console.log(row_id);
+    //console.log(row_id);
     var idd = "#".concat(i);
     var row_id = "#".concat(row_id);
-    console.log(row_id);
+    //console.log(row_id);
     if($(idd).is(':checked')){
         console.log($(idd).val());
         $(row_id).css("background-color","red");

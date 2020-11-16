@@ -11,8 +11,11 @@
                     <div class="site-search"> 
                         <input type="text" placeholder="Test Name" name="name"> 
                     </div>      <!--site-search-->  <!--date-->
-                        <div class="site-search"> 
-                    <button type = "submit" style="font-size:18px">Search</button> 
+                    <div class="site-search"> 
+                        <input type="Date" placeholder="Test Date" name="date"> 
+                    </div> 
+                    <div class="site-search"> 
+                        <button type = "submit" style="font-size:18px">Search</button> 
                     </div>      <!--site-search-->  <!--btn-->
                 </div>      <!--search-bar--> 
                 <div class="table"> 

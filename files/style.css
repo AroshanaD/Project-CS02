@@ -1205,14 +1205,22 @@ table>thead, table>tbody{
 .calendar-day{
     margin-right: 2px;
     padding: 4px;
-    background-color: cornflowerblue;
+    background-color: #000f3f;
+    color: white;
 }
 
 .calendar-doctor{
     margin-right: 2px;
     padding: 4px;
-    background-color: cornsilk;
-    font-weight: normal;
+    font-size: 16px;
+}
+
+.calendar-doctor:nth-child(even){
+    background-color: #b8cac7;
+}
+
+.calendar-doctor:nth-child(odd){
+    background-color: white;
 }
 
 table{
