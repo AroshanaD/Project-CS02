@@ -27,8 +27,9 @@ function render_table(data){
 
     var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
-    $(`<td>`).text("ID"),$(`<td>`).text("Name"),
-    $(`<td>`).text("Description"),$(`<td>`).text("Unit Cost"),
+    $(`<td>`).text("ID"),$(`<td>`).text("Patient Name"),
+    $(`<td>`).text("Test Name"),$(`<td>`).text("Date"),
+    $(`<td>`).text("Availability"),
     $(`<td>`).append("Update"),
     $(`<td>`).append("Delete"));
     $("table").append(header);

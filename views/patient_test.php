@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-    <html>
-        <head>
-            <meta charset="utf-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <link rel="stylesheet" href="style.css">
-        </head>
-        <body>
+<script src=<?php echo Router::base_url().'/files/js/patient_test.js'?> type="text/javascript"></script>
 
     <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
         <div class ="container">
@@ -21,27 +14,12 @@
                         <div class="site-search"> 
                     <button type = "submit" style="font-size:18px">Search</button> 
                     </div>      <!--site-search-->  <!--btn-->
-                </div>      <!--search-bar-->  
-                <table class="view-table">
-                    <thead>
-                        <tr id="test-table">
-                            <th>Test ID</th>
-                            <th>Date</th>
-                            <th>Time</th>
-                            <th>Patient Name</th>
-                            <th>Patient Age</th>
-                            <th>Contact</th>
-                            <th>Cost</th>
-                            <th>Availability</th>
-                        </tr>
-                    </thead>
-                    <tbody> 
-                        
-                    </tbody>
-                </table>
+                </div>      <!--search-bar--> 
+                <div class="table"> 
+                    <table>
                     
-                
-               
+                    </table>
+                </div>
             </div> <!--container-2-->
         </div><!--container-->
         
