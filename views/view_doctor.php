@@ -22,27 +22,14 @@
                 <div class="site-search"> 
                     <button id="search-btn" type="submit">Search</button> 
                 </div>      <!--site-search-->  <!--btn-->
-            </div>      <!--search-bar-->  
-            <table class="view-table">
-                <thead>
-                    <tr id="doctor-table">
-                        <th>No.</th>
-                        <th>Id</th>
-                        <th>Name</th>
-                        <th>Specialization</th>
-                        <th>Charges</th>
-                        <th>Address</th>
-                        <th>Email</th>
-                        <th>Contact</th>
-                        <th>Update</th>
-                        <th>Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-
-                </tbody>
+            </div>   <!--search-bar-->  
+            <div class="table">
+                <table>
+                  
                 </table>
-        </div>      <!--container-2-->
-        </div>      <!--container-->
+            </div><!--container-2-->
+        </div>
+    </div>
+    </div>      <!--container-->
     </body>
 </html>

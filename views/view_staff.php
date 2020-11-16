@@ -25,23 +25,11 @@
                     <button id="search-btn" name="search" type = "submit">Search</button>
                 </div>     <!--site-search-->  <!--btn-->  
             </div>    <!--search-bar-->  
-            <table class ="view-table">
-                <thead>
-                <tr>
-                    <th>No.</th>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Contact</th>
-                    <th>Email</th>
-                    <th>Update</th>
-                    <th>Delete</th>
-                </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-            
+            <div class="table">
+                <table>
+                    
+                </table>
+            <div>
         </div>      <!--container-2-->
         </div>      <!--container-->
     </body>

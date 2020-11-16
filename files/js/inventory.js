@@ -23,7 +23,16 @@ $(document).ready(function(){
 })
 
 function render_table(data){
-    $("tbody").empty();
+    $("table").empty();
+
+    var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`).text("No"),
+    $(`<td>`).text("ID"),$(`<td>`).text("Name"),
+    $(`<td>`).text("Vendor"),$(`<td>`).text("Description"),
+    $(`<td>`).text("Unit Price"),$(`<td>`).text("Quantity"),
+    $(`<td>`).append("Update"),
+    $(`<td>`).append("Delete"));
+    $("table").append(header);
+
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'];
         var update = "<a href=../inventory/update?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
@@ -34,6 +43,6 @@ function render_table(data){
         $(`<td>`).text(data[i].unit_price),$(`<td>`).text(data[i].quantity),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
-        $("tbody").append(row);
+        $("table").append(row);
     }
 }

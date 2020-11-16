@@ -28,6 +28,14 @@ function render_table(data){
     $("tbody").empty();
     var category = $("#staff").val();
 
+    var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`).text("No"),
+    $(`<td>`).text("ID"),$(`<td>`).text("Name"),
+    $(`<td>`).text("Address"),$(`<td>`).text("Email"),
+    $(`<td>`).text("Contact"),
+    $(`<td>`).append("Update"),
+    $(`<td>`).append("Delete"));
+    $("table").append(header);
+
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'].concat("&category=",category);
         var name = data[i]['f_name'].concat(' ',data[i]['l_name']);
@@ -40,6 +48,6 @@ function render_table(data){
         $(`<td>`).text(data[i].email),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
-        $("tbody").append(row);
+        $("table").append(row);
     }
 }

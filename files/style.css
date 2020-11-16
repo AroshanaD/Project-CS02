@@ -1045,7 +1045,7 @@ button:focus{
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    width: max-content;
+    width: 100%;
     height: max-content;
     padding: 20px;
     background-color: #fffffff1;
@@ -1214,39 +1214,27 @@ table>thead, table>tbody{
     font-weight: normal;
 }
 
-.view-table{
-    display: flex;
-    flex-wrap: wrap;
+table{
     width: 100%;
-    height: fit-content;
-    margin-top: 20px;
+    border-collapse: collapse;
     border: 1px black solid;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
 }
 
-thead, tbody{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    padding: 5px 0px;
-}
-
 tr{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
     padding: 5px 0px;
     box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
 }
 
 td, th{
-    width: 15%;
+    width: max-content;
     background-color: inherit;
-    padding: 5px;
+    padding: 10px 20px;
     border-right: 1px black solid;
+}
+
+tr:nth-child(1){
+    background-color: #000f3f;
 }
 
 tr:nth-child(odd) {
@@ -1257,55 +1245,17 @@ tr:nth-child(even) {
     background-color: white;
 }
 
-td:nth-child(1),th:nth-child(1){
-    width:4%;
-}
-
-td:nth-child(2),th:nth-child(2){
-    width:8%;
-}
-
-td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child(2){
-    width:5%;
-}
-
-td:nth-last-child(1),th:nth-last-child(1){
-    border: none;
-}
-
 .tb-btn{
-    width: 100%;
-    height: 100%;
+    padding: 5px;
     background-color: rgba(96, 112, 202, 0.973);
     border-radius: 5px;
     border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-#doctor-table>td:nth-child(2),#doctor-table> td:nth-child(8),
-#doctor-table>th:nth-child(2),#doctor-table>th:nth-child(8){
-    width: 8%;
-}
-
-#doctor-table>td:nth-child(4),#doctor-table> th:nth-child(4){
-    width: 10%;
-}
-
-#doctor-table>td:nth-child(5),#doctor-table> th:nth-child(5){
-    width: 6%;
-}
-
-#inventory-table>td:nth-child(6),#inventory-table> td:nth-child(7),
-#inventory-table>th:nth-child(6),#inventory-table>th:nth-child(7){
-    width: 8%;
-}
-
-#test-table>td:nth-child(4),#test-table>th:nth-child(4),
-#test-table>td:nth-child(3),#test-table>th:nth-child(3){
-    width: 22%;
-}
-
-#test-table>td:nth-child(5),#test-table>th:nth-child(5),
-#test-table>td:nth-child(2),#test-table>th:nth-child(2){
-    width: 10%;
+.table{
+    width: 100%;
+    margin: 20px;
+    overflow-x: auto;
+    border: 1px black solid;
 }
