@@ -40,5 +40,11 @@
             $this->load('views','header');
             $this->load('views','view_test');
         }
+
+        public function view_appointment(){
+            $this->load('views','header');
+            $this->load('views','view_appointment');
+        }
+
         
     }
