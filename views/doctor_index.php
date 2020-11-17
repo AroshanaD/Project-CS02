@@ -23,7 +23,7 @@
                 </p>
                 <div class="dropdown-content">
                     <ul>
-                        <li><a href=<?php echo Router::site_url().'/appointment/view_appointment' ?>>View Appointments</a></li>
+                        <li><a href=<?php echo Router::site_url().'/doctor_Schedule/view_appointment' ?>>View Appointments</a></li>
                     </ul>
                 </div>
             </div>
