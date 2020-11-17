@@ -35,4 +35,6 @@
             $this->load('views','header');
             $this->load('views','appointment_receipt');
         }
+
+        
     }
