@@ -38,7 +38,7 @@
                     </p>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url().'/appointment/view'?>>Lab Test Results</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment/view' ?>>Lab Test Results</a></li>
                         </ul>
                     </div>
                 </div>

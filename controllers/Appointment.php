@@ -35,6 +35,10 @@
             $this->load('views','header');
             $this->load('views','appointment_receipt');
         }
-
+        
+        public function view(){
+            $this->load('views','header');
+            $this->load('views','view_test');
+        }
         
     }
