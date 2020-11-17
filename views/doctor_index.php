@@ -8,7 +8,7 @@
                     <div class="field">Name</div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
                     <div class="field">Specialization</div><div class="val_field"><?php echo $_SESSION['specialization_id']?></div>
                     <div class="field">Qualification</div><div class="val_field"><?php echo $_SESSION['qualification']?></div>
-                    <div class="field">Contact</div><div class="val_field"><?php echo $_SESSION['contact']?></div>
+                    <div class="field">Contact</div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
                     <div class="field">Email</div><div class="val_field"><?php echo $_SESSION['email']?></div>
                 </div>
             </div>
@@ -23,7 +23,7 @@
                 </p>
                 <div class="dropdown-content">
                     <ul>
-                        <li><a href=<?php echo Router::site_url().'/Doctor_Schedule/viewApppointment' ?>>View Appointments</a></li>
+                        <li><a href=<?php echo Router::site_url().'/appointment/view_appointment' ?>>View Appointments</a></li>
                     </ul>
                 </div>
             </div>
