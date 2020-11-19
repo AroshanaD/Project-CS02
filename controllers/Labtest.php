@@ -56,7 +56,16 @@
                 $description = $_POST['test_description'];
                 $price = $_POST['test_price'];
 
-                $model->update($id,$testName,$price,$description);
+                $result=$model->update($id,$testName,$price,$description);
+
+                if($result==TRUE){
+                    $URL= Router::site_url()."/labtest/view?successfully updated";
+                    echo "<script>location.href='$URL'</script>";
+                }
+                else{
+                    $URL= Router::site_url()."/labtest/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>"; 
+                }
             }
         }
 
@@ -70,7 +79,15 @@
 
             if(isset($_POST['Delete'])){
                 $testId = $_POST['id'];
-                $model->delete($testId);
+                $result=$model->delete($testId);
+                if($result==TRUE){
+                    $URL= Router::site_url()."/labtest/view?successfully deleted";
+                    echo "<script>location.href='$URL'</script>";
+                }
+                else{
+                    $URL= Router::site_url()."/labtest/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>"; 
+                }
             }
         }
 

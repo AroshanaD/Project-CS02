@@ -58,7 +58,14 @@
             $deleted = 0;
             $query= "UPDATE test SET name=?, unit_cost=?, description=?, deleted='$deleted' WHERE id=?";
             $stmt = $pdo->prepare($query);
-            $status = $stmt->execute([$testName,$price, $description,$id]);
+            $status= $stmt->execute([$testName,$price, $description,$id]);
+
+            if($status==TRUE){
+                return TRUE;
+            }
+            else{
+                return FALSE;
+            }
         }
 
         public function delete($testId){
@@ -67,7 +74,14 @@
 
             $query = "UPDATE test SET deleted='1' WHERE id=?";
             $stmt = $pdo->prepare($query);
-            $status = $stmt->execute([$testId]);
+            $status= $stmt->execute([$testId]);
+
+            if($status==TRUE){
+                return TRUE;
+            }
+            else{
+                return FALSE;
+            }
         }
     }
 ?>
