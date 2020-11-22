@@ -9,16 +9,18 @@
         public function add(){
             $this->load('views','header');
             $this->load('views','add_test');
+        }
+
+        public function add_test(){
             $model=$this->load('models','Labtest_manage');
             
-            if(isset($_POST['Add'])){
-                $id=$_POST['test_id'];
-                $name=$_POST['test_name'];
-                $description=$_POST['test_description'];
-                $price=$_POST['test_price'];
+            $name=$_POST['name'];
+            $description=$_POST['description'];
+            $cost=$_POST['cost'];
 
-                $model->add($id,$name,$price,$description);
-            }
+            $result = $model->add($name,$cost,$description);
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function view(){

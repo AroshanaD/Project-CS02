@@ -7,12 +7,6 @@
                        <div class="form-box">
                            <div class="title">Add Lab Test</div>
                             <div class="label">
-                                <label for="test_id" id="id_f">Test Id</label>
-                            </div>
-                            <div class="input">
-                                <input type="number" id="id" name="test_id" disabled selected required>
-                            </div>
-                            <div class="label">
                                 <label for="test_name" id="name_f">Test name</label>
                             </div>
                             <div class="input">
@@ -31,6 +25,7 @@
                                 <input type="num" id="cost" name="test_price" required>
                             </div>
                             <div class="btn-area"><input type="submit" value="Add" name="Add" class="submit-btn"></div>
+                            <div id="form-message"></div>
                         </div >
                     </form>
                 </div>
