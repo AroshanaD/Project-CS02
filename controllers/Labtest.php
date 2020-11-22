@@ -9,16 +9,18 @@
         public function add(){
             $this->load('views','header');
             $this->load('views','add_test');
+        }
+
+        public function add_test(){
             $model=$this->load('models','Labtest_manage');
             
-            if(isset($_POST['Add'])){
-                $id=$_POST['test_id'];
-                $name=$_POST['test_name'];
-                $description=$_POST['test_description'];
-                $price=$_POST['test_price'];
+            $name=$_POST['name'];
+            $description=$_POST['description'];
+            $cost=$_POST['cost'];
 
-                $model->add($id,$name,$price,$description);
-            }
+            $result = $model->add($name,$cost,$description);
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function view(){
@@ -56,7 +58,16 @@
                 $description = $_POST['test_description'];
                 $price = $_POST['test_price'];
 
-                $model->update($id,$testName,$price,$description);
+                $result=$model->update($id,$testName,$price,$description);
+
+                if($result==TRUE){
+                    $URL= Router::site_url()."/labtest/view?successfully updated";
+                    echo "<script>location.href='$URL'</script>";
+                }
+                else{
+                    $URL= Router::site_url()."/labtest/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>"; 
+                }
             }
         }
 
@@ -70,7 +81,15 @@
 
             if(isset($_POST['Delete'])){
                 $testId = $_POST['id'];
-                $model->delete($testId);
+                $result=$model->delete($testId);
+                if($result==TRUE){
+                    $URL= Router::site_url()."/labtest/view?successfully deleted";
+                    echo "<script>location.href='$URL'</script>";
+                }
+                else{
+                    $URL= Router::site_url()."/labtest/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>"; 
+                }
             }
         }
 
