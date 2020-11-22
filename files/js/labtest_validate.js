@@ -1,12 +1,8 @@
 $(document).ready(function(){
     
-    var id = Math.floor(Math.random() * (999999999 - 100000000));
-    $("#id").val(id);
-    
     $("form").submit(function(event){
         event.preventDefault();
 
-        var id = $("#id").val();
         var name = $("#name").val();
         var description = $("#description").val();
         var cost = $("#cost").val();
