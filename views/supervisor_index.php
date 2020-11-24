@@ -29,21 +29,21 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-5">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="mange inventory" style="width:50px; height:50px;">
-                        </p>
+            <div class="task-card" style="width:250px">
+                <p>
+                    <img src=<?php echo Router::base_url().'/files/icons/in-inventory.png'?> alt="mange inventory" style="width:50px; height:50px;">
+                </p>
+                <p>
                         Manage Inventory
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/inventory/add" ?>>Add Medicine</a></li>
-                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Inventory</a></li>
-                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>Add Vendors</a></li>
-                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Vendors</a></li>
-                        </ul>
-                    </div>
+                </p>
+                <div class="dropdown-content">
+                    <ul>
+                        <li><a href=<?php echo Router::site_url()."/inventory/add" ?>>Add Medicine</a></li>
+                        <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Medicine</a></li>
+                        <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>Add Vendors</a></li>
+                        <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Vendors</a></li>
+                    </ul>
+                </div>
             </div>
             <div class="task-card" style="width:250px">
                 <p>
