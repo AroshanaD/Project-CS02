@@ -38,8 +38,10 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url()."/inventory/add" ?>>Add Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/inventory/add" ?>>Add Medicine</a></li>
                             <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>Add Vendors</a></li>
+                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Vendors</a></li>
                         </ul>
                     </div>
             </div>

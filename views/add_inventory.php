@@ -1,3 +1,4 @@
+<script type="text/javascript" src="/project-cs02/files/js/autofill_vendors.js"></script>
 
     <div style="background-image: linear-gradient(to left, oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_medical_care_movn.png'?>);background-repeat: no-repeat">
         <div class="container">
@@ -18,10 +19,12 @@
                                 <input type="text" name="med_name" required>
                             </div>
                             <div class="label">
-                                <label for="med_vendor">Vendor</label>
+                                <label for="vendors">Vendors</label>
                             </div>
                             <div class="input">
-                                <input type="text" name="med_vendor" required>
+                                <select name="vendors" id="vendors" required>
+                                
+                                </select>
                             </div>
                             <div class="label">
                                 <label for="med_description">Description</label>
