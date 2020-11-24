@@ -2,7 +2,7 @@
 <html>
     <head>
         <title><?php $url = explode('/',rtrim($_SERVER['REQUEST_URI'],'/'));
-                if($url[3]&&$url[4]){echo ucwords($url[3]).'/'.ucwords($url[4]);}; ?></title>
+                if($url[3]&&$url[4]){echo ucwords($url[3]).'|'.ucwords($url[4]);}; ?></title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>

@@ -42,10 +42,12 @@ function password_val(password){
     }
 }
 
-function text_val(text){
-    if(! /^[\w._-,\/]/.test(text)){
-        $("#text").addClass("input-error");
-        $("<div class='error-message'>Can Only Use '._-,' Special Characters</div>").insertAfter("#text_f");
+function text_val(id,text){
+    var id = "#".concat(id);
+    var clas = id.concat('_f');
+    if(! /^[\w\.\_\-\,\/\s]/.test(text)){
+        $(id).addClass("input-error");
+        $("<div class='error-message'>Can Only Use '._-,' Special Characters</div>").insertAfter(clas);
         return false;
     }
 }

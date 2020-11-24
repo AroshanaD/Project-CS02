@@ -6,6 +6,9 @@
         }
 
         public function index(){
+            if($_SESSION['id']){
+                $this->load('views','header');
+            }
             $this->load('views','doctor_schedule');
         }
 
@@ -16,6 +19,10 @@
 
             header('Content-Type: application/json');
             echo json_encode($result);
+        }
+        public function view_appointment(){
+            $this->load('views','header');
+            $this->load('views','view_appointment');
         }
     }
 

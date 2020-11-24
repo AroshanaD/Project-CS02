@@ -10,7 +10,7 @@ class Verify_login extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
        
-        $query = "SELECT * FROM $user_cat WHERE id = ?";
+        $query = "SELECT * FROM $user_cat WHERE id = ? AND verified='1'";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$user_id]);
         $result = $stmt->fetch();
@@ -18,5 +18,15 @@ class Verify_login extends Models{
             return "invalid user";
         }
         return $result;
+    }
+
+    public function set_password($id,$category,$password){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "UPDATE $category SET pwd=? WHERE id=?";
+        $stmt = $pdo->prepare($query);
+        $status = $stmt->execute([$password,$id]);
+        return $status;
     }
 }

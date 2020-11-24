@@ -19,6 +19,7 @@ a {
 
 p {
     margin-bottom: 0;
+    font-family: monospace;
 }
 
 button:focus{
@@ -265,18 +266,18 @@ button:focus{
     flex-wrap: wrap;
     background-color: rgba(13, 0, 130, 0.7);
     margin-top: 60px;
-    padding: 50px 0 50px 0;
+    padding: 30px 0 30px 0;
     height: fit-content;
     justify-content: space-around;
 }
 
 .task-card {
-    width: 35vw;
+    align-content: center;
+    width: 40vw;
     min-height: 140px;
     text-align: center;
     margin: 0px 0 10px 0;
     background-color: oldlace;
-    border: 5px rgb(255, 175, 0) solid;
     border-radius: 20px;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
     justify-content: space-evenly;
@@ -285,27 +286,18 @@ button:focus{
     font-family: Roboto;
     color: black;
     padding-top: 0.5px;
-}
-
-.taskboard>.col-5 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
-    position: relative;
-    background-color: initial;
+    padding-bottom: 20px;
 }
 
 .dropdown-content {
-    width: 35vw;
+    width: inherit;
     display: none;
     position: relative;
-    background-image: url(icons/taskboard-image.jpg);
     background-size: cover;
-    font-size: 16px;
-    margin: 5px 0;
+    font-size: 20px;
     font-weight: bold;
+    font-family: monospace;
     z-index: 1;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.7);
 }
 
 .dropdown-content>ul>li {
@@ -317,12 +309,12 @@ button:focus{
     list-style: none;
     text-align: center;
     margin-right: 40px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding: 5px;
     background-color: oldlace;
 }
 
 .dropdown-content>ul>li>a {
+    width: inherit;
     color: rgb(7, 7, 7);
 }
 
@@ -334,7 +326,11 @@ button:focus{
     color: oldlace;
 }
 
-.taskboard>.col-5:hover .dropdown-content {
+.task-card:hover p{
+    display:none;
+}
+
+.task-card:hover .dropdown-content {
     display: block;
 }
 
@@ -377,20 +373,20 @@ button:focus{
     display: flex;
     flex-wrap: wrap;
     margin-top: 40px;
-    background-color: #000000fd;
     justify-content: space-evenly;
 }
 
 .data-card {
-    flex-basis: 42%;
-    min-width: 380px;
+    flex-basis: 35vw;
+    min-height: 100px;
     padding: 10px 30px;
     margin-top: 10px;
     margin-bottom: 10px;
     color: #000000;
-    background-color: rgb(255, 174, 0);
+    background-color: oldlace;
     border-radius: 20px;
-    font-size: 16px;
+    font-size: 20px;
+    font-family: monospace;
     text-align: center;
     font-weight: bold;
     text-decoration: none;
@@ -1004,9 +1000,12 @@ button:focus{
     flex-wrap: wrap;
     width: 48%;
     font-size: 16px;
+    margin: 20px;
     justify-content: space-between;
     padding: 2px;
     border: none;
+    border-radius: 5px;
+    background-image: linear-gradient(to left,  rgb(4, 201, 201), rgb(1, 61, 110));
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -1015,7 +1014,8 @@ button:focus{
     margin: 5px 20px 5px 10px;
     padding: 10px;
     border-width: 0;
-    background-color: rgb(255, 200, 100);
+    border-radius: 5px;
+    background-image: linear-gradient(to right,  rgba(243, 252, 252, 0.842), rgba(2, 53, 95, 0.377));
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
 }
 
@@ -1024,14 +1024,15 @@ button:focus{
 }
 
 .site-search>button {
-    background-color: rgb(255, 200, 100);
+    background-color: rgb(1, 93, 116);
     height: inherit;
-    color: black;
+    color: rgb(255, 255, 255);
     padding: 5px 10px;
     margin-top: 5px;
     margin-right: 20px;
     font-size: 16px;
-    border: 1px black solid;
+    border: 1px  rgb(1, 93, 116) solid;
+    border-radius: 5px;
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
@@ -1045,7 +1046,7 @@ button:focus{
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    width: max-content;
+    width: 100%;
     height: max-content;
     padding: 20px;
     background-color: #fffffff1;
@@ -1062,8 +1063,8 @@ button:focus{
     color: #ff0055;
     text-transform: uppercase;
     text-align: center;
-    background-color: lightcyan;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    background-color: transparent;
+    /*box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);*/
 }
 
 .reg-table button {
@@ -1204,79 +1205,70 @@ table>thead, table>tbody{
 .calendar-day{
     margin-right: 2px;
     padding: 4px;
-    background-color: cornflowerblue;
+    background-color: #000f3f;
+    color: white;
 }
 
 .calendar-doctor{
     margin-right: 2px;
     padding: 4px;
-    background-color: cornsilk;
-    font-weight: normal;
+    font-size: 16px;
 }
 
-.view-table{
-    display: flex;
-    flex-wrap: wrap;
+.calendar-doctor:nth-child(even){
+    background-color: #b8cac7;
+}
+
+.calendar-doctor:nth-child(odd){
+    background-color: white;
+}
+
+table{
     width: 100%;
-    height: fit-content;
-    margin-top: 20px;
+    border-collapse: collapse;
     border: 1px black solid;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
 }
 
-thead, tbody{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    padding: 5px 0px;
-}
-
 tr{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-    height: fit-content;
-    justify-content: center;
     padding: 5px 0px;
     box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
 }
 
 td, th{
-    width: 15%;
+    width: max-content;
     background-color: inherit;
-    padding: 2px;
+    padding: 10px 20px;
+    border-right: 1px black solid;
+}
+
+tr:nth-child(1){
+    background-color: #000f3f;
 }
 
 tr:nth-child(odd) {
-    background-color: rgb(220, 220, 220);
+    background-color: #b8cac7;
 }
 
 tr:nth-child(even) {
     background-color: white;
 }
 
-td:nth-child(1),th:nth-child(1){
-    width:4%;
-}
-
-td:nth-child(2),th:nth-child(2){
-    width:8%;
-}
-
-td:nth-last-child(1),th:nth-last-child(1),td:nth-last-child(2),th:nth-last-child(2){
-    width:6%;
-}
-
 .tb-btn{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(255, 200, 100);
+    padding: 5px;
+    background-color: rgba(96, 112, 202, 0.973);
+    border-radius: 5px;
     border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 }
 
-#doctor-table>td:nth-child(2),#doctor-table> td:nth-child(5),#doctor-table> td:nth-child(8),
-#doctor-table>th:nth-child(2),#doctor-table>th:nth-child(5),#doctor-table>th:nth-child(8){
-    width: 8%;
+.table{
+    width: 100%;
+    margin: 20px;
+    overflow-x: auto;
+    border: 1px black solid;
+}
+
+select{
+    background-color: #474545;
 }

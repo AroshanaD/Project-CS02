@@ -1,6 +1,7 @@
 <?php
 
     require_once('config/autoload.php');
+    
     session_start();
     $controller;
     $controller_method;

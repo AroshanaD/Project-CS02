@@ -34,7 +34,8 @@
                         header('Location:'.Router::site_url().'/user/login/?invalid user');
                     }
                     else{
-                        if($user['pwd'] == $userpwd){
+                        $userpwd = hash('SHA256',$userpwd);
+                        if($userpwd == $user['pwd']){
                             $user['user_cat'] = $user_cat;
                             $session_inst = new session_helper;
                             $session_inst->start($user);
@@ -81,5 +82,33 @@
         public function logout(){
             session_destroy();
             header('Location:/project-cs02/index.php/user/login?logout successfully');
+        }
+
+        public function confirm_register(){
+            if($_GET['auth_key'] && $_GET['category'] && $_GET['id']){
+                $model = $this->load('models','Staff_Manage');
+                $verified = $model->is_verified($_GET['auth_key'],$_GET['category'],$_GET['id']);
+                if($verified['verified'] == 0){
+                    $_SESSION['id'] = $_GET['id'];
+                    $_SESSION['user_cat'] = $_GET['category'];
+                    $this->load('views','set_password');
+                }
+                else{
+                    header("Location: ../user/login?account already activated");
+                }
+            }
+        }
+
+        public function set_password(){
+            $model = $this->load('models','Verify_login');
+            $password = hash('SHA256',$_POST['password']);
+            $status = $model->set_password($_SESSION['id'],$_SESSION['user_cat'],$password);
+            if($status == TRUE){
+                $model = $this->load('models','Staff_Manage');
+                $status = $model->confirm($_SESSION['user_cat'],$_SESSION['id']);
+                session_destroy();
+                header('Location:/project-cs02/index.php/user/login');
+                $this->login();
+            }
         }
     }
