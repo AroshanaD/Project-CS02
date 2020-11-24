@@ -33,13 +33,14 @@ class Inventory_manage extends Models{
         return $result;
     }
 
-    public function add($medId,$medName,$medVendor, $description,$price,$quantity){
+    public function add_medicine($name,$vendor, $description,$price,$quantity){
         $connect = new Database();
         $pdo = $connect->connect();
-        $deleted = 0;
-        $query="insert into medicine values('$medId','$medName','$medVendor','$description','$price','$quantity','$deleted')";
+
+        $query = "INSERT INTO `medicine`(name,description,vendor,unit_price,quantity) VALUES(?,?,?,?,?)";
         $stmt = $pdo->prepare($query);
-        $stmt->execute();
+        $status = $stmt->execute([$name,$vendor, $description,$price,$quantity]);
+        return $status;
     }
 
     public function displayById($id){

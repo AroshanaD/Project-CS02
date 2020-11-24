@@ -38,9 +38,9 @@
                 </p>
                 <div class="dropdown-content">
                     <ul>
-                        <li><a href=<?php echo Router::site_url()."/inventory/add" ?>>Add Medicine</a></li>
+                        <li><a href=<?php echo Router::site_url()."/inventory/add?add=medicine" ?>>Add Medicine</a></li>
                         <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Medicine</a></li>
-                        <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>Add Vendors</a></li>
+                        <li><a href=<?php echo Router::site_url()."/inventory/add?add=vendor" ?>>Add Vendors</a></li>
                         <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Vendors</a></li>
                     </ul>
                 </div>
