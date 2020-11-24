@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/inventory/get_medicine',
+        url: '../../index.php/inventory/get_vendor',
         data: {},
         type: 'post',
         success:function(data){
@@ -11,8 +11,8 @@ $(document).ready(function(){
 
     $("#search-btn").click(function(){
         $.ajax({
-            url: '../../index.php/inventory/search_medicine',
-            data: {id:$("#id").val(),name:$("#name").val()},
+            url: '../../index.php/inventory/search_vendor',
+            data: {name:$("#name").val()},
             type: 'post',
             success:function(data){
                 var details = data;
@@ -28,26 +28,26 @@ function render_table(data){
     var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Name"),
-    $(`<td>`).text("Vendor"),$(`<td>`).text("Description"),
-    $(`<td>`).text("Unit Price"),$(`<td>`).text("Quantity"),
+    $(`<td>`).text("Address"),$(`<td>`).text("Contact"),
+    $(`<td>`).text("Email"),
     $(`<td>`).append("Update"),
     $(`<td>`).append("Delete"));
     $("table").append(header);
 
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'];
-        var update = "<a href=../inventory/update?update=medicine&id=".concat(get_details,"><button class='tb-btn'>Update</a>");
-        var dele = "<a href=../inventory/delete?delete=medicine&id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
+        var update = "<a href=../inventory/update_vendor?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
+        var dele = "<a href=../inventory/delete_vendor?id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
 
         var row_id = data[i]['id'];
-        var row_id = (row_id.toString()).concat("')");
+        var row_id = row_id.concat("')");
         var func = "selectfunc(".concat(i+1,",","'",row_id);
         
         var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
         $(`<td>`).text(i+1),
         $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].name),
-        $(`<td>`).text(data[i].vendor),$(`<td>`).text(data[i].description),
-        $(`<td>`).text(data[i].unit_price),$(`<td>`).text(data[i].quantity),
+        $(`<td>`).text(data[i].address),$(`<td>`).text(data[i].contact),
+        $(`<td>`).text(data[i].email),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
         $("table").append(row);
