@@ -21,7 +21,7 @@
                                 <input type="textarea" name="med_description" id="description" required>
                             </div>
                             <div class="label">
-                                <label for="vendors">Vendors</label>
+                                <label for="vendors">Vendor</label>
                             </div>
                             <div class="input">
                                 <select name="vendors" id="vendors" required>
@@ -32,7 +32,7 @@
                                 <label for="med_price">Unit Price</label>
                             </div>
                             <div class="input">
-                                <input type="float" name="med_price" id="cost" required>
+                                <input type="float" name="med_price" id="price" required>
                             </div>
                             <div class="label">
                                 <label for="med_quantity">Quantity</label>

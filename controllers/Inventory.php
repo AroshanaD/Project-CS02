@@ -59,7 +59,7 @@
             $name = $_POST['name'];
             $vendor = $_POST['vendor'];
             $description = $_POST['description'];
-            $price = $_POST['cost'];
+            $price = $_POST['price'];
             $quantity = $_POST['quantity'];
 
             $result = $model->add_medicine($name,$description,$vendor,$price,$quantity);
@@ -68,30 +68,32 @@
             echo json_encode($result);
         }
 
-        public function update_medicine(){
-            $id = $_GET['id'];
-            $model= $this->load('models','Inventory_manage');
-            $result= $model->displayById($id);
-            $_POST['medicine']=$result;
-            $this->load('views','header');
-            $this->load('views','update_inventory');
-
-            if(isset($_POST['Update'])){
-                $medName = $_POST['med_name'];
-                $medVendor = $_POST['med_vendor'];
-                $description = $_POST['med_description'];
-                $price = $_POST['med_price'];
-                $quantity = $_POST['med_quantity'];
-
-                $result = $model->update($id,$medName,$medVendor, $description,$price,$quantity);
-
-                if($result ==  TRUE){
-                    header("Location: ../inventory/view?successfully updated");
-                }
-                else{
-                    header("Location: ../inventory/view?something went wrong");
-                }
+        public function update(){
+            if($_GET['update'] == 'medicine'){
+                $id = $_GET['id'];
+                $model= $this->load('models','Inventory_manage');
+                $result= $model->displayById($id);
+                $_POST['medicine']=$result;
+                $this->load('views','header');
+                $this->load('views','update_inventory');
             }
+            if($_GET['update'] == 'vendor'){
+
+            }
+        }
+
+        public function update_medicine(){
+            $model= $this->load('models','Inventory_manage');
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $vendor = $_POST['vendor'];
+            $description = $_POST['description'];
+            $price = $_POST['price'];
+            $quantity = $_POST['quantity'];
+
+            $result = $model->update_medicine($id,$name,$description,$vendor,$price,$quantity);
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function delete_medicine(){
