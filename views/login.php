@@ -4,8 +4,21 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
+        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/main.css" ?>>
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
-    <body style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
+    <body style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
+    <div class="main-nav" style="background:#98B5FF">
+            <div></div>
+            <div></div>
+           <div>MedCaid Hospitals</div>
+           <div>
+                <a href=<?php echo Router::site_url().'/main' ?>><button class="main-button">Home</button></a>
+                <a href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
+                <a href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
+           </div>
+       </div>
         <div class="container">
             <div class="block">
                     <form method="post">
