@@ -8,7 +8,18 @@ class Inventory_manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM medicine WHERE deleted=0";
+        $query = "SELECT * FROM medicine WHERE deleted='0'";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function view_vendors(){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "SELECT * FROM vendor WHERE deleted='0'";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -33,6 +44,24 @@ class Inventory_manage extends Models{
         return $result;
     }
 
+    public function search_vendor($name){
+        $connect = new Database;
+        $pdo = $connect->connect();
+
+        if($name != null){
+            $name = $name.'%';
+        }
+        else{
+            $name = '';
+        }
+
+        $query = "SELECT * FROM vendor WHERE name LIKE ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$name]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function add_medicine($name,$vendor, $description,$price,$quantity){
         $connect = new Database();
         $pdo = $connect->connect();
@@ -40,6 +69,16 @@ class Inventory_manage extends Models{
         $query = "INSERT INTO `medicine`(name,description,vendor,unit_price,quantity) VALUES(?,?,?,?,?)";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$name,$vendor, $description,$price,$quantity]);
+        return $status;
+    }
+
+    public function add_vendor($name,$address, $contact,$email){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "INSERT INTO `vendor`(name,address,contact,email) VALUES(?,?,?,?)";
+        $stmt = $pdo->prepare($query);
+        $status = $stmt->execute([$name,$address, $contact,$email]);
         return $status;
     }
 

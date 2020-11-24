@@ -68,6 +68,20 @@
             echo json_encode($result);
         }
 
+        public function add_vendor(){
+            $model= $this->load('models','Inventory_manage');
+
+            $name = $_POST['name'];
+            $address = $_POST['address'];
+            $contact = $_POST['contact'];
+            $email = $_POST['email'];
+
+            $result = $model->add_vendor($name,$address,$contact,$email);
+
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
         public function update(){
             if($_GET['update'] == 'medicine'){
                 $id = $_GET['id'];
@@ -122,6 +136,14 @@
             $id = $_POST['id'];
             $name = $_POST['name'];
             $result = $model->search($id,$name);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
+        public function search_vendor(){
+            $model = $this->load('models','Inventory_manage');
+            $name = $_POST['name'];
+            $result = $model->search($name);
             header('Content-Type: application/json');
             echo json_encode($result);
         }
