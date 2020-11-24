@@ -489,12 +489,12 @@ button:focus{
 .submit-btn {
     width: 100%;
     padding: 10px 20px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bolder;
     border: 0px;
     position: relative;
-    background: #000f3f;
-    color: #fff;
+    background: #7977fd;
+    color: rgb(3, 0, 31);
     cursor: pointer;
     border-radius: 3px;
     outline: none;
@@ -505,8 +505,9 @@ button:focus{
 }
 
 .block .form-box .title {
+    font-family:"arial,helvetica,sans-serif";
     width: 600px;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
     margin-bottom: 25px;
     color: #ff0055;
@@ -524,15 +525,17 @@ button:focus{
 }
 
 .block>form>.form-box>.label {
-    font-family: 'Montserrat', sans-serif;
+    font-family: "Lucida Console", Courier, monospace;
+    color: #6e5c91;
     align-self: flex-start;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: bold;
     width: 180px;
 }
 
 .block>form>.form-box>.input>input {
-    border-color: 1px solid #d5dbd9;
+    border-color:transparent;
+    border-bottom:2px solid #6e8edf;
     background-color: #e6e3e321;
     border-radius: 3px;
     width: 300px;
@@ -543,6 +546,8 @@ button:focus{
     margin: 10px 20px 0px 20px;
     padding-left: 30px;
     background-color: #e6e3e321;
+    border-color:transparent;
+    border-bottom:2px solid #6e8edf;
     border-radius: 3px;
     width: 340px;
     height: 30px;

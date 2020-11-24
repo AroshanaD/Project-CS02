@@ -9,7 +9,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
     <body style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
-    <div class="main-nav" style="background:#98B5FF">
+    <div class="main-nav" style="background: #9d9bfd">
             <div></div>
             <div></div>
            <div>MedCaid Hospitals</div>
