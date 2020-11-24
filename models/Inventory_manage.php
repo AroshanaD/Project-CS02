@@ -4,7 +4,7 @@ class Inventory_manage extends Models{
 
     }
 
-    public function view(){
+    public function view_medicine(){
         $connect = new Database();
         $pdo = $connect->connect();
 

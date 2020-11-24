@@ -9,12 +9,30 @@
 
         public function view(){
             $this->load('views','header');
-            $this->load('views','view_inventory');
+            if(isset($_GET['view'])){
+                if($_GET['view'] == 'vendor'){
+                    $this->load('views','view_vendors');
+                }
+                else{
+                    $this->load('views','view_inventory');
+                }
+            }
+            else{
+                $this->load('views','view_inventory');
+            }
         }
 
-        public function get_view(){
+        public function get_medicine(){
             $model= $this->load('models','Inventory_manage');
-            $result = $model->view();
+            $result = $model->view_medicine();
+            
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
+        public function get_vendors(){
+            $model= $this->load('models','Inventory_manage');
+            $result = $model->view_vendors();
             
             header('Content-Type: application/json');
             echo json_encode($result);
@@ -50,7 +68,7 @@
             echo json_encode($result);
         }
 
-        public function update(){
+        public function update_medicine(){
             $id = $_GET['id'];
             $model= $this->load('models','Inventory_manage');
             $result= $model->displayById($id);
@@ -76,7 +94,7 @@
             }
         }
 
-        public function delete(){
+        public function delete_medicine(){
             $id = $_GET['id'];
             $model= $this->load('models','Inventory_manage');
             $result= $model->displayById($id);
@@ -97,7 +115,7 @@
             $this->load('views','create_bill');
         }
 
-        public function search(){
+        public function search_medicine(){
             $model = $this->load('models','Inventory_manage');
             $id = $_POST['id'];
             $name = $_POST['name'];
