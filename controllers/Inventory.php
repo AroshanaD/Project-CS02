@@ -22,20 +22,32 @@
 
         public function add(){
             $this->load('views','header');
-            $this->load('views','add_inventory');
-            $model= $this->load('models','Inventory_manage');
-            if(isset($_POST['addMedicine'])){
-                $medId = $_POST['med_id'];
-                $medName = $_POST['med_name'];
-                $medVendor = $_POST['med_vendor'];
-                $description = $_POST['med_description'];
-                $price = $_POST['med_price'];
-                $quantity = $_POST['med_quantity'];
-
-                $user = $model->add($medId,$medName,$medVendor, $description,$price,$quantity);
-                
-
+            if(isset($_GET['add'])){
+                if($_GET['add'] == 'vendor'){
+                    $this->load('views','add_vendor');
+                }
+                else{
+                    $this->load('views','add_inventory');
+                }
             }
+            else{
+                $this->load('views','add_inventory');
+            }
+        }
+
+        public function add_medicine(){
+            $model= $this->load('models','Inventory_manage');
+
+            $name = $_POST['name'];
+            $vendor = $_POST['vendor'];
+            $description = $_POST['description'];
+            $price = $_POST['cost'];
+            $quantity = $_POST['quantity'];
+
+            $result = $model->add_medicine($name,$description,$vendor,$price,$quantity);
+
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function update(){
