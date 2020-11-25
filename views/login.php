@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
-    <body style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
+    <body style="background:white;">
     <div class="main-nav" style="background: #a48df5">
             <div></div>
             <div></div>
@@ -20,9 +20,10 @@
            </div>
        </div>
         <div class="container">
-            <div class="block">
+            <div class="contact-box">
+            <div class="left"></div>
                     <form method="post">
-                        <div class="form-box">
+                        <div class="right">
                             <div class="title">Login</div>
                             <div class="label">
                                 <label for="userid">User ID</label>
@@ -35,12 +36,11 @@
                             </div>
                             <div class="input">
                                 <input type="password" name="password" required>
-                            </div>
+                            </div></br>
                             <div><a href="#">Forget password?</a></div>
-                            <div><a href=<?php echo Router::site_url().'/register'?>>Not already an user</a></div>
-                        
-                            <div class="btn-area">
-                                <button type="submit" name="login-submit" class = "submit-btn" >Login</button>
+                            <div><a href=<?php echo Router::site_url().'/register'?>>Not already an user</a></div></br>
+                            <div>
+                                <button type="submit" name="login-submit" class = "btn" >LOGIN</button>
                             </div>
                         </div>
                     </form>
