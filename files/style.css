@@ -483,20 +483,20 @@ button:focus{
     display: flex;
     width: inherit;
     margin: 10px 10px 0px 15px;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 .submit-btn {
-    width: 100%;
+    width: 20%;
     padding: 10px 20px;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: bolder;
     border: 0px;
     position: relative;
-    background: #7977fd;
-    color: rgb(3, 0, 31);
+    background: #7562b6;
+    color: rgb(255, 255, 255);
     cursor: pointer;
-    border-radius: 3px;
+    border-radius: 10px;
     outline: none;
 }
 
@@ -525,7 +525,7 @@ button:focus{
 }
 
 .block>form>.form-box>.label {
-    font-family: "Lucida Console", Courier, monospace;
+    font-family: 'Lato' ,sans-serif;
     color: #6e5c91;
     align-self: flex-start;
     font-size: 15px;
