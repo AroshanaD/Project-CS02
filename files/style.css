@@ -1218,7 +1218,7 @@ select{
 }
 
 .contact-box{
-	max-width: 900px;
+	max-width: 1000px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
@@ -1244,7 +1244,7 @@ select{
     border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
     background-color: white;
-    width: 290px;
+    width: 400px;
     font-size: 17px;
     font-weight: bold;
 }
@@ -1253,7 +1253,7 @@ select{
     border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
 	background-color: white;
-    width: 300px;
+    width: 400px;
     height: 30px;
     font-weight: bold;
 }
@@ -1279,7 +1279,7 @@ select{
 }
 
 .right{
-    width: 300px;
+    width: 450px;
     padding: 25px 40px;
     background-color: #69f0ae;
 }
@@ -1298,7 +1298,7 @@ select{
 }
 
 .btn{
-	width: 300px;
+	width: 410px;
 	padding: 0.5rem 1rem;
 	background-color: white;
 	color: #2f2e41;
@@ -1309,7 +1309,7 @@ select{
 	cursor: pointer;
     transition: .3s;
     box-shadow: 0px 0px 19px 5px rgba(0,0,0,0.19);
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 .btn:hover{
@@ -1317,9 +1317,9 @@ select{
 }
 
 #login-ref{
-    color : white;
-    font-size: 14px;
-    padding: 5px;
+    color : black;
+    font-size: 18px;
+    padding: 10px;
 }
 
 @media screen and (max-width: 880px){
@@ -1345,10 +1345,11 @@ select{
 #task{
     flex-basis: 80%;
     margin: 10px;
+    height: max-content;
 }
 
 .s-title{
-    height: 70px;
+    height: 110px;
     position: relative;
     font-family:'Quicksand', sans-serif;
     font-size: 1.2rem;
