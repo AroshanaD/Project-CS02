@@ -2,11 +2,12 @@
 <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
 <script type="text/javascript" src="/project-cs02/files/js/medicine_validate.js"></script>
 
-    <div style="background-image: linear-gradient(to left, oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_medical_care_movn.png'?>);background-repeat: no-repeat">
+    <div style="background:white;">
         <div class="container">
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_medicine.svg' ?>)"></div>
                     <form action=<?php echo Router::site_url()."/Inventory/add" ?> method="post">
-                       <div class="form-box">
+                       <div class="right">
                            <div class="title">Add Medicine</div>
                             <div class="label">
                                 <label for="med_name" id="name_f">Medicine</label>
@@ -40,7 +41,7 @@
                             <div class="input">
                                 <input type="number" name="med_quantity" id="quantity" required>
                             </div>
-                            <div class="btn-area"><input type="submit" name="addMedicine" value="Add" class="submit-btn"></div>
+                            <div><input type="submit" name="addMedicine" value="Add" class="btn"></div>
                             <div id="form-message"> </div>
                         </div >
                     </form>

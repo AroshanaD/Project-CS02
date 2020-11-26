@@ -1,11 +1,12 @@
 
     <script type="text/javascript" src="/project-cs02/files/js/autofill_spec.js"></script>
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_doctor_kw5l.png'?>); background-repeat: no-repeat;">
+    <div style="background:white;">
         <div class="container">
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_doctor.svg' ?>)"></div>
                     <form action ="#" method = "POST">
-                       <div class="form-box">
+                       <div class="right">
                            <div class="title">ADD DOCTORS</div>
                             <div class="label">
                                 <label for="id">Id</label>
@@ -63,7 +64,7 @@
                             <div class="input">
                                 <input type="text" name="fee" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div><input type="submit" value="Add" class="btn"></div>
                         </div >
                     </form>
                 </div>
