@@ -21,24 +21,24 @@
        </div>
         <div class="container">
             <div class="contact-box">
-            <div class="left"></div>
+            <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/login.svg' ?>)"></div>
                     <form method="post">
                         <div class="right">
                             <div class="title">Login</div>
                             <div class="label">
-                                <label for="userid">User ID</label>
+                                <label for="userid">USER ID</label>
                             </div>
                             <div class="input">
                                 <input type="text" name="userid" required>
                             </div>
                             <div class="label">
-                                <label for="password">Password</label>
+                                <label for="password">PASSWORD</label>
                             </div>
                             <div class="input">
                                 <input type="password" name="password" required>
                             </div></br>
-                            <div><a href="#">Forget password?</a></div>
-                            <div><a href=<?php echo Router::site_url().'/register'?>>Not already an user</a></div></br>
+                            <div style="text-align:left"><a href="#" id="login-ref">Forget password?</a>
+                            <a href=<?php echo Router::site_url().'/register'?> id="login-ref">Not already an user</a></div></br>
                             <div>
                                 <button type="submit" name="login-submit" class = "btn" >LOGIN</button>
                             </div>
