@@ -25,7 +25,7 @@ $(document).ready(function(){
 function render_table(data){
     $("table").empty();
 
-    var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`),
+    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Name"),
     $(`<td>`).text("Address"),$(`<td>`).text("Contact"),
@@ -36,8 +36,8 @@ function render_table(data){
 
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'];
-        var update = "<a href=../inventory/update_vendor?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
-        var dele = "<a href=../inventory/delete_vendor?id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
+        var update = "<a href=../inventory/update_vendor?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../inventory/delete_vendor?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
 
         var row_id = data[i]['id'];
         var row_id = row_id.concat("')");
@@ -65,7 +65,7 @@ function selectfunc(i,row_id){
     }
     else{
         if(i%2==0){
-            $(row_id).css("background-color","#b8cac7");
+            $(row_id).css("background-color","#69f0ae");
         }
         else{
             $(row_id).css("background-color","white");

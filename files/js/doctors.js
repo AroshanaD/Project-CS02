@@ -27,7 +27,7 @@ $(document).ready(function(){
 function render_details(details){
 
     $("table").empty();
-    var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`),
+    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Name"),
     $(`<td>`).text("Specialization"),$(`<td>`).text("Charges"),
@@ -40,8 +40,8 @@ function render_details(details){
 
     for(var i=0; i<details.length; i++){
         var get_details = details[i]['id'];
-        var update = "<a href=../doctors/update?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
-        var dele = "<a href=../doctors/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
+        var update = "<a href=../doctors/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../doctors/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
 
         var row_id = details[i]['id'];
         var row_id = row_id.concat("')");
@@ -71,7 +71,7 @@ function selectfunc(i,row_id){
     }
     else{
         if(i%2==0){
-            $(row_id).css("background-color","#b8cac7");
+            $(row_id).css("background-color","#69f0ae");
         }
         else{
             $(row_id).css("background-color","white");

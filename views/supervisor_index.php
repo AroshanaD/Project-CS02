@@ -11,8 +11,7 @@
             </div>
             <div class="taskboard">
                 <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/user_icon.svg'?>)">
-                </div>
+                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/user_icon.svg'?>)"></div>
                 <div class="right">
                     <div class="s-title">
                         Manage Users
@@ -25,12 +24,11 @@
                             <li><a href=<?php echo Router::site_url()."/doctors/view" ?>>View Doctor</a></li>
                         </ul>
                     </div>
-                    </div>
                 </div>
-                
+                </div>
+
                 <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/inventory.svg'?>)">
-                </div>
+                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/inventory.svg'?>)"></div>
                 <div class="right">
                     <div class="s-title">
                         Manage Inventory
@@ -43,7 +41,8 @@
                             <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Vendors</a></li>
                         </ul>
                     </div>
-                    </div>
+                </div>
+                </div>
 
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/schedule.svg'?>)">
