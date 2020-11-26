@@ -91,8 +91,9 @@ button:focus{
     position: relative;
     width: 100%;
     display: flex;
+    flex-wrap: wrap;
     padding-top: 50px;
-    justify-content: center;
+    justify-content: space-around;
     margin: 0;
 }
 
@@ -226,21 +227,14 @@ button:focus{
   }
 
 .field,.val_field{
-    padding-left: 30px;
-    height: 30px;
     font-family: 'Montserrat', sans-serif;
-    color: #000000;
-    font-size: 16px;
-    font-weight: bold;
-}
-
-.field{
-    margin-left: 20px;
-    flex-basis: 25%;
+    color: black;
+    font-size: 20px;
+    text-align: left;
 }
 
 .val_field{
-    flex-basis: 50%;
+    margin-bottom: 20px;
 }
 
 @media (max-width:768px) {
@@ -262,13 +256,14 @@ button:focus{
 }
 
 .taskboard {
+    width: 50%;
     display: flex;
     flex-wrap: wrap;
-    background-color: rgba(13, 0, 130, 0.7);
     margin-top: 60px;
     padding: 30px 0 30px 0;
     height: fit-content;
     justify-content: space-around;
+    margin: 20px;
 }
 
 .task-card {
@@ -310,7 +305,7 @@ button:focus{
     text-align: center;
     margin-right: 40px;
     padding: 5px;
-    background-color: oldlace;
+    background-color: white;
 }
 
 .dropdown-content>ul>li>a {
@@ -323,15 +318,19 @@ button:focus{
 }
 
 .dropdown-content>ul>li:hover a {
-    color: oldlace;
+    color: white;
 }
 
 .task-card:hover p{
     display:none;
 }
 
-.task-card:hover .dropdown-content {
+#task:hover .dropdown-content {
     display: block;
+}
+
+#task:hover .s-title{
+    display: none;
 }
 
 .dropdown {
@@ -1219,7 +1218,7 @@ select{
 }
 
 .contact-box{
-	max-width: 850px;
+	max-width: 900px;
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	justify-content: center;
@@ -1233,7 +1232,7 @@ select{
 
 .label {
     font-family: 'Quicksand', sans-serif;
-    color: white;
+    color: black;
     text-align: left;
     font-size: 15px;
     font-weight: bold;
@@ -1266,7 +1265,7 @@ select{
     font-family:'Quicksand', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: white;
+    color: black;
     text-transform: uppercase;
     text-align: center;
     border: 2px white solid;
@@ -1282,7 +1281,7 @@ select{
 .right{
     width: 300px;
     padding: 25px 40px;
-    background-color: #2f2e41;
+    background-color: #69f0ae;
 }
 
 .container:after{
@@ -1330,4 +1329,31 @@ select{
 	.left{
 		height: 200px;
 	}
+}
+
+#profile-board{
+    border-radius: 50px;
+    flex-basis: 40%;
+}
+
+#profile{
+    width: 400px;
+    font-size: 1.4rem;
+    margin: 30px;
+}
+
+#task{
+    flex-basis: 80%;
+    margin: 10px;
+}
+
+.s-title{
+    height: 70px;
+    position: relative;
+    font-family:'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
 }
