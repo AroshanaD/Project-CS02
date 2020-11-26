@@ -7,11 +7,11 @@
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
     </head>
    
-    <body style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
+    <body style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
     <div class ="container">
     <div class=container-t>
 
-    <div class="topic">View Doctor Schedule</div>
+    <div class="topic1">View Doctor Schedule</div>
     
             <div class = "search-bar">
                 

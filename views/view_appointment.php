@@ -9,10 +9,10 @@
         
     </head>
     <body>
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
+    <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
         <div class ="container">
             <div class = "container-t">
-                <div class="topic">View Appointments</div>
+                <div class="topic1">View Appointments</div>
                 <div class = "search-bar">
                 <div class="site-search"> 
                         <input type="text" id="id" placeholder="Appointment Id" name="id"> 
