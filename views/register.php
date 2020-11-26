@@ -25,7 +25,7 @@
 
         <div class="container">
             <div class="contact-box">
-            <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_unlock_24mb.svg' ?>)"></div>
+            <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/change_password.svg' ?>)"></div>
                     <form action=<?php echo Router::site_url()."/register/validate" ?> method="post">
                         <div class="right">
                             <div class="title">User Registration</div>
