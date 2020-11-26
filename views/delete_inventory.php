@@ -1,12 +1,13 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-            <div class="block">
+            <div class="contact-box">
+            <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/inventory.svg' ?>)"></div>
                 <?php if(!empty($_POST['medicine'])):?>
                     <?php foreach($_POST['medicine'] as $record):?>
                     <form  method = "POST">
                         <?php $_POST['id']=$record['id'] ?>
-                        <div class="form-box">
+                        <div class="right">
                             <div class="title">Delete Inventory</div>
                             <div class="label">
                                 <label for="med_id">Medicine Id</label>
@@ -45,8 +46,8 @@
                                 <input type="text" name="med_quantity" value="<?php echo $record['quantity'];?>" disabled>
                             </div>
                             
-                            <div class="btn-area">
-                                <input type="submit" value="Delete" class="submit-btn" name="deleteMedicine">
+                            <div>
+                                <input type="submit" value="Delete" class="btn" name="deleteMedicine">
                             </div>
                         </div>    
                     </form>

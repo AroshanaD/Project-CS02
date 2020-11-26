@@ -1,10 +1,11 @@
 <script rel="text/javascript" src="/project-cs02/files/js/labtest_validate.js"></script>
 <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_medical_care_movn.png'?>);background-repeat:no-repeat">   
+    <div style="background:white;">   
         <div class="container">
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab_test.svg' ?>)"></div>
                     <form method="POST">
-                       <div class="form-box">
+                       <div class="right">
                            <div class="title">Add Lab Test</div>
                             <div class="label">
                                 <label for="test_name" id="name_f">Test name</label>
@@ -24,7 +25,7 @@
                             <div class="input">
                                 <input type="num" id="cost" name="test_price" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Add" name="Add" class="submit-btn"></div>
+                            <div><input type="submit" value="Add" name="Add" class="btn"></div>
                             <div id="form-message"></div>
                         </div >
                     </form>
