@@ -44,7 +44,6 @@
                         </ul>
                     </div>
                     </div>
-                </div>
 
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/schedule.svg'?>)">
