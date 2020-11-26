@@ -1,9 +1,10 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">    
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/change_password.svg' ?>)"></div>
                     <form action ="#" method = "POST">
-                        <div class="form-box">
+                        <div class="right">
                             <div class="title">CHANGE PASSWORD</div>
                             <div class="label">
                                 <label for="phar_oldpw">Enter Old Password</label>
@@ -24,8 +25,8 @@
                             <input type="password" name="re-password" minlength="8" maxlength="12" required>
                             </div>
                             
-                            <div class="btn-area">
-                                <input type="submit" value="Confirm" class="submit-btn">
+                            <div>
+                                <input type="submit" value="Confirm" class="btn">
                             </div>
                             <div>
                                 <br><a href='<?php echo Router::site_url()."/User/change_details"?>'>Change Details?</a>

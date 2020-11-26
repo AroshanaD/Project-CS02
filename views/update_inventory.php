@@ -1,11 +1,12 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-            <div class="block">
+            <div class="contact-box">
+            <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/inventory.svg' ?>)"></div>
             <?php if(!empty($_POST['medicine'])):?>
                 <?php foreach($_POST['medicine'] as $record):?>
                     <form method="post">
-                        <div class="form-box">
+                        <div class="right">
                             <div class="title">Update Inventory</div>
                             <div class="label">
                                 <label for="med_id">Medicine Id</label>
@@ -45,7 +46,7 @@
                             </div>
                             
                             <div class="btn-area">
-                                <input type="submit" value="Update" class="submit-btn" name="Update">
+                                <input type="submit" value="Update" class="btn" name="Update">
                             </div>
                         </div>    
                     </form>
