@@ -10,6 +10,7 @@
 
         public function login(){
             $this->load('views','login');
+            $this->load('views','footer');
 
             $model = $this->load('models','Verify_login');
             if(isset($_POST['login-submit'])){

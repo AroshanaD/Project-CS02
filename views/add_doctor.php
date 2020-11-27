@@ -5,7 +5,7 @@
         <div class="container">
                 <div class="contact-box">
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_doctor.svg' ?>)"></div>
-                    <form action ="#" method = "POST">
+                    <form method = "POST">
                        <div class="right">
                            <div class="title">ADD DOCTORS</div>
                             <div class="label">

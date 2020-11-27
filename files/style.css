@@ -330,7 +330,11 @@ button:focus {
     display: block;
 }
 
-#task:hover .s-title {
+#task:hover .s-title{
+    display: none;
+}
+
+#task:hover .m-title{
     display: none;
 }
 
@@ -1120,6 +1124,7 @@ table>tbody {
 .calendar {
     width: 100%;
     background-color: white;
+    margin: 0 3% 0 3%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -1136,7 +1141,7 @@ table>tbody {
 }
 
 [class*='calendar-'] {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     font-weight: bold;
     margin-bottom: 2px;
 }
@@ -1144,7 +1149,7 @@ table>tbody {
 @media screen and (max-width:800px) {
     .calendar-day,
     .calendar-doctor {
-        font-size: 2vw;
+        font-size: 1.4vw;
         width: 10vw;
     }
 }
@@ -1152,7 +1157,7 @@ table>tbody {
 @media screen and (min-width:800px) {
     .calendar-day,
     .calendar-doctor {
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         width: 11vw;
     }
 }
@@ -1160,22 +1165,19 @@ table>tbody {
 .calendar-day {
     margin-right: 2px;
     padding: 4px;
-    background-color: #000f3f;
+    background-color: #1d1d1f;
     color: white;
 }
 
 .calendar-doctor {
     margin-right: 2px;
     padding: 4px;
-    font-size: 16px;
+    font-size: 1vw;
 }
 
-.calendar-doctor:nth-child(even) {
-    background-color: #b8cac7;
-}
-
-.calendar-doctor:nth-child(odd) {
-    background-color: white;
+.calendar-doctor{
+    background-color: #69f0ae;
+    min-height: 70px;
 }
 
 table {
@@ -1400,6 +1402,17 @@ select {
 
 .s-title {
     height: 110px;
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.m-title {
+    height: 80px;
     position: relative;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;

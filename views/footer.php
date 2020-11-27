@@ -7,8 +7,8 @@
     position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%
-    margin: 20px;
+    width: 100%;
+    z-index: -1;
     justify-content: space-around;
     background-color: rgb(39, 39, 39);
     font-family: 'Nunito',sans-serif;
