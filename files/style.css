@@ -1201,6 +1201,7 @@ th {
 #head_row {
     background-color: #0c0c0c;
     color: white;
+    font-weight: bold;
 }
 
 tr:nth-child(odd) {
