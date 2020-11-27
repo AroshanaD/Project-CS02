@@ -4,13 +4,13 @@
 
         }
 
-        public function add($id,$name,$price,$description){
+        public function add($name,$cost,$description){
             $connect = new Database();
             $pdo = $connect->connect();
-            $query="insert into test values('$id','$name','$price','$description',0)";
+            $query="INSERT INTO `test`(`name`,`unit_cost`,`description`) VALUES(?,?,?)";
             $stmt = $pdo->prepare($query);
-            $status=$stmt->execute();
-                
+            $status=$stmt->execute([$name,$cost,$description]);
+            return $status;
         }
 
         public function view(){

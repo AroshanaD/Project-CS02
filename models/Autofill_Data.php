@@ -17,4 +17,16 @@
             
             return $result;
         }
+
+        public function vendors(){
+            $connection = new Database;
+            $pdo = $connection->connect();
+
+            $query = "SELECT * FROM vendor ORDER BY name ASC";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $result = $stmt->fetchAll();
+            
+            return $result;
+        }
     }

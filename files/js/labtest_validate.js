@@ -21,10 +21,24 @@ $(document).ready(function(){
         if(text_val("name",name) == false){valid = false;}
         if(text_val("description",description) == false){valid = false;}
 
-        //console.log(id);
-
         if(valid == true){
-            $(this).unbind('submit').submit();
+            //console.log("jfna");
+            $.ajax({
+                url: '../../index.php/labtest/add_test',
+                data: {name:name, description:description, cost:cost},
+                type: 'post',
+                success:function(data){
+                    if(data == true){
+                        id_list.forEach(element => {
+                            $(element).val("");
+                        });
+                        $("#form-message").text("Successfully Added Test");
+                    }
+                    else{
+                        $("#form-message").text("Something Went Wrong");
+                    }
+                }
+            })
         }
     })
 })

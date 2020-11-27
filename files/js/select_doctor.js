@@ -1,0 +1,66 @@
+$(document).ready(function(){
+    $.ajax({
+        url: '../../index.php/appointment/doctor_select',
+        data: {},
+        type: 'post',
+        success:function(data){
+            var details = data;
+            render_details(details);
+        }
+    })
+
+})
+
+function render_details(details){
+
+    $("table").empty();
+    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
+    $(`<td>`).text("No"),
+    $(`<td>`).text("Specialization"),
+    $(`<td>`).text("Qualification"),
+    $(`<td>`).text("Charges"),
+    $(`<td>`).append("Select"));
+    $("table").append(header);
+
+
+    for(var i=0; i<details.length; i++){
+        var get_details = details[i]['id'];
+        var update = "<a href=../doctors/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../doctors/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
+
+        var row_id = details[i]['id'];
+        var row_id = row_id.concat("')");
+        var func = "selectfunc(".concat(i+1,",","'",row_id);
+
+        var row = $(`<tr id=${details[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
+        $(`<td>`).text(i+1),
+        $(`<td>`).text(details[i].id),$(`<td>`).text(details[i].f_name.concat(" ",details[i].l_name)),
+        $(`<td>`).text(details[i].specialization),$(`<td>`).text(details[i].fee),
+        $(`<td>`).text(details[i].address),$(`<td>`).text(details[i].email),
+        $(`<td>`).text(details[i].contact_no),
+        $(`<td>`).append(update),
+        $(`<td>`).append(dele));
+        $("table").append(row);
+    }
+
+}
+
+function selectfunc(i,row_id){
+    //console.log(row_id);
+    var idd = "#".concat(i);
+    var row_id = "#".concat(row_id);
+    //console.log(row_id);
+    if($(idd).is(':checked')){
+        //console.log($(idd).val());
+        $(row_id).css("background-color","red");
+    }
+    else{
+        if(i%2==0){
+            $(row_id).css("background-color","#69f0ae");
+        }
+        else{
+            $(row_id).css("background-color","white");
+        }
+    }
+    
+}

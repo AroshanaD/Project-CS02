@@ -1,16 +1,28 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/filesicons/undraw_visual_data_b1wx.png'?>);background-repeat:no-repeat">
-        <div class="container-small">Weekly statistics</div>
-        <div class="statistic-card">
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="chart_div"></div>          
+<div class="title">Weekly statistics</div>
+<div class="contact-box" id="stat-card">
+    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/statistics.svg' ?>)"></div>
+    <div class="right">
+    <div class="container">
+        <div class="stat">
+            <div class="s-title"> Number of Appointments Last Week </div>
+            <div class="statistic-card">
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <div id="chart_div"></div>          
+            </div>
         </div>
-        <div class="statistic-card">
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="piechart-1"></div>
-            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-            <div id="piechart-2"></div>
+        <div class="stat">
+            <div class="s-title">Appointments on Gender Basis and Platform Basis</div>
+            <div class="statistic-card">
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <div id="piechart-1"></div>
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <div id="piechart-2"></div>
+            </div>
         </div>
+    </div>
+    </div>
+</div>
 
         <script>
         google.charts.load('current', {packages: ['corechart', 'line']});
@@ -33,7 +45,7 @@
                 vAxis: {
                 title: 'No.of Appointments'
                 },
-                backgroundColor: '#f1f8e9'
+                backgroundColor: 'white'
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
