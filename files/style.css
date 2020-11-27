@@ -120,6 +120,7 @@ button:focus {
     font-weight: lighter;
     opacity: 1;
     text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .button-medium:hover {
@@ -188,7 +189,7 @@ button:focus {
     color: #c70000;
 }
 
-.block>.profile-card-details {
+.block > .profile-card-details {
     display: flex;
     flex-wrap: wrap;
     width: 600px;
@@ -452,6 +453,16 @@ button:focus {
     font-family: "arial,helvetica,sans-serif";
     width: 600px;
     font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ff0055;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.title{
+    width: auto;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
     color: #ff0055;

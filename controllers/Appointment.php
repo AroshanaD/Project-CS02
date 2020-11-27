@@ -8,8 +8,12 @@
 
         public function index(){
             $this->load('views','header');
-            $this->search_doctor();
-            $this->load('views','footer');
+            if($_SESSION['user_cat'] == 'patient'){
+                $this->search_doctor();
+            }
+            if($_SESSION['user_cat'] == 'receptionist'){
+                $this->onpremise();
+            }
         }
 
         public function search_doctor(){
@@ -48,11 +52,19 @@
             $this->load('views','footer');
         }
 
-        public function view_appointment(){
+        public function onpremise(){
             $this->load('views','header');
-            $this->load('views','view_appointment');
-            $this->load('views','footer');
+            $this->load('views','appointment_onpremise');
         }
 
+        public function get_doctors(){
+            $model = $this->load('models','Appointment_Data');
+            $specialization = $_POST['specialization'];
+            $name = $_POST['name'];
+
+            $result = $model->get_doctors($specialization, $name);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
         
     }

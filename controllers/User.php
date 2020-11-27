@@ -19,6 +19,8 @@
                 $user_cat = substr($userid,0,1);
                 switch($user_cat){
                     case "1": $user_cat = 'patient'; break;
+                    case "2": $user_cat = 'patient'; break;
+                    case "9": $user_cat = 'patient'; break;
                     case "D": $user_cat = 'doctor'; break;
                     case "R": $user_cat = 'receptionist'; break;
                     case "L": $user_cat = 'lab_technician'; break;
