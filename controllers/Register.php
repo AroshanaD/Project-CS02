@@ -54,10 +54,14 @@
                 $model = $this->load('models','Register_User');
                 $status = $model->confirm($_GET['auth_key']);
                 if($status == TRUE){
-                    header("Location: ../user/login?successfully registered please login");
+                    /*header("Location: ../user/login?successfully registered please login");*/
+                    $URL= Router::site_url()."/user/login?successfully registered please login";
+                    echo "<script>location.href='$URL'</script>";
                 }
                 else{
-                    header("Location: ../user/login?confirmation failed");
+                    /*header("Location: ../user/login?confirmation failed");*/
+                    $URL= Router::site_url()."/user/login?confirmation failed";
+                    echo "<script>location.href='$URL'</script>";
                 }
             }
         }

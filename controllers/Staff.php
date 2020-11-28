@@ -196,10 +196,14 @@
                 $result = $model->delete($category,$id);
 
                 if($result == TRUE){
-                    header("Location: ../staff/view?successfully deleted");
+                    /*header("Location: ../staff/view?successfully deleted");*/
+                    $URL= Router::site_url()."/staff/view?successfully deleted";
+                    echo "<script>location.href='$URL'</script>";
                 }
                 else{
-                    header("Location: ../staff/view?something went wrong");
+                    /*header("Location: ../staff/view?something went wrong");*/
+                    $URL= Router::site_url()."/staff/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>";
                 }
             }
         }

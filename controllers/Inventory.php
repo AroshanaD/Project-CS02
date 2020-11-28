@@ -121,8 +121,11 @@
             if(isset($_POST['deleteMedicine'])){
                 $medId = $_POST['id'];
                 $user = $model->delete($medId);
-                header("Location: ../inventory/view?successfully deleted");
-                $this->view();
+                /*header("Location: ../inventory/view?successfully deleted");
+                $this->view();*/
+                $URL= Router::site_url()."/inventory/view?successfully deleted";
+                echo "<script>location.href='$URL'</script>";
+
             }
         }
 
