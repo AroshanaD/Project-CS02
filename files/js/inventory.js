@@ -25,7 +25,7 @@ $(document).ready(function(){
 function render_table(data){
     $("table").empty();
 
-    var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`),
+    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Name"),
     $(`<td>`).text("Vendor"),$(`<td>`).text("Description"),
@@ -36,8 +36,8 @@ function render_table(data){
 
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'];
-        var update = "<a href=../inventory/update?update=medicine&id=".concat(get_details,"><button class='tb-btn'>Update</a>");
-        var dele = "<a href=../inventory/delete?delete=medicine&id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
+        var update = "<a href=../inventory/update?update=medicine&id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../inventory/delete?delete=medicine&id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
 
         var row_id = data[i]['id'];
         var row_id = (row_id.toString()).concat("')");
@@ -46,7 +46,7 @@ function render_table(data){
         var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
         $(`<td>`).text(i+1),
         $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].name),
-        $(`<td>`).text(data[i].vendor),$(`<td>`).text(data[i].description),
+        $(`<td id=${data[i].v_id}>`).text(data[i].v_name),$(`<td>`).text(data[i].description),
         $(`<td>`).text(data[i].unit_price),$(`<td>`).text(data[i].quantity),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
@@ -65,7 +65,7 @@ function selectfunc(i,row_id){
     }
     else{
         if(i%2==0){
-            $(row_id).css("background-color","#b8cac7");
+            $(row_id).css("background-color","#69f0ae");
         }
         else{
             $(row_id).css("background-color","white");

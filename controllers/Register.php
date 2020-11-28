@@ -15,6 +15,8 @@
             $password = hash('SHA256',$password);
             $verification_key = $id.$password;
             $verification_key = hash('SHA256',$verification_key);
+            $fname = ucfirst($fname);
+            $lname = ucfirst($lname);
             $status = $model->add($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password,$verification_key);
 
             if($status == TRUE){

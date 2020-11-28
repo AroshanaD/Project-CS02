@@ -10,6 +10,7 @@
 
         public function login(){
             $this->load('views','login');
+            $this->load('views','footer');
 
             $model = $this->load('models','Verify_login');
             if(isset($_POST['login-submit'])){
@@ -18,6 +19,8 @@
                 $user_cat = substr($userid,0,1);
                 switch($user_cat){
                     case "1": $user_cat = 'patient'; break;
+                    case "2": $user_cat = 'patient'; break;
+                    case "9": $user_cat = 'patient'; break;
                     case "D": $user_cat = 'doctor'; break;
                     case "R": $user_cat = 'receptionist'; break;
                     case "L": $user_cat = 'lab_technician'; break;
@@ -54,6 +57,7 @@
             if(isset($_SESSION['id'])){
                 $this->load('views','header');
                 $this->load('views',$_SESSION['user_cat']."_index");
+                $this->load('views','footer');
             }
             else{
                 header('Location:/project-cs02/index.php/user/login?please login');
@@ -64,6 +68,7 @@
             if(isset($_SESSION['id'])){
                 $this->load('views','header');
                 $this->load('views','change_password');
+                $this->load('views','footer');
             }
             else{
                 header('Location:/project-cs02/index.php/user/login?please login');
@@ -74,6 +79,7 @@
             if(isset($_SESSION['id'])){
                 $this->load('views','header');
                 $this->load('views','change_details');
+                $this->load('views','footer');
             }
             else{
                 header('Location:/project-cs02/index.php/user/login?please login');

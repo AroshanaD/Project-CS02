@@ -6,7 +6,7 @@
     <div class ="container">
         <div class = "container-t">
             <div class="topic1">View Doctor</div>
-            <div class="site-search"> 
+            <div class="search-bar"> 
                 <select name="specialization" id="search_spec">
                     <option value="" disabled selected hidden>Select Specialization</option>
                     <option value="" >Any Specialization</option>
