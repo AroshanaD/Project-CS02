@@ -1,6 +1,6 @@
 
     <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
-    <script src=<?php echo Router::base_url().'/files/js/doctors.js'?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url().'/files/js/select_doctor.js'?> type="text/javascript"></script>
 
     <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
     <div class ="container">

@@ -1,11 +1,17 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/appointment/doctor_select',
+        url: '../../index.php/appointment/available_doctors',
         data: {},
         type: 'post',
         success:function(data){
             var details = data;
-            render_details(details);
+            if(data.length == 0){
+                $("table").remove();
+                $(".container-t").append(`<div id=${"table-message"}>`.concat("No Doctors Available"));
+            }
+            else{
+                render_details(details);
+            }
         }
     })
 
@@ -14,53 +20,44 @@ $(document).ready(function(){
 function render_details(details){
 
     $("table").empty();
-    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
-    $(`<td>`).text("No"),
-    $(`<td>`).text("Specialization"),
-    $(`<td>`).text("Qualification"),
-    $(`<td>`).text("Charges"),
-    $(`<td>`).append("Select"));
-    $("table").append(header);
-
 
     for(var i=0; i<details.length; i++){
-        var get_details = details[i]['id'];
-        var update = "<a href=../doctors/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
-        var dele = "<a href=../doctors/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
+        var func = "get_dates('".concat(details[i].id,"')");
+        var select = "<a><button class='tb-btn' onclick=".concat(func,">Select</button><a>");
 
-        var row_id = details[i]['id'];
-        var row_id = row_id.concat("')");
-        var func = "selectfunc(".concat(i+1,",","'",row_id);
-
-        var row = $(`<tr id=${details[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
-        $(`<td>`).text(i+1),
-        $(`<td>`).text(details[i].id),$(`<td>`).text(details[i].f_name.concat(" ",details[i].l_name)),
-        $(`<td>`).text(details[i].specialization),$(`<td>`).text(details[i].fee),
-        $(`<td>`).text(details[i].address),$(`<td>`).text(details[i].email),
-        $(`<td>`).text(details[i].contact_no),
-        $(`<td>`).append(update),
-        $(`<td>`).append(dele));
+        var row = $(`<tr id=${details[i].id}>`).append(
+        $(`<td id=${"doctor-avatar"}>`).append(),
+        $(`<td id=${"td-large"}>`).text("Dr. ".concat(details[i].f_name," ",details[i].l_name)),
+        $(`<td id=${"td-large"}>`).text(details[i].specialization),
+        $(`<td id=${"td-large"}>`).text("Rs. ".concat(details[i].fee)),
+        $(`<td id=${"td-large"}>`).text(details[i].qualification),
+        $(`<td id=${"td-large"}>`).append(select));
         $("table").append(row);
     }
 
 }
 
-function selectfunc(i,row_id){
-    //console.log(row_id);
-    var idd = "#".concat(i);
-    var row_id = "#".concat(row_id);
-    //console.log(row_id);
-    if($(idd).is(':checked')){
-        //console.log($(idd).val());
-        $(row_id).css("background-color","red");
-    }
-    else{
-        if(i%2==0){
-            $(row_id).css("background-color","#69f0ae");
+function get_dates(doctor){
+    $.ajax({
+        url: '../../index.php/appointment/available_dates',
+        data: {id: doctor},
+        type: 'post'
+    }).always(function(data){
+        console.log("in");
+        console.log(data);
+        if(data.length == 0){
+            $("table").remove();
+            $(".container-t").append(`<div id=${"table-message"}>`.concat("No Available Dates"));
         }
         else{
-            $(row_id).css("background-color","white");
+            render_dates(data);
         }
-    }
-    
+    })
+        
+}
+
+function render_dates(details){
+    console.log(details);
+
+    $("table").remove();
 }
