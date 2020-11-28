@@ -1,9 +1,10 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_team_ih79.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/doctor.svg' ?>)"></div>
                     <form method = "POST">
-                       <div class="form-box">
+                       <div class="right">
                            <div class="title">Update Doctors</div>
                             <div class="label">
                                 <label for="id">Id</label>
@@ -53,7 +54,7 @@
                             <div class="input">
                                 <input type="text" value="<?php echo $_POST['details']['email'] ?>" name="email" required>
                             </div>
-                            <div class="btn-area"><input type="submit" name="Update" value="Update" class="submit-btn"></div>
+                            <div><input type="submit" name="Update" value="Update" class="btn"></div>
                         </div >
                     </form>
                 </div>

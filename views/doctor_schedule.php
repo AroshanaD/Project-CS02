@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>View</title>
+        <title>Doctor Schedule</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
@@ -10,14 +10,15 @@
         <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
     </head>
 
-    <body style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
-        <div class="container">
-            <div class="block">
+    <body>
+        <div class="contact-box" style="max-width: 100%; margin: 50px 80px 10px 80px; height: 150px">
+            <div class="left" style="background-image:url(<?php echo Router::base_url().'/files/icons/schedule.svg'?>)"></div>
+            <div class="right" style="max-width: 800px">
                 <form>
                     <div class="form-box">
                         <div class="input">
                             <select name="specialization" id="search_spec" required>
-                                <option value="" disabled selected hidden>Select Specialization</option>
+                                <option value="" selected>Select Specialization</option>
                             </select>
                         </div>
                     </div>
@@ -25,7 +26,7 @@
             </div>    
         </div>
         <div class='container'>
-            <div class='calendar'>
+            <div class='calendar' style="overflow-x:auto; border: 2px black solid">
                 <div class='calendar-row'>
                     <div class='calendar-day'>Time</div>
                     <div class='calendar-day'>Monday</div>

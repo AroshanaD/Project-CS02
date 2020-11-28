@@ -1,10 +1,11 @@
 <script rel="text/javascript" src="/project-cs02/files/js/staff_validate.js"></script>
 <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_team_ih79.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_staff.svg' ?>)"></div>
                     <form method = "POST">
-                       <div class="form-box">
+                       <div class="right">
                            <div class="title">Update Staff Members</div>
                             <div class="label">
                                 <label for="staff">Staff</label>
@@ -60,7 +61,7 @@
                             <div class="input" id="email_f">
                                 <input type="email" name="email" id="email" value="<?php echo $_POST['details']['email'] ?>" required>
                             </div>
-                            <div class="btn-area"><input type="submit" name="Update" value="Update" class="submit-btn"></div>
+                            <div><input type="submit" name="Update" value="Update" class="btn"></div>
                             <div id="form-message"></div>
                         </div >
                     </form>

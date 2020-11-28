@@ -1,8 +1,8 @@
 
-    <div style="background-image: url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
-        <div class="container">
-            <div class="block">
-                <div class="profile-card-details">
+<div class="container" >
+            <div class="contact-box" id="profile-board">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
+                <div class="right" id="profile">
                     <div class="title">Patient Profile</div>
                     <div class="field">Name    </div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
                     <div class="field">Gender </div><div class="val_field"><?php echo $_SESSION['gender']?></div>
@@ -12,21 +12,12 @@
                     <div class="field">Address </div><div class="val_field"><?php echo $_SESSION['address']?></div>
                 </div>
             </div>
-        </div>
-        <div class="databoard">
-            <div class="data-card">
-                Appointments
-            </div>
-            <div class="data-card">
-                Lab Tests
-            </div>
-        </div>
-        <div class="taskboard">
-            <div class="col-5">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/book.png'?> alt="view appointment" style="width:50px; height:50px;">
-                        </p>
+            <div class="taskboard">
+                <div class="contact-box" id="task">
+                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg'?>)">
+                </div>
+                <div class="right">
+                    <div class="s-title">
                         Appointments
                     </div>
                     <div class="dropdown-content">
@@ -35,16 +26,24 @@
                             <li><a href=<?php echo Router::site_url().'/doctor_Schedule/index'?>>Doctor Schedule</a></li>
                         </ul>
                     </div>
-            </div>
-            <div class="col-5">
-                <a href="#">
-                    <div class="task-card">
-                        <p>
-                            <img src=<?php echo Router::base_url().'/files/icons/test-passed.png'?> alt="view lab test" style="width:50px; height:50px;">
-                        </p>
-                        View Lab Test Results
                     </div>
-                </a>
+                </div>
+
+                <div class="contact-box" id="task">
+                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab.svg'?>)">
+                </div>
+                <div class="right">
+                    <div class="s-title">
+                        Lab Test 
+                    </div>
+                    <div class="dropdown-content">
+                        <ul>
+                            <li><a href=<?php echo Router::site_url().'/appointment/view' ?>>Lab Test Results</a></li>
+                        </ul>
+                    </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </body>

@@ -1,9 +1,10 @@
 
-    <div  style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_science_fqhl.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-                <div class="block">
-                    <form action ="#" method = "POST">
-                       <div class="form-box">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab_test.svg' ?>)"></div>
+                    <form method = "POST">
+                       <div class="right">
                            <div class="title">Create Lab Test</div>
                             <h1>Patient Details</h1>
                             <div class="label">
@@ -85,7 +86,7 @@
                                 </select>
                             </div>
                             
-                            <div class="btn-area"><input type="submit" value="Add" class="submit-btn"></div>
+                            <div><input type="submit" value="Add" class="btn"></div>
                         </div >
                     </form>
                 </div>

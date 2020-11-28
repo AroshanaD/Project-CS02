@@ -1,8 +1,8 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);background-repeat:no-repeat">
+    <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);background-repeat:no-repeat">
         <div class="container">
             <div class="box-container">
-                <div class="form-name">create bill</div>
+                <div class="topic1">CREATE BILL</div>
                 <div class="box-0">   
                 <input type="text" class=input name="custName" placeholder="Customer Name" required>
                 <input type="text" class=input name="custAge" placeholder="Customer Age" required></br>
@@ -17,8 +17,8 @@
                 <button type="button"  class="submit-btn" id="addMedicine-button" >Add Medicine</button>  </br>
                 </div>
             
-                <table class=reg-table>        
-                    <tr>
+                <table class ="view-table">
+                <thead>
                         <th>ID</th>
                         <th>Medicine</th>
                         <th>Description</th>
@@ -27,6 +27,8 @@
                         <th>Sub Total</th>
                         <th>Note</th>
                     </tr>
+                    </thead>
+                    <tbody>
                     <tr>
                         <td></td>
                         <td></td>
@@ -36,24 +38,7 @@
                         <td></td>
                         <td></td>
                     </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>            
-                    </tr>
+                    </tbody>
                         
                 </table><br>
                 <button type="button"  class="table-btn" id="confirm-button" >Confirm</button>

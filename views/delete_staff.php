@@ -1,9 +1,10 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_team_ih79.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-                <div class="block">
+                <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_staff.svg' ?>)"></div>
                     <form action method = "POST">
-                       <div class="form-box">
+                       <div class="right">
                            <div class="title">Delete Staff Members</div>
                             <div class="label">
                                 <label for="staff">Staff</label>
@@ -52,7 +53,7 @@
                             <div class="input">
                                 <input type="email" name="email" value="<?php echo $_POST['details']['email'] ?>" disabled required>
                             </div>
-                            <div class="btn-area"><input type="submit" name="Delete" value="Delete" class="submit-btn"></div>
+                            <div><input type="submit" name="Delete" value="Delete" class="btn"></div>
                         </div >
                     </form>
                 </div>

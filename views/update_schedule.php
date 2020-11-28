@@ -1,9 +1,10 @@
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_calendar_dutt.png'?>);background-repeat:no-repeat">
+    <div style="background:white;">
         <div class="container">
-            <div class="block">
+            <div class="contact-box">
+            <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/schedule.svg' ?>)"></div>
                     <form action ="#" method = "POST">
-                       <div class="form-box">
+                       <div class="right">
                             <div class="title">Update Doctor Schedule</div>
                             <div class="label">
                                 <label for="doc_id">Doctor Id</label>
@@ -41,8 +42,8 @@
                             <div class="input">
                                 <input type="time" name="sche_time" required>
                             </div>
-                            <div class="btn-area">
-                                <input type="submit" value="Update" class="submit-btn">
+                            <div>
+                                <input type="submit" value="Update" class="btn">
                             </div>
                         </div >
                     </form>

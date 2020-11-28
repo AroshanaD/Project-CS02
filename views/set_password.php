@@ -11,11 +11,12 @@
         <script src=<?php echo Router::base_url().'/files/js/validation.js'?> type="text/javascript"></script>
     </head>
     <body>
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_authentication_fsn5.png'?>);background-repeat:no-repeat">
-        <div class="container">    
-                <div class="block">
+    <div style="background:white;">
+        <div class="container"> 
+        <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/login.svg' ?>)"></div>   
+                <div class="contact-box">
                     <form action=<?php echo Router::site_url().'/user/set_password' ?> method = "POST">
-                        <div class="form-box">
+                        <div class="right">
                             <div class="title">CHANGE PASSWORD</div>
                             <div class="label">
                                 <label for="phar_newpw">Enter New Password</label>
@@ -29,8 +30,8 @@
                             <div class="input" id = "rpassword_f">
                                 <input type="password" name="re-password" id = "rpassword" required>
                             </div>
-                            <div class="btn-area">
-                                <input type="submit" value="Confirm" class="submit-btn">
+                            <div>
+                                <input type="submit" value="Confirm" class="btn">
                             </div>
                             <div id="form-message"></div>
                         </div>    
