@@ -1141,6 +1141,7 @@ table>tbody {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin: 0 3% 0 3%;
 }
 
 .calendar-row {
@@ -1185,6 +1186,9 @@ table>tbody {
     margin-right: 2px;
     padding: 4px;
     font-size: 16px;
+    font-size: 1vw;
+    background-color: #69f0ae;
+    min-height: 70px;
 }
 
 .calendar-doctor:nth-child(even) {
@@ -1245,21 +1249,16 @@ tr:nth-child(even) {
     background-color: white;
 }
 
-.tb-btn {
-    padding: 5px;
-    background-color: rgba(26, 122, 42, 0.973);
-    border-radius: 5px;
-    border: none;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+#head_row {
+    background-color: #0c0c0c;
+    color: white;
+    font-weight: bold;
+}
+
 td > a{
     display: block;
     width: 100%;
     height: 100%;
-}
-
-#td-large{
-    font-size: 18px;
-    font-weight: bold;
 }
 
 .tb-btn {
@@ -1284,12 +1283,17 @@ button:active {
     background-color: white;
 }
 
+#td-large{
+    font-size: 18px;
+}
+
 .table {
     width: 100%;
     margin: 20px;
     overflow-x: auto;
     border: 1px black solid;
 }
+
 
 select {
     background-color: #474545;
@@ -1488,6 +1492,8 @@ a > #a-btn{
     display: block;
     width: 100px;
     height: 50px;
+}
+
 #table-message{
     width: 100%;
     font-size: 20px;
