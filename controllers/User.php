@@ -34,7 +34,9 @@
                 else{
                     $user = $model->verify($user_cat,$userid,$userpwd);
                     if($user == "invalid user"){
-                        header('Location:'.Router::site_url().'/user/login/?invalid user');
+                        /*header('Location:'.Router::site_url().'/user/login/?invalid user');*/
+                        $URL= Router::site_url()."/user/login/?invalid user";
+                        echo "<script>location.href='$URL'</script>";
                     }
                     else{
                         $userpwd = hash('SHA256',$userpwd);
@@ -42,11 +44,15 @@
                             $user['user_cat'] = $user_cat;
                             $session_inst = new session_helper;
                             $session_inst->start($user);
-                            header('Location:'.Router::site_url().'/user/dashboard');
-                            $this->dashboard();
+                            /*header('Location:'.Router::site_url().'/user/dashboard');
+                            $this->dashboard();*/
+                            $URL= Router::site_url()."/user/dashboard";
+                            echo "<script>location.href='$URL'</script>";
                         }
                         else{
-                            header('Location:'.Router::site_url().'/user/login/?incorrect password');
+                            /*header('Location:'.Router::site_url().'/user/login/?incorrect password');*/
+                            $URL= Router::site_url()."/user/login/?incorrect password";
+                            echo "<script>location.href='$URL'</script>";
                         }
                     }
                 }
@@ -60,7 +66,9 @@
                 $this->load('views','footer');
             }
             else{
-                header('Location:/project-cs02/index.php/user/login?please login');
+                /*header('Location:/project-cs02/index.php/user/login?please login');*/
+                $URL= Router::site_url()."/user/login?please login";
+                echo "<script>location.href='$URL'</script>";
             }
         }
 
@@ -71,7 +79,9 @@
                 $this->load('views','footer');
             }
             else{
-                header('Location:/project-cs02/index.php/user/login?please login');
+                /*header('Location:/project-cs02/index.php/user/login?please login');*/
+                $URL= Router::site_url()."/user/login?please login";
+                echo "<script>location.href='$URL'</script>";
             }
         }
 
@@ -82,12 +92,16 @@
                 $this->load('views','footer');
             }
             else{
-                header('Location:/project-cs02/index.php/user/login?please login');
+                /*header('Location:/project-cs02/index.php/user/login?please login');*/
+                $URL= Router::site_url()."/user/login?please login";
+                echo "<script>location.href='$URL'</script>";
             }
         }
         public function logout(){
             session_destroy();
-            header('Location:/project-cs02/index.php/user/login?logout successfully');
+            /*header('Location:/project-cs02/index.php/user/login?logout successfully');*/
+            $URL= Router::site_url()."/user/login?logout successfully";
+            echo "<script>location.href='$URL'</script>";
         }
 
         public function confirm_register(){
@@ -100,7 +114,9 @@
                     $this->load('views','set_password');
                 }
                 else{
-                    header("Location: ../user/login?account already activated");
+                   /* header("Location: ../user/login?account already activated");*/
+                    $URL= Router::site_url()."/user/login?account already activated";
+                    echo "<script>location.href='$URL'</script>";
                 }
             }
         }
@@ -113,8 +129,10 @@
                 $model = $this->load('models','Staff_Manage');
                 $status = $model->confirm($_SESSION['user_cat'],$_SESSION['id']);
                 session_destroy();
-                header('Location:/project-cs02/index.php/user/login');
-                $this->login();
+                /*header('Location:/project-cs02/index.php/user/login');
+                $this->login();*/
+                $URL= Router::site_url()."/user/login";
+                echo "<script>location.href='$URL'</script>";
             }
         }
     }

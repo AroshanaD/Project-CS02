@@ -24,10 +24,14 @@
                 $status = $model->add($id,$f_name,$l_name, $qualifi,$address,$contact,$email,$specialization,$fee);
                 
                 if($result == TRUE){
-                    header("Location: ../doctor/view?successfully added");
+                    /*header("Location: ../doctor/view?successfully added");*/
+                    $URL= Router::site_url()."/doctor/view?successfully added";
+                    echo "<script>location.href='$URL'</script>";
                 }
                 else{
-                    header("Location: ../doctor/view?something went wrong");
+                    /*header("Location: ../doctor/view?something went wrong");*/
+                    $URL= Router::site_url()."/doctor/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>";
                 }
 
             }
@@ -59,10 +63,14 @@
                 $result = $model->update($id,$qualification,$fee,$address,$contact,$email);
 
                 if($result == TRUE){
-                    header("Location: ../../index.php/doctors/view?successfully updated");
+                    /*header("Location: ../../index.php/doctors/view?successfully updated");*/
+                    $URL= Router::site_url()."/doctors/view?successfully updated";
+                    echo "<script>location.href='$URL'</script>";
                 }
                 else{
-                    header("Location: ../../index.php/doctors/view?something went wrong");
+                   /* header("Location: ../../index.php/doctors/view?something went wrong");*/
+                    $URL= Router::site_url()."/doctors/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>";
                 }
             }
         }
@@ -82,10 +90,14 @@
                 $result = $model->delete($id);
 
                 if($result == TRUE){
-                    header("Location: ../../index.php/doctors/view?successfully deleted");
+                    /*header("Location: ../../index.php/doctors/view?successfully deleted");*/
+                    $URL= Router::site_url()."/doctors/view?successfully deleted";
+                    echo "<script>location.href='$URL'</script>";
                 }
                 else{
-                    header("Location: ../../index.php/doctors/view?something went wrong");
+                    /*header("Location: ../../index.php/doctors/view?something went wrong");*/
+                    $URL= Router::site_url()."/doctors/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>";
                 }
             }
         }
