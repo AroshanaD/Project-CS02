@@ -46,5 +46,13 @@
             $this->load('views','view_appointment');
         }
 
+        public function result(){
+            $this->load('views','header');
+            $this->load('views','patient_result');
+        }   
         
+        public function view_details(){
+            $this->load('views','header');
+            $this->load('views','patient_appointment');
+        }     
     }

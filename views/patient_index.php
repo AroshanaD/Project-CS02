@@ -24,6 +24,7 @@
                         <ul>
                             <li><a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Make Appointment</a></li>
                             <li><a href=<?php echo Router::site_url().'/doctor_Schedule/index'?>>Doctor Schedule</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment/view_details'?>>View Appointment</a></li>
                         </ul>
                     </div>
                     </div>
@@ -38,7 +39,7 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url().'/appointment/view' ?>>Lab Test Results</a></li>
+                            <li><a href=<?php echo Router::site_url().'/appointment/result' ?>>Lab Test Results</a></li>
                         </ul>
                     </div>
                     </div>
