@@ -120,6 +120,7 @@ button:focus {
     font-weight: lighter;
     opacity: 1;
     text-decoration: none;
+    margin-bottom: 10px;
 }
 
 .button-medium:hover {
@@ -188,7 +189,8 @@ button:focus {
     color: #c70000;
 }
 
-.block>.profile-card-details {
+
+.block > .profile-card-details {
     display: flex;
     flex-wrap: wrap;
     width: 600px;
@@ -330,7 +332,11 @@ button:focus {
     display: block;
 }
 
-#task:hover .s-title {
+#task:hover .s-title{
+    display: none;
+}
+
+#task:hover .m-title{
     display: none;
 }
 
@@ -448,6 +454,16 @@ button:focus {
     font-family: "arial,helvetica,sans-serif";
     width: 600px;
     font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    color: #ff0055;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.title{
+    width: auto;
+    font-size: 24px;
     font-weight: 700;
     margin-bottom: 25px;
     color: #ff0055;
@@ -965,6 +981,11 @@ button:focus {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
 }
 
+.site-search > select{
+    height: 100%;
+    background-color: #ebfdfa;
+}
+
 .site-search>input:focus,
 .site-search>select:focus {
     outline: none;
@@ -993,7 +1014,7 @@ button:focus {
     flex-wrap: wrap;
     justify-content: space-between;
     position: relative;
-    width: 100%;
+    width: 90%;
     height: max-content;
     padding: 20px;
     background-color: white;
@@ -1115,6 +1136,7 @@ table>tbody {
 .calendar {
     width: 100%;
     background-color: white;
+    margin: 0 3% 0 3%;
     padding: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -1131,7 +1153,7 @@ table>tbody {
 }
 
 [class*='calendar-'] {
-    font-size: 1.4vw;
+    font-size: 1.2vw;
     font-weight: bold;
     margin-bottom: 2px;
 }
@@ -1139,7 +1161,7 @@ table>tbody {
 @media screen and (max-width:800px) {
     .calendar-day,
     .calendar-doctor {
-        font-size: 2vw;
+        font-size: 1.4vw;
         width: 10vw;
     }
 }
@@ -1147,7 +1169,7 @@ table>tbody {
 @media screen and (min-width:800px) {
     .calendar-day,
     .calendar-doctor {
-        font-size: 1.4vw;
+        font-size: 1.2vw;
         width: 11vw;
     }
 }
@@ -1155,7 +1177,7 @@ table>tbody {
 .calendar-day {
     margin-right: 2px;
     padding: 4px;
-    background-color: #000f3f;
+    background-color: #1d1d1f;
     color: white;
 }
 
@@ -1171,6 +1193,12 @@ table>tbody {
 
 .calendar-doctor:nth-child(odd) {
     background-color: white;
+    font-size: 1vw;
+}
+
+.calendar-doctor{
+    background-color: #69f0ae;
+    min-height: 70px;
 }
 
 table {
@@ -1200,6 +1228,17 @@ tr:nth-child(1) {
 
 tr:nth-child(odd) {
     background-color: #b8cac7;
+    padding: 10px 25px;
+}
+
+#head_row {
+    background-color: #0c0c0c;
+    color: white;
+    font-weight: bold;
+}
+
+tr:nth-child(odd) {
+    background-color: #69f0ae;
 }
 
 tr:nth-child(even) {
@@ -1212,6 +1251,37 @@ tr:nth-child(even) {
     border-radius: 5px;
     border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+td > a{
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#td-large{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.tb-btn {
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 40px;
+    background-color: #7045b4;
+}
+
+button:hover {background-color: white}
+
+button:active {
+
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.tb-btn :visited{
+    background-color: white;
 }
 
 .table {
@@ -1223,6 +1293,9 @@ tr:nth-child(even) {
 
 select {
     background-color: #474545;
+    height: 100%;
+    border: none;
+    outline: none;
 }
 
 .topic1 {
@@ -1236,7 +1309,6 @@ select {
     color: black;
     text-transform: uppercase;
     text-align: center;
-    border: 2px #141313 solid;
 }
 
 .contact-box {
@@ -1250,6 +1322,7 @@ select {
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
     font-family: 'Quicksand', sans-serif;
     margin: 50px;
+    align-items: center;
 }
 
 .label {
@@ -1266,9 +1339,10 @@ select {
     border: 2px solid rgba(0, 0, 0, 0);
     outline: none;
     background-color: white;
-    width: 400px;
+    width: 380px;
     font-size: 17px;
     font-weight: bold;
+    padding: 5px 0 5px 20px;
 }
 
 .input>select {
@@ -1278,6 +1352,7 @@ select {
     width: 400px;
     height: 30px;
     font-weight: bold;
+    padding: 5px 0 5px 20px;
 }
 
 .title {
@@ -1322,8 +1397,8 @@ select {
 .btn {
     width: 410px;
     padding: 0.5rem 1rem;
-    background-color: white;
-    color: #2f2e41;
+    background-color: #7045b4;
+    color: black;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
@@ -1335,7 +1410,7 @@ select {
 }
 
 .btn:hover {
-    background-color: #7045b4;
+    background-color: white;
 }
 
 #login-ref {
@@ -1362,6 +1437,7 @@ select {
     width: 350px;
     font-size: 1.4rem;
     margin: 30px;
+    height: 80%;
 }
 
 #task {
@@ -1372,6 +1448,17 @@ select {
 
 .s-title {
     height: 110px;
+    position: relative;
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.m-title {
+    height: 80px;
     position: relative;
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
@@ -1401,8 +1488,6 @@ a > #a-btn{
     display: block;
     width: 100px;
     height: 50px;
-}
-
 #table-message{
     width: 100%;
     font-size: 20px;
@@ -1415,4 +1500,4 @@ a > #a-btn{
     margin: 10px;
     background-image: url('icons/doctor.svg');
     background-size: contain;
-} 
+}
