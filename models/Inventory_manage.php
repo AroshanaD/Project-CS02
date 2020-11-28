@@ -8,7 +8,9 @@ class Inventory_manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM medicine WHERE deleted='0'";
+        $query = "SELECT medicine.id, medicine.name, medicine.description, medicine.vendor, medicine.unit_price, 
+                medicine.quantity, medicine.deleted, vendor.id AS 'v_id', vendor.name AS 'v_name'
+                FROM medicine LEFT JOIN vendor ON medicine.vendor = vendor.id WHERE medicine.deleted=0";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

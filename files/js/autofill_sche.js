@@ -10,6 +10,7 @@ $(document).ready(function(){
         var calendar = [];
         var weekdays = [1,2,3,4,5,6,7];
         var time = data[0]['time'];
+        console.log(typeof(time));
         row = [];
         row['time'] = data[0]['time'];
         weekdays.forEach(function(value){
@@ -61,7 +62,7 @@ $(document).ready(function(){
                         array[value].forEach(function(value){
                             doctors = doctors.concat("<div>",value);
                         })
-                        $(".calendar").append("<div class='calendar-doctor' style='background-color:oldlace; font-weight:bold;'>".concat(doctors,'</div>'));
+                        $(".calendar").append("<div class='calendar-doctor' style='background-color:white; font-weight:bold;'>".concat(doctors,'</div>'));
                     }
                 })
             })

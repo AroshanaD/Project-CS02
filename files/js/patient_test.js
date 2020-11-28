@@ -25,7 +25,7 @@ $(document).ready(function(){
 function render_table(data){
     $("table").empty();
 
-    var header = $(`<tr style=${"background-color:lightblue"}>`).append($(`<td>`),
+    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Patient Name"),
     $(`<td>`).text("Test Name"),$(`<td>`).text("Date"),
@@ -41,8 +41,8 @@ function render_table(data){
         var func = "selectfunc(".concat(i+1,",","'",row_id);
 
         var get_details = data[i]['id'];
-        var update = "<a href=../labtest/update?id=".concat(get_details,"><button class='tb-btn'>Update</a>");
-        var dele = "<a href=../labtest/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</a>");
+        var update = "<a href=../labtest/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../labtest/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
         var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
         $(`<td>`).text(i+1),
         $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].name),
@@ -64,7 +64,7 @@ function selectfunc(i,row_id){
     }
     else{
         if(i%2==0){
-            $(row_id).css("background-color","#b8cac7");
+            $(row_id).css("background-color","#69f0ae");
         }
         else{
             $(row_id).css("background-color","white");

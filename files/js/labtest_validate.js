@@ -3,7 +3,6 @@ $(document).ready(function(){
     $("form").submit(function(event){
         event.preventDefault();
 
-        var id = $("#id").val();
         var name = $("#name").val();
         var description = $("#description").val();
         var cost = $("#cost").val();
