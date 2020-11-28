@@ -78,6 +78,10 @@
             $this->load('views','appointment_onpremise');
         }
 
+        public function result(){
+            $this->load('views','header');
+            $this->load('views','patient_result');
+        }   
         public function get_doctors(){
             $model = $this->load('models','Appointment_Data');
             $specialization = $_POST['specialization'];
@@ -88,4 +92,8 @@
             echo json_encode($result);
         }
         
+        public function view_details(){
+            $this->load('views','header');
+            $this->load('views','patient_appointment');
+        }     
     }

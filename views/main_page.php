@@ -7,8 +7,8 @@
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
-    <body style="background: linear-gradient(rgb(230, 137, 137), #a7ace9);;">
-       <div class="main-nav">
+    <body style="background: white">
+       <div class="main-nav" style="background:#19163b">
            <div class="logo">
                 <svg width="80px" height="80px" viewBox="0 0 236 246" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="Layer 2">
@@ -45,11 +45,11 @@
                     </defs>
                 </svg>
            </div>
-           <div>MedCaid Hospitals</div>
+           <div style="color:white">MedCaid Hospitals</div>
            <div>
-                <a href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
-                <a href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
-                <a href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
+                <a id="a-btn" href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
+                <a id="a-btn" href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
+                <a id="a-btn" href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
            </div>
        </div>
        <div class="section">
@@ -262,11 +262,11 @@
                     <div>Online Appointment</div>
                 </div>
                 <div class="slide">
-                    <div><img src=<?php echo Router::base_url()."/files/icons/secure_payment.svg" ?>></div>
+                    <div><img src=<?php echo Router::base_url()."/files/icons/mobile_pay.svg" ?>></div>
                     <div>Secure Payment</div>
                 </div>
                 <div class="slide">
-                    <div><img src=<?php echo Router::base_url()."/files/icons/private_data.svg" ?>></div>
+                    <div><img src=<?php echo Router::base_url()."/files/icons/privacy.svg" ?>></div>
                     <div>Data Privacy</div>
                 </div>
             </div>

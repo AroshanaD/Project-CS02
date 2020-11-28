@@ -189,6 +189,7 @@ button:focus {
     color: #c70000;
 }
 
+
 .block > .profile-card-details {
     display: flex;
     flex-wrap: wrap;
@@ -1183,6 +1184,15 @@ table>tbody {
 .calendar-doctor {
     margin-right: 2px;
     padding: 4px;
+    font-size: 16px;
+}
+
+.calendar-doctor:nth-child(even) {
+    background-color: #b8cac7;
+}
+
+.calendar-doctor:nth-child(odd) {
+    background-color: white;
     font-size: 1vw;
 }
 
@@ -1208,6 +1218,16 @@ td,
 th {
     width: max-content;
     background-color: inherit;
+    padding: 10px 20px;
+    border-right: 1px black solid;
+}
+
+tr:nth-child(1) {
+    background-color: #000f3f;
+}
+
+tr:nth-child(odd) {
+    background-color: #b8cac7;
     padding: 10px 25px;
 }
 
@@ -1225,6 +1245,12 @@ tr:nth-child(even) {
     background-color: white;
 }
 
+.tb-btn {
+    padding: 5px;
+    background-color: rgba(26, 122, 42, 0.973);
+    border-radius: 5px;
+    border: none;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
 td > a{
     display: block;
     width: 100%;
@@ -1266,7 +1292,7 @@ button:active {
 }
 
 select {
-    background-color: #ebfdfa;
+    background-color: #474545;
     height: 100%;
     border: none;
     outline: none;
@@ -1324,6 +1350,7 @@ select {
     outline: none;
     background-color: white;
     width: 400px;
+    height: 30px;
     font-weight: bold;
     padding: 5px 0 5px 20px;
 }
@@ -1457,6 +1484,10 @@ select {
     width: 1400px;
 }
 
+a > #a-btn{
+    display: block;
+    width: 100px;
+    height: 50px;
 #table-message{
     width: 100%;
     font-size: 20px;
