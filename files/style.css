@@ -977,13 +977,13 @@ button:focus {
     padding: 10px;
     border-width: 0;
     border-radius: 5px;
-    background-color: #ebfdfa;
+    background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
 }
 
 .site-search > select{
     height: 100%;
-    background-color: #ebfdfa;
+    background-color: white;
 }
 
 .site-search>input:focus,
@@ -1188,21 +1188,7 @@ table>tbody {
     font-size: 16px;
     font-size: 1vw;
     background-color: #69f0ae;
-    min-height: 70px;
-}
-
-.calendar-doctor:nth-child(even) {
-    background-color: #b8cac7;
-}
-
-.calendar-doctor:nth-child(odd) {
-    background-color: white;
-    font-size: 1vw;
-}
-
-.calendar-doctor{
-    background-color: #69f0ae;
-    min-height: 70px;
+    min-height: 100px;
 }
 
 table {
@@ -1223,7 +1209,6 @@ th {
     width: max-content;
     background-color: inherit;
     padding: 10px 20px;
-    border-right: 1px black solid;
 }
 
 tr:nth-child(1) {
@@ -1296,7 +1281,7 @@ button:active {
 
 
 select {
-    background-color: #474545;
+    background-color: white;
     height: 100%;
     border: none;
     outline: none;
@@ -1354,7 +1339,7 @@ select {
     outline: none;
     background-color: white;
     width: 400px;
-    height: 30px;
+    height: 40px;
     font-weight: bold;
     padding: 5px 0 5px 20px;
 }

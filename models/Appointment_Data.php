@@ -33,7 +33,7 @@
             $query = "SELECT f_name, l_name, qualification, fee FROM doctor WHERE id=?";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$id]);
-            $result = $stmt->fetchAll();
+            $result = $stmt->fetch();
             return $result;
         }
 

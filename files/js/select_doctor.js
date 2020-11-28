@@ -5,8 +5,8 @@ $(document).ready(function(){
         type: 'post',
         success:function(data){
             var details = data;
-            if(data.length == 0){
-                $("table").remove();
+            if(data == null){
+                $(".container-t").empty();
                 $(".container-t").append(`<div id=${"table-message"}>`.concat("No Doctors Available"));
             }
             else{
@@ -41,16 +41,17 @@ function get_dates(doctor){
     $.ajax({
         url: '../../index.php/appointment/available_dates',
         data: {id: doctor},
-        type: 'post'
-    }).always(function(data){
-        console.log("in");
-        console.log(data);
-        if(data.length == 0){
-            $("table").remove();
-            $(".container-t").append(`<div id=${"table-message"}>`.concat("No Available Dates"));
-        }
-        else{
-            render_dates(data);
+        type: 'post',
+        success:function(data){
+            console.log("in");
+            console.log(data);
+            if(data.length == 0){
+                $("table").remove();
+                $(".container-t").append(`<div id=${"table-message"}>`.concat("No Available Dates"));
+            }
+            else{
+                render_dates(data);
+            }
         }
     })
         

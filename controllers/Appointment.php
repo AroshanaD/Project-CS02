@@ -20,7 +20,6 @@
             $_SESSION['appointment'] = [];
             $this->load('views','header');
             $this->load('views','search_doctor');
-            $this->load('views','footer');
         }
 
         public function select_doctor(){
@@ -50,27 +49,22 @@
             $_SESSION['appointment']['doctor_fee'] = $doctor['fee'];
 
             $result = $model->get_dates($id);
-
-            header('Content-Type: application/json');
             echo json_encode($result);
         }
         
         public function fill_form(){
             $this->load('views','header');
             $this->load('views','appointment_form');
-            $this->load('views','footer');
         }
 
         public function receipt(){
             $this->load('views','header');
             $this->load('views','appointment_receipt');
-            $this->load('views','footer');
         }
         
         public function view(){
             $this->load('views','header');
             $this->load('views','view_test');
-            $this->load('views','footer');
         }
 
         public function onpremise(){
