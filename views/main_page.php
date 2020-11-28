@@ -47,9 +47,9 @@
            </div>
            <div style="color:white">MedCaid Hospitals</div>
            <div>
-                <a href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
-                <a href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
-                <a href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
+                <a id="a-btn" href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
+                <a id="a-btn" href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
+                <a id="a-btn" href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
            </div>
        </div>
        <div class="section">
@@ -262,11 +262,11 @@
                     <div>Online Appointment</div>
                 </div>
                 <div class="slide">
-                    <div><img src=<?php echo Router::base_url()."/files/icons/secure_payment.svg" ?>></div>
+                    <div><img src=<?php echo Router::base_url()."/files/icons/mobile_pay.svg" ?>></div>
                     <div>Secure Payment</div>
                 </div>
                 <div class="slide">
-                    <div><img src=<?php echo Router::base_url()."/files/icons/private_data.svg" ?>></div>
+                    <div><img src=<?php echo Router::base_url()."/files/icons/privacy.svg" ?>></div>
                     <div>Data Privacy</div>
                 </div>
             </div>
