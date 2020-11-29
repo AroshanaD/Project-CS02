@@ -20,6 +20,7 @@
             else{
                 $this->load('views','view_inventory');
             }
+            $this->load('views','footer');
         }
 
         public function get_medicine(){
@@ -51,6 +52,7 @@
             else{
                 $this->load('views','add_inventory');
             }
+            $this->load('views','footer');
         }
 
         public function add_medicine(){
@@ -90,6 +92,7 @@
                 $_POST['medicine']=$result;
                 $this->load('views','header');
                 $this->load('views','update_inventory');
+                $this->load('views','footer');
             }
             if($_GET['update'] == 'vendor'){
 
@@ -117,6 +120,7 @@
             $_POST['medicine']=$result;
             $this->load('views','header');
             $this->load('views','delete_inventory');
+            $this->load('views','footer');
 
             if(isset($_POST['deleteMedicine'])){
                 $medId = $_POST['id'];
@@ -132,6 +136,7 @@
         public function create_bill(){
             $this->load('views','header');
             $this->load('views','create_bill');
+            $this->load('views','footer');
         }
 
         public function search_medicine(){

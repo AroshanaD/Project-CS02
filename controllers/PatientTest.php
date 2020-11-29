@@ -9,11 +9,13 @@
         public function create_test(){
             $this->load('views','header');
             $this->load('views','add_labtest');
+            $this->load('views','footer');
         }
 
         public function view(){
             $this->load('views','header');
             $this->load('views','patient_test');
+            $this->load('views','footer');
         }        
 
         public function get_view(){

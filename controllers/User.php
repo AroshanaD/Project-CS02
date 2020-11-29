@@ -10,6 +10,7 @@
 
         public function login(){
             $this->load('views','login');
+            $this->load('views','footer');
 
             $model = $this->load('models','Verify_login');
             if(isset($_POST['login-submit'])){
@@ -75,6 +76,7 @@
             if(isset($_SESSION['id'])){
                 $this->load('views','header');
                 $this->load('views','change_password');
+                $this->load('views','footer');
             }
             else{
                 /*header('Location:/project-cs02/index.php/user/login?please login');*/
@@ -87,6 +89,7 @@
             if(isset($_SESSION['id'])){
                 $this->load('views','header');
                 $this->load('views','change_details');
+                $this->load('views','footer');
             }
             else{
                 /*header('Location:/project-cs02/index.php/user/login?please login');*/

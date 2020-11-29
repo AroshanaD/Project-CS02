@@ -20,6 +20,7 @@
             $_SESSION['appointment'] = [];
             $this->load('views','header');
             $this->load('views','search_doctor');
+            $this->load('views','footer');
         }
 
         public function select_doctor(){
@@ -29,6 +30,7 @@
 
             $this->load('views','header');
             $this->load('views','select_doctor');
+            $this->load('views','footer');
         }
 
         public function available_doctors(){
@@ -58,6 +60,7 @@
 
             $this->load('views','header');
             $this->load('views','select_date');
+            $this->load('views','footer');
         }
 
         public function available_dates(){
@@ -79,30 +82,36 @@
 
             $this->load('views','header');
             $this->load('views','appointment_form');
+            $this->load('views','footer');
         }
 
         public function receipt(){
             $this->load('views','header');
             $this->load('views','appointment_receipt');
+            $this->load('views','footer');
         }
         
         public function view(){
             $this->load('views','header');
             $this->load('views','view_test');
+            $this->load('views','footer');
         }
 
         public function onpremise(){
             $this->load('views','header');
             $this->load('views','appointment_onpremise');
+            $this->load('views','footer');
         }
 
         public function result(){
             $this->load('views','header');
             $this->load('views','patient_result');
+            $this->load('views','footer');
         }   
         
         public function view_details(){
             $this->load('views','header');
             $this->load('views','patient_appointment');
+            $this->load('views','footer');
         }     
     }

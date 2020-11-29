@@ -10,6 +10,7 @@
                 $this->load('views','header');
             }
             $this->load('views','doctor_schedule');
+            $this->load('views','footer');
         }
 
         public function schedules(){
@@ -23,6 +24,7 @@
         public function view_appointment(){
             $this->load('views','header');
             $this->load('views','view_appointment');
+            $this->load('views','footer');
         }
     }
 

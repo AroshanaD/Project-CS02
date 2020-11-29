@@ -9,6 +9,7 @@
         public function add(){
             $this->load('views','header');
             $this->load('views','add_doctor');
+            $this->load('views','footer');
             $model= $this->load('models','doctor_manage');
 
             if(isset($_POST['Add'])){
@@ -40,6 +41,7 @@
         public function view(){
             $this->load('views','header');
             $this->load('views','view_doctor');
+            $this->load('views','footer');
         }
 
         public function update(){
@@ -52,6 +54,7 @@
             }
             $this->load('views','header');
             $this->load('views','update_doctor');
+            $this->load('views','footer');
 
             if(isset($_POST['Update'])){
                 $qualification = $_POST['qualification'];
@@ -85,6 +88,7 @@
             }
             $this->load('views','header');
             $this->load('views','delete_doctor');
+            $this->load('views','footer');
 
             if(isset($_POST['Delete'])){
                 $result = $model->delete($id);

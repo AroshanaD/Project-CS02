@@ -9,6 +9,7 @@
         public function add(){
             $this->load('views','header');
             $this->load('views','add_test');
+            $this->load('views','footer');
         }
 
         public function add_test(){
@@ -26,6 +27,7 @@
         public function view(){
             $this->load('views','header');
             $this->load('views','view_test');
+            $this->load('views','footer');
         }
 
         public function get_view(){
@@ -52,6 +54,7 @@
             $_POST['test']=$result;
             $this->load('views','header');
             $this->load('views','update_test');
+            $this->load('views','footer');
 
             if(isset($_POST['Update'])){
                 $testName = $_POST['test_name'];
@@ -78,6 +81,7 @@
             $_POST['test']=$result;
             $this->load('views','header');
             $this->load('views','delete_test');
+            $this->load('views','footer');
 
             if(isset($_POST['Delete'])){
                 $testId = $_POST['id'];
