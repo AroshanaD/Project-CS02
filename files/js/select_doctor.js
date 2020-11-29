@@ -5,7 +5,7 @@ $(document).ready(function(){
         type: 'post',
         success:function(data){
             var details = data;
-            if(data == null){
+            if(data.length == 0){
                 $(".container-t").empty();
                 $(".container-t").append(`<div id=${"table-message"}>`.concat("No Doctors Available"));
             }
@@ -22,8 +22,7 @@ function render_details(details){
     $("table").empty();
 
     for(var i=0; i<details.length; i++){
-        var func = "get_dates('".concat(details[i].id,"')");
-        var select = "<a><button class='tb-btn' onclick=".concat(func,">Select</button><a>");
+        var select = "<a href='../appointment/select_dates?doctor=".concat(i,"'><button class='tb-btn'>Select</button><a>");
 
         var row = $(`<tr id=${details[i].id}>`).append(
         $(`<td id=${"doctor-avatar"}>`).append(),
@@ -35,30 +34,4 @@ function render_details(details){
         $("table").append(row);
     }
 
-}
-
-function get_dates(doctor){
-    $.ajax({
-        url: '../../index.php/appointment/available_dates',
-        data: {id: doctor},
-        type: 'post',
-        success:function(data){
-            console.log("in");
-            console.log(data);
-            if(data.length == 0){
-                $("table").remove();
-                $(".container-t").append(`<div id=${"table-message"}>`.concat("No Available Dates"));
-            }
-            else{
-                render_dates(data);
-            }
-        }
-    })
-        
-}
-
-function render_dates(details){
-    console.log(details);
-
-    $("table").remove();
 }

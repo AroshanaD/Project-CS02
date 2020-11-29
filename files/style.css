@@ -1492,3 +1492,19 @@ a > #a-btn{
     background-image: url('icons/doctor.svg');
     background-size: contain;
 }
+
+#calendar-avatar{
+    width: 70px;
+    height: 70px;
+    margin: 10px;
+    background-image: url('icons/calendar.svg');
+    background-size: contain;
+}
+
+#doctor-large{
+    width: 300px;
+    min-height:300px;
+    margin: 10px;
+    background-image: url('icons/doctor.svg');
+    background-size: contain;
+}
