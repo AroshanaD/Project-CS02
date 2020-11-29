@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
     <body style="background:white;">
-    <div class="main-nav" style="background: #a48df5">
+    <div class="main-nav" style="background: #023047">
             <div></div>
             <div></div>
            <div style="color:white">MedCaid Hospitals</div>

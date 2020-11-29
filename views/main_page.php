@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
     <body style="background: white">
-       <div class="main-nav" style="background:#19163b">
+       <div class="main-nav" style="background:#023047">
            <div class="logo">
                 <svg width="80px" height="80px" viewBox="0 0 236 246" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="Layer 2">
