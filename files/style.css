@@ -231,8 +231,9 @@ button:focus {
 .field,
 .val_field {
     font-family: 'Montserrat', sans-serif;
-    color: black;
+    color: #012638;
     font-size: 20px;
+    font-weight: bolder;
     text-align: left;
 }
 
@@ -317,7 +318,7 @@ button:focus {
 }
 
 .dropdown-content>ul>li:hover {
-    background-color: rgb(24, 24, 24);
+    background-color: #fb8500;
 }
 
 .dropdown-content>ul>li:hover a {
@@ -1441,7 +1442,7 @@ select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
+    color: #fb8500;
     text-transform: uppercase;
     text-align: center;
 }
@@ -1452,7 +1453,7 @@ select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
+    color: #fb8500;
     text-transform: uppercase;
     text-align: center;
 }
