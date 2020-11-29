@@ -53,6 +53,7 @@
 
             $_SESSION['appointment']['doctor_id'] = $id;
             $_SESSION['appointment']['doctor_name'] = $doctor['f_name']." ".$doctor['l_name'];
+            $_SESSION['appointment']['doctor_qualification'] = $doctor['qualification'];
             $_SESSION['appointment']['doctor_fee'] = $doctor['fee'];
 
             $this->load('views','header');
@@ -61,12 +62,21 @@
 
         public function available_dates(){
             $model = $this->load('models','Appointment_Data');
+
+            $id = $_SESSION['appointment']['doctor_id'];
             $result = $model->get_dates($id);
+            $_SESSION['search']['search_datelist'] = $result;
             header('Content-Type: application/json');
             echo json_encode($result);
         }
         
         public function fill_form(){
+            $date_no = $_GET['date'];
+            $date = $_SESSION['search']['search_datelist'][$date_no]['date'];
+            $time = $_SESSION['search']['search_datelist'][$date_no]['time'];
+            $_SESSION['appointment']['date'] = $date;
+            $_SESSION['appointment']['time'] = $time;
+
             $this->load('views','header');
             $this->load('views','appointment_form');
         }
