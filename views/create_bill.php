@@ -1,48 +1,54 @@
 
     <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);background-repeat:no-repeat">
         <div class="container">
-            <div class="box-container">
-                <div class="topic1">CREATE BILL</div>
-                <div class="box-0">   
-                <input type="text" class=input name="custName" placeholder="Customer Name" required>
-                <input type="text" class=input name="custAge" placeholder="Customer Age" required></br>
-                <input type="text" class=input name="orderDate" placeholder="Order Date" required>
-                <input type="text" class=input name="orderTime" placeholder="Order Time" required></br>
-                <select name="medicine" id="select-medicine" class=input>
-                <option value ="Any">Any medicine</option> 
-                </select>
-                <select name="quantity" id="select-quantity" class=input>
-                <option value ="Any">Any quantity</option> 
-                </select><br>
-                <button type="button"  class="submit-btn" id="addMedicine-button" >Add Medicine</button>  </br>
+            <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab_test.svg' ?>)"></div>
+                    <form> 
+                        <div class="right">
+                            <div class="title">CREATE BILL</div>
+                            <div class="input"><input type="text"  name="custName" placeholder="Customer Name" required></div></br>
+                            <div class="input"><input type="text"  name="custAge" placeholder="Customer Age" required></div></br>
+                            <div class="input"><input type="text"  name="orderDate" placeholder="Order Date" required></div></br>
+                            <div class="input"><input type="text"  name="orderTime" placeholder="Order Time" required></div></br>
+                            <div class="input"><select name="medicine" id="select-medicine" >
+                            <option value ="Any">Any medicine</option> 
+                            </select></div></br>
+                            <div class="input"><select name="quantity" id="select-quantity" >
+                            <option value ="Any">Any quantity</option> 
+                            </select></div></br>
+                            <div><button type="button"  class="btn" id="addMedicine-button" >Add Medicine</button></div>
+                        </div>
+                    </form>
+            </div>
+
+            <div class="container-t">
+                <div class="table">
+                    <table>
+
+                        <tr>
+                            <td>ID</td>
+                            <td>Medicine</td>
+                            <td>Description</td>
+                            <td>Quantity</td>
+                            <td>Unit Price</td>
+                            <td>Sub Total</td>
+                            <td>Note</td>
+                        </tr>
+      
+
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>        
+                    </table>
                 </div>
-            
-                <table class ="view-table">
-                <thead>
-                        <th>ID</th>
-                        <th>Medicine</th>
-                        <th>Description</th>
-                        <th>Quantity</th>
-                        <th>Unit Price</th>
-                        <th>Sub Total</th>
-                        <th>Note</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                    </tbody>
-                        
-                </table><br>
                 <button type="button"  class="table-btn" id="confirm-button" >Confirm</button>
-           </div>
+            </div>
         </div>
     </body>
 </html>

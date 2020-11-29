@@ -680,7 +680,7 @@ button:focus {
 
 .box-0 {
     height: fit-content;
-    background-color: #a7a7a71f;
+    background-color:#edf2fbe1;
     font-size: max(2vw, 25px);
 }
 
@@ -689,8 +689,10 @@ button:focus {
     padding-bottom: 2px;
     padding-left: 5px;
     padding-right: 5px;
-    border-color: 1px solid #d5dbd9;
-    background-color: #ffffff21;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: white;
+    font-weight: bold;
     width: 300px;
     height: 24px;
     margin: 8px 0;
@@ -704,8 +706,10 @@ button:focus {
     padding-right: 5px;
     border-width: thin;
     border-style: solid;
-    border-color: 1px solid #d5dbd9;
-    background-color: #e6e3e321;
+    border: 2px solid rgba(0, 0, 0, 0);
+    outline: none;
+    background-color: white;
+    font-weight: bold;
     border-radius: 3px;
     width: 300px;
     height: 24px;
@@ -1300,7 +1304,7 @@ select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: black;
+    color:  #023047;
     text-transform: uppercase;
     text-align: center;
 }
