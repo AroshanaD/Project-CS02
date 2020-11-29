@@ -14,7 +14,7 @@
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/user_icon.svg'?>)">
                 </div>
-                <div class="right">
+                <div class="right" style="background:#023047">
                     <div class="s-title">
                         Patient Lab Test
                     </div>
@@ -30,7 +30,7 @@
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab.svg'?>)">
                 </div>
-                <div class="right">
+                <div class="right" style="background:#023047">
                     <div class="s-title">
                         Lab Test 
                     </div>

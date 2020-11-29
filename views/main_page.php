@@ -8,7 +8,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
     <body style="background: white">
-       <div class="main-nav" style="background:#19163b">
+       <div class="main-nav" style="background:#023047">
            <div class="logo">
                 <svg width="80px" height="80px" viewBox="0 0 236 246" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <g id="Layer 2">
@@ -45,7 +45,7 @@
                     </defs>
                 </svg>
            </div>
-           <div style="color:white">MedCaid Hospitals</div>
+           <div style="color:#fb8500">MedCaid Hospitals</div>
            <div>
                 <a id="a-btn" href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
                 <a id="a-btn" href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>

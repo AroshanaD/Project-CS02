@@ -12,13 +12,13 @@
     <style>
         .navbar {
             overflow: hidden;
-            background-color:  #a48df5;
+            background-color:  #023047;
         }
         
         .navbar a {
             float: left;
             display: block;
-            color: #f2f2f2;
+            color: #fb8500;
             text-align: center;
             padding: 12px 16px;
             text-decoration: none;
@@ -32,14 +32,14 @@
         }
         
         .navbar a.active {
-            background-color: #333;
-            color: white;
+            background-color:#f5f3f4;
+            color: #fb8500;
             padding: 14px 16px;
         }
         
         .navbar >p{
             display: block;
-            color: white;
+            color: #fb8500;
             text-align: center;
             font-weight:bolder;
             font-family:'Lato',sans-serif;
@@ -95,7 +95,7 @@
         <a href="javascript:void(0)" onclick="openSidebar()" ><img src=<?php echo Router::base_url().'../files/icons/nav.png'?> style="width:30px; height:15px ;margin-top=0px"></a>
         <a href=<?php echo Router::site_url().'/main' ?> class="active">Home</a>
         <a href="javascript:void(0)" onclick="Back()">Back</a>
-        <p style="font-size:21px; color:white; margin-bottom:10px">MedCaid Hospital</p>
+        <p style="font-size:21px; color:#fb8500; margin-bottom:10px">MedCaid Hospital</p>
   <!--a href="javascript:void(0);" class="icon" onclick="myFunction()"-->
     <!--i class="fa fa-bars"></i-->
         </a>

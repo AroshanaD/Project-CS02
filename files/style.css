@@ -231,8 +231,9 @@ button:focus {
 .field,
 .val_field {
     font-family: 'Montserrat', sans-serif;
-    color: black;
+    color: #012638;
     font-size: 20px;
+    font-weight: bolder;
     text-align: left;
 }
 
@@ -317,7 +318,7 @@ button:focus {
 }
 
 .dropdown-content>ul>li:hover {
-    background-color: rgb(24, 24, 24);
+    background-color: #fb8500;
 }
 
 .dropdown-content>ul>li:hover a {
@@ -1351,10 +1352,10 @@ select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: black;
+    color: #023047;
     text-transform: uppercase;
     text-align: center;
-    border: 2px white solid;
+    border: 3px #fb8500 solid;
 }
 
 .left {
@@ -1367,7 +1368,7 @@ select {
 .right {
     width: 450px;
     padding: 25px 40px;
-    background-color: #69f0ae;
+    background-color:#edf2fbe1 ;
 }
 
 .container:after {
@@ -1386,8 +1387,8 @@ select {
 .btn {
     width: 410px;
     padding: 0.5rem 1rem;
-    background-color: #7045b4;
-    color: black;
+    background-color: #03202e;
+    color: #fb8500;
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
@@ -1399,7 +1400,7 @@ select {
 }
 
 .btn:hover {
-    background-color: white;
+    background-color: #013955;
 }
 
 #login-ref {
@@ -1441,7 +1442,7 @@ select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
+    color: #fb8500;
     text-transform: uppercase;
     text-align: center;
 }
@@ -1452,7 +1453,7 @@ select {
     font-family: 'Quicksand', sans-serif;
     font-size: 1.2rem;
     font-weight: bold;
-    color: black;
+    color: #fb8500;
     text-transform: uppercase;
     text-align: center;
 }

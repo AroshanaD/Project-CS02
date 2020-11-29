@@ -9,10 +9,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     </head>
     <body style="background:white;">
-    <div class="main-nav" style="background: #19163b">
+    <div class="main-nav" style="background: #023047">
             <div></div>
             <div></div>
-           <div style="color:white">MedCaid Hospitals</div>
+           <div style="color:#fb8500">MedCaid Hospitals</div>
            <div>
                 <a href=<?php echo Router::site_url().'/main' ?>><button class="main-button">Home</button></a>
                 <a href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>

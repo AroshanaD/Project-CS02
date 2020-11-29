@@ -14,7 +14,7 @@
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg'?>)">
                 </div>
-                <div class="right">
+                <div class="right" style="background:#023047">
                     <div class="s-title">
                         Appointments
                     </div>
@@ -30,7 +30,7 @@
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/schedule.svg'?>)">
                 </div>
-                <div class="right">
+                <div class="right" style="background:#023047">
                     <div class="s-title">
                         Doctor Schedule
                     </div>
