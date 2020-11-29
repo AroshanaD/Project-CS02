@@ -45,7 +45,7 @@
                     </defs>
                 </svg>
            </div>
-           <div style="color:white">MedCaid Hospitals</div>
+           <div style="color:#fb8500">MedCaid Hospitals</div>
            <div>
                 <a id="a-btn" href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
                 <a id="a-btn" href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>

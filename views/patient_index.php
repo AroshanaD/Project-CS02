@@ -1,8 +1,8 @@
 
 <div class="container" style="min-height:700px">
-            <div class="contact-box" id="profile-board">
+            <div class="contact-box" id="profile-board" >
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
-                <div class="right" id="profile">
+                <div class="right" id="profile" >
                     <div class="title">Patient Profile</div>
                     <div class="field">Name    </div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
                     <div class="field">Gender </div><div class="val_field"><?php echo $_SESSION['gender']?></div>
@@ -16,7 +16,7 @@
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg'?>)">
                 </div>
-                <div class="right">
+                <div class="right" style="background:#023047">
                     <div class="s-title">
                         Appointments
                     </div>
@@ -33,7 +33,7 @@
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab.svg'?>)">
                 </div>
-                <div class="right">
+                <div class="right" style="background:#023047">
                     <div class="s-title">
                         Lab Test 
                     </div>
