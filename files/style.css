@@ -97,6 +97,7 @@ button:focus {
     margin: 0;
     align-items: center;
     align-content: space-between;
+    min-height: 700px;
 }
 
 .avatar {

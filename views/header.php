@@ -94,6 +94,7 @@
   
         <a href="javascript:void(0)" onclick="openSidebar()" ><img src=<?php echo Router::base_url().'../files/icons/nav.png'?> style="width:30px; height:15px ;margin-top=0px"></a>
         <a href=<?php echo Router::site_url().'/main' ?> class="active">Home</a>
+        <a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a>
         <a href="javascript:void(0)" onclick="Back()">Back</a>
         <p style="font-size:21px; color:#fb8500; margin-bottom:10px">MedCaid Hospital</p>
   <!--a href="javascript:void(0);" class="icon" onclick="myFunction()"-->

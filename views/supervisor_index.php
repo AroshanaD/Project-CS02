@@ -1,4 +1,4 @@
-        <div class="container" style="min-height:700px">>
+        <div class="container" style="min-height:700px">
             <div class="contact-box" id="profile-board">
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
                 <div class="right" id="profile">
