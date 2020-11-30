@@ -235,17 +235,17 @@ button:focus {
 .val_field {
     font-family: 'Montserrat', sans-serif;
     font-size: 20px;
-    font-weight: bolder;
+    font-weight: 520;
     text-align: left;
 }
 
 .field{
-    color:#4c4c78;
+    color:#0f80aa;
 }
 
 .val_field {
     margin-bottom: 20px;
-    color: #012638;
+    color: #011722;
 }
 
 @media (max-width:768px) {
@@ -415,8 +415,8 @@ button:focus {
     font-family: 'Nunito' sans-serif;
     font-size: 18px;
     font-weight: Bold;
-    color: rgb(0, 0, 0);
-    background-color: white;
+    color: rgb(255, 255, 255);
+    background-color: rgba(190, 20, 20, 0.904);
 }
 
 .input-error {
@@ -1427,11 +1427,13 @@ select {
 }
 
 #profile-board {
-    border-radius: 50px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.19);
+    background: linear-gradient(to right, #f5f3f4 75%, #fb8500 25%);
     flex-basis: 40%;
 }
 
 #profile {
+    background:white;
     width: 350px;
     font-size: 1.4rem;
     margin: 30px;
