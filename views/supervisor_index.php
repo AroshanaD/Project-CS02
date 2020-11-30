@@ -72,6 +72,7 @@
                             <li><a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a></li>
                             <li><a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a></li>
                             <li><a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a></li>
+                            <li><a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a></li>
                         </ul>
                     </div>
                     </div>
