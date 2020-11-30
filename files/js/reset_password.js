@@ -21,7 +21,7 @@ $(document).ready(function(){
         }
 
         if(valid == true){
-            $(this).unbind('submit').submit()
+            $(this).unbind('submit').submit();
         }
     })
 })

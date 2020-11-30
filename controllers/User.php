@@ -11,52 +11,57 @@
         public function login(){
             $this->load('views','login');
             $this->load('views','footer');
+        }
 
+        public function verify_login(){
             $model = $this->load('models','Verify_login');
-            if(isset($_POST['login-submit'])){
-                $userid = $_POST['userid'];
-                $userpwd = $_POST['password'];
-                $user_cat = substr($userid,0,1);
-                switch($user_cat){
-                    case "1": $user_cat = 'patient'; break;
-                    case "2": $user_cat = 'patient'; break;
-                    case "9": $user_cat = 'patient'; break;
-                    case "D": $user_cat = 'doctor'; break;
-                    case "R": $user_cat = 'receptionist'; break;
-                    case "L": $user_cat = 'lab_technician'; break;
-                    case "P": $user_cat = 'pharmacist'; break;
-                    case "S": $user_cat = 'supervisor'; break;
-                    default : $user_cat = 'invalid'; break;
-                }
-                if($user_cat == "invalid"){
-                    echo "Invalid user id";
+            $userid = $_POST['id'];
+            $userpwd = $_POST['password'];
+            $user_cat = substr($userid,0,1);
+            switch($user_cat){
+                case "1": $user_cat = 'patient'; break;
+                case "2": $user_cat = 'patient'; break;
+                case "9": $user_cat = 'patient'; break;
+                case "D": $user_cat = 'doctor'; break;
+                case "R": $user_cat = 'receptionist'; break;
+                case "L": $user_cat = 'lab_technician'; break;
+                case "P": $user_cat = 'pharmacist'; break;
+                case "S": $user_cat = 'supervisor'; break;
+                default : $user_cat = 'invalid'; break;
+            }
+            if($user_cat == "invalid"){
+                $status = 2;
+            }
+            else{
+                $user = $model->verify($user_cat,$userid,$userpwd);
+                if($user == "invalid user"){
+                    /*header('Location:'.Router::site_url().'/user/login/?invalid user');*/
+                    //$URL= Router::site_url()."/user/login/?invalid user";
+                    //echo "<script>location.href='$URL'</script>";
+                    $status = 2;
                 }
                 else{
-                    $user = $model->verify($user_cat,$userid,$userpwd);
-                    if($user == "invalid user"){
-                        /*header('Location:'.Router::site_url().'/user/login/?invalid user');*/
-                        $URL= Router::site_url()."/user/login/?invalid user";
-                        echo "<script>location.href='$URL'</script>";
+                    $userpwd = hash('SHA256',$userpwd);
+                    if($userpwd == $user['pwd']){
+                        $user['user_cat'] = $user_cat;
+                        $session_inst = new session_helper;
+                        $session_inst->start($user);
+                        /*header('Location:'.Router::site_url().'/user/dashboard');
+                        $this->dashboard();*/
+                        //$URL= Router::site_url()."/user/dashboard";
+                        //echo "<script>location.href='$URL'</script>";
+                        $status = 0;
                     }
                     else{
-                        $userpwd = hash('SHA256',$userpwd);
-                        if($userpwd == $user['pwd']){
-                            $user['user_cat'] = $user_cat;
-                            $session_inst = new session_helper;
-                            $session_inst->start($user);
-                            /*header('Location:'.Router::site_url().'/user/dashboard');
-                            $this->dashboard();*/
-                            $URL= Router::site_url()."/user/dashboard";
-                            echo "<script>location.href='$URL'</script>";
-                        }
-                        else{
-                            /*header('Location:'.Router::site_url().'/user/login/?incorrect password');*/
-                            $URL= Router::site_url()."/user/login/?incorrect password";
-                            echo "<script>location.href='$URL'</script>";
-                        }
+                        /*header('Location:'.Router::site_url().'/user/login/?incorrect password');*/
+                        //$URL= Router::site_url()."/user/login/?incorrect password";
+                        //echo "<script>location.href='$URL'</script>";
+                        $status = 1;
                     }
                 }
             }
+            header('Content-Type: application/json');
+            echo json_encode($status);
         }
 
         public function dashboard(){

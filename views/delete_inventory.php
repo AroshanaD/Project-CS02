@@ -8,7 +8,7 @@
                     <form  method = "POST">
                         <?php $_POST['id']=$record['id'] ?>
                         <div class="right">
-                            <div class="title">Delete Inventory</div>
+                            <div class="title">Delete Medicine</div>
                             <div class="label">
                                 <label for="med_id">Medicine Id</label>
                             </div>

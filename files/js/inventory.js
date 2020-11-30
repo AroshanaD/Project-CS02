@@ -36,8 +36,8 @@ function render_table(data){
 
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'];
-        var update = "<a href=../inventory/update?update=medicine&id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
-        var dele = "<a href=../inventory/delete?delete=medicine&id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
+        var update = "<a href=../inventory/update?update=vendor&id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../inventory/delete_medicine?delete=medicine&id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
 
         var row_id = data[i]['id'];
         var row_id = (row_id.toString()).concat("')");
