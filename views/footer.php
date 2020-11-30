@@ -17,9 +17,4 @@
         
         <div class="footer">
             <p style="width:100%">© 2020, All rights reserved by MedCaid Hospitals</p></br>
-            <p>
-                +94 (0)11 2140 010</br>
-                +94 (0)11 2140 050</br></br>
-                contactus@medcaid.com</br></br>
-            </p>
        </div>
