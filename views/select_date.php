@@ -5,11 +5,14 @@
     <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
     <div class ="container">
         <div class="container-t" style="justify-content:center">
-            <div class="topic1">Select Doctor</div>
+            <div class="topic1">Select Date</div>
             <div class="contact-box" style="margin:10px">
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/calendar.svg' ?>)"></div>
                 <div class="right" style="max-width:500px">
                     <form method="post" action="<?php echo Router::site_url().'/appointment/fill_form' ?>">
+                        <div class="s-title" style="height:auto">
+                                <label for="date">Appointment Date</label>
+                            </div>
                         <div class="input">
                             <input type="date" name="date">
                         </div>

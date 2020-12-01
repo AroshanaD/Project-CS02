@@ -1,5 +1,4 @@
 
-    <div  style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_Payments_re_77x0.png'?>);background-repeat:no-repeat">
         <div class="container">
                 <div class="contact-box">
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/fill_form.svg' ?>)"></div>
@@ -76,6 +75,5 @@
                     </div>
                 </div>
             </div>
-        </div>
     </body>
 </html>

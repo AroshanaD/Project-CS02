@@ -10,13 +10,13 @@ class doctor_manage extends Models{
 
         if($specialization == null){
             $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
-            FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE doctor.deleted='0'";
+            FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE doctor.deleted=0";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
         }
         else{
             $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
-                FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE specialization.id = ? AND doctor.deleted='0'";
+                FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE specialization.id = ? AND doctor.deleted=0";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$specialization]);
         }

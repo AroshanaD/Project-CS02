@@ -36,7 +36,6 @@
             $model = $this->load('models','Appointment_Data');
             $name = $_SESSION['search']['name'];
             $specialization = $_SESSION['search']['specialization'];
-            $date = $_SESSION['search']['date'];
 
             $result = $model->get_doctors($specialization, $name);
             $_SESSION['search']['search_doclist'] = $result;
@@ -113,4 +112,13 @@
             $this->load('views','patient_appointment');
             $this->load('views','footer');
         }     
+
+        public function doctors(){
+            $model = $this->load('models','Appointment_Data');
+
+            $specialization = $_POST['specialization'];
+            $result = $model->doctors($specialization);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
     }

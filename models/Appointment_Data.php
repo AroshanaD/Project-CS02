@@ -49,6 +49,27 @@
             return $result;
         }
 
+        public function doctors($specialization){
+            $connect = new Database();
+            $pdo = $connect->connect();
+    
+            if($specialization == null){
+                $query = "SELECT id,f_name,l_name,qualification,fee FROM doctor WHERE deleted=0";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+            }
+            else{
+                $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
+                    FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE specialization.id = ? AND doctor.deleted=0";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute([$specialization]);
+            }
+        
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            return $result;
+        }
+    
+
     }
 
 ?>
