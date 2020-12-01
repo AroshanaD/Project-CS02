@@ -93,23 +93,19 @@
     <div class="navbar">
   
         <a href="javascript:void(0)" onclick="openSidebar()" ><img src=<?php echo Router::base_url().'../files/icons/nav.png'?> style="width:30px; height:15px ;margin-top=0px"></a>
-        <a href=<?php echo Router::site_url().'/main' ?> class="active">Home</a>
         <a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a>
-        <a href="javascript:void(0)" onclick="Back()">Back</a>
+        <a href=<?php echo Router::site_url().'/user/logout' ?>>Log Out</a>
         <p style="font-size:21px; color:#fb8500; margin-bottom:10px">MedCaid Hospital</p>
-  <!--a href="javascript:void(0);" class="icon" onclick="myFunction()"-->
-    <!--i class="fa fa-bars"></i-->
+
         </a>
     </div>
 
     <div id="sidebar" class="sidebar">
         <a href="javascript:void(0)" style="font-size:36px; text-align:right; padding-right: 50px" onclick="closeSidebar()">&times;</a>
-        <a href=<?php echo Router::site_url().'/main' ?>>Home</a>
         <a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a>
         <a href=<?php echo Router::site_url().'/user/change_password' ?>>Change Password</a>
         <a href=<?php echo Router::site_url().'/user/change_details' ?>>Change Profile</a>
         <a href=<?php echo Router::site_url().'/user/logout' ?>>Log Out</a>
-        <a href="javascript:void(0) " onclick="Back()">Back</a>
     </div>
 
     <script>
@@ -121,7 +117,4 @@
     document.getElementById("sidebar").style.width = "0";
     }
 
-    function Back() {
-    window.history.back();
-    }
     </script>

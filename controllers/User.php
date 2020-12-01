@@ -103,10 +103,17 @@
             }
         }
         public function logout(){
-            session_destroy();
-            /*header('Location:/project-cs02/index.php/user/login?logout successfully');*/
-            $URL= Router::site_url()."/user/login?logout successfully";
-            echo "<script>location.href='$URL'</script>";
+            if($_SESSION['user_cat']=='patient'){
+                session_destroy();
+                $URL= Router::site_url()."/main?logout successfully";
+                echo "<script>location.href='$URL'</script>";
+            }
+            else{
+                session_destroy();
+                /*header('Location:/project-cs02/index.php/user/login?logout successfully');*/
+                $URL= Router::site_url()."/user/login?logout successfully";
+                echo "<script>location.href='$URL'</script>";
+            }   
         }
 
         public function confirm_register(){
