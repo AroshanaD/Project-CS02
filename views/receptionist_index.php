@@ -11,7 +11,7 @@
                     <div class="dropdown-content">
                         <ul>
                             <li><a href=<?php echo Router::site_url().'/appointment/onpremise' ?>>Make Appointment</a></li>
-                            <li><a href=<?php echo Router::site_url().'/appointment/view_appointment' ?>>View Appointments</a></li>
+                            <li><a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View Appointments</a></li>
                         </ul>
                     </div>
                     </div>
