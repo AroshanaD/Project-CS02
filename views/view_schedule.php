@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html>
-    <head>
-    <title>View</title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
-    </head>
+<script src=<?php echo Router::base_url().'/files/js/schedule.js'?> type="text/javascript"></script>
    
     <body style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
     <div class ="container">
@@ -25,28 +18,15 @@
                 </div>      <!--search-bar--> 
                 <div class="table"> 
                     <table>
-                        <tr class="head_row">
-                            <td>No.</td>
-                            <td>Id</td>
-                            <td>Doctor</td>
-                            <td>Date</td>
-                            <td>Time</td>
-                            <td>Update</td>
-                            <td>Delete</td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td><a href=<?php echo Router::site_url().'/schedules/update' ?> style="color:black"><button type = "t-btn">Update</a></td>
-                            <td><a href=<?php echo Router::site_url().'/schedules/delete' ?> style="color:black"><button type = "t-btn">Delete</a></td>
-                        </tr>
+                        
                     </table>
                 </div>
         </div>      <!--container-2-->
     </div>      <!--container-->
+
+    <script>
+            
+    </script>
 </body>
     
 </html>

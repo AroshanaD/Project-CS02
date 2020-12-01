@@ -18,6 +18,14 @@
             $this->load('views','footer');
         }
 
+        public function get_view(){
+            $model= $this->load('models','Schedules_Manage');
+            $result = $model->view();
+            
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
         public function update(){
             $this->load('views','header');
             $this->load('views','update_schedule');
