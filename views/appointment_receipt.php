@@ -59,7 +59,7 @@
                         <label>-</label>
                     </div>
 
-                    <div><input type="submit" value="Print" class="btn"></div>
+                    <div><input type="submit" value="Save" class="btn"></div>
                 </div>  
             </div>
         </div>
