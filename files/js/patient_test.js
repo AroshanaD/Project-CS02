@@ -30,11 +30,20 @@ function render_table(data){
     $(`<td>`).text("ID"),$(`<td>`).text("Patient Name"),
     $(`<td>`).text("Test Name"),$(`<td>`).text("Date"),
     $(`<td>`).text("Availability"),
-    $(`<td>`).append("Update"),
-    $(`<td>`).append("Delete"));
+    $(`<td>`).append("View"));
     $("table").append(header);
 
-    for(var i=0; i<data.length; i++){
+    var View = "<a href=../patientTest/View_available><button class='tb-btn'>View</button></a>";
+    var header = $(`<tr>`).append($(`<td>`),
+    $(`<td>`).text(1),
+    $(`<td>`).text(1),$(`<td>`).text("Nimal perera"),
+    $(`<td>`).text("ECG"),$(`<td>`).text("2020-11-29"),
+    $(`<td>`).text("Unavailabile"),
+    $(`<td>`).append(View));
+    $("table").append(header);
+
+
+    /*for(var i=0; i<data.length; i++){
 
         var row_id = toString(data[i]['id']);
         var row_id = row_id.concat("')");
@@ -50,7 +59,7 @@ function render_table(data){
         $(`<td>`).append(update),
         $(`<td>`).append(dele));
         $("tbody").append(row);
-    }
+    }*/
 }
 
 function selectfunc(i,row_id){

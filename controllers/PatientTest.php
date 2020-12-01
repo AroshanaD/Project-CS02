@@ -67,5 +67,11 @@
             }
         }
 
+        public function View_available(){
+            $this->load('views','header');
+            $this->load('views','labtest_availability');
+            $this->load('views','footer');
+        }
+
     }
 ?>
