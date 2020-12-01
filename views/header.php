@@ -6,7 +6,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js'?>"></script>
     </head>
     <body>
     <style>
@@ -92,9 +92,9 @@
 
     <div class="navbar">
   
-        <a href="javascript:void(0)" onclick="openSidebar()" ><img src=<?php echo Router::base_url().'../files/icons/nav.png'?> style="width:30px; height:15px ;margin-top=0px"></a>
-        <a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a>
-        <a href=<?php echo Router::site_url().'/user/logout' ?>>Log Out</a>
+        <a href="javascript:void(0)" onclick="openSidebar()" ><img src=<?php echo Router::base_url().'/files/icons/navbar.svg'?> style="width:30px; height:15px ;margin-top=0px"></a>
+        <a href=<?php echo Router::site_url().'/user/logout' ?> style="float:right">Log Out</a>
+        <a href=<?php echo Router::site_url().'/user/dashboard' ?> style="float:right">Dashboard</a>
         <p style="font-size:21px; color:#fb8500; margin-bottom:10px">MedCaid Hospital</p>
 
         </a>
