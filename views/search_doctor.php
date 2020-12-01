@@ -21,13 +21,6 @@
                                     <option value="Any">Any Specialization</option>
                                 </select>
                             </div>
-                            <div class="label">
-                                <label for="birthday">Appointment Date</label>
-                            </div>
-                            <div class="input">
-                                <input type="date" name="date">
-                            </div>
-                        
                             <div><input type="submit" value="Search" class="btn"></div>
                         </div>    
                     </form>    

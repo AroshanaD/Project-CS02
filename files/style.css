@@ -95,9 +95,7 @@ button:focus {
     padding-top: 50px;
     justify-content: space-around;
     margin: 0;
-    align-items: center;
-    align-content: space-between;
-    min-height: 700px;
+    min-height: 800px;
 }
 
 .avatar {
@@ -272,9 +270,11 @@ button:focus {
     flex-wrap: wrap;
     margin-top: 60px;
     padding: 30px 0 30px 0;
-    height: fit-content;
+    height: 100%;
+    min-height: 500px;
     justify-content: space-around;
     margin: 20px;
+    align-content: space-between;
 }
 
 .task-card {
@@ -1030,7 +1030,7 @@ button:focus {
     height: max-content;
     padding: 20px;
     background-color: white;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     margin: 20px 10px 0px 15px;
     margin-bottom: 20px;
     align-items: center;
@@ -1278,7 +1278,8 @@ button:active {
 }
 
 #td-large{
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .table {
@@ -1291,7 +1292,7 @@ button:active {
 
 select {
     background-color: white;
-    height: 100%;
+    height: 50px;
     border: none;
     outline: none;
 }
@@ -1317,10 +1318,11 @@ select {
     align-items: center;
     text-align: center;
     background-color: #fff;
-    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.1);
     font-family: 'Quicksand', sans-serif;
     margin: 50px;
     align-items: center;
+    height: max-content;
 }
 
 .label {

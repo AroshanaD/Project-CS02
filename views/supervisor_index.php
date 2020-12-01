@@ -1,4 +1,4 @@
-        <div class="container" style="min-height:700px">
+        <div class="container">
             <div class="taskboard">
                 <div class="contact-box" id="task">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/user_icon.svg'?>)"></div>

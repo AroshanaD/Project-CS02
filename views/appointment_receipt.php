@@ -1,57 +1,66 @@
 
     <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_fill_forms_yltj.png'?>);background-repeat:no-repeat">
         <div class="container">
-            <div class="card-container">
-                <div class="card-medium">
-                    <div>Patient Details</div>
-                    <div class="card-details">
-                        Patient Name
+        <div class="contact-box">
+                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/receipt.svg' ?>)"></div>
+                <div class="right">
+                    <div class="title">Appointment Receipt</div>
+                    <div class="title" style="border:none; text-align:left">Patient Details</div>
+                    <div class="label">
+                        <label>Name</label>
                     </div>
-                    <div class="card-details">
-                        Contact
+                    <div class="input">
+                        <label>-</label>
                     </div>
-                    <div class="card-details">
-                        Email
+                    <div class="label">
+                        <label>ID</label>
                     </div>
-                </div>
-                <div class="card-medium">
-                    <div>Doctor Details</div>
-                    <div class="card-details">
-                        Doctor Name
+                    <div class="input">
+                        <label>-</label>
                     </div>
-                    <div class="card-details">
-                        Specialization
+                    <div class="label">
+                        <label>Contact No</label>
                     </div>
-                    <div class="card-details">
-                        Qualifications
+                    <div class="input">
+                        <label>-</label>
                     </div>
-                </div>
-                <div class="card-small">
-                    <div>Schedule Details</div>
-                    <div class="card-details">
-                        Date
+
+                    <div class="title" style="border:none; text-align:left">Doctor Details</div>
+                    <div class="label">
+                        <label>Name</label>
                     </div>
-                    <div class="card-details">
-                        Time
+                    <div class="input">
+                        <label>-</label>
                     </div>
-                    <div class="card-details">
-                        Number
+                    <div class="label">
+                        <label>Specialization</label>
                     </div>
-                </div>
-                <div class="card-large">
-                    <div>Charges</div>
-                    <div class="card-details">
-                        Doctor Charges
+                    <div class="input">
+                        <label>-</label>
                     </div>
-                    <div class="card-details">
-                        Tax
+
+                    <div class="title" style="border:none; text-align:left">Charges</div>
+                    <div class="label">
+                        <label>Doctor Fee</label>
                     </div>
-                    <div class="card-details">
-                        Total Amount
+                    <div class="input">
+                        <label>-</label>
                     </div>
-                    <input type="submit" value="Print" class="table-btn">
-                </div>
-                
+                    <div class="label">
+                        <label>Tax</label>
+                    </div>
+                    <div class="input">
+                        <label>-</label>
+                    </div>
+                    <div class="label">
+                        <label>Total Amount</label>
+                    </div>
+                    <div class="input">
+                        <label>-</label>
+                    </div>
+
+                    <div><input type="submit" value="Print" class="btn"></div>
+                </div>  
             </div>
         </div>
     </body>

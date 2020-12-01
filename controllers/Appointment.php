@@ -26,8 +26,7 @@
         public function select_doctor(){
             $_SESSION['search']['name'] = $_GET['doctor'];
             $_SESSION['search']['specialization'] = $_GET['specialization'];
-            $_SESSION['search']['date'] = $_GET['date'];
-
+            
             $this->load('views','header');
             $this->load('views','select_doctor');
             $this->load('views','footer');
@@ -74,11 +73,11 @@
         }
         
         public function fill_form(){
-            $date_no = $_GET['date'];
+            /**$date_no = $_GET['date'];
             $date = $_SESSION['search']['search_datelist'][$date_no]['date'];
             $time = $_SESSION['search']['search_datelist'][$date_no]['time'];
             $_SESSION['appointment']['date'] = $date;
-            $_SESSION['appointment']['time'] = $time;
+            $_SESSION['appointment']['time'] = $time;**/
 
             $this->load('views','header');
             $this->load('views','appointment_form');
