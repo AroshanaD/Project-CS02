@@ -95,10 +95,11 @@
                             <div>
                                 <button type="submit" name="Register" class = "btn" >REGISTER</button>
                             </div> 
+                            <div id="form-message"></div>
                         </div>
                            
                     </form>
-                    <div id="form-message"></div>
+                    
                 </div>
             </div>
         </div>

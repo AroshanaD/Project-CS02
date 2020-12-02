@@ -84,14 +84,24 @@ class Inventory_manage extends Models{
         return $status;
     }
 
-    public function displayById($id){
+    public function displayMedicine($id){
         $connect = new Database();
         $pdo = $connect->connect();
         $query = "SELECT medicine.id, medicine.name, medicine.description, medicine.vendor, medicine.unit_price, medicine.quantity, vendor.name AS vendor_name
-                FROM medicine LEFT JOIN vendor ON medicine.vendor = vendor.id WHERE medicine.id=?";
+                FROM medicine LEFT JOIN vendor ON medicine.vendor = vendor.id WHERE medicine.id=? AND medicine.deleted=0 ";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function displayVendor($id){
+        $connect = new Database();
+        $pdo = $connect->connect();
+        $query = "SELECT * FROM vendor WHERE id=? AND deleted=0";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 
@@ -109,9 +119,25 @@ class Inventory_manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "UPDATE medicine SET deleted='1' WHERE id=?";
+        $query = "UPDATE medicine SET deleted=1 WHERE id=?";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$medId]);
+
+        if($status == TRUE){
+            return TRUE;
+        }
+        else{
+            return FALSE;
+        }
+    }
+
+    public function delete_vendor($id){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "UPDATE vendor SET deleted=1 WHERE id=?";
+        $stmt = $pdo->prepare($query);
+        $status = $stmt->execute([$id]);
 
         if($status == TRUE){
             return TRUE;

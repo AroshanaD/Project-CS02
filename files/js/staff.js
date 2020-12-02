@@ -70,7 +70,7 @@ function selectfunc(i,row_id){
     }
     else{
         if(i%2==0){
-            $(row_id).css("background-color","#69f0ae");
+            $(row_id).css("background-color","#b8cac7");
         }
         else{
             $(row_id).css("background-color","white");

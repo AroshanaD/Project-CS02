@@ -46,16 +46,9 @@
                         $user['user_cat'] = $user_cat;
                         $session_inst = new session_helper;
                         $session_inst->start($user);
-                        /*header('Location:'.Router::site_url().'/user/dashboard');
-                        $this->dashboard();*/
-                        //$URL= Router::site_url()."/user/dashboard";
-                        //echo "<script>location.href='$URL'</script>";
                         $status = 0;
                     }
                     else{
-                        /*header('Location:'.Router::site_url().'/user/login/?incorrect password');*/
-                        //$URL= Router::site_url()."/user/login/?incorrect password";
-                        //echo "<script>location.href='$URL'</script>";
                         $status = 1;
                     }
                 }
@@ -71,7 +64,6 @@
                 $this->load('views','footer');
             }
             else{
-                /*header('Location:/project-cs02/index.php/user/login?please login');*/
                 $URL= Router::site_url()."/user/login?please login";
                 echo "<script>location.href='$URL'</script>";
             }
@@ -146,5 +138,10 @@
                 $URL= Router::site_url()."/user/login";
                 echo "<script>location.href='$URL'</script>";
             }
+        }
+
+        public function reset_password(){
+            $this->load('views','reset_password');
+            $this->load('views','footer');
         }
     }

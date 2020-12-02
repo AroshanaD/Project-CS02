@@ -8,12 +8,6 @@
                             
                             <div class="title">Change Details</div>
                             <div class="label">
-                                <label for="phar_details">User Details</label>
-                            </div>
-                            <div class="input">
-                                <input type="textarea" name="userdetails" required>
-                            </div>
-                            <div class="label">
                                 <label for="phar_contact">Contact No</label>
                             </div>
                             <div class="input">

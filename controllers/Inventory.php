@@ -88,14 +88,20 @@
             if($_GET['update'] == 'medicine'){
                 $id = $_GET['id'];
                 $model= $this->load('models','Inventory_manage');
-                $result= $model->displayById($id);
+                $result= $model->displayMedicine($id);
                 $_POST['medicine']=$result;
                 $this->load('views','header');
                 $this->load('views','update_inventory');
                 $this->load('views','footer');
             }
             if($_GET['update'] == 'vendor'){
-
+                $id = $_GET['id'];
+                $model= $this->load('models','Inventory_manage');
+                $result= $model->displayVendor($id);
+                $_POST['details']=$result;
+                $this->load('views','header');
+                $this->load('views','update_vendor');
+                $this->load('views','footer');
             }
         }
 
@@ -116,7 +122,7 @@
         public function delete_medicine(){
             $id = $_GET['id'];
             $model= $this->load('models','Inventory_manage');
-            $result= $model->displayById($id);
+            $result= $model->displayMedicine($id);
             $_POST['medicine']=$result;
             $this->load('views','header');
             $this->load('views','delete_inventory');
@@ -125,13 +131,32 @@
             if(isset($_POST['deleteMedicine'])){
                 $medId = $_POST['id'];
                 $user = $model->delete($medId);
-                /*header("Location: ../inventory/view?successfully deleted");
-                $this->view();*/
+                
                 $URL= Router::site_url()."/inventory/view?successfully deleted";
                 echo "<script>location.href='$URL'</script>";
 
             }
         }
+
+        public function delete_vendor(){
+            $id = $_GET['id'];
+            $model= $this->load('models','Inventory_manage');
+            $result= $model->displayVendor($id);
+            $_POST['details']=$result;
+            $this->load('views','header');
+            $this->load('views','delete_vendor');
+            $this->load('views','footer');
+
+            if(isset($_POST['Delete'])){
+                $id = $_POST['id'];
+                $status = $model->delete_vendor($id);
+                
+                $URL= Router::site_url()."/inventory/view?view=vendor?successfully deleted";
+                echo "<script>location.href='$URL'</script>";
+
+            }
+        }
+
 
         public function create_bill(){
             $this->load('views','header');

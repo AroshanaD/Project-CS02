@@ -10,8 +10,10 @@
                     </div>
                     <div class="dropdown-content">
                         <ul>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/view"?>>View Inventory</a></li>
-                            <li><a href=<?php echo Router::site_url()."/Inventory/add"?>>Add Inventory</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/view" ?>>View Medicine</a></li>
+                            <li><a href=<?php echo Router::site_url()."/Inventory/add"?>>Add Medicine</a></li>
+                            <li><a href=<?php echo Router::site_url()."/inventory/add?add=vendor" ?>>Add Vendors</a></li>
+                            <li><a href=<?php echo Router::site_url()."/inventory/view?view=vendor" ?>>View Vendors</a></li>
                         </ul>
                     </div>
                     </div>

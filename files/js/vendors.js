@@ -1,6 +1,6 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/inventory/get_vendor',
+        url: '../../index.php/inventory/get_vendors',
         data: {},
         type: 'post',
         success:function(data){
@@ -36,11 +36,11 @@ function render_table(data){
 
     for(var i=0; i<data.length; i++){
         var get_details = data[i]['id'];
-        var update = "<a href=../inventory/update_vendor?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var update = "<a href=../inventory/update?update=vendor&id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
         var dele = "<a href=../inventory/delete_vendor?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
 
         var row_id = data[i]['id'];
-        var row_id = row_id.concat("')");
+        var row_id = row_id.toString().concat("')");
         var func = "selectfunc(".concat(i+1,",","'",row_id);
         
         var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
@@ -65,7 +65,7 @@ function selectfunc(i,row_id){
     }
     else{
         if(i%2==0){
-            $(row_id).css("background-color","#69f0ae");
+            $(row_id).css("background-color","#b8cac7");
         }
         else{
             $(row_id).css("background-color","white");
