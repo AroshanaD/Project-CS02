@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style.css'?>>
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+        <script src="/project-cs02/files/js/jquery-3.5.1.js"></script>
         <script rel="text/javascript" src="/project-cs02/files/js/validate_form.js"></script>
         <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/main.css" ?>>
@@ -33,7 +33,7 @@
                                 <label for="id">NIC</label>
                             </div>
                             <div class="input" id="id_f">
-                                <input type="text" id="id" name="id" placeholder="ex:199912345678" required>
+                                <input type="text" id="id" name="id" placeholder="ex:199912345678 or 991234567V" required>
                             </div>
                             <div class="label" >
                                 <label for="name">First Name</label>

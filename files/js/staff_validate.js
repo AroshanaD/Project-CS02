@@ -12,7 +12,7 @@ $(document).ready(function(){
         var contact = $("#contact").val();
         var address = $("#address").val();
         var email = $("#email").val();
-        var submit = $(".submit-btn").val();
+        var submit = $(".btn").val();
 
         var valid = true;
         $(".error-message").remove();

@@ -1,5 +1,5 @@
 <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
-<script type="text/javascript" src="/project-cs02/files/js/medicine_validate.js"></script>
+<script type="text/javascript" src="/project-cs02/files/js/vendor_validate.js"></script>
 
     <div>
         <div class="container">

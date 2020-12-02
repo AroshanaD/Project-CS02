@@ -7,7 +7,7 @@ $(document).ready(function(){
         var address = $("#address").val();
         var contact = $("#contact").val();
         var email = $("#email").val();
-        var submit = $(".submit-btn").val();
+        var submit = $(".btn").val();
 
         var valid = true;
         $(".error-message").remove();
@@ -20,13 +20,13 @@ $(document).ready(function(){
         });
 
         if(text_val("name",name) == false){valid = false;}
-        if(address != null){
+        if(address != ''){
             if(address_val(address) == false){valid = false;}
         }
-        if(contact != null){
+        if(contact != ''){
             if(contact_val(contact) == false){valid = false;}
         }
-        if(email != null){
+        if(email != ''){
             if(email_val(email) == false){valid = false;}
         }
 

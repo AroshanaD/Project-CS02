@@ -78,7 +78,7 @@ class Inventory_manage extends Models{
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "INSERT INTO `vendor`(name,address,contact,email) VALUES(?,?,?,?)";
+        $query = "INSERT INTO `vendor`(name,address,contact_no,email) VALUES(?,?,?,?)";
         $stmt = $pdo->prepare($query);
         $status = $stmt->execute([$name,$address, $contact,$email]);
         return $status;

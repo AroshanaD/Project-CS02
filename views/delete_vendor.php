@@ -4,7 +4,7 @@
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_staff.svg' ?>)"></div>
                     <form method = "POST">
                        <div class="right">
-                           <div class="title">Update Vendor</div>
+                           <div class="title">Delete Vendor</div>
                             
                             <div class="label">
                                 <label for="id">Id</label>

@@ -45,7 +45,7 @@ function password_val(password){
 function text_val(id,text){
     var id = "#".concat(id);
     var clas = id.concat('_f');
-    if(! /^[\w\.\_\-\,\/\s]/.test(text)){
+    if(! /^[\w\.\_\-\,\s]/.test(text)){
         $(id).addClass("input-error");
         $("<div class='error-message'>Can Only Use '._-,' Special Characters</div>").insertAfter(clas);
         return false;
@@ -53,7 +53,7 @@ function text_val(id,text){
 }
 
 function id_val(id){
-    if(! /(^(19|20){1}([0-9]{10})$|^(99){1}(0-9){9}v$)/.test(id)){
+    if(! /(^(19|20){1}([0-9]{10})$|^9[0-9]{8}V$)/.test(id)){
         $("#id").addClass("input-error");
         $("<div class='error-message'>Please Enter Valid Id</div>").insertAfter("#id_f");
         return false;

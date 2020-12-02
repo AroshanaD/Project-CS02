@@ -48,17 +48,17 @@
             $query = "SELECT * FROM test WHERE id=?";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$id]);
-            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stmt->fetch(PDO::FETCH_ASSOC);
             return $result;
         }
 
-        public function update($id,$testName,$price,$description){
+        public function update($id,$price,$description){
             $connect = new Database();
             $pdo = $connect->connect();
             $deleted = 0;
-            $query= "UPDATE test SET name=?, unit_cost=?, description=?, deleted='$deleted' WHERE id=?";
+            $query= "UPDATE test SET unit_cost=?, description=? WHERE id=?";
             $stmt = $pdo->prepare($query);
-            $status= $stmt->execute([$testName,$price, $description,$id]);
+            $status= $stmt->execute([$price, $description,$id]);
 
             if($status==TRUE){
                 return TRUE;

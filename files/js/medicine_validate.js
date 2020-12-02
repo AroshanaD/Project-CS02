@@ -8,7 +8,7 @@ $(document).ready(function(){
         var vendor = $("#vendors").val();
         var price = $("#price").val();
         var quantity = $("#quantity").val();
-        var submit = $(".submit-btn").val();
+        var submit = $(".btn").val();
 
         var valid = true;
         $(".error-message").remove();

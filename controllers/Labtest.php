@@ -56,12 +56,32 @@
             $this->load('views','update_test');
             $this->load('views','footer');
 
-            if(isset($_POST['Update'])){
+            if(isset($_POST['update'])){
                 $testName = $_POST['test_name'];
                 $description = $_POST['test_description'];
                 $price = $_POST['test_price'];
 
                 $result=$model->update($id,$testName,$price,$description);
+
+                if($result==TRUE){
+                    $URL= Router::site_url()."/labtest/view?successfully updated";
+                    echo "<script>location.href='$URL'</script>";
+                }
+                else{
+                    $URL= Router::site_url()."/labtest/view?something went wrong";
+                    echo "<script>location.href='$URL'</script>"; 
+                }
+            }
+        }
+
+        public function update_test(){
+            $model= $this->load('models','Labtest_manage');
+            if(isset($_POST['update'])){
+                $id = $_GET['id'];
+                $description = $_POST['test_description'];
+                $price = $_POST['test_price'];
+
+                $result=$model->update($id,$price,$description);
 
                 if($result==TRUE){
                     $URL= Router::site_url()."/labtest/view?successfully updated";

@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="/project-cs02/files/js/jquery-3.5.1.js"></script>
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/style.css" ?>>
         <link rel="stylesheet" href=<?php echo Router::base_url()."/files/main.css" ?>>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
-        <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
         <script rel="text/javascript" src="/project-cs02/files/js/login.js"></script>
     </head>
     <body style="background:white;">

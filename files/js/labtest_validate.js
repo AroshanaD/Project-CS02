@@ -35,7 +35,7 @@ $(document).ready(function(){
                         $("#form-message").text("Successfully Added Test");
                     }
                     else{
-                        $("#form-message").text("Something Went Wrong");
+                        $("#form-message").text("Lab Test Already Available");
                     }
                 }
             })

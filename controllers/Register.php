@@ -42,7 +42,7 @@
                     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                     <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
                     <h4 style='text-decoration: underline'> Please Use This Email To Confirm Account Registration</h4>
-                    <p> You have registered for Medcaid Hospital Services. Please use the link below to complete the registration.</p>".$link;
+                    <p> You have registered for Medcaid Hospital Services. Please use the link below to complete the registration.</p><a href='".$link."'>".$link."</a>";
 
             $to = $email;
             $mail = new mail_authentication();
