@@ -21,7 +21,7 @@
         }
 
         public function validate($table,$col,$value){
-            $query = "SELECT count(1) FROM $table where $col = ?";
+            $query = "SELECT count(1) FROM $table WHERE $col = ?";
             $stmt = $this->pdo->prepare($query);
             $stmt->execute([$value]);
             $result = $stmt->fetch();

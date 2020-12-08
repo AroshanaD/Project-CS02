@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $("#search_spec").change(function(){
         $.ajax({
-            url: '../../index.php/doctors/doctors',
+            url: '../../index.php/doctors/category',
             data: {specialization:$("#search_spec").val()},
             type: 'post',
             success:function(data){

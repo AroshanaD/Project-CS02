@@ -1,24 +1,27 @@
 $(document).ready(function(){
 
+    id_generate();
+
     $("form").submit(function(event){
         event.preventDefault();
 
-        var category = $("#category").val();
         var id = $("#id").val();
         var fname = $("#fname").val();
         var lname = $("#lname").val();
         var gender = $("#gender").val();
-        var birthday = $("#birthday").val();
+        var qualification = $("#qualification").val();
         var contact = $("#contact").val();
         var address = $("#address").val();
         var email = $("#email").val();
+        var specialization = $("#search_spec").val();
+        var fee = $("#fee").val();
         var submit = $(".btn").val();
 
         var valid = true;
         $(".error-message").remove();
         $("#form-message").empty();
 
-        var id_list = ["#id","#fname","#lname","#gender","#birthday","#contact","#address","#email"];
+        var id_list = ["#id","#fname","#lname","#qualification","#contact","#address","#email","#specialization","#fee"];
 
         id_list.forEach(element => {
             $(element).removeClass("input-error");
@@ -30,34 +33,37 @@ $(document).ready(function(){
         if(contact_val(contact) == false){valid = false;}
         if(address_val(address) == false){valid = false;}
         if(email_val(email) == false){valid = false;}
-        if(bday_val(birthday) == false){valid = false;}
+        if(text_val(qualification) == false){valid = false;}
 
         console.log(id);
 
         if(valid == true){
             $.ajax({
-                url: '../../index.php/staff/validate',
-                data: {category : category,
+                url: '../../index.php/doctors/validate',
+                data: {
                     id : id,
                     fname : fname,
                     lname : lname,
                     gender : gender,
-                    birthday : birthday,
+                    qualification : qualification,
                     contact : contact,
                     address : address,
                     email : email,
+                    specialization : specialization,
+                    fee : fee,
                     submit : submit},
                 type: 'post',
                 success:function(data){
                     if(data['success'] == 1){
                         id_list.forEach(element => {
-                            $(element).val(" ");
+                            $(element).val("");
+                            id_generate();
                         });
                         if(submit == 'Add'){
                             $("#form-message").text("Successfully Added User! Email Sent To User");
                         }
                         if(submit == 'Update'){
-                            location.href = "../../index.php/staff/view";
+                            location.href = "../../index.php/doctors/view";
                         }
                     }
                     else{
@@ -84,28 +90,12 @@ $(document).ready(function(){
         }
     })
 
-    $("#category").change(function(){
-        id_generate();
-     })
 })
 
 function id_generate(){
     var category= $("#category").val();
-        var prefix_cat = "";
-         switch(category){
-            case 'pharmacist':
-                 prefix_cat = 'P';
-             break;
-             case 'receptionist':
-                 prefix_cat = 'R';
-             break;
-             case 'lab_technician':
-                 prefix_cat = 'L';
-             break;
-             case 'supervisor':
-                 prefix_cat = 'S';
-             break;
-         }
-         var id = prefix_cat.concat(Math.floor(Math.random() * (999999999 - 100000000)));
-         $("#id").val(id);
+    var prefix_cat = "D";
+         
+    var id = prefix_cat.concat(Math.floor(Math.random() * (999999999 - 100000000)));
+    $("#id").val(id);
 }
