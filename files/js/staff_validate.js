@@ -7,8 +7,12 @@ $(document).ready(function(){
         var id = $("#id").val();
         var fname = $("#fname").val();
         var lname = $("#lname").val();
-        var gender = $("#gender").val();
-        var birthday = $("#birthday").val();
+        if($("#gender")){
+            var gender = $("#gender").val();
+        }
+        if($("#birthday")){
+            var birthday = $("#birthday").val();
+        }
         var contact = $("#contact").val();
         var address = $("#address").val();
         var email = $("#email").val();
@@ -86,7 +90,7 @@ $(document).ready(function(){
 
     $("#category").change(function(){
         id_generate();
-     })
+    })
 })
 
 function id_generate(){

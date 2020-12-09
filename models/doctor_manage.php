@@ -81,19 +81,19 @@ class doctor_manage extends Models{
         $pdo = $connect->connect();
 
         $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.gender,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
-        FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE WHERE id=?";
+        FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE doctor.id=?";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function update_change($id,$address,$contact,$email,$fee){
+    public function update_change($id,$qualification,$address,$contact,$email,$fee){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query= "UPDATE doctor SET address=?, contact_no=?, email=?, fee=? WHERE id=?";
+        $query= "UPDATE doctor SET qualification=?, address=?, contact_no=?, email=?, fee=? WHERE id=?";
         $stmt = $pdo->prepare($query);
-        $status = $stmt->execute([$address,$contact,$email,$fee,$id]);
+        $status = $stmt->execute([$qualification,$address,$contact,$email,$fee,$id]);
 
         if($status == TRUE){
             return TRUE;

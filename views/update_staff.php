@@ -32,18 +32,6 @@
                                 <input type="text" name="l_name" id="lname" value="<?php echo $_POST['details']['l_name'] ?>" disabled required>
                             </div>
                             <div class="label">
-                                <label for="gender">Gender</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" id="gender" name="gender" value="<?php echo $_POST['details']['gender'] ?>" disabled required>
-                            </div>
-                            <div class="label">
-                                <label for="birthday">Birthday</label>
-                            </div>
-                            <div class="input" id="bday_f">
-                                <input type="date" id="birthday" name="birthday" value="<?php echo $_POST['details']['birthday'] ?>" disabled required>
-                            </div>
-                            <div class="label">
                                 <label for="address">Address</label>
                             </div>
                             <div class="input" id="address_f">

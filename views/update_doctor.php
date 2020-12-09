@@ -29,12 +29,6 @@
                                 <input type="text" id="lname" value="<?php echo $_POST['details']['l_name'] ?>" name="l_name" disabled required>
                             </div>
                             <div class="label">
-                                <label for="gender">Gender</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" id="gender" value="<?php echo $_POST['details']['gender'] ?>" name="gender" disabled required>
-                            </div>
-                            <div class="label">
                                 <label for="qualification">Qualifications</label>
                             </div>
                             <div class="input" id="text_f">
@@ -56,13 +50,13 @@
                                 <label for="contact">Contact No</label>
                             </div>
                             <div class="input" id="contact_f">
-                                <input type="text" id="contact" value="<?php echo $_POST['details']['contact_no'] ?>" name="contact" required>
+                                <input type="num" id="contact" value="<?php echo $_POST['details']['contact_no'] ?>" name="contact" required>
                             </div>
                             <div class="label">
                                 <label for="email">Email Address</label>
                             </div>
                             <div class="input" id="email_f">
-                                <input type="text" id="email" value="<?php echo $_POST['details']['email'] ?>" name="email" required>
+                                <input type="email" id="email" value="<?php echo $_POST['details']['email'] ?>" name="email" required>
                             </div>
                             <div><input type="submit" name="Update" value="Update" class="btn"></div>
                         </div >

@@ -49,12 +49,16 @@
             $id = $_POST['id'];
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
-            $gender = $_POST['gender'];
+            if(isset($_POST['gender'])){
+                $gender = $_POST['gender'];
+            }
             $qualification = $_POST['qualification'];
             $contact = $_POST['contact'];
             $address = $_POST['address'];
             $email = $_POST['email'];
-            $specialization = $_POST['specialization'];
+            if(isset($_POST['specialization'])){
+                $specialization = $_POST['specialization'];
+            }
             $fee = $_POST['fee'];
             $submit = $_POST['submit'];
 
@@ -95,7 +99,7 @@
                     $invalid_list['success'] = $status;
                 }
                 if($submit == 'Update'){
-                    $status = $this->update_doctor($id,$qualification,$address,$contact,$email);
+                    $status = $this->update_doctor($id,$qualification,$address,$contact,$email,$fee);
                     $invalid_list['success'] = $status;
                 }
             }
@@ -170,9 +174,9 @@
             $this->load('views','footer');
         }
 
-        public function update_doctor($id,$address,$contact,$email,$fee){
+        public function update_doctor($id,$qualification,$address,$contact,$email,$fee){
             $model = $this->load('models','doctor_manage');
-            $result = $model->update_change($id,$address,$contact,$email,$fee);
+            $result = $model->update_change($id,$qualification,$address,$contact,$email,$fee);
 
             if($result == TRUE){
                 return TRUE;
@@ -198,12 +202,12 @@
 
                 if($result == TRUE){
                     /*header("Location: ../staff/view?successfully deleted");*/
-                    $URL= Router::site_url()."/doctor/view?successfully deleted";
+                    $URL= Router::site_url()."/doctors/view?successfully deleted";
                     echo "<script>location.href='$URL'</script>";
                 }
                 else{
                     /*header("Location: ../staff/view?something went wrong");*/
-                    $URL= Router::site_url()."/doctor/view?something went wrong";
+                    $URL= Router::site_url()."/doctors/view?something went wrong";
                     echo "<script>location.href='$URL'</script>";
                 }
             }

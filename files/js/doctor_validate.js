@@ -1,6 +1,8 @@
 $(document).ready(function(){
 
-    id_generate();
+    if($(".btn").val() == 'Add'){
+        id_generate();
+    }
 
     $("form").submit(function(event){
         event.preventDefault();
@@ -8,12 +10,16 @@ $(document).ready(function(){
         var id = $("#id").val();
         var fname = $("#fname").val();
         var lname = $("#lname").val();
-        var gender = $("#gender").val();
+        if($("#gender")){
+            var gender = $("#gender").val();
+        }
         var qualification = $("#qualification").val();
         var contact = $("#contact").val();
         var address = $("#address").val();
         var email = $("#email").val();
-        var specialization = $("#search_spec").val();
+        if($("#search_spec")){
+            var specialization = $("#search_spec").val();
+        }
         var fee = $("#fee").val();
         var submit = $(".btn").val();
 

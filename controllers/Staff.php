@@ -49,8 +49,12 @@
             $id = $_POST['id'];
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
-            $gender = $_POST['gender'];
-            $birthday = $_POST['birthday'];
+            if(isset($_POST['gender'])){
+                $gender = $_POST['gender'];
+            }
+            if(isset($_POST['birthday'])){
+                $birthday = $_POST['birthday'];
+            }
             $contact = $_POST['contact'];
             $address = $_POST['address'];
             $email = $_POST['email'];
