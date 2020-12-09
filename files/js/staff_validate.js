@@ -7,8 +7,12 @@ $(document).ready(function(){
         var id = $("#id").val();
         var fname = $("#fname").val();
         var lname = $("#lname").val();
-        var gender = $("#gender").val();
-        var birthday = $("#birthday").val();
+        if($("#gender")){
+            var gender = $("#gender").val();
+        }
+        if($("#birthday")){
+            var birthday = $("#birthday").val();
+        }
         var contact = $("#contact").val();
         var address = $("#address").val();
         var email = $("#email").val();
@@ -54,10 +58,13 @@ $(document).ready(function(){
                             $(element).val("");
                         });
                         if(submit == 'Add'){
+                            $("#category").change(function(){
+                                id_generate();
+                             });
                             $("#form-message").text("Successfully Added User! Email Sent To User");
                         }
                         if(submit == 'Update'){
-                            $("#form-message").text("Successfully Updated User!");
+                            location.href = "../../index.php/staff/view";
                         }
                     }
                     else{
@@ -83,10 +90,6 @@ $(document).ready(function(){
             })
         }
     })
-
-    $("#category").change(function(){
-        id_generate();
-     })
 })
 
 function id_generate(){
