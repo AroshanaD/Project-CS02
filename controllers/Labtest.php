@@ -104,8 +104,7 @@
             $this->load('views','footer');
 
             if(isset($_POST['Delete'])){
-                $testId = $_POST['id'];
-                $result=$model->delete($testId);
+                $result=$model->delete($id);
                 if($result==TRUE){
                     $URL= Router::site_url()."/labtest/view?successfully deleted";
                     echo "<script>location.href='$URL'</script>";

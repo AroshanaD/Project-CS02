@@ -17,7 +17,7 @@
             $connect = new Database();
             $pdo = $connect->connect();
 
-            $query = "SELECT * FROM test WHERE deleted='0'";
+            $query = "SELECT * FROM test WHERE deleted=0";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -35,7 +35,7 @@
                 $name = '';
             }
     
-            $query = "SELECT * FROM test WHERE id = ? AND deleted ='0' OR name LIKE ?  ";
+            $query = "SELECT * FROM test WHERE id = ? AND deleted =0 OR name LIKE ?  ";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$id,$name]);
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -72,7 +72,7 @@
             $connect = new Database();
             $pdo = $connect->connect();
 
-            $query = "UPDATE test SET deleted='1' WHERE id=?";
+            $query = "UPDATE test SET deleted=1 WHERE id=?";
             $stmt = $pdo->prepare($query);
             $status= $stmt->execute([$testId]);
 
