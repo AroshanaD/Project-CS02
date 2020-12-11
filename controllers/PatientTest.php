@@ -34,7 +34,8 @@
                     $model->add_testis($last_test,$test);
                 }
             }
-
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function view(){

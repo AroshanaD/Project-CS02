@@ -1,4 +1,5 @@
 var selected_list = [];
+var selected_list_details = [];
 var total_cost = 0;
 
 $(document).ready(function(){
@@ -63,7 +64,10 @@ $(document).ready(function(){
                     },
                     type: 'post',
                     success:function(data){
-                        
+                        if(data == true){  
+                            render_bill(id,name,gender,age,contact);
+                        }
+                        //location.href = "../../index.php/PatientTest/create_test";
                     }
                 })
             }
@@ -102,9 +106,12 @@ function render_table(data){
 
 function select_func(id,name,cost){
 
+    var test = [id,name,cost];
+    selected_list_details.push(test);
     selected_list.push(id);
     total_cost = total_cost + cost;
-    console.log(selected_list);
+    //console.log(selected_list);
+    //console.log(selected_list_details);
 
     var remove_func = "remove_func(".concat(id,")");
 
@@ -119,7 +126,46 @@ function select_func(id,name,cost){
 
 function remove_func(id){
     selected_list.splice(selected_list.indexOf(id),1);
+    let index = selected_list_details.findIndex( element => {
+        if (element[0] == id) {
+          return true;
+        }
+    });
+    selected_list_details.splice(selected_list.indexOf(index),1);
+    //console.log(selected_list_details);
 
     $("#".concat(id)).remove();
-    console.log(selected_list);
+    //console.log(selected_list);
+}
+
+function render_bill(id,name,gender,age,contact){
+    $(".container").empty();
+    $(".container").append(`<div class=${"receipt"}>`);
+    $(".receipt").append(`<div class=${"receipt-t"}>`);
+    $(".receipt-t").text("Lab Test");
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient ID"));
+    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(id));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Name"));
+    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(name));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Gender"));
+    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(gender));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Age"));
+    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(age));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Contact"));
+    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(contact));
+    $(".receipt").append($(`<table id=${"test-tb"}>`));
+
+    selected_list_details.forEach(element => {
+        var row = $(`<tr id=${element[0]}>`).append(
+            $(`<td>`).text(element[0]),$(`<td>`).text(element[1]),
+            $(`<td>`).text(element[2]));
+        $("#test-tb").append(row);
+    });
+    row = $(`<tr>`).append(
+        $(`<td>`),$(`<td>`).text("Total"),
+        $(`<td>`).text(total_cost));
+    $("#test-tb").append(row);
+
+    $(".receipt").append($(`<button id=${"print"}>`).text("Print"));
+
 }
