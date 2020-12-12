@@ -1,12 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+    </head>
 
-        <div class="container">
-                <div class="contact-box">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/fill_form.svg' ?>)"></div>
-                <div class="right">
-                    <form method='post' action=<?php echo Router::site_url().'/appointment/receipt' ?>>
-                        <div class="form-box">
-                            <div class="title">Appointment Form</div>
-                            <div class="label">
+    <body>
+        <div class="container-2">
+            <div class="nav">
+                <a href=<?php echo Router::site_url().'/user/logout' ?> style="float:right">Log Out</a>
+                <a href=<?php echo Router::site_url().'/user/dashboard'?> style="float:right">Dashboard</a>
+                <button id="nav-icon">   
+                </button>
+                <button id="close-icon">
+                </button>
+            </div>
+              
+            <?php include 'patient_sidebar.php';?>
+             
+            <form class="form" method='post' action=<?php echo Router::site_url().'/appointment/receipt' ?>>
+                <div class="form-container">
+                    <div id="form-img"> 
+                    </div>
+                    <div id="form-1">
+                    <div class="label">
                                 <label for="id">NIC</label>
                             </div>
                             <div class="input">
@@ -45,8 +63,10 @@
                                 <input type="radio" id="method1" name="method" value="method1">
                                 <label for="method2">Method 2</label>
                                 <input type="radio" id="method2" name="method" value="method2">
-                            </div>
-                            <div class="label">
+                            </div> 
+                    </div>
+                    <div id="form-2">
+                    <div class="label">
                                 <label for="doc_charges">Doctor Charges</label>
                             </div>
                             <div class="input">
@@ -68,12 +88,12 @@
                                 <label for="payment">Acknowledge & Proceed</label>
                                 <input type="checkbox" id="agree" name="agree" value="agree" required>
                             </div>
-                            <div class="btn-area"><input type="submit" value="Proceed" class="btn"></div>
-                        </div>
-                        </div>
-                    </form>
+                            <input type="submit" value="Proceed" class="btn">
+                            <div id="form-message"></div>
                     </div>
                 </div>
-            </div>
+            </form> 
+            <div class="footer">All rights are reserved</div>
+          </div>
     </body>
 </html>
