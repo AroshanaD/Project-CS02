@@ -7,9 +7,7 @@
         } 
 
         public function add(){
-            $this->load('views','header');
             $this->load('views','add_test');
-            $this->load('views','footer');
         }
 
         public function add_test(){

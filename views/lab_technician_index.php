@@ -44,8 +44,10 @@
                 <div><img src='seller.png' style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
             <div class="taskboard" style="background-color: #c7c7c7;">
-              <a href=<?php echo Router::site_url().'/patientTest/view' ?> class="task">Patient's lab test</a>
-              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task">Lab tests</a>
+              <a href=<?php echo Router::site_url().'/patientTest/create_test' ?> class="task">Create Test</a>
+              <a href=<?php echo Router::site_url().'/patientTest/view' ?> class="task">View Patient Tests</a>
+              <a href=<?php echo Router::site_url().'/labtest/add' ?> class="task">Add New Lab Test</a>
+              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task">View Lab tests</a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>
