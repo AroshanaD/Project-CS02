@@ -28,7 +28,7 @@
 
             </table>
         </div>
-        <div class="form">
+        <div class="form" style="background: none">
             <form class="form-container">
                 <div id="form-img"></div>
                 <div id="form-1">
