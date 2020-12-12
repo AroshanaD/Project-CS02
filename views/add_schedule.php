@@ -10,8 +10,8 @@
     <body>
         <div class="container-2">
             <div class="nav">
-                <a href='/user/logout' style="float:right">Log Out</a>
-                <a href='/user/dashboard' style="float:right">Dashboard</a>
+                <a href=<?php echo Router::site_url().'/user/logout' ?> style="float:right">Log Out</a>
+                <a href=<?php echo Router::site_url().'/user/dashboard'?> style="float:right">Dashboard</a>
                 <button id="nav-icon">   
                 </button>
                 <button id="close-icon">
@@ -21,14 +21,10 @@
             <?php include 'Supervisor_sidebar.php';?>
              
             <form class="form">
-              <div class="form-container">
-                 <div id="form-img"> 
-                 </div>
-                 <div id="form-1">
-                    <div class="label">
-                        <label for="schedule">Doctor Schedule</label>
+                <div class="form-container">
+                    <div id="form-img"> 
                     </div>
-                         
+                    <div id="form-1">
                         <div class="label">
                             <label for="doc_id">Doctor Id</label>
                         </div>
@@ -71,8 +67,8 @@
                         <input type="submit" name="Add" value="Add" class="btn">
                          <div id="form-message"></div>
 
-                         </div>
-              </div>
+                    </div>
+                </div>
             </form>
             <div class="footer">All rights are reserved</div>
           </div>
