@@ -59,9 +59,9 @@
 
         public function dashboard(){
             if(isset($_SESSION['id'])){
-                $this->load('views','header');
+                /*$this->load('views','header');*/
                 $this->load('views',$_SESSION['user_cat']."_index");
-                $this->load('views','footer');
+               /* $this->load('views','footer');*/
             }
             else{
                 $URL= Router::site_url()."/user/login?please login";
