@@ -1,89 +1,89 @@
-<script type="text/javascript" src="/project-cs02/files/js/select_labtest.js"></script>
-<script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
+<!DOCTYPE html>
+<html>
 
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script type="text/javascript" src="/project-cs02/files/js/select_labtest.js"></script>
+    <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
+</head>
 
-        <div class="container">
-            <div class="container-t">
-                <div style="width:60%">
-                    <div class="table" style="max-height: 400px; overflow-y: scroll">
-                        <table id="test_tb">
+<body>
+    <div class="container-l">
+        <div class="nav">
+            <a href='/user/logout' style="float:right">Log Out</a>
+            <a href='/user/dashboard' style="float:right">Dashboard</a>
+            <button id="nav-icon">
+            </button>
+            <button id="close-icon">
+            </button>
+        </div>
 
-                        </table>
+        <?php include 'Supervisor_sidebar.php'; ?>
+
+        <div class=table id="selected">
+            <table id="test_tb">
+
+            </table>
+        </div>
+        <div class="form">
+            <form class="form-container">
+                <div id="form-img"></div>
+                <div id="form-1">
+                    <div class="input">
+                        <input style="width:200px" type="number" name="test_id" value="<?php echo $_POST['test_id'] ?>" disabled required>
+                    </div>
+                    <div class="input" id="id_f">
+                        <input style="width:200px" type="text" name="id" id="id" placeholder="Customer ID" required>
+                    </div>
+                    <div class="input" id="name_f">
+                        <input style="width:200px" type="text" id="name" name="full_name" placeholder="Customer Name" required>
+                    </div>
+                    <div class="input">
+                        <input style="width:200px" type="text" name="age" id="age" placeholder="Customer Age" required>
                     </div>
                 </div>
-
-                <div class="contact-box" style="max-width:30%">
-                    <div class="left"></div>
-                        <form> 
-                            <div class="right">
-                                <div class="label">
-                                    <label for="test_id">Test Id</label>
-                                </div>
-                                <div class="input">
-                                    <input type="number" name="test_id" value="<?php echo $_POST['test_id'] ?>" disabled required>
-                                </div>
-                                <div class="label">
-                                    <label for="id">Patient Id</label>
-                                </div>
-                                <div class="input" id="id_f">
-                                    <input type="text" name="id" id="id" required>
-                                </div>
-                                <div class="label">
-                                    <label for="full_name">Name</label>
-                                </div>
-                                <div class="input" id="name_f">
-                                <input type="text" id="name" name="full_name" required>
-                                </div>
-                                <div class="label">
-                                    <label for="age">Age</label>
-                                </div>
-                                <div class="input">
-                                    <input type="text" name="age" id="age" required>
-                                </div>
-                                <div class="label">
-                                    <label for="gender">Gender</label>
-                                </div>
-                                <div class="input">
-                                    <select name="gender" id="gender" required>
-                                        <option value="any">Select gender</option>
-                                        <option value="male">Male</option>
-                                        <option value="female">female</option>
-                                        <option value="other">Other</option>
-                                    </select>
-                                </div>
-                                <div class="label">
-                                    <label for="contact">Contact No</label>
-                                </div>
-                                <div class="input" id="contact_f">
-                                    <input type="tel" id="contact" name="contact" required>
-                                </div>
-                                <div style="width:100%; text-align: center">
-                                    <input type="submit" value="Add Test" class="btn">
-                                </div>
-                                <div id="form-message"></div>
-                            </div>
-                        </form>
+                <div id="form-2">
+                    <div class="input">
+                        <select style="width:200px" name="gender" id="gender" required>
+                            <option value="any">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">female</option>
+                            <option value="other">Other</option>
+                        </select>
                     </div>
-                    <div class="container-t">
-                        <div class="search-bar" style="width: 400px">
-                            <div class="site-search"> 
-                                <input id="name" type="text" placeholder="Name " name="name"> 
-                            </div>      <!--site-search-->  <!--date-->
-                            <div class="site-search"> 
-                                <button id="search-btn" type = "submit"  name="search" style="font-size:18px">Search</button> 
-                            </div>
-                        </div>
-                        <div class="table">
-                            <table id="select-tb">
-                        
-                            </table>
-                        </div>
+                    <div class="input" id="contact_f">
+                        <input style="width:200px" type="tel" id="contact" name="contact" placeholder="Customer Contact" required>
                     </div>
+                    <div style="width:100%; text-align: center">
+                        <input style="width:200px" type="submit" value="Add Test" class="btn">
+                    </div>
+                    <div id="form-message"></div>
                 </div>
+            </form>
+        </div>
+        <div class="table">
+            <div class="search-bar" style="width: 400px">
+                <div class="site-search">
+                    <input id="name" type="text" placeholder="Name " name="name">
+                </div>
+                <!--site-search-->
+                <!--date-->
+                <div class="site-search">
+                    <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
+                </div>
+            </div>
+            <div class="table">
+                <table id="select-tb">
 
+                </table>
             </div>
         </div>
 
-    </body>
+        <div class="footer">All rights are reserved</div>
+    </div>
+</body>
 
 </html>

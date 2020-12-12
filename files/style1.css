@@ -331,16 +331,18 @@ body {
     height: 80%;
     display: grid;
     box-shadow: var(--box-shadow);
+    min-height: -webkit-fill-available;
+    min-width: -webkit-fill-available;
 }
 
-.form-container{
+.form-container {
     flex-basis: 80%;
     grid-template-columns: 0.6fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "form-img form-1 form-2";
 }
 
-.form-container1{
+.form-container1 {
     flex-basis: 60%;
     grid-template-columns: 0.5fr 1fr;
     grid-template-rows: 1fr;
@@ -385,6 +387,7 @@ body {
     font-size: 15px;
     font-weight: lighter;
     padding: 5px 0 5px 20px;
+    margin-bottom: 10px;
 }
 
 .input>select {
@@ -393,10 +396,11 @@ body {
     outline: none;
     background-color: white;
     color: #4e4e4e;
-    width: 405px;
+    width: 400px;
     height: 30px;
     font-weight: lighter;
     padding: 5px 0 5px 20px;
+    margin-bottom: 10px;
 }
 
 .btn {
@@ -417,4 +421,22 @@ body {
 
 .btn:hover {
     background-color: var(--btn-color);
+}
+
+.container-l {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.4fr 1fr 1fr;
+    grid-template-rows: 0.2fr 0.8fr 1fr 0.2fr;
+    grid-template-areas: "nav nav nav" "sidebar selected form" "sidebar table table" "footer footer footer";
+}
+
+#selected {
+    padding: var(--main-padding);
+    grid-area: selected;
+}
+
+.table {
+    padding: var(--main-padding);
+    grid-area: table;
 }

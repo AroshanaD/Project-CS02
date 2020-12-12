@@ -10,9 +10,7 @@
             $model= $this->load('models','PatientTest_Manage');
             $result = $model->get_lastid();
             $_POST['test_id'] = $result['id'] + 1;
-            $this->load('views','header');
             $this->load('views','add_labtest');
-            $this->load('views','footer');
         }
 
         public function add_test(){

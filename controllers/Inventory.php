@@ -165,9 +165,7 @@ class Inventory extends Controllers
 
     public function create_bill()
     {
-        $this->load('views', 'header');
         $this->load('views', 'create_bill');
-        $this->load('views', 'footer');
     }
 
     public function search_medicine()
