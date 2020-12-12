@@ -29,9 +29,9 @@
         }
 
         public function report(){
-            $this->load('views','header');
+            /*$this->load('views','header');*/
             $this->load('views','generate_report');
-            $this->load('views','footer');
+            /*$this->load('views','footer');*/
         }
 
     }

@@ -18,9 +18,9 @@
 
         public function search_doctor(){
             $_SESSION['appointment'] = [];
-            $this->load('views','header');
+            /*$this->load('views','header');*/
             $this->load('views','search_doctor');
-            $this->load('views','footer');
+            /*$this->load('views','footer');*/
         }
 
         public function select_doctor(){
@@ -78,15 +78,15 @@
             $_SESSION['appointment']['date'] = $date;
             $_SESSION['appointment']['time'] = $time;**/
 
-            $this->load('views','header');
+            /*$this->load('views','header');*/
             $this->load('views','appointment_form');
-            $this->load('views','footer');
+            /*$this->load('views','footer');*/
         }
 
         public function receipt(){
-            $this->load('views','header');
+            /*$this->load('views','header');*/
             $this->load('views','appointment_receipt');
-            $this->load('views','footer');
+            /*$this->load('views','footer');*/
         }
         
         public function view(){
