@@ -113,7 +113,7 @@ function select_func(id,name,cost){
     //console.log(selected_list);
     //console.log(selected_list_details);
 
-    var remove_func = "remove_func(".concat(id,")");
+    var remove_func = "remove_func(".concat(id,',',cost,")");
 
     var remove = $(`<button class=${"tb-btn"} id=${"select"} onclick=${remove_func}>`).text("Remove");
     var row = $(`<tr id=${id}>`).append(
@@ -124,7 +124,8 @@ function select_func(id,name,cost){
 
 }
 
-function remove_func(id){
+function remove_func(id,cost){
+    total_cost = total_cost - cost;
     selected_list.splice(selected_list.indexOf(id),1);
     let index = selected_list_details.findIndex( element => {
         if (element[0] == id) {
