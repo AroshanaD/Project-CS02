@@ -1,42 +1,65 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <script type = "text/javascript" src=<?php echo Router::base_url(). '/project-cs02/files/js/staff.js'?>></script>
+    </head>
 
-    <script src=<?php echo Router::base_url().'/files/js/staff.js'?> type="text/javascript"></script>
-   
-    <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
-    <div class ="container">
-        <div class=container-t>
-            <div class="topic1">View staff</div>
-            <div class="search-bar">
-            <div clas="site-search">
-                <select id="staff" name="staff" required>
-                    <option value="" selected="true" disabled>Select Category</option>
+    <body>
+    <div class="container-2">
+        <div class="nav">
+            <a href='/user/logout' style="float:right">Log Out</a>
+            <a href='/user/dashboard' style="float:right">Dashboard</a>
+            <button id="nav-icon">   
+                </button>
+            <button id="close-icon">
+                </button>
+        </div>
+    
+        <?php include 'Supervisor_sidebar.php';?>
+
+        <form class="form">
+            <div class="search">
+                <div class="search-bar">
+                    <select name="specialization" id="staff">
+                    <option value="" disabled selected hidden>Select Category</option>
                     <option value="pharmacist">Pharmacist</option>
                     <option value="lab_technician ">Lab technician</option>
                     <option value="receptionist">Receptionist</option>
                     <option value="supervisor">Supervisor</option>
-                </select>
-            </div>
-            </div>
-            <div class = "search-bar">
-                <div class="site-search"> 
-                    <input id="id" type="text" placeholder=" Id" name="id"> 
-                </div>      <!--site-search-->  <!--text-->
-                <div class="site-search"> 
-                    <input id="name" type="text" placeholder=" Name " name="name"> 
-                </div>      <!--site-search-->  <!--date-->
-                <div class="site-search"> 
-                    <button id="search-btn" name="search" type = "submit">Search</button>
-                </div>     <!--site-search-->  <!--btn-->  
-            </div>    <!--search-bar-->  
-            <div class="table">
-                <table id="tb">
-                    
-                </table>
-            <div>
-        </div>      <!--container-2-->
-        </div>      <!--container-->
-        <script>
-            
-        </script>
+                    </select>
+                </div>
+                <div class="search-bar">
+                    <div class="site-search">
+                        <input type="text" id="id" placeholder="Id" name="id">
+                    </div>
+                    <!--site-search-->
+                    <!--text-->
+                    <div class="site-search">
+                        <input type="text" id="name" placeholder="Name" name="name">
+                    </div>
+                    <!--site-search-->
+                    <!--date-->
+                    <!--site-search-->
+                    <div class="site-search">
+                        <button id="search-btn" type="submit">Search</button>
+                    </div>
+                    <!--site-search-->
+                    <!--btn-->
+                </div>
+
+
+                <div class="table">
+                    <table>
+                       
+                    </table>
+                </div>
+        </form>
+        </div>
+        <div class="footer">All rights are reserved</div>
+    </div>
     </body>
     
 </html>

@@ -136,7 +136,7 @@
         }
 
         public function view(){
-            $this->load('views','header');
+           /* $this->load('views','header');*/
             $this->load('views','view_staff');
         }
 
