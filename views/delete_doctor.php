@@ -46,13 +46,13 @@
                                 <label for="contact">Contact No</label>
                             </div>
                             <div class="input">
-                                <input type="text" value="<?php echo $_POST['details']['contact_no'] ?>" name="contact" required>
+                                <input type="text" value="<?php echo $_POST['details']['contact_no'] ?>" name="contact" disabled required>
                             </div>
                             <div class="label">
                                 <label for="email">Email Address</label>
                             </div>
                             <div class="input">
-                                <input type="text" value="<?php echo $_POST['details']['email'] ?>" name="email" required>
+                                <input type="text" value="<?php echo $_POST['details']['email'] ?>" name="email" disabled required>
                             </div>
                             <div><input type="submit" name="Delete" value="Delete" class="btn"></div>
                         </div >
