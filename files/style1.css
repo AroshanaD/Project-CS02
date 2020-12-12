@@ -328,22 +328,20 @@ body {
     background-position: right bottom;
     /*Positioning*/
     background-repeat: no-repeat;
-    height: 80%;
+    height: fit-content;
     display: grid;
     box-shadow: var(--box-shadow);
-    min-height: -webkit-fill-available;
-    min-width: -webkit-fill-available;
 }
 
 .form-container {
-    flex-basis: 80%;
+    width: fit-content;
     grid-template-columns: 0.6fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "form-img form-1 form-2";
 }
 
 .form-container1 {
-    flex-basis: 60%;
+    width: fit-content;
     grid-template-columns: 0.5fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "form-img form-1";

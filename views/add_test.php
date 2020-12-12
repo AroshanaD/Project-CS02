@@ -23,7 +23,7 @@
         <?php include 'labtech_sidebar.php'; ?>
 
         <form class="form">
-            <div class="form-container">
+            <div class="form-container1">
                 <div id="form-img">
                 </div>
                 <div id="form-1">
@@ -47,8 +47,6 @@
                     </div>
                     <div><input type="submit" value="Add" name="Add" class="btn"></div>
                     <div id="form-message"></div>
-                </div>
-                <div id="form-2">
                 </div>
             </div>
         </form>
