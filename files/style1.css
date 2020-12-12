@@ -434,11 +434,13 @@ body {
     grid-area: selected;
 }
 
-.table {
+.render-table {
     padding: var(--main-padding);
+    background-color: var(--table-color);
     grid-area: table;
 }
 
+<<<<<<< Updated upstream
 table {
     width: 100%;
     border-collapse: collapse;
@@ -495,3 +497,98 @@ td>a {
     font-size: 20px;
     font-weight: bold;
 }
+=======
+.render-table th,
+.render-table td {
+    padding: 5px 20px 5px 20px;
+    font-size: max(1.2vw, 14px);
+    font-weight: normal;
+    width: fit-content;
+}
+
+.render-table tr {
+    height: 30px;
+    width: 100%;
+    background-color: white;
+}
+
+.render-table th {
+    background-color: rgba(43, 18, 153, 0.712);
+    font-weight: normal;
+    font-size: max(1.4vw, 14px);
+    color: #fff;
+}
+
+.render-table tr:nth-child(odd) {
+    background-color: rgb(141, 142, 207);
+}
+
+.render-table tr:nth-child(even) {
+    background-color: rgb(208, 211, 209);
+}
+
+.search {
+    padding: var(--main-padding);
+    background-color: rgb(247, 243, 243);
+    grid-area: search;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    width: fit-content;
+    font-size: 16px;
+    margin: 20px;
+    justify-content: space-between;
+    padding: 2px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--side-bar-color);
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
+}
+
+.site-search>input,
+.site-search>select {
+    width: 180px;
+    margin: 5px 20px 5px 10px;
+    padding: 10px;
+    border-width: 0;
+    border-radius: 5px;
+    background-color: white;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
+}
+
+.site-search>select {
+    height: 100%;
+    background-color: white;
+    color: rgb(120, 120, 120);
+    border-radius: var(--main-border-radius);
+}
+
+.site-search>input:focus,
+.site-search>select:focus {
+    outline: none;
+}
+
+.site-search>button {
+    background-color: #dcdce2a2;
+    height: inherit;
+    color: rgb(30, 9, 49);
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-right: 20px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
+}
+
+.search-item>input:hover,
+.search-btn:hover {
+    opacity: 0.6;
+}
+>>>>>>> Stashed changes
