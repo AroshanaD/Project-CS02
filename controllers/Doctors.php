@@ -7,9 +7,9 @@
         }
 
         public function add(){
-            $this->load('views','header');
+            /*$this->load('views','header');*/
             $this->load('views','add_doctor');
-            $this->load('views','footer');
+            /*$this->load('views','footer');*/
         }
 
         public function add_doctor($id,$fname,$lname,$gender,$qualification,$contact,$address,$email,$specialization,$fee){

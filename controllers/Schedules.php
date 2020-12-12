@@ -7,9 +7,9 @@
         }
 
         public function add(){
-            $this->load('views','header');
+           /* $this->load('views','header');*/
             $this->load('views','add_schedule');
-            $this->load('views','footer');
+           /* $this->load('views','footer');*/
         }
 
         public function view(){

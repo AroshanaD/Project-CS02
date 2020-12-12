@@ -1,15 +1,36 @@
-
-    <script type="text/javascript" src="/project-cs02/files/js/autofill_spec.js"></script>
-    <script type="text/javascript" src="/project-cs02/files/js/doctor_validate.js"></script>
-    <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
-
-    <div style="background:white;">
-        <div class="container">
-                <div class="contact-box">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/add_doctor.svg' ?>)"></div>
-                    <form method = "POST">
-                       <div class="right">
-                           <div class="title">ADD DOCTORS</div>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <script type="text/javascript" src="/project-cs02/files/js/autofill_spec.js"></script>
+        <script type="text/javascript" src="/project-cs02/files/js/doctor_validate.js"></script>
+        <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
+    </head>
+    
+    <body>
+        <div class="container-2">
+            <div class="nav">
+                <a href='/user/logout' style="float:right">Log Out</a>
+                <a href='/user/dashboard' style="float:right">Dashboard</a>
+                <button id="nav-icon">   
+                </button>
+                <button id="close-icon">
+                </button>
+            </div>
+              
+            <?php include 'Supervisor_sidebar.php';?>
+             
+            <form class="form">
+              <div class="form-container">
+                 <div id="form-img"> 
+                 </div>
+                 <div id="form-1">
+                    <div class="label">
+                        <label for="doctor">Doctors</label>
+                    </div>
+                           
                             <div class="label">
                                 <label for="id">Id</label>
                             </div>
@@ -37,12 +58,18 @@
                                     <option value="Female">Female</option>
                                 </select>
                             </div>
+
                             <div class="label">
                                 <label for="qualification">Qualification</label>
                             </div>
                             <div class="input" id="text_f">
                                 <input type="text" name="qualification" id="qualification" required>
                             </div>
+
+                        </div><!--form1-->
+
+
+                            <div id="form-2">
                             <div class="label">
                                 <label for="address">Address</label>
                             </div>
@@ -78,8 +105,9 @@
                             <div><input type="submit" value="Add" class="btn"></div>
                             <div id="form-message"></div>
                         </div >
+                    </div>      
                     </form>
-                </div>
+                 <div class="footer">All rights are reserved</div>
         </div> 
     </body>
 
