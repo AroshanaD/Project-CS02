@@ -440,64 +440,6 @@ body {
     grid-area: table;
 }
 
-<<<<<<< Updated upstream
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border: 1px black solid;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
-    margin-top: var(--padding-top);
-}
-
-tr {
-    padding: 5px 0px;
-    box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
-    background-color: #b8cac7;
-}
-
-td,
-th {
-    width: max-content;
-    background-color: inherit;
-    padding: 10px 20px;
-}
-
-tr:nth-child(1) {
-    background-color: #000f3f;
-}
-
-tr:nth-child(odd) {
-    background-color: #b8cac7;
-    padding: 10px 25px;
-}
-
-#head_row {
-    background-color: #0c0c0c;
-    color: white;
-    font-weight: bold;
-}
-
-tr:nth-child(even) {
-    background-color: white;
-}
-
-#head_row {
-    background-color: #0c0c0c;
-    color: white;
-    font-weight: bold;
-}
-
-td>a {
-    display: block;
-    width: 100%;
-    height: 100%;
-}
-
-#td-large {
-    font-size: 20px;
-    font-weight: bold;
-}
-=======
 .render-table th,
 .render-table td {
     padding: 5px 20px 5px 20px;
@@ -591,4 +533,3 @@ td>a {
 .search-btn:hover {
     opacity: 0.6;
 }
->>>>>>> Stashed changes
