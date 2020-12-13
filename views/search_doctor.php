@@ -10,9 +10,11 @@
 
     <body>
         <div class="container-2">
-        <?php include 'navbar.php';?>
-              
-            <?php include 'patient_sidebar.php';?>
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+
+        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
              
             <form class="form" method="get" action=<?php echo Router::site_url().'/Appointment/select_doctor' ?>>
                 <div class="form-container1">

@@ -9,8 +9,10 @@
 
     <body>
         <div class="container-1">
-        <?php include 'navbar.php';?>
-            
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+          
             <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
             <div class="dashboard">

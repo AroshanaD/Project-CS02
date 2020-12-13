@@ -31,22 +31,25 @@
 
     <body>
     <div class="sidebar">
-            <div>
-                <div style="margin-left: var(--small-margin);"><img src='home.png' style="width:20px; height: 20px; "><a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a> </div><br>
-                    <div class="dropdown">
-                        <div style="margin-left: var(--small-margin);"><img src='home.png' style="width:20px; height: 20px; ">  Appointments</div>
-                        <div class="dropdown-content">
-                            <a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Make Appointment</a>
-                            <a href=<?php echo Router::site_url().'/appointment/view_details'?>>View Appointment</a>   
-                        </div><br>
-                    </div><br>
-                    
-                    <div class="dropdown">
-                        <div style="margin-left: var(--small-margin);"><img src='user.png' style="width:20px; height: 20px; ">  Doctor schedules</div>
-                        <div class="dropdown-content">
-                            <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?>>Doctor Schedule</a> 
-                        </div><br>
-                    </div><br>
-
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);">
+                <img src='home.png' style="width:20px; height: 20px; ">
+                <a href=<?php echo Router::site_url() . '/user/dashboard' ?>>Dashboard</a>
             </div>
+        </div>    
+       
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);"><img src='home.png' style="width:20px; height: 20px; ">  Appointments</div>
+            <div class="dropdown-content">
+                <a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Make Appointment</a>
+                <a href=<?php echo Router::site_url().'/appointment/view_details'?>>View Appointment</a>   
+            </div>
+        </div>
+                    
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);"><img src='user.png' style="width:20px; height: 20px; ">  Doctor schedules</div>
+            <div class="dropdown-content">
+                <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?>>Doctor Schedule</a> 
+            </div>
+        </div>
     </div>
