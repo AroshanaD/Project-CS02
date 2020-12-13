@@ -48,7 +48,13 @@
 
         <div class="table">
             <table>
+
             </table>
+
+            <div>
+                <input type="submit" value="Next" class="next-btn">
+                <input type="submit" value="Previous" class="next-btn">
+            </div>
         </div>
 
         <div class="footer">All rights are reserved</div>
