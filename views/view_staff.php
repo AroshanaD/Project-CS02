@@ -21,7 +21,7 @@
         <?php $path=$_SESSION['user_cat']."_sidebar"; include $path; ?>
         
         <form class="form">
-            <div class="search">
+          
                 <div class="search-bar">
                     <select name="specialization" id="staff">
                     <option value="" disabled selected hidden>Select Category</option>
@@ -35,20 +35,18 @@
                     <div class="site-search">
                         <input type="text" id="id" placeholder="Id" name="id">
                     </div>
-                    <!--site-search-->
-                    <!--text-->
+                    <!--site-search--> <!--text-->
                     <div class="site-search">
                         <input type="text" id="name" placeholder="Name" name="name">
                     </div>
                     <!--site-search-->
-                    <!--date-->
-                    <!--site-search-->
+                    
                     <div class="site-search">
                         <button id="search-btn" type="submit">Search</button>
                     </div>
-                    <!--site-search-->
-                    <!--btn-->
-                </div>
+                    <!--site-search-->   <!--btn-->
+                   
+                </div>  <!--search-bar--> 
 
 
                 <div class="table">
@@ -57,7 +55,7 @@
                     </table>
                 </div>
         </form>
-        </div>
+        
         <div class="footer">All rights are reserved</div>
     </div>
     </body>
