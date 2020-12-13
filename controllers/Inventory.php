@@ -12,7 +12,7 @@ class Inventory extends Controllers
 
     public function view()
     {
-        $this->load('views', 'header');
+        /*$this->load('views', 'header');*/
         if (isset($_GET['view'])) {
             if ($_GET['view'] == 'vendor') {
                 $this->load('views', 'view_vendors');
@@ -22,7 +22,7 @@ class Inventory extends Controllers
         } else {
             $this->load('views', 'view_inventory');
         }
-        $this->load('views', 'footer');
+        /*$this->load('views', 'footer');*/
     }
 
     public function get_medicine()
