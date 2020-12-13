@@ -15,10 +15,11 @@
 <body>
     <div class="container-3">
         <div class="nav">
-
+            <a href=<?php echo Router::site_url().'/main' ?>><button class="main-button">Home</button></a>
+            <a href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Login</button></a>
         </div>
         <div class="form">
-            <div class="form-container1">
+            <div class="form-container">
                 <div id="form-img">
                 </div>
                 <div id="form-1">

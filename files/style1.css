@@ -328,6 +328,33 @@ body {
     align-items: center;
 }
 
+.receipt{
+    width: 100%;
+    grid-area: receipt;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: var(--main-border-radius);
+    margin: var(--large-margin);
+    padding: var(--large-padding);
+}
+
+[class*="receipt-"]{
+    padding: var(--main-padding);
+    margin: var(--small-margin);
+    width: 40%;
+    color: var(--side-bar-color-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.receipt-t{
+    width: 90%;
+    text-align: center;
+}
+
 [class*="form-container"] {
     border-radius: var(--main-border-radius);
     background-color: #ffffff;
@@ -500,13 +527,28 @@ td>a {
     font-weight: bold;
 }
 
+#selected {
+    display: flex;
+    align-items: center;
+    background: none;
+    border: none;
+}
+
 .table {
-    width: 100%;
     margin: 20px;
     overflow-x: auto;
     border: 1px black solid;
     background-color: white;
+    grid-area: table;
+    border-radius: var(--main-border-radius);
 }
+
+
+
+#small-tb{
+    width: 50%;
+}
+
 
 .tb-btn {
     width: 90px;

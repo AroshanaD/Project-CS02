@@ -19,7 +19,7 @@
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
         <div class=table id="selected">
-            <table id="test_tb">
+            <table id="test-tb">
 
             </table>
         </div>

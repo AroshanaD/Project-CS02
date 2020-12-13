@@ -120,7 +120,7 @@ function select_func(id,name,cost){
     $(`<td>`).text(id),$(`<td>`).text(name),
     $(`<td>`).text(cost),
     $(`<td>`).append(remove));
-    $("#test_tb").append(row);
+    $("#test-tb").append(row);
 
 }
 
@@ -140,8 +140,10 @@ function remove_func(id,cost){
 }
 
 function render_bill(id,name,gender,age,contact){
-    $(".container").empty();
-    $(".container").append(`<div class=${"receipt"}>`);
+    $(".table").remove();
+    $(".form").remove();
+    $(".container-l").css("grid-template-areas", "'nav nav nav' 'sidebar receipt receipt' 'sidebar receipt receipt' 'footer footer footer'")
+    $(".container-l").append(`<div class=${"receipt"}>`);
     $(".receipt").append(`<div class=${"receipt-t"}>`);
     $(".receipt-t").text("Lab Test");
     $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient ID"));
@@ -154,19 +156,18 @@ function render_bill(id,name,gender,age,contact){
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(age));
     $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Contact"));
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(contact));
-    $(".receipt").append($(`<table id=${"test-tb"}>`));
+    $(".receipt").append($(`<table id=${"small-tb"}>`));
 
     selected_list_details.forEach(element => {
         var row = $(`<tr id=${element[0]}>`).append(
             $(`<td>`).text(element[0]),$(`<td>`).text(element[1]),
             $(`<td>`).text(element[2]));
-        $("#test-tb").append(row);
+        $("#small-tb").append(row);
     });
     row = $(`<tr>`).append(
         $(`<td>`),$(`<td>`).text("Total"),
         $(`<td>`).text(total_cost));
-    $("#test-tb").append(row);
+    $("#small-tb").append(row);
 
-    $(".receipt").append($(`<button id=${"print"}>`).text("Print"));
-
+    $(".receipt").append($(`<div class=${"receipt-t"}>`).append($(`<button id=${"print"}>`).text("Print")));
 }
