@@ -324,7 +324,7 @@ body {
 .form {
     padding: var(--main-padding);
     /*background-color: #f5f5f5;*/
-    background-image: url('icons/background.jpeg') ;
+    background-image: url('icons/background.jpeg');
     background-position: left;
     background-repeat: no-repeat;
     grid-area: form;
@@ -334,7 +334,7 @@ body {
     align-items: center;
 }
 
-.receipt{
+.receipt {
     width: 100%;
     grid-area: receipt;
     display: flex;
@@ -347,7 +347,7 @@ body {
     padding: var(--large-padding);
 }
 
-[class*="receipt-"]{
+[class*="receipt-"] {
     padding: var(--main-padding);
     margin: var(--small-margin);
     width: 40%;
@@ -356,7 +356,7 @@ body {
     font-weight: bold;
 }
 
-.receipt-t{
+.receipt-t {
     width: 90%;
     text-align: center;
 }
@@ -551,12 +551,9 @@ td>a {
     justify-content: center;
 }
 
-
-
-#small-tb{
+#small-tb {
     width: 50%;
 }
-
 
 .tb-btn {
     width: 90px;
@@ -637,4 +634,20 @@ td>a {
 .search-item>input:hover,
 .search-btn:hover {
     opacity: 0.6;
+}
+
+.next-btn {
+    width: 110px;
+    position: relative;
+    padding: 0.5rem 1rem;
+    background-color: #0e09646e;
+    color: #0f0f13;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+    margin-top: 20px;
 }
