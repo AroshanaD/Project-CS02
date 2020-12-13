@@ -31,18 +31,27 @@
 
     <body>
     <div class="sidebar">        
-            <div>
-                <div style="margin-left: var(--small-margin);"><img src='home.png' style="width:20px; height: 20px; "><a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a> </div><br>
-                <div style="margin-left: var(--small-margin);"><img src='home.png' style="width:20px; height: 20px; "><a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View appointment</a></div><br>
-                    <div class="dropdown">
-                        <div style="margin-left: var(--small-margin);"><img src='logout.png' style="width:20px; height: 20px; ">  View Statistics</div>
-                        <div class="dropdown-content">
-                                <a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a>
-                                <a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a>
-                                <a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a>
-                                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
-                        </div><br>
-                    </div><br>
-
-                </div>
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);">
+                <img src='home.png' style="width:20px; height: 20px; ">
+                <a href=<?php echo Router::site_url() . '/user/dashboard' ?>>Dashboard</a>
             </div>
+        </div>
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);">
+                <img src='home.png' style="width:20px; height: 20px; ">
+                <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View appointment</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);"><img src='logout.png' style="width:20px; height: 20px; ">  View Statistics</div>
+            <div class="dropdown-content">
+                <a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a>
+                <a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a>
+                <a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a>
+                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
+            </div>
+        </div>
+
+            
+    </div>

@@ -31,23 +31,29 @@
 
     <body>
     <div class="sidebar">
-            <div>
-                <div style="margin-left: var(--small-margin);"><img src='home.png' style="width:20px; height: 20px; "><a href=<?php echo Router::site_url().'/user/dashboard' ?>>Dashboard</a> </div><br>
-                    <div class="dropdown">
-                        <div style="margin-left: var(--small-margin);"><img src='home.png' style="width:20px; height: 20px; ">  Patient lab test</div>
-                        <div class="dropdown-content">
-                                <a href=<?php echo Router::site_url().'/patientTest/create_test' ?>> Create Test</a>
-                                <a href=<?php echo Router::site_url().'/patientTest/view' ?>> View Test</a>   
-                        </div><br>
-                    </div><br>
-                    
-                    <div class="dropdown">
-                        <div style="margin-left: var(--small-margin);"><img src='user.png' style="width:20px; height: 20px; ">  Lab test</div>
-                        <div class="dropdown-content">
-                            <a href=<?php echo Router::site_url()."/labtest/add" ?>>Add Test</a>
-                            <a href=<?php echo Router::site_url()."/labtest/view" ?>>View Test</a>
-                        </div><br>
-                    </div><br>
 
-                </div>
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);">
+                <img src='home.png' style="width:20px; height: 20px; ">
+                <a href=<?php echo Router::site_url() . '/user/dashboard' ?>>Dashboard</a>
             </div>
+        </div>
+            
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);"><img src='home.png' style="width:20px; height: 20px; ">  Patient lab test</div>
+            <div class="dropdown-content">
+                <a href=<?php echo Router::site_url().'/patientTest/create_test' ?>> Create Test</a>
+                <a href=<?php echo Router::site_url().'/patientTest/view' ?>> View Test</a>   
+            </div>
+        </div>
+                    
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);"><img src='user.png' style="width:20px; height: 20px; ">  Lab test</div>
+            <div class="dropdown-content">
+                <a href=<?php echo Router::site_url()."/labtest/add" ?>>Add Test</a>
+                <a href=<?php echo Router::site_url()."/labtest/view" ?>>View Test</a>
+            </div>
+        </div>
+
+                
+    </div>
