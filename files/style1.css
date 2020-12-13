@@ -442,39 +442,86 @@ body {
     grid-area: selected;
 }
 
-.render-table {
-    padding: var(--main-padding);
-    background-color: var(--table-color);
-    grid-area: table;
+table>thead,
+table>tbody {
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    height: fit-content;
 }
 
-.render-table th,
-.render-table td {
-    padding: 5px 20px 5px 20px;
-    font-size: max(1.2vw, 14px);
-    font-weight: normal;
-    width: fit-content;
-}
-
-.render-table tr {
-    height: 30px;
+table {
     width: 100%;
+    border-collapse: collapse;
+    border: 1px black solid;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+}
+
+tr {
+    padding: 5px 0px;
+    box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
+    background-color: #b8cac7;
+}
+
+td,
+th {
+    width: max-content;
+    background-color: inherit;
+    padding: 10px 20px;
+}
+
+tr:nth-child(1) {
+    background-color: #000f3f;
+}
+
+tr:nth-child(odd) {
+    background-color: hsl(244, 53%, 70%);
+    padding: 10px 25px;
+}
+
+tr:nth-child(even) {
     background-color: white;
 }
 
-.render-table th {
-    background-color: rgba(43, 18, 153, 0.712);
-    font-weight: normal;
-    font-size: max(1.4vw, 14px);
-    color: #fff;
+#head_row {
+    background-color: #2e1097;
+    color: white;
+    font-weight: bold;
 }
 
-.render-table tr:nth-child(odd) {
-    background-color: rgb(141, 142, 207);
+td>a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
-.render-table tr:nth-child(even) {
-    background-color: rgb(208, 211, 209);
+#td-large {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.table {
+    width: 100%;
+    margin: 20px;
+    overflow-x: auto;
+    border: 1px black solid;
+    background-color: white;
+}
+
+.tb-btn {
+    width: 90px;
+    padding: 0.5rem 1rem;
+    background-color: #3e37c96e;
+    color: #11006e;
+    font-size: 0.8rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
+    margin: 15px 10px 13px 15px;
 }
 
 .search {
