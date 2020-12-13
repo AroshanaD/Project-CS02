@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="container-2">
+    <div class="container-4">
         <div class="nav">
             <a href=<?php echo Router::site_url() . '/user/logout' ?> style="float:right">Log Out</a>
             <a href=<?php echo Router::site_url() . '/user/dashboard' ?> style="float:right">Dashboard</a>
@@ -24,24 +24,26 @@
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
         <form class="form">
-            <div class="search-bar">
-                <div class="site-search">
-                    <input type="text" id="id" placeholder="Appointment Id" name="id">
+            <div class="search">
+                <div class="search-bar">
+                    <div class="site-search">
+                        <input type="text" id="id" placeholder="Appointment Id" name="id">
+                    </div>
+                    <!--site-search-->
+                    <!--id-->
+                    <div class="site-search">
+                        <input type="date/time" id="date" placeholder="Appointment Date" name="date">
+                    </div>
+                    <!--site-search-->
+                    <!--date-->
+                    <div class="site-search">
+                        <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
+                    </div>
+                    <!--site-search-->
+                    <!--btn-->
                 </div>
-                <!--site-search-->
-                <!--id-->
-                <div class="site-search">
-                    <input type="date/time" id="date" placeholder="Appointment Date" name="date">
-                </div>
-                <!--site-search-->
-                <!--date-->
-                <div class="site-search">
-                    <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
-                </div>
-                <!--site-search-->
-                <!--btn-->
+                <!--search-bar-->
             </div>
-            <!--search-bar-->
 
             <div class="table">
                 <table class="table">

@@ -24,13 +24,13 @@
                 </div>
                 <div id="form-1">
                     <div class="label">
-                        <label for="userid">USER ID</label>
+                        <label for="userid">User Id</label>
                     </div>
                     <div class="input">
                         <input type="text" name="userid" id="id" required>
                     </div>
                     <div class="label">
-                        <label for="password">PASSWORD</label>
+                        <label for="password">Password</label>
                     </div>
                     <div class="input">
                         <input type="password" name="password" id="password" required>

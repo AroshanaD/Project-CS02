@@ -11,7 +11,7 @@
 
 <body>
 
-    <div class="container-2">
+    <div class="container-4">
         <div class="nav">
             <a href=<?php echo Router::site_url() . '/user/logout' ?> style="float:right">Log Out</a>
             <a href=<?php echo Router::site_url() . '/user/dashboard' ?> style="float:right">Dashboard</a>
@@ -23,7 +23,7 @@
 
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
-        <form class="form">
+        <div class="search">
 
             <div class="search-bar">
                 <div class="site-search">
@@ -38,14 +38,13 @@
                 <!--btn-->
             </div>
             <!--search-bar-->
+        </div>
+        <div class="table">
+            <table>
 
-            <div class="table">
-                <table>
 
-
-                </table>
-            </div>
-        </form>
+            </table>
+        </div>
 
         <div class="footer">All rights are reserved</div>
     </div>

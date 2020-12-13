@@ -40,8 +40,8 @@ function render_details(details){
 
     for(var i=0; i<details.length; i++){
         var get_details = details[i]['id'];
-        var update = "<a href=../doctors/update?id=".concat(get_details,"class='tb-btn'>Update</a>");
-        var dele = "<a href=../doctors/delete?id=".concat(get_details,"class='tb-btn'>Delete</a>");
+        var update = "<a href=../doctors/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+        var dele = "<a href=../doctors/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
 
         var row_id = details[i]['id'];
         var row_id = row_id.concat("')");
