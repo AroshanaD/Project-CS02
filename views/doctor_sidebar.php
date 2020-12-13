@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>
     </head>
 
     <script>
@@ -33,18 +36,18 @@
     <div class="sidebar">        
         <div class="dropdown">
             <div style="margin: var(--large-margin);">
-                <img src='home.png' style="width:20px; height: 20px; ">
+            <i class="fas fa-id-badge"></i>
                 <a href=<?php echo Router::site_url() . '/user/dashboard' ?>>Dashboard</a>
             </div>
         </div>
         <div class="dropdown">
             <div style="margin: var(--large-margin);">
-                <img src='home.png' style="width:20px; height: 20px; ">
+            <i class="far fa-calendar-check"></i>
                 <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View appointment</a>
             </div>
         </div>
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><img src='logout.png' style="width:20px; height: 20px; ">  View Statistics</div>
+            <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a>
                 <a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a>
