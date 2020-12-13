@@ -245,14 +245,19 @@ body {
 
 .dropdown {
     height: fit-content;
-    border: 1px rgb(230, 230, 230) solid;
+    border-top: 1px rgba(0, 0, 0, 0) solid;
+    border-bottom: 1px rgb(230, 230, 230) solid;
     flex-basis: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     color: white;
     font-weight: bold;
 }
 
-a{
+.dropdown:nth-child(1) {
+    border-top: 1px rgb(230, 230, 230) solid;
+}
+
+a {
     text-decoration: none;
     color: white;
 }
@@ -483,8 +488,7 @@ a{
     grid-area: selected;
 }
 
-table>thead,
-table>tbody {
+table>thead, table>tbody {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
@@ -504,8 +508,7 @@ tr {
     background-color: #b8cac7;
 }
 
-td,
-th {
+td, th {
     width: max-content;
     background-color: inherit;
     padding: 10px 20px;
@@ -602,8 +605,7 @@ td>a {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-.site-search>input,
-.site-search>select {
+.site-search>input, .site-search>select {
     width: 180px;
     margin: 5px 20px 5px 10px;
     padding: 10px;
@@ -620,8 +622,7 @@ td>a {
     border-radius: var(--main-border-radius);
 }
 
-.site-search>input:focus,
-.site-search>select:focus {
+.site-search>input:focus, .site-search>select:focus {
     outline: none;
 }
 
@@ -639,8 +640,7 @@ td>a {
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
-.search-item>input:hover,
-.search-btn:hover {
+.search-item>input:hover, .search-btn:hover {
     opacity: 0.6;
 }
 
@@ -658,4 +658,12 @@ td>a {
     cursor: pointer;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
     margin-top: 20px;
+}
+
+.pagination {
+    width: 50%;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: var(--main-padding);
 }

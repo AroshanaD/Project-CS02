@@ -45,12 +45,12 @@
                     <div class="label">
                         <label for="qualification">Qualifications</label>
                     </div>
-                </div>
-
-                <div id="form-2">
                     <div class="input">
                         <input type="text" value="<?php echo $_POST['details']['qualification'] ?>" name="qualification" required>
                     </div>
+                </div>
+
+                <div id="form-2">
                     <div class="label">
                         <label for="fee">Charges</label>
                     </div>
