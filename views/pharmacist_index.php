@@ -5,7 +5,6 @@
         <meta charset="UTF-8">
         <title>Dashboard</title>
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
-        <script src="http://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
     </head>
 
     <body>

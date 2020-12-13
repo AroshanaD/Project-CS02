@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
         <script type = "text/javascript" src=<?php echo Router::base_url(). '/project-cs02/files/js/staff.js'?>></script>
     </head>
 
@@ -18,7 +19,7 @@
                 </button>
         </div>
     
-        <?php $path=$_SESSION['user_cat']."_sidebar"; include $path; ?>
+        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
         <form class="form">
           

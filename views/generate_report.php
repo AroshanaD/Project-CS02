@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
     </head>
 

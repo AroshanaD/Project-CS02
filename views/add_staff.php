@@ -4,9 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
-    <script rel="text/javascript" src="/project-cs02/files/js/staff_validate.js"></script>
-    <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
+    <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
+    <script rel="text/javascript" src=<?php echo Router::base_url().'/files/js/staff_validate.js'?>></script>
+    <script rel="text/javascript" src=<?php echo Router::base_url().'/files/js/validation.js'?>></script>
 </head>
 
 <body>
@@ -38,7 +39,7 @@
                         <label for="id">Id</label>
                     </div>
                     <div class="input" id="id_f">
-                        <input type="text" name="id" id="id" disabled required>
+                        <input type="text" name="id" id="id" selected disabled required>
                     </div>
                     <div class="label">
                         <label for="f_name">First name</label>

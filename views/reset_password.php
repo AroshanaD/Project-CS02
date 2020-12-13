@@ -9,11 +9,11 @@
     </title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
-    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/main.css' ?>>
-    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
-    <script src=<?php echo Router::base_url() . '/files/js/reset_password.js' ?> type="text/javascript"></script>
-    <script src=<?php echo Router::base_url() . '/files/js/validation.js' ?> type="text/javascript"></script>
+    <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css' ?>>
+    <link rel="stylesheet" href=<?php echo Router::base_url().'/files/main.css' ?>>
+    <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
+    <script src=<?php echo Router::base_url().'/files/js/reset_password.js' ?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url().'/files/js/validation.js' ?> type="text/javascript"></script>
 </head>
 
 <body>

@@ -4,6 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
         <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
         <script src=<?php echo Router::base_url().'/files/js/doctors.js'?> type="text/javascript"></script>
     </head>
@@ -19,8 +20,7 @@
                 </button>
             </div>
 
-            <?php include 'Supervisor_sidebar.php';?>
-
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
             <form class="form">
 
                 <select name="specialization" id="search_spec">

@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
     <script src=<?php echo Router::base_url() . '/files/js/create_bill.js' ?> type="text/javascript"></script>
 </head>
 
