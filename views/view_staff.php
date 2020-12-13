@@ -18,8 +18,8 @@
                 </button>
         </div>
     
-        <?php include 'Supervisor_sidebar.php';?>
-
+        <?php $path=$_SESSION['user_cat']."_sidebar"; include $path; ?>
+        
         <form class="form">
             <div class="search">
                 <div class="search-bar">

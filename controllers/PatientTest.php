@@ -37,9 +37,7 @@
         }
 
         public function view(){
-            $this->load('views','header');
             $this->load('views','patient_test');
-            $this->load('views','footer');
         }        
 
         public function get_view(){
@@ -65,7 +63,6 @@
             $model= $this->load('models','PatientTest_Manage');
             $result= $model->displayById($id);
             $_POST['test']=$result;
-            $this->load('views','header');
             $this->load('views','update_test');
 
             if(isset($_POST['Update'])){
@@ -82,7 +79,6 @@
             $model= $this->load('models','PatientTest_Manage');
             $result= $model->displayById($id);
             $_POST['test']=$result;
-            $this->load('views','header');
             $this->load('views','delete_test');
 
             if(isset($_POST['Delete'])){
@@ -92,9 +88,7 @@
         }
 
         public function View_available(){
-            $this->load('views','header');
             $this->load('views','labtest_availability');
-            $this->load('views','footer');
         }
 
     }

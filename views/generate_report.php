@@ -17,7 +17,7 @@
                 </button>
             </div>
               
-            <?php include 'Supervisor_sidebar.php';?>
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
              
             <form class="form">
                 <div class="form-container1">

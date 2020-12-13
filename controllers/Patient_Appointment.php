@@ -7,9 +7,7 @@
         }
 
         Public function view_recept(){
-            $this->load('views','header');
             $this->load('views','view_appointment');
-            $this->load('views','footer');
         }
 
         public function get_viewRecept(){
@@ -21,9 +19,7 @@
         }
 
         public function view_Appoint(){
-            $this->load('views','header');
             $this->load('views','appointmentOfPatient');
-            $this->load('views','footer');
         }
 
     }

@@ -19,7 +19,7 @@
                 </button>
             </div>
             
-            <?php include 'recept_sidebar.php';?>
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
             <div class="dashboard">
               <div id="welcome-board">

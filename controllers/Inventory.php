@@ -49,10 +49,10 @@ class Inventory extends Controllers
             if ($_GET['add'] == 'vendor') {
                 $this->load('views', 'add_vendor');
             } else {
-                $this->load('views', 'add_inventory');
+                $this->load('views', 'add_medicine');
             }
         } else {
-            $this->load('views', 'add_inventory');
+            $this->load('views', 'add_medicine');
         }
     }
 
@@ -94,18 +94,14 @@ class Inventory extends Controllers
             $model = $this->load('models', 'Inventory_manage');
             $result = $model->displayMedicine($id);
             $_POST['medicine'] = $result;
-            $this->load('views', 'header');
-            $this->load('views', 'update_inventory');
-            $this->load('views', 'footer');
+            $this->load('views', 'update_medicine');
         }
         if ($_GET['update'] == 'vendor') {
             $id = $_GET['id'];
             $model = $this->load('models', 'Inventory_manage');
             $result = $model->displayVendor($id);
             $_POST['details'] = $result;
-            $this->load('views', 'header');
             $this->load('views', 'update_vendor');
-            $this->load('views', 'footer');
         }
     }
 
@@ -131,7 +127,7 @@ class Inventory extends Controllers
         $result = $model->displayMedicine($id);
         $_POST['medicine'] = $result;
         $this->load('views', 'header');
-        $this->load('views', 'delete_inventory');
+        $this->load('views', 'delete_medicine');
         $this->load('views', 'footer');
 
         if (isset($_POST['deleteMedicine'])) {

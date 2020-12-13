@@ -12,16 +12,11 @@
 <body>
     <div class="container-2">
         <div class="nav">
-            <a href=<?php echo Router::site_url() . '/user/logout' ?> style="float:right">Log Out</a>
-            <a href=<?php echo Router::site_url() . '/user/dashboard' ?> style="float:right">Dashboard</a>
-            <button id="nav-icon">
-            </button>
-            <button id="close-icon">
-            </button>
+            <?php include 'header.php'; ?>
         </div>
 
-        <?php include 'labtech_sidebar.php'; ?>
-
+        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+        
         <form class="form">
             <div class="form-container1">
                 <div id="form-img">

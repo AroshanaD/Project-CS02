@@ -1,31 +1,27 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
-        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js'?>"></script>
-        <script src='/project-cs02/files/js/autofill_spec.js' type="text/javascript"></script>
-    </head>
 
-    <body>
-        <div class="container-2">
-            <div class="nav">
-                <a href=<?php echo Router::site_url().'/user/logout' ?> style="float:right">Log Out</a>
-                <a href=<?php echo Router::site_url().'/user/dashboard'?> style="float:right">Dashboard</a>
-                <button id="nav-icon">   
-                </button>
-                <button id="close-icon">
-                </button>
-            </div>
-              
-            <?php include 'patient_sidebar.php';?>
-             
-            <form class="form" method="get" action=<?php echo Router::site_url().'/Appointment/select_doctor' ?>>
-                <div class="form-container1">
-                    <div id="form-img"> 
-                    </div>
-                    <div id="form-1">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script src='/project-cs02/files/js/autofill_spec.js' type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container-2">
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+
+        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+        
+        <form class="form" method="get" action=<?php echo Router::site_url() . '/Appointment/select_doctor' ?>>
+            <div class="form-container1">
+                <div id="form-img">
+                </div>
+                <div id="form-1">
                     <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Patient Details</div>
                     <div class="label">
                         <label>Name</label>
@@ -80,11 +76,12 @@
                         <label>-</label>
                     </div>
                     <input type="submit" value="Save" class="btn">
-                    <div id="form-message"></div> 
-                    </div>
+                    <div id="form-message"></div>
                 </div>
-            </form> 
-            <div class="footer">All rights are reserved</div>
-          </div>
-    </body>
+            </div>
+        </form>
+        <div class="footer">All rights are reserved</div>
+    </div>
+</body>
+
 </html>

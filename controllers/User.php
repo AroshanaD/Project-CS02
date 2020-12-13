@@ -10,7 +10,6 @@
 
         public function login(){
             $this->load('views','login');
-            $this->load('views','footer');
         }
 
         public function verify_login(){
@@ -71,10 +70,8 @@
 
         public function change_password(){
             if(isset($_SESSION['id'])){
-                $this->load('views','header');
                 $this->load('views','change_password');
-                $this->load('views','footer');
-            }
+                }
             else{
                 /*header('Location:/project-cs02/index.php/user/login?please login');*/
                 $URL= Router::site_url()."/user/login?please login";
@@ -84,10 +81,8 @@
 
         public function change_details(){
             if(isset($_SESSION['id'])){
-                $this->load('views','header');
                 $this->load('views','change_details');
-                $this->load('views','footer');
-            }
+                }
             else{
                 /*header('Location:/project-cs02/index.php/user/login?please login');*/
                 $URL= Router::site_url()."/user/login?please login";
@@ -142,6 +137,5 @@
 
         public function reset_password(){
             $this->load('views','reset_password');
-            $this->load('views','footer');
         }
     }

@@ -7,13 +7,11 @@
 
         public function index(){
             if(isset($_SESSION['id'])){
-                $this->load('views','header');
             }
             else{
                 $this->load('views','schedule_header');
             }
             $this->load('views','doctor_schedule');
-            $this->load('views','footer');
         }
 
         public function schedules(){
@@ -24,10 +22,9 @@
             header('Content-Type: application/json');
             echo json_encode($result);
         }
+        
         public function view_appointment(){
-            $this->load('views','header');
             $this->load('views','view_appointment');
-            $this->load('views','footer');
         }
     }
 
