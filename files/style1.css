@@ -488,7 +488,8 @@ a {
     grid-area: selected;
 }
 
-table>thead, table>tbody {
+table>thead,
+table>tbody {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
@@ -500,6 +501,7 @@ table {
     border-collapse: collapse;
     border: 1px black solid;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 tr {
@@ -508,10 +510,11 @@ tr {
     background-color: #b8cac7;
 }
 
-td, th {
+td,
+th {
     width: max-content;
     background-color: inherit;
-    padding: 10px 20px;
+    padding: 5px 20px;
 }
 
 tr:nth-child(1) {
@@ -520,17 +523,19 @@ tr:nth-child(1) {
 
 tr:nth-child(odd) {
     background-color: hsl(244, 53%, 70%);
-    padding: 10px 25px;
+    padding: 5px 25px;
 }
 
 tr:nth-child(even) {
     background-color: white;
+    padding: 5px 25px;
 }
 
 #head_row {
     background-color: #2e1097;
     color: white;
     font-weight: bold;
+    font-size: 18px;
 }
 
 td>a {
@@ -568,7 +573,7 @@ td>a {
 
 .tb-btn {
     width: 90px;
-    padding: 0.5rem 1rem;
+    padding: 0.3rem 1rem;
     background-color: #3e37c96e;
     color: #11006e;
     font-size: 0.8rem;
@@ -579,7 +584,7 @@ td>a {
     cursor: pointer;
     transition: .3s;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
-    margin: 15px 10px 13px 15px;
+    margin: 3px 10px 3px 10px;
 }
 
 .search {
@@ -605,7 +610,8 @@ td>a {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-.site-search>input, .site-search>select {
+.site-search>input,
+.site-search>select {
     width: 180px;
     margin: 5px 20px 5px 10px;
     padding: 10px;
@@ -622,7 +628,8 @@ td>a {
     border-radius: var(--main-border-radius);
 }
 
-.site-search>input:focus, .site-search>select:focus {
+.site-search>input:focus,
+.site-search>select:focus {
     outline: none;
 }
 
@@ -640,7 +647,8 @@ td>a {
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
-.search-item>input:hover, .search-btn:hover {
+.search-item>input:hover,
+.search-btn:hover {
     opacity: 0.6;
 }
 
