@@ -25,18 +25,18 @@
             <div class="databoard-1">
                 <div id="databord-title">Appointments</div>
                 <div id="databord-value">76</div>
-                <div><img src='diagnosis.png' style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/appointment.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
             <div class="databoard-2">
                 <div id="databord-title">Doctors</div>
                 <div id="databord-value">128</div>
-                <div><img src='stethoscope (3).png' style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
             
             <div class="databoard-3">
                 <div id="databord-title">Patients</div>
                 <div id="databord-value">30</div>
-                <div><img src='seller.png' style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/patient.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
             <div class="taskboard" style="background-color: #c7c7c7;">
               <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?> class="task">Appointments</a>
