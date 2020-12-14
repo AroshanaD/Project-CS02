@@ -18,7 +18,7 @@
 
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
-        <form class="form">
+    
             <div class="search">
                 <div class="search-bar">
                     <div class="site-search">
@@ -45,14 +45,11 @@
 
                 </table>
 
-                <div>
             </div>
 
-        </form>
-
+    
         <div class="footer">All rights are reserved</div>
-    </div>
-    <!--container-2-->
+    </div>  <!--container-2-->
 
 </body>
 
