@@ -1,4 +1,15 @@
 $(document).ready(function () {
+
+    $.ajax({
+        url: '../../index.php/doctors/category',
+        data: { specialization: "" },
+        type: 'post',
+        success: function (data) {
+            var details = data;
+            render_details(details);
+        }
+    })
+
     $("#search_spec").change(function () {
         $.ajax({
             url: '../../index.php/doctors/category',

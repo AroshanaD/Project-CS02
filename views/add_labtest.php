@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
-    <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
     <script type="text/javascript" src="/project-cs02/files/js/select_labtest.js"></script>
     <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
 </head>
@@ -16,7 +16,8 @@
             <?php include 'header.php'; ?>
         </div>
 
-        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+        <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
+        include $path; ?>
 
         <div class=table id="selected">
             <table id="test-tb">
@@ -52,6 +53,9 @@
                     <div class="input" id="contact_f">
                         <input style="width:200px" type="tel" id="contact" name="contact" placeholder="Customer Contact" required>
                     </div>
+                    <div class="input">
+                        <input style="width:200px" type="number" name="total" id="total" placeholder="Total" required disabled>
+                    </div>
                     <div style="width:100%; text-align: center">
                         <input style="width:200px" type="submit" value="Add Test" class="btn">
                     </div>
@@ -59,8 +63,8 @@
                 </div>
             </form>
         </div>
-        <div class="table">
-            <div class="search-bar" style="width: 400px">
+        <div class="table" style="margin: 5px; padding: 0px">
+            <div class="search-bar">
                 <div class="site-search">
                     <input id="name" type="text" placeholder="Name " name="name">
                 </div>
@@ -70,8 +74,15 @@
                     <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
                 </div>
             </div>
-            <div class="table">
-                <table id="select-tb">
+            <div class="pagination" style="width: 20%">
+                <button class="next-btn" id="previous">Previous</button>
+                <button class="next-btn" id="next">Next</button>
+            </div>
+            <div class="table" style="margin: 5px; padding: 0px">
+                <table id="select-tb0">
+
+                </table>
+                <table id="select-tb1">
 
                 </table>
             </div>

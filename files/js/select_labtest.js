@@ -1,31 +1,32 @@
 var selected_list = [];
 var selected_list_details = [];
 var total_cost = 0;
+var details = [];
 
-$(document).ready(function(){
+$(document).ready(function () {
     $.ajax({
         url: '../../index.php/labtest/get_view',
         data: {},
         type: 'post',
-        success:function(data){
-            var details = data;
-            render_table(details);
+        success: function (data) {
+            details = data;
+            render_table(data);
         }
     })
 
-    $("#search-btn").click(function(){
+    $("#search-btn").click(function () {
         $.ajax({
             url: '../../index.php/labtest/search',
-            data: {id:$("#id").val(),name:$("#name").val()},
+            data: { id: $("#id").val(), name: $("#name").val() },
             type: 'post',
-            success:function(data){
-                var details = data;
-                render_table(details);
+            success: function (data) {
+                details = data;
+                render_table(data);
             }
         })
     })
 
-    $("form").submit(function(event){
+    $("form").submit(function (event) {
         event.preventDefault();
 
         var id = $("#id").val();
@@ -39,39 +40,39 @@ $(document).ready(function(){
         $(".error-message").remove();
         $("#form-message").empty();
 
-        var id_list = ["#id","#name","#contact"];
+        var id_list = ["#id", "#name", "#contact"];
 
         id_list.forEach(element => {
             $(element).removeClass("input-error");
         });
 
-        if(id_val(id) == false){valid = false;}
-        if(text_val("name",name) == false){valid = false;}
-        if(contact_val(contact) == false){valid = false;}
+        if (id_val(id) == false) { valid = false; }
+        if (text_val("name", name) == false) { valid = false; }
+        if (contact_val(contact) == false) { valid = false; }
 
-        if(valid == true){
-            if(selected_list.length >= 1){
+        if (valid == true) {
+            if (selected_list.length >= 1) {
                 $.ajax({
                     url: '../../index.php/PatientTest/add_test',
                     data: {
-                    id : id,
-                    name : name,
-                    gender : gender,
-                    age : age,
-                    contact : contact,
-                    cost : total_cost,
-                    test_list : selected_list,
+                        id: id,
+                        name: name,
+                        gender: gender,
+                        age: age,
+                        contact: contact,
+                        cost: total_cost,
+                        test_list: selected_list,
                     },
                     type: 'post',
-                    success:function(data){
-                        if(data == true){  
-                            render_bill(id,name,gender,age,contact);
+                    success: function (data) {
+                        if (data == true) {
+                            render_bill(id, name, gender, age, contact);
                         }
                         //location.href = "../../index.php/PatientTest/create_test";
                     }
                 })
             }
-            else{
+            else {
                 $("#form-message").text("Please Select 1 Test Or More");
             }
         }
@@ -79,67 +80,95 @@ $(document).ready(function(){
     })
 })
 
-function render_table(data){
-    $("#select-tb").empty();
+function render_table(data) {
 
-    var header = $(`<tr id=${"head_row"}>`).append(
-    $(`<td>`).text("No"),
-    $(`<td>`).text("ID"),$(`<td>`).text("Name"),
-    $(`<td>`).text("Description"),$(`<td>`).text("Unit Cost"),
-    $(`<td>`).append("Select"));
-    $("#select-tb").append(header);
+    const no_rows = 2;
+    var page = 1;
+    var tot_rows = data.length;
 
-    for(var i=0; i<data.length; i++){
-        
-        var select_func = 'select_func('.concat(data[i].id,',', "'".concat(data[i].name,"'"),',', data[i].unit_cost,')');
+    render_page();
 
-        var get_details = data[i]['id'];
-        var select = $(`<button class=${"tb-btn"} id=${"select"} onclick=${select_func}>`).text("Select");
-        var row = $(`<tr id=${data[i].id}>`).append(
-        $(`<td>`).text(i+1),
-        $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].name),
-        $(`<td>`).text(data[i].description),$(`<td>`).text(data[i].unit_cost),
-        $(`<td>`).append(select));
-        $("#select-tb").append(row);
+    $(".pagination").css("display", "flex");
+
+    $("#next").click(function () {
+        if (page * no_rows < tot_rows) {
+            page = page + 1;
+            render_page();
+        }
+    });
+
+    $("#previous").click(function () {
+        if (page > 1) {
+            page = page - 1;
+            render_page();
+        }
+    })
+
+    function render_page() {
+        let first_row = (page - 1) * no_rows;
+        let last_row = (first_row + no_rows > tot_rows) ? tot_rows : first_row + no_rows;
+        $("#select-tb0").empty();
+        $("#select-tb1").empty();
+
+        for (let i = first_row; i < last_row; i++) {
+
+            let odd_even = i % 2;
+
+            let select_func = 'select_func('.concat(i,')');
+
+            let get_details = data[i]['id'];
+            let select = $(`<button class=${"tb-btn"} id=${"select"} onclick=${select_func}>`).text("Select");
+            let row = $(`<tr id=${data[i].id}>`).append(
+                $(`<td>`).text(i + 1),
+                $(`<td>`).text(data[i].id), 
+                $(`<td>`).text(data[i].name),
+                $(`<td>`).text(data[i].unit_cost),
+                $(`<td>`).append(select));
+            $("#select-tb".concat(odd_even)).append(row);
+        }
     }
 }
 
-function select_func(id,name,cost){
+function select_func(i) {
 
-    var test = [id,name,cost];
+    var test = [details[i].id, details[i].name, details[i].unit_cost];
     selected_list_details.push(test);
-    selected_list.push(id);
-    total_cost = total_cost + cost;
+    selected_list.push(details[i].id);
+    total_cost = total_cost + details[i].unit_cost;
+    $("#total").val(total_cost);
     //console.log(selected_list);
     //console.log(selected_list_details);
 
-    var remove_func = "remove_func(".concat(id,',',cost,")");
+    var remove_func = "remove_func(".concat(i,")");
 
     var remove = $(`<button class=${"tb-btn"} id=${"select"} onclick=${remove_func}>`).text("Remove");
-    var row = $(`<tr id=${id}>`).append(
-    $(`<td>`).text(id),$(`<td>`).text(name),
-    $(`<td>`).text(cost),
-    $(`<td>`).append(remove));
+    var row = $(`<tr id=${details[i].id}>`).append(
+        $(`<td>`).text(details[i].id), 
+        $(`<td>`).text(details[i].name),
+        $(`<td>`).text(details[i].unit_cost),
+        $(`<td>`).append(remove));
     $("#test-tb").append(row);
 
 }
 
-function remove_func(id,cost){
-    total_cost = total_cost - cost;
-    selected_list.splice(selected_list.indexOf(id),1);
-    let index = selected_list_details.findIndex( element => {
-        if (element[0] == id) {
-          return true;
+function remove_func(i) {
+    total_cost = total_cost - details[i].unit_cost;
+    selected_list.splice(selected_list.indexOf(details[i].id), 1);
+    let index = selected_list_details.findIndex(element => {
+        if (element[0] == details[i].id) {
+            return true;
         }
     });
-    selected_list_details.splice(selected_list.indexOf(index),1);
+    selected_list_details.splice(selected_list.indexOf(index), 1);
+    $("#total").val(total_cost);
+
     //console.log(selected_list_details);
 
-    $("#".concat(id)).remove();
+    $("#".concat(details[i].id)).remove();
     //console.log(selected_list);
 }
 
-function render_bill(id,name,gender,age,contact){
+function render_bill(id, name, gender, age, contact) {
     $(".table").remove();
     $(".form").remove();
     $(".container-l").css("grid-template-areas", "'nav nav nav' 'sidebar receipt receipt' 'sidebar receipt receipt' 'footer footer footer'")
@@ -160,12 +189,12 @@ function render_bill(id,name,gender,age,contact){
 
     selected_list_details.forEach(element => {
         var row = $(`<tr id=${element[0]}>`).append(
-            $(`<td>`).text(element[0]),$(`<td>`).text(element[1]),
+            $(`<td>`).text(element[0]), $(`<td>`).text(element[1]),
             $(`<td>`).text(element[2]));
         $("#small-tb").append(row);
     });
     row = $(`<tr>`).append(
-        $(`<td>`),$(`<td>`).text("Total"),
+        $(`<td>`), $(`<td>`).text("Total"),
         $(`<td>`).text(total_cost));
     $("#small-tb").append(row);
 
