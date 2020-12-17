@@ -60,6 +60,31 @@ body {
     grid-template-areas: "nav nav" "sidebar search" "sidebar table" "footer footer";
 }
 
+.container-5 {
+    grid-template-columns: 0.2fr 1fr;
+    grid-template-rows: 0.2fr 1.7fr 0.1fr;
+    grid-template-areas: "nav nav" "sidebar container-t"  "footer footer";
+}
+
+.container-6 {
+    grid-template-columns: 0.5fr 1.5fr 1.5fr;
+    grid-template-rows: 0.4fr 1.6fr 1.6fr 0.2fr;
+    grid-template-areas: "nav nav nav" "sidebar form form" "sidebar taskboard taskboard" "footer footer footer";
+}
+
+.container-t {
+    display: grid;
+    position: relative;
+    width: max-content;
+    height: max-content;
+    padding: 20px;
+    background-color: #fffffff1;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
+    margin: 20px 10px 0px 15px;
+    justify-items: center;
+    margin-bottom: 20px;
+}
+
 .nav {
     background-color: var(--nav-color);
     color: rgb(17, 17, 17);
@@ -674,4 +699,47 @@ td>a {
     justify-content: space-between;
     padding: var(--main-padding);
     align-items: center;
+}
+
+#doctor-avatar{
+    width: 100px;
+    height: 70px;
+    margin: 10px 10px 10px 10px;
+    background-image: url('icons/doctor.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    align-items: center;
+}
+
+#td-large{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.contact-box {
+    max-width: 1000px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.1);
+    font-family: 'Quicksand', sans-serif;
+    margin: 50px;
+    align-items: center;
+    height: max-content;
+}
+
+.left {
+    background: no-repeat center;
+    background-size: contain;
+    height: 100%;
+    margin: 20px;
+}
+
+.right {
+    width: 450px;
+    padding: 25px 40px;
+    background-color:#edf2fbe1 ;
 }
