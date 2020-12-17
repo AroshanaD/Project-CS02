@@ -1,10 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js'?>"></script>
+        <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
+        <script src=<?php echo Router::base_url().'/files/js/select_date.js'?> type="text/javascript"></script>
+    </head>
 
-    <script src=<?php echo Router::base_url().'/files/js/autofill_spec.js'?> type="text/javascript"></script>
-    <script src=<?php echo Router::base_url().'/files/js/select_date.js'?> type="text/javascript"></script>
+    <body>
+        <div class ="container-5">
+            <div class="nav">
+                <?php include 'header.php'; ?>
+            </div>
+                
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
-    <div style="background-color: white, url(<?php echo Router::base_url().'/files/icons/schedule_picture.png'?>);background-repeat:no-repeat">
-    <div class ="container">
-        <div class="container-t" style="justify-content:center">
+        <div class=container-t>
             <div class="topic1">Select Date</div>
             <div class="contact-box" style="margin:10px">
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/calendar.svg' ?>)"></div>
@@ -39,7 +52,8 @@
                 </div>
             </div>
         </div>
-    </div>
-    </div>      <!--container-->
+        <div class="footer">All rights are reserved</div>
+        </div>
+        
     </body>
 </html>
