@@ -60,7 +60,7 @@
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="fas fa-dolly-flatbed"></i> Manage inventory</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/inventory/add?add=medicine" ?>>Add medicine</a>
+                <a href=<?php echo Router::site_url() . "/inventory/add_grn" ?>>Add GRN</a>
                 <a href=<?php echo Router::site_url() . "/inventory/view" ?>>View medicine</a>
             </div>
         </div>

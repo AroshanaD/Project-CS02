@@ -10,6 +10,10 @@ class Inventory extends Controllers
         $this->view();
     }
 
+    public function add_grn(){
+        $this->load('views','add_medicine_grn');
+    }
+
     public function view()
     {
         /*$this->load('views', 'header');*/
