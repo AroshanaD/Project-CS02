@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <div class="container-1">
+        <div class="container-1" style="background-image:url(<?php echo Router::base_url().'/files/icons/doctor.jpg'?>); background-repeat:no-repeat">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
@@ -18,9 +18,9 @@
 
             <div class="dashboard">
               <div id="welcome-board">
-                <div id="welcome-txt">Welcome, Dasun!</div>
+                <div id="welcome-txt" style="color:black">Welcome, Dasun!</div>
               </div>
-              <div id="dashboard-title">Dashboard</div>
+              <div id="dashboard-title" style="color:black">Dashboard</div>
             </div>
             <div class="databoard-1">
                 <div id="databord-title">Appointments</div>
@@ -38,9 +38,29 @@
                 <div id="databord-value">30</div>
                 <div><img src=<?php echo Router::base_url().'/files/icons/patient.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
-            <div class="taskboard" style="background-color: #c7c7c7;">
-              <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?> class="task">Appointments</a>
-              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task">View Statistics</a>
+            <div class="taskboard" style="background-color: #cececee1">
+              <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?> class="task-large">Appointments
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Here you can find <br>
+                  appointment details<br>
+                  of your patient!!
+                </p>
+            
+              </a>
+              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task-large">View Statistics
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Our Hospital analyis the <br>
+                  appointment details and<br>
+                  Patients details!!
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/statistics/report" ?> class="task-large">generate reports
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Here you can get a<br>
+                  complete report<br>
+                  of your patients and appointments!!
+                </p>
+              </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>
