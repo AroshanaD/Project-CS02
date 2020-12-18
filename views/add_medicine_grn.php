@@ -8,7 +8,6 @@
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
     <script type="text/javascript" src="/project-cs02/files/js/autofill_vendors.js"></script>
     <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
-    <script type="text/javascript" src="/project-cs02/files/js/medicine_validate.js"></script>
     <script type="text/javascript" src="/project-cs02/files/js/grn.js"></script>
 </head>
 
@@ -28,10 +27,10 @@
                 </div>
                 <form id="form-1">
                     <div class="label">
-                        <label for="grn_id" id="grn_id">GRN Id</label>
+                        <label for="grn_id" id="grn_f">GRN Id</label>
                     </div>
                     <div class="input">
-                        <input type="number" name="grn_id" id="grn_id" disabled required>
+                        <input type="number" name="grn" id="grn" value="<?php echo $_POST['grn'] ?>" disabled required>
                     </div>
                     <div class="label">
                         <label for="vendors">Vendor</label>
@@ -42,39 +41,39 @@
                         </select>
                     </div>
                     <div class="label">
-                        <label for="no_items" id="no_items">No.of Items</label>
+                        <label for="no_items" id="no_items_f">No.of Items</label>
                     </div>
                     <div class="input">
                         <input type="number" name="no_items" id="no_items" disabled required>
                     </div>
                     <div class="label">
-                        <label for="grn " id="grn_id">GRN Value</label>
+                        <label for="grn " id="grn_value_f">GRN Value</label>
                     </div>
                     <div class="input">
                         <input type="number" name="grn_value" id="grn_value" disabled required>
                     </div>
                     <div class="label">
-                        <label for="receiver_id" id="receiver_id">Reciver Id</label>
+                        <label for="receiver_id" id="receiver_id_f">Reciver Id</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="receiver_id" id="receiver_id" disabled required>
+                        <input type="text" name="receiver_id" id="receiver_id" value="<?php echo $_SESSION["id"] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="note" id="note">Note</label>
+                        <label for="note" id="note_f">Note</label>
                     </div>
                     <div class="input">
-                        <input type="tetxarea" name="grn_id" id="grn_id">
+                        <input type="text" name="note" id="note">
                     </div>
                     <div><input type="submit" name="submit" id="submit" value="Submit" class="btn"></div>
-                    <div id="form-message"> </div>
+                    <div id="form-message"></div>
                 </form>
                 <div id="form-3">
                     <div class="med-div">
                         <form class="medicine-details">
-                            <div class="input_m">
-                                <input class="m_input" type="number" name="br_id" id="br_id" placeholder="BR No" required>
+                            <div class="input_m" id="br_f">
+                                <input class="m_input" type="number" name="br" id="br" placeholder="BR No" required>
                             </div>
-                            <div class="input_m">
+                            <div class="input_m" id="medicine_f">
                                 <input class="m_input" type="text" name="medicine" id="medicine" placeholder="Medicine Name" required>
                             </div>
                             <div class="input_s">
@@ -92,19 +91,19 @@
                             <div class="input_m">
                                 <input class="m_input" type="number" name="quantity" id="quantity" placeholder="Quantity" required>
                             </div>
-                            <div class="input_m">
+                            <div class="input_m" id="manufacturer_f">
                                 <input class="m_input" type="text" name="manufacturer" id="manufacturer" placeholder="Manufacturer" required>
                             </div>
-                            <div class="input_m">
+                            <div class="input_m" id="manufacture_date_f">
                                 <label style="color:#743ebb">Manufacture Date</label>
                                 <input class="m_input" type="date" name="manufacture_date" id="manufacture_date" placeholder="Manufacture Date" required>
                             </div>
-                            <div class="input_m">
+                            <div class="input_m" id="expire_date_f">
                                 <label style="color:#743ebb">Expire Date</label>
                                 <input class="m_input" type="date" name="expire_date" id="expire_date" placeholder="Expire Date" required>
                             </div>
                             <div class="input_m">
-                                <input class="m_input" type="text" name="note" id="note" placeholder="Note">
+                                <input class="m_input" type="text" name="note" id="note_m" placeholder="Note">
                             </div>
                             <div class="input_m"><button class="add" id="add-icon"><i class="fas fa-plus" style="color:white"></i></button></div>
                         </form>
@@ -113,7 +112,7 @@
                             <button id="down" onclick="down()"><i class="fas fa-angle-down"></i></button>
                         </div>
                     </div>
-                    <div class="table" style="display: block; margin: 0">
+                    <div class="table" style="display: block; margin: 0; overflow-y: auto">
                         <table>
 
                         </table>

@@ -10,8 +10,12 @@ class Inventory extends Controllers
         $this->view();
     }
 
-    public function add_grn(){
-        $this->load('views','add_medicine_grn');
+    public function add_grn()
+    {
+        $model = $this->load('models', 'Inventory_manage');
+        $result = $model->get_lastid();
+        $_POST['grn'] = $result['grn_id'] + 1;
+        $this->load('views', 'add_medicine_grn');
     }
 
     public function view()
