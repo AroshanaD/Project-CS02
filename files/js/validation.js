@@ -106,10 +106,13 @@ function manufacture_val(manufacture_date) {
     yyyy = yyyy - 1;
     day = yyyy + '-' + mm + '-' + dd;
 
-    if (manufacture_date > day) {
-        $("#manufacture_date").addClass("input-error");
-        $("<div class='error-message'>Manufacture date of medicine is within one year. Please check before proceed.</div>").insertBefore(".drop-icon");
-        return true;
+    if (manufacture_date < day) {
+        if(confirm("Manufacture date of medicine is not within one year. Please check before proceed")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }
 
@@ -134,8 +137,11 @@ function expire_val(expire_date) {
     day = yyyy + '-' + mm + '-' + dd;
 
     if (day > expire_date) {
-        $("#expire_date").addClass("input-error");
-        $("<div class='error-message'>Expire date of medicine is within one year. Please check before proceed.</div>").insertBefore(".drop-icon");
-        return true;
+        if(confirm("Expire date of medicine is within one year. Please check before proceed")){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 }

@@ -18,6 +18,32 @@ class Inventory extends Controllers
         $this->load('views', 'add_medicine_grn');
     }
 
+    public function add_new_grn(){
+        $model = $this->load('models', 'Inventory_manage');
+
+        $vendor = $_POST['vendor'];
+        $no_items = $_POST['no_items'];
+        $grn_value = $_POST['grn_value'];
+        $note = $_POST['note'];
+        $receiver_cat = $_SESSION['user_cat'];
+        $receiver_id = $_SESSION['id'];
+        $medicine_list = $_POST['medicine_list'];
+
+        $status = $model->add_grn($vendor,$no_items,$grn_value,$receiver_cat,$receiver_id,$note);
+        if($status == TRUE){
+            $grn_id = $model->get_lastid()['grn_id'];
+            foreach($medicine_list as $medicine){
+                $model->add_medicine($grn_id,$medicine);
+            }
+            header('Content-Type: application/json');
+            echo json_encode(TRUE);
+        }
+        else{
+            header('Content-Type: application/json');
+            echo json_encode(FALSE);
+        }
+    }
+
     public function view()
     {
         /*$this->load('views', 'header');*/

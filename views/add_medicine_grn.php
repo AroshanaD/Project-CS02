@@ -95,11 +95,11 @@
                                 <input class="m_input" type="text" name="manufacturer" id="manufacturer" placeholder="Manufacturer" required>
                             </div>
                             <div class="input_m" id="manufacture_date_f">
-                                <label style="color:#743ebb">Manufacture Date</label>
+                                <div style="margin-bottom: 5px;"><label style="color:#743ebb">Manufacture Date</label></div>
                                 <input class="m_input" type="date" name="manufacture_date" id="manufacture_date" placeholder="Manufacture Date" required>
                             </div>
                             <div class="input_m" id="expire_date_f">
-                                <label style="color:#743ebb">Expire Date</label>
+                                <div style="margin-bottom: 5px;"><label style="color:#743ebb">Expire Date</label></div>
                                 <input class="m_input" type="date" name="expire_date" id="expire_date" placeholder="Expire Date" required>
                             </div>
                             <div class="input_m">
