@@ -22,7 +22,7 @@ function render_details(details){
     $("table").empty();
 
     for(var i=0; i<details.length; i++){
-        var select = "<a href='../appointment/select_dates?doctor=".concat(i,"'><button class='tb-btn'>Select</button><a>");
+        var select = "<a href='../appointment/select_dates?doctor=".concat(i,"'><button class='tb-btn'>Select</button></a>");
 
         var row = $(`<tr id=${details[i].id}>`).append(
         $(`<td id=${"doctor-avatar"}>`).append(),

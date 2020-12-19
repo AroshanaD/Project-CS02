@@ -554,6 +554,10 @@ a {
     margin-bottom: 10px;
 }
 
+.input-error{
+    background-color: rgb(255, 70, 70);
+}
+
 .drop-form{
     width: 100%;
     margin: 0;
