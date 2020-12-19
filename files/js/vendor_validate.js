@@ -33,7 +33,7 @@ $(document).ready(function(){
         if(valid == true){
             //console.log("jfna");
             $.ajax({
-                url: '../../index.php/inventory/add_vendor',
+                url: '../../index.php/inventory/add_new_vendor',
                 data: {name:name, address:address, contact:contact, email:email},
                 type: 'post',
                 success:function(data){
