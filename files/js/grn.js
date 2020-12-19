@@ -10,10 +10,9 @@ $(document).ready(function () {
     $("#form-1").submit(function (event) {
         event.preventDefault();
 
-        let grn = $("#grn").val();
-        let vendor = $("#vendor").val();
-        let note = $("#note").val();
-        let grn_details = [grn, medicine_list, vendor, no_items, total_worth, note];
+        var grn = $("#grn").val();
+        var vendor = $("#vendors").val();
+        var note = $("#note").val();
 
         let valid = true;
         $(".error-message").remove();
@@ -29,7 +28,27 @@ $(document).ready(function () {
 
         if (valid == true) {
             if (medicine_list.length >= 1) {
-
+                console.log("in");
+                $.ajax({
+                    url: '../../index.php/inventory/add_new_grn',
+                    data: {
+                        grn: grn,
+                        vendor: vendor,
+                        no_items: no_items,
+                        grn_value: total_worth,
+                        note: note,
+                        medicine_list: medicine_list
+                    },
+                    type: 'post',
+                    success: function (data) {
+                        if(data == true){
+                            //location.href = "../../index.php/inventory/add_grn?grn added successfully";
+                        }
+                        else{
+                            //location.href = "../../index.php/inventory/add_grn?couldnot add successfully";
+                        }
+                    }
+                })
             }
             else {
                 $("#form-message").text("Please add 1 or more medicines");
@@ -106,16 +125,6 @@ $(document).ready(function () {
             });
 
             add_to_table(medicine_item);
-        }
-        else {
-            var id_list = ["#br", "#medicine", "#unit_price", "#selling_price", "#quantity", "#manufacturer",
-                "#manufacture_date", "#expire_date", "#note_m", "#unit_value", "#unit"];
-
-            var valid = true;
-
-            id_list.forEach(element => {
-                $(element).removeClass("input-error");
-            });
         }
     })
 
