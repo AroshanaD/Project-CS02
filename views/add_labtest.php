@@ -19,11 +19,6 @@
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
 
-        <div class=table id="selected">
-            <table id="test-tb">
-
-            </table>
-        </div>
         <div class="form" style="background: none">
             <form class="form-container">
                 <div id="form-img"></div>
@@ -63,6 +58,13 @@
                 </div>
             </form>
         </div>
+
+        <div class=table id="selected">
+            <table id="test-tb">
+
+            </table>
+        </div>
+
         <div class="table" style="margin: 5px; padding: 0px">
             <div class="search-bar">
                 <div class="site-search">

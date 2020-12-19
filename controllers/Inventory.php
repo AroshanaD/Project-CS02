@@ -7,7 +7,7 @@ class Inventory extends Controllers
 
     public function index()
     {;
-        $this->view();
+        $this->view_stock();
     }
 
     public function add_grn()
@@ -18,6 +18,10 @@ class Inventory extends Controllers
         $this->load('views', 'add_medicine_grn');
     }
 
+    public function view_stock()
+    {
+    }
+  
     public function add_new_grn(){
         $model = $this->load('models', 'Inventory_manage');
 
@@ -44,19 +48,9 @@ class Inventory extends Controllers
         }
     }
 
-    public function view()
+    public function view_vendor()
     {
-        /*$this->load('views', 'header');*/
-        if (isset($_GET['view'])) {
-            if ($_GET['view'] == 'vendor') {
-                $this->load('views', 'view_vendors');
-            } else {
-                $this->load('views', 'view_inventory');
-            }
-        } else {
-            $this->load('views', 'view_inventory');
-        }
-        /*$this->load('views', 'footer');*/
+        $this->load('views', 'view_vendors');
     }
 
     public function get_medicine()
@@ -77,17 +71,9 @@ class Inventory extends Controllers
         echo json_encode($result);
     }
 
-    public function add()
+    public function add_vendor()
     {
-        if (isset($_GET['add'])) {
-            if ($_GET['add'] == 'vendor') {
-                $this->load('views', 'add_vendor');
-            } else {
-                $this->load('views', 'add_medicine');
-            }
-        } else {
-            $this->load('views', 'add_medicine');
-        }
+        $this->load('views', 'add_vendor');
     }
 
     public function add_medicine()
@@ -106,7 +92,7 @@ class Inventory extends Controllers
         echo json_encode($result);
     }
 
-    public function add_vendor()
+    public function add_new_vendor()
     {
         $model = $this->load('models', 'Inventory_manage');
 
@@ -121,56 +107,13 @@ class Inventory extends Controllers
         echo json_encode($result);
     }
 
-    public function update()
-    {
-        if ($_GET['update'] == 'medicine') {
-            $id = $_GET['id'];
-            $model = $this->load('models', 'Inventory_manage');
-            $result = $model->displayMedicine($id);
-            $_POST['medicine'] = $result;
-            $this->load('views', 'update_medicine');
-        }
-        if ($_GET['update'] == 'vendor') {
-            $id = $_GET['id'];
-            $model = $this->load('models', 'Inventory_manage');
-            $result = $model->displayVendor($id);
-            $_POST['details'] = $result;
-            $this->load('views', 'update_vendor');
-        }
-    }
-
-    public function update_medicine()
-    {
-        $model = $this->load('models', 'Inventory_manage');
-        $id = $_POST['id'];
-        $name = $_POST['name'];
-        $vendor = $_POST['vendor'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-        $quantity = $_POST['quantity'];
-
-        $result = $model->update_medicine($id, $name, $description, $vendor, $price, $quantity);
-        header('Content-Type: application/json');
-        echo json_encode($result);
-    }
-
-    public function delete_medicine()
+    public function update_vendor()
     {
         $id = $_GET['id'];
         $model = $this->load('models', 'Inventory_manage');
-        $result = $model->displayMedicine($id);
-        $_POST['medicine'] = $result;
-        $this->load('views', 'header');
-        $this->load('views', 'delete_medicine');
-        $this->load('views', 'footer');
-
-        if (isset($_POST['deleteMedicine'])) {
-            $medId = $_POST['id'];
-            $user = $model->delete($medId);
-
-            $URL = Router::site_url() . "/inventory/view?successfully deleted";
-            echo "<script>location.href='$URL'</script>";
-        }
+        $result = $model->displayVendor($id);
+        $_POST['details'] = $result;
+        $this->load('views', 'update_vendor');
     }
 
     public function delete_vendor()

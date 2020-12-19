@@ -610,7 +610,7 @@ button{
     display: grid;
     grid-template-columns: 0.4fr 1fr 1fr;
     grid-template-rows: 0.2fr 0.8fr 1fr 0.2fr;
-    grid-template-areas: "nav nav nav" "sidebar selected form" "sidebar table table" "footer footer footer";
+    grid-template-areas: "nav nav nav" "sidebar form selected" "sidebar table table" "footer footer footer";
 }
 
 #selected {
