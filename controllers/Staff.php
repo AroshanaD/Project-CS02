@@ -7,9 +7,7 @@
         }
 
         public function add(){
-            $this->load('views','header');
             $this->load('views','add_staff');
-            $this->load('views','footer');
         }
 
         public function add_staff($category,$id,$fname,$lname,$gender,$birthday,$contact,$address,$email){
@@ -136,7 +134,6 @@
         }
 
         public function view(){
-            $this->load('views','header');
             $this->load('views','view_staff');
         }
 
@@ -169,9 +166,7 @@
                 $_POST['details'] = $result;
                 $_POST['details']['category'] = $category;
             }
-            $this->load('views','header');
             $this->load('views','update_staff');
-            $this->load('views','footer');
 
         }
 
@@ -195,9 +190,7 @@
                 $result = $model->update_current($category,$id);
                 $_POST['details'] = $result;
             }
-            $this->load('views','header');
             $this->load('views','delete_staff');
-            $this->load('views','footer');
 
             if(isset($_POST['Delete'])){
                 $result = $model->delete($category,$id);

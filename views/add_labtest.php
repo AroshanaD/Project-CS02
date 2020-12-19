@@ -1,97 +1,95 @@
+<!DOCTYPE html>
+<html>
 
-    <div style="background:white;">
-        <div class="container">
-                <div class="contact-box">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab_test.svg' ?>)"></div>
-                    <form method = "POST">
-                       <div class="right">
-                           <div class="title">Create Lab Test</div>
-                            <h1>Patient Details</h1>
-                            <div class="label">
-                                <label for="patient_id">Patient Id</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="patient_id" required>
-                            </div>
-                            <div class="label">
-                                <label for="full_name">Full name</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="full_name" required>
-                            </div>
-                            <div class="label">
-                                <label for="age">Age</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="age" required>
-                            </div>
-                            <div class="label">
-                                <label for="gender">Gender</label>
-                            </div>
-                            <div class="input">
-                                <select name="gender" required>
-                                    <option value="any">Select gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">female</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="label">
-                                <label for="contact">Contact No</label>
-                            </div>
-                            <div class="input">
-                                <input type="tel" name="contact" required>
-                            </div>
-                            <div class="label">
-                                <label for="email">Email Address</label>
-                            </div>
-                            <div class="input">
-                                <input type="email" name="email" required>
-                            </div>
-                            <h1>Test Details</h1>
-                            <div class="label">
-                                <label for="test1">Test Details</label>
-                            </div>
-                            <div class="input">
-                                <select name="test1" required>
-                                    <option value="Any">Any Test</option>
-                                    <option value="#">#</option>
-                                </select>
-                            </div>
-                            <div class="label">
-                                <label for="test2">Test Details</label>
-                            </div>
-                            <div class="input">
-                                <select name="test2" required>
-                                    <option value="Any">Any Test</option>
-                                    <option value="#">#</option>
-                                </select>
-                            </div>
-                            <div class="label">
-                                <label for="test3">Test Details</label>
-                            </div>
-                            <div class="input">
-                                <select name="test3" required>
-                                    <option value="Any">Any Test</option>
-                                    <option value="#">#</option>
-                                </select>
-                            </div>
-                            <div class="label">
-                                <label for="test4">Test Details</label>
-                            </div>
-                            <div class="input">
-                                <select name="test4" required>
-                                    <option value="Any">Any Test</option>
-                                    <option value="#">#</option>
-                                </select>
-                            </div>
-                            
-                            <div><input type="submit" value="Add" class="btn"></div>
-                        </div >
-                    </form>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script type="text/javascript" src="/project-cs02/files/js/select_labtest.js"></script>
+    <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
+</head>
+
+<body>
+    <div class="container-l">
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+
+        <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
+        include $path; ?>
+
+        <div class=table id="selected">
+            <table id="test-tb">
+
+            </table>
+        </div>
+        <div class="form" style="background: none">
+            <form class="form-container">
+                <div id="form-img"></div>
+                <div id="form-1">
+                    <div class="input">
+                        <input style="width:200px" type="number" name="test_id" value="<?php echo $_POST['test_id'] ?>" disabled required>
+                    </div>
+                    <div class="input" id="id_f">
+                        <input style="width:200px" type="text" name="id" id="id" placeholder="Customer ID" required>
+                    </div>
+                    <div class="input" id="name_f">
+                        <input style="width:200px" type="text" id="name" name="full_name" placeholder="Customer Name" required>
+                    </div>
+                    <div class="input">
+                        <input style="width:200px" type="text" name="age" id="age" placeholder="Customer Age" required>
+                    </div>
+                </div>
+                <div id="form-2">
+                    <div class="input">
+                        <select style="width:200px" name="gender" id="gender" required>
+                            <option value="any">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="input" id="contact_f">
+                        <input style="width:200px" type="tel" id="contact" name="contact" placeholder="Customer Contact" required>
+                    </div>
+                    <div class="input">
+                        <input style="width:200px" type="number" name="total" id="total" placeholder="Total" required disabled>
+                    </div>
+                    <div style="width:100%; text-align: center">
+                        <input style="width:200px" type="submit" value="Add Test" class="btn">
+                    </div>
+                    <div id="form-message"></div>
+                </div>
+            </form>
+        </div>
+        <div class="table" style="margin: 5px; padding: 0px">
+            <div class="search-bar">
+                <div class="site-search">
+                    <input id="name" type="text" placeholder="Name " name="name">
+                </div>
+                <!--site-search-->
+                <!--date-->
+                <div class="site-search">
+                    <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
                 </div>
             </div>
-        </div> 
-    </body>
+            <div class="pagination" style="width: 20%">
+                <button class="next-btn" id="previous">Previous</button>
+                <button class="next-btn" id="next">Next</button>
+            </div>
+            <div class="table" style="margin: 5px; padding: 0px">
+                <table id="select-tb0">
+
+                </table>
+                <table id="select-tb1">
+
+                </table>
+            </div>
+        </div>
+
+        <div class="footer">All rights are reserved</div>
+    </div>
+</body>
 
 </html>

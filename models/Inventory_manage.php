@@ -64,6 +64,17 @@ class Inventory_manage extends Models{
         return $result;
     }
 
+    public function get_lastid(){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "SELECT grn_id FROM medicine_grn ORDER BY grn_id DESC LIMIT 1";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute();
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
     public function add_medicine($name,$vendor, $description,$price,$quantity){
         $connect = new Database();
         $pdo = $connect->connect();

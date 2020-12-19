@@ -8,7 +8,6 @@
 
         public function index(){
             $this->load('views','register');
-            $this->load('views','footer');
         }
 
         public function register_user($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password){

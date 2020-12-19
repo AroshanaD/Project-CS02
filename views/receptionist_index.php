@@ -1,50 +1,49 @@
+<!DOCTYPE html>
 
-<div class="container">
-            <div class="taskboard">
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="s-title">
-                        Appointments
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url().'/appointment/onpremise' ?>>Make Appointment</a></li>
-                            <li><a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View Appointments</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+    </head>
 
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/schedule.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="s-title">
-                        Doctor Schedule
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?>>Doctor Schedule</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="contact-box" id="profile-board" >
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
-                <div class="right" id="profile">
-                    <div class="title" style="border:none; color:  #cb0112">Receptionist Profile</div>
-                    <div class="field">Name:</div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
-                    <div class="field">Contact:</div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
-                    <div class="field">Email:</div><div class="val_field"><?php echo $_SESSION['email']?></div>
-                    <div class="field">Address:</div><div class="val_field"><?php echo $_SESSION['address']?></div>
-                </div>
-            </div>
-
+    <body>
+        <div class="container-1">
+        <div class="nav">
+            <?php include 'header.php'; ?>
         </div>
+            
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+
+            <div class="dashboard">
+              <div id="welcome-board">
+                <div id="welcome-txt">Welcome, Dasun!</div>
+              </div>
+              <div id="dashboard-title">Dashboard</div>
+            </div>
+            <div class="databoard-1">
+                <div id="databord-title">Appointments</div>
+                <div id="databord-value">76</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/appointment.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="databoard-2">
+                <div id="databord-title">Doctors</div>
+                <div id="databord-value">128</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            
+            <div class="databoard-3">
+                <div id="databord-title">Patients</div>
+                <div id="databord-value">530</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/patient.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="taskboard" style="background-color: #c7c7c7;">
+              <a href=<?php echo Router::site_url().'/appointment/onpremise' ?> class="task">Appointments</a>
+              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task">Doctor schedules</a>
+            </div>
+            <div class="footer">@ All rights are reserved</div> 
+          <div>
+         
     </body>
+
 </html>

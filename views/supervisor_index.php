@@ -1,86 +1,53 @@
-        <div class="container">
-            <div class="taskboard">
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/user_icon.svg'?>)"></div>
-                <div class="right" style="background:#023047">
-                    <div class="m-title">
-                        Manage Users
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/staff/add" ?>>Add Staff</a></li>
-                            <li><a href=<?php echo Router::site_url()."/staff/view" ?>>View Staff</a></li>
-                            <li><a href=<?php echo Router::site_url()."/doctors/add" ?>>Add Doctor</a></li>
-                            <li><a href=<?php echo Router::site_url()."/doctors/view" ?>>View Doctor</a></li>
-                        </ul>
-                    </div>
-                </div>
-                </div>
+<!DOCTYPE html>
 
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/inventory.svg'?>)"></div>
-                <div class="right" style="background:#023047">
-                    <div class="m-title">
-                        Manage Inventory
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/inventory/add?add=medicine" ?>>Add Medicine</a></li>
-                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Medicine</a></li>
-                            <li><a href=<?php echo Router::site_url()."/inventory/add?add=vendor" ?>>Add Vendors</a></li>
-                            <li><a href=<?php echo Router::site_url()."/inventory/view" ?>>View Vendors</a></li>
-                        </ul>
-                    </div>
-                </div>
-                </div>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+    </head>
 
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/schedule.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="m-title">
-                        Manage Schedules
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/schedules/add" ?>>Add Schedules</a></li>
-                            <li><a href=<?php echo Router::site_url()."/schedules/view" ?>>View Schedules</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+    <body>
+        <div class="container-1">
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+            
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/statistics.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="m-title">
-                        View Statistics
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a></li>
-                            <li><a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a></li>
-                            <li><a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a></li>
-                            <li><a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
+            <div class="dashboard">
+              <div id="welcome-board">
+                <div id="welcome-txt">Welcome, Dasun!</div>
+              </div>
+              <div id="dashboard-title">Dashboard</div>
             </div>
-
-            <div class="contact-box" id="profile-board">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
-                <div class="right" id="profile">
-                    <div class="title" style="border:none; color:  #cb0112">Supervisor Profile</div>
-                    <div class="field">Name    :</div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
-                    <div class="field">Contact :</div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
-                    <div class="field">Address :</div><div class="val_field"><?php echo $_SESSION['email']?></div>
-                    <div class="field">Email   :</div><div class="val_field"><?php echo $_SESSION['address']?></div>
-                </div>
+            <div class="databoard-1">
+                <div id="databord-title">Appointments</div>
+                <div id="databord-value">76</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/appointment.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="databoard-2">
+                <div id="databord-title">Doctors</div>
+                <div id="databord-value">128</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
             
-        </div>
+            <div class="databoard-3">
+                <div id="databord-title">Vendors</div>
+                <div id="databord-value">30</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/vendor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="taskboard" style="background-color: #c7c7c7;">
+              <a href=<?php echo Router::site_url()."/staff/view" ?> class="task">Manage Staff</a>
+              <a href=<?php echo Router::site_url()."/doctors/view" ?> class="task">Manage Doctors</a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Inventory</a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Vendors</a>
+              <a href=<?php echo Router::site_url()."/schedules/view"?> class="task">Manage Schedules</a>
+              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task">View Statistics</a>
+            </div>
+            <div class="footer">@ All rights are reserved</div> 
+          <div>
+         
     </body>
+
 </html>

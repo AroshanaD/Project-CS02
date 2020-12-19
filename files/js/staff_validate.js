@@ -58,6 +58,9 @@ $(document).ready(function(){
                             $(element).val(" ");
                         });
                         if(submit == 'Add'){
+                            $("#category").change(function(){
+                                id_generate();
+                             });
                             $("#form-message").text("Successfully Added User! Email Sent To User");
                         }
                         if(submit == 'Update'){

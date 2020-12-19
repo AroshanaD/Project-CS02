@@ -1,53 +1,70 @@
+<!DOCTYPE html>
 
-        <div class="container">
-            <div class="taskboard">
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="s-title">
-                        View Appointments
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View Appointments</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
+    </head>
 
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/statistics.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="s-title">
-                        View Statistics
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a></li>
-                            <li><a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a></li>
-                            <li><a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a></li>
-                            <li><a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="contact-box" id="profile-board">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
-                <div class="right" id="profile">
-                <div class="title" style="border:none; color:  #cb0112">Doctor Profile</div>
-                    <div class="field">Name</div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
-                    <div class="field">Specialization</div><div class="val_field"><?php echo $_SESSION['specialization_id']?></div>
-                    <div class="field">Qualification</div><div class="val_field"><?php echo $_SESSION['qualification']?></div>
-                    <div class="field">Contact</div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
-                    <div class="field">Email</div><div class="val_field"><?php echo $_SESSION['email']?></div>
-                </div>
-            </div>
-
+    <body>
+        <div class="container-1" style="background-image:url(<?php echo Router::base_url().'/files/icons/doctor.jpg'?>); background-repeat:no-repeat">
+        <div class="nav">
+            <?php include 'header.php'; ?>
         </div>
+
+        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+
+            <div class="dashboard">
+              <div id="welcome-board">
+                <div id="welcome-txt" style="color:black">Welcome, Dasun!</div>
+              </div>
+              <div id="dashboard-title" style="color:black">Dashboard</div>
+            </div>
+            <div class="databoard-1">
+                <div id="databord-title">Appointments</div>
+                <div id="databord-value">76</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/appointment.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="databoard-2">
+                <div id="databord-title">Doctors</div>
+                <div id="databord-value">128</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            
+            <div class="databoard-3">
+                <div id="databord-title">Patients</div>
+                <div id="databord-value">30</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/patient.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="taskboard" style="background-color: #cececee1">
+              <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?> class="task-large">Appointments
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Here you can find <br>
+                  appointment details<br>
+                  of your patient!!
+                </p>
+            
+              </a>
+              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task-large">View Statistics
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Our Hospital analyis the <br>
+                  appointment details and<br>
+                  Patients details!!
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/statistics/report" ?> class="task-large">generate reports
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Here you can get a<br>
+                  complete report<br>
+                  of your patients and appointments!!
+                </p>
+              </a>
+            </div>
+            <div class="footer">@ All rights are reserved</div> 
+          <div>
+         
     </body>
+
 </html>

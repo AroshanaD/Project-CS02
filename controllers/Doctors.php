@@ -7,9 +7,7 @@
         }
 
         public function add(){
-            $this->load('views','header');
             $this->load('views','add_doctor');
-            $this->load('views','footer');
         }
 
         public function add_doctor($id,$fname,$lname,$gender,$qualification,$contact,$address,$email,$specialization,$fee){
@@ -138,7 +136,6 @@
         }
 
         public function view(){
-            $this->load('views','header');
             $this->load('views','view_doctor');
         }
 
@@ -169,9 +166,7 @@
                 $result = $model->update_current($id);
                 $_POST['details'] = $result;
             }
-            $this->load('views','header');
             $this->load('views','update_doctor');
-            $this->load('views','footer');
         }
 
         public function update_doctor($id,$qualification,$address,$contact,$email,$fee){
@@ -193,9 +188,7 @@
                 $result = $model->update_current($id);
                 $_POST['details'] = $result;
             }
-            $this->load('views','header');
             $this->load('views','delete_doctor');
-            $this->load('views','footer');
 
             if(isset($_POST['Delete'])){
                 $result = $model->delete($id);

@@ -7,15 +7,37 @@
         }
 
         public function create_test(){
-            $this->load('views','header');
+            $model= $this->load('models','PatientTest_Manage');
+            $result = $model->get_lastid();
+            $_POST['test_id'] = $result['id'] + 1;
             $this->load('views','add_labtest');
-            $this->load('views','footer');
+        }
+
+        public function add_test(){
+            $model= $this->load('models','PatientTest_Manage');
+
+            $id = $_POST['id'];
+            $name = $_POST['name'];
+            $gender = $_POST['gender'];
+            $age = $_POST['age'];
+            $contact = $_POST['contact'];
+            $cost = $_POST['cost'];
+            $test_list = $_POST['test_list'];
+            $lab_id = $_SESSION['id'];
+
+            $result = $model->add_labtest($name,$gender,$age,$contact,$cost,$id,$lab_id);
+            if($result == TRUE){
+                $last_test = ($model->get_lastid())['id'];
+                foreach($test_list as $test){
+                    $model->add_testis($last_test,$test);
+                }
+            }
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function view(){
-            $this->load('views','header');
             $this->load('views','patient_test');
-            $this->load('views','footer');
         }        
 
         public function get_view(){
@@ -41,7 +63,6 @@
             $model= $this->load('models','PatientTest_Manage');
             $result= $model->displayById($id);
             $_POST['test']=$result;
-            $this->load('views','header');
             $this->load('views','update_test');
 
             if(isset($_POST['Update'])){
@@ -58,7 +79,6 @@
             $model= $this->load('models','PatientTest_Manage');
             $result= $model->displayById($id);
             $_POST['test']=$result;
-            $this->load('views','header');
             $this->load('views','delete_test');
 
             if(isset($_POST['Delete'])){
@@ -68,9 +88,7 @@
         }
 
         public function View_available(){
-            $this->load('views','header');
             $this->load('views','labtest_availability');
-            $this->load('views','footer');
         }
 
     }

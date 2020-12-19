@@ -1,53 +1,50 @@
+<!DOCTYPE html>
 
-<div class="container">
-            <div class="taskboard">
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="s-title">
-                        Appointments
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url().'/appointment/search_doctor'?>>Make Appointment</a></li>
-                            <li><a href=<?php echo Router::site_url().'/doctor_Schedule/index'?>>Doctor Schedule</a></li>
-                            <li><a href=<?php echo Router::site_url().'/appointment/view_details'?>>View Appointment</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport" />
+        <meta charset="UTF-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+    </head>
 
-                <div class="contact-box" id="task">
-                    <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab.svg'?>)">
-                </div>
-                <div class="right" style="background:#023047">
-                    <div class="s-title">
-                        Lab Test 
-                    </div>
-                    <div class="dropdown-content">
-                        <ul>
-                            <li><a href=<?php echo Router::site_url().'/appointment/result' ?>>Lab Test Results</a></li>
-                        </ul>
-                    </div>
-                    </div>
-                </div>
-
-            </div>
-
-            <div class="contact-box" id="profile-board" >
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/dashboard.svg' ?>)"></div>
-                <div class="right" id="profile" >
-                    <div class="title" style="border:none; color:  #cb0112">Patient Profile</div>
-                    <div class="field">Name    </div><div class="val_field"><?php echo $_SESSION['f_name'].' '.$_SESSION['l_name']?></div>
-                    <div class="field">Gender </div><div class="val_field"><?php echo $_SESSION['gender']?></div>
-                    <div class="field">Birthday </div><div class="val_field"><?php echo $_SESSION['birthday']?></div>
-                    <div class="field">Contact </div><div class="val_field"><?php echo $_SESSION['contact_no']?></div>
-                    <div class="field">Email   </div><div class="val_field"><?php echo $_SESSION['email']?></div>
-                    <div class="field">Address </div><div class="val_field"><?php echo $_SESSION['address']?></div>
-                </div>
-            </div>
-
+    <body>
+        <div class="container-1" style="background-image:url(<?php echo Router::base_url().'/files/icons/patient.jpg'?>); background-repeat:no-repeat">
+        <div class="nav">
+            <?php include 'header.php'; ?>
         </div>
+ 
+            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+
+            <div class="dashboard">
+              <div id="welcome-board">
+                <div id="welcome-txt" style="color:black">Welcome, Dasun!</div>
+              </div>
+              <div id="dashboard-title" style="color:black">Dashboard</div>
+            </div>
+            <div class="databoard-1">
+                <div id="databord-title">Appointments</div>
+                <div id="databord-value">76</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/appointment.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="databoard-2">
+                <div id="databord-title">Doctors</div>
+                <div id="databord-value">128</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            
+            <div class="databoard-3">
+                <div id="databord-title">Lab tests</div>
+                <div id="databord-value">30</div>
+                <div><img src=<?php echo Router::base_url().'/files/icons/labtest.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+            </div>
+            <div class="taskboard" style="background-color:#cececee1">
+              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments</a>
+              <a href=<?php echo Router::site_url().'/doctor_Schedule/index'?> class="task-large">Doctor Schedules</a>
+              <a href=<?php echo Router::site_url().'/appointment/result' ?> class="task-large">Lab tests</a>
+            </div>
+            <div class="footer">@ All rights are reserved</div> 
+          <div>
+         
     </body>
+
 </html>

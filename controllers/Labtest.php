@@ -7,9 +7,7 @@
         } 
 
         public function add(){
-            $this->load('views','header');
             $this->load('views','add_test');
-            $this->load('views','footer');
         }
 
         public function add_test(){
@@ -25,9 +23,7 @@
         }
 
         public function view(){
-            $this->load('views','header');
             $this->load('views','view_test');
-            $this->load('views','footer');
         }
 
         public function get_view(){
@@ -52,9 +48,7 @@
             $model= $this->load('models','Labtest_manage');
             $result= $model->displayById($id);
             $_POST['test']=$result;
-            $this->load('views','header');
             $this->load('views','update_test');
-            $this->load('views','footer');
 
             if(isset($_POST['update'])){
                 $testName = $_POST['test_name'];
@@ -99,13 +93,10 @@
             $model= $this->load('models','Labtest_manage');
             $result= $model->displayById($id);
             $_POST['test']=$result;
-            $this->load('views','header');
             $this->load('views','delete_test');
-            $this->load('views','footer');
 
             if(isset($_POST['Delete'])){
-                $testId = $_POST['id'];
-                $result=$model->delete($testId);
+                $result=$model->delete($id);
                 if($result==TRUE){
                     $URL= Router::site_url()."/labtest/view?successfully deleted";
                     echo "<script>location.href='$URL'</script>";

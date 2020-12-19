@@ -1,11 +1,28 @@
+<!DOCTYPE html>
+<html>
 
-    <div style="background-image: linear-gradient(to left,  oldlace, rgba(255, 255, 255, 0)), url(<?php echo Router::base_url().'/files/icons/undraw_fill_forms_yltj.png'?>);background-repeat:no-repeat">
-        <div class="container">
-        <div class="contact-box">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/receipt.svg' ?>)"></div>
-                <div class="right">
-                    <div class="title">Appointment Receipt</div>
-                    <div class="title" style="border:none; text-align:left">Patient Details</div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script src='/project-cs02/files/js/autofill_spec.js' type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="container-2">
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+
+        <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+        
+        <form class="form" method="get" action=<?php echo Router::site_url() . '/Appointment/select_doctor' ?>>
+            <div class="form-container1">
+                <div id="form-img">
+                </div>
+                <div id="form-1">
+                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Patient Details</div>
                     <div class="label">
                         <label>Name</label>
                     </div>
@@ -25,7 +42,7 @@
                         <label>-</label>
                     </div>
 
-                    <div class="title" style="border:none; text-align:left">Doctor Details</div>
+                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Doctor Details</div>
                     <div class="label">
                         <label>Name</label>
                     </div>
@@ -39,7 +56,7 @@
                         <label>-</label>
                     </div>
 
-                    <div class="title" style="border:none; text-align:left">Charges</div>
+                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Charges</div>
                     <div class="label">
                         <label>Doctor Fee</label>
                     </div>
@@ -58,10 +75,13 @@
                     <div class="input">
                         <label>-</label>
                     </div>
-
-                    <div><input type="submit" value="Save" class="btn"></div>
-                </div>  
+                    <input type="submit" value="Save" class="btn">
+                    <div id="form-message"></div>
+                </div>
             </div>
-        </div>
-    </body>
+        </form>
+        <div class="footer">All rights are reserved</div>
+    </div>
+</body>
+
 </html>
