@@ -20,21 +20,35 @@ function render_details(details){
     $(`<td>`).text("Time"));
     $("table").append(head);
 
-    /**var week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
+    var week = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday'];
 
-    week.forEach(element => {
+    /**week.forEach(element => {
         var weekday = $(`<tr id=${element}>`).append(
             $(`<td>`).text(element),
             $(`<td>`).text("18:00"));
             $("table").append(weekday);
     });**/
 
-    for(var i=0;i<details.length;i++){
-        var row = $(`<tr>`).append(
-            $(`<td>`).text(details[i].date),
-            $(`<td>`).text(details[i].time));
-            $("table").append(row);
+    for (var j=0;j<7;j++){
+        for(var i=0;i<details.length;i++){
+            if(week[j]==details[i].date){
+                var row = $(`<tr>`).append(
+                $(`<td>`).text(details[i].date),
+                $(`<td>`).text(details[i].time));
+                $("table").append(row);
+                break;
+            }
+            else if(i==details.length-1){
+                var row = $(`<tr>`).append(
+                $(`<td>`).text(week[j]),
+                $(`<td>`).text("Not available"));
+                $("table").append(row);
+            }
+        }
     }
+    
+        
+    
 
     /**for(var i=0; i<details.length; i++){
         var select = "<a href='../appointment/fill_form?date=".concat(i,"'><button class='tb-btn'>Select</button><a>");
