@@ -62,7 +62,7 @@ body {
 
 .container-5 {
     grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.2fr 1fr 0.1fr;
+    grid-template-rows: 0.2fr 1.7fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar container-t"  "footer footer";
 }
 
@@ -294,7 +294,7 @@ body {
     flex-basis: 100%;
     background-color: rgba(0, 0, 0, 0.1);
     color: white;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .dropdown:nth-child(1) {
