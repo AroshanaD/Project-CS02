@@ -21,6 +21,7 @@
     --footer-color: #1f1f1f;
     --box-shadow: 0 0 10px 10px rgba(120, 120, 120, 0.63);
     --btn-color: #5e60ce;
+    --border-line: 1px black solid;
 }
 
 body {
@@ -83,6 +84,15 @@ body {
     margin: 20px 10px 0px 15px;
     justify-items: center;
     margin-bottom: 20px;
+}
+
+.container-l {
+    background-color: white;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 0.4fr 0.6fr 1fr;
+    grid-template-rows: 0.1fr 0.5fr 1fr 0.1fr;
+    grid-template-areas: "nav nav nav" "sidebar form selected" "sidebar table table" "footer footer footer";
 }
 
 .nav {
@@ -391,6 +401,20 @@ a {
     align-items: center;
 }
 
+#spec{
+    background-image: none;
+    background-color: white;
+    border-top: var(--border-line);
+    border-right: var(--border-line);
+    padding: 0;
+}
+
+#bill-form{
+    box-shadow: none;
+    margin: 0;
+    padding: var(--main-padding);
+}
+
 .receipt {
     width: 100%;
     grid-area: receipt;
@@ -605,17 +629,44 @@ button{
     background-color: var(--btn-color);
 }
 
-.container-l {
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 0.4fr 1fr 1fr;
-    grid-template-rows: 0.2fr 0.8fr 1fr 0.2fr;
-    grid-template-areas: "nav nav nav" "sidebar form selected" "sidebar table table" "footer footer footer";
-}
-
 #selected {
     padding: var(--main-padding);
     grid-area: selected;
+    border-top: var(--border-line);
+    display: flex;
+    align-items: center;
+    background: none;
+    margin: 0;
+}
+
+#test-tb{
+    box-shadow: none;
+    border: none;
+}
+
+#test-tb > tr{
+    background-color: white;
+}
+
+#test-tb > tr:nth-child(1){
+    background-color:  #2e1097;
+}
+
+#test-tb > tr:nth-last-child(1){
+    background-color:  #d7caff;
+}
+
+#full-tb-div{
+    margin: 5px; 
+    padding: 0px;
+    justify-content: flex-start;
+    border-top: var(--border-line);
+}
+
+#select-tb-div{
+    margin: 5px; 
+    padding: 0px; 
+    justify-content: space-around; 
 }
 
 table>thead,
@@ -679,19 +730,13 @@ td>a {
     font-weight: bold;
 }
 
-#selected {
-    display: flex;
-    align-items: center;
-    background: none;
-    border: none;
-}
-
 .table {
     display: flex;
     flex-wrap: wrap;
     height: fit-content;
     margin: 20px;
     overflow-x: auto;
+    overflow-y: auto;
     grid-area: table;
     padding: var(--large-padding);
     justify-content: center;

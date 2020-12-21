@@ -19,8 +19,8 @@
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
 
-        <div class="form" style="background: none">
-            <form class="form-container">
+        <div class="form" id="spec">
+            <form class="form-container" id="bill-form">
                 <div id="form-img"></div>
                 <div id="form-1">
                     <div class="input">
@@ -65,7 +65,7 @@
             </table>
         </div>
 
-        <div class="table" style="margin: 5px; padding: 0px">
+        <div class="table" id="full-tb-div">
             <div class="search-bar">
                 <div class="site-search">
                     <input id="name" type="text" placeholder="Name " name="name">
@@ -80,11 +80,8 @@
                 <button class="next-btn" id="previous">Previous</button>
                 <button class="next-btn" id="next">Next</button>
             </div>
-            <div class="table" style="margin: 5px; padding: 0px">
-                <table id="select-tb0">
-
-                </table>
-                <table id="select-tb1">
+            <div class="table" id="select-tb-div">
+                <table id="select-tb">
 
                 </table>
             </div>
