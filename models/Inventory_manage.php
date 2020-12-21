@@ -10,7 +10,7 @@ class Inventory_manage extends Models
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM vendor WHERE deleted='0'";
+        $query = "SELECT * FROM vendor WHERE deleted=0";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -165,6 +165,16 @@ class Inventory_manage extends Models
         $query = "SELECT * FROM vendor WHERE id=? AND deleted=0";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function update_vendor($id, $address, $contact, $email){
+        $connect = new Database();
+        $pdo = $connect->connect();
+        $query = "UPDATE vendor SET address=?, contact_no=?, email=? WHERE id=?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([ $address, $contact, $email, $id]);
         $result = $stmt->fetch(PDO::FETCH_ASSOC);
         return $result;
     }

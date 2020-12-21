@@ -33,7 +33,7 @@
                         <label for="f_name">Name</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="f_name" id="fname" value="<?php echo $_POST['details']['name'] ?>" disabled required>
+                        <input type="text" name="f_name" id="name" value="<?php echo $_POST['details']['name'] ?>" disabled required>
                     </div>
                     <div class="label">
                         <label for="address">Address</label>

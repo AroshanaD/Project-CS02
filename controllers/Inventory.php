@@ -101,6 +101,18 @@ class Inventory extends Controllers
         $this->load('views', 'update_vendor');
     }
 
+    public function update_vendor_details(){
+        $id = $_POST['id'];
+        $address = $_POST['address'];
+        $contact = $_POST['contact'];
+        $email = $_POST['email'];
+
+        $model = $this->load('models', 'Inventory_manage');
+        $result = $model->update_vendor($id,$address,$contact,$email);
+        header('Content-Type: application/json');
+        echo json_encode($result);
+    }
+
     public function delete_vendor()
     {
         $id = $_GET['id'];
@@ -112,10 +124,9 @@ class Inventory extends Controllers
         $this->load('views', 'footer');
 
         if (isset($_POST['Delete'])) {
-            $id = $_POST['id'];
             $status = $model->delete_vendor($id);
 
-            $URL = Router::site_url() . "/inventory/view?view=vendor?successfully deleted";
+            $URL = Router::site_url() . "/inventory/view_vendor?successfully deleted";
             echo "<script>location.href='$URL'</script>";
         }
     }
@@ -165,7 +176,7 @@ class Inventory extends Controllers
     {
         $model = $this->load('models', 'Inventory_manage');
         $name = $_POST['name'];
-        $result = $model->search($name);
+        $result = $model->search_vendor($name);
         header('Content-Type: application/json');
         echo json_encode($result);
     }
