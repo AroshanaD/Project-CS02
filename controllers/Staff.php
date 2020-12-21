@@ -189,19 +189,16 @@
                 $id = $_GET['id'];
                 $result = $model->update_current($category,$id);
                 $_POST['details'] = $result;
+                $this->load('views','delete_staff');
             }
-            $this->load('views','delete_staff');
-
             if(isset($_POST['Delete'])){
                 $result = $model->delete($category,$id);
 
                 if($result == TRUE){
-                    /*header("Location: ../staff/view?successfully deleted");*/
                     $URL= Router::site_url()."/staff/view?successfully deleted";
                     echo "<script>location.href='$URL'</script>";
                 }
                 else{
-                    /*header("Location: ../staff/view?something went wrong");*/
                     $URL= Router::site_url()."/staff/view?something went wrong";
                     echo "<script>location.href='$URL'</script>";
                 }

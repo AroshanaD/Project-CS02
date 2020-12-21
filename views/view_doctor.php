@@ -30,21 +30,13 @@
                 <div class="site-search">
                     <input type="text" id="id" placeholder="Doctor Id" name="id">
                 </div>
-                <!--site-search-->
-                <!--text-->
                 <div class="site-search">
                     <input type="text" id="name" placeholder="Doctor Name" name="name">
                 </div>
-                <!--site-search-->
-                <!--date-->
-                <!--site-search-->
                 <div class="site-search">
                     <button id="search-btn" type="submit">Search</button>
                 </div>
-                <!--site-search-->
-                <!--btn-->
             </div>
-            <!--search-bar-->
         </div>
 
         <div class="table">
