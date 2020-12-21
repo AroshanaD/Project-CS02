@@ -76,7 +76,7 @@
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="fas fa-calendar-alt"></i> Manage Schedules</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/schedules/add" ?>>Add schedules</a>
+                <a href=<?php echo Router::site_url() . "/doctors/view" ?>>Add schedules</a>
                 <a href=<?php echo Router::site_url() . "/schedules/view" ?>>view schedules</a>
             </div>
         </div>

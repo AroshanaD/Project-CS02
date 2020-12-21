@@ -44,7 +44,7 @@
 
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
-        <form class="form">
+        <form class="form" method="POST" action=<?php echo Router::site_url()."/Schedules/add" ?>>
             <div class="form-container1">
                 <div id="form-img">
                 </div>
@@ -53,19 +53,25 @@
                         <label for="doc_id">Doctor Id</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="doc_id" required>
+                        <input type="text" name="doc_id"  value="<?php echo $_POST['details']['id'] ?>"  required>
                     </div>
                     <div class="label">
-                        <label for="doc_name">Name</label>
+                        <label for="f_name"> First name</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="doc_name" required>
+                        <input type="text" name="f_name" value="<?php echo $_POST['details']['f_name'] ?>"  required>
+                    </div>
+                    <div class="label">
+                        <label for="l_name">Last name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="l_name" value="<?php echo $_POST['details']['l_name'] ?>"  required>
                     </div>
                     <div class="label">
                         <label for="doc_special">Specialization</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="doc_special" required>
+                        <input type="text" name="doc_special" value="<?php echo $_POST['details']['specialization'] ?>" required>
                     </div>
                     <div class="label">
                         <label for="sche_id">Schedules</label>
@@ -86,7 +92,7 @@
                             <a href="javascript:void(0);" id="add_button" title="Add field"><img src="<?php echo Router::base_url().'/files/icons/add-icon.png'?>"></a>
                         </div>
                     </div>
-                    <input type="submit" name="Delete" value="Delete" class="btn">
+                    <input type="submit" name="add" value="Add" class="btn">
                     <div id="form-message"></div>
                 </div>
             </div>
