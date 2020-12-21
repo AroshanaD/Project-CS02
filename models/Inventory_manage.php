@@ -179,6 +179,21 @@ class Inventory_manage extends Models
         return $result;
     }
 
+    public function remove_stock_item($br_id){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "UPDATE stock SET deleted=1 WHERE br_id=?";
+        $stmt = $pdo->prepare($query);
+        $status = $stmt->execute([$br_id]);
+
+        if ($status == TRUE) {
+            return TRUE;
+        } else {
+            return FALSE;
+        }
+    }
+
     public function delete_vendor($id)
     {
         $connect = new Database();

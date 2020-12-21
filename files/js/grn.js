@@ -100,7 +100,6 @@ $(document).ready(function () {
             $(element).removeClass("input-error");
         });
 
-        //if (typeof br != "number") { valid = false; }
         if (text_val("medicine", medicine) == false) { valid = false; }
         if (text_val("manufacturer", manufacturer) == false) { valid = false; }
         if (text_val("unit", unit) == false) { valid = false; }
