@@ -45,7 +45,8 @@ function render_details(details) {
             $(`<th>`).text("Specialization"),
             $(`<th>`).text("Charges"),
             $(`<th>`).append("Update"),
-            $(`<th>`).append("Delete"));
+            $(`<th>`).append("Delete"),
+            $(`<th>`).append("Schedule"));
         $("table").append(header);
     }
 
@@ -82,7 +83,7 @@ function render_details(details) {
             let get_details = details[i]['id'];
             let update = "<a href=../doctors/update?id=".concat(get_details, "><button class='tb-btn'>Update</button></a>");
             let dele = "<a href=../doctors/delete?id=".concat(get_details, "><button class='tb-btn'>Delete</button></a>");
-
+            let schedule = "<a href=../Schedules/get_add?id=".concat(get_details, "><button class='tb-btn'>Add</button></a>");
             let row_id = details[i].id;
 
             let row = $(`<tr id=${row_id}>`).append(
@@ -91,7 +92,8 @@ function render_details(details) {
                 $(`<td>`).text(details[i].specialization),
                 $(`<td>`).text(details[i].fee),
                 $(`<td>`).append(update),
-                $(`<td>`).append(dele));
+                $(`<td>`).append(dele),
+                $(`<td>`).append(schedule));
             $("table").append(row);
         }
     }

@@ -63,6 +63,7 @@
             echo json_encode($result);
         }
         
+        
         public function fill_form(){
             $this->load('views','appointment_form');
         }

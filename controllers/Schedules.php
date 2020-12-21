@@ -6,8 +6,31 @@
 
         }
 
-        public function add(){
+        public function get_add(){
+            $model = $this->load('models','Schedules_manage');
+            if(isset($_GET['id'])){
+                $id = $_GET['id'];
+                $result = $model->get_doctor($id);
+                $_POST['details'] = $result;
+            }
             $this->load('views','add_schedule');
+        }
+
+        public function add(){
+            $model=$this->load('models','Schedules_manage');
+            
+            $id=$_POST['doc_id'] ;
+            $noOfSchedule = count($_POST["day"]);
+
+            for ($i=0; $i < $noOfSchedule; $i++) { 
+                if (trim($_POST['day'] != '') && trim($_POST['time'] != '')) {
+                    $date   = $_POST["day"][$i];
+                    $time = $_POST["time"][$i];
+                    $result = $model->add_schedule($id,$date,$time);
+                }
+            }
+            $URL= Router::site_url()."/Schedules/view?successfully added";
+             echo "<script>location.href='$URL'</script>";
         }
 
         public function view(){

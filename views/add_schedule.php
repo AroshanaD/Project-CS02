@@ -7,7 +7,34 @@
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
     <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
     <script rel="text/javascript" src="/project-cs02/files/js/schedule.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
+
+<script>
+    $(document).ready(function(){
+            var maxField = 7; //Input fields increment limitation
+            var addButton = $('#add_button'); //Add button selector
+            var wrapper = $('#field_wrapper'); //Input field wrapper
+            var fieldHTML = '<div class="input"><select name="day[]" id="category" placeholder="Schedule day" required><option value="" disabled hidden selected> Select Category </option><option value="Sunday">Sunday</option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option></select><input type="time" name="time[]" id="time"></br><a href="javascript:void(0);" id="remove_button" title="Add field"><img src="<?php echo Router::base_url().'/files/icons/remove-icon.png'?>"/></a></div>'; //New input field html 
+            var x = 1; //Initial field counter is 1
+            
+            //Once add button is clicked
+            $(addButton).click(function(){
+                //Check maximum number of input fields
+                if(x < maxField){ 
+                    x++; //Increment field counter
+                    $(wrapper).append(fieldHTML); //Add field html
+                }
+            });
+            
+            //Once remove button is clicked
+            $(wrapper).on('click', '#remove_button', function(e){
+                e.preventDefault();
+                $(this).parent('div').remove(); //Remove field html
+                x--; //Decrement field counter
+            });
+        });
+</script>
 
 <body>
     <div class="container-2">
@@ -17,8 +44,8 @@
 
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
-        <form class="form">
-            <div class="form-container">
+        <form class="form" method="POST" action=<?php echo Router::site_url()."/Schedules/add" ?>>
+            <div class="form-container1">
                 <div id="form-img">
                 </div>
                 <div id="form-1">
@@ -26,44 +53,47 @@
                         <label for="doc_id">Doctor Id</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="doc_id" required>
+                        <input type="text" name="doc_id"  value="<?php echo $_POST['details']['id'] ?>"  required>
                     </div>
                     <div class="label">
-                        <label for="doc_fname">First name</label>
+                        <label for="f_name"> First name</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="doc_fname" required>
+                        <input type="text" name="f_name" value="<?php echo $_POST['details']['f_name'] ?>"  required>
                     </div>
                     <div class="label">
-                        <label for="doc_lname">Last name</label>
+                        <label for="l_name">Last name</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="doc_lname" required>
-                    </div>
-
-                </div>
-                <div id="form-2">
-                    <div class="label">
-                        <label for="sche_id">Schedule Id</label>
-                    </div>
-                    <div class="input">
-                        <input type="text" name="sche_id" required>
+                        <input type="text" name="l_name" value="<?php echo $_POST['details']['l_name'] ?>"  required>
                     </div>
                     <div class="label">
-                        <label for="sche_date">Schedule Date</label>
+                        <label for="doc_special">Specialization</label>
                     </div>
                     <div class="input">
-                        <input type="date" name="sche_date" required>
+                        <input type="text" name="doc_special" value="<?php echo $_POST['details']['specialization'] ?>" required>
                     </div>
                     <div class="label">
-                        <label for="sche_time">Schedule Time</label>
+                        <label for="sche_id">Schedules</label>
                     </div>
-                    <div class="input">
-                        <input type="time" name="sche_time" required>
+                    <div id="field_wrapper">
+                        <div class="input">
+                            <select name="day[]" id="category" placeholder="Schedule day" required>
+                                <option value="" disabled hidden selected> Select Category </option>
+                                <option value="Sunday">Sunday</option>
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                            </select>
+                            <input type="time" name="time[]" id="time"></br>
+                            <a href="javascript:void(0);" id="add_button" title="Add field"><img src="<?php echo Router::base_url().'/files/icons/add-icon.png'?>"></a>
+                        </div>
                     </div>
-                    <input type="submit" name="Delete" value="Delete" class="btn">
+                    <input type="submit" name="add" value="Add" class="btn">
                     <div id="form-message"></div>
-
                 </div>
             </div>
         </form>

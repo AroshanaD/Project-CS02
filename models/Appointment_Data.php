@@ -40,9 +40,7 @@
         public function get_dates($id){
             $connect = new Database();
             $pdo = $connect->connect();
-            $query = "SELECT schedule_month.id, schedule_month.date, schedule_month.seat_no, schedule.time
-                    FROM schedule_month INNER JOIN schedule ON 
-                    schedule_month.schedule_id = schedule.id WHERE schedule.doctor_id =?";
+            $query = "SELECT date,time FROM schedule WHERE doctor_id=?";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$id]);
             $result = $stmt->fetchAll();
