@@ -36,9 +36,8 @@
 
         public function search(){
             $model = $this->load('models','labtest_manage');
-            $id = $_POST['id'];
             $name = $_POST['name'];
-            $result = $model->search($id,$name);
+            $result = $model->search($name);
             header('Content-Type: application/json');
             echo json_encode($result);
         }

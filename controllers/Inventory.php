@@ -20,9 +20,11 @@ class Inventory extends Controllers
 
     public function view_stock()
     {
+        $this->load('views', 'view_stock');
     }
-  
-    public function add_new_grn(){
+
+    public function add_new_grn()
+    {
         $model = $this->load('models', 'Inventory_manage');
 
         $vendor = $_POST['vendor'];
@@ -33,16 +35,15 @@ class Inventory extends Controllers
         $receiver_id = $_SESSION['id'];
         $medicine_list = $_POST['medicine_list'];
 
-        $status = $model->add_grn($vendor,$no_items,$grn_value,$receiver_cat,$receiver_id,$note);
-        if($status == TRUE){
+        $status = $model->add_grn($vendor, $no_items, $grn_value, $receiver_cat, $receiver_id, $note);
+        if ($status == TRUE) {
             $grn_id = $model->get_lastid()['grn_id'];
-            foreach($medicine_list as $medicine){
-                $model->add_medicine($grn_id,$medicine);
+            foreach ($medicine_list as $medicine) {
+                $model->add_medicine($grn_id, $medicine);
             }
             header('Content-Type: application/json');
             echo json_encode(TRUE);
-        }
-        else{
+        } else {
             header('Content-Type: application/json');
             echo json_encode(FALSE);
         }
@@ -53,10 +54,10 @@ class Inventory extends Controllers
         $this->load('views', 'view_vendors');
     }
 
-    public function get_medicine()
+    public function get_stock()
     {
         $model = $this->load('models', 'Inventory_manage');
-        $result = $model->view_medicine();
+        $result = $model->view_stock();
 
         header('Content-Type: application/json');
         echo json_encode($result);
@@ -74,22 +75,6 @@ class Inventory extends Controllers
     public function add_vendor()
     {
         $this->load('views', 'add_vendor');
-    }
-
-    public function add_medicine()
-    {
-        $model = $this->load('models', 'Inventory_manage');
-
-        $name = $_POST['name'];
-        $vendor = $_POST['vendor'];
-        $description = $_POST['description'];
-        $price = $_POST['price'];
-        $quantity = $_POST['quantity'];
-
-        $result = $model->add_medicine($name, $description, $vendor, $price, $quantity);
-
-        header('Content-Type: application/json');
-        echo json_encode($result);
     }
 
     public function add_new_vendor()
@@ -141,12 +126,37 @@ class Inventory extends Controllers
         $this->load('views', 'create_bill');
     }
 
+    public function add_bill()
+    {
+        $model = $this->load('models', 'Inventory_manage');
+
+        $id = $_POST['id'];
+        $name = $_POST['name'];
+        $age = $_POST['age'];
+        $cost = $_POST['cost'];
+        $note = $_POST['note'];
+        $receptionist_id = $_SESSION['id'];
+        $medicine_list = $_POST['medicine_list'];
+
+        $status = $model->add_bill_details($id, $name, $age, $receptionist_id, $cost, $note);
+        if ($status == TRUE) {
+            $sales_id = $model->get_last_salesid()['sales_id'];
+            foreach ($medicine_list as $medicine) {
+                $model->add_bill_list($sales_id, $medicine);
+            }
+            header('Content-Type: application/json');
+            echo json_encode(TRUE);
+        } else {
+            header('Content-Type: application/json');
+            echo json_encode(FALSE);
+        }
+    }
+
     public function search_medicine()
     {
         $model = $this->load('models', 'Inventory_manage');
-        $id = $_POST['id'];
         $name = $_POST['name'];
-        $result = $model->search($id, $name);
+        $result = $model->search_medicine($name);
         header('Content-Type: application/json');
         echo json_encode($result);
     }
