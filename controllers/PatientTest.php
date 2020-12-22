@@ -25,19 +25,19 @@
             $test_list = $_POST['test_list'];
             $lab_id = $_SESSION['id'];
 
-            $result = $model->add_labtest($name,$gender,$age,$contact,$cost,$id,$lab_id);
-            if($result == TRUE){
+            $result = $model->add_patient_test($name,$gender,$age,$contact,$cost,$id,$lab_id,$test_list);
+            /*if($result == TRUE){
                 $last_test = ($model->get_lastid())['id'];
                 foreach($test_list as $test){
                     $model->add_testis($last_test,$test);
                 }
-            }
+            }*/
             header('Content-Type: application/json');
             echo json_encode($result);
         }
 
         public function view(){
-            $this->load('views','patient_test');
+            $this->load('views','view_patient_test');
         }        
 
         public function get_view(){

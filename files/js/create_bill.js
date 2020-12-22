@@ -1,6 +1,7 @@
 var selected_list = [];
 var selected_list_details = [];
 var total_cost = 0;
+var no_items = 0;
 var details = [];
 
 $(document).ready(function () {
@@ -64,8 +65,9 @@ $(document).ready(function () {
                         id: id,
                         name: name,
                         age: age,
-                        note: note,
+                        no_items: no_items,
                         cost: total_cost,
+                        note: note,
                         medicine_list: selected_list_details,
                     },
                     type: 'post',
@@ -74,7 +76,7 @@ $(document).ready(function () {
                            render_bill(id, name, age, note);
                         }
                         else{
-                            location.href = "../../index.php/PatientTest/create_test?could not create the bill";
+                            location.href = "../../index.php/Inventory/create_test?could not create the bill";
                         }
                     }
                 })
@@ -215,6 +217,7 @@ function select_func(i) {
                 alert("Stock out of quantity");
             }
             else {
+                no_items = no_items + 1;
                 var medicine_total = medicine_quantity * details[i].selling_price;
                 total_cost = total_cost + medicine_total;
                 var medicine = [details[i].br_id, details[i].drug_name, medicine_quantity, medicine_total, medicine_note];
@@ -253,6 +256,7 @@ function select_func(i) {
 }
 
 function remove_func(i, medicine_quantity) {
+    no_items = no_items - 1;
     total_cost = total_cost - (details[i].selling_price * medicine_quantity);
     selected_list.splice(selected_list.indexOf(details[i].br_id), 1);
     let index = selected_list_details.findIndex(element => {
