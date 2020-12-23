@@ -10,7 +10,7 @@ class PatientTest_Manage extends Models
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM test WHERE deleted=0";
+        $query = "SELECT * FROM lab_test WHERE availability = 0 ORDER BY id DESC";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -81,14 +81,13 @@ class PatientTest_Manage extends Models
 
             $pdo->commit();
             return TRUE;
-
         } catch (PDOException $e) {
             $pdo->rollBack();
             return FALSE;
         }
     }
 
-    public function search($id, $name)
+    public function search($id, $name, $date, $availability)
     {
         $connect = new Database;
         $pdo = $connect->connect();
@@ -96,12 +95,18 @@ class PatientTest_Manage extends Models
         if ($name != null) {
             $name = $name . '%';
         } else {
-            $name = '';
+            $name = '%';
         }
 
-        $query = "SELECT * FROM test WHERE id = ? AND deleted =0 OR name LIKE ?  ";
-        $stmt = $pdo->prepare($query);
-        $stmt->execute([$id, $name]);
+        if ($availability != 2) {
+            $query = "SELECT * FROM lab_test WHERE (id = ? OR patient_name LIKE ?  OR date = ?) AND availability = ? ORDER BY date DESC";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$id, $name, $date, $availability]);
+        } else {
+            $query = "SELECT * FROM lab_test WHERE id = ? OR patient_name LIKE ?  OR date = ? ORDER BY date DESC";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$id, $name, $date]);
+        }
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
@@ -110,30 +115,31 @@ class PatientTest_Manage extends Models
     {
         $connect = new Database();
         $pdo = $connect->connect();
-        $query = "SELECT * FROM test WHERE id=?";
+        $query = "SELECT * FROM lab_test WHERE id=?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function get_tests($id)
+    {
+        $connect = new Database();
+        $pdo = $connect->connect();
+        $query = "SELECT * FROM test_is INNER JOIN test ON test_is.test_id = test.id WHERE test_is.labtest_id=?";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
 
-    public function update($id, $testName, $price, $description)
+    public function update($id, $availability)
     {
         $connect = new Database();
         $pdo = $connect->connect();
-        $deleted = 0;
-        $query = "UPDATE test SET name=?, unit_cost=?, description=?, deleted='$deleted' WHERE id=?";
+        $query = "UPDATE lab_test SET availability=? WHERE id=?";
         $stmt = $pdo->prepare($query);
-        $status = $stmt->execute([$testName, $price, $description, $id]);
-    }
-
-    public function delete($testId)
-    {
-        $connect = new Database();
-        $pdo = $connect->connect();
-
-        $query = "UPDATE test SET deleted='1' WHERE id=?";
-        $stmt = $pdo->prepare($query);
-        $status = $stmt->execute([$testId]);
+        $status = $stmt->execute([$availability, $id]);
+        return $status;
     }
 }
