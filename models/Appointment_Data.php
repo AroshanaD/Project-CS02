@@ -66,6 +66,17 @@
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }
+
+        public function available_appoint($doc_id,$date){
+            $connect = new Database();
+            $pdo = $connect->connect();
+
+            $query = "SELECT Seat_no FROM appointment WHERE Doctor_Id=? AND `Date`=?";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$doc_id,$date]);
+            $result = $stmt->fetch();
+            return $result;
+        }
     
 
     }

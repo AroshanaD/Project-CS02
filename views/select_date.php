@@ -21,15 +21,16 @@
                 <div class="contact-box" style="margin:0px">
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/calendar.svg' ?>)"></div>
                     <div class="right" style="max-width:500px">
-                        <form method="post" action="<?php echo Router::site_url().'/appointment/fill_form' ?>">
+                        <form id="selectdate-form">
                             <div class="s-title" style="height:auto">
                                     <label for="date">Appointment Date</label>
                                 </div>
                             <div class="input">
-                                <input type="date" name="date">
+                                <input type="date" name="date" id="date" required>
                             </div>
                                     
-                            <div><input type="submit" value="Select" class="btn"></div>
+                            <div><input type="submit" value="Select" class="btn" id="date_select"></div>
+                            <div id="form-message"></div>
                         </form>
                     </div>
                 </div>
