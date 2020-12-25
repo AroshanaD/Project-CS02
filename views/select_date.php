@@ -22,7 +22,7 @@
                     <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/calendar.svg' ?>)"></div>
                     <div class="right" style="max-width:500px">
                         <form id="selectdate-form">
-                            <div class="s-title" style="height:auto">
+                            <div class="title" style="height:auto">
                                     <label for="date">Appointment Date</label>
                                 </div>
                             <div class="input">

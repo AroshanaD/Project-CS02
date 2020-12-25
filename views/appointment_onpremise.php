@@ -9,7 +9,7 @@
                 <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/appointment.svg' ?>)"></div>
                 <div class="right" style="max-width:500px">
                     <form method="post" action="<?php echo Router::site_url().'/appointment/fill_form' ?>">
-                        <div class="s-title">Appointment Details</div>
+                        <div class="title">Appointment Details</div>
                         
                         <div class="label">
                             <label for="doctor">Select Doctor</label>

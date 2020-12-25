@@ -64,7 +64,7 @@ body {
 .container-5 {
     grid-template-columns: 0.2fr 1fr;
     grid-template-rows: 0.2fr 1.7fr 0.1fr;
-    grid-template-areas: "nav nav" "sidebar container-t"  "footer footer";
+    grid-template-areas: "nav nav" "sidebar container-t" "footer footer";
 }
 
 .container-6 {
@@ -400,7 +400,7 @@ a {
     align-items: center;
 }
 
-#spec{
+#spec {
     background-image: none;
     background-color: white;
     border-top: var(--border-line);
@@ -408,7 +408,7 @@ a {
     padding: 0;
 }
 
-#bill-form{
+#bill-form {
     box-shadow: none;
     margin: 0;
     padding: var(--main-padding);
@@ -468,7 +468,7 @@ a {
     grid-template-areas: "form-img form-1";
 }
 
-.form-container2{
+.form-container2 {
     padding: var(--large-padding);
     width: -webkit-fill-available;
     height: -webkit-fill-available;
@@ -495,15 +495,15 @@ a {
     grid-area: form-2;
 }
 
-#form-3{
-    border-left:  1px black solid;
+#form-3 {
+    border-left: 1px black solid;
     margin: var(--small-margin);
     padding: var(--large-padding);
     grid-area: form-3;
     overflow-y: auto;
 }
 
-.medicine-details{
+.medicine-details {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -511,7 +511,7 @@ a {
     align-content: flex-start;
 }
 
-.med-div{
+.med-div {
     margin-bottom: 5px;
     padding-bottom: 5px;
     border-bottom: 1px black solid;
@@ -553,19 +553,19 @@ a {
     margin-bottom: 10px;
 }
 
-.input_m{
+.input_m {
     margin: 0;
     padding: 0;
     flex-basis: 48%;
 }
 
-.input_s{
+.input_s {
     margin: 0;
     padding: 0;
     flex-basis: 22%;
 }
 
-.m_input{
+.m_input {
     border: 1px solid var(--side-bar-color);
     outline: none;
     width: 98%;
@@ -577,11 +577,11 @@ a {
     margin-bottom: 10px;
 }
 
-.input-error{
+.input-error {
     background-color: rgb(255, 70, 70);
 }
 
-.drop-form{
+.drop-form {
     width: 100%;
     margin: 0;
     padding: 0;
@@ -590,19 +590,19 @@ a {
     justify-content: space-between;
 }
 
-.drop-icon{
+.drop-icon {
     display: block;
     width: 100%;
     text-align: right;
 }
 
-button{
+button {
     background-color: white;
     border: none;
     outline: none;
 }
 
-#add-icon{
+#add-icon {
     background-color: var(--btn-color);
     padding: 5px 10px;
     border-radius: var(--main-border-radius);
@@ -638,34 +638,34 @@ button{
     margin: 0;
 }
 
-#test-tb{
+#test-tb {
     box-shadow: none;
     border: none;
 }
 
-#test-tb > tr{
+#test-tb>tr {
     background-color: white;
 }
 
-#test-tb > tr:nth-child(1){
-    background-color:  #2e1097;
+#test-tb>tr:nth-child(1) {
+    background-color: #2e1097;
 }
 
-#test-tb > tr:nth-last-child(1){
-    background-color:  #d7caff;
+#test-tb>tr:nth-last-child(1) {
+    background-color: #d7caff;
 }
 
-#full-tb-div{
-    margin: 5px; 
+#full-tb-div {
+    margin: 5px;
     padding: 0px;
     justify-content: flex-start;
     border-top: var(--border-line);
 }
 
-#select-tb-div{
-    margin: 5px; 
-    padding: 0px; 
-    justify-content: space-around; 
+#select-tb-div {
+    margin: 5px;
+    padding: 0px;
+    justify-content: space-around;
 }
 
 table>thead,
@@ -850,7 +850,7 @@ td>a {
     align-items: center;
 }
 
-#doctor-avatar{
+#doctor-avatar {
     width: 100px;
     height: 70px;
     margin: 10px 10px 10px 10px;
@@ -860,7 +860,7 @@ td>a {
     align-items: center;
 }
 
-#td-large{
+#td-large {
     font-size: 20px;
     font-weight: bold;
 }
@@ -890,5 +890,33 @@ td>a {
 .right {
     width: 450px;
     padding: 25px 40px;
-    background-color:#edf2fbe1 ;
+    background-color: #edf2fbe1;
+}
+
+.field,
+.val_field {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: 250;
+    text-align: left;
+}
+
+.field {
+    color: #7459ee;
+}
+
+.val_field {
+    margin-bottom: 20px;
+    color: #011722;
+}
+
+.title {
+    position: relative;
+    padding: 10px 0 10px;
+    margin-bottom: 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #023047;
+    text-align: center;
 }
