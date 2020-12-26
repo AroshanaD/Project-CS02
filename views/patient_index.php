@@ -8,7 +8,7 @@
     </head>
 
     <body>
-        <div class="container-1" style="background-image:url(<?php echo Router::base_url().'/files/icons/patient.jpg'?>); background-repeat:no-repeat">
+        <div class="container-1">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
@@ -37,7 +37,7 @@
                 <div id="databord-value">30</div>
                 <div><img src=<?php echo Router::base_url().'/files/icons/labtest.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
-            <div class="taskboard" style="background-color:#cececee1">
+            <div class="taskboard">
               <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments</a>
               <a href=<?php echo Router::site_url().'/doctor_Schedule/index'?> class="task-large">Doctor Schedules</a>
               <a href=<?php echo Router::site_url().'/appointment/result' ?> class="task-large">Lab tests</a>

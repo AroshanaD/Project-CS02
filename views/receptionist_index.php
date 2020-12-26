@@ -37,9 +37,10 @@
                 <div id="databord-value">530</div>
                 <div><img src=<?php echo Router::base_url().'/files/icons/patient.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
-            <div class="taskboard" style="background-color: #c7c7c7;">
-              <a href=<?php echo Router::site_url().'/appointment/onpremise' ?> class="task">Appointments</a>
-              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task">Doctor schedules</a>
+            <div class="taskboard">
+              <a href=<?php echo Router::site_url().'/appointment/search_doctor'?> class="task-large">Make Appointment</a>
+              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">View Appointment</a>  
+              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task-large">Doctor schedules</a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>
