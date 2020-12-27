@@ -41,9 +41,9 @@
                     <div class="input">
                         <input type="password" name="password" id="password" required>
                     </div></br>
-                    <div style="text-align:left; color: #240046;">
-                        <a href="<?php echo Router::site_url() . '/user/reset_password' ?>" id="login-ref">Forget password?</a>
-                        <a href=<?php echo Router::site_url() . '/register' ?> id="login-ref">Not already an user</a>
+                    <div>
+                        <a href="<?php echo Router::site_url() . '/user/reset_password' ?>" id="login-ref" style=" color: #743ebb; float:left; font-size:13px">Forget password?</a>
+                        <a href=<?php echo Router::site_url() . '/register' ?> id="login-ref" style=" color: #743ebb; float:right; font-size:13px; margin-right:20px">Not already an user(Sign up)</a>
                     </div></br>
                     <div>
                         <button type="submit" name="login-submit" class="btn">LOGIN</button>

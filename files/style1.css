@@ -29,6 +29,7 @@ body {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 [class*="container-"] {
@@ -74,7 +75,7 @@ body {
 
 .container-t {
     display: grid;
-    position: relative;
+    position: center;
     width: max-content;
     height: max-content;
     padding: 20px;
@@ -88,7 +89,7 @@ body {
 .nav {
     background-color: var(--nav-color);
     color: rgb(17, 17, 17);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     grid-area: nav;
     background-position: var(--extra-large-margin);
     background-repeat: no-repeat;
@@ -102,8 +103,8 @@ body {
     padding: 14px 16px;
     margin-top: 26px;
     text-decoration: none;
-    font-size: 15px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav a:hover {
@@ -121,7 +122,7 @@ body {
     display: block;
     text-align: center;
     font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media screen and (max-width: 600px) {
@@ -153,8 +154,8 @@ body {
 .sidebar {
     background: var(--side-bar-color);
     color: rgb(255, 255, 255);
-    font-size: 15px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     grid-area: sidebar;
     padding: var(--main-padding);
 }
@@ -172,9 +173,9 @@ body {
     height: fit-content;
     background-color: transparent;
     padding: var(--large-padding);
-    font-size: 20px;
-    font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
     border-radius: var(--main-border-radius);
     text-align: center;
@@ -193,9 +194,9 @@ body {
 }
 
 #welcome-txt {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /*text-transform: uppercase;*/
     border-radius: var(--main-border-radius);
     text-align: center;
@@ -206,7 +207,7 @@ body {
 }
 
 [class*="databoard-"] {
-    background: #7678ed54;
+    background: #6d6fd57e;
     margin: var(--large-margin);
     border-radius: var(--main-border-radius);
 }
@@ -224,9 +225,9 @@ body {
 }
 
 #databord-title {
-    color: #464646;
+    color: #ffffff;
     font-size: 20px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -236,7 +237,7 @@ body {
     color: #3a0ca3;
     float: left;
     font-size: 60px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 105px;
 }
 
@@ -248,9 +249,9 @@ body {
 }
 
 .task {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /*text-transform: uppercase;*/
     flex-basis: 24%;
     height: 25%;
@@ -266,9 +267,9 @@ body {
 }
 
 .task-large {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /*text-transform: uppercase;*/
     flex-basis: 24%;
     height: 75%;
@@ -328,8 +329,8 @@ a {
 .footer {
     background-color: var(--footer-color);
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
     text-align: center;
     grid-area: footer;
     padding: var(--main-padding);
@@ -405,7 +406,7 @@ a {
     margin: var(--small-margin);
     width: 40%;
     color: var(--side-bar-color-color);
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -489,20 +490,20 @@ a {
 }
 
 .label {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #743ebb;
     text-align: left;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: normal;
     width: 90%;
     margin: 10px 0 10px 0;
 }
 
 .input>input {
-    border: none;
-    border-bottom: 1px solid var(--side-bar-color);
-    outline: none;
+    border-style: solid;
+    border-color:#b5b5b5;
     background-color:transparent;
+    outline: none;
     color: #4e4e4e;
     width: 90%;
     font-size: 15px;
@@ -512,12 +513,11 @@ a {
 }
 
 .input>select {
-    border: none;
-    border-bottom: 1px solid var(--side-bar-color);
-    outline: none;
+    border-style: solid;
+    border-color:#b5b5b5;
     background-color:transparent;
     color: #4e4e4e;
-    width: 90%;
+    width: 98%;
     height: 30px;
     font-weight: lighter;
     padding: 5px 0 5px 20px;
@@ -623,15 +623,19 @@ table>tbody {
 table {
     border-radius: var(--main-border-radius);
     border-collapse: collapse;
-    border: 1px black solid;
+    border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 tr {
     padding: 5px 0px;
     box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
     background-color: #b8cac7;
+    font-size: 13px;
+    border:none;
+    border-bottom: 1px solid #3a3a3a52;
+    outline: none;
 }
 
 td,
@@ -639,27 +643,28 @@ th {
     width: max-content;
     background-color: inherit;
     padding: 5px 20px;
+    font-size: 13px;
 }
 
 tr:nth-child(1) {
-    background-color: #000f3f;
+    background-color: #ffffff;
 }
 
 tr:nth-child(odd) {
-    background-color: hsl(244, 53%, 70%);
+    background-color: hsl(0, 0%, 100%);
     padding: 5px 25px;
 }
 
 tr:nth-child(even) {
-    background-color: white;
+    background-color: rgb(243, 243, 243);
     padding: 5px 25px;
 }
 
 #head_row {
-    background-color: #2e1097;
-    color: white;
+    background-color: #fdfdff;
+    color: rgba(72, 72, 72, 0.802);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 13px;
 }
 
 td>a {
@@ -669,7 +674,7 @@ td>a {
 }
 
 #td-large {
-    font-size: 20px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -713,7 +718,7 @@ td>a {
 
 .search {
     padding: var(--main-padding);
-    background-color: rgb(247, 243, 243);
+    background-color: transparent;
     grid-area: search;
     display: flex;
     flex-wrap: wrap;
@@ -724,13 +729,13 @@ td>a {
     display: flex;
     flex-wrap: wrap;
     width: fit-content;
-    font-size: 16px;
+    font-size: 13px;
     margin: 20px;
     justify-content: space-between;
     padding: 2px;
     border: none;
     border-radius: 5px;
-    background-color: var(--side-bar-color);
+    background-color: white;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -739,8 +744,9 @@ td>a {
     width: 180px;
     margin: 5px 20px 5px 10px;
     padding: 10px;
-    border-width: 0;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgba(99, 99, 99, 0.419);
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
 }
@@ -749,6 +755,8 @@ td>a {
     height: 100%;
     background-color: white;
     color: rgb(120, 120, 120);
+    border-style: solid;
+    border-color: rgba(99, 99, 99, 0.419);
     border-radius: var(--main-border-radius);
 }
 
@@ -758,16 +766,16 @@ td>a {
 }
 
 .site-search>button {
-    background-color: #dcdce2a2;
+    background-color: #bbbbffbf;
     height: inherit;
     color: rgb(30, 9, 49);
     padding: 5px 10px;
-    margin-top: 5px;
+    margin-top: 12px;
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
@@ -782,7 +790,7 @@ td>a {
     position: relative;
     background-color: #0e09646e;
     color: #0f0f13;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
     border: none;
     border-radius: var(--main-border-radius);
@@ -810,7 +818,7 @@ td>a {
 }
 
 #td-large{
-    font-size: 20px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -823,7 +831,7 @@ td>a {
     text-align: center;
     background-color: #fff;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 50px;
     align-items: center;
     height: max-content;

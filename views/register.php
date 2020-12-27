@@ -18,11 +18,11 @@
 <body>
     <div class="container-3">
         <div class="nav">
-            <a href=<?php echo Router::site_url().'/main' ?>> <i class="fas fa-home"></i> Home</a>
             <a href=<?php echo Router::site_url()."/user/login" ?>> <i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href=<?php echo Router::site_url().'/main' ?>> <i class="fas fa-home"></i> Home</a>    
         </div>
-        <div class="form">
-            <div class="form-container">
+        <form class="form">
+            <div class="form-container"  style="background-color: transparent;">
                 <div id="form-img" style="background-color: transparent;" >
                 <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:320px; margin-top:70px">
                 </div>
@@ -92,16 +92,18 @@
                     </div>
                     <div class="input" id="rpassword_f">
                         <input type="password" id="repassword" name="repassword" required>
-                    </div><br>
+                    </div>
                     <div>
                         <button type="submit" name="Register" class="btn">REGISTER</button>
                     </div>
-                    <div id="form-message"></div>
+                    <div id="form-message"></div></br>
+                    <div>
+                        <a href=<?php echo Router::site_url()."/user/login" ?> id="login-ref" style=" color: #743ebb; float:left; font-size:13px; margin-right:20px">Already have an account?(Login here)</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="footer">
-
         </div>
     </div>
 </body>

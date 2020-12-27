@@ -32,8 +32,8 @@ function render_table(data){
     var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Name"),
-    $(`<td>`).text("Address"),$(`<td>`).text("Email"),
-    $(`<td>`).text("Contact"),
+    $(`<td>`).text("Address"),$(`<td>`).text("Contact"),
+    $(`<td>`).text("Email"),
     $(`<td>`).append("Update"),
     $(`<td>`).append("Delete"));
     $("table").append(header);
