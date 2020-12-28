@@ -28,6 +28,7 @@
             <form class="form-container">
                 <div id="form-img"></div>
                 <div id="form-1">
+                <div class="topic-small">Add lab tests</div>
                     <div class="input">
                         <input style="width:200px" type="number" name="test_id" value="<?php echo $_POST['test_id'] ?>" disabled required>
                     </div>

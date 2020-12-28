@@ -26,6 +26,8 @@
             <form class="form-container1">
                 <div id="form-img"></div>
                 <div id="form-1">
+                    
+                <div class="topic-small">Create Bill</div>
                     <div class="input"><input type="text" name="custName" placeholder="Customer Name" required></div></br>
                     <div class="input"><input type="text" name="custAge" placeholder="Customer Age" required></div></br>
                     <div class="input"><input type="text" name="orderDate" placeholder="Order Date" required></div></br>
