@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
-    <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
-    <script src=<?php echo Router::base_url().'/files/js/validation.js' ?> type="text/javascript"></script>
-    <script src=<?php echo Router::base_url().'/files/js/create_bill.js' ?> type="text/javascript"></script>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/validation.js' ?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/create_bill.js' ?> type="text/javascript"></script>
 </head>
 
 <body>
-    <div class="container-l">
+    <div class="container-8">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
@@ -20,14 +20,15 @@
         include $path; ?>
 
         <div class="form" id="spec">
-            <form class="form-container1" id="bill-form">
-                <div id="form-img"></div>
+            <form class="form-container3" id="bill-form">
                 <div id="form-1">
-                    
-                <div class="topic-small">Create Bill</div>
+                    <div class="input"><input type="text" name="custId" placeholder="Customer NIC"></div></br>
                     <div class="input"><input type="text" name="custName" placeholder="Customer Name" required></div></br>
+                    <div id="form-message"></div>
+                </div>
+                <div id="form-2">
                     <div class="input"><input type="text" name="custAge" placeholder="Customer Age" required></div></br>
-                    <div class="input"><input type="text" name="orderDate" placeholder="Order Date" required></div></br>
+                    <div class="input"><input type="number" name="custContact" placeholder="Customer Contact"></div></br>
                     <div class="input"><input type="submit" value="Create Bill" class="btn"></div>
                     <div id="form-message"></div>
                 </div>

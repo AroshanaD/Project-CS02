@@ -14,11 +14,11 @@
     --extra-large-margin: 35px;
     --border-left: 50px #5e60ce solid;
     --small-border-left: 20px #560bad solid;
-    --nav-color: #ffffff;
+    --nav-color: #01345B;
     --side-bar-color: #5e60ce;
     --databoard-color: #3e37c96e;
     --table-color: #f5f5f5;
-    --footer-color: #1f1f1f;
+    --footer-color: #01345B;
     --box-shadow: 0 0 10px 10px rgba(120, 120, 120, 0.63);
     --btn-color: #5e60ce;
     --border-line: 1px black solid;
@@ -40,44 +40,44 @@ body {
 }
 
 .container-1 {
-    grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: 0.4fr 0.6fr 1fr 1.6fr 0.2fr;
+    grid-template-columns: 0.15fr 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 0.15fr 0.4fr 0.6fr 0.7fr 0.1fr;
     grid-template-areas: "nav nav nav nav" "sidebar dashboard dashboard dashboard" "sidebar databoard-1 databoard-2 databoard-3" "sidebar taskboard taskboard taskboard" "footer footer footer footer";
 }
 
 .container-2 {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.4fr 4fr 0.2fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 1.6fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar form" "footer footer";
 }
 
 .container-3 {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1.7fr 0.1fr;
+    grid-template-rows: 0.15fr 1.7fr 0.1fr;
     grid-template-areas: "nav" "form" "footer";
 }
 
 .container-4 {
-    grid-template-columns: 0.2fr 0.8fr;
-    grid-template-rows: 0.2fr 0.3fr 1.4fr 0.1fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 0.3fr 1.4fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar search" "sidebar table" "footer footer";
 }
 
 .container-5 {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.2fr 1.7fr 0.1fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 1.7fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar container-t" "footer footer";
 }
 
 .container-6 {
-    grid-template-columns: 0.5fr 1.5fr 1.5fr;
-    grid-template-rows: 0.4fr 1.6fr 1.6fr 0.2fr;
+    grid-template-columns: 0.15fr 0.4fr 0.5fr;
+    grid-template-rows: 0.15fr 0.8fr 0.9fr 0.1fr;
     grid-template-areas: "nav nav nav" "sidebar form form" "sidebar taskboard taskboard" "footer footer footer";
 }
 
 .container-7 {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 0.8fr 0.9fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar details" "sidebar table" "footer footer";
 }
 
@@ -94,12 +94,9 @@ body {
     margin-bottom: 20px;
 }
 
-.container-l {
-    background-color: white;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 0.4fr 0.6fr 1fr;
-    grid-template-rows: 0.1fr 0.5fr 1fr 0.1fr;
+.container-8 {
+    grid-template-columns: 0.15fr 0.5fr 0.5fr;
+    grid-template-rows: 0.15fr 0.7fr 1fr 0.1fr;
     grid-template-areas: "nav nav nav" "sidebar form selected" "sidebar table table" "footer footer footer";
 }
 
@@ -543,6 +540,12 @@ a {
     grid-template-areas: "form-img form-1 form-3 form-3";
 }
 
+.form-container3 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "form-1 form-2";
+}
+
 #form-img {
     margin: var(--small-margin);
     background-color: var(--side-bar-color);
@@ -609,7 +612,9 @@ a {
 .input>select {
     border-style: solid;
     border-color: #b5b5b5;
+    border-width: 2px;
     background-color: transparent;
+    outline: none;
     color: #4e4e4e;
     width: 98%;
     height: 30px;
@@ -627,18 +632,19 @@ a {
 .input_s {
     margin: 0;
     padding: 0;
-    flex-basis: 22%;
+    flex-basis: 21.5%;
 }
 
 .m_input {
-    border: 1px solid var(--side-bar-color);
+    border-style: solid;
+    border-color: #b5b5b5;
+    background-color: transparent;
     outline: none;
-    width: 98%;
-    background-color: white;
     color: #4e4e4e;
+    width: 98%;
     font-size: 15px;
     font-weight: lighter;
-    padding: 5px 0 5px 2%;
+    padding: 5px 0 5px 5px;
     margin-bottom: 10px;
 }
 
@@ -681,7 +687,7 @@ button {
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: var(--main-border-radius);
     outline: none;
     cursor: pointer;
     transition: .3s;
@@ -715,6 +721,7 @@ button {
 
 #test-tb>tr:nth-child(1) {
     background-color: #2e1097;
+    color: white;
 }
 
 #test-tb>tr:nth-last-child(1) {
@@ -822,7 +829,7 @@ td>a {
     font-size: 0.8rem;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: var(--main-border-radius);
     outline: none;
     cursor: pointer;
     transition: .3s;
@@ -866,7 +873,6 @@ td>a {
 }
 
 .site-search>select {
-    height: 100%;
     background-color: white;
     color: rgb(120, 120, 120);
     border-style: solid;
@@ -889,7 +895,7 @@ td>a {
     font-size: 13px;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: var(--main-border-radius);
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
