@@ -23,9 +23,12 @@ $(document).ready(function () {
     })
 
     $("#search-btn").click(function () {
+        var specialization = $("#search_spec").val();
+        var name = $("#name").val();
+        var id = $("#id").val();
         $.ajax({
             url: '../../index.php/doctors/search',
-            data: { $specialization: $("#search_spec"), id: $("#id").val(), name: $("#name").val() },
+            data: { specialization: specialization, id: id, name: name},
             type: 'post',
             success: function (data) {
                 var details = data;

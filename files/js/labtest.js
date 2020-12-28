@@ -12,7 +12,7 @@ $(document).ready(function(){
     $("#search-btn").click(function(){
         $.ajax({
             url: '../../index.php/labtest/search',
-            data: {id:$("#id").val(),name:$("#name").val()},
+            data: {name:$("#name").val()},
             type: 'post',
             success:function(data){
                 var details = data;

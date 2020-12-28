@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
-    <script type="text/javascript" src="/project-cs02/files/js/select_labtest.js"></script>
+    <script type="text/javascript" src="/project-cs02/files/js/create_labtest.js"></script>
     <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
 </head>
 
@@ -19,13 +19,8 @@
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
 
-        <div class=table id="selected">
-            <table id="test-tb">
-
-            </table>
-        </div>
-        <div class="form" style="background: none">
-            <form class="form-container">
+        <div class="form" id="spec">
+            <form class="form-container" id="bill-form">
                 <div id="form-img"></div>
                 <div id="form-1">
                 <div class="topic-small">Add lab tests</div>
@@ -64,7 +59,14 @@
                 </div>
             </form>
         </div>
-        <div class="table" style="margin: 5px; padding: 0px">
+
+        <div class=table id="selected">
+            <table id="test-tb">
+
+            </table>
+        </div>
+
+        <div class="table" id="full-tb-div">
             <div class="search-bar">
                 <div class="site-search">
                     <input id="name" type="text" placeholder="Name " name="name">
@@ -79,11 +81,8 @@
                 <button class="next-btn" id="previous">Previous</button>
                 <button class="next-btn" id="next">Next</button>
             </div>
-            <div class="table" style="margin: 5px; padding: 0px">
-                <table id="select-tb0">
-
-                </table>
-                <table id="select-tb1">
+            <div class="table" id="select-tb-div">
+                <table id="select-tb">
 
                 </table>
             </div>

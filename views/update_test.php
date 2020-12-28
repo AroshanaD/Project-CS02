@@ -28,25 +28,25 @@
                         <label for="test_id">Test Id</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="test_id" value="<?php echo ($_POST['test']['id']); ?>" disabled required>
+                        <input type="text" id="id" name="test_id" value="<?php echo ($_POST['test']['id']); ?>" disabled required>
                     </div>
                     <div class="label">
                         <label for="test_name">Test name</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="test_name" value="<?php echo ($_POST['test']['name']); ?>" disabled required>
+                        <input type="text" id="name" name="test_name" value="<?php echo ($_POST['test']['name']); ?>" disabled required>
                     </div>
                     <div class="label">
                         <label for="test_description">Description</label>
                     </div>
                     <div class="input">
-                        <input type="textarea" name="test_description" value="<?php echo ($_POST['test']['description']); ?>" required>
+                        <input type="textarea" id="description" name="test_description" value="<?php echo ($_POST['test']['description']); ?>" required>
                     </div>
                     <div class="label">
                         <label for="test_price">Unit Price</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="test_price" value="<?php echo ($_POST['test']['unit_cost']); ?>" required>
+                        <input type="text" id="cost" name="test_price" value="<?php echo ($_POST['test']['unit_cost']); ?>" required>
                     </div>
                     <div><input type="submit" value="Update" class="btn" name="Update"></div>
                 </div>

@@ -25,7 +25,7 @@ class doctor_manage extends Models{
         return $result;
     }
 
-    public function search($id,$name){
+    public function search($specialization,$id,$name){
         $connect = new Database;
         $pdo = $connect->connect();
 
@@ -33,15 +33,13 @@ class doctor_manage extends Models{
             $name = $name.'%';
         }
         else{
-            if($id == null){
-                $name = '%';
-            }
+            $name = '%';
         }
 
         $query = "SELECT doctor.id,doctor.f_name,doctor.l_name,doctor.qualification,doctor.address,doctor.contact_no,doctor.email,doctor.fee,specialization.name AS 'specialization' 
-                FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE (doctor.deleted='0') AND (doctor.id = ? OR doctor.f_name LIKE ? OR doctor.l_name LIKE ?)";
+                FROM doctor LEFT JOIN specialization ON doctor.specialization_id=specialization.id WHERE (doctor.id = ? OR doctor.f_name LIKE ? OR doctor.l_name LIKE ?) AND specialization.id = ? AND  doctor.deleted=0";
         $stmt = $pdo->prepare($query);
-        $stmt->execute([$id,$name,$name]);
+        $stmt->execute([$id,$name,$name,$specialization]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }

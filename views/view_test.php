@@ -21,22 +21,12 @@
 
             <div class="search-bar">
                 <div class="site-search">
-                    <input type="text" id="id" placeholder="Test Id" name="id">
-                </div>
-                <!--site-search-->
-                <!--text-->
-                <div class="site-search">
                     <input type="text" id="name" placeholder="Test Name" name="name">
                 </div>
-                <!--site-search-->
-                <!--date-->
                 <div class="site-search">
                     <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
                 </div>
-                <!--site-search-->
-                <!--btn-->
             </div>
-            <!--search-bar-->
         </div>
 
         <div class="table">
@@ -47,7 +37,6 @@
 
         <div class="footer">All rights are reserved</div>
     </div>
-    <!--container-2-->
 
 </body>
 

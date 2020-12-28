@@ -25,22 +25,22 @@
             $test_list = $_POST['test_list'];
             $lab_id = $_SESSION['id'];
 
-            $result = $model->add_labtest($name,$gender,$age,$contact,$cost,$id,$lab_id);
-            if($result == TRUE){
+            $result = $model->add_patient_test($name,$gender,$age,$contact,$cost,$id,$lab_id,$test_list);
+            /*if($result == TRUE){
                 $last_test = ($model->get_lastid())['id'];
                 foreach($test_list as $test){
                     $model->add_testis($last_test,$test);
                 }
-            }
+            }*/
             header('Content-Type: application/json');
             echo json_encode($result);
         }
 
         public function view(){
-            $this->load('views','patient_test');
+            $this->load('views','view_patient_test');
         }        
 
-        public function get_view(){
+        public function get_tests(){
             $model= $this->load('models','PatientTest_Manage');
             $result = $model->view();
             
@@ -53,7 +53,8 @@
             $id = $_POST['id'];
             $name = $_POST['name'];
             $date = $_POST['date'];
-            $result = $model->search($id,$name,$date);
+            $availability = $_POST['availability'];
+            $result = $model->search($id,$name,$date,$availability);
             header('Content-Type: application/json');
             echo json_encode($result);
         }
@@ -62,29 +63,30 @@
             $id = $_GET['id'];
             $model= $this->load('models','PatientTest_Manage');
             $result= $model->displayById($id);
-            $_POST['test']=$result;
-            $this->load('views','update_test');
+            $_POST['patient_test']=$result;
+            $this->load('views','change_test_availability');
 
-            if(isset($_POST['Update'])){
-                $testName = $_POST['test_name'];
-                $description = $_POST['test_description'];
-                $price = $_POST['test_price'];
+            if(isset($_POST['update'])){
+                $availability = $_POST['availability'];
+                $result = $model->update($id,$availability);
 
-                $model->update($id,$testName,$price,$description);
+                if($result == TRUE){
+                    $URL= Router::site_url()."/patientTest/view?successfully updated availability";
+                    echo "<script>location.href='$URL'</script>";
+                }
+                else{
+                    $URL= Router::site_url()."/patientTest/view?could not update availability";
+                    echo "<script>location.href='$URL'</script>";
+                }
             }
         }
 
-        public function delete(){
-            $id = $_GET['id'];
+        public function test_details(){
+            $id = $_POST['id'];
             $model= $this->load('models','PatientTest_Manage');
-            $result= $model->displayById($id);
-            $_POST['test']=$result;
-            $this->load('views','delete_test');
-
-            if(isset($_POST['Delete'])){
-                $testId = $_POST['id'];
-                $model->delete($testId);
-            }
+            $result= $model->get_tests($id);
+            header('Content-Type: application/json');
+            echo json_encode($result);
         }
 
         public function View_available(){

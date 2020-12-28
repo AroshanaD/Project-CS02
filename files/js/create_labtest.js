@@ -78,11 +78,32 @@ $(document).ready(function () {
         }
 
     })
+    function render_header_test() {
+        let header = $(`<tr id=${"head_row"}>`).append(
+            $(`<td>`).text("Test ID"),
+            $(`<td>`).text("Test Name"),
+            $(`<td>`).text("Unit Price"),
+            $(`<td>`).text("Remove"));
+        $("#test-tb").append(header);
+    }
+
+    render_header_test();
 })
 
 function render_table(data) {
 
-    const no_rows = 2;
+    function render_header() {
+        let header = $(`<tr id=${"head_row"}>`).append(
+            $(`<td>`).text("No"),
+            $(`<td>`).text("Test ID"),
+            $(`<td>`).text("Test Name"),
+            $(`<td>`).text("Description"),
+            $(`<td>`).text("Unit Price"),
+            $(`<td>`).text("Select"));
+        $("#select-tb").append(header);
+    }
+
+    const no_rows = 3;
     var page = 1;
     var tot_rows = data.length;
 
@@ -107,24 +128,24 @@ function render_table(data) {
     function render_page() {
         let first_row = (page - 1) * no_rows;
         let last_row = (first_row + no_rows > tot_rows) ? tot_rows : first_row + no_rows;
-        $("#select-tb0").empty();
-        $("#select-tb1").empty();
+        $("#select-tb").empty();
+
+        render_header();
 
         for (let i = first_row; i < last_row; i++) {
 
-            let odd_even = i % 2;
-
-            let select_func = 'select_func('.concat(i,')');
+            let select_func = 'select_func('.concat(i, ')');
 
             let get_details = data[i]['id'];
             let select = $(`<button class=${"tb-btn"} id=${"select"} onclick=${select_func}>`).text("Select");
             let row = $(`<tr id=${data[i].id}>`).append(
                 $(`<td>`).text(i + 1),
-                $(`<td>`).text(data[i].id), 
+                $(`<td>`).text(data[i].id),
                 $(`<td>`).text(data[i].name),
+                $(`<td>`).text(data[i].description),
                 $(`<td>`).text(data[i].unit_cost),
                 $(`<td>`).append(select));
-            $("#select-tb".concat(odd_even)).append(row);
+            $("#select-tb").append(row);
         }
     }
 }
@@ -139,15 +160,25 @@ function select_func(i) {
     //console.log(selected_list);
     //console.log(selected_list_details);
 
-    var remove_func = "remove_func(".concat(i,")");
+    var remove_func = "remove_func(".concat(i, ")");
 
     var remove = $(`<button class=${"tb-btn"} id=${"select"} onclick=${remove_func}>`).text("Remove");
-    var row = $(`<tr id=${details[i].id}>`).append(
-        $(`<td>`).text(details[i].id), 
+    var row = $(`<tr class=${"bill-tb-tr"} id=${details[i].id}>`).append(
+        $(`<td>`).text(details[i].id),
         $(`<td>`).text(details[i].name),
         $(`<td>`).text(details[i].unit_cost),
         $(`<td>`).append(remove));
     $("#test-tb").append(row);
+
+    $("#total-tr").remove();
+
+    let tot_row = $(`<tr id=${"total-tr"}>`).append(
+        $(`<td>`),
+        $(`<td>`).text("Total"),
+        $(`<td>`).text(total_cost),
+        $(`<td>`)
+    );
+    $("#test-tb").append(tot_row);
 
 }
 
@@ -162,10 +193,16 @@ function remove_func(i) {
     selected_list_details.splice(selected_list.indexOf(index), 1);
     $("#total").val(total_cost);
 
-    //console.log(selected_list_details);
-
     $("#".concat(details[i].id)).remove();
-    //console.log(selected_list);
+    $("#total-tr").remove();
+
+    let tot_row = $(`<tr id=${"total-tr"}>`).append(
+        $(`<td>`),
+        $(`<td>`).text("Total"),
+        $(`<td>`).text(total_cost),
+        $(`<td>`)
+    );
+    $("#test-tb").append(tot_row);
 }
 
 function render_bill(id, name, gender, age, contact) {

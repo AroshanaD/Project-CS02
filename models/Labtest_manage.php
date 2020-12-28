@@ -24,7 +24,7 @@
             return $result;
         }
 
-        public function search($id,$name){
+        public function search($name){
             $connect = new Database;
             $pdo = $connect->connect();
     
@@ -35,9 +35,9 @@
                 $name = '';
             }
     
-            $query = "SELECT * FROM test WHERE id = ? AND deleted =0 OR name LIKE ?  ";
+            $query = "SELECT * FROM test WHERE name LIKE ? AND deleted =0";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$id,$name]);
+            $stmt->execute([$name]);
             $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
             return $result;
         }

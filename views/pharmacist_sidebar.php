@@ -46,15 +46,15 @@
             <div style="margin: var(--large-margin);"><i class="fas fa-dolly-flatbed"></i> Manage inventory</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . "/Inventory/add_grn" ?>>Add GRN</a>
-                <a href=<?php echo Router::site_url() . "/Inventory/view" ?>>View Medicine</a>
+                <a href=<?php echo Router::site_url() . "/Inventory/view_stock" ?>>View Stock</a>
             </div>
         </div>
 
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="fas fa-user-tie"></i> Manage venodrs</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/inventory/add?add=vendor" ?>>Add Vendors</a>
-                <a href=<?php echo Router::site_url() . "/inventory/view?view=vendor" ?>>View Vendors</a>
+                <a href=<?php echo Router::site_url() . "/inventory/add_vendor" ?>>Add Vendors</a>
+                <a href=<?php echo Router::site_url() . "/inventory/view_vendor" ?>>View Vendors</a>
             </div>
         </div>
 
