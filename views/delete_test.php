@@ -23,6 +23,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Delete Test</div>
                     <div class="label">
                         <label for="test_id">Test Id</label>
                     </div>

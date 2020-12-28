@@ -24,6 +24,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Update Medicine</div>
                     <div class="label">
                         <label for="med_id">Medicine Id</label>
                     </div>

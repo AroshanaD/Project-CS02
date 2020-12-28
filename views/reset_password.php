@@ -24,6 +24,7 @@
             <a href=<?php echo Router::site_url() . "/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
         </div>
         <form class="form">
+        <div class="topic">Reset Passwords</div>
             <div class="form-container1">
                 <div id="form-img">
                 </div>

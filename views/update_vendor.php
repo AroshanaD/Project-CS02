@@ -23,6 +23,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Update vendor</div>
                     <div class="label">
                         <label for="id">Id</label>
                     </div>

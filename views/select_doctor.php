@@ -18,6 +18,7 @@
             <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
             <div class = "container-t">
+            <div class="topic">Select Doctor</div>
                 <div class="table">
                     <table>
                     
