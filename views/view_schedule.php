@@ -22,17 +22,22 @@
 
             <div class="search-bar">
                 <div class="site-search">
-                    <input type="text" placeholder="Doctor Name" name="d_id">
+                    <input type="text" placeholder="Doctor Id" name="d_id" id="id">
                 </div>
                 <!--site-search-->
                 <!--text-->
                 <div class="site-search">
-                    <input type="text" placeholder="Specialization" name="s_id">
+                    <input type="text" placeholder="Doctor name" name="d_name" id="name">
                 </div>
                 <!--site-search-->
                 <!--date-->
                 <div class="site-search">
-                    <button type="submit">Search</button>
+                    <input type="text" placeholder="Specialization" name="d_special" id="special">
+                </div>
+                <!--site-search-->
+                <!--date-->
+                <div class="site-search">
+                    <button id="search-btn" type="submit">Search</button>
                 </div>
                 <!--site-search-->
                 <!--btn-->
