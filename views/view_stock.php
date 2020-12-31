@@ -42,7 +42,6 @@
 
         <div class="footer">All rights are reserved</div>
     </div>
-    <!--container-2-->
 </body>
 
 </html>

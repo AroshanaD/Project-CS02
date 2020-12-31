@@ -45,8 +45,10 @@ function render_table(data){
         
         var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
         $(`<td>`).text(i+1),
-        $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].name),
-        $(`<td>`).text(data[i].address),$(`<td>`).text(data[i].contact),
+        $(`<td>`).text(data[i].id),
+        $(`<td>`).text(data[i].name),
+        $(`<td>`).text(data[i].address),
+        $(`<td>`).text(data[i].contact_no),
         $(`<td>`).text(data[i].email),
         $(`<td>`).append(update),
         $(`<td>`).append(dele));

@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
     <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
-    <script rel="text/javascript" src="/project-cs02/files/js/labtest_validate.js"></script>
-    <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
 </head>
 
 <body>
@@ -18,7 +16,7 @@
 
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
-        <form class="form">
+        <form class="form" method="post">
             <div class="form-container1">
                 <div id="form-img">
                 </div>

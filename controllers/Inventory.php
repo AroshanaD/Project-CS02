@@ -35,8 +35,11 @@ class Inventory extends Controllers
         $receiver_id = $_SESSION['id'];
         $medicine_list = $_POST['medicine_list'];
 
-        $status = $model->add_grn($vendor, $no_items, $grn_value, $receiver_cat, $receiver_id, $note);
-        if ($status == TRUE) {
+        $status = $model->add_stock($vendor, $no_items, $grn_value, $receiver_cat, $receiver_id, $note, $medicine_list);
+        header('Content-Type: application/json');
+        echo json_encode($status);
+
+        /*if ($status == TRUE) {
             $grn_id = $model->get_lastid()['grn_id'];
             foreach ($medicine_list as $medicine) {
                 $model->add_medicine($grn_id, $medicine);
@@ -46,7 +49,7 @@ class Inventory extends Controllers
         } else {
             header('Content-Type: application/json');
             echo json_encode(FALSE);
-        }
+        }*/
     }
 
     public function view_vendor()
@@ -101,6 +104,33 @@ class Inventory extends Controllers
         $this->load('views', 'update_vendor');
     }
 
+    public function update_vendor_details()
+    {
+        $id = $_POST['id'];
+        $address = $_POST['address'];
+        $contact = $_POST['contact'];
+        $email = $_POST['email'];
+
+        $model = $this->load('models', 'Inventory_manage');
+        $result = $model->update_vendor($id, $address, $contact, $email);
+        header('Content-Type: application/json');
+        echo json_encode($result);
+    }
+
+    public function remove_stock_item()
+    {
+        $model = $this->load('models', 'Inventory_manage');
+        $br_id = $_GET['br_id'];
+        $result = $model->remove_stock_item($br_id);
+        if ($result == true) {
+            $URL = Router::site_url() . "/inventory/view_stock?successfully removed stock item";
+            echo "<script>location.href='$URL'</script>";
+        } else {
+            $URL = Router::site_url() . "/inventory/view_vendor?could not remove stock item";
+            echo "<script>location.href='$URL'</script>";
+        }
+    }
+
     public function delete_vendor()
     {
         $id = $_GET['id'];
@@ -112,10 +142,9 @@ class Inventory extends Controllers
         $this->load('views', 'footer');
 
         if (isset($_POST['Delete'])) {
-            $id = $_POST['id'];
             $status = $model->delete_vendor($id);
 
-            $URL = Router::site_url() . "/inventory/view?view=vendor?successfully deleted";
+            $URL = Router::site_url() . "/inventory/view_vendor?successfully deleted";
             echo "<script>location.href='$URL'</script>";
         }
     }
@@ -133,12 +162,17 @@ class Inventory extends Controllers
         $id = $_POST['id'];
         $name = $_POST['name'];
         $age = $_POST['age'];
+        $no_items = $_POST['no_items'];
         $cost = $_POST['cost'];
         $note = $_POST['note'];
         $receptionist_id = $_SESSION['id'];
         $medicine_list = $_POST['medicine_list'];
 
-        $status = $model->add_bill_details($id, $name, $age, $receptionist_id, $cost, $note);
+        $status = $model->add_bill($id, $name, $age, $receptionist_id, $no_items, $cost, $note, $medicine_list);
+        header('Content-Type: application/json');
+        echo json_encode($status);
+
+        /*$status = $model->add_bill_details($id, $name, $age, $receptionist_id, $no_items, $cost, $note);
         if ($status == TRUE) {
             $sales_id = $model->get_last_salesid()['sales_id'];
             foreach ($medicine_list as $medicine) {
@@ -149,7 +183,7 @@ class Inventory extends Controllers
         } else {
             header('Content-Type: application/json');
             echo json_encode(FALSE);
-        }
+        }*/
     }
 
     public function search_medicine()
@@ -165,7 +199,7 @@ class Inventory extends Controllers
     {
         $model = $this->load('models', 'Inventory_manage');
         $name = $_POST['name'];
-        $result = $model->search($name);
+        $result = $model->search_vendor($name);
         header('Content-Type: application/json');
         echo json_encode($result);
     }

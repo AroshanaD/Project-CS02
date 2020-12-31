@@ -1,6 +1,7 @@
 var selected_list = [];
 var selected_list_details = [];
 var total_cost = 0;
+var no_items = 0;
 var details = [];
 
 $(document).ready(function () {
@@ -64,16 +65,19 @@ $(document).ready(function () {
                         id: id,
                         name: name,
                         age: age,
-                        note: note,
+                        no_items: no_items,
                         cost: total_cost,
+                        note: note,
                         medicine_list: selected_list_details,
                     },
                     type: 'post',
                     success: function (data) {
-                        //if (data == true) {
-                          //  render_bill(id, name, gender, age, contact);
-                        //}
-                        //location.href = "../../index.php/PatientTest/create_test";
+                        if (data == true) {
+                           render_bill(id, name, age, note);
+                        }
+                        else{
+                            location.href = "../../index.php/Inventory/create_test?could not create the bill";
+                        }
                     }
                 })
             }
@@ -213,6 +217,7 @@ function select_func(i) {
                 alert("Stock out of quantity");
             }
             else {
+                no_items = no_items + 1;
                 var medicine_total = medicine_quantity * details[i].selling_price;
                 total_cost = total_cost + medicine_total;
                 var medicine = [details[i].br_id, details[i].drug_name, medicine_quantity, medicine_total, medicine_note];
@@ -251,6 +256,7 @@ function select_func(i) {
 }
 
 function remove_func(i, medicine_quantity) {
+    no_items = no_items - 1;
     total_cost = total_cost - (details[i].selling_price * medicine_quantity);
     selected_list.splice(selected_list.indexOf(details[i].br_id), 1);
     let index = selected_list_details.findIndex(element => {
@@ -278,33 +284,45 @@ function remove_func(i, medicine_quantity) {
     console.log(selected_list_details);
 }
 
-function render_bill(id, name, gender, age, contact) {
+function render_bill(id, name, age, note) {
     $(".table").remove();
     $(".form").remove();
     $(".container-l").css("grid-template-areas", "'nav nav nav' 'sidebar receipt receipt' 'sidebar receipt receipt' 'footer footer footer'")
     $(".container-l").append(`<div class=${"receipt"}>`);
     $(".receipt").append(`<div class=${"receipt-t"}>`);
     $(".receipt-t").text("Lab Test");
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient ID"));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer ID"));
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(id));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Name"));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer Name"));
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(name));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Gender"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(gender));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Age"));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer Age"));
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(age));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Contact"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(contact));
+    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Note"));
+    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(note));
     $(".receipt").append($(`<table id=${"small-tb"}>`));
+
+    var header = $(`<tr>`).append(
+        $(`<td>`).text("ID"),
+        $(`<td>`).text("Medicine"),
+        $(`<td>`).text("Quantity"),
+        $(`<td>`).text("Special Note"),
+        $(`<td>`).text("Sub Total"));
+    $("#small-tb").append(header);
 
     selected_list_details.forEach(element => {
         var row = $(`<tr id=${element[0]}>`).append(
-            $(`<td>`).text(element[0]), $(`<td>`).text(element[1]),
-            $(`<td>`).text(element[2]));
+            $(`<td>`).text(element[0]), 
+            $(`<td>`).text(element[1]),
+            $(`<td>`).text(element[2]),
+            $(`<td>`).text(element[4]),
+            $(`<td>`).text(element[3]));
         $("#small-tb").append(row);
     });
     row = $(`<tr>`).append(
-        $(`<td>`), $(`<td>`).text("Total"),
+        $(`<td>`),
+        $(`<td>`),
+        $(`<td>`),
+        $(`<td>`).text("Total"),
         $(`<td>`).text(total_cost));
     $("#small-tb").append(row);
 

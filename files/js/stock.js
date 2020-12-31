@@ -72,7 +72,8 @@ function render_details(data) {
         render_header();
         for (let i = first_row; i < last_row; i++) {
             var get_details = data[i]['br_id'];
-            var dele = "<a href=../inventory/delete_medicine?br_id=".concat(get_details, "><button class='tb-btn'>Remove</button></a>");
+            var remove_func = 'remove('.concat(data[i].br_id, ')');
+            var remove = $(`<button class=${"tb-btn"} id=${"remove"} onclick=${remove_func}>`).text("Remove");
 
             var row_id = data[i]['br_id'];
             console.log(row_id);
@@ -92,7 +93,7 @@ function render_details(data) {
                 $(`<td>`).text(data[i].manufacture_date),
                 $(`<td>`).text(data[i].expire_date),
                 $(`<td>`).text(data[i].note),
-                $(`<td>`).append(dele));
+                $(`<td>`).append(remove));
             $("table").append(row);
         }
     }
@@ -117,4 +118,10 @@ function selectfunc(i, row_id) {
         }
     }
 
+}
+
+function remove(br_id){
+    if(confirm("Please confirm to remove selected item from stock")){
+        location.href = '../../index.php/inventory/remove_stock_item?br_id='.concat(br_id);
+    }
 }

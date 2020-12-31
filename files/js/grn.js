@@ -12,7 +12,13 @@ $(document).ready(function () {
 
         var grn = $("#grn").val();
         var vendor = $("#vendors").val();
-        var note = $("#note").val();
+        if ($("#note").val() != "") {
+            var note = $("#note").val();
+            if (text_val("note", note) == false) { valid = false; }
+        }
+        else {
+            var note = "";
+        }
 
         let valid = true;
         $(".error-message").remove();
@@ -23,8 +29,6 @@ $(document).ready(function () {
         id_list.forEach(element => {
             $(element).removeClass("input-error");
         });
-
-        if (text_val("note", note) == false) { valid = false; }
 
         if (valid == true) {
             if (medicine_list.length >= 1) {
@@ -41,11 +45,11 @@ $(document).ready(function () {
                     },
                     type: 'post',
                     success: function (data) {
-                        if(data == true){
-                            //location.href = "../../index.php/inventory/add_grn?grn added successfully";
+                        if (data == true) {
+                            location.href = "../../index.php/inventory/view_stock?grn added successfully";
                         }
-                        else{
-                            //location.href = "../../index.php/inventory/add_grn?couldnot add successfully";
+                        else {
+                            location.href = "../../index.php/inventory/add_grn?couldnot add successfully";
                         }
                     }
                 })
@@ -85,7 +89,6 @@ $(document).ready(function () {
         let manufacturer = $("#manufacturer").val();
         let manufacture_date = $("#manufacture_date").val();
         let expire_date = $("#expire_date").val();
-        let note = $("#note_m").val();
         let unit_value = $("#unit_value").val();
         let unit = $("#unit").val();
 
@@ -100,11 +103,16 @@ $(document).ready(function () {
             $(element).removeClass("input-error");
         });
 
-        //if (typeof br != "number") { valid = false; }
         if (text_val("medicine", medicine) == false) { valid = false; }
         if (text_val("manufacturer", manufacturer) == false) { valid = false; }
         if (text_val("unit", unit) == false) { valid = false; }
-        if (text_val("note", note) == false) { valid = false; }
+        if ($("#note_m").val() != '') {
+            var note = $("#note_m").val();
+            if (text_val("note_m", note) == false) { valid = false; }
+        }
+        else {
+            var note = null;
+        }
         if (manufacture_val(manufacture_date) == false) { valid = false; }
         if (expire_val(expire_date) == false) { valid = false; }
 
