@@ -62,6 +62,26 @@
             header('Content-Type: application/json');
             echo json_encode($result);
         }
+
+        public function available_appointment(){
+            $model = $this->load('models','Appointment_Data');
+            $doc_id = $_SESSION['appointment']['doctor_id'];
+            $date=$_POST['date'];
+            $_SESSION['appointment']['select_date']=$date;
+            $result = $model->available_appoint($doc_id,$date);
+            $_SESSION['appointment']['seat_no']=$result['Seat_no'];
+            if($result['Seat_no']==null){
+                $status=0; // avaiable and no seat book yet
+            }
+            else if($result['Seat_no']>0 && $result['Seat_no']<70){
+                $status=1; // available and some of seats are booked
+            }
+            else{
+                $status=2; // seat are not available
+            }
+            header('Content-Type: application/json');
+            echo json_encode($status);
+        }
         
         
         public function fill_form(){

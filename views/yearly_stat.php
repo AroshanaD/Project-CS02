@@ -5,14 +5,14 @@
     <div class="right">
     <div class="container">
         <div class="stat">
-            <div class="s-title"> Number of Appointments Yearly </div>
+            <div class="title"> Number of Appointments Yearly </div>
             <div class="statistic-card">
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <div id="chart_div"></div>          
             </div>
         </div>
         <div class="stat">
-            <div class="s-title">Appointments on Gender Basis and Platform Basis</div>
+            <div class="title">Appointments on Gender Basis and Platform Basis</div>
             <div class="statistic-card">
                 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
                 <div id="piechart-1"></div>
