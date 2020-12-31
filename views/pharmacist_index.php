@@ -38,9 +38,9 @@
                 <div><img src=<?php echo Router::base_url().'/files/icons/vendor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
             <div class="taskboard" style="background-color: #c7c7c7;">
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Inventory</a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Vendors</a>
-              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task">Create bills</a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory</a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Vendors</a>
+              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create bills</a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>

@@ -9,7 +9,7 @@
     </head>
 
     <body>
-        <div class="container-1" style="background-image:url(<?php echo Router::base_url().'/files/icons/doctor.jpg'?>); background-repeat:no-repeat">
+        <div class="container-1">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
@@ -18,9 +18,9 @@
 
             <div class="dashboard">
               <div id="welcome-board">
-                <div id="welcome-txt" style="color:black">Welcome, Dasun!</div>
+                <div id="welcome-txt" >Welcome, Dasun!</div>
               </div>
-              <div id="dashboard-title" style="color:black">Dashboard</div>
+              <div id="dashboard-title">Dashboard</div>
             </div>
             <div class="databoard-1">
                 <div id="databord-title">Appointments</div>
@@ -38,7 +38,7 @@
                 <div id="databord-value">30</div>
                 <div><img src=<?php echo Router::base_url().'/files/icons/patient.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
-            <div class="taskboard" style="background-color: #cececee1">
+            <div class="taskboard">
               <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?> class="task-large">Appointments
                 <p style="algin:center; color:grey; font-weight:normal">
                   Here you can find <br>

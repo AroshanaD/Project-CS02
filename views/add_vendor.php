@@ -23,6 +23,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Add Vendor</div>
                     <div class="label">
                         <label for="name" id="name_f">Vendor</label>
                     </div>

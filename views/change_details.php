@@ -22,6 +22,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">change Details</div>
                     <div class="label">
                         <label for="phar_contact">Contact No</label>
                     </div>

@@ -23,6 +23,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Add staff</div>
                     <div class="label">
                         <label for="staff">Staff</label>
                     </div>

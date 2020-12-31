@@ -21,6 +21,7 @@
                     <div id="form-img"> 
                     </div>
                     <div id="form-1">
+                    <div class="topic">Search Doctor</div>
                     <div class="label">
                         <label for="doctor">Doctor name</label>
                     </div>

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="container-l">
+    <div class="container-8">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
@@ -20,25 +20,21 @@
         include $path; ?>
 
         <div class="form" id="spec">
-            <form class="form-container" id="bill-form">
-                <div id="form-img"></div>
+            <form class="form-container3" id="bill-form">
                 <div id="form-1">
-                    <div class="input">
-                        <input style="width:200px" type="number" name="test_id" value="<?php echo $_POST['test_id'] ?>" disabled required>
-                    </div>
                     <div class="input" id="id_f">
-                        <input style="width:200px" type="text" name="id" id="id" placeholder="Customer ID" required>
+                        <input type="text" name="id" id="id" placeholder="Customer ID" required>
                     </div>
                     <div class="input" id="name_f">
-                        <input style="width:200px" type="text" id="name" name="full_name" placeholder="Customer Name" required>
+                        <input type="text" id="name" name="full_name" placeholder="Customer Name" required>
                     </div>
                     <div class="input">
-                        <input style="width:200px" type="text" name="age" id="age" placeholder="Customer Age" required>
+                        <input type="text" name="age" id="age" placeholder="Customer Age" required>
                     </div>
                 </div>
                 <div id="form-2">
                     <div class="input">
-                        <select style="width:200px" name="gender" id="gender" required>
+                        <select name="gender" id="gender" required>
                             <option value="any">Select gender</option>
                             <option value="male">Male</option>
                             <option value="female">female</option>
@@ -46,13 +42,13 @@
                         </select>
                     </div>
                     <div class="input" id="contact_f">
-                        <input style="width:200px" type="tel" id="contact" name="contact" placeholder="Customer Contact" required>
+                        <input type="tel" id="contact" name="contact" placeholder="Customer Contact" required>
                     </div>
                     <div class="input">
-                        <input style="width:200px" type="number" name="total" id="total" placeholder="Total" required disabled>
+                        <input type="number" name="total" id="total" placeholder="Total" required disabled>
                     </div>
                     <div style="width:100%; text-align: center">
-                        <input style="width:200px" type="submit" value="Add Test" class="btn">
+                        <input type="submit" value="Add Test" class="btn">
                     </div>
                     <div id="form-message"></div>
                 </div>

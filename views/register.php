@@ -10,19 +10,24 @@
     <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+    <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container-3">
         <div class="nav">
-            <a href=<?php echo Router::site_url().'/main' ?>><button class="main-button">Home</button></a>
-            <a href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Login</button></a>
+            <a href=<?php echo Router::site_url()."/user/login" ?>> <i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href=<?php echo Router::site_url().'/main' ?>> <i class="fas fa-home"></i> Home</a>    
         </div>
-        <div class="form">
-            <div class="form-container">
-                <div id="form-img">
+        <form class="form">
+            <div class="form-container"  style="background-color: transparent;">
+                <div id="form-img" style="background-color: transparent;" >
+                <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:320px; margin-top:70px">
                 </div>
                 <div id="form-1">
+                    <div class="title">Sign Up</div>
                     <div class="label">
                         <label for="id">NIC</label>
                     </div>
@@ -87,16 +92,18 @@
                     </div>
                     <div class="input" id="rpassword_f">
                         <input type="password" id="repassword" name="repassword" required>
-                    </div><br>
+                    </div>
                     <div>
                         <button type="submit" name="Register" class="btn">REGISTER</button>
                     </div>
-                    <div id="form-message"></div>
+                    <div id="form-message"></div></br>
+                    <div>
+                        <a href=<?php echo Router::site_url()."/user/login" ?> id="login-ref" style=" color: #743ebb; float:left; font-size:13px; margin-right:20px">Already have an account?(Login here)</a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </form>
         <div class="footer">
-
         </div>
     </div>
 </body>

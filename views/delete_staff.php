@@ -22,6 +22,7 @@
                 </div>
                 <div id="form-1">
                     <div class="label">
+                    <div class="topic">Delete Staff</div>
                         <label for="staff">Staff</label>
                     </div>
                     <div class="input">

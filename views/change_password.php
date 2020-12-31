@@ -22,6 +22,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Change Passwords</div>
                     <div class="label">
                         <label for="phar_oldpw">Enter Old Password</label>
                     </div>

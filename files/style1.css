@@ -14,11 +14,11 @@
     --extra-large-margin: 35px;
     --border-left: 50px #5e60ce solid;
     --small-border-left: 20px #560bad solid;
-    --nav-color: #ffffff;
+    --nav-color: #01345B;
     --side-bar-color: #5e60ce;
     --databoard-color: #3e37c96e;
     --table-color: #f5f5f5;
-    --footer-color: #1f1f1f;
+    --footer-color: #01345B;
     --box-shadow: 0 0 10px 10px rgba(120, 120, 120, 0.63);
     --btn-color: #5e60ce;
     --border-line: 1px black solid;
@@ -27,10 +27,11 @@
 
 body {
     margin: 0;
-    background-image: url('icons/background.jpeg');
+    background-color: #f8f7ff;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 [class*="container-"] {
@@ -39,50 +40,50 @@ body {
 }
 
 .container-1 {
-    grid-template-columns: 0.5fr 1fr 1fr 1fr;
-    grid-template-rows: 0.4fr 0.6fr 1fr 1.6fr 0.2fr;
+    grid-template-columns: 0.15fr 0.3fr 0.3fr 0.3fr;
+    grid-template-rows: 0.15fr 0.4fr 0.6fr 0.7fr 0.1fr;
     grid-template-areas: "nav nav nav nav" "sidebar dashboard dashboard dashboard" "sidebar databoard-1 databoard-2 databoard-3" "sidebar taskboard taskboard taskboard" "footer footer footer footer";
 }
 
 .container-2 {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.4fr 4fr 0.2fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 1.6fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar form" "footer footer";
 }
 
 .container-3 {
     grid-template-columns: 1fr;
-    grid-template-rows: 0.2fr 1.7fr 0.1fr;
+    grid-template-rows: 0.15fr 1.7fr 0.1fr;
     grid-template-areas: "nav" "form" "footer";
 }
 
 .container-4 {
-    grid-template-columns: 0.2fr 0.8fr;
-    grid-template-rows: 0.2fr 0.3fr 1.4fr 0.1fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 0.3fr 1.4fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar search" "sidebar table" "footer footer";
 }
 
 .container-5 {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.2fr 1.7fr 0.1fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 1.7fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar container-t" "footer footer";
 }
 
 .container-6 {
-    grid-template-columns: 0.5fr 1.5fr 1.5fr;
-    grid-template-rows: 0.4fr 1.6fr 1.6fr 0.2fr;
+    grid-template-columns: 0.15fr 0.4fr 0.5fr;
+    grid-template-rows: 0.15fr 0.8fr 0.9fr 0.1fr;
     grid-template-areas: "nav nav nav" "sidebar form form" "sidebar taskboard taskboard" "footer footer footer";
 }
 
 .container-7 {
-    grid-template-columns: 0.2fr 1fr;
-    grid-template-rows: 0.2fr 1fr 1fr 0.2fr;
+    grid-template-columns: 0.15fr 0.9fr;
+    grid-template-rows: 0.15fr 0.8fr 0.9fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar details" "sidebar table" "footer footer";
 }
 
 .container-t {
     display: grid;
-    position: relative;
+    position: center;
     width: max-content;
     height: max-content;
     padding: 20px;
@@ -93,39 +94,34 @@ body {
     margin-bottom: 20px;
 }
 
-.container-l {
-    background-color: white;
-    height: 100vh;
-    display: grid;
-    grid-template-columns: 0.4fr 0.6fr 1fr;
-    grid-template-rows: 0.1fr 0.5fr 1fr 0.1fr;
+.container-8 {
+    grid-template-columns: 0.15fr 0.5fr 0.5fr;
+    grid-template-rows: 0.15fr 0.7fr 1fr 0.1fr;
     grid-template-areas: "nav nav nav" "sidebar form selected" "sidebar table table" "footer footer footer";
 }
 
 .nav {
     background-color: var(--nav-color);
     color: rgb(17, 17, 17);
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     grid-area: nav;
-    background-image: url(logo.png);
     background-position: var(--extra-large-margin);
     background-repeat: no-repeat;
 }
 
 .nav a {
-    float: left;
+    float: right;
     display: block;
     color: #6404d3;
     text-align: center;
-    padding: 12px 16px;
+    padding: 14px 16px;
     margin-top: 26px;
     text-decoration: none;
-    font-size: 17px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .nav a:hover {
-    background-color: #ddd;
     color: black;
     padding: 14px 16px;
 }
@@ -140,7 +136,7 @@ body {
     display: block;
     text-align: center;
     font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 @media screen and (max-width: 600px) {
@@ -172,8 +168,8 @@ body {
 .sidebar {
     background: var(--side-bar-color);
     color: rgb(255, 255, 255);
-    font-size: 15px;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 13px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     grid-area: sidebar;
     padding: var(--main-padding);
 }
@@ -191,13 +187,13 @@ body {
     height: fit-content;
     background-color: transparent;
     padding: var(--large-padding);
-    font-size: 25px;
-    font-weight: bolder;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-transform: uppercase;
     border-radius: var(--main-border-radius);
     text-align: center;
-    color: #ffffff;
+    color: #000000;
 }
 
 #welcome-board {
@@ -212,20 +208,20 @@ body {
 }
 
 #welcome-txt {
-    font-size: 30px;
+    font-size: 20px;
     font-weight: bold;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /*text-transform: uppercase;*/
     border-radius: var(--main-border-radius);
     text-align: center;
     color: var(--title-color);
     background-color: transparent;
     padding: var(--large-padding);
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 
 [class*="databoard-"] {
-    background: #3e37c9bb;
+    background: #6d6fd57e;
     margin: var(--large-margin);
     border-radius: var(--main-border-radius);
 }
@@ -243,19 +239,19 @@ body {
 }
 
 #databord-title {
-    color: #c7c7c7;
-    font-size: 25px;
-    font-family: 'Lato';
+    color: #ffffff;
+    font-size: 20px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
 }
 
 #databord-value {
-    color: #ffffff;
+    color: #3a0ca3;
     float: left;
     font-size: 60px;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin-left: 105px;
 }
 
@@ -267,13 +263,12 @@ body {
 }
 
 .task {
-    font-size: 20px;
+    font-size: 16px;
     font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /*text-transform: uppercase;*/
     flex-basis: 24%;
     height: 25%;
-    background-image: url('icons/tile.jpg');
     margin: var(--large-margin);
     border-radius: var(--main-border-radius);
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
@@ -286,9 +281,9 @@ body {
 }
 
 .task-large {
-    font-size: 20px;
-    font-weight: bold;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 17px;
+    font-weight: bolder;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     /*text-transform: uppercase;*/
     flex-basis: 24%;
     height: 75%;
@@ -348,8 +343,8 @@ a {
 .footer {
     background-color: var(--footer-color);
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 14px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 12px;
     text-align: center;
     grid-area: footer;
     padding: var(--main-padding);
@@ -502,7 +497,7 @@ a {
     margin: var(--small-margin);
     width: 40%;
     color: var(--side-bar-color-color);
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -515,12 +510,10 @@ a {
     border-radius: var(--main-border-radius);
     background-color: #ffffff;
     /*Default bg, similar to the background's base color*/
-    background-image: url(8496.jpg);
     background-position: right bottom;
     /*Positioning*/
     background-repeat: no-repeat;
     display: grid;
-    box-shadow: var(--box-shadow);
     width: fit-content;
     padding: var(--main-padding);
 }
@@ -545,6 +538,12 @@ a {
     grid-template-columns: 0.1fr 0.8fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "form-img form-1 form-3 form-3";
+}
+
+.form-container3 {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "form-1 form-2";
 }
 
 #form-img {
@@ -588,20 +587,20 @@ a {
 }
 
 .label {
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: #743ebb;
     text-align: left;
-    font-size: 15px;
+    font-size: 13px;
     font-weight: normal;
     width: 90%;
     margin: 10px 0 10px 0;
 }
 
 .input>input {
-    border: none;
-    border-bottom: 1px solid var(--side-bar-color);
+    border-style: solid;
+    border-color: #b5b5b5;
+    background-color: transparent;
     outline: none;
-    background-color: white;
     color: #4e4e4e;
     width: 90%;
     font-size: 15px;
@@ -611,12 +610,13 @@ a {
 }
 
 .input>select {
-    border: none;
-    border-bottom: 1px solid var(--side-bar-color);
+    border-style: solid;
+    border-color: #b5b5b5;
+    border-width: 2px;
+    background-color: transparent;
     outline: none;
-    background-color: white;
     color: #4e4e4e;
-    width: 90%;
+    width: 98%;
     height: 30px;
     font-weight: lighter;
     padding: 5px 0 5px 20px;
@@ -632,18 +632,19 @@ a {
 .input_s {
     margin: 0;
     padding: 0;
-    flex-basis: 22%;
+    flex-basis: 21.5%;
 }
 
 .m_input {
-    border: 1px solid var(--side-bar-color);
+    border-style: solid;
+    border-color: #b5b5b5;
+    background-color: transparent;
     outline: none;
-    width: 98%;
-    background-color: white;
     color: #4e4e4e;
+    width: 98%;
     font-size: 15px;
     font-weight: lighter;
-    padding: 5px 0 5px 2%;
+    padding: 5px 0 5px 5px;
     margin-bottom: 10px;
 }
 
@@ -686,7 +687,7 @@ button {
     font-size: 1.1rem;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: var(--main-border-radius);
     outline: none;
     cursor: pointer;
     transition: .3s;
@@ -720,6 +721,7 @@ button {
 
 #test-tb>tr:nth-child(1) {
     background-color: #2e1097;
+    color: white;
 }
 
 #test-tb>tr:nth-last-child(1) {
@@ -749,42 +751,47 @@ table>thead, table>tbody {
 table {
     border-radius: var(--main-border-radius);
     border-collapse: collapse;
-    border: 1px black solid;
+    border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 tr {
     padding: 5px 0px;
     box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
     background-color: #b8cac7;
+    font-size: 13px;
+    border: none;
+    border-bottom: 1px solid #3a3a3a52;
+    outline: none;
 }
 
 td, th {
     width: max-content;
     background-color: inherit;
     padding: 5px 20px;
+    font-size: 13px;
 }
 
 tr:nth-child(1) {
-    background-color: #000f3f;
+    background-color: #ffffff;
 }
 
 tr:nth-child(odd) {
-    background-color: hsl(244, 53%, 70%);
+    background-color: hsl(0, 0%, 100%);
     padding: 5px 25px;
 }
 
 tr:nth-child(even) {
-    background-color: white;
+    background-color: rgb(243, 243, 243);
     padding: 5px 25px;
 }
 
 #head_row {
-    background-color: #2e1097;
-    color: white;
+    background-color: #fdfdff;
+    color: rgba(72, 72, 72, 0.802);
     font-weight: bold;
-    font-size: 18px;
+    font-size: 13px;
 }
 
 td>a {
@@ -794,7 +801,7 @@ td>a {
 }
 
 #td-large {
-    font-size: 20px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -822,7 +829,7 @@ td>a {
     font-size: 0.8rem;
     font-weight: bold;
     border: none;
-    border-radius: 15px;
+    border-radius: var(--main-border-radius);
     outline: none;
     cursor: pointer;
     transition: .3s;
@@ -832,7 +839,7 @@ td>a {
 
 .search {
     padding: var(--main-padding);
-    background-color: rgb(247, 243, 243);
+    background-color: transparent;
     grid-area: search;
     display: flex;
     flex-wrap: wrap;
@@ -843,13 +850,13 @@ td>a {
     display: flex;
     flex-wrap: wrap;
     width: fit-content;
-    font-size: 16px;
+    font-size: 13px;
     margin: 20px;
     justify-content: space-between;
     padding: 2px;
     border: none;
     border-radius: 5px;
-    background-color: var(--side-bar-color);
+    background-color: white;
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
@@ -858,27 +865,37 @@ td>a {
     width: 180px;
     margin: 5px 20px 5px 10px;
     padding: 10px;
-    border-width: 0;
-    border-radius: 5px;
+    border-radius: 15px;
+    border-style: solid;
+    border-color: rgba(99, 99, 99, 0.419);
     background-color: white;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.05);
 }
 
-.site-search>input:focus, .site-search>select:focus {
+.site-search>select {
+    background-color: white;
+    color: rgb(120, 120, 120);
+    border-style: solid;
+    border-color: rgba(99, 99, 99, 0.419);
+    border-radius: var(--main-border-radius);
+}
+
+.site-search>input:focus,
+.site-search>select:focus {
     outline: none;
 }
 
 .site-search>button {
-    background-color: #dcdce2a2;
+    background-color: #bbbbffbf;
     height: inherit;
     color: rgb(30, 9, 49);
     padding: 5px 10px;
-    margin-top: 5px;
+    margin-top: 12px;
     margin-right: 20px;
-    font-size: 18px;
+    font-size: 13px;
     font-weight: bold;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--main-border-radius);
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
@@ -892,7 +909,7 @@ td>a {
     position: relative;
     background-color: #0e09646e;
     color: #0f0f13;
-    font-size: 16px;
+    font-size: 13px;
     font-weight: bold;
     border: none;
     border-radius: var(--main-border-radius);
@@ -914,14 +931,13 @@ td>a {
     width: 100px;
     height: 70px;
     margin: 10px 10px 10px 10px;
-    background-image: url('icons/doctor.svg');
     background-size: contain;
     background-repeat: no-repeat;
     align-items: center;
 }
 
 #td-large {
-    font-size: 20px;
+    font-size: 13px;
     font-weight: bold;
 }
 
@@ -934,7 +950,7 @@ td>a {
     text-align: center;
     background-color: #fff;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.1);
-    font-family: 'Quicksand', sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 50px;
     align-items: center;
     height: max-content;
@@ -953,17 +969,45 @@ td>a {
     background-color: #edf2fbe1;
 }
 
-.change {
-    border: none;
-    outline: none;
-    color: var(--side-bar-color);
-    padding: var(--small-padding);
-    background-color: white;
-    font-size: 16px;
+.title {
+    position: relative;
+    padding: 10px 0 10px;
+    margin-bottom: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.3rem;
+    color: #06212e;
+    font-weight: bolder;
+    text-transform: none;
+    text-align: left;
 }
 
-#availability {
-    background-color: var(--side-bar-color);
-    color: white;
-    padding-left: var(--large-padding);
+.small-title {
+    position: relative;
+    padding: 10px 0 10px;
+    margin-bottom: 0px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 0.9rem;
+    color: #222222;
+    text-transform: none;
+    text-align: left;
+}
+
+.topic {
+    font-size: 20px;
+    font-weight: 600;
+    color: #5e41e2;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.topic-small {
+    font-size: 15px;
+    font-weight: 600;
+    color: #5e41e2;
+    position: relative;
+    text-transform: uppercase;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

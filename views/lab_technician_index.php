@@ -10,7 +10,9 @@
 
     <body>
         <div class="container-1">
-        <?php include 'navbar.php';?>
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
             
             <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
@@ -36,11 +38,16 @@
                 <div id="databord-value">30</div>
                 <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
             </div>
-            <div class="taskboard" style="background-color: #c7c7c7;">
-              <a href=<?php echo Router::site_url().'/patientTest/create_test' ?> class="task">Create Test</a>
-              <a href=<?php echo Router::site_url().'/patientTest/view' ?> class="task">View Patient Tests</a>
-              <a href=<?php echo Router::site_url().'/labtest/add' ?> class="task">Add New Lab Test</a>
-              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task">View Lab tests</a>
+            <div class="taskboard">
+              <a href=<?php echo Router::site_url().'/patientTest/create_test' ?> class="task-large">Create Test
+                <p style="algin:center; color:grey; font-weight:normal">
+                  Now very easy to<br>
+                  create tests <br>
+                  for patients<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url().'/patientTest/view' ?> class="task-large">Patient Tests</a>
+              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task-large">Lab tests</a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>

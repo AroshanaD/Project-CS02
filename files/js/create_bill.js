@@ -112,7 +112,6 @@ function render_details(data) {
             $(`<td>`).text("Price"),
             $(`<td>`).text("Available Quantity"),
             $(`<td>`).text("Manufacturer"),
-            $(`<td>`).text("Manufacture Date"),
             $(`<td>`).text("Expiration Date"),
             $(`<td>`).text("Note"),
             $(`<td>`).text("Bill Quantity"),
@@ -162,11 +161,10 @@ function render_details(data) {
                 $(`<td>`).text(data[i].selling_price),
                 $(`<td>`).text(data[i].quantity),
                 $(`<td>`).text(data[i].manufacturer),
-                $(`<td>`).text(data[i].manufacture_date),
                 $(`<td>`).text(data[i].expire_date),
                 $(`<td>`).text(data[i].note),
                 $(`<td>`).append(`<input type${"number"} id=${"q".concat(i)} style=${"width:50px"} required>`),
-                $(`<td>`).append(`<input type${"number"} id=${"n".concat(i)}>`),
+                $(`<td>`).append(`<input type${"text"} id=${"n".concat(i)} style=${"width:150px"}>`),
                 $(`<td>`).append(select));
             $("#full-tb").append(row);
         }

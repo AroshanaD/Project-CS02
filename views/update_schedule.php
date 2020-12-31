@@ -22,6 +22,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Update Schedule</div>
                     <div class="label">
                         <label for="doc_id">Doctor Id</label>
                     </div>
