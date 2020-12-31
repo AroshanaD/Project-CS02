@@ -22,7 +22,7 @@ class Inventory_manage extends Models
         $connect = new Database();
         $pdo = $connect->connect();
 
-        $query = "SELECT * FROM stock WHERE deleted=0";
+        $query = "SELECT * FROM stock WHERE quantity > 0 and expire_date > CURDATE()";
         $stmt = $pdo->prepare($query);
         $stmt->execute();
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);

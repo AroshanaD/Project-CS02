@@ -117,11 +117,11 @@ class Inventory extends Controllers
         echo json_encode($result);
     }
 
-    public function remove_stock_item()
+    public function view_stock_item()
     {
         $model = $this->load('models', 'Inventory_manage');
         $br_id = $_GET['br_id'];
-        $result = $model->remove_stock_item($br_id);
+        $result = $model->view_stock_item($br_id);
         if ($result == true) {
             $URL = Router::site_url() . "/inventory/view_stock?successfully removed stock item";
             echo "<script>location.href='$URL'</script>";

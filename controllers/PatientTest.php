@@ -93,5 +93,13 @@
             $this->load('views','labtest_availability');
         }
 
+        public function search_user(){
+            $email = $_POST['email'];
+            $model = $this->load('models','PatientTest_Manage');
+            $result = $model->user_details($email);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
     }
 ?>

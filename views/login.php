@@ -9,9 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>
     <script rel="text/javascript" src="/project-cs02/files/js/login.js"></script>
+    
 </head>
 
 <body>
@@ -30,10 +30,10 @@
                     <div class="title">Welcome to Medcaid hospital</div>
                     <div class="small-title">Login to your account</div>
                     <div class="label">
-                        <label for="userid">User Id</label>
+                        <label for="id">User ID</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="userid" id="id" required>
+                        <input type="text" name="id" id="id" required>
                     </div>
                     <div class="label">
                         <label for="password">Password</label>

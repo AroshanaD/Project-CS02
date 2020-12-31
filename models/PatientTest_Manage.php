@@ -142,4 +142,14 @@ class PatientTest_Manage extends Models
         $status = $stmt->execute([$availability, $id]);
         return $status;
     }
+
+    public function user_details($email){
+        $connect = new Database();
+        $pdo = $connect->connect();
+        $query = "SELECT id,f_name,l_name,NIC,contact_no FROM patient WHERE email=? AND verified=1";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$email]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

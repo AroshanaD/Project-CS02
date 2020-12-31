@@ -25,8 +25,6 @@ function render_details(data) {
     function render_header() {
         $("table").empty();
         var header = $(`<tr id=${"head_row"}>`).append(
-            $(`<td>`),
-            $(`<td>`).text("No"),
             $(`<td>`).text("BR"),
             $(`<td>`).text("Medicine"),
             $(`<td>`).text("Unit"),
@@ -34,10 +32,8 @@ function render_details(data) {
             $(`<td>`).text("Selling Price"),
             $(`<td>`).text("Quantity"),
             $(`<td>`).text("Manufacturer"),
-            $(`<td>`).text("Manufacture Date"),
             $(`<td>`).text("Expiration Date"),
-            $(`<td>`).text("Note"),
-            $(`<td>`).text("Remove"));
+            $(`<td>`).text("View"));
         $("table").append(header);
     }
 
@@ -81,8 +77,6 @@ function render_details(data) {
             var func = "selectfunc(".concat(i + 1, ",", "'", row_id);
 
             var row = $(`<tr id=${data[i].id}>`).append(
-                $(`<td>`).append($(`<input type=${"checkbox"} id=${i + 1} value=1 onchange=${func}> `)),
-                $(`<td>`).text(i + 1),
                 $(`<td>`).text(data[i].br_id),
                 $(`<td>`).text(data[i].drug_name),
                 $(`<td>`).text((data[i].unitary_value).toString().concat(" ", data[i].unitary_unit)),
@@ -90,9 +84,7 @@ function render_details(data) {
                 $(`<td>`).text(data[i].selling_price),
                 $(`<td>`).text(data[i].quantity),
                 $(`<td>`).text(data[i].manufacturer),
-                $(`<td>`).text(data[i].manufacture_date),
                 $(`<td>`).text(data[i].expire_date),
-                $(`<td>`).text(data[i].note),
                 $(`<td>`).append(remove));
             $("table").append(row);
         }
@@ -120,8 +112,6 @@ function selectfunc(i, row_id) {
 
 }
 
-function remove(br_id){
-    if(confirm("Please confirm to remove selected item from stock")){
-        location.href = '../../index.php/inventory/remove_stock_item?br_id='.concat(br_id);
-    }
+function view(br_id){
+    location.href = '../../index.php/inventory/view_stock_item?br_id='.concat(br_id);
 }

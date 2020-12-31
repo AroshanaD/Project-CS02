@@ -2,6 +2,8 @@ var selected_list = [];
 var selected_list_details = [];
 var total_cost = 0;
 var details = [];
+var p_email = "";
+var p_id = "";
 
 $(document).ready(function () {
     $.ajax({
@@ -26,14 +28,32 @@ $(document).ready(function () {
         })
     })
 
+    $("#email").change(function(){
+        let email = $("#email").val();
+        $.ajax({
+            url: '../../index.php/patientTest/search_user',
+            data: { email: email},
+            type: 'post',
+            success: function (data) {
+                console.log(data);
+                $("#id").val(data[0]['NIC']);
+                $("#p_name").val(data[0]['f_name'].concat(" ",data[0]['l_name']));
+                $("#contact").val(data[0]['contact_no']);
+                p_email = email;
+                p_id = data[0]['id'];
+            }
+        })
+    })
+
     $("form").submit(function (event) {
         event.preventDefault();
 
         var id = $("#id").val();
-        var name = $("#name").val();
+        var name = $("#p_name").val();
         var gender = $("#gender").val();
         var age = $("#age").val();
         var contact = $("#contact").val();
+        var email = $("email").val();
         var submit = $(".btn").val();
 
         var valid = true;
@@ -46,15 +66,22 @@ $(document).ready(function () {
             $(element).removeClass("input-error");
         });
 
-        if (id_val(id) == false) { valid = false; }
+        if(id_val != ""){if (id_val(id) == false) { valid = false; }}
         if (text_val("name", name) == false) { valid = false; }
         if (contact_val(contact) == false) { valid = false; }
 
         if (valid == true) {
+            if(email == p_email){
+                var pid = p_id;
+            }
+            else{
+                var pid = null;
+            }
             if (selected_list.length >= 1) {
                 $.ajax({
                     url: '../../index.php/PatientTest/add_test',
                     data: {
+                        pid: pid,
                         id: id,
                         name: name,
                         gender: gender,

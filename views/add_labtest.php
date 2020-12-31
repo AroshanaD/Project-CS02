@@ -23,10 +23,10 @@
             <form class="form-container3" id="bill-form">
                 <div id="form-1">
                     <div class="input" id="id_f">
-                        <input type="text" name="id" id="id" placeholder="Customer ID" required>
+                        <input type="text" name="id" id="id" placeholder="Customer NIC">
                     </div>
                     <div class="input" id="name_f">
-                        <input type="text" id="name" name="full_name" placeholder="Customer Name" required>
+                        <input type="text" id="p_name" name="full_name" placeholder="Customer Name" required>
                     </div>
                     <div class="input">
                         <input type="text" name="age" id="age" placeholder="Customer Age" required>
@@ -42,10 +42,10 @@
                         </select>
                     </div>
                     <div class="input" id="contact_f">
-                        <input type="tel" id="contact" name="contact" placeholder="Customer Contact" required>
+                        <input type="tel" id="contact" name="contact" placeholder="Customer Contact">
                     </div>
-                    <div class="input">
-                        <input type="number" name="total" id="total" placeholder="Total" required disabled>
+                    <div class="input" id="email_f">
+                        <input type="email" id="email" name="email" placeholder="Customer Email">
                     </div>
                     <div style="width:100%; text-align: center">
                         <input type="submit" value="Add Test" class="btn">
