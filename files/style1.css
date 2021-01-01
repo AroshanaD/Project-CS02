@@ -14,11 +14,11 @@
     --extra-large-margin: 35px;
     --border-left: 50px #5e60ce solid;
     --small-border-left: 20px #560bad solid;
-    --nav-color: #01345B;
+    --nav-color: #ffffff;
     --side-bar-color: #5e60ce;
     --databoard-color: #3e37c96e;
     --table-color: #f5f5f5;
-    --footer-color: #01345B;
+    --footer-color: #7e7e7e7c;
     --box-shadow: 0 0 10px 10px rgba(120, 120, 120, 0.63);
     --btn-color: #5e60ce;
     --border-line: 1px black solid;
@@ -187,9 +187,9 @@ body {
     height: fit-content;
     background-color: transparent;
     padding: var(--large-padding);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     text-transform: uppercase;
     border-radius: var(--main-border-radius);
     text-align: center;
@@ -208,9 +208,9 @@ body {
 }
 
 #welcome-txt {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     /*text-transform: uppercase;*/
     border-radius: var(--main-border-radius);
     text-align: center;
@@ -241,7 +241,7 @@ body {
 #databord-title {
     color: #ffffff;
     font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin-left: 40px;
     padding-top: 5px;
     padding-bottom: 5px;
@@ -265,7 +265,7 @@ body {
 .task {
     font-size: 16px;
     font-weight: bold;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     /*text-transform: uppercase;*/
     flex-basis: 24%;
     height: 25%;
@@ -283,7 +283,7 @@ body {
 .task-large {
     font-size: 17px;
     font-weight: bolder;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     /*text-transform: uppercase;*/
     flex-basis: 24%;
     height: 75%;
@@ -342,9 +342,10 @@ a {
 
 .footer {
     background-color: var(--footer-color);
-    color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: rgb(0, 0, 0);
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 12px;
+    font-weight: bold;
     text-align: center;
     grid-area: footer;
     padding: var(--main-padding);
@@ -680,18 +681,17 @@ button {
 }
 
 .btn {
-    width: 110px;
-    padding: 10px 0;
+    width: fit-content;
+    padding: 10px 20px 10px 20px;
     background-color: #3e37c96e;
     color: #11006e;
-    font-size: 1.1rem;
+    font-size: 15px;
     font-weight: bold;
     border: none;
-    border-radius: var(--main-border-radius);
+    border-radius: 30px;
     outline: none;
     cursor: pointer;
     transition: .3s;
-    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
     margin-top: 20px;
     text-align: center;
 }
@@ -973,7 +973,8 @@ td>a {
     position: relative;
     padding: 10px 0 10px;
     margin-bottom: 0px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Redressed', cursive;
+    font-family: 'Roboto Mono', monospace;
     font-size: 1.3rem;
     color: #06212e;
     font-weight: bolder;
