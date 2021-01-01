@@ -8,8 +8,6 @@
     <script src="/project-cs02/files/js/jquery-3.5.1.js"></script>
     <script rel="text/javascript" src="/project-cs02/files/js/validate_form.js"></script>
     <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>
@@ -24,10 +22,10 @@
         <form class="form">
             <div class="form-container"  style="background-color: transparent;">
                 <div id="form-img" style="background-color: transparent;" >
-                <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:320px; margin-top:70px">
+                <img src="<?php echo Router::base_url() . '/files/icons/privacy.svg' ?>" style="width:320px; margin-top:70px">
                 </div>
                 <div id="form-1">
-                    <div class="title">Sign Up</div>
+                    <div class="title" style="font-size:30px">Sign Up</div>
                     <div class="label">
                         <label for="id">NIC</label>
                     </div>
@@ -94,7 +92,7 @@
                         <input type="password" id="repassword" name="repassword" required>
                     </div>
                     <div>
-                        <button type="submit" name="Register" class="btn">REGISTER</button>
+                        <button type="submit" name="Register" class="btn">Register</button>
                     </div>
                     <div id="form-message"></div></br>
                     <div>

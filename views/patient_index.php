@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <title>Dashboard</title>
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -24,18 +26,18 @@
             <div class="databoard-1">
                 <div id="databord-title">Appointments</div>
                 <div id="databord-value">76</div>
-                <div><img src=<?php echo Router::base_url().'/files/icons/appointment.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
             </div>
             <div class="databoard-2">
                 <div id="databord-title">Doctors</div>
                 <div id="databord-value">128</div>
-                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
                 <div id="databord-title">Lab tests</div>
                 <div id="databord-value">30</div>
-                <div><img src=<?php echo Router::base_url().'/files/icons/labtest.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments</a>
