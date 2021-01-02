@@ -994,13 +994,13 @@ td>a {
 }
 
 .topic {
-    font-size: 20px;
+    font-size: 25px;
     font-weight: 600;
     color: #5e41e2;
     position: relative;
-    text-transform: uppercase;
-    text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: left;
+    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .topic-small {
