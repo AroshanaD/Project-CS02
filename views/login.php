@@ -14,17 +14,18 @@
     <script rel="text/javascript" src="/project-cs02/files/js/login.js"></script>
 </head>
 
-<body>
-    <div class="container-3">
+<body >
+    <div class="container-3" >
         <div class="nav">
+            <img src="<?php echo Router::base_url() . '/files/icons/Logo.png' ?>" style="float:left; margin-left:60px;margin-top:10px">
             <a href=<?php echo Router::site_url() . "/user/dashboard" ?>><i class="fas fa-id-badge"></i> Dashboard</a>
             <a href=<?php echo Router::site_url() . "/register" ?>><i class="fas fa-user-plus"></i> Register</a>
             <a href=<?php echo Router::site_url() . '/main' ?>><i class="fas fa-home"></i> Home</a>
         </div>
-        <form class="form">
-            <div class="form-container1" style="background-color: transparent;">
+        <form class="form" style="background-color:#9999ff">
+            <div class="form-container1" >
                 <div id="form-img" style="background-color: transparent;" >
-                <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:300px">
+                <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:350px">
                 </div>
                 <div id="form-1">
                     <div class="title">Welcome to Medcaid hospital</div>
@@ -52,7 +53,7 @@
                 </div>
             </div>
         </form>
-        <div class="footer">
+        <div class="footer">@ All rights are reserved
         </div>
     </div>
 </body>
