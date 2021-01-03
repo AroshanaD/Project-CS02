@@ -931,7 +931,9 @@ td>a {
     width: 100px;
     height: 70px;
     margin: 10px 10px 10px 10px;
-    background-size: contain;
+    background-image:url(icons/user.png);
+    background-size: 45px;
+    background-position: center;
     background-repeat: no-repeat;
     align-items: center;
 }
