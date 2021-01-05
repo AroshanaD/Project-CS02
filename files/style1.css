@@ -81,6 +81,12 @@ body {
     grid-template-areas: "nav nav" "sidebar details" "sidebar table" "footer footer";
 }
 
+.container-9 {
+    grid-template-columns: 0.15fr 0.5fr 0.4fr;
+    grid-template-rows: 0.15fr 0.6fr 1.1fr 0.1fr;
+    grid-template-areas: "nav nav nav" "sidebar selection table" "sidebar form form" "footer footer footer";
+}
+
 .container-t {
     display: grid;
     position: center;
@@ -403,6 +409,12 @@ a {
     align-items: center;
 }
 
+#selection {
+    grid-area: selection;
+    border-top: var(--border-line);
+    border-right: var(--border-line);
+}
+
 .details {
     border-radius: var(--main-border-radius);
     margin: var(--large-margin);
@@ -461,7 +473,7 @@ a {
     background-color: rgb(196, 206, 255);
 }
 
-.test-details-div{
+.test-details-div {
     flex-basis: 44%;
     margin: var(--small-margin);
 }
@@ -688,7 +700,7 @@ button {
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-radius: 30px;
+    border-radius: var(--main-border-radius);
     outline: none;
     cursor: pointer;
     transition: .3s;
@@ -770,7 +782,7 @@ td, th {
     width: max-content;
     background-color: inherit;
     padding: 5px 20px;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 tr:nth-child(1) {
@@ -797,11 +809,10 @@ tr:nth-child(even) {
 td>a {
     display: block;
     width: 100%;
-    height: 100%;
 }
 
 #td-large {
-    font-size: 13px;
+    font-size: 14px;
     font-weight: bold;
 }
 
@@ -881,8 +892,7 @@ td>a {
     border-radius: var(--main-border-radius);
 }
 
-.site-search>input:focus,
-.site-search>select:focus {
+.site-search>input:focus, .site-search>select:focus {
     outline: none;
 }
 
@@ -932,7 +942,7 @@ td>a {
     width: 100px;
     height: 70px;
     margin: 10px 10px 10px 10px;
-    background-image:url(icons/user.png);
+    background-image: url(icons/user.png);
     background-size: 45px;
     background-position: center;
     background-repeat: no-repeat;

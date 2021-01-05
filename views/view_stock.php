@@ -30,7 +30,7 @@
             </div>
         </div>
 
-        <div class="table" style="justify-content: flex-start">
+        <div class="table">
             <table>
 
             </table>

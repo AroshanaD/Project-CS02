@@ -63,6 +63,15 @@
             echo json_encode($result);
         }
 
+        public function doctor_schedule(){
+            $model = $this->load('models','Appointment_Data');
+
+            $id = $_POST['id'];
+            $result = $model->get_dates($id);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
         public function available_appointment(){
             $model = $this->load('models','Appointment_Data');
             $doc_id = $_SESSION['appointment']['doctor_id'];

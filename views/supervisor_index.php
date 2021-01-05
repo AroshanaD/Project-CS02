@@ -1,85 +1,68 @@
 <!DOCTYPE html>
 
-    <head>
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
-        <meta charset="UTF-8">
-        <title>Dashboard</title>
-        <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
-    </head>
+<head>
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+</head>
 
-    <body>
-        <div class="container-1">
-        <div class="nav">
-            <?php include 'header.php'; ?>
-        </div>
-            
-            <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
+<body>
+  <div class="container-1">
+    <div class="nav">
+      <?php include 'header.php'; ?>
+    </div>
 
-            <div class="dashboard">
-              <div id="welcome-board">
-                <div id="welcome-txt">Welcome, Dasun!</div>
-              </div>
-              <div id="dashboard-title">Dashboard</div>
-            </div>
-            <div class="databoard-1">
-                <div id="databord-title">Appointments</div>
-                <div id="databord-value">76</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
-            </div>
-            <div class="databoard-2">
-                <div id="databord-title">Doctors</div>
-                <div id="databord-value">128</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
-            </div>
-            
-            <div class="databoard-3">
-                <div id="databord-title">Vendors</div>
-                <div id="databord-value">30</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
-            </div>
-            <div class="taskboard">
-              <a href=<?php echo Router::site_url()."/staff/view" ?> class="task-large">Manage Staff
-              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
-                  Here you can manage <br>
-                  the details our staff!!<br>
-                </p>
-              </a>
-              <a href=<?php echo Router::site_url()."/doctors/view" ?> class="task-large">Manage Doctors
-              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
-                  Here you can manage <br>
-                  the details of doctors!!<br>
-                </p>
-              </a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Inventory
-              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
-                  Here you can manage <br>
-                  the inventory details !!<br>
-                </p>
-              </a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Vendors
-              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
-                  Here you can manage <br>
-                  the vendor details!!<br>
-                </p>
-              </a>
-              <a href=<?php echo Router::site_url()."/schedules/view"?> class="task">Manage Schedules
-              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
-                  Here you can manage <br>
-                  the schedules of doctors!!<br>
-                </p>
-              </a>
-              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task">View Statistics
-              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
-                 Our Hospital analyse the <br>
-                  
-                </p>
-                </a>
-            </div>
-            <div class="footer">@ All rights are reserved</div> 
-          <div>
-         
-    </body>
+    <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
+    include $path; ?>
+
+    <div class="dashboard">
+      <div id="welcome-board">
+        <div id="welcome-txt">Welcome, Dasun!</div>
+      </div>
+      <div id="dashboard-title">Dashboard</div>
+    </div>
+    <div class="databoard-1">
+      <div id="databord-title">Appointments</div>
+      <div id="databord-value">76</div>
+      <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
+    </div>
+    <div class="databoard-2">
+      <div id="databord-title">Doctors</div>
+      <div id="databord-value">128</div>
+      <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
+    </div>
+
+    <div class="databoard-3">
+      <div id="databord-title">Vendors</div>
+      <div id="databord-value">30</div>
+      <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
+    </div>
+    <div class="taskboard">
+      <a href=<?php echo Router::site_url() . "/staff/view" ?> class="task">Manage Staff
+
+      </a>
+      <a href=<?php echo Router::site_url() . "/doctors/view" ?> class="task">Manage Doctors
+
+      </a>
+      <a href=<?php echo Router::site_url() . "/inventory/view" ?> class="task">Manage Inventory
+
+      </a>
+      <a href=<?php echo Router::site_url() . "/inventory/view" ?> class="task">Manage Vendors
+
+      </a>
+      <a href=<?php echo Router::site_url() . "/schedules/view" ?> class="task">Manage Schedules
+
+      </a>
+      <a href=<?php echo Router::site_url() . "/statistics/weekly" ?> class="task">View Statistics
+
+      </a>
+    </div>
+    <div class="footer">@ All rights are reserved</div>
+    <div>
+
+</body>
 
 </html>

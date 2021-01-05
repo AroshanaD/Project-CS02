@@ -17,7 +17,7 @@
                 
             <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
 
-            <div class = "container-t" style="margin-left:100px">
+            <div>
                 <div class="table" >
                     <table>
                     
