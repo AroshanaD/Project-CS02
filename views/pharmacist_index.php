@@ -5,6 +5,8 @@
         <meta charset="UTF-8">
         <title>Dashboard</title>
         <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css'?>>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     </head>
 
     <body>
@@ -24,23 +26,40 @@
             <div class="databoard-1">
                 <div id="databord-title">Medicines</div>
                 <div id="databord-value">76</div>
-                <div><img src=<?php echo Router::base_url().'/files/icons/medicine.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-capsules fa-5x"></i></div>
             </div>
             <div class="databoard-2">
                 <div id="databord-title">Doctors</div>
                 <div id="databord-value">128</div>
-                <div><img src=<?php echo Router::base_url().'/files/icons/doctor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
                 <div id="databord-title">Vendors</div>
                 <div id="databord-value">30</div>
-                <div><img src=<?php echo Router::base_url().'/files/icons/vendor.png'?> style="float:right; width: 80px; height: 70px; margin-right: 60px;"></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
             </div>
-            <div class="taskboard" style="background-color: #c7c7c7;">
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory</a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Vendors</a>
-              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create bills</a>
+            <div class="taskboard">
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can manage<br>
+                  inventory details<br>
+                  of medicines!!
+                </p>
+                </a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Vendors
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                   Here you can manage<br>
+                  vendor details<br>
+                  of vedndors!!
+                </p>
+                </a>
+              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create bills
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can create <br>
+                  pharmacy bills<br>
+                </p>
+                </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>
