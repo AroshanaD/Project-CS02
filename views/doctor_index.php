@@ -47,7 +47,6 @@
                   appointment details<br>
                   of your patient!!
                 </p>
-            
               </a>
               <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task-large">View Statistics
                 <p style="algin:center; color:grey; font-weight:normal; font-size:14px">

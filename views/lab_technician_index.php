@@ -42,14 +42,26 @@
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/patientTest/create_test' ?> class="task-large">Create Test
-                <p style="algin:center; color:grey; font-weight:normal">
+                <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
                   Now very easy to<br>
                   create tests <br>
                   for patients<br>
                 </p>
               </a>
-              <a href=<?php echo Router::site_url().'/patientTest/view' ?> class="task-large">Patient Tests</a>
-              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task-large">Lab tests</a>
+              <a href=<?php echo Router::site_url().'/patientTest/view' ?> class="task-large">Patient Tests
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can find <br>
+                  details of previous <br>
+                  lab tests of patient!!
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task-large">Lab tests
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can findout <br>
+                  various labtest details<br>
+                  details!!
+                </p>
+                </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>

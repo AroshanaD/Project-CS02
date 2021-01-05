@@ -40,9 +40,26 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
             </div>
             <div class="taskboard">
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory</a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Vendors</a>
-              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create bills</a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can manage<br>
+                  inventory details<br>
+                  of medicines!!
+                </p>
+                </a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Vendors
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                   Here you can manage<br>
+                  vendor details<br>
+                  of vedndors!!
+                </p>
+                </a>
+              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create bills
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can create <br>
+                  pharmacy bills<br>
+                </p>
+                </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>

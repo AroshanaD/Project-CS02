@@ -40,9 +40,25 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
             </div>
             <div class="taskboard">
-              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments</a>
-              <a href=<?php echo Router::site_url().'/doctor_Schedule/index'?> class="task-large">Doctor Schedules</a>
-              <a href=<?php echo Router::site_url().'/appointment/result' ?> class="task-large">Lab tests</a>
+              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can find <br>
+                  your appointment details<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url().'/doctor_Schedule/index'?> class="task-large">Doctor Schedules
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can find your <br>
+                  scheduled appointment details<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url().'/appointment/result' ?> class="task-large">Lab tests
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can find <br>
+                  your lab test <br>
+                  availability details!!
+                </p>
+              </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>

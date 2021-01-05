@@ -40,12 +40,42 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
             </div>
             <div class="taskboard">
-              <a href=<?php echo Router::site_url()."/staff/view" ?> class="task">Manage Staff</a>
-              <a href=<?php echo Router::site_url()."/doctors/view" ?> class="task">Manage Doctors</a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Inventory</a>
-              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Vendors</a>
-              <a href=<?php echo Router::site_url()."/schedules/view"?> class="task">Manage Schedules</a>
-              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task">View Statistics</a>
+              <a href=<?php echo Router::site_url()."/staff/view" ?> class="task-large">Manage Staff
+              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
+                  Here you can manage <br>
+                  the details our staff!!<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/doctors/view" ?> class="task-large">Manage Doctors
+              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
+                  Here you can manage <br>
+                  the details of doctors!!<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Inventory
+              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
+                  Here you can manage <br>
+                  the inventory details !!<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task">Manage Vendors
+              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
+                  Here you can manage <br>
+                  the vendor details!!<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/schedules/view"?> class="task">Manage Schedules
+              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
+                  Here you can manage <br>
+                  the schedules of doctors!!<br>
+                </p>
+              </a>
+              <a href=<?php echo Router::site_url()."/statistics/weekly" ?> class="task">View Statistics
+              <p style="algin:center; color:grey; font-weight:normal; font-size:14px">
+                 Our Hospital analyse the <br>
+                  
+                </p>
+                </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>

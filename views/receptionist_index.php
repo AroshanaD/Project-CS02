@@ -40,9 +40,27 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-hospital-user fa-5x"></i></div>
             </div>
             <div class="taskboard">
-              <a href=<?php echo Router::site_url().'/appointment/search_doctor'?> class="task-large">Make Appointment</a>
-              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">View Appointment</a>  
-              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task-large">Doctor schedules</a>
+              <a href=<?php echo Router::site_url().'/appointment/search_doctor'?> class="task-large">Make Appointment
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can create <br>
+                  appointments for doctors<br>
+                  based on the request of patient!!
+                </p>
+                </a>
+              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">View Appointment
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can view <br>
+                  the appointment details<br>
+                  of relevant patient!!
+                </p>
+                </a>  
+              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task-large">Doctor schedules
+              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                  Here you can find <br>
+                  scheduled details<br>
+                  of doctors!!
+                </p>
+                </a>
             </div>
             <div class="footer">@ All rights are reserved</div> 
           <div>
