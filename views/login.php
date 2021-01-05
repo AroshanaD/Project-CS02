@@ -22,10 +22,10 @@
             <a href=<?php echo Router::site_url() . "/register" ?>><i class="fas fa-user-plus"></i> Register</a>
             <a href=<?php echo Router::site_url() . '/main' ?>><i class="fas fa-home"></i> Home</a>
         </div>
-        <form class="form" style="background-color:#9999ff">
-            <div class="form-container1" >
-                <div id="form-img" style="background-color: transparent;" >
-                <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:350px">
+        <form class="form" style="background: linear-gradient(to right, #6190e8, #a7bfe8);">
+            <div class="form-container1" style="background-color:white">
+                <div id="form-img" style="background-color: transparent" >
+                <img src="<?php echo Router::base_url() . '/files/icons/login.svg' ?>" style="width:400px">
                 </div>
                 <div id="form-1">
                     <div class="title">Welcome to Medcaid hospital</div>
