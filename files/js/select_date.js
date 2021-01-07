@@ -33,11 +33,22 @@ $(document).ready(function(){
             if(index != -1){
                 $.ajax({
                     url: '../../index.php/appointment/available_appointment',
-                    data: {date:date},
+                    data: {date:date,scheduleId:details[index].id},
                     type: 'post',
                     
                     success:function(data){
-                        if(data==0 || data==1){
+                        var max=data.max_patient;
+                        var status;
+                            if(data.Seat_no==null){
+                                status=0; // avaiable and no seat book yet
+                            }
+                            else if(data.Seat_no>0 && data.Seat_no<max){
+                                status=1; // available and some of seats are booked
+                            }
+                            else{
+                                status=2; // seat are not available
+                            }
+                        if(status==0 || status==1){
                             location.href = "../../index.php/appointment/fill_form";
                         }
                         else{

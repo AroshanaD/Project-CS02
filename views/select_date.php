@@ -38,10 +38,6 @@
                 <div class="contact-box" style="margin:0px">
                     <div class="right" style="width:350px; background-color:white">
                         <div class="title" style="border:none">Doctor Details</div>
-                        <div class="field">Name</div><div class="val_field"><--?php echo "Dr. ".$_SESSION['appointment']['doctor_name']?></div>
-                        <div class="field">Specialization</div><div class="val_field"><--?php echo $_SESSION['search']['specialization']?></div>
-                        <div class="field">Qualification</div><div class="val_field"><--?php echo $_SESSION['appointment']['doctor_qualification']?></div>
-                        <div class="field">Fee</div><div class="val_field"><--?php echo "Rs.".$_SESSION['appointment']['doctor_fee']?></div>
                     </div>
                     <div class="right">
                         <div class="title" style="border:none">Week Schedule</div>

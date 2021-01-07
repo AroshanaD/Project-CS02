@@ -55,7 +55,7 @@
                     </div>
                     <div class="input">
                         <select name="day" id="category" placeholder="Schedule day"  required>
-                                <option value="" disabled hidden selected><?php echo $_POST['details']['date'] ?></option>
+                                <option value="<?php echo $_POST['details']['date'] ?>"><?php echo $_POST['details']['date'] ?></option>
                                 <option value="Sunday">Sunday</option>
                                 <option value="Monday">Monday</option>
                                 <option value="Tuesday">Tuesday</option>
@@ -70,6 +70,12 @@
                     </div>
                     <div class="input">
                         <input type="time" name="sche_time" value="<?php echo $_POST['details']['time'] ?>" required>
+                    </div>
+                    <div class="label">
+                        <label for="maxpatient">Maximum no of patient</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="maxpatient" value="<?php echo $_POST['details']['max_patient'] ?>" required>
                     </div>
                     
                     <input type="submit" name="Update" value="Update" class="btn">

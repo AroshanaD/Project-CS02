@@ -11,6 +11,7 @@
             if(isset($_GET['id'])){
                 $id = $_GET['id'];
                 $result = $model->get_doctor($id);
+                $_SESSION['schedule']['doctor_id']=$result['id'];
                 $_POST['details'] = $result;
             }
             $this->load('views','add_schedule');
@@ -19,14 +20,15 @@
         public function add(){
             $model=$this->load('models','Schedules_manage');
             
-            $id=$_POST['doc_id'] ;
+            $id=$_SESSION['schedule']['doctor_id'] ;
             $noOfSchedule = count($_POST["day"]);
 
             for ($i=0; $i < $noOfSchedule; $i++) { 
-                if (trim($_POST['day'] != '') && trim($_POST['time'] != '')) {
+                if (trim($_POST['day'] != '') && trim($_POST['time'] != '') && trim($_POST['maxPatient'] !=='')) {
                     $date   = $_POST["day"][$i];
                     $time = $_POST["time"][$i];
-                    $result = $model->add_schedule($id,$date,$time);
+                    $maxPatient=$_POST["maxPatient"][$i];
+                    $result = $model->add_schedule($id,$date,$time,$maxPatient);
                 }
             }
             $URL= Router::site_url()."/Schedules/view?successfully added";
@@ -70,7 +72,8 @@
             if(isset($_POST['Update'])){
                 $day=$_POST['day'];
                 $time=$_POST['sche_time'];
-                $result=$model->update($id,$day,$time);
+                $maxPatient=$_POST['maxpatient'];
+                $result=$model->update($id,$day,$time,$maxPatient);
 
                 if($result==TRUE){
                     $URL= Router::site_url()."/schedules/view?successfully updated";
