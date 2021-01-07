@@ -19,7 +19,7 @@
     --databoard-color: #3e37c96e;
     --table-color: #f5f5f5;
     --footer-color: #7e7e7e7c;
-    --box-shadow: 0 0 10px 10px rgba(120, 120, 120, 0.63);
+    --box-shadow: 0 0 5px 5px rgba(180, 179, 179, 0.288);
     --btn-color: #5e60ce;
     --border-line: 1px black solid;
     --form-title-color: rgb(45, 0, 128);
@@ -85,6 +85,12 @@ body {
     grid-template-columns: 0.15fr 0.5fr 0.4fr;
     grid-template-rows: 0.15fr 0.6fr 1.1fr 0.1fr;
     grid-template-areas: "nav nav nav" "sidebar selection table" "sidebar form form" "footer footer footer";
+}
+
+.container-10 {
+    grid-template-columns: 0.15fr 0.5fr 0.4fr;
+    grid-template-rows: 0.15fr 0.6fr 1.1fr 0.1fr;
+    grid-template-areas: "nav nav nav" "sidebar form form" "sidebar details table" "footer footer footer";
 }
 
 .container-t {
@@ -1024,4 +1030,52 @@ td>a {
     text-transform: uppercase;
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.calendar {
+    width: 100%;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 3% 0 3%;
+    overflow-x:auto;
+    box-shadow: var(--box-shadow);
+}
+
+.calendar-row {
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+[class*='calendar-'] {
+    font-size: 14px;
+    font-weight: bold;
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    overflow-x: auto;
+    margin: 1px;
+    padding-left: 2px;
+}
+
+@media screen and (max-width:800px) {
+    .calendar-day, .calendar-doctor {
+        font-size: 14px;
+        width: 9vw;
+    }
+}
+
+@media screen and (min-width:800px) {
+    .calendar-day, .calendar-doctor {
+        font-size: 14px;
+        width: 9vw;
+    }
+}
+
+.calendar-row{
+    background-color: rgb(243, 243, 243);
 }

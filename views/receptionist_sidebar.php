@@ -42,7 +42,7 @@
         </div>    
        
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="far fa-calendar-check"></i>  Appointments</div>
+            <div style="margin: var(--large-margin);"><i class="far fa-calendar-check" style="padding: 0;"></i>  Appointments</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url().'/appointment/onpremise'?>>Make Appointment</a>
                 <a href=<?php echo Router::site_url().'/appointment/view_details'?>>View Appointment</a>   

@@ -6,11 +6,6 @@
         }
 
         public function index(){
-            if(isset($_SESSION['id'])){
-            }
-            else{
-                $this->load('views','schedule_header');
-            }
             $this->load('views','doctor_schedule');
         }
 
