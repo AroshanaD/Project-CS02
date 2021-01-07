@@ -48,7 +48,6 @@ $(document).ready(function(){
             }
             else{
                 $("#form-message").text("doctor doesn't have a schedule on " + day);
-
             }
 
     })
