@@ -33,7 +33,7 @@
                     </div>
                     <div class="input">
                         <select name="specialization" id="search_spec" required>
-                            <option value="Any">Any Specialization</option>
+                            <option value="Any" selected disabled>Any Specialization</option>
                         </select>
                     </div>
                     <input type="submit" value="Search" class="btn">

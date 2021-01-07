@@ -42,7 +42,7 @@
         </div>
         <div class="dropdown">
             <div style="margin: var(--large-margin);">
-            <i class="far fa-calendar-check"></i>
+            <i class="far fa-calendar-check" style="padding: 0;"></i>
                 <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?>>View appointment</a>
             </div>
         </div>

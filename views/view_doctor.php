@@ -12,7 +12,7 @@
 
 <body>
     <div class="container-4">
-    <div class="nav">
+        <div class="nav">
             <?php include 'header.php'; ?>
         </div>
 

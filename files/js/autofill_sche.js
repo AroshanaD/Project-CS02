@@ -28,25 +28,25 @@ $(document).ready(function(){
                 }
                 switch(data[i]['date']){
                     case 'Monday':
-                        row[1].push(data[i]['f_name'][0].concat('.',data[i]['l_name']));
+                        row[1].push(data[i]['f_name'][0].concat('. ',data[i]['l_name']));
                     break;
                     case 'Tuesday':
-                        row[2].push(data[i]['f_name'][0].concat('.',data[i]['l_name']));
+                        row[2].push(data[i]['f_name'][0].concat('. ',data[i]['l_name']));
                     break;
                     case 'Wednesday':
-                        row[3].push(data[i]['f_name'][0].concat('.',data[i]['l_name']));
+                        row[3].push(data[i]['f_name'][0].concat('. ',data[i]['l_name']));
                     break;
                     case 'Thursday':
-                        row[4].push(data[i]['f_name'][0].concat('.',data[i]['l_name']));
+                        row[4].push(data[i]['f_name'][0].concat('. ',data[i]['l_name']));
                     break;
                     case 'Friday':
-                        row[5].push(data[i]['f_name'][0].concat('.',data[i]['l_name']));
+                        row[5].push(data[i]['f_name'][0].concat('. ',data[i]['l_name']));
                     break;
                     case 'Saturday':
-                        row[6].push(data[i]['f_name'][0].concat('.',data[i]['l_name']));
+                        row[6].push(data[i]['f_name'][0].concat('. ',data[i]['l_name']));
                     break;
                     case 'Sunday':
-                        row[7].push(data[i]['f_name'].concat('.',data[i]['l_name']));
+                        row[7].push(data[i]['f_name'].concat('. ',data[i]['l_name']));
                     break;
                 }
             }
@@ -62,7 +62,7 @@ $(document).ready(function(){
                         array[value].forEach(function(value){
                             doctors = doctors.concat("<div>",value);
                         })
-                        $(".calendar").append("<div class='calendar-doctor' style='background-color:white; font-weight:bold;'>".concat(doctors,'</div>'));
+                        $(".calendar").append("<div class='calendar-doctor' style='background-color:#b7b9fb; font-weight:bold;'>".concat(doctors,'</div>'));
                     }
                 })
             })
