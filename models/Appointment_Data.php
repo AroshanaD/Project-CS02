@@ -30,7 +30,7 @@
         public function doctor_details($id){
             $connect = new Database();
             $pdo = $connect->connect();
-            $query = "SELECT f_name, l_name, qualification, fee FROM doctor WHERE id=?";
+            $query = "SELECT doctor.f_name, doctor.l_name, doctor.qualification, doctor.fee, specialization.name AS 'specialization' FROM doctor INNER JOIN specialization ON doctor.specialization_id = specialization.id WHERE doctor.id=?";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$id]);
             $result = $stmt->fetch();
@@ -40,7 +40,7 @@
         public function get_dates($id){
             $connect = new Database();
             $pdo = $connect->connect();
-            $query = "SELECT date,time FROM schedule WHERE doctor_id=?";
+            $query = "SELECT id,date,time FROM schedule WHERE doctor_id=?";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$id]);
             $result = $stmt->fetchAll();
@@ -69,17 +69,27 @@
             return $result;
         }
 
-        public function available_appoint($doc_id,$date){
+        public function available_appoint($date,$schedule_id){
             $connect = new Database();
             $pdo = $connect->connect();
 
-            $query = "SELECT Seat_no FROM appointment WHERE Doctor_Id=? AND `Date`=?";
+            $query = "SELECT appointment.Seat_no, schedule.max_patient FROM appointment INNER JOIN schedule ON appointment.schedule_id=schedule.id where schedule.id = ? AND appointment.Date=?";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$doc_id,$date]);
+            $stmt->execute([$schedule_id,$date]);
             $result = $stmt->fetch();
             return $result;
         }
-    
+        
+        public function charges($id){
+            $connect = new Database();
+            $pdo = $connect->connect();
+
+            $query = "SELECT fee FROM doctor WHERE id=?";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$id]);
+            $result = $stmt->fetch();
+            return $result;
+        }
 
     }
 

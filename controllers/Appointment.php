@@ -47,6 +47,7 @@
 
             $_SESSION['appointment']['doctor_id'] = $id;
             $_SESSION['appointment']['doctor_name'] = $doctor['f_name']." ".$doctor['l_name'];
+            $_SESSION['appointment']['doctor_specialization']=$doctor['specialization'];
             $_SESSION['appointment']['doctor_qualification'] = $doctor['qualification'];
             $_SESSION['appointment']['doctor_fee'] = $doctor['fee'];
 
@@ -74,22 +75,13 @@
 
         public function available_appointment(){
             $model = $this->load('models','Appointment_Data');
-            $doc_id = $_SESSION['appointment']['doctor_id'];
             $date=$_POST['date'];
+            $schedule_id=$_POST['scheduleId'];
             $_SESSION['appointment']['select_date']=$date;
-            $result = $model->available_appoint($doc_id,$date);
+            $result = $model->available_appoint($date,$schedule_id);
             $_SESSION['appointment']['seat_no']=$result['Seat_no'];
-            if($result['Seat_no']==null){
-                $status=0; // avaiable and no seat book yet
-            }
-            else if($result['Seat_no']>0 && $result['Seat_no']<70){
-                $status=1; // available and some of seats are booked
-            }
-            else{
-                $status=2; // seat are not available
-            }
             header('Content-Type: application/json');
-            echo json_encode($status);
+            echo json_encode($result);
         }
         
         
@@ -124,5 +116,20 @@
             $result = $model->doctors($specialization);
             header('Content-Type: application/json');
             echo json_encode($result);
+        }
+
+        public function appointment_charge(){
+            $model=$this->load('models','Appointment_Data');
+            $id=$_POST['doctor_id'];
+            $result=$model->charges($id);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
+        public function make_appointment(){
+            $model=$this->load('models','Appointment_Data');
+            $nic=$_POST['schedule_id'];
+            echo $nic;
+
         }
     }

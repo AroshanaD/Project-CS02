@@ -31,16 +31,18 @@
                     <div class="input">
                         <input type="date" id="date" name="date" placeholder="Select Date" required>
                     </div>
+                    <div id="form-message"></div>
                 </div>
                 <div id="form-2">
                     <div class="input">
                         <select name="doctor" id="doctor" required>
-
+                            <option value="" hidden selected>Select doctor</option>
                         </select>
                     </div>
                     <div class="input">
-                        <input type="number" id="seat" name="seat" placeholder="Available Seat No" required>
+                        <input type="text" id="seat" name="seat" placeholder="Available Seat No" required>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -52,39 +54,39 @@
                 </table>
             </div>
         </div>
-        <form class="form" style="background-color:white; border-top: var(--border-line)">
+        <form class="form"  style="background-color:white; border-top: var(--border-line)">
             <div class="topic-small" style="width: 100%">Fill Patient Details</div>
-            <div class="form-container3" style="width:60%; padding: 0">
+            <div class="form-container3" style="width:60%; padding: 0" >
                 <div id="form-1">
                     <div class="label">
                         <label for="id">NIC</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="id" required>
+                        <input type="text" name="id" id="id" required>
                     </div>
                     <div class="label">
                         <label for="name">Name</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="name" required>
+                        <input type="text" name="name" id="name" required>
                     </div>
                     <div class="label">
                         <label for="age">Age</label>
                     </div>
                     <div class="input">
-                        <input type="number" name="age" required>
+                        <input type="number" name="age" id="age" required>
                     </div>
                     <div class="label">
                         <label for="contact">Contact</label>
                     </div>
                     <div class="input">
-                        <input type="tel" name="contact" required>
+                        <input type="tel" name="contact" id="contact" required>
                     </div>
                     <div class="label">
                         <label for="email">Email</label>
                     </div>
                     <div class="input">
-                        <input type="email" name="email" required>
+                        <input type="email" name="email" id="email" required>
                     </div>
                 </div>
                 <div id="form-2">
@@ -92,7 +94,7 @@
                         <label for="appoint_no">Appointment no</label>
                     </div>
                     <div class="input">
-                        <input type="float" id="d_charges" name="d_charges" disabled>
+                        <input type="float" id="appoint_no" name="appoint_no" disabled>
                     </div>
                     <div class="label">
                         <label for="doc_charges">Doctor Charges</label>
@@ -112,7 +114,7 @@
                     <div class="input">
                         <input type="float" id="total" name="total" required disabled>
                     </div>
-                    <input type="submit" value="Proceed" class="btn">
+                    <input type="submit" value="Proceed" class="btn" name="submit" id="submit">
                     <div id="form-message"></div>
                 </div>
             </div>

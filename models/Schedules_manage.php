@@ -16,12 +16,12 @@ class Schedules_manage extends Models{
         return $result;
     }
 
-    public function add_schedule($id,$date,$time){
+    public function add_schedule($id,$date,$time,$maxPatient){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query="INSERT INTO `schedule`(`date`,`time`,`doctor_id`) VALUES(?,?,?)";
+        $query="INSERT INTO `schedule`(`date`,`time`,`max_patient`,`doctor_id`) VALUES(?,?,?,?)";
         $stmt = $pdo->prepare($query);
-        $status=$stmt->execute([$date,$time,$id]);
+        $status=$stmt->execute([$date,$time,$maxPatient,$id]);
         return $status;
     }
 
@@ -59,7 +59,7 @@ class Schedules_manage extends Models{
     public function get_details($sche_id){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query="SELECT schedule.id, schedule.doctor_id,schedule.date, schedule.time, doctor.f_name AS 'first_name', doctor.l_name AS 'last_name'
+        $query="SELECT schedule.id, schedule.doctor_id,schedule.date, schedule.time,schedule.max_patient, doctor.f_name AS 'first_name', doctor.l_name AS 'last_name'
         from schedule inner join doctor on schedule.doctor_id=doctor.id where schedule.id=? ";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$sche_id]);
@@ -67,12 +67,12 @@ class Schedules_manage extends Models{
         return $result;
     }
 
-    public function update($id,$day,$time){
+    public function update($id,$day,$time,$maxPatient){
         $connect= new Database();
         $pdo = $connect->connect();
-        $query="UPDATE schedule SET date=?, time=? WHERE id=?";
+        $query="UPDATE schedule SET date=?, time=?, max_patient=? WHERE id=?";
         $stmt=$pdo->prepare($query);
-        $status=$stmt->execute([$day,$time,$id]);
+        $status=$stmt->execute([$day,$time,$maxPatient,$id]);
         
         if($status==TRUE){
             return TRUE;

@@ -62,6 +62,12 @@
                     <div class="input">
                         <input type="time" name="sche_time" value="<?php echo $_POST['details']['time'] ?>" disabled required>
                     </div>
+                    <div class="label">
+                        <label for="maxpatient">Maximum no of patient</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="maxpatient" value="<?php echo $_POST['details']['max_patient'] ?>" disabled required>
+                    </div>
                     <input type="submit" name="Delete" value="Delete" class="btn">
                     <div id="form-message"></div>
 
