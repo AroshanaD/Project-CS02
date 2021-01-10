@@ -74,7 +74,7 @@
         </div>
 
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-calendar-alt"></i> Manage Schedules</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-calendar-alt" style="padding: 0"></i> Manage Schedules</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . "/doctors/view" ?>>Add schedules</a>
                 <a href=<?php echo Router::site_url() . "/schedules/view" ?>>view schedules</a>
@@ -84,9 +84,7 @@
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i> View Statistics</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/statistics/weekly" ?>>Weekly</a>
-                <a href=<?php echo Router::site_url() . "/statistics/monthly" ?>>Monthly</a>
-                <a href=<?php echo Router::site_url() . "/statistics/yearly" ?>>Yearly</a>
+                <a href=<?php echo Router::site_url() . "/statistics/appointment" ?>>Appointment Stat</a>
                 <a href=<?php echo Router::site_url() . "/statistics/report" ?>>Generate reports</a>
             </div>
         </div>

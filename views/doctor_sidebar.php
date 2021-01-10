@@ -49,12 +49,8 @@
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url()."/statistics/weekly" ?>>Weekly</a>
-                <a href=<?php echo Router::site_url()."/statistics/monthly" ?>>Monthly</a>
-                <a href=<?php echo Router::site_url()."/statistics/yearly" ?>>Yearly</a>
+                <a href=<?php echo Router::site_url()."/statistics/appointment" ?>>Appointment Stat</a>
                 <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
             </div>
-        </div>
-
-            
-    </div>
+        </div>      
+</div>
