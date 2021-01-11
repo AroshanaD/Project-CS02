@@ -1,18 +1,25 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/Patient_Appointment/get_viewRecept',
+        url: '../../index.php/Patient_Appointment/get_patient_appointmentView',
         data: {},
         type: 'post',
         success:function(data){
-            var details = data;
+            console.log(data);
+           var details = data;
             render_table(details);
         }
     })
 
     $("#search-btn").click(function(){
+        var date= new Date($("#date").val());
+        var dd = String(date.getDate()).padStart(2, '0');
+        var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+        var yyyy = date.getFullYear();
+        date= yyyy + '-' + mm + '-' + dd;
+
         $.ajax({
             url: '../../index.php/Patient_Appointment/search',
-            data: {id:$("#id").val(),date:$("#date").val()},
+            data: {date:date},
             type: 'post',
             success:function(data){
                 var details = data;
@@ -27,15 +34,15 @@ function render_table(data){
 
     var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
     $(`<td>`).text("No"),
-    $(`<td>`).text("Appointment Id"),$(`<td>`).text("Appointment date"),
+    $(`<td>`).text("Appointment No"),$(`<td>`).text("Appointment date"),
     $(`<td>`).text("Appointment time"),$(`<td>`).text("Patient name"),
-    $(`<td>`).text("Patient age"),$(`<td>`).text("Patient contact"),
-    $(`<td>`).text("Patient Id"),
+    $(`<td>`).text("Patient birthday"),$(`<td>`).text("Patient contact"),
+    $(`<td>`).text("Doctor_name"),
     $(`<td>`).append("View"));
     $("table").append(header);
 
 
-    var View = "<a href=../patient_Appointment/view_Appoint?><button class='tb-btn'>View</button></a>";
+   /* var View = "<a href=../patient_Appointment/view_Appoint?><button class='tb-btn'>View</button></a>";
     var header= $(`<tr>`).append($(`<td>`),
     $(`<td>`).text(1),
     $(`<td>`).text(1),$(`<td>`).text('2020-10-23'),
@@ -43,27 +50,26 @@ function render_table(data){
     $(`<td>`).text('46'),$(`<td>`).text('764578123'),
     $(`<td>`).text(5),
     $(`<td>`).append(View));
-    $("table").append(header);
+    $("table").append(header);*/
 
-    /*for(var i=0; i<2; i++){
+    for(var i=0; i<data.length; i++){
 
-        
-        var row_id = data[i]['id'].toString();
-        //console.log(row_id);
+        var row_id = data[i]['Seat_no'].toString();
+        console.log(row_id);
         var row_id = row_id.concat("')");
         var func = "selectfunc(".concat(i+1,",","'",row_id);
+        var getDetails=data[i]['appointment_Id'];
 
-        var get_details = data[i]['id'];
-        var update = "<a href=../patientAppointment/view_Appoint?id=".concat(get_details,"><button class='tb-btn'>View</button></a>");
-        var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
+        var View = "<a href=../patient_Appointment/view_Appoint?id=".concat(getDetails,"><button class='tb-btn'>View</button></a>");
+        var row = $(`<tr id=${data[i].Seat_no}>>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
         $(`<td>`).text(i+1),
-        $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].date),
-        $(`<td>`).text(data[i].time),$(`<td>`).text(data[i].patient_name),
-        $(`<td>`).text(data[i].patient_age),$(`<td>`).text(data[i].patient_contact),
-        $(`<td>`).text(data[i].patient_id),
-        $(`<td>`).append(view));
+        $(`<td>`).text(data[i].Seat_no),$(`<td>`).text(data[i].Date),
+        $(`<td>`).text(data[i].time),$(`<td>`).text(data[i].f_name.concat(" ",data[i].l_name)),
+        $(`<td>`).text(data[i].birthday),$(`<td>`).text(data[i].contact_no),
+        $(`<td>`).text(data[i].doctor_fname.concat(" ",data[i].doctor_lname)),
+        $(`<td>`).append(View));
         $("table").append(row);
-    }*/
+    }
 }
 
 function selectfunc(i,row_id){
