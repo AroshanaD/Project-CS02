@@ -3,55 +3,27 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href=<?php echo Router::base_url()."/files/main.css" ?>>
+        <link rel="stylesheet" href=<?php echo Router::base_url() . "/files/style1.css" ?>>
+        <link rel="stylesheet" href=<?php echo Router::base_url() . "/files/main.css" ?>>
         <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chilanka&display=swap" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Redressed&family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
+        <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>
     </head>
     <body style="background: white">
-       <div class="main-nav" style="background:#023047">
-           <div class="logo">
-                <svg width="80px" height="80px" viewBox="0 0 236 246" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g id="Layer 2">
-                    <g id="Vector" filter="url(#filter0_d)">
-                    <path d="M226.77 226.77L214.32 0H185.18L181.77 5.38L170.3 23.49L144.57 64.13L113.38 113.39L104.12 98.82L82.06 64.13L72.52 49.13L41.28 0H11L0 226.77H32.92V207.55H13.7V190.17H32.92V171H41.4V64.13L52.14 82L71 113.39L95.4 154.13H131.4L155.84 113.39L185.18 64.5L185.4 64.13V226.77H226.77Z" fill="#FF5E03" fill-opacity="0.69"/>
-                    <path d="M184.751 64.2427L184.75 64.2445L155.411 113.133L155.84 113.39L155.411 113.133L131.117 153.63H95.6834L71.4289 113.133L71.4286 113.132L52.5686 81.7425L52.5686 81.7424L41.8286 63.8724L40.9 62.3274V64.13V170.5H32.92H32.42V171V189.67H13.7H13.2V190.17V207.55V208.05H13.7H32.42V226.27H0.524842L11.4763 0.5H41.0054L72.0981 49.3983L72.52 49.13L72.0981 49.3983L81.6381 64.3983L103.698 99.0882L103.698 99.0883L112.958 113.658L113.381 114.323L113.802 113.657L144.992 64.3975L144.6 64.149L144.992 64.3975L170.722 23.7575L182.192 5.64768L182.192 5.64753L185.455 0.5H213.847L226.242 226.27H185.9V64.13V62.3108L184.97 63.8745L184.751 64.2427Z" stroke="black"/>
-                    </g>
-                    <g id="c" filter="url(#filter1_d)">
-                    <path d="M103 111.81C103 152.63 135.11 187.93 181.75 204.81V223.66C105.81 217.44 46.75 169.75 46.75 111.85C46.75 53.95 105.83 6.22 181.77 0V18.85C135.13 35.69 103 71 103 111.81Z" fill="#838BC5"/>
-                    <path d="M102.5 111.81C102.5 152.82 134.673 188.192 181.25 205.16V223.117C105.697 216.726 47.25 169.237 47.25 111.85C47.25 54.4626 105.717 6.93467 181.27 0.543354V18.4993C134.692 35.4285 102.5 70.8101 102.5 111.81Z" stroke="black"/>
-                    </g>
-                    <path id="Vector_2" d="M50.29 170.95H41.4V226.77H50.29V170.95Z" fill="#C1272D"/>
-                    <path id="Vector_3" d="M69.51 190.17H41.4V207.55H69.51V190.17Z" fill="#C1272D"/>
-                    </g>
-                    <defs>
-                    <filter id="filter0_d" x="0" y="0" width="235.77" height="245.77" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                    <feOffset dx="5" dy="15"/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                    </filter>
-                    <filter id="filter1_d" x="46.75" y="0" width="144.02" height="242.66" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                    <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                    <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
-                    <feOffset dx="5" dy="15"/>
-                    <feGaussianBlur stdDeviation="2"/>
-                    <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
-                    <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow"/>
-                    <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
-                    </filter>
-                    </defs>
-                </svg>
-           </div>
-           <div style="color:#fb8500">MedCaid Hospitals</div>
-           <div>
-                <a id="a-btn" href=<?php echo Router::site_url()."/user/login" ?>><button class="main-button">Log In</button></a>
-                <a id="a-btn" href=<?php echo Router::site_url()."/register" ?>><button class="main-button">Register</button></a>
-                <a id="a-btn" href=<?php echo Router::site_url()."/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
-           </div>
-       </div>
+    <div class="sec">
+       <div class="nav">
+            <img src="<?php echo Router::base_url() . '/files/icons/Logo.png' ?>" style="float:left; margin-left:60px;margin-top:10px">
+           
+            <a href=<?php echo Router::site_url()."/user/login" ?>> <i class="fas fa-sign-in-alt"></i> Login</a>
+            <a href=<?php echo Router::site_url() . "/register" ?>><i class="fas fa-user-plus"></i> Register</a>
+            <a href=<?php echo Router::site_url() . "/user/dashboard" ?>><i class="fas fa-id-badge"></i> Dashboard</a>
+        </div>
+     </div>
+
        <div class="section">
             <div>
                 <svg width="1105" height="783" viewBox="0 0 1105 783" fill="none" xmlns="http://www.w3.org/2000/svg">
