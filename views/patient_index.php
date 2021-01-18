@@ -41,19 +41,19 @@
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments
-              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+              <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   your appointment details<br>
                 </p>
               </a>
               <a href=<?php echo Router::site_url().'/doctor_Schedule/index'?> class="task-large">Doctor Schedules
-              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+              <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find your <br>
                   scheduled appointment details<br>
                 </p>
               </a>
               <a href=<?php echo Router::site_url().'/appointment/result' ?> class="task-large">Lab tests
-              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+              <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   your lab test <br>
                   availability details!!
