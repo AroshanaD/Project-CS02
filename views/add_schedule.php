@@ -15,7 +15,7 @@
         var maxField = 7; //Input fields increment limitation
         var addButton = $('#add_button'); //Add button selector
         var wrapper = $('#field_wrapper'); //Input field wrapper
-        var fieldHTML = '<div class="input"><select name="day[]" id="category" placeholder="Schedule day" required><option value="" disabled hidden selected> Select Category </option><option value="Sunday">Sunday</option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option></select><input type="time" name="time[]" id="time"></br><input type="text" placeholder="Maximum no of patient" name="maxPatient[]" id="maxPatient"></br><a href="javascript:void(0);" id="remove_button" title="Add field"><img src="<?php echo Router::base_url() . '/files/icons/remove-icon.png' ?>"/></a></div>'; //New input field html 
+        var fieldHTML = '<div class="input"><select name="day[]" id="category" placeholder="Schedule Day" required><option value="" disabled hidden selected> Select Category </option><option value="Sunday">Sunday</option><option value="Monday">Monday</option><option value="Tuesday">Tuesday</option><option value="Wednesday">Wednesday</option><option value="Thursday">Thursday</option><option value="Friday">Friday</option><option value="Saturday">Saturday</option></select><input type="time" name="time[]" id="time"></br><input type="text" placeholder="Maximum no of patient" name="maxPatient[]" id="maxPatient"></br><a href="javascript:void(0);" id="remove_button" title="Add field"><img src="<?php echo Router::base_url() . '/files/icons/remove-icon.png' ?>"/></a></div>'; //New input field html 
         var x = 1; //Initial field counter is 1
 
         //Once add button is clicked
@@ -83,7 +83,7 @@
                     <div id="field_wrapper">
                         <div class="input">
                             <select name="day[]" id="category" placeholder="Schedule day" required>
-                                <option value="" disabled hidden selected> Select Category </option>
+                                <option value="" disabled hidden selected> Select Day </option>
                                 <option value="Sunday">Sunday</option>
                                 <option value="Monday">Monday</option>
                                 <option value="Tuesday">Tuesday</option>

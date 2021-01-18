@@ -56,7 +56,7 @@
       <a href=<?php echo Router::site_url() . "/schedules/view" ?> class="task">Manage Schedules
 
       </a>
-      <a href=<?php echo Router::site_url() . "/statistics/weekly" ?> class="task">View Statistics
+      <a href=<?php echo Router::site_url() . "/statistics/report" ?> class="task">View Statistics
 
       </a>
     </div>

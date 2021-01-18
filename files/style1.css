@@ -1082,6 +1082,12 @@ td>a {
 
 /** stat style **/
 
+@keyframes bake-pie {
+    from {
+        transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+}
+
 section {
     margin-top: 30px;
 }
