@@ -461,7 +461,7 @@ a {
     background-color: rgb(196, 206, 255);
 }
 
-.test-details-div{
+.test-details-div {
     flex-basis: 44%;
     margin: var(--small-margin);
 }
@@ -741,7 +741,8 @@ button {
     justify-content: space-around;
 }
 
-table>thead, table>tbody {
+table>thead,
+table>tbody {
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
@@ -766,7 +767,8 @@ tr {
     outline: none;
 }
 
-td, th {
+td,
+th {
     width: max-content;
     background-color: inherit;
     padding: 5px 20px;
@@ -860,7 +862,8 @@ td>a {
     box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.1);
 }
 
-.site-search>input, .site-search>select {
+.site-search>input,
+.site-search>select {
     height: auto;
     width: 180px;
     margin: 5px 20px 5px 10px;
@@ -899,7 +902,8 @@ td>a {
     box-shadow: 0px 8px 16px 0px rgba(65, 37, 37, 0.1);
 }
 
-.search-item>input:hover, .search-btn:hover {
+.search-item>input:hover,
+.search-btn:hover {
     opacity: 0.6;
 }
 
@@ -931,7 +935,7 @@ td>a {
     width: 100px;
     height: 70px;
     margin: 10px 10px 10px 10px;
-    background-image:url(icons/user.png);
+    background-image: url(icons/user.png);
     background-size: 45px;
     background-position: center;
     background-repeat: no-repeat;
