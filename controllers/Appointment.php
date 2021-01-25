@@ -79,7 +79,8 @@
             $schedule_id=$_POST['scheduleId'];
             $_SESSION['appointment']['select_date']=$date;
             $result = $model->available_appoint($date,$schedule_id);
-            $_SESSION['appointment']['seat_no']=$result['Seat_no'];
+            $_SESSION['appointment']['appointmentID']=$result['appointment_id'];
+            $_SESSION['appointment']['seat_no']=$result['CurrentSeat_no'];
             header('Content-Type: application/json');
             echo json_encode($result);
         }
@@ -90,6 +91,12 @@
         }
 
         public function receipt(){
+            $model = $this->load('models','Appointment_Data');
+            $patient_id=$_GET['id'];
+            $id=$_SESSION['appointment']['appointmentID'];
+
+            $result = $model->receipt($id,$patient_id);
+            $_POST['details']=$result;
             $this->load('views','appointment_receipt');
         }
         
@@ -99,15 +106,22 @@
 
         public function onpremise(){
             $this->load('views','appointment_onpremise');
+            /*if(isset($_POST['submit'])){
+                $model = $this->load('models','Appointment_Data');
+                $id=$_POST['id'];
+                $name=$_POST['name'];
+                $age=$_POST['age'];
+                $contact=$_POST['contact'];
+                $email=$_POST['email'];
+                $schedule_id=$_POST['schedule_id'];
+
+                $result=$model->make_appointment($id,$name,$age,$contact,$email,$schedule_id);
+            }*/
         }
 
         public function result(){
             $this->load('views','patient_result');
-        }   
-        
-        public function view_details(){
-            $this->load('views','patient_appointment');
-        }     
+        }       
 
         public function doctors(){
             $model = $this->load('models','Appointment_Data');
@@ -128,8 +142,32 @@
 
         public function make_appointment(){
             $model=$this->load('models','Appointment_Data');
-            $nic=$_POST['schedule_id'];
-            echo $nic;
+            $nic=$_POST['nic'];
+            $name=$_POST['name'];
+            $age=$_POST['age'];
+            $contact=$_POST['contact'];
+            $email=$_POST['email'];
+            $address=$_POST['address'];
+            $gender=$_POST['gender'];
+            $date=$_POST['date'];
+            $seatno=$_POST['seatno'];
+            $schedule_id=$_POST['schedule_id'];
+            $doctor_id=$_POST['doctor_id'];
+            
+           $result=$model->make_appointment($nic,$name,$age,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id);
+          /* if($result==TRUE){
+            $subject = 'Account Authentication Email';
+                $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
+                        <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
+                        <h4 style='text-decoration: underline'> Make Appointment</h4>
+                        <p> Your have maked your appointment successfully.</p>";
 
+                $to = $email;
+                $mail = new mail_authentication();
+                $status = $mail->send_mail($subject,$body,$to);
+           }*/
+           header('Content-Type: application/json');
+           echo json_encode($result);
         }
     }

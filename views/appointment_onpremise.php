@@ -83,13 +83,25 @@
                         <input type="tel" name="contact" id="contact" required>
                     </div>
                     <div class="label">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="gender" id="gender" required>
+                    </div>
+                    <div class="label">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="address" id="address" required>
+                    </div>
+                </div>
+                <div id="form-2">
+                    <div class="label">
                         <label for="email">Email</label>
                     </div>
                     <div class="input">
                         <input type="email" name="email" id="email" required>
                     </div>
-                </div>
-                <div id="form-2">
                     <div class="label">
                         <label for="appoint_no">Appointment no</label>
                     </div>
