@@ -1,12 +1,12 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/Patient_Appointment/get_patient_appointmentView',
+        url: '../../index.php/Patient_Appointment/get_doctor_appointmentView',
         data: {},
         type: 'post',
         success:function(data){
             console.log(data);
            var details = data;
-            render_table(details);
+            render_details(details);
         }
     })
 
@@ -18,18 +18,18 @@ $(document).ready(function(){
         date= yyyy + '-' + mm + '-' + dd;
 
         $.ajax({
-            url: '../../index.php/Patient_Appointment/search',
+            url: '../../index.php/Patient_Appointment/doctor_search',
             data: {date:date},
             type: 'post',
             success:function(data){
                 var details = data;
-                render_table(details);
+                render_details(details);
             }
         })
     })
 })
 
-function render_table(data){
+function render_details(data){
 
     function render_header(){
         $("table").empty();

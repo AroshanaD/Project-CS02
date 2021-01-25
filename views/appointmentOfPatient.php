@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="label" style="color:black">
-                        <label><?php echo $_POST['details']['birthday']?></label>
+                        <label><?php echo $_POST['details']['contact_no']?></label>
                     </div>
 
                     <div class="label" style="margin-top:20px">
@@ -76,7 +76,6 @@
                     <div class="label" style="color:black">
                         <label><?php echo $_POST['details']['time']?></label>
                     </div>
-
                 </div>
             </div>
         </form>

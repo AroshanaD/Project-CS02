@@ -1,35 +1,49 @@
 $(document).ready(function(){
     $.ajax({
-        url: '../../index.php/Patient_Appointment/get_patient_appointmentView',
-        data: {},
+        url: '../../index.php/patient_Appointment/category',
+        data: { specialization: "" },
         type: 'post',
-        success:function(data){
-            console.log(data);
-           var details = data;
-            render_table(details);
+        success: function (data) {
+            var details = data;
+            render_details(details);
         }
     })
 
-    $("#search-btn").click(function(){
+    $("#search_spec").change(function () {
+        $.ajax({
+            url: '../../index.php/patient_Appointment/category',
+            data: { specialization: $("#search_spec").val() },
+            type: 'post',
+            success: function (data) {
+
+                var details = data;
+                render_details(details);
+            }
+        })
+    })
+
+    $("#search-btn").click(function () {
+        var name = $("#name").val();
         var date= new Date($("#date").val());
         var dd = String(date.getDate()).padStart(2, '0');
         var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
         var yyyy = date.getFullYear();
         date= yyyy + '-' + mm + '-' + dd;
 
+
         $.ajax({
-            url: '../../index.php/Patient_Appointment/search',
-            data: {date:date},
+            url: '../../index.php/patient_Appointment/recept_search',
+            data: { date:date, name: name},
             type: 'post',
-            success:function(data){
+            success: function (data) {
                 var details = data;
-                render_table(details);
+                render_details(details);
             }
         })
     })
 })
 
-function render_table(data){
+function render_details(data){
 
     function render_header(){
         $("table").empty();
