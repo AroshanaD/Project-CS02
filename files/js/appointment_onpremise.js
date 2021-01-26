@@ -57,13 +57,27 @@ $(document).ready(function () {
         var age=$("#age").val();
         var contact=$("#contact").val();
         var email=$("#email").val();
+        var address=$("#address").val();
+        var gender =$("#gender").val();
         var date=$("#date").val();
+        var seatno =$("#appoint_no").val();
         var schedule_id=details[index].id;
+        var doctor_id= $("#doctor").val();
+
     
         $.ajax({
             url: '../../index.php/appointment/make_appointment',
-            data: { nic:nic,name:name,age:age,contact:contact,email:email,date:date,schedule_id:schedule_id},
+            data: {nic:nic,name:name,age:age, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
             type: 'post',
+            success: function (data) {
+                if(data!=false){
+                    var id=data;
+                    location.href = "../../index.php/appointment/receipt?id=".concat(id) ;
+                }
+                else{
+                    $("#form-message").text("Appointment is not Successfull");
+                }
+            }
         })
     
     })
@@ -87,10 +101,10 @@ $(document).ready(function () {
                     success:function(data){
                         var max=data.max_patient;
                         var status;
-                            if(data.Seat_no==null){
+                            if(data.CurrentSeat_no==null){
                                 status=0; // avaiable and no seat book yet
                             }
-                            else if(data.Seat_no>0 && data.Seat_no<max){
+                            else if(data.CurrentSeat_no>0 && data.CurrentSeat_no<max){
                                 status=1; // available and some of seats are booked
                             }
                             else{
@@ -99,26 +113,29 @@ $(document).ready(function () {
                         if(status==0){
                             $("#form-message").text('seats are available');
                             $("#seat").val(1);
-                            
+                            var scheduleId= details[index].id;
                             for (var i=0;i<doctors.length;i++){
                                 if($("#doctor").val()==doctors[i].id){
                                     $("#appoint_no").val(1);
                                     $("#d_charges").val(doctors[i].fee);
                                     $("#total").val(doctors[i].fee + 250);
+                                    $("schedule_id").val(scheduleId);
                                     break;
                                 }
-                            }        
+                            } 
 
                         }
+
                         else if(status==1){
                             $("#form-message").text('seats are available');
-                            $("#seat").val(data.Seat_no + 1);
-                            
+                            $("#seat").val(data.CurrentSeat_no + 1);
+                            var scheduleId= details[index].id;
                             for (var i=0;i<doctors.length;i++){
                                 if($("#doctor").val()==doctors[i].id){
-                                    $("#appoint_no").val(data.Seat_no + 1);
+                                    $("#appoint_no").val(data.CurrentSeat_no + 1);
                                     $("#d_charges").val(doctors[i].fee);
                                     $("#total").val(doctors[i].fee + 250);
+                                    $("schedule_id").val(scheduleId);
                                     break;
                                 }
                             }        

@@ -17,8 +17,8 @@
 
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
-        <form class="form" method="get" action=<?php echo Router::site_url() . '/Appointment/select_doctor' ?>>
-            <div class="form-container1">
+        <form class="form">
+            <div class="form-container1" style="width:500px">
                 <div id="form-img">
                 </div>
                 <div id="form-1">
@@ -27,53 +27,53 @@
                         <label>Name</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['f_name']." ".$_POST['details']['l_name'] ?></label>
                     </div>
                     <div class="label">
-                        <label>ID</label>
+                        <label>Appointment No</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['Seat_no']?></label>
                     </div>
                     <div class="label">
                         <label>Contact No</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['contact_no']?></label>
                     </div>
 
-                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Doctor Details</div>
+                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left; margin-top:50px">Doctor Details</div>
                     <div class="label">
                         <label>Name</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['doctor_fname']." ".$_POST['details']['doctor_lname'] ?></label>
                     </div>
                     <div class="label">
                         <label>Specialization</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['specialization']?></label>
                     </div>
-
-                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Charges</div>
+                
+                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left; margin-top:50px">Charges</div>
                     <div class="label">
                         <label>Doctor Fee</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['fee']?></label>
                     </div>
                     <div class="label">
                         <label>Tax</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label>250</label>
                     </div>
                     <div class="label">
                         <label>Total Amount</label>
                     </div>
                     <div class="input">
-                        <label>-</label>
+                        <label><?php echo $_POST['details']['fee']+ 250?></label>
                     </div>
                     <input type="submit" value="Save" class="btn">
                     <div id="form-message"></div>

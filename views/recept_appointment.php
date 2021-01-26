@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
-    <script src=<?php echo Router::base_url() . '/files/js/appointment_view.js' ?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/autofill_spec.js' ?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/appointment_receptView.js' ?> type="text/javascript"></script>
 </head>
 
 <body>
@@ -21,13 +22,19 @@
     
             <div class="search">
                 <div class="search-bar">
+                    <select name="specialization" id="search_spec">
+                        <option value="" disabled selected hidden>Select Specialization</option>
+                        <option value="">Any Specialization</option>
+                    </select>
+                </div>
+                <div class="search-bar">
                     <div class="site-search">
-                        <input type="text" id="id" placeholder="Appointment Id" name="id">
+                        <input type="text" id="name" placeholder="patient name" name="name">
                     </div>
                     <!--site-search-->
                     <!--id-->
                     <div class="site-search">
-                        <input type="date/time" id="date" placeholder="Appointment Date" name="date">
+                        <input type="date" id="date" placeholder="Appointment Date" name="date">
                     </div>
                     <!--site-search-->
                     <!--date-->
@@ -41,9 +48,13 @@
             </div>
 
             <div class="table">
-                <table class="table">
+                <table>
 
                 </table>
+                <div class="pagination">
+                    <button class="next-btn" id="previous">Previous</button>
+                    <button class="next-btn" id="next">Next</button>
+                </div>
 
             </div>
 

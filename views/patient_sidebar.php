@@ -46,7 +46,7 @@
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . '/appointment/search_doctor' ?>>Make Appointment</a>
                 <a href=<?php echo Router::site_url() . '/doctor_Schedule/index' ?>>Doctor Schedule</a>
-                <a href=<?php echo Router::site_url() . '/appointment/view_details' ?>>View Appointment</a>
+                <a href=<?php echo Router::site_url() . '/patient_Appointment/patient_appointmentView' ?>>View Appointment</a>
             </div>
         </div>
 
