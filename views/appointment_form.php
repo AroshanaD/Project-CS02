@@ -25,7 +25,7 @@
                         <label for="id">NIC</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="id" value="<?php echo $_SESSION['id'] ?>" required disabled>
+                        <input type="text" name="id" value="<?php echo $_SESSION['NIC'] ?>" required disabled>
                     </div>
                     <div class="label">
                         <label for="name">Name</label>

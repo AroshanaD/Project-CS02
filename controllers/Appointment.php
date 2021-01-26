@@ -1,137 +1,174 @@
-<?php
+<?php 
 
+    class Appointment extends Controllers{
+        public function __construct(){
 
-class Appointment extends Controllers
-{
-    public function __construct()
-    {
-    }
-
-    public function index()
-    {
-        if ($_SESSION['user_cat'] == 'patient') {
-            $this->search_doctor();
         }
-        if ($_SESSION['user_cat'] == 'receptionist') {
-            $this->onpremise();
+
+        public function index(){
+            if($_SESSION['user_cat'] == 'patient'){
+                $this->search_doctor();
+            }
+            if($_SESSION['user_cat'] == 'receptionist'){
+                $this->onpremise();
+            }
         }
-    }
 
-    public function search_doctor()
-    {
-        $_SESSION['appointment'] = [];
-        $this->load('views', 'search_doctor');
-    }
+        public function search_doctor(){
+            $_SESSION['appointment'] = [];
+            $this->load('views','search_doctor');
+        }
 
-    public function select_doctor()
-    {
-        $_SESSION['search']['name'] = $_GET['doctor'];
-        $_SESSION['search']['specialization'] = $_GET['specialization'];
+        public function select_doctor(){
+            $_SESSION['search']['name'] = $_GET['doctor'];
+            $_SESSION['search']['specialization'] = $_GET['specialization'];
+            
+            $this->load('views','select_doctor');
+        }
 
-        $this->load('views', 'select_doctor');
-    }
+        public function available_doctors(){
+            $model = $this->load('models','Appointment_Data');
+            $name = $_SESSION['search']['name'];
+            $specialization = $_SESSION['search']['specialization'];
 
-    public function available_doctors()
-    {
-        $model = $this->load('models', 'Appointment_Data');
-        $name = $_SESSION['search']['name'];
-        $specialization = $_SESSION['search']['specialization'];
+            $result = $model->get_doctors($specialization, $name);
+            $_SESSION['search']['search_doclist'] = $result;
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
 
-        $result = $model->get_doctors($specialization, $name);
-        $_SESSION['search']['search_doclist'] = $result;
-        header('Content-Type: application/json');
-        echo json_encode($result);
-    }
+        public function select_dates(){
+            $doctor = $_GET['doctor'];
+            $id = $_SESSION['search']['search_doclist'][$doctor]['id'];
 
-    public function select_dates()
-    {
-        $doctor = $_GET['doctor'];
-        $id = $_SESSION['search']['search_doclist'][$doctor]['id'];
+            $model = $this->load('models','Appointment_Data');
+            $doctor = $model->doctor_details($id);
 
-        $model = $this->load('models', 'Appointment_Data');
-        $doctor = $model->doctor_details($id);
+            $_SESSION['appointment']['doctor_id'] = $id;
+            $_SESSION['appointment']['doctor_name'] = $doctor['f_name']." ".$doctor['l_name'];
+            $_SESSION['appointment']['doctor_specialization']=$doctor['specialization'];
+            $_SESSION['appointment']['doctor_qualification'] = $doctor['qualification'];
+            $_SESSION['appointment']['doctor_fee'] = $doctor['fee'];
 
-        $_SESSION['appointment']['doctor_id'] = $id;
-        $_SESSION['appointment']['doctor_name'] = $doctor['f_name'] . " " . $doctor['l_name'];
-        $_SESSION['appointment']['doctor_specialization'] = $doctor['specialization'];
-        $_SESSION['appointment']['doctor_qualification'] = $doctor['qualification'];
-        $_SESSION['appointment']['doctor_fee'] = $doctor['fee'];
+            $this->load('views','select_date');
+        }
 
-        $this->load('views', 'select_date');
-    }
+        public function available_dates(){
+            $model = $this->load('models','Appointment_Data');
 
-    public function available_dates()
-    {
-        $model = $this->load('models', 'Appointment_Data');
+            $id = $_SESSION['appointment']['doctor_id'];
+            $result = $model->get_dates($id);
+            $_SESSION['search']['search_datelist'] = $result;
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
 
-        $id = $_SESSION['appointment']['doctor_id'];
-        $result = $model->get_dates($id);
-        $_SESSION['search']['search_datelist'] = $result;
-        header('Content-Type: application/json');
-        echo json_encode($result);
-    }
+        public function doctor_schedule(){
+            $model = $this->load('models','Appointment_Data');
 
-    public function doctor_schedule()
-    {
-        $model = $this->load('models', 'Appointment_Data');
+            $id = $_POST['id'];
+            $result = $model->get_dates($id);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
 
-        $id = $_POST['id'];
-        $result = $model->get_dates($id);
-        header('Content-Type: application/json');
-        echo json_encode($result);
-    }
+        public function available_appointment(){
+            $model = $this->load('models','Appointment_Data');
+            $date=$_POST['date'];
+            $schedule_id=$_POST['scheduleId'];
+            $_SESSION['appointment']['select_date']=$date;
+            $result = $model->available_appoint($date,$schedule_id);
+            $_SESSION['appointment']['appointmentID']=$result['appointment_id'];
+            $_SESSION['appointment']['seat_no']=$result['CurrentSeat_no'];
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+        
+        
+        public function fill_form(){
+            $this->load('views','appointment_form');
+        }
 
-    public function available_appointment()
-    {
-        $model = $this->load('models', 'Appointment_Data');
-        $date = $_POST['date'];
-        $schedule_id = $_POST['scheduleId'];
-        $_SESSION['appointment']['select_date'] = $date;
-        $result = $model->available_appoint($date, $schedule_id);
-        $_SESSION['appointment']['seat_no'] = $result['Seat_no'];
-        header('Content-Type: application/json');
-        echo json_encode($result);
-    }
+        public function receipt(){
+            $model = $this->load('models','Appointment_Data');
+            $patient_id=$_GET['id'];
+            $id=$_SESSION['appointment']['appointmentID'];
 
+            $result = $model->receipt($id,$patient_id);
+            $_POST['details']=$result;
+            $this->load('views','appointment_receipt');
+        }
+        
+        public function view(){
+            $this->load('views','view_test');
+        }
 
-    public function fill_form()
-    {
-        $this->load('views', 'appointment_form');
-    }
+        public function onpremise(){
+            $this->load('views','appointment_onpremise');
+            /*if(isset($_POST['submit'])){
+                $model = $this->load('models','Appointment_Data');
+                $id=$_POST['id'];
+                $name=$_POST['name'];
+                $age=$_POST['age'];
+                $contact=$_POST['contact'];
+                $email=$_POST['email'];
+                $schedule_id=$_POST['schedule_id'];
 
-    public function receipt()
-    {
-        $this->load('views', 'appointment_receipt');
-    }
+                $result=$model->make_appointment($id,$name,$age,$contact,$email,$schedule_id);
+            }*/
+        }
 
-    public function view()
-    {
-        $this->load('views', 'view_test');
-    }
+        public function result(){
+            $this->load('views','patient_result');
+        }       
 
-    public function onpremise()
-    {
-        $this->load('views', 'appointment_onpremise');
-    }
+        public function doctors(){
+            $model = $this->load('models','Appointment_Data');
 
-    public function result()
-    {
-        $this->load('views', 'patient_result');
-    }
+            $specialization = $_POST['specialization'];
+            $result = $model->doctors($specialization);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
 
-    public function view_details()
-    {
-        $this->load('views', 'patient_appointment');
-    }
+        public function appointment_charge(){
+            $model=$this->load('models','Appointment_Data');
+            $id=$_POST['doctor_id'];
+            $result=$model->charges($id);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
 
-    public function doctors()
-    {
-        $model = $this->load('models', 'Appointment_Data');
+        public function make_appointment(){
+            $model=$this->load('models','Appointment_Data');
+            $nic=$_POST['nic'];
+            $name=$_POST['name'];
+            $age=$_POST['age'];
+            $contact=$_POST['contact'];
+            $email=$_POST['email'];
+            $address=$_POST['address'];
+            $gender=$_POST['gender'];
+            $date=$_POST['date'];
+            $seatno=$_POST['seatno'];
+            $schedule_id=$_POST['schedule_id'];
+            $doctor_id=$_POST['doctor_id'];
+            
+           $result=$model->make_appointment($nic,$name,$age,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id);
+          /* if($result==TRUE){
+            $subject = 'Account Authentication Email';
+                $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
+                        <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
+                        <h4 style='text-decoration: underline'> Make Appointment</h4>
+                        <p> Your have maked your appointment successfully.</p>";
 
-        $specialization = $_POST['specialization'];
-        $result = $model->doctors($specialization);
-        header('Content-Type: application/json');
-        echo json_encode($result);
+                $to = $email;
+                $mail = new mail_authentication();
+                $status = $mail->send_mail($subject,$body,$to);
+           }*/
+           header('Content-Type: application/json');
+           echo json_encode($result);
+        }
     }
 
     public function appointment_charge()
@@ -141,13 +178,6 @@ class Appointment extends Controllers
         $result = $model->charges($id);
         header('Content-Type: application/json');
         echo json_encode($result);
-    }
-
-    public function make_appointment()
-    {
-        $model = $this->load('models', 'Appointment_Data');
-        $nic = $_POST['schedule_id'];
-        echo $nic;
     }
 
     public function payment()
@@ -178,4 +208,3 @@ class Appointment extends Controllers
         }
 
     }
-}
