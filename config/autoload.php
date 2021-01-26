@@ -4,7 +4,7 @@
 
         static $autoload_array = array('core/Controllers','core/Models','config/database','config/router',
                                         'helpers/db_helper','helpers/validation_helper','helpers/session_helper','config/authentication',
-                                        'helpers/pwd_generator','helpers/mail_authentication');
+                                        'helpers/pwd_generator','helpers/mail_authentication','vendor/autoload');
 
         public function __construct(){
 
