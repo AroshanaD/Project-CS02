@@ -169,42 +169,33 @@
            header('Content-Type: application/json');
            echo json_encode($result);
         }
-    }
-
-    public function appointment_charge()
-    {
-        $model = $this->load('models', 'Appointment_Data');
-        $id = $_POST['doctor_id'];
-        $result = $model->charges($id);
-        header('Content-Type: application/json');
-        echo json_encode($result);
-    }
-
-    public function payment()
-    {
-        $this->load('views', 'payment_page');
-    }
-
-    public function charge(){
-        \Stripe\Stripe::setApiKey('sk_test_51I74WzJLrx4nTWtKvd0nIEXbqWENdwJNsdWXHHyZHNfZ6XHeHEzrOe1Ueqw4XMBUDrGnG5zKTCHGrf548rqmq8It000fcJN1zl');
-        $name_oncard = $_POST['name'];
-        $token = $_POST['stripeToken'];
-        $email = $_POST['email'];
-        
-        $customer = \Stripe\Customer::create(array(
-            "email" => $email,
-            "source" => $token
-        ));
-
-        $charge = \Stripe\Charge::create(array(
-            "amount" => $_SESSION['appointment']['charge'].'00',
-            "currency" => 'lkr',
-            "description" => 'Appointment Charges',
-            "customer" => $customer->id
-        ));
-        //print_r($charge);
-        if($charge->status == 'succeeded'){
-            $_SESSION['appointment']['payment_id'] = $charge->id;
+    
+        public function payment()
+        {
+            $this->load('views', 'payment_page');
         }
 
+        public function charge(){
+            \Stripe\Stripe::setApiKey('sk_test_51I74WzJLrx4nTWtKvd0nIEXbqWENdwJNsdWXHHyZHNfZ6XHeHEzrOe1Ueqw4XMBUDrGnG5zKTCHGrf548rqmq8It000fcJN1zl');
+            $name_oncard = $_POST['name'];
+            $token = $_POST['stripeToken'];
+            $email = $_POST['email'];
+            
+            $customer = \Stripe\Customer::create(array(
+                "email" => $email,
+                "source" => $token
+            ));
+
+            $charge = \Stripe\Charge::create(array(
+                "amount" => $_SESSION['appointment']['charge'].'00',
+                "currency" => 'lkr',
+                "description" => 'Appointment Charges',
+                "customer" => $customer->id
+            ));
+            //print_r($charge);
+            if($charge->status == 'succeeded'){
+                $_SESSION['appointment']['payment_id'] = $charge->id;
+            }
+
+        }
     }
