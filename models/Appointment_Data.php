@@ -184,6 +184,55 @@
             return $result;
         }
 
+        public function create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id){
+            $connect = new Database();
+            $pdo = $connect->connect();
+
+            if($seat!=1){
+                $query1 = "UPDATE appointment SET CurrentSeat_no=? WHERE Date=?";
+                $stmt = $pdo->prepare($query1);
+                $stmt->execute([$seat,$date]);
+
+                $query2= "SELECT appointment_Id FROM appointment WHERE Date=?";
+                $stmt = $pdo->prepare($query2);
+                $stmt->execute([$date]);
+                $result2 = $stmt->fetch();
+                $appointment_id=$result2['appointment_Id'];
+
+                $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`) VALUES(?,?,?)";
+                $stmt = $pdo->prepare($query3);
+                $status=$stmt->execute([$id,$seat,$appointment_id]);
+
+                if ($status == TRUE) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+            }
+
+            else if($seat ==1){
+                $query1 = "INSERT INTO `appointment`(`Date`,`schedule_id`,`Doctor_Id`,`CurrentSeat_no`) VALUES(?,?,?,?)";
+                $stmt = $pdo->prepare($query1);
+                $stmt->execute([$date,$schedule_id,$doc_id,$seat]);
+
+                $query2= "SELECT appointment_Id FROM appointment WHERE Date=?";
+                $stmt = $pdo->prepare($query2);
+                $stmt->execute([$date]);
+                $result2 = $stmt->fetch();
+                $appointment_id=$result2['appointment_Id'];
+
+                $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`) VALUES(?,?,?)";
+                $stmt = $pdo->prepare($query3);
+                $status=$stmt->execute([$id,$seat,$appointment_id]);
+
+                if ($status == TRUE) {
+                    return TRUE;
+                } else {
+                    return FALSE;
+                }
+            }
+        }
+
     }
 
 ?>

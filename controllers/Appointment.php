@@ -80,6 +80,7 @@
             $result = $model->available_appoint($date,$schedule_id);
             $_SESSION['appointment']['appointmentID']=$result['appointment_id'];
             $_SESSION['appointment']['seat_no']=$result['CurrentSeat_no'];
+            $_SESSION['appointment']['schedule_id'] =$schedule_id;
             header('Content-Type: application/json');
             echo json_encode($result);
         }
@@ -196,6 +197,34 @@
             if($charge->status == 'succeeded'){
                 $_SESSION['appointment']['payment_id'] = $charge->id;
             }
+
+            $this->create_appointment();
+
+        }
+
+        public function create_appointment(){
+            $id=$_SESSION['id'];
+            $doc_id=$_SESSION['appointment']['doctor_id'];
+            $date=$_SESSION['appointment']['select_date'];
+            $seat=$_SESSION['appointment']['seat_no']+1;
+            $schedule_id=$_SESSION['appointment']['schedule_id'] ; 
+
+            $model=$this->load('models','Appointment_Data');
+            $result=$model->create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id);
+
+            if($result== TRUE){
+                $URL = Router::site_url() . "/appointment/patient_receipt?successfull";
+                echo "<script>location.href='$URL'</script>";
+            }
+        }
+
+        public function patient_receipt(){
+            $model=$this->load('models','Appointment_Data');
+            $patient_id=$_SESSION['id'];
+            $id=$_SESSION['appointment']['appointmentID'];
+            $result = $model->receipt($id,$patient_id);
+            $_POST['details']=$result;
+            $this->load('views','appointment_receipt');
 
         }
     }
