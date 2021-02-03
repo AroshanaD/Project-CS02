@@ -6,7 +6,7 @@
         'Register'=>'Any', 'Appointment'=>array('patient','receptionist'),
         'Doctors'=>array('supervisor'), 'Inventory'=>array('pharmacist','supervisor'), 'Statistics'=>array('doctor','supervisor','lab_technician','pharmacist'),
         'Labtest'=>array('lab_technician'), 'Schedules'=>array('supervisor'), 'Staff'=>array('supervisor'), 
-        'PatientTest'=>array('lab_technician'), 'Patient_Appointment'=>array('receptionist','doctor')
+        'PatientTest'=>array('lab_technician'), 'Patient_Appointment'=>array('receptionist','doctor','patient')
         );
 
         public function __construct(){

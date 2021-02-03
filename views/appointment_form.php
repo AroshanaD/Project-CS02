@@ -16,7 +16,7 @@
 
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
-        <form class="form" method='post' action=<?php echo Router::site_url() . '/appointment/receipt' ?>>
+        <form class="form" method='post' action=<?php echo Router::site_url() . '/appointment/payment' ?>>
             <div class="form-container">
                 <div id="form-img">
                 </div>
@@ -25,7 +25,7 @@
                         <label for="id">NIC</label>
                     </div>
                     <div class="input">
-                        <input type="text" name="id" value="<?php echo $_SESSION['id'] ?>" required disabled>
+                        <input type="text" name="id" value="<?php echo $_SESSION['NIC'] ?>" required disabled>
                     </div>
                     <div class="label">
                         <label for="name">Name</label>
@@ -51,15 +51,6 @@
                     </div>
                     <div class="input">
                         <input type="email" name="email" value="<?php echo $_SESSION['email'] ?>" required disabled>
-                    </div>
-                    <div class="label">
-                        <label for="payment">Payment Method</label>
-                    </div>
-                    <div class="radio-btn">
-                        <label for="method1">Method 1</label>
-                        <input type="radio" id="method1" name="method" value="method1">
-                        <label for="method2">Method 2</label>
-                        <input type="radio" id="method2" name="method" value="method2">
                     </div>
                 </div>
                 <div id="form-2">

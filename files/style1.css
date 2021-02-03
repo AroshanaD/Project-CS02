@@ -23,6 +23,8 @@
     --btn-color: #5e60ce;
     --border-line: 1px black solid;
     --form-title-color: rgb(45, 0, 128);
+    --pcolor:rgb(0, 14, 61);
+    --scolor:rgba(0, 217, 255, 0.699);
 }
 
 body {
@@ -1208,4 +1210,504 @@ section {
 .Dchart {
     width: 100%;
     height: 260px;
+}
+/**
+ * The CSS shown here will not be introduced in the Quickstart guide, but shows
+ * how you can use CSS to style your Element's container.
+ */
+
+.StripeElement {
+    box-sizing: border-box;
+    height: 40px;
+    padding: 10px 12px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    background-color: white;
+    box-shadow: 0 1px 3px 0 #e6ebf1;
+    -webkit-transition: box-shadow 150ms ease;
+    transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+    box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+    border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+    background-color: #fefde5 !important;
+}
+
+#payment-btn {
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    text-decoration: none;
+    color: #fff;
+    background: #32325d;
+    white-space: nowrap;
+    display: inline-block;
+    height: 40px;
+    line-height: 40px;
+    padding: 0 14px;
+    box-shadow: 0 4px 6px rgba(50, 50, 93, .11), 0 1px 3px rgba(0, 0, 0, .08);
+    border-radius: 4px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.025em;
+    text-decoration: none;
+    margin-top: 28px;
+}
+
+#payment-btn:hover {
+    box-shadow: 0 7px 14px rgba(50, 50, 93, .10), 0 3px 6px rgba(0, 0, 0, .08);
+    background-color: #43458b;
+}
+
+/** stat css **/
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700);
+
+@keyframes bake-pie {
+  from {
+    transform: rotate(0deg) translate3d(0,0,0);
+  }
+}
+
+:root{
+  --pcolor:rgb(0, 14, 61);
+  --scolor:rgba(0, 217, 255, 0.699);
+}
+
+.body {
+  font-family: "Open Sans", Arial;
+  background: rgb(255, 255, 255);
+  max-width: 100%;
+  
+}
+.main {
+
+padding-top: 30px;
+margin-left: 100px;
+
+}
+section {
+  margin-top: 30px;
+}
+.pieID {
+  display: inline-block;
+  vertical-align: top;
+}
+.pie {
+  height: 200px;
+  width: 200px;
+  position: relative;
+  margin: 0 30px 30px 0;
+}
+.pie::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  background: #EEE;
+  border-radius: 50%;
+  top: 50px;
+  left: 50px;
+}
+.pie::after {
+  content: "";
+  display: block;
+  width: 120px;
+  height: 2px;
+  background: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  box-shadow: 0 0 3px 4px rgba(0,0,0,0.1);
+  margin: 220px auto;
+  
+}
+.slice {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  clip: rect(0px, 200px, 200px, 100px);
+  animation: bake-pie 1s;
+}
+.slice span {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  clip: rect(0px, 200px, 200px, 100px);
+}
+.legend {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background: #FFF;
+  padding: 15px;
+  font-size: 13px;
+  box-shadow: 1px 1px 0 #DDD,
+              2px 2px 0 #BBB;
+}
+.legend li {
+  width: 110px;
+  height: 1.25em;
+  margin-bottom: 0.7em;
+  padding-left: 0.5em;
+  border-left: 1.25em solid black;
+}
+.legend em {
+  font-style: normal;
+}
+.legend span {
+  float: right;
+}
+
+
+.divcon{
+	box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.10), 0 10px 20px 0 rgba(0, 0, 0, 0.10);
+  }
+
+.navitop{
+ 
+	padding-top: 50px;
+	width: 100%;
+	height: 120px;
+  background-color:rgb(0, 14, 61) ;
+  position: sticky;
+  top: 0%;
+  z-index: 2;
+
+ 
+}
+
+ .navibar{
+  z-index: 3;
+	margin-top: -120px;
+	color: rgb(255, 255, 255);
+	background-color: var(--pcolor);
+  width:250px;
+  position: sticky;
+  top: 0%;
+  height: 720px;
+
+ }
+
+ .logo1{
+
+	width:200px;
+	margin-top: 35px;
+	margin-left: 15px;
+ }
+
+.opt{
+	margin-top: 40px;
+	text-align: center;
+}
+
+.profdiv{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  margin-top: 30.5px; 
+	background-color:var(--scolor);
+	height: 85px; 
+}
+.p1{
+  margin-left: 15px;
+  margin-top: 15px;
+}
+.p2{
+  margin-top: 50px;
+  margin-left: -43px;
+}
+.p3{
+  margin-left: -60px;
+  margin-top: 50px;
+}
+
+.hylt{
+	margin-right: 15px;
+	margin-left: 10px;
+	padding-top: 8px;
+	height: 82px;
+	background-color: rgba(247, 247, 247, 0.301);
+
+}
+
+table {
+  color: #000000;
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+  }
+  
+  td, th {
+	
+	text-align: left;
+	padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+	background-color: #d1d1d18c;
+  }
+  
+
+  .whtl1{
+    width:3px; 
+    margin-top: -30px; 
+    margin-left: 250px; 
+    height: 80px; 
+    background-color:rgb(255, 255, 255);
+  }
+  
+  .whtl2{
+    width: 5px; 
+    height: 82px; 
+    margin-left: 1px; 
+    margin-top: -8px; 
+    background-color: rgb(255, 255, 255);
+  }
+
+  .hyicon{
+    margin-left: 85px;
+    
+  }
+
+  .path{
+
+
+    color: cornsilk;
+    font-size: 25px;
+    margin-top: -10px; 
+    margin-left: 20px;
+  }
+
+  .searchb{
+
+    width:700px; 
+    margin-left: 100px; 
+    height: 50px; 
+    margin-top: -15px; 
+    border-radius: 10px; 
+    border-style: none;
+
+  }
+
+  .serachicon{
+    margin-left: 30px;
+     color: rgb(255, 255, 255);
+  }
+
+  [class*= "bellicon"]{
+    color: rgb(255, 255, 255);
+    
+  }
+
+  .bellicon-1{
+     margin-left: 90px;   
+  }
+
+  .bellicon-2{
+    margin-top: 5px;
+    margin-left: 940px;   
+ }
+
+  .notdiv{
+    margin-top: -20px;
+    margin-left: -13px;
+  }
+
+  .notimg{
+  width:30px; 
+  height:30px;
+  }
+
+  [class*= form1]{
+
+    color: #000000;
+    padding-left: 30px; 
+    padding-right: 30px;
+    background-color: rgb(255, 255, 255);
+    width: 1267px; 
+    margin-left: 252px;
+   
+  }
+
+  .form1-1{
+    margin-top: -550px; 
+  
+    
+  }
+
+  .form1-2{
+    margin-top: -570px; 
+    
+  
+  }
+
+  .form1-3{
+    margin-top: -550px; 
+
+  }
+
+  .iconcol{
+    color: rgb(255, 255, 255);
+  }
+  
+ 
+ .blueicon{
+  color: var(--pcolor);
+  margin-left: 10px;
+   margin-top: 10px;
+ }
+
+.btnpos{
+  margin-left: 1010px;
+  margin-top: 10px;
+}
+ 
+
+ .div3{
+   margin-left: 15px;
+ }
+
+
+ [class*=addbt]{
+
+    background-color: var(--pcolor); 
+    color: white;
+    height:40px; 
+    border: none;
+    border-radius: 5px;
+    background-origin: padding-box;
+    border-radius: 5px;
+ }
+ .addbt-1{
+  width: 300px;
+
+ }
+ .addbt-2{
+  width: 200px;
+  
+ }
+
+
+ .table1{
+   margin-left: 25px;
+   margin-top: 30px;
+   width: 1120px;
+ }
+
+ .inputdivs{
+
+  width:30%;
+  margin-left: 40px;
+ }
+
+ .tableh{
+  color: rgba(0, 0, 0, 0.986);
+
+ }
+ .tabler{
+  color: var(--pcolor);
+ }
+
+ [class*= "tbicon"]{
+
+  margin-left: 25px; 
+  margin-top: px;
+ }
+
+ .tbicon-1{
+  color:  rgb(6, 1, 73); 
+ }
+ .tbicon-2{
+  color:  rgb(211, 17, 3); 
+ }
+ .tbicon-3{
+  color:  rgb(6, 1, 73); 
+ }
+
+ .grpdiv{
+	padding-top:20px;
+	padding-left: 50px;
+	margin-top: 60px;
+	width:40%;
+	height:340px;
+	margin-left: 60px;
+  }
+  
+ .grpdiv2{
+	padding-top:20px;
+	padding-left: 20px;
+	margin-top: 60px;
+	width:69.5%;
+	height:500px;
+	margin-left: 47px;
+	margin-bottom: 60px;
+ } 
+
+ [class*=grpdiv-inner]{
+  margin-top: 30px; 
+  margin-left: 20px; 
+  background-color: rgb(255, 255, 255); 
+  height: 85%;
+  padding-top: 20px;
+  
+  
+
+ }
+
+.grpdiv-inner-1{
+  margin-right: 20px;
+  width:15%;
+  
+ }
+
+.grpdiv-inner-2{
+  text-align: center;
+  width:38%;
+}
+
+.grpdiv-inner-3{
+  width:77.5%;
+  text-align: center;
+}
+
+ .grpdiv-outer{
+   
+  background-color:rgb(255, 255, 255);
+  width: 100%; 
+  height:400px;
+
+ }
+
+ .Dchart{
+  width: 100%; height: 260px;
+ }
+
+.input-label{
+  font-weight: bold;
+  
+}
+
+#pay_name{
+    font-family: "Helvetica, sans-serif";
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+    width: 100%; 
+    margin-top:20px; 
+    margin-bottom:20px; 
+    outline: none;
 }
