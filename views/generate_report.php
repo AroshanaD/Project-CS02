@@ -32,7 +32,7 @@
                             </select>
                         </div>
                         <div class="label">
-                            <label for="start_date">Since</label>
+                            <label for="start_date">From</label>
                         </div>
                         <div class="input" id="id_f">
                             <input type="date" name="start_date" id="start_date"  required>

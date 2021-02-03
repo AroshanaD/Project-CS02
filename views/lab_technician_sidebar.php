@@ -57,6 +57,12 @@
                 <a href=<?php echo Router::site_url()."/labtest/view" ?>>View Test</a>
             </div>
         </div>
-
+        <div class="dropdown">
+            <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
+            <div class="dropdown-content">
+                <a href=<?php echo Router::site_url()."/statistics/lab" ?>>Lab Stat</a>
+                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
+            </div>
+        </div>
                 
     </div>

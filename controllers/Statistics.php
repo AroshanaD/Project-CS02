@@ -6,20 +6,16 @@
 
         }
 
-        public function index(){
-            $this->weekly();
+        public function appointment(){
+            $this->load('views','appointment_stat');
         }
 
-        public function weekly(){
-            $this->load('views','weekly_stat');
+        public function pharmacy(){
+            $this->load('views','pharmacy_stat');
         }
 
-        public function monthly(){
-            $this->load('views','monthly_stat');
-        }
-
-        public function yearly(){
-            $this->load('views','yearly_stat');
+        public function lab(){
+            $this->load('views','lab_stat');
         }
 
         public function report(){
