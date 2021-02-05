@@ -13,7 +13,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
         <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>
     </head>
-    <body style="background: #ae92ee;">
+    <body style="background: #8c8ef1;">
     <div class="sec">
        <div class="nav">
             <img src="<?php echo Router::base_url() . '/files/icons/Logo.png' ?>" style="float:left; margin-left:60px;margin-top:10px">
