@@ -152,4 +152,32 @@ class PatientTest_Manage extends Models
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function PatientResult($id){
+        $connect = new Database();
+        $pdo = $connect->connect();
+
+        $query = "SELECT * FROM lab_test WHERE p_id=? ";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
+
+    public function patient_search($id,$date,$availability){
+        $connect = new Database;
+        $pdo = $connect->connect();
+
+        if ($availability != 2) {
+            $query = "SELECT * FROM lab_test WHERE date = ? AND availability = ? AND p_id =? ORDER BY date DESC";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$date, $availability,$id]);
+        } else {
+            $query = "SELECT * FROM lab_test date = ? AND p_id =? ORDER BY date DESC";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$date,$id]);
+        }
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }
