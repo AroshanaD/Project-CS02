@@ -13,26 +13,45 @@
 
 <body>
 
-    <div class="container-2">
+    <div class="container-11">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
 
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
-        <div class="form">
+
+        <div class="search">
+
+            <div class="search-bar">
+                <div class="site-search">
+                    <input type="Month" class="form-control"><br>
+                </div>
+                <div class="site-search">
+                    <button id="search-btn" type="submit">Generate</button>
+                </div>
+                <!--site-search-->
+                <!--btn-->
+
+            </div>
+        </div>
+
+        <div class="stat">
             <div class="stat-div">
 
                 <div class="d-flex grpdiv-outer">
+                    <div class="stat-card-div">
 
-                    <div class="grpdiv-inner-1">
-                        <label class="input-label"> From</label><br>
-                        <input type="date" style="width: 180px;" class="form-control"><br>
+                        <div class="stat-card" style="background-color: #5e60ce;">
+                            <p>Total Appointments</p>
+                            <p style="font-size: 28px;">9876</p>
+                        </div>
+                        <div class="stat-card" style="background-color: #CF6AFF;">
+                            <p>Online Appointments</p>
+                            <p style="font-size: 28px;">3452</p>
+                        </div>
 
-                        <label class="input-label"> To</label><br>
-                        <input type="date" style="width: 180px;" class="form-control"><br>
                     </div>
-
                     <div class="grpdiv-inner-2 divcon">
 
                         <p>Platform Based Analysis</p>
@@ -64,13 +83,6 @@
                 </div>
 
                 <div class="d-flex grpdiv-outer">
-
-                    <div class="grpdiv-inner-1 ">
-
-                        <label class="input-label"> Month</label><br>
-                        <input type="Month" class="form-control"><br>
-
-                    </div>
 
                     <div class="grpdiv-inner-3 divcon" style="width: -webkit-fill-available;">
                         <p>Monthly Appointments</p>
