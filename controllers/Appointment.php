@@ -119,9 +119,7 @@
             }*/
         }
 
-        public function result(){
-            $this->load('views','patient_result');
-        }       
+      
 
         public function doctors(){
             $model = $this->load('models','Appointment_Data');

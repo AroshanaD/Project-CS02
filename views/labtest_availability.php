@@ -1,51 +1,49 @@
+<!DOCTYPE html>
+<html>
 
-    <div style="background:white;">
-        <div class="container">
-                <div class="contact-box">
-                <div class="left" style="background-image: url(<?php echo Router::base_url().'/files/icons/lab_test.svg' ?>)"></div>
-                    <form method = "POST">
-                       <div class="right">
-                           <div class="title">Create Lab Test</div>
-                            <h1>Patient Details</h1>
-                            <div class="label">
-                                <label for="patient_id">Patient Id</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="patient_id" value="1" disabled required>
-                            </div>
-                            <div class="label">
-                                <label for="full_name">Patient name</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="full_name" value="Nimal perera " disabled required>
-                            </div>
-                            <div class="label">
-                                <label for="test">Test name</label>
-                            </div>
-                            <div class="input">
-                                <input type="text" name="test" value="ECG" disabled required>
-                            </div>
-                            <div class="label">
-                                <label for="date">Date</label>
-                            </div>
-                            <div class="input">
-                                <input type="date" name="date" value="2020-11-29" disabled required>
-                            </div>
-                            <div class="label">
-                                <label for="availability">Availability</label>
-                            </div>
-                            <div class="input">
-                                <select name="test1" required>
-                                    <option value="unavailable">Unavailable</option>
-                                    <option value="available">Available</option>
-                                </select>
-                            </div>
-                            <div><input type="submit" value="mark Availability" name="available" class="btn"></div>
-                        </div >
-                    </form>
-                </div>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script type="text/javascript" src="/project-cs02/files/js/test_availability.js"></script>
+</head>
+
+<body>
+    <div class="container-7">
+        <div class="nav">
+            <?php include 'header.php'; ?>
+        </div>
+
+        <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
+        include $path; ?>
+
+        <form class="details" method="post">
+            <div class="details-div1">
+                <div class="details-title">Patient Details</div>
+                <div class="details-field">Name</div><input class="details-field" id="name" value="<?php echo $_POST['testofpatient']['patient_name'] ?>" disabled>
+                <div class="details-field">Age</div><input class="details-field" id="age" value="<?php echo $_POST['testofpatient']['patient_age'] ?>" disabled>
+                <div class="details-field">Gender</div><input class="details-field" id="gender" value="<?php echo $_POST['testofpatient']['patient_gender'] ?>" disabled>
+                <div class="details-field">Contact</div><input class="details-field" id="contact" value="<?php echo $_POST['testofpatient']['patient_contact'] ?>" disabled>
             </div>
-        </div> 
-    </body>
+            <div class="details-div2">
+                <div class="details-title">Lab Test Details</div>
+                
+                <div class="details-field">Date</div><input class="details-field" id="date" value="<?php echo $_POST['testofpatient']['date'] ?>" disabled>
+                <div class="details-field">Time</div><input class="details-field" id="time" value="<?php echo $_POST['testofpatient']['time'] ?>" disabled>
+                <div class="details-field">Cost</div><input class="details-field" id="cost" value="<?php echo $_POST['testofpatient']['cost'] ?>" disabled>
+                <div class="details-field">Available</div>
+                <input class="details-field" value="<?php $available = $_POST['testofpatient']['availability'] == 0 ? "No" : "Yes";
+                                                    echo $available; ?>" disabled>
+                <div class="details-field"></div><input type="hidden" class="details-field" id="t_id" value="<?php echo $_GET['id'] ?>" disabled>
+            </div>
+        </form>
+
+        <div class="test-details">
+        </div>
+
+        <div class="footer">All rights are reserved</div>
+    </div>
+</body>
 
 </html>

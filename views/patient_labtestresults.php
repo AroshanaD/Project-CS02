@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
-    <script src=<?php echo Router::base_url() . '/files/js/patient_test.js' ?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/labtest_patientView.js' ?> type="text/javascript"></script>
 </head>
 
 <body>
@@ -17,15 +17,8 @@
 
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
-
         <div class="search">
             <div class="search-bar">
-                <div class="site-search">
-                    <input type="text" placeholder="Test Id" name="id" id="id">
-                </div>
-                <div class="site-search">
-                    <input type="text" placeholder="Patient Name" name="testname" id="testname">
-                </div>
                 <div class="site-search">
                     <input type="Date" placeholder="Test Date" name="date" id="date">
                 </div>

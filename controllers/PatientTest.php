@@ -89,10 +89,6 @@
             echo json_encode($result);
         }
 
-        public function View_available(){
-            $this->load('views','labtest_availability');
-        }
-
         public function search_user(){
             $email = $_POST['email'];
             $model = $this->load('models','PatientTest_Manage');
@@ -101,5 +97,34 @@
             echo json_encode($result);
         }
 
+        public function patientResult_View(){
+            $this->load('views','patient_labtestresults');
+        }
+
+        public function getpatient_Result(){
+            $id =$_SESSION['id'];
+            $model =$this->load('models','PatientTest_Manage');
+            $result = $model->PatientResult($id);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
+        public function patient_Searchresult(){
+            $model = $this->load('models','PatientTest_Manage');
+            $id = $_SESSION['id'];
+            $date = $_POST['date'];
+            $availability = $_POST['availability'];
+            $result = $model->patient_search($id,$date,$availability);
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
+
+        public function View_available(){
+            $id = $_GET['id'];
+            $model= $this->load('models','PatientTest_Manage');
+            $result= $model->displayById($id);
+            $_POST['testofpatient']=$result;
+            $this->load('views','labtest_availability');
+        }
     }
 ?>
