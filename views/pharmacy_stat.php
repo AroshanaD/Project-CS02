@@ -13,51 +13,78 @@
 
 <body>
 
-    <div class="container-2">
+    <div class="container-11">
         <div class="nav">
             <?php include 'header.php'; ?>
         </div>
 
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
-        <div class="form">
+
+        <div class="search">
+
+            <div class="search-bar">
+                <div class="site-search">
+                    <input type="Month" class="form-control"><br>
+                </div>
+                <div class="site-search">
+                    <button id="search-btn" type="submit">Generate</button>
+                </div>
+                <!--site-search-->
+                <!--btn-->
+
+            </div>
+        </div>
+
+        <div class="stat">
             <div class="stat-div">
 
                 <div class="d-flex grpdiv-outer">
+                    <div class="stat-card-div">
 
-                    <div class="grpdiv-inner-1">
-                        <label class="input-label"> From</label><br>
-                        <input type="date" style="width: 180px;" class="form-control"><br>
+                        <div class="stat-card" style="background-color: #0077b6;">
+                            <p>Total Sales</p>
+                            <p style="font-size: 28px;">9876</p>
+                        </div>
+                        <div class="stat-card" style="background-color: #CF6AFF;">
+                            <p>Total income</p>
+                            <p style="font-size: 28px;">3452</p>
+                        </div>
+                        
 
-                        <label class="input-label"> To</label><br>
-                        <input type="date" style="width: 180px;" class="form-control"><br>
+                    </div>
+                    <div class="stat-card-div">
+
+
+                        <div class="stat-card" style="background-color: #5e60ce;">
+                            <p>Most Sales in a day</p>
+                            <p style="font-size: 28px;">Panadol</p>
+                        </div>
+                        <div class="stat-card" style="background-color: #CF6AFF;">
+                            <p>No of vendors</p>
+                            <p style="font-size: 28px;">30</p>
+                        </div>
+
                     </div>
 
                     <div class="grpdiv-inner-2 divcon">
 
-                        <p>Platform Based Analysis</p>
+                        <p>Drugs Based Analysis</p>
                         <section>
                             <div class="pieID pie">
 
                             </div>
                             <ul class="pieID legend">
                                 <li>
-                                    <em>Online</em>
-                                    <span id="online">1000</span>
+                                    <em>Pendol</em>
+                                    <span id="Pendol">800</span>
                                 </li>
                                 <li>
-                                    <em>At Hospital</em>
-                                    <span id="hospital">1000</span>
+                                    <em>Amoxicillin</em>
+                                    <span id="Amoxicillin">1990</span>
                                 </li>
                             </ul>
                         </section>
-
-                    </div>
-
-                    <div class="grpdiv-inner-2 divcon">
-                        <p>Gender Based Analysis</p>
-
-                        <div id="columnchart_values"></div>
 
                     </div>
 
@@ -65,15 +92,8 @@
 
                 <div class="d-flex grpdiv-outer">
 
-                    <div class="grpdiv-inner-1 ">
-
-                        <label class="input-label"> Month</label><br>
-                        <input type="Month" class="form-control"><br>
-
-                    </div>
-
                     <div class="grpdiv-inner-3 divcon" style="width: -webkit-fill-available;">
-                        <p>Monthly Appointments</p>
+                        <p>Monthly Sales</p>
 
                         <div id="chart_div1" class="Dchart"></div>
 
