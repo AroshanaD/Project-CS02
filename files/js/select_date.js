@@ -52,13 +52,14 @@ $(document).ready(function(){
                             location.href = "../../index.php/appointment/fill_form";
                         }
                         else{
-                            $("#form-message").text('no of seats are not available. please select another date.');
+                            $("#form-message").text('! Seats are not available. please select another date.');
                         }
                     }
                 })
             }
             else{
-                $("#form-message").text("doctor doesn't have a schedule on " + day);
+                $("#form-message").text("! Not available. please select another date.");
+
             }
 
     })

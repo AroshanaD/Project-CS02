@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
     <script src=<?php echo Router::base_url() . '/files/js/autofill_spec.js' ?> type="text/javascript"></script>
     <script src=<?php echo Router::base_url() . '/files/js/select_date.js' ?> type="text/javascript"></script>
@@ -61,11 +63,11 @@
         include $path; ?>
         <div class="form">
             <form id="selectdate-form">
-                <div class="title" style="width:100%; text-align: center">
+                <div class="title" style="width:100%; text-align: center;font-size:17px">
                     <label for="date">Appointment Date</label>
                 </div>
                 <div class="form-container1">
-                    <div id="form-img" style="background-image: url(<?php echo Router::base_url() . '/files/icons/calendar.svg' ?>); width: 250px; height: 200px; background-size:cover"></div>
+                    <div id="form-img" style="background-image: url(<?php echo Router::base_url() . '/files/icons/calendar.svg' ?>); width: 200px; height: 150px; background-size:cover"></div>
                     <div id="form-1">
                         <div class="input">
                             <input type="date" name="date" id="date" required>
@@ -78,7 +80,7 @@
         </div>
         <div class="details">
             <div class="details-div1">
-                <div class="title">Doctor Details</div>
+                <div class="title" style="font-size:17px">Doctor Details</div>
                 <div class="field" style="width:100%">Name</div>
                 <div class="field" style="width:100%">Specialization</div>
                 <div class="field" style="width:100%">Qualification</div>
@@ -102,7 +104,7 @@
             </div>
         </div>
         <div class="table" style="background-color: white; height:initial; align-items: center">
-            <div class="title" style="width:100%; text-align:center">Week Schedule</div>
+            <div class="title" style="width:100%; text-align:center;font-size:17px">Week Schedule</div>
             <table style="width:fit-content; box-shadow: none">
 
             </table>
