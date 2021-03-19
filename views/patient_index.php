@@ -40,7 +40,7 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
             </div>
             <div class="taskboard">
-              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">Appointments
+              <a href=<?php echo Router::site_url().'/patient_Appointment/patient_appointmentView'?> class="task-large">Appointments
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   your appointment details<br>
@@ -52,7 +52,7 @@
                   scheduled appointment details<br>
                 </p>
               </a>
-              <a href=<?php echo Router::site_url().'/appointment/result' ?> class="task-large">Lab tests
+              <a href=<?php echo Router::site_url().'/patientTest/patientResult_View' ?> class="task-large">Lab tests
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   your lab test <br>
