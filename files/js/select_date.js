@@ -39,10 +39,10 @@ $(document).ready(function(){
                     success:function(data){
                         var max=data.max_patient;
                         var status;
-                            if(data.Seat_no==null){
+                            if(data.CurrentSeat_no==null){
                                 status=0; // avaiable and no seat book yet
                             }
-                            else if(data.Seat_no>0 && data.Seat_no<max){
+                            else if(data.CurrentSeat_no>0 && data.CurrentSeat_no<max){
                                 status=1; // available and some of seats are booked
                             }
                             else{
@@ -58,7 +58,7 @@ $(document).ready(function(){
                 })
             }
             else{
-                $("#form-message").text("! Not available. please select another date.");
+                $("#form-message").text("Not available");
 
             }
 
