@@ -153,7 +153,7 @@
             $doctor_id=$_POST['doctor_id'];
             
            $result=$model->make_appointment($nic,$name,$age,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id);
-          /* if($result==TRUE){
+          /* if($result!=FALSE){
             $subject = 'Account Authentication Email';
                 $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>

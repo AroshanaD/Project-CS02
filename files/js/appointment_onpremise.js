@@ -22,8 +22,9 @@ $(document).ready(function () {
     $("#search_spec").change(function () {
         var specialization_id = $("#search_spec").val();
         $("#doctor").empty();
+        $("#form-message").empty();
         $("#date").val("");
-        $("#seat").val("");
+        $("#seat").val(""); 
         $("#doctor").append(`<option value=${""} placeholder=${"Select Doctor"}</option>`);
         for (var i = 0; i < doctors.length; i++) {
             //console.log(doctors[i].specialization_id);
@@ -37,6 +38,7 @@ $(document).ready(function () {
         var doctor_id = $("#doctor").val();
         $("#date").val("");
         $("#seat").val("");
+        $("#form-message").empty();
         $.ajax({
             url: '../../index.php/appointment/doctor_schedule',
             data: { id: doctor_id },
@@ -127,7 +129,7 @@ $(document).ready(function () {
                         }
 
                         else if(status==1){
-                            $("#form-message").text('seats are available');
+                            $("#form-message").text('seats are available!');
                             $("#seat").val(data.CurrentSeat_no + 1);
                             var scheduleId= details[index].id;
                             for (var i=0;i<doctors.length;i++){
@@ -143,21 +145,23 @@ $(document).ready(function () {
                         }
 
                         else{
-                            $("#form-message").text('no of seats are not available. please select another date.');
+                            $("#form-message").text('!seats are not available. please select another date.');
                             $("#seat").val("reach maximum");
                             $("#appoint_no").val("");
                             $("#d_charges").val("");
                             $("#total").val("");
+                            $("#date").val("");
                         }
                     }
                 });
             }
             else{
-                $("#form-message").text("doctor doesn't have a schedule on " + day);
+                $("#form-message").text("!No schedule available schedule on " + day);
                 $("#seat").val("");
                 $("#appoint_no").val("");
                 $("#d_charges").val("");
                 $("#total").val("");
+                $("#date").val("");
             }
     })
 })

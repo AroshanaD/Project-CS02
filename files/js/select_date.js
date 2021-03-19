@@ -39,10 +39,10 @@ $(document).ready(function(){
                     success:function(data){
                         var max=data.max_patient;
                         var status;
-                            if(data.Seat_no==null){
+                            if(data.CurrentSeat_no==null){
                                 status=0; // avaiable and no seat book yet
                             }
-                            else if(data.Seat_no>0 && data.Seat_no<max){
+                            else if(data.CurrentSeat_no>0 && data.CurrentSeat_no<max){
                                 status=1; // available and some of seats are booked
                             }
                             else{
@@ -52,13 +52,14 @@ $(document).ready(function(){
                             location.href = "../../index.php/appointment/fill_form";
                         }
                         else{
-                            $("#form-message").text('no of seats are not available. please select another date.');
+                            $("#form-message").text('! Seats are not available. please select another date.');
                         }
                     }
                 })
             }
             else{
-                $("#form-message").text("doctor doesn't have a schedule on " + day);
+                $("#form-message").text("Not available");
+
             }
 
     })
