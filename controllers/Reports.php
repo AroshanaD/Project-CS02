@@ -19,7 +19,8 @@
 
         public function appointment_overview()
         {
-            
+            $model = $this->load('models','report_Data');
+            $data = $model->appointment_data();
         }
     }
 

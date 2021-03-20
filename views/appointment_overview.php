@@ -23,7 +23,7 @@
                 <div class="heading">
                     Appointment Overview Report </br></br>
                     <p style="font-size: 16px; font-weight: normal; text-align: left">
-                        <?php echo $_POST['from_date']; ?> - <?php echo $_POST['to_date']; ?> </p>
+                        <?php echo $_POST['from_date']; ?> --- <?php echo $_POST['to_date']; ?> </p>
                 </div>
                 <div class="content">
                     <table class="report-tb" id="app">
