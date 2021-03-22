@@ -115,7 +115,23 @@
             return $result;
         }
 
-        public function make_appointment($nic,$name,$age,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id){
+        public function serach_patient($contact){
+            $connect = new Database();
+            $pdo = $connect->connect();
+
+            $query = "SELECT id, f_name, l_name, birthday, address, gender,email FROM patient WHERE contact_no=?";
+            $stmt= $pdo->prepare($query);
+            $stmt->execute([$contact]);
+            $result = $stmt->fetch();
+            if($result!=NULL){
+                return $result;
+            }
+            else{
+                return false;
+            }
+        }
+
+        public function make_appointment($id,$fname,$lname,$birthday,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id){
             try{   
                 $connect = new Database();
                 $pdo = $connect->connect();
@@ -125,51 +141,47 @@
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
 
-                $patientid;
+                /*$patientid;
                 $query = "SELECT id FROM patient WHERE email=?";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute([$email]);
-                $result = $stmt->fetch();
+                $result = $stmt->fetch();*/
                 
 
-                if($result==null){
-                    $sperate_name = explode(" ", $name);
-                    $fname =$sperate_name[0];
-                    $lname =$sperate_name[1];
-
-                    $query1 = "INSERT INTO `patient`(`f_name`,`l_name`,`gender`,`address`,`contact_no`,`email`,`NIC`) VALUES(?,?,?,?,?,?,?)";
+                if($id==null){
+                    $query1 = "INSERT INTO `patient`(`f_name`,`l_name`,`birthday`,`gender`,`address`,`contact_no`,`email`,`online`) VALUES(?,?,?,?,?,?,?,0)";
                     $stmt = $pdo->prepare($query1);
-                    $stmt->execute([$fname,$lname,$gender,$address,$contact,$email,$nic]);
+                    $stmt->execute([$fname,$lname,$birthday,$gender,$address,$contact,$email]);
 
-                    $query = "SELECT id FROM patient WHERE email=?";
+                    $query = "SELECT id FROM patient WHERE contact_no=?";
                     $stmt = $pdo->prepare($query);
-                    $stmt->execute([$email]);
+                    $stmt->execute([$contact]);
                     $result = $stmt->fetch();
-                    $patientid = $result['id'];
+                    $id = $result['id'];
 
                 }
-                else{
+                /*else{
                     $patientid = $result['id'];
-                }
+                }*/
                 
 
                 if($seatno!=1){
-                    $query1 = "UPDATE appointment SET CurrentSeat_no=? WHERE Date=?";
+                    $query1 = "UPDATE appointment SET CurrentSeat_no=? WHERE Date=? AND schedule_id=? AND Doctor_Id=? ";
                     $stmt = $pdo->prepare($query1);
-                    $stmt->execute([$seatno,$date]);
+                    $stmt->execute([$seatno,$date,$schedule_id,$doctor_id]);
 
-                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=?";
+                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=? AND schedule_id=? AND Doctor_Id=?";
                     $stmt = $pdo->prepare($query2);
-                    $stmt->execute([$date]);
+                    $stmt->execute([$date,$schedule_id,$doctor_id]);
                     $result2 = $stmt->fetch();
                     $appointment_id=$result2['appointment_Id'];
 
                     $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`) VALUES(?,?,?)";
                     $stmt = $pdo->prepare($query3);
-                    $status=$stmt->execute([$patientid,$seatno,$appointment_id]);
+                    $status=$stmt->execute([$id,$seatno,$appointment_id]);
 
                     $pdo->commit();
-                    return $patientid;
+                    return $id;
 
                     /*if ($status == TRUE) {
                         return $patientid;
@@ -183,18 +195,18 @@
                     $stmt = $pdo->prepare($query1);
                     $stmt->execute([$date,$schedule_id,$doctor_id,$seatno]);
 
-                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=?";
+                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=? AND schedule_id=? AND Doctor_Id=?";
                     $stmt = $pdo->prepare($query2);
-                    $stmt->execute([$date]);
+                    $stmt->execute([$date,$schedule_id,$doctor_id]);
                     $result2 = $stmt->fetch();
                     $appointment_id=$result2['appointment_Id'];
 
                     $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`) VALUES(?,?,?)";
                     $stmt = $pdo->prepare($query3);
-                    $status=$stmt->execute([$patientid,$seatno,$appointment_id]);
+                    $status=$stmt->execute([$id,$seatno,$appointment_id]);
 
                     $pdo->commit();
-                    return $patientid;
+                    return $id;
 
                     /*if ($status == TRUE) {
                         return $patientid;
@@ -205,7 +217,7 @@
             }
             catch (PDOException $e) {
                 $pdo->rollBack();
-                make_appointment($nic,$name,$age,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id);
+                return false;
             }
         }
 

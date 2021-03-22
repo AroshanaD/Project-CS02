@@ -9,6 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src=<?php echo Router::base_url() . '/files/js/autofill_spec.js' ?> type="text/javascript"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/validation.js' ?> type="text/javascript"></script>
     <script src=<?php echo Router::base_url() . '/files/js/appointment_onpremise.js' ?> type="text/javascript"></script>
 </head>
 
@@ -61,48 +62,16 @@
             <div class="form-container3" style="width:60%; padding: 0" >
                 <div id="form-1">
                     <div class="label">
-                        <label for="id">NIC</label>
-                    </div>
-                    <div class="input">
-                        <input type="text" name="id" id="id" required>
-                    </div>
-                    <div class="label">
-                        <label for="name">Name</label>
-                    </div>
-                    <div class="input">
-                        <input type="text" name="name" id="name" required>
-                    </div>
-                    <div class="label">
-                        <label for="age">Age</label>
-                    </div>
-                    <div class="input">
-                        <input type="number" name="age" id="age" required>
-                    </div>
-                    <div class="label">
-                        <label for="contact">Contact</label>
+                        <label for="contact">Contact*</label>
                     </div>
                     <div class="input">
                         <input type="tel" name="contact" id="contact" required>
                     </div>
                     <div class="label">
-                        <label for="gender">Gender</label>
-                    </div>
-                    <div class="input">
-                        <input type="text" name="gender" id="gender" required>
-                    </div>
-                    <div class="label">
-                        <label for="address">Address</label>
-                    </div>
-                    <div class="input">
-                        <input type="text" name="address" id="address" required>
-                    </div>
-                </div>
-                <div id="form-2">
-                    <div class="label">
                         <label for="email">Email</label>
                     </div>
                     <div class="input">
-                        <input type="email" name="email" id="email" required>
+                        <input type="email" name="email" id="email">
                     </div>
                     <div class="label">
                         <label for="appoint_no">Appointment no</label>
@@ -127,6 +96,44 @@
                     </div>
                     <div class="input">
                         <input type="float" id="total" name="total" required disabled>
+                    </div>
+                </div>
+                <div id="form-2">
+                    <!--div class="label">
+                        <label for="id">NIC</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="id" id="id" required>
+                    </div-->
+                    <div class="label">
+                        <label for="name">First Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="f_name" id="f_name" required>
+                    </div>
+                    <div class="label">
+                        <label for="name">Last Name</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="l_name" id="l_name" required>
+                    </div>
+                    <div class="label">
+                        <label for="age">Birthday</label>
+                    </div>
+                    <div class="input">
+                        <input type="date" name="birthday" id="birthday" required>
+                    </div>
+                    <div class="label">
+                        <label for="gender">Gender</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="gender" id="gender" required>
+                    </div>
+                    <div class="label">
+                        <label for="address">Address</label>
+                    </div>
+                    <div class="input">
+                        <input type="text" name="address" id="address" required>
                     </div>
                     <input type="submit" value="Proceed" class="btn" name="submit" id="submit">
                     <div id="form-message"></div>

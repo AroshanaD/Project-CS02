@@ -8,7 +8,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
-    <script src='/project-cs02/files/js/autofill_spec.js' type="text/javascript"></script>
 </head>
 
 <body>
@@ -78,7 +77,7 @@
                     <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['fee']+ 250?></label>
                     </div><br>
-                    <button class="btn">OK</button>
+                    <button href="<?php echo Router::site_url().'/appointment/index'?>" class="btn">OK</button>
                     <div id="form-message"></div>
                 </div>
             </div>

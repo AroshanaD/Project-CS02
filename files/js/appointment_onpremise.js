@@ -1,4 +1,5 @@
 var doctors;
+var patient_id;
 var index;
 var details=[];
 var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -51,12 +52,51 @@ $(document).ready(function () {
         })
     })
 
+    $("#contact").change(function(){
+        var contact = $("#contact").val();
+        var valid = true;
+        $(".error-message").remove();
+        $("#form-message").empty();
+        $("#contact").removeClass("input-error");
+        if(contact_val(contact) == false){valid = false;}
+
+        if(valid == true){
+            $.ajax({
+                url: '../../index.php/appointment/serach_patient',
+                data: {contact:contact},
+                type:'post',
+                success:function(data){
+                    if(data != false){
+                        patient_id = data.id;
+                        $("#email").val(data.email);
+                        $("#f_name").val(data.f_name);
+                        $("#l_name").val(data.l_name);
+                        $("#birthday").val(data.birthday);
+                        $("#address").val(data.address);
+                        $("#gender").val(data.gender);
+                        
+                    }
+                }
+            })
+        }
+        else if(valid == false){
+            $("#form-message").text('enter valid contact no(EX : 76xxxxxxx)');
+            $("#email").val("");
+            $("#f_name").val("");
+            $("#l_name").val("");
+            $("#birthday").val("");
+            $("#address").val("");
+            $("#gender").val("");
+        }
+    })
+
     $("form").submit(function(event){
         event.preventDefault();
 
-        var nic=$("#id").val();
-        var name=$("#name").val();
-        var age=$("#age").val();
+        var id=patient_id;
+        var fname=$("#f_name").val();
+        var lname=$("#l_name").val();
+        var birthday=$("#birthday").val();
         var contact=$("#contact").val();
         var email=$("#email").val();
         var address=$("#address").val();
@@ -66,21 +106,37 @@ $(document).ready(function () {
         var schedule_id=details[index].id;
         var doctor_id= $("#doctor").val();
 
-    
-        $.ajax({
-            url: '../../index.php/appointment/make_appointment',
-            data: {nic:nic,name:name,age:age, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
-            type: 'post',
-            success: function (data) {
-                if(data!=false){
-                    var id=data;
-                    location.href = "../../index.php/appointment/receipt?id=".concat(id) ;
+        /*var valid = true;
+        $(".error-message").remove();
+        $("#form-message").empty();
+
+        var id_list = ["#f_name","#l_name","#gender","#birthday","#contact","#address","#email"];
+
+        id_list.forEach(element => {
+            $(element).removeClass("input-error");
+        });
+        if(name_val("fname",fname) == false){valid = false;}
+        if(name_val("lname",lname) == false){valid = false;}
+        if(contact_val(contact) == false){valid = false;}
+        if(address_val(address) == false){valid = false;}
+        if(email_val(email) == false){valid = false;}
+        if(bday_val(birthday) == false){valid = false;}
+        console.log(valid);*/
+
+            $.ajax({
+                url: '../../index.php/appointment/make_appointment',
+                data: {id:id,f_name:fname,l_name:lname,birthday:birthday, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
+                type: 'post',
+                success: function (data) {
+                    if(data!=false){
+                        var id=data;
+                        location.href = "../../index.php/appointment/receipt?id=".concat(id) ;
+                    }
+                    else{
+                        $("#form-message").text("Appointment is not Successfull");
+                    }
                 }
-                else{
-                    $("#form-message").text("Appointment is not Successfull");
-                }
-            }
-        })
+            })  
     
     })
 
