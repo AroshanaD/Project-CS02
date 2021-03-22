@@ -22,6 +22,14 @@
             $model = $this->load('models','report_Data');
             $data = $model->appointment_data();
         }
+
+        public function inventory_overview()
+        {
+            $model = $this->load('models','report_Data');
+            $result = $model->inventory_data();
+            /*header('Content-Type: application/json');
+            echo json_encode($result);*/
+        }
     }
 
 ?>
