@@ -79,7 +79,7 @@ body {
 
 .container-7 {
     grid-template-columns: 0.15fr 0.9fr;
-    grid-template-rows: 0.15fr 0.8fr 0.9fr 0.1fr;
+    grid-template-rows: 0.15fr 0.8fr 1fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar details" "sidebar table" "footer footer";
 }
 
@@ -454,7 +454,7 @@ a {
 
 .details-div1 {
     grid-area: details-div1;
-    border-right: var(--border-line);
+    border-right: 1px rgb(85, 126, 181) solid;
 }
 
 .details-div2 {
@@ -487,7 +487,7 @@ a {
     overflow-y: auto;
     margin: var(--large-margin);
     padding: var(--large-padding);
-    background-color: rgb(196, 206, 255);
+    background-color: var(--databoard-color);
 }
 
 .test-details-div {
@@ -859,11 +859,11 @@ td>a {
 .tb-btn {
     width: 90px;
     padding: 0.3rem 1rem;
-    background-color: #3e37c96e;
-    color: #11006e;
+    background-color: var(--side-bar-color);
+    color: #ffffff;
     font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: normal;
     border: none;
     border-radius: var(--main-border-radius);
     outline: none;
@@ -885,6 +885,7 @@ td>a {
     flex-wrap: wrap;
     width: fit-content;
     font-size: 13px;
+    font-family: 'Poppins', sans-serif;
     margin: 20px;
     justify-content: space-between;
     padding: 2px;
@@ -900,6 +901,7 @@ td>a {
     margin: 5px 20px 5px 10px;
     padding: 10px;
     border-radius: var(--main-border-radius);
+    font-family: 'Poppins', sans-serif;
     border-style: solid;
     border-color: rgba(99, 99, 99, 0.419);
     background-color: white;
@@ -910,6 +912,7 @@ td>a {
     background-color: white;
     color: rgb(120, 120, 120);
     border-style: solid;
+    font-family: 'Poppins', sans-serif;
     border-color: rgba(99, 99, 99, 0.419);
     border-width: 2px;
     border-radius: var(--main-border-radius);
@@ -920,13 +923,14 @@ td>a {
 }
 
 .site-search>button {
-    background-color: #bbbbffbf;
+    background-color:var(--databoard-color);
     height: inherit;
-    color: rgb(30, 9, 49);
-    padding: 5px 10px;
-    margin-top: 12px;
+    color: rgb(21, 21, 21);
+    padding: 5px 5px;
+    margin-top: 10px;
     margin-right: 20px;
-    font-size: 13px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     border: none;
     border-radius: var(--main-border-radius);
@@ -941,10 +945,11 @@ td>a {
     height: 40px;
     width: 110px;
     position: relative;
-    background-color: #0e09646e;
-    color: #0f0f13;
+    background-color: var(--side-bar-color);
+    color: #ffffff;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
     border: none;
     border-radius: var(--main-border-radius);
     outline: none;
@@ -1037,7 +1042,7 @@ td>a {
     position: relative;
     text-align: left;
     margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .topic-small {
