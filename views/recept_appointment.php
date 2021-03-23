@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
     <script src=<?php echo Router::base_url() . '/files/js/autofill_spec.js' ?> type="text/javascript"></script>
     <script src=<?php echo Router::base_url() . '/files/js/appointment_receptView.js' ?> type="text/javascript"></script>
@@ -29,12 +31,12 @@
                 </div>
                 <div class="search-bar">
                     <div class="site-search">
-                        <input type="text" id="name" placeholder="patient name" name="name">
+                        <input type="text" id="name" placeholder="doctor name" name="name">
                     </div>
                     <!--site-search-->
                     <!--id-->
                     <div class="site-search">
-                        <input type="date" id="date" placeholder="Appointment Date" name="date">
+                        <input type="date" id="date" placeholder="Appointment Date" name="date" >
                     </div>
                     <!--site-search-->
                     <!--date-->
