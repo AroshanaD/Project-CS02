@@ -5,6 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
     <script src=<?php echo Router::base_url() . '/files/js/autofill_spec.js' ?> type="text/javascript"></script>
     <script src=<?php echo Router::base_url() . '/files/js/appointment_doctorView.js' ?> type="text/javascript"></script>

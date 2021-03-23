@@ -169,7 +169,7 @@ class PatientTest_Manage extends Models
         $pdo = $connect->connect();
 
         if ($availability != 2) {
-            $query = "SELECT * FROM lab_test WHERE date = ? AND availability = ? AND p_id =? ORDER BY date DESC";
+            $query = "SELECT * FROM lab_test WHERE (date = ? OR availability = ?) AND p_id =? ORDER BY date DESC";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$date, $availability,$id]);
         } else {
