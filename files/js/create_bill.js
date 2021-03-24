@@ -33,13 +33,12 @@ $(document).ready(function () {
         var id = null;
         var name = $("#customer_name").val();
         var age = $("#age").val();
-        var note = null;
 
         var valid = true;
         $(".error-message").remove();
         $("#form-message").empty();
 
-        var id_list = ["#id", "#customer_name", "#age", "#note"];
+        var id_list = ["#id", "#customer_name", "#age"];
 
         id_list.forEach(element => {
             $(element).removeClass("input-error");
@@ -50,10 +49,10 @@ $(document).ready(function () {
             if (id_val(id) == false) { valid = false; }
         }
 
-        if($("#note").val() != ""){
+        /*if($("#note").val() != ""){
             note = $("#note").val();
             if (text_val("note",note) == false) { valid = false; }
-        }
+        }*/
 
         if (text_val("name", name) == false) { valid = false; }
 
@@ -67,13 +66,12 @@ $(document).ready(function () {
                         age: age,
                         no_items: no_items,
                         cost: total_cost,
-                        note: note,
                         medicine_list: selected_list_details,
                     },
                     type: 'post',
                     success: function (data) {
                         if (data == true) {
-                           render_bill(id, name, age, note);
+                           render_bill(id, name, age);
                         }
                         else{
                             location.href = "../../index.php/Inventory/create_test?could not create the bill";
@@ -282,7 +280,7 @@ function remove_func(i, medicine_quantity) {
     console.log(selected_list_details);
 }
 
-function render_bill(id, name, age, note) {
+function render_bill(id, name, age) {
     $(".table").remove();
     $(".form").remove();
     $(".container-l").css("grid-template-areas", "'nav nav nav' 'sidebar receipt receipt' 'sidebar receipt receipt' 'footer footer footer'")
@@ -295,8 +293,6 @@ function render_bill(id, name, age, note) {
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(name));
     $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer Age"));
     $(".receipt").append($(`<div class=${"receipt-f"}>`).text(age));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Note"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(note));
     $(".receipt").append($(`<table id=${"small-tb"}>`));
 
     var header = $(`<tr>`).append(
