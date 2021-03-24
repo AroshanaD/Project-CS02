@@ -176,7 +176,7 @@
                     $result2 = $stmt->fetch();
                     $appointment_id=$result2['appointment_Id'];
 
-                    $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`) VALUES(?,?,?)";
+                    $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`,`online`) VALUES(?,?,?,0)";
                     $stmt = $pdo->prepare($query3);
                     $status=$stmt->execute([$id,$seatno,$appointment_id]);
 
@@ -201,7 +201,7 @@
                     $result2 = $stmt->fetch();
                     $appointment_id=$result2['appointment_Id'];
 
-                    $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`) VALUES(?,?,?)";
+                    $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`,`online`) VALUES(?,?,?,0)";
                     $stmt = $pdo->prepare($query3);
                     $status=$stmt->execute([$id,$seatno,$appointment_id]);
 
