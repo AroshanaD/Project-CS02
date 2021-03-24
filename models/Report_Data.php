@@ -46,15 +46,57 @@
             $connect = new Database();
             $pdo = $connect ->connect();
 
-            /*$result;
-            $query = "SELECT COUNT(drug_name) FROM stock;";
+            $result;
+            $query = "SELECT COUNT(drug_name) AS 'drug_count' FROM stock;";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
-            $result['total_medicine']=$stmt->fetch();
+            $drugcount=$stmt->fetch();
+
+            $result['drug_count']=$drugcount['drug_count'];
+
+            $query = "SELECT COUNT(drug_name) AS 'count_tablet' FROM stock where unitary_unit='tablet';";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $tabletcount=$stmt->fetch();
+
+            $result['tablet_count']=$tabletcount['count_tablet'];
+
+            $query = "SELECT COUNT(drug_name) AS 'sirup_count' FROM stock where unitary_unit='sirup';";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $sirupcount=$stmt->fetch();
+
+            $result['sirup_count']=$sirupcount['sirup_count'];
+
+            $query = "SELECT SUM(unitary_value*unitary_price*quantity) AS 'expense',SUM(unitary_value*selling_price*quantity) AS 'income'  
+            FROM stock;";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $drug_price=$stmt->fetch();
+
+            $result['expense']=$drug_price['expense'];
+            $result['income']=$drug_price['income'];
+
+            $query = "SELECT drug_name AS 'most_drug', manufacturer AS 'most_manufacture' FROM `stock` 
+            WHERE quantity = (SELECT MAX(quantity) FROM stock);";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $drug_most=$stmt->fetch();
+
+            $result['most_drug']=$drug_most['most_drug'];
+            $result['most_manufacture']=$drug_most['most_manufacture'];
+
+            $query = "SELECT COUNT(drug_name) AS 'count_expire' FROM `stock` WHERE expire_date < NOW();";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $count_expire=$stmt->fetch();
+            
+            $result['count_expire']=$count_expire['count_expire'];
+
             if($result!=NULL)
                 return $result;
             else
-                return false;*/
+                return false;
         }
     }
 
