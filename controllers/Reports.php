@@ -19,8 +19,11 @@
 
         public function appointment_overview()
         {
-            $model = $this->load('models','report_Data');
+            $model = $this->load('models','Report_Data');
             $data = $model->appointment_data();
+
+            header('Content-Type: application/json');
+            echo json_encode($data);
         }
 
         public function inventory_overview()
