@@ -22,4 +22,13 @@
             $this->load('views','generate_report');
         }
 
+        public function appointment_stat(){
+            //$month = $_POST['month'];
+            $model = $this->load('models','Stat_Data');
+            $data = $model->appointment_data();
+
+            header('Content-Type: application/json');
+            echo json_encode($data);
+        }
+
     }

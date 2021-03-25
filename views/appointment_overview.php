@@ -38,6 +38,20 @@
                     </table>
                 </div>
             </div>
+            <div class="report-paper">
+                <div class="content">
+                    <table class="report-tb" id="doc">
+
+                    </table>
+                </div>
+            </div>
+            <div class="report-paper">
+                <div class="content">
+                    <table class="report-tb" id="spec">
+
+                    </table>
+                </div>
+            </div>
         </div>
 
         <div class="footer">All rights are reserved</div>

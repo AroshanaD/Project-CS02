@@ -31,7 +31,6 @@
                             <option value="" disabled hidden selected> Select Category </option>
                             <?php if ($_SESSION['user_cat'] == 'supervisor') : ?>
                                 <option value="appointment_overview">Appointment Overview</option>
-                                <option value="doctor_overview">Doctor Overview</option>
                                 <option value="inventory_overview">Inventory Overview</option>
                             <?php endif; ?>
                             <?php if ($_SESSION['user_cat'] == 'pharmacist') : ?>
