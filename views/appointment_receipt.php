@@ -5,8 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
-    <script src='/project-cs02/files/js/autofill_spec.js' type="text/javascript"></script>
 </head>
 
 <body>
@@ -18,64 +19,65 @@
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
         <form class="form">
-            <div class="form-container1" style="width:500px">
+            <div class="form-container">
                 <div id="form-img">
                 </div>
-                <div id="form-1">
-                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left">Patient Details</div>
+                <div id="form-1" style="width:200px" >
+                    <div class="label" style="color:black; font-size:17px;font-weight:bold;margin-bottom:20px;font-family: 'Poppins', sans-serif;"><u>Patient Details</u></div>
                     <div class="label">
                         <label>Name</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['f_name']." ".$_POST['details']['l_name'] ?></label>
-                    </div>
+                    </div><br>
                     <div class="label">
                         <label>Appointment No</label>
                     </div>
-                    <div class="input">
-                        <label><?php echo $_POST['details']['Seat_no']?></label>
-                    </div>
+                    <div class="input" style="font-size: 14px;">
+                        <label><?php echo "No: ". $_POST['details']['Seat_no']?></label>
+                    </div><br>
                     <div class="label">
                         <label>Contact No</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['contact_no']?></label>
                     </div>
 
-                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left; margin-top:50px">Doctor Details</div>
+                    <div class="label" style="color:black; font-size:17px;font-weight:bold;margin-bottom:20px;margin-top:40px;font-family: 'Poppins', sans-serif;"><u>Doctor Details</u></div>
                     <div class="label">
                         <label>Name</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['doctor_fname']." ".$_POST['details']['doctor_lname'] ?></label>
-                    </div>
+                    </div><br>
                     <div class="label">
                         <label>Specialization</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['specialization']?></label>
                     </div>
-                
-                    <div style="font-size:15px; font-weight:bold; border:none; text-align:left; margin-top:50px">Charges</div>
+                </div>
+                <div id="form-2">
+                    <div class="label" style="color:black; font-size:17px;font-weight:bold;margin-bottom:20px;font-family: 'Poppins', sans-serif;"><u>Charges</u></div>
                     <div class="label">
                         <label>Doctor Fee</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['fee']?></label>
-                    </div>
+                    </div><br>
                     <div class="label">
                         <label>Tax</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label>250</label>
-                    </div>
+                    </div><br>
                     <div class="label">
                         <label>Total Amount</label>
                     </div>
-                    <div class="input">
+                    <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['fee']+ 250?></label>
-                    </div>
-                    <input type="submit" value="Save" class="btn">
+                    </div><br>
+                    <button href="<?php echo Router::site_url().'/appointment/index'?>" class="btn">OK</button>
                     <div id="form-message"></div>
                 </div>
             </div>

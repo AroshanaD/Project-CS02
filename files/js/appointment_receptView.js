@@ -10,6 +10,8 @@ $(document).ready(function(){
     })
 
     $("#search_spec").change(function () {
+        $("#name").val("");
+        $("#date").val("");
         $.ajax({
             url: '../../index.php/patient_Appointment/category',
             data: { specialization: $("#search_spec").val() },
@@ -24,13 +26,18 @@ $(document).ready(function(){
 
     $("#search-btn").click(function () {
         var name = $("#name").val();
-        var date= new Date($("#date").val());
-        var dd = String(date.getDate()).padStart(2, '0');
-        var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
-        var yyyy = date.getFullYear();
-        date= yyyy + '-' + mm + '-' + dd;
-
-
+        var date;
+        if($("#date").val()==""){
+            date = null;
+        }
+        else{
+            date= new Date($("#date").val());
+            var dd = String(date.getDate()).padStart(2, '0');
+            var mm = String(date.getMonth() + 1).padStart(2, '0'); //January is 0!
+            var yyyy = date.getFullYear();
+            date= yyyy + '-' + mm + '-' + dd; 
+        }
+        
         $.ajax({
             url: '../../index.php/patient_Appointment/recept_search',
             data: { date:date, name: name},
@@ -59,7 +66,7 @@ function render_details(data){
 
     render_header();
 
-    const no_rows= 3;
+    const no_rows= 10;
     var page = 1;
     var tot_rows = data.length;
 

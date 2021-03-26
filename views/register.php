@@ -8,6 +8,8 @@
     <script src="/project-cs02/files/js/jquery-3.5.1.js"></script>
     <script rel="text/javascript" src="/project-cs02/files/js/validate_form.js"></script>
     <script rel="text/javascript" src="/project-cs02/files/js/validation.js"></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" charset="utf-8"></script>
     <script src="https://kit.fontawesome.com/1b83d32a6d.js" crossorigin="anonymous"></script>

@@ -1,4 +1,5 @@
 var doctors;
+var patient_id;
 var index;
 var details=[];
 var week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -22,8 +23,9 @@ $(document).ready(function () {
     $("#search_spec").change(function () {
         var specialization_id = $("#search_spec").val();
         $("#doctor").empty();
+        $("#form-message").empty();
         $("#date").val("");
-        $("#seat").val("");
+        $("#seat").val(""); 
         $("#doctor").append(`<option value=${""} placeholder=${"Select Doctor"}</option>`);
         for (var i = 0; i < doctors.length; i++) {
             //console.log(doctors[i].specialization_id);
@@ -37,6 +39,7 @@ $(document).ready(function () {
         var doctor_id = $("#doctor").val();
         $("#date").val("");
         $("#seat").val("");
+        $("#form-message").empty();
         $.ajax({
             url: '../../index.php/appointment/doctor_schedule',
             data: { id: doctor_id },
@@ -49,12 +52,51 @@ $(document).ready(function () {
         })
     })
 
+    $("#contact").change(function(){
+        var contact = $("#contact").val();
+        var valid = true;
+        $(".error-message").remove();
+        $("#form-message").empty();
+        $("#contact").removeClass("input-error");
+        if(contact_val(contact) == false){valid = false;}
+
+        if(valid == true){
+            $.ajax({
+                url: '../../index.php/appointment/serach_patient',
+                data: {contact:contact},
+                type:'post',
+                success:function(data){
+                    if(data != false){
+                        patient_id = data.id;
+                        $("#email").val(data.email);
+                        $("#f_name").val(data.f_name);
+                        $("#l_name").val(data.l_name);
+                        $("#birthday").val(data.birthday);
+                        $("#address").val(data.address);
+                        $("#gender").val(data.gender);
+                        
+                    }
+                }
+            })
+        }
+        else if(valid == false){
+            $("#form-message").text('enter valid contact no(EX : 76xxxxxxx)');
+            $("#email").val("");
+            $("#f_name").val("");
+            $("#l_name").val("");
+            $("#birthday").val("");
+            $("#address").val("");
+            $("#gender").val("");
+        }
+    })
+
     $("form").submit(function(event){
         event.preventDefault();
 
-        var nic=$("#id").val();
-        var name=$("#name").val();
-        var age=$("#age").val();
+        var id=patient_id;
+        var fname=$("#f_name").val();
+        var lname=$("#l_name").val();
+        var birthday=$("#birthday").val();
         var contact=$("#contact").val();
         var email=$("#email").val();
         var address=$("#address").val();
@@ -64,21 +106,37 @@ $(document).ready(function () {
         var schedule_id=details[index].id;
         var doctor_id= $("#doctor").val();
 
-    
-        $.ajax({
-            url: '../../index.php/appointment/make_appointment',
-            data: {nic:nic,name:name,age:age, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
-            type: 'post',
-            success: function (data) {
-                if(data!=false){
-                    var id=data;
-                    location.href = "../../index.php/appointment/receipt?id=".concat(id) ;
+        /*var valid = true;
+        $(".error-message").remove();
+        $("#form-message").empty();
+
+        var id_list = ["#f_name","#l_name","#gender","#birthday","#contact","#address","#email"];
+
+        id_list.forEach(element => {
+            $(element).removeClass("input-error");
+        });
+        if(name_val("fname",fname) == false){valid = false;}
+        if(name_val("lname",lname) == false){valid = false;}
+        if(contact_val(contact) == false){valid = false;}
+        if(address_val(address) == false){valid = false;}
+        if(email_val(email) == false){valid = false;}
+        if(bday_val(birthday) == false){valid = false;}
+        console.log(valid);*/
+
+            $.ajax({
+                url: '../../index.php/appointment/make_appointment',
+                data: {id:id,f_name:fname,l_name:lname,birthday:birthday, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
+                type: 'post',
+                success: function (data) {
+                    if(data!=false){
+                        var id=data;
+                        location.href = "../../index.php/appointment/receipt?id=".concat(id) ;
+                    }
+                    else{
+                        $("#form-message").text("Appointment is not Successfull");
+                    }
                 }
-                else{
-                    $("#form-message").text("Appointment is not Successfull");
-                }
-            }
-        })
+            })  
     
     })
 
@@ -127,7 +185,7 @@ $(document).ready(function () {
                         }
 
                         else if(status==1){
-                            $("#form-message").text('seats are available');
+                            $("#form-message").text('seats are available!');
                             $("#seat").val(data.CurrentSeat_no + 1);
                             var scheduleId= details[index].id;
                             for (var i=0;i<doctors.length;i++){
@@ -143,21 +201,23 @@ $(document).ready(function () {
                         }
 
                         else{
-                            $("#form-message").text('no of seats are not available. please select another date.');
+                            $("#form-message").text('!seats are not available. please select another date.');
                             $("#seat").val("reach maximum");
                             $("#appoint_no").val("");
                             $("#d_charges").val("");
                             $("#total").val("");
+                            $("#date").val("");
                         }
                     }
                 });
             }
             else{
-                $("#form-message").text("doctor doesn't have a schedule on " + day);
+                $("#form-message").text("!No schedule available schedule on " + day);
                 $("#seat").val("");
                 $("#appoint_no").val("");
                 $("#d_charges").val("");
                 $("#total").val("");
+                $("#date").val("");
             }
     })
 })

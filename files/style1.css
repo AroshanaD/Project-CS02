@@ -79,7 +79,7 @@ body {
 
 .container-7 {
     grid-template-columns: 0.15fr 0.9fr;
-    grid-template-rows: 0.15fr 0.8fr 0.9fr 0.1fr;
+    grid-template-rows: 0.15fr 0.8fr 1fr 0.1fr;
     grid-template-areas: "nav nav" "sidebar details" "sidebar table" "footer footer";
 }
 
@@ -431,8 +431,9 @@ a {
 
 #selection {
     grid-area: selection;
-    border-top: var(--border-line);
-    border-right: var(--border-line);
+    border-right:1px rgb(255, 255, 255) solid;
+    
+    
 }
 
 .details {
@@ -440,6 +441,7 @@ a {
     margin: var(--large-margin);
     padding: var(--large-padding);
     background-color: white;
+    font-family: 'Poppins', sans-serif;
     grid-area: details;
     display: grid;
     grid-template-rows: 1fr;
@@ -451,13 +453,14 @@ a {
     padding: var(--large-padding);
     display: flex;
     flex-wrap: wrap;
+    font-family: 'Poppins', sans-serif;
     justify-content: space-between;
     background-color: white;
 }
 
 .details-div1 {
     grid-area: details-div1;
-    border-right: var(--border-line);
+    border-right: 1px rgb(85, 126, 181) solid;
 }
 
 .details-div2 {
@@ -490,7 +493,7 @@ a {
     overflow-y: auto;
     margin: var(--large-margin);
     padding: var(--large-padding);
-    background-color: rgb(196, 206, 255);
+    background-color: var(--databoard-color);
 }
 
 .test-details-div {
@@ -620,7 +623,7 @@ a {
 }
 
 .label {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: #743ebb;
     text-align: left;
     font-size: 13px;
@@ -637,6 +640,7 @@ a {
     color: #4e4e4e;
     width: 90%;
     font-size: 15px;
+    font-family: 'Poppins', sans-serif;
     font-weight: lighter;
     padding: 5px 0 5px 15px;
     margin-bottom: 10px;
@@ -653,6 +657,8 @@ a {
     height: 36px;
     font-weight: lighter;
     padding: 8px 20px 8px 20px;
+    font-family: 'Poppins', sans-serif;
+    padding: 5px 0 5px 20px;
     margin-bottom: 10px;
 }
 
@@ -719,6 +725,7 @@ button {
     color: #11006e;
     font-size: 15px;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     border: none;
     border-radius: var(--main-border-radius);
     outline: none;
@@ -785,7 +792,7 @@ table {
     border-collapse: collapse;
     border: none;
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.15);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 tr {
@@ -793,6 +800,7 @@ tr {
     box-shadow: 0px 8px 16px 0px rgba(255, 192, 140, 0.1);
     background-color: #b8cac7;
     font-size: 13px;
+    font-family: 'Poppins', sans-serif;
     border: none;
     border-bottom: 1px solid #3a3a3a52;
     outline: none;
@@ -803,6 +811,7 @@ td, th {
     background-color: inherit;
     padding: 5px 20px;
     font-size: 14px;
+    font-family: 'Poppins', sans-serif;
 }
 
 tr:nth-child(1) {
@@ -834,6 +843,7 @@ td>a {
 #td-large {
     font-size: 14px;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .table {
@@ -844,6 +854,7 @@ td>a {
     overflow-x: auto;
     overflow-y: auto;
     grid-area: table;
+    font-family: 'Poppins', sans-serif;
     padding: var(--large-padding);
     justify-content: center;
 }
@@ -855,16 +866,16 @@ td>a {
 .tb-btn {
     width: 90px;
     padding: 0.3rem 1rem;
-    background-color: #3e37c96e;
-    color: #11006e;
+    background-color: var(--side-bar-color);
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
     font-size: 0.8rem;
-    font-weight: bold;
+    font-weight: normal;
     border: none;
     border-radius: var(--main-border-radius);
     outline: none;
     cursor: pointer;
     transition: .3s;
-    box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
     margin: 3px 10px 3px 10px;
 }
 
@@ -881,6 +892,7 @@ td>a {
     flex-wrap: wrap;
     width: fit-content;
     font-size: 13px;
+    font-family: 'Poppins', sans-serif;
     margin: 20px;
     justify-content: space-between;
     padding: 2px;
@@ -896,6 +908,7 @@ td>a {
     margin: 5px 20px 5px 10px;
     padding: 10px;
     border-radius: var(--main-border-radius);
+    font-family: 'Poppins', sans-serif;
     border-style: solid;
     border-color: rgba(99, 99, 99, 0.419);
     background-color: white;
@@ -906,6 +919,7 @@ td>a {
     background-color: white;
     color: rgb(120, 120, 120);
     border-style: solid;
+    font-family: 'Poppins', sans-serif;
     border-color: rgba(99, 99, 99, 0.419);
     border-width: 2px;
     border-radius: var(--main-border-radius);
@@ -916,13 +930,14 @@ td>a {
 }
 
 .site-search>button {
-    background-color: #bbbbffbf;
+    background-color:var(--databoard-color);
     height: inherit;
-    color: rgb(30, 9, 49);
-    padding: 5px 10px;
-    margin-top: 12px;
+    color: rgb(21, 21, 21);
+    padding: 5px 5px;
+    margin-top: 10px;
     margin-right: 20px;
-    font-size: 13px;
+    margin-bottom: 10px;
+    font-family: 'Poppins', sans-serif;
     font-weight: bold;
     border: none;
     border-radius: var(--main-border-radius);
@@ -937,10 +952,11 @@ td>a {
     height: 40px;
     width: 110px;
     position: relative;
-    background-color: #0e09646e;
-    color: #0f0f13;
+    background-color: var(--side-bar-color);
+    color: #ffffff;
     font-size: 13px;
-    font-weight: bold;
+    font-weight: normal;
+    font-family: 'Poppins', sans-serif;
     border: none;
     border-radius: var(--main-border-radius);
     outline: none;
@@ -966,11 +982,13 @@ td>a {
     background-position: center;
     background-repeat: no-repeat;
     align-items: center;
+    font-family: 'Poppins', sans-serif;
 }
 
 #td-large {
     font-size: 13px;
     font-weight: bold;
+    font-family: 'Poppins', sans-serif;
 }
 
 .contact-box {
@@ -1005,8 +1023,7 @@ td>a {
     position: relative;
     padding: 10px 0 10px;
     margin-bottom: 0px;
-    font-family: 'Redressed', cursive;
-    font-family: 'Roboto Mono', monospace;
+    font-family: 'Poppins', sans-serif;
     font-size: 1.3rem;
     color: #06212e;
     font-weight: bolder;
@@ -1032,7 +1049,7 @@ td>a {
     position: relative;
     text-align: left;
     margin-bottom: 20px;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .topic-small {
@@ -1042,7 +1059,7 @@ td>a {
     position: relative;
     text-transform: uppercase;
     text-align: center;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Poppins', sans-serif;
 }
 
 .calendar {
@@ -1793,3 +1810,14 @@ tr:nth-child(even) {
     width: 40%;
     text-align: right;
 }
+
+#form-message {
+    width: 100%;
+    margin-top: 20px;
+    width: inherit;
+    text-align: left;
+    font-family: 'Poppins', sans-serif;
+    font-size: 13px;
+    font-weight: Bold;
+    color: rgb(209, 0, 3);
+  }

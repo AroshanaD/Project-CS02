@@ -138,11 +138,20 @@
             echo json_encode($result);
         }
 
+        public function serach_patient(){
+            $model = $this->load('models','Appointment_Data');
+            $contact = $_POST['contact'];
+            $result = $model->serach_patient($contact);
+            header('Content-Type:application/json');
+            echo json_encode($result);
+        }
+
         public function make_appointment(){
             $model=$this->load('models','Appointment_Data');
-            $nic=$_POST['nic'];
-            $name=$_POST['name'];
-            $age=$_POST['age'];
+            $id=$_POST['id'];
+            $fname=$_POST['f_name'];
+            $lname=$_POST['l_name'];
+            $birthday=$_POST['birthday'];
             $contact=$_POST['contact'];
             $email=$_POST['email'];
             $address=$_POST['address'];
@@ -152,9 +161,9 @@
             $schedule_id=$_POST['schedule_id'];
             $doctor_id=$_POST['doctor_id'];
             
-           $result=$model->make_appointment($nic,$name,$age,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id);
-          /* if($result==TRUE){
-            $subject = 'Account Authentication Email';
+           $result=$model->make_appointment($id,$fname,$lname,$birthday,$contact,$email,$address,$gender,$date,$seatno,$schedule_id,$doctor_id);
+            if($result!=FALSE){
+            $subject = 'Appointment Booking Email';
                 $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                         <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
@@ -164,7 +173,7 @@
                 $to = $email;
                 $mail = new mail_authentication();
                 $status = $mail->send_mail($subject,$body,$to);
-           }*/
+           }
            header('Content-Type: application/json');
            echo json_encode($result);
         }
@@ -211,6 +220,18 @@
             $result=$model->create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id);
 
             if($result== TRUE){
+                /*
+                $subject = 'Appointment Booking Email';
+                $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
+                        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
+                        <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
+                        <h4 style='text-decoration: underline'> Make Appointment</h4>
+                        <p> Your have maked your appointment successfully.</p>";
+
+                $to = $email;
+                $mail = new mail_authentication();
+                $status = $mail->send_mail($subject,$body,$to);
+                */
                 $URL = Router::site_url() . "/appointment/patient_receipt?successfull";
                 echo "<script>location.href='$URL'</script>";
             }

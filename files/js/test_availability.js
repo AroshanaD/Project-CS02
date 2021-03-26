@@ -19,8 +19,6 @@ function render_table(data){
 
         var row = $(`<div class=${"test-details-div"}>`).append(
             $(`<div class=${"details-title"}>`).text("Test ".concat(i+1)),
-            $(`<div class=${"details-field"}>`).text("Test ID"),
-            $(`<div class=${"details-field"}>`).text(data[i].id),
             $(`<div class=${"details-field"}>`).text("Test Name"),
             $(`<div class=${"details-field"}>`).text(data[i].name),
             $(`<div class=${"details-field"}>`).text("Description"),

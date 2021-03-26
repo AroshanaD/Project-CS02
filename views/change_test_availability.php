@@ -21,7 +21,6 @@
         <form class="details" method="post">
             <div class="details-div1">
                 <div class="details-title">Patient Details</div>
-                <div class="details-field">ID</div><input class="details-field" id="p_id" value="<?php echo $_POST['patient_test']['patient_id'] ?>" disabled>
                 <div class="details-field">Name</div><input class="details-field" id="name" value="<?php echo $_POST['patient_test']['patient_name'] ?>" disabled>
                 <div class="details-field">Age</div><input class="details-field" id="age" value="<?php echo $_POST['patient_test']['patient_age'] ?>" disabled>
                 <div class="details-field">Gender</div><input class="details-field" id="gender" value="<?php echo $_POST['patient_test']['patient_gender'] ?>" disabled>
@@ -29,7 +28,7 @@
             </div>
             <div class="details-div2">
                 <div class="details-title">Lab Test Details</div>
-                <div class="details-field">ID</div><input class="details-field" id="t_id" value="<?php echo $_GET['id'] ?>" disabled>
+                <input type="hidden" class="details-field" id="t_id" value="<?php echo $_GET['id'] ?>" disabled>
                 <div class="details-field">Date</div><input class="details-field" id="date" value="<?php echo $_POST['patient_test']['date'] ?>" disabled>
                 <div class="details-field">Time</div><input class="details-field" id="time" value="<?php echo $_POST['patient_test']['time'] ?>" disabled>
                 <div class="details-field">Cost</div><input class="details-field" id="cost" value="<?php echo $_POST['patient_test']['cost'] ?>" disabled>

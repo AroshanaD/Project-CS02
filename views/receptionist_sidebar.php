@@ -50,7 +50,7 @@
         </div>
                     
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-calendar-alt"></i>  Doctor schedules</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-calendar-alt" style="padding: 0;"></i>  Doctor schedules</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?>>Doctor Schedule</a> 
             </div>
