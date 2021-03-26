@@ -25,7 +25,7 @@
 
             <div class="search-bar">
                 <div class="site-search">
-                    <input type="Month" class="form-control"><br>
+                    <input type="Month" class="form-control" id="month"><br>
                 </div>
                 <div class="site-search">
                     <button id="search-btn" type="submit">Generate</button>
@@ -44,11 +44,11 @@
 
                         <div class="stat-card" style="background-color: #5e60ce;">
                             <p>Total Appointments</p>
-                            <p style="font-size: 28px;">9876</p>
+                            <p style="font-size: 28px;" id="tot_apps"></p>
                         </div>
                         <div class="stat-card" style="background-color: #CF6AFF;">
                             <p>Online Appointments</p>
-                            <p style="font-size: 28px;">3452</p>
+                            <p style="font-size: 28px;" id="online_apps"></p>
                         </div>
 
                     </div>
@@ -62,11 +62,11 @@
                             <ul class="pieID legend">
                                 <li>
                                     <em>Online</em>
-                                    <span id="online">1000</span>
+                                    <span id="online"></span>
                                 </li>
                                 <li>
                                     <em>At Hospital</em>
-                                    <span id="hospital">1000</span>
+                                    <span id="hospital"></span>
                                 </li>
                             </ul>
                         </section>

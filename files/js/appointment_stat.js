@@ -1,12 +1,26 @@
 $(document).ready(function () {
+    $("#search-btn").click(function(){
+        $.ajax({
+            url: '../../index.php/Statistics/appointment_stat',
+            data: {},
+            type: 'post',
+            success:function(data){
+                $("#tot_apps").text(data['tot_apps']);
+                $("#online_apps").text(data['online_apps']);
 
-    platform_stat();
-    gender_stat();
-    monthly_appointment();
+                $("#online").text(data['online_apps']);
+                $("#hospital").text(data['tot_apps'] - data['online_apps']);
+                
+                platform_stat(data);
+                gender_stat(data);
+                monthly_appointment(data);
+            }
+        })
+    });
 })
 
 
-function gender_stat() {
+function gender_stat(data) {
 
     google.charts.load("current", {
         packages: ['corechart']
@@ -18,8 +32,8 @@ function gender_stat() {
             ["Element", "Density", {
                 role: "style"
             }],
-            ["Male", 20, "cornflowerblue"],
-            ["Female", 5, "orange"],
+            ["Male",data['male_apps'], "cornflowerblue"],
+            ["Female",data['female_apps'], "orange"],
 
         ]);
 
@@ -61,37 +75,7 @@ function monthly_appointment() {
     function drawChart() {
         var data = google.visualization.arrayToDataTable([
             ['Day', 'Appointments'],
-            ['1', 1,],
-            ['2', 2,],
-            ['3', 1,],
-            ['4', 5,],
-            ['5', 2,],
-            ['6', 5,],
-            ['7', 3,],
-            ['8', 1,],
-            ['9', 1,],
-            ['10', 1,],
-            ['11', 1,],
-            ['12', 1,],
-            ['13', 1,],
-            ['14', 5,],
-            ['15', 3,],
-            ['16', 1,],
-            ['17', 2,],
-            ['18', 2,],
-            ['19', 1,],
-            ['20', 1,],
-            ['21', 2,],
-            ['22', 2,],
-            ['23', 2,],
-            ['24', 2,],
-            ['25', 1,],
-            ['26', 1,],
-            ['27', 1,],
-            ['28', 1,],
-            ['29', 2,],
-            ['30', 1,],
-            ['31', 3,]
+            data['day_overview']
         ]);
 
         var options = {
