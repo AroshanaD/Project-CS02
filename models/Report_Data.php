@@ -195,6 +195,24 @@
             else
                 return false;
         }
+
+        public function labtest_data(){
+                $connect = new Database();
+                $pdo = $connect ->connect();
+
+                $result;
+                $query = "SELECT COUNT(patient_name) AS 'patient_count' FROM lab_test;";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $patient_count=$stmt->fetch();
+                $result['patient_count']=$patient_count['patient_count'];
+
+                $query = "SELECT COUNT(id) AS 'test_count' FROM lab_test;";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $patient_count=$stmt->fetch();
+                $result['test_count']=$patient_count['test_count'];
+        }
     }
 
 ?>
