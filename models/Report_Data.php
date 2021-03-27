@@ -150,6 +150,13 @@
 
             $result['sirup_count']=$sirupcount['sirup_count'];
 
+            $query = "SELECT COUNT(DISTINCT vendor_id) AS 'count_vendor' FROM medicine_grn";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $order=$stmt->fetch();
+
+            $result['count_vendor']=$order['count_vendor'];
+
             $query = "SELECT SUM(unitary_value*unitary_price*quantity) AS 'expense',SUM(unitary_value*selling_price*quantity) AS 'income'  
             FROM stock;";
             $stmt = $pdo->prepare($query);
@@ -174,6 +181,14 @@
             $count_expire=$stmt->fetch();
             
             $result['count_expire']=$count_expire['count_expire'];
+
+            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense',
+            selling_price*quantity AS 'drugIncome', expire_date FROM stock ";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $drug_details=$stmt->fetchAll();
+
+            $result['drug_details']=$drug_details;
 
             if($result!=NULL)
                 return $result;
