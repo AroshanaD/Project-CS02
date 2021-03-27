@@ -19,7 +19,7 @@
 
             <div class="dashboard">
               <div id="welcome-board">
-                <div id="welcome-txt" style="color:black">Welcome, Dasun!</div>
+                <div id="welcome-txt" style="color:black">Welcome, <?php echo $_SESSION['f_name']?>!</div>
               </div>
               <div id="dashboard-title" style="color:black">Dashboard</div>
             </div>

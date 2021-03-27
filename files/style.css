@@ -347,6 +347,10 @@ table>tbody {
     margin: 0 3% 0 3%;
 }
 
+.calendar-doctor{
+    background-color: aliceblue;
+}
+
 .calendar-row {
     width: fit-content;
     height: fit-content;

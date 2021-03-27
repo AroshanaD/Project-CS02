@@ -26,16 +26,18 @@ $(document).ready(function(){
                     location.href = "../../index.php/user/dashboard";
                 }
                 else{
-                    $("#id").addClass("input-error");
-                    $("#password").addClass("input-error");
                     if(data == 1){
                         $("#password").val("");
-                        $("#form-message").text("Incorrect Password");
+                        alert("Incorrect Password");
+                        //$("#form-message").text("Incorrect Password");
+                        $("#password").addClass("input-error");
                     }
                     else{
                         $("#id").val("");
                         $("#password").val("");
-                        $("#form-message").text("Incorrect User ID");
+                        alert("Incorrect User ID")
+                        //$("#form-message").text("Incorrect User ID");
+                        $("#id").addClass("input-error");
                     }
                 }
 

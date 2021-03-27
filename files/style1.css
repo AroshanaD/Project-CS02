@@ -885,6 +885,7 @@ td>a {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+    padding: 10px;
 }
 
 .search-bar {
@@ -1072,6 +1073,11 @@ td>a {
     margin: 0 3% 0 3%;
     overflow-x: auto;
     box-shadow: var(--box-shadow);
+}
+
+.calendar-doctor{
+    text-align: center;
+    background-color: aliceblue;
 }
 
 .calendar-row {
