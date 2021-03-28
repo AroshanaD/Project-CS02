@@ -227,7 +227,7 @@
                 $data = $stmt->fetch();
                 $result['female_test'] = $data['female_test'];
 
-                $query = "SELECT SUM(cost) AS 'tot_income';
+                $query = "SELECT SUM(cost) AS 'tot_income'";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
