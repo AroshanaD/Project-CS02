@@ -233,34 +233,52 @@ function remove_func(i) {
 }
 
 function render_bill(id, name, gender, age, contact) {
+    
+    let current = new Date();
+    let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+    let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+    let dateTime = cDate + ' ' + cTime;
     $(".table").remove();
     $(".form").remove();
-    $(".container-l").css("grid-template-areas", "'nav nav nav' 'sidebar receipt receipt' 'sidebar receipt receipt' 'footer footer footer'")
-    $(".container-l").append(`<div class=${"receipt"}>`);
-    $(".receipt").append(`<div class=${"receipt-t"}>`);
-    $(".receipt-t").text("Lab Test");
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient ID"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(id));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Name"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(name));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Gender"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(gender));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Age"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(age));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Patient Contact"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(contact));
-    $(".receipt").append($(`<table id=${"small-tb"}>`));
+    $(".container-8").css("grid-template-areas", "'nav nav nav' 'sidebar report report' 'sidebar report report' 'footer footer footer'")
+    $(".container-8").append(`<div class=${"report"}>`);
+    $(".report").append(`<div class=${"report-paper"} style=${"height:500px"}>`);
+    $(".report-paper").append(`<div class=${"content"} style=${"height:400px"}>`);
+    $(".content").append($(`<div>`).text("MedCaid Hospital"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 010"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 050"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text("contactus@medcaid.com"));
+    $(".content").append($(`</br>`));
+    $(".content").append($(`<div class=${"heading"}>`).text("Lab Test"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text(dateTime));
+    $(".content").append($(`</br>`));
+    $(".content").append($(`<table class=${"report-tb"}>`));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer ID"),$(`<td>`).text(id)));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer Name"),$(`<td>`).text(name)));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer Age"),$(`<td>`).text(age)));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer Contact"),$(`<td>`).text(contact)));
+    $(".content").append($(`</br>`));
+    $(".content").append($(`<table class=${"report-tb"} id=${"app"}>`));
+
+    var header = $(`<tr>`).append(
+        $(`<td>`).text("ID"),
+        $(`<td>`).text("Medicine"),
+        $(`<td>`).text("Sub Total"));
+    $("#app").append(header);
 
     selected_list_details.forEach(element => {
         var row = $(`<tr id=${element[0]}>`).append(
             $(`<td>`).text(element[0]), $(`<td>`).text(element[1]),
             $(`<td>`).text(element[2]));
-        $("#small-tb").append(row);
+        $("#app").append(row);
     });
-    row = $(`<tr>`).append(
+    total = $(`<tr>`).append(
         $(`<td>`), $(`<td>`).text("Total"),
         $(`<td>`).text(total_cost));
-    $("#small-tb").append(row);
+    $("#app").append(total);
 
-    $(".receipt").append($(`<div class=${"receipt-t"}>`).append($(`<button id=${"print"}>`).text("Print")));
+    $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"print"}>`).text("Print")));
+    $("#print").click(function(){
+        window.print();
+    })
 }

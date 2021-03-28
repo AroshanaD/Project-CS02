@@ -9,6 +9,10 @@ $(document).ready(function(){
         }
     })
 
+    $("#print").click(function(){
+        window.print();
+    })
+
     function render_data(data){
         $("#app").append(
             $(`<tr id=${"report-tr"} >`).append(

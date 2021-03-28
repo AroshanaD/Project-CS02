@@ -25,7 +25,7 @@
         <div class=form id="selection" >
             <div class="topic-small" style="color:white; font-size:17px">Select Doctor And Date</div>
             <div class="form-container3" style="width:90%; background-color:transparent">
-                <div id="form-1" style="background-color:transparent">
+                <div id="form-1" style="background-color:transparent;padding:0">
                     <div class="input" >
                         <select style="background-color:white" name="specialization" id="search_spec" required >
                             <option value="Any">Any Specialization</option>
@@ -36,7 +36,7 @@
                     </div>
                     <div id="form-message"></div>
                 </div>
-                <div id="form-2" style="background-color:transparent">
+                <div id="form-2" style="background-color:transparent;padding:0">
                     <div class="input" >
                         <select style="background-color:white" name="doctor" id="doctor" required>
                             <option value="" hidden selected>Select doctor</option>
@@ -58,7 +58,7 @@
             </div>
         </div>
         <form class="form"  style="background-color:white;">
-            <div class="topic-small" style="width: 100%;font-size:17px">Fill Patient Details</div>
+            <div class="topic" style="width: 100%;text-align:center;margin:0">Fill Patient Details</div>
             <div class="form-container3" style="width:60%; padding: 0" >
                 <div id="form-1">
                     <div class="label">

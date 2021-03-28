@@ -169,7 +169,7 @@ $(document).ready(function () {
                                 status=2; // seat are not available
                             }
                         if(status==0){
-                            $("#form-message").text('seats are available');
+                            alert('Seats Available');
                             $("#seat").val(1);
                             var scheduleId= details[index].id;
                             for (var i=0;i<doctors.length;i++){
@@ -185,7 +185,7 @@ $(document).ready(function () {
                         }
 
                         else if(status==1){
-                            $("#form-message").text('seats are available!');
+                            alert('Seats available!');
                             $("#seat").val(data.CurrentSeat_no + 1);
                             var scheduleId= details[index].id;
                             for (var i=0;i<doctors.length;i++){
@@ -201,7 +201,7 @@ $(document).ready(function () {
                         }
 
                         else{
-                            $("#form-message").text('!seats are not available. please select another date.');
+                            alert('Seats not available. Please select another date.');
                             $("#seat").val("reach maximum");
                             $("#appoint_no").val("");
                             $("#d_charges").val("");
@@ -226,26 +226,24 @@ function render_details(details) {
 
     $("table").empty();
 
-    var head = $(`<tr id=${"head_row"}>`).append(
-        $(`<td>`).text("Weekday"),
-        $(`<td>`).text("Time"));
-    $("table").append(head);
+    $("table").append($(`<tr id=${"app_day"}>`));
+    $("#app_day").append($(`<td>`),
+    $(`<td>`).text("Sunday"),$(`<td>`).text("Monday"),
+    $(`<td>`).text("Tuesday"),$(`<td>`).text("Wednesday"),
+    $(`<td>`).text("Thursday"),$(`<td>`).text("Friday"),
+    $(`<td>`).text("Saturday"));
 
+    $("table").append($(`<tr id=${"app_avail"} style=${"background-color:white"}>`));
+    $("#app_avail").append($(`<td>`).text("Time"));
 
     for (var j=0;j<7;j++){
         for(var i=0;i<details.length;i++){
             if(week[j]==details[i].date){
-                var row = $(`<tr>`).append(
-                $(`<td>`).text(details[i].date),
-                $(`<td>`).text(details[i].time));
-                $("table").append(row);
+                $("#app_avail").append($(`<td>`).text(details[i].time));
                 break;
             }
             else if(i==details.length-1){
-                var row = $(`<tr>`).append(
-                $(`<td>`).text(week[j]),
-                $(`<td>`).text("Not available"));
-                $("table").append(row);
+                $("#app_avail").append($(`<td style=${"text-align:center"}>`).text("-"));
             }
         }
     }

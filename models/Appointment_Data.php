@@ -92,7 +92,7 @@
             $stmt->execute([$schedule_id,$date]);
             $result = $stmt->fetch();
 
-            if($result['appointment_id']==NULL){
+            if($result==NULL){
                 $query="SELECT MAX(appointment_id) AS 'appointmentID' FROM appointment";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();

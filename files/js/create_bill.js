@@ -45,9 +45,19 @@ $(document).ready(function () {
             $(element).removeClass("input-error");
         });
 
-        if($("#id").val() != ""){
+        if(id != ""){
             id = $("#id").val();
-            if (id_val(id) == false) { valid = false; }
+            if (id_val(id) == false) { valid = false; 
+            alert("Please enter a valid id");}
+        }
+
+        if(contact != ""){
+            if(contact_val(contact) == false){valid = false;
+            alert("Please enter a valid contact");}
+        }
+
+        if(age > 100 & age < 18){
+            alert("Please enter a valid age");
         }
 
         /*if($("#note").val() != ""){
@@ -279,6 +289,10 @@ function remove_func(i, medicine_quantity) {
 }
 
 function render_bill(id, name, age) {
+    let current = new Date();
+    let cDate = current.getFullYear() + '-' + (current.getMonth() + 1) + '-' + current.getDate();
+    let cTime = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+    let dateTime = cDate + ' ' + cTime;
     $(".table").remove();
     $(".form").remove();
     $(".container-8").css("grid-template-areas", "'nav nav nav' 'sidebar report report' 'sidebar report report' 'footer footer footer'")
@@ -291,6 +305,7 @@ function render_bill(id, name, age) {
     $(".content").append($(`<div style=${"text-align:right"}>`).text("contactus@medcaid.com"));
     $(".content").append($(`</br>`));
     $(".content").append($(`<div class=${"heading"}>`).text("Bill Invoice"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text(dateTime));
     $(".content").append($(`</br>`));
     $(".content").append($(`<table class=${"report-tb"}>`));
     $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer ID"),$(`<td>`).text(id)));
@@ -325,4 +340,8 @@ function render_bill(id, name, age) {
     $("#app").append(total);
 
     $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"print"}>`).text("Print")));
+
+    $("#print").click(function(){
+        window.print();
+    })
 }
