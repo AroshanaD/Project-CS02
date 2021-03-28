@@ -212,7 +212,7 @@ $(document).ready(function () {
                 });
             }
             else{
-                $("#form-message").text("!No schedule available schedule on " + day);
+                alert("!No schedule available schedule on " + day);
                 $("#seat").val("");
                 $("#appoint_no").val("");
                 $("#d_charges").val("");
