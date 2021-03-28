@@ -164,11 +164,10 @@ class Inventory extends Controllers
         $age = $_POST['age'];
         $no_items = $_POST['no_items'];
         $cost = $_POST['cost'];
-        $note = $_POST['note'];
         $receptionist_id = $_SESSION['id'];
         $medicine_list = $_POST['medicine_list'];
 
-        $status = $model->add_bill($id, $name, $age, $receptionist_id, $no_items, $cost, $note, $medicine_list);
+        $status = $model->add_bill($id, $name, $age, $receptionist_id, $no_items, $cost, $medicine_list);
         header('Content-Type: application/json');
         echo json_encode($status);
 

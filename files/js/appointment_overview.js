@@ -101,14 +101,14 @@ $(document).ready(function(){
         var header = $(`<tr id=${"head_row"}>`).append(
             $(`<th>`).text("Specialization"),
             $(`<th>`).text("No.of Appointments"));
-        $("#spec").append(header);
+        $("#spe").append(header);
 
         var spec_data = data['spec_overview'];
         spec_data.forEach(details => {
             var row = $(`<tr>`).append(
                 $(`<td>`).text(details.spec),
                 $(`<td>`).text(details.apps));
-            $("#spec").append(row);
+            $("#spe").append(row);
         });
     }
 

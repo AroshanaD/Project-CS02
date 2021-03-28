@@ -61,7 +61,7 @@ $(document).ready(function(){
                             $("#category").change(function(){
                                 id_generate();
                              });
-                            $("#form-message").text("Successfully Added User! Email Sent To User");
+                            alert("Successfully Added User! Email Sent To User");
                         }
                         if(submit == 'Update'){
                             location.href = "../../index.php/staff/view";
@@ -69,7 +69,7 @@ $(document).ready(function(){
                     }
                     else{
                         if(data['validation_success'] == 1){
-                            $("#form-message").text("Couldn't Send Email. Please Verify Email Again");
+                            alert("Couldn't Send Email. Please Verify Email Again");
                         }
                         else{
                             if(data['id'] == 1){

@@ -22,6 +22,7 @@ $(document).ready(function(){
 
         if(valid == true){
             $(this).unbind('submit').submit();
+            console.log("true");
         }
     })
 })

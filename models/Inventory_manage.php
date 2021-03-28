@@ -193,7 +193,7 @@ class Inventory_manage extends Models
         return $status;
     }*/
 
-    public function add_bill($id, $name, $age, $receptionist_id, $no_items, $cost, $note, $medicine_list)
+    public function add_bill($id, $name, $age, $receptionist_id, $no_items, $cost, $medicine_list)
     {
         try {
             $connect = new Database();
@@ -205,9 +205,9 @@ class Inventory_manage extends Models
             $stmt = $pdo->prepare($query);
             $stmt->execute();
 
-            $query = "INSERT INTO `medicine_sales`(customer_id, customer_name, customer_age, pharmacist_id, no_items, total_cost, note) VALUES(?,?,?,?,?,?,?)";
+            $query = "INSERT INTO `medicine_sales`(customer_id, customer_name, customer_age, pharmacist_id, no_items, total_cost) VALUES(?,?,?,?,?,?)";
             $stmt = $pdo->prepare($query);
-            $status = $stmt->execute([$id, $name, $age, $receptionist_id, $no_items, $cost, $note]);
+            $status = $stmt->execute([$id, $name, $age, $receptionist_id, $no_items, $cost]);
 
             $sales_id = $this->get_last_salesid()['sales_id'] + 1;
 

@@ -45,11 +45,12 @@
         <?php $path = $_SESSION['user_cat'] . "_sidebar.php";
         include $path; ?>
 
-        <form class="form" method="POST" action=<?php echo Router::site_url() . "/Schedules/add" ?>>
+        <form class="form" method="POST" action=<?php echo Router::site_url() . "/Schedules/add" ?> style="height: 95%; overflow-y:scroll">
             <div class="form-container">
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                    <div style="padding-top:15px"><div class="topic" style="margin:0">Add Schedule</div></div>
                     <div class="label">
                         <label for="doc_id">Doctor Id</label>
                     </div>

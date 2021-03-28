@@ -17,7 +17,7 @@
             $verification_key = hash('SHA256',$verification_key);
             $fname = ucfirst($fname);
             $lname = ucfirst($lname);
-            $status = $model->add($id,$fname,$lname,$gender,$birthday,$contact,$address,$email,$password,$verification_key);
+            $status = $model->add($id,$fname,$lname,$birthday,$gender,$contact,$address,$email,$password,$verification_key);
 
             if($status == TRUE){
                 $email_sent = $this->send_auth_mail($verification_key,$email);
@@ -25,7 +25,7 @@
                     return TRUE;
                 }
                 else{
-                    $model->delete($id);
+                    $model->delete($email);
                     return FALSE;
                 }
             }
@@ -82,12 +82,8 @@
 
             $valid = TRUE;
 
-            $invalid_list = array("success"=>FALSE,"validation_success"=>FALSE,"id"=>FALSE,"contact"=>FALSE,"email"=>FALSE);
+            $invalid_list = array("success"=>FALSE,"validation_success"=>FALSE,"contact"=>FALSE,"email"=>FALSE);
             
-            if($valid_instance->validate("patient","id",$id) != 0){
-                $invalid_list['id'] = TRUE;
-                $valid = FALSE;
-            }
             if($valid_instance->validate("patient","contact_no",$contact) != 0){
                 $invalid_list['contact'] = TRUE;
                 $valid = FALSE;

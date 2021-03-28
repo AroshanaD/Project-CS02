@@ -143,15 +143,6 @@ button:focus {
     background-color: rgba(255, 0, 0, 0.0.5);
 }
 
-.error-message {
-    width: 100%;
-    color: red;
-    font-size: 16px;
-    font-weight: bold;
-    text-align: center;
-    padding: 5px;
-}
-
 .btn-area {
     display: flex;
     width: inherit;
@@ -561,8 +552,8 @@ td>a {
     cursor: pointer;
     transition: .3s;
     box-shadow: 0px 0px 19px 5px rgba(0, 0, 0, 0.19);
-    margin-top: 20px;
     text-align: center;
+    margin: 0;
 }
 
 .btn:hover {

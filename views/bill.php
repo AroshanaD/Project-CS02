@@ -19,12 +19,13 @@
         include $path; ?>
 
         <div class="report">
-            <div class="report-paper">
+            <div class="report-paper" style="height:400px">
                 <div class="content">
                 <div class="heading">
-                    Appointment Overview Report </br></br>
-                    <p style="font-size: 16px; font-weight: normal; text-align: left">
-                        <?php echo $_POST['from_date']; ?> --- <?php echo $_POST['to_date']; ?> </p>
+                    Bill Invoice </br></br>
+                    <p style="font-size: 16px; font-weight: normal; text-align: left">+94 (0)11 2140 010 </p>
+                    <p style="font-size: 16px; font-weight: normal; text-align: left">+94 (0)11 2140 050 </p>
+                    <p style="font-size: 16px; font-weight: normal; text-align: left">medcaid.info@gmail.com </p>
                 </div>
                     <table class="report-tb" id="app">
 

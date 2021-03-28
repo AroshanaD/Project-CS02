@@ -39,7 +39,7 @@ function render_details(data) {
 
     render_header();
 
-    const no_rows = 3;
+    const no_rows = 10;
     var page = 1;
     var tot_rows = data.length;
 

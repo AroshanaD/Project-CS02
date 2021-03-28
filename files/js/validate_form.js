@@ -56,24 +56,20 @@ $(document).ready(function(){
                     address : address,
                     email : email,
                     password : password,
-                    repassword : repassword,},
+                    repassword : repassword},
                 type: 'post',
                 success:function(data){
                     if(data['success'] == 1){
                         id_list.forEach(element => {
                             $(element).val("");
                         });
-                        $("#form-message").text("Successfully Registered!   Please Use Link Sent To Email To Confirm Registration");
+                        alert("Successfully Registered!   Please Use Link Sent To Email To Confirm Registration");
                     }
                     else{
                         if(data['validation_success'] == 1){
-                            $("#form-message").text("Couldn't Send Email. Please Verify Email Again");
+                            alert("Couldn't Send Email. Please Verify Email Again");
                         }
                         else{
-                            if(data['id'] == 1){
-                                $("#id").addClass("input-error");
-                                $("<div class='error-message'>Id Already TAken</div>").insertAfter("#id_f");
-                            }
                             if(data['contact'] == 1){
                                 $("#contact").addClass("input-error");
                                 $("<div class='error-message'>Contact Number Already Exist</div>").insertAfter("#contact_f");

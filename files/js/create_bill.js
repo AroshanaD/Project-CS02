@@ -30,15 +30,16 @@ $(document).ready(function () {
     $("#bill-form").submit(function (event) {
         event.preventDefault();
 
-        var id = null;
+        var id = $("#id").val();
         var name = $("#customer_name").val();
         var age = $("#age").val();
+        var contact =$("#contact").val()
 
         var valid = true;
         $(".error-message").remove();
         $("#form-message").empty();
 
-        var id_list = ["#id", "#customer_name", "#age"];
+        var id_list = ["#id", "#customer_name", "#age", "#contact"];
 
         id_list.forEach(element => {
             $(element).removeClass("input-error");
@@ -64,6 +65,7 @@ $(document).ready(function () {
                         id: id,
                         name: name,
                         age: age,
+                        contact: contact,
                         no_items: no_items,
                         cost: total_cost,
                         medicine_list: selected_list_details,
@@ -80,7 +82,7 @@ $(document).ready(function () {
                 })
             }
             else {
-                $("#form-message").text("Please Select 1 Medicine Or More");
+                alert("Please Select 1 Medicine Or More");
             }
         }
 
@@ -109,9 +111,7 @@ function render_details(data) {
             $(`<td>`).text("Unit"),
             $(`<td>`).text("Price"),
             $(`<td>`).text("Available Quantity"),
-            $(`<td>`).text("Manufacturer"),
             $(`<td>`).text("Expiration Date"),
-            $(`<td>`).text("Note"),
             $(`<td>`).text("Bill Quantity"),
             $(`<td>`).text("Special Note"),
             $(`<td>`).text("Select"));
@@ -120,7 +120,7 @@ function render_details(data) {
 
     render_header();
 
-    const no_rows = 3;
+    const no_rows = 12;
     var page = 1;
     var tot_rows = data.length;
 
@@ -158,11 +158,9 @@ function render_details(data) {
                 $(`<td>`).text((data[i].unitary_value).toString().concat(" ", data[i].unitary_unit)),
                 $(`<td>`).text(data[i].selling_price),
                 $(`<td>`).text(data[i].quantity),
-                $(`<td>`).text(data[i].manufacturer),
                 $(`<td>`).text(data[i].expire_date),
-                $(`<td>`).text(data[i].note),
                 $(`<td>`).append(`<input type${"number"} id=${"q".concat(i)} style=${"width:50px"} required>`),
-                $(`<td>`).append(`<input type${"text"} id=${"n".concat(i)} style=${"width:150px"}>`),
+                $(`<td>`).append(`<input type${"text"} id=${"n".concat(i)} style=${"width:100px"}>`),
                 $(`<td>`).append(select));
             $("#full-tb").append(row);
         }
@@ -283,17 +281,23 @@ function remove_func(i, medicine_quantity) {
 function render_bill(id, name, age) {
     $(".table").remove();
     $(".form").remove();
-    $(".container-l").css("grid-template-areas", "'nav nav nav' 'sidebar receipt receipt' 'sidebar receipt receipt' 'footer footer footer'")
-    $(".container-l").append(`<div class=${"receipt"}>`);
-    $(".receipt").append(`<div class=${"receipt-t"}>`);
-    $(".receipt-t").text("Lab Test");
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer ID"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(id));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer Name"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(name));
-    $(".receipt").append($(`<div class=${"receipt-l"}>`).text("Customer Age"));
-    $(".receipt").append($(`<div class=${"receipt-f"}>`).text(age));
-    $(".receipt").append($(`<table id=${"small-tb"}>`));
+    $(".container-8").css("grid-template-areas", "'nav nav nav' 'sidebar report report' 'sidebar report report' 'footer footer footer'")
+    $(".container-8").append(`<div class=${"report"}>`);
+    $(".report").append(`<div class=${"report-paper"} style=${"height:500px"}>`);
+    $(".report-paper").append(`<div class=${"content"} style=${"height:400px"}>`);
+    $(".content").append($(`<div>`).text("MedCaid Hospital"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 010"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 050"));
+    $(".content").append($(`<div style=${"text-align:right"}>`).text("contactus@medcaid.com"));
+    $(".content").append($(`</br>`));
+    $(".content").append($(`<div class=${"heading"}>`).text("Bill Invoice"));
+    $(".content").append($(`</br>`));
+    $(".content").append($(`<table class=${"report-tb"}>`));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer ID"),$(`<td>`).text(id)));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer Name"),$(`<td>`).text(name)));
+    $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Customer Age"),$(`<td>`).text(age)));
+    $(".content").append($(`</br>`));
+    $(".content").append($(`<table class=${"report-tb"} id=${"app"}>`));
 
     var header = $(`<tr>`).append(
         $(`<td>`).text("ID"),
@@ -301,7 +305,7 @@ function render_bill(id, name, age) {
         $(`<td>`).text("Quantity"),
         $(`<td>`).text("Special Note"),
         $(`<td>`).text("Sub Total"));
-    $("#small-tb").append(header);
+    $("#app").append(header);
 
     selected_list_details.forEach(element => {
         var row = $(`<tr id=${element[0]}>`).append(
@@ -310,15 +314,15 @@ function render_bill(id, name, age) {
             $(`<td>`).text(element[2]),
             $(`<td>`).text(element[4]),
             $(`<td>`).text(element[3]));
-        $("#small-tb").append(row);
+        $("#app").append(row);
     });
-    row = $(`<tr>`).append(
+    total = $(`<tr>`).append(
         $(`<td>`),
         $(`<td>`),
         $(`<td>`),
         $(`<td>`).text("Total"),
         $(`<td>`).text(total_cost));
-    $("#small-tb").append(row);
+    $("#app").append(total);
 
-    $(".receipt").append($(`<div class=${"receipt-t"}>`).append($(`<button id=${"print"}>`).text("Print")));
+    $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"print"}>`).text("Print")));
 }

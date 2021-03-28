@@ -29,7 +29,7 @@ $(document).ready(function(){
 function render_table(data){
     $("table").empty();
 
-    var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
+    var header = $(`<tr id=${"head_row"}>`).append(
     $(`<td>`).text("No"),
     $(`<td>`).text("ID"),$(`<td>`).text("Doctor Name"),
     $(`<td>`).text("Specialization"),
@@ -41,17 +41,14 @@ function render_table(data){
 
     for(var i=0; i<data.length; i++){
 
-        var row_id = data[i]['id'].toString();
-        //console.log(row_id);
-        var row_id = row_id.concat("')");
-        var func = "selectfunc(".concat(i+1,",","'",row_id);
+        console.log(data[i].first_name)
 
         var get_details = data[i]['id'];
         var update = "<a href=../schedules/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
         var dele = "<a href=../schedules/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
-        var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
-        $(`<td>`).text(i+1),
-        $(`<td>`).text(data[i].id),$(`<td>`).text(data[i].first_name.concat(" ",data[i].last_name)),
+        var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).text(i+1),
+        $(`<td>`).text(data[i].id),
+        $(`<td>`).text(data[i].first_name.concat(" ",data[i].last_name)),
         $(`<td>`).text(data[i].specialization),
         $(`<td>`).text(data[i].date),$(`<td>`).text(data[i].time),
         $(`<td>`).append(update),

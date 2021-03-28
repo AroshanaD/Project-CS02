@@ -21,7 +21,7 @@
             <a href=<?php echo Router::site_url() . "/register" ?>><button class="main-button">Register</button></a>
             <a href=<?php echo Router::site_url() . "/user/dashboard" ?>><button class="main-button">Dashboard</button></a>
         </div>
-        <form class="form">
+        <form class="form" method="post" action=<?php echo Router::site_url().'/user/set_password' ?>>
             <div class="form-container1">
                 <div id="form-img">
                 </div>

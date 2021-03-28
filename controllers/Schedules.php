@@ -41,7 +41,7 @@
 
 
         public function get_view(){
-            $model= $this->load('models','Schedules_Manage');
+            $model= $this->load('models','Schedules_manage');
             $result = $model->view();
             
             header('Content-Type: application/json');
@@ -49,7 +49,7 @@
         }
 
         public function search(){
-            $model= $this->load('models','Schedules_Manage');
+            $model= $this->load('models','Schedules_manage');
             $id=$_POST['id'];
             $name=$_POST['name'];
             $specialization=$_POST['specialization'];
@@ -61,7 +61,7 @@
         }
 
         public function update(){
-            $model= $this->load('models','Schedules_Manage');
+            $model= $this->load('models','Schedules_manage');
             if(isset($_GET['id'])){
                 $id=$_GET['id'];
                 $result=$model->get_details($id);
@@ -87,7 +87,7 @@
         }
 
         public function delete(){
-            $model= $this->load('models','Schedules_Manage');
+            $model= $this->load('models','Schedules_manage');
             if(isset($_GET['id'])){
                 $id=$_GET['id'];
                 $result=$model->get_details($id);

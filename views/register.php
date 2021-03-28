@@ -30,12 +30,6 @@
                 <div id="form-1">
                     <div class="title" style="font-size:30px">Sign Up</div>
                     <div class="label">
-                        <label for="id">NIC</label>
-                    </div>
-                    <div class="input" id="id_f">
-                        <input type="text" id="id" name="id" placeholder="ex:199912345678 or 991234567V" required>
-                    </div>
-                    <div class="label">
                         <label for="name">First Name</label>
                     </div>
                     <div class="input" id="fname_f">
@@ -61,6 +55,12 @@
                     </div>
                     <div class="input" id="bday_f">
                         <input type="date" id="birthday" name="birthday" required>
+                    </div>
+                    <div class="label">
+                        <label for="id">NIC</label>
+                    </div>
+                    <div class="input" id="id_f">
+                        <input type="text" id="id" name="id" placeholder="ex:199912345678 or 991234567V" required>
                     </div>
                 </div>
                 <div id="form-2">
