@@ -180,6 +180,10 @@
                     $stmt = $pdo->prepare($query3);
                     $status=$stmt->execute([$id,$seatno,$appointment_id]);
 
+                    $query4= "INSERT INTO `payment`(`type`,`Charge_id`,`appointment_id`,`p_id`) VALUES('premises','paid',?,?)";
+                    $stmt = $pdo->prepare($query4);
+                    $status=$stmt->execute([$appointment_id,$id]);
+
                     $pdo->commit();
                     return $id;
 
@@ -204,6 +208,10 @@
                     $query3 = "INSERT INTO `patient_appointment`(`patient_Id`,`Seat_no`,`doctor_appointmentId`,`online`) VALUES(?,?,?,0)";
                     $stmt = $pdo->prepare($query3);
                     $status=$stmt->execute([$id,$seatno,$appointment_id]);
+
+                    $query4= "INSERT INTO `payment`(`type`,`Charge_id`,`appointment_id`,`p_id`) VALUES('premises','paid',?,?)";
+                    $stmt = $pdo->prepare($query4);
+                    $status=$stmt->execute([$appointment_id,$id]);
 
                     $pdo->commit();
                     return $id;
@@ -236,7 +244,7 @@
             return $result;
         }
 
-        public function create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id){
+        public function create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id,$payment_id){
             try{
                 $connect = new Database();
                 $pdo = $connect->connect();
@@ -261,6 +269,10 @@
                     $stmt = $pdo->prepare($query3);
                     $status=$stmt->execute([$id,$seat,$appointment_id]);
 
+                    $query4= "INSERT INTO `payment`(`type`,`Charge_id`,`appointment_id`,`p_id`) VALUES('online',?,?,?)";
+                    $stmt = $pdo->prepare($query4);
+                    $status=$stmt->execute([$payment_id,$appointment_id,$id]);
+
                     $query = "SET foreign_key_checks = 1";
                     $stmt = $pdo->prepare($query);
                     $stmt->execute();
@@ -284,6 +296,10 @@
                     $stmt = $pdo->prepare($query3);
                     $status=$stmt->execute([$id,$seat,$appointment_id]);
 
+                    $query4= "INSERT INTO `payment`(`type`,`Charge_id`,`appointment_id`,`p_id`) VALUES('online',?,?,?)";
+                    $stmt = $pdo->prepare($query4);
+                    $status=$stmt->execute([$payment_id,$appointment_id,$id]);
+
                     $query = "SET foreign_key_checks = 1";
                     $stmt = $pdo->prepare($query);
                     $stmt->execute();
@@ -294,7 +310,8 @@
             }
             catch (PDOException $e) {
                 $pdo->rollBack();
-                create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id);
+                return false;
+                /*create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id);*/
             }
         }
 
