@@ -200,12 +200,12 @@
                 "description" => 'Appointment Charges',
                 "customer" => $customer->id
             ));
-            //print_r($charge);
             if($charge->status == 'succeeded'){
                 $_SESSION['appointment']['payment_id'] = $charge->id;
+                $this->create_appointment();
             }
 
-            $this->create_appointment();
+            
 
         }
 
@@ -214,14 +214,14 @@
             $doc_id=$_SESSION['appointment']['doctor_id'];
             $date=$_SESSION['appointment']['select_date'];
             $seat=$_SESSION['appointment']['seat_no']+1;
-            $schedule_id=$_SESSION['appointment']['schedule_id'] ; 
+            $schedule_id=$_SESSION['appointment']['schedule_id'];
+            $payment_id = $_SESSION['appointment']['payment_id'];
 
             $model=$this->load('models','Appointment_Data');
-            $result=$model->create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id);
+            $result=$model->create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id,$payment_id);
 
             if($result== TRUE){
-                /*
-                $subject = 'Appointment Booking Email';
+               /* $subject = 'Appointment Booking Email';
                 $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                         <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
@@ -230,9 +230,13 @@
 
                 $to = $email;
                 $mail = new mail_authentication();
-                $status = $mail->send_mail($subject,$body,$to);
-                */
+                $status = $mail->send_mail($subject,$body,$to);*/
                 $URL = Router::site_url() . "/appointment/patient_receipt?successfull";
+                echo "<script>location.href='$URL'</script>";
+            }
+            else{
+                
+                $URL = Router::site_url() . "/appointment/search_doctor?unsuccessfull";
                 echo "<script>location.href='$URL'</script>";
             }
         }

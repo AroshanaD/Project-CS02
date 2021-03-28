@@ -195,6 +195,46 @@
             else
                 return false;
         }
+
+        public function labtest_data(){
+                $connect = new Database();
+                $pdo = $connect ->connect();
+
+                $result;
+                $query = "SELECT COUNT(patient_name) AS 'patient_count' FROM lab_test;";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $patient_count=$stmt->fetch();
+                $result['patient_count']=$patient_count['patient_count'];
+
+                $query = "SELECT COUNT(id) AS 'test_count' FROM lab_test;";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $patient_count=$stmt->fetch();
+                $result['test_count']=$patient_count['test_count'];
+
+                $query = "SELECT COUNT(patient_name) AS 'male' FROM lab_test
+                    WHERE patient_gender = 'male'";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $data = $stmt->fetch();
+                $result['male_test'] = $data['male_test'];
+
+                $query = "SELECT COUNT(patient_name) AS 'female' FROM lab_test
+                    WHERE patient_gender = 'female'";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $data = $stmt->fetch();
+                $result['female_test'] = $data['female_test'];
+
+                $query = "SELECT SUM(cost) AS 'tot_income'";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $data = $stmt->fetch();
+                $result['tot_income'] = $data['tot_income'];
+
+                
+        }
     }
 
 ?>

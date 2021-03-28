@@ -33,6 +33,14 @@
             header('Content-Type: application/json');
             echo json_encode($result);
         }
+
+        public function labtest_overview()
+        {
+            $model = $this->load('models','report_Data');
+            $result = $model->labtest_data();
+            header('Content-Type: application/json');
+            echo json_encode($result);
+        }
     }
 
 ?>
