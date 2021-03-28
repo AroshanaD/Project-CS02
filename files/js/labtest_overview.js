@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     $.ajax({
-        url: '../../index.php/Reports/inventory_overview',
+        url: '../../index.php/Reports/labtest_overview',
         data: {},
         type: 'post',
         success: function(data) {
