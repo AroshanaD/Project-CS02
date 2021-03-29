@@ -35,6 +35,14 @@ function render_details(data) {
         $(`<tr id=${"report-tr"} >`).append(
             $(`<td id=${"report-td-1"}>`).append("Total income from Lab Tests"),
             $(`<td id=${"report-td-2"}>`).append(data['tot_income'])
+        ),
+        $(`<tr id=${"report-tr"} >`).append(
+            $(`<td id=${"report-td-1"}>`).append("Total number of different Lab Tests"),
+            $(`<td id=${"report-td-2"}>`).append(data['diff_test'])
+        ),
+        $(`<tr id=${"report-tr"} >`).append(
+            $(`<td id=${"report-td-1"}>`).append("Most number of Lab Tests"),
+            $(`<td id=${"report-td-2"}>`).append(data['most_lab'])
         )
     )
 }
