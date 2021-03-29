@@ -7,7 +7,7 @@
             
         }
 
-        public function appointment_data()
+        public function appointment_data($from,$to)
         {
 
             $connect = new Database();
@@ -19,10 +19,10 @@
                     COUNT(DISTINCT appointment.appointment_id) AS 'tot_sessions', SUM(doctor.fee) AS 'tot_income'
                     FROM patient_appointment LEFT JOIN appointment 
                     ON patient_appointment.doctor_appointmentId = appointment.appointment_id LEFT JOIN doctor
-                    ON appointment.Doctor_id = doctor.id";
+                    ON appointment.Doctor_id = doctor.id WHERE appointment.Date > ? AND appointment.Date < ?";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetch();
 
             $result['tot_apps'] = $data['tot_apps'];
@@ -32,20 +32,21 @@
 
             $query = "SELECT COUNT(patient_appointment.appointment_id) AS 'online_app' FROM patient_appointment
                     LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id
-                    WHERE patient_appointment.online = 1";
+                    WHERE patient_appointment.online = 1 AND appointment.Date > ? AND appointment.Date < ?";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetch();
 
             $result['online_app'] = $data['online_app'];
 
             $query = "SELECT appointment.Date AS 'most_day', COUNT(patient_appointment.appointment_id) AS 'apps'
                     FROM patient_appointment LEFT JOIN appointment 
-                    ON patient_appointment.doctor_appointmentId = appointment.appointment_id GROUP BY appointment.Date ORDER BY 'apps' DESC LIMIT 1;";
+                    ON patient_appointment.doctor_appointmentId = appointment.appointment_id WHERE appointment.Date > ? AND appointment.Date < ?
+                    GROUP BY appointment.Date ORDER BY 'apps' DESC LIMIT 1;";
             
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetch();
 
             $result['most_day'] = $data['most_day'];
@@ -53,10 +54,11 @@
 
             $query = "SELECT doctor.f_name AS 'f_name', doctor.l_name AS 'l_name', COUNT(patient_appointment.appointment_id) AS 'apps' FROM patient_appointment 
                     LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id 
-                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id GROUP BY doctor.id ORDER BY 'apps' DESC LIMIT 1";
+                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id WHERE appointment.Date > ? AND appointment.Date < ? 
+                    GROUP BY doctor.id ORDER BY 'apps' DESC LIMIT 1";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetch();
 
             $result['most_doc'] = $data['f_name'].$data['l_name'];
@@ -65,10 +67,11 @@
             $query = "SELECT specialization.name AS 'most_spec', COUNT(patient_appointment.appointment_id) AS 'apps' FROM patient_appointment 
                     LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id 
                     LEFT JOIN doctor ON appointment.Doctor_id = doctor.id LEFT JOIN specialization 
-                    ON doctor.specialization_id = specialization.id GROUP BY specialization.id ORDER BY 'apps' DESC LIMIT 1";
+                    ON doctor.specialization_id = specialization.id WHERE appointment.Date > ? AND appointment.Date < ? 
+                    GROUP BY specialization.id ORDER BY 'apps' DESC LIMIT 1";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetch();
 
             $result['most_spec'] = $data['most_spec'];
@@ -77,10 +80,10 @@
             $query = "SELECT COUNT(patient_appointment.appointment_id) AS 'male' FROM patient_appointment
                     LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id
                     LEFT JOIN patient ON patient_appointment.patient_id = patient.id
-                    WHERE patient.gender = 'Male'";
+                    WHERE patient.gender = 'Male' AND appointment.Date > ? AND appointment.Date < ?";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetch();
 
             $result['male_apps'] = $data['male'];
@@ -90,20 +93,21 @@
                     COUNT(DISTINCT appointment.Doctor_id) AS 'doctors', COUNT(patient_appointment.appointment_id) AS 'appointments', 
                     SUM(doctor.fee) AS 'income' FROM patient_appointment LEFT JOIN appointment 
                     ON patient_appointment.doctor_appointmentId = appointment.appointment_id LEFT JOIN doctor 
-                    ON appointment.Doctor_id = doctor.id GROUP BY appointment.Date";
+                    ON appointment.Doctor_id = doctor.id WHERE appointment.Date > ? AND appointment.Date < ? GROUP BY appointment.Date";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetchAll();
 
             $result['day_overview'] = $data;
 
             $query = "SELECT doctor.f_name AS 'f_name', doctor.l_name AS 'l_name', COUNT(patient_appointment.appointment_id) AS 'apps' FROM patient_appointment 
                     LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id 
-                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id GROUP BY doctor.id ORDER BY 'apps' DESC";
+                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id WHERE appointment.Date > ? AND appointment.Date < ? 
+                    GROUP BY doctor.id ORDER BY 'apps' DESC";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetchAll();
 
             $result['doc_overview'] = $data;
@@ -111,14 +115,87 @@
             $query = "SELECT specialization.name AS 'spec', COUNT(patient_appointment.appointment_id) AS 'apps' FROM patient_appointment 
                     LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id 
                     LEFT JOIN doctor ON appointment.Doctor_id = doctor.id LEFT JOIN specialization 
-                    ON doctor.specialization_id = specialization.id GROUP BY specialization.id ORDER BY 'apps' DESC";
+                    ON doctor.specialization_id = specialization.id WHERE appointment.Date > ? AND appointment.Date < ? 
+                    GROUP BY specialization.id ORDER BY 'apps' DESC";
 
             $stmt = $pdo->prepare($query);
-            $stmt->execute();
+            $stmt->execute([$from,$to]);
             $data = $stmt->fetchAll();
 
             $result['spec_overview'] = $data;
 
+            //print_r($result);
+
+            return $result;
+        }
+
+        public function doctor_appointment_data($id,$from,$to){
+            $connect = new Database();
+            $pdo = $connect->connect();
+
+            $result;
+
+            $query = "SELECT COUNT(patient_appointment.appointment_id) AS 'tot_apps',
+                    COUNT(DISTINCT appointment.appointment_id) AS 'tot_sessions', SUM(doctor.fee) AS 'tot_income'
+                    FROM patient_appointment LEFT JOIN appointment 
+                    ON patient_appointment.doctor_appointmentId = appointment.appointment_id LEFT JOIN doctor
+                    ON appointment.Doctor_id = doctor.id WHERE appointment.Date > ? AND appointment.Date < ? AND doctor.id = ?";
+
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to,$id]);
+            $data = $stmt->fetch();
+
+            $result['tot_apps'] = $data['tot_apps'];
+            $result['tot_sessions'] = $data['tot_sessions'];
+            $result['tot_income'] = $data['tot_income'];
+
+            $query = "SELECT COUNT(patient_appointment.appointment_id) AS 'online_app' FROM patient_appointment
+                    LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id
+                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id
+                    WHERE patient_appointment.online = 1 AND appointment.Date > ? AND appointment.Date < ? AND doctor.id = ?";
+
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to,$id]);
+            $data = $stmt->fetch();
+
+            $result['online_app'] = $data['online_app'];
+
+            $query = "SELECT appointment.Date AS 'most_day', COUNT(patient_appointment.appointment_id) AS 'apps'
+                    FROM patient_appointment LEFT JOIN appointment 
+                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id
+                    ON patient_appointment.doctor_appointmentId = appointment.appointment_id WHERE appointment.Date > ? AND appointment.Date < ?
+                    AND doctor.id = ? GROUP BY appointment.Date ORDER BY 'apps' DESC LIMIT 1;";
+            
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to,$id]);
+            $data = $stmt->fetch();
+
+            $result['most_day'] = $data['most_day'];
+            $result['most_day_apps'] = $data['apps'];
+
+            $query = "SELECT COUNT(patient_appointment.appointment_id) AS 'male' FROM patient_appointment
+                    LEFT JOIN appointment ON patient_appointment.doctor_appointmentId = appointment.appointment_id
+                    LEFT JOIN patient ON patient_appointment.patient_id = patient.id
+                    LEFT JOIN doctor ON appointment.Doctor_id = doctor.id
+                    WHERE patient.gender = 'Male' AND appointment.Date > ? AND appointment.Date < ? AND doctor.id = ?";
+
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to,$id]);
+            $data = $stmt->fetch();
+
+            $result['male_apps'] = $data['male'];
+            $result['female_apps'] = $result['tot_apps'] - $result['male_apps'];
+
+            $query = "SELECT appointment.Date AS 'Date', COUNT(patient_appointment.appointment_id) AS 'appointments', 
+                    SUM(doctor.fee) AS 'income' FROM patient_appointment LEFT JOIN appointment 
+                    ON patient_appointment.doctor_appointmentId = appointment.appointment_id LEFT JOIN doctor 
+                    ON appointment.Doctor_id = doctor.id WHERE appointment.Date > ? AND appointment.Date < ? AND doctor.id = ? GROUP BY appointment.Date";
+
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to,$id]);
+            $data = $stmt->fetchAll();
+
+            $result['day_overview'] = $data;
             //print_r($result);
 
             return $result;

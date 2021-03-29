@@ -21,8 +21,9 @@
         include $path; ?>
 
         <div class="form" id="spec">
+        <div style="padding-top:15px"><div class="topic" style="margin:0">Patient Details</div></div>
             <form class="form-container3" id="bill-form">
-                <div id="form-1">
+                <div id="form-1" style="padding:0">
                     <div class="input" id="id_f">
                         <input type="text" name="id" id="id" placeholder="Customer NIC">
                     </div>
@@ -33,7 +34,7 @@
                         <input type="text" name="age" id="age" placeholder="Customer Age" required>
                     </div>
                 </div>
-                <div id="form-2">
+                <div id="form-2" style="padding:0">
                     <div class="input">
                         <select name="gender" id="gender" required>
                             <option value="any">Select gender</option>
@@ -48,9 +49,7 @@
                     <div class="input" id="email_f">
                         <input type="email" id="email" name="email" placeholder="Customer Email">
                     </div>
-                    <div style="width:100%; text-align: center">
-                        <input type="submit" value="Add Test" class="btn">
-                    </div>
+                    <div style="align-text: center"><input type="submit" value="Add Test" class="btn"></div>
                     <div id="form-message"></div>
                 </div>
             </form>
@@ -73,7 +72,7 @@
                     <button id="search-btn" type="submit" name="search" style="font-size:18px">Search</button>
                 </div>
             </div>
-            <div class="pagination" style="width: 20%">
+            <div class="pagination" style="width: 30%; text-align:right">
                 <button class="next-btn" id="previous">Previous</button>
                 <button class="next-btn" id="next">Next</button>
             </div>

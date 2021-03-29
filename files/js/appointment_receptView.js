@@ -58,7 +58,7 @@ function render_details(data){
             $(`<td>`).text("No"),
             $(`<td>`).text("Appointment No"),$(`<td>`).text("Appointment date"),
             $(`<td>`).text("Appointment time"),$(`<td>`).text("Patient name"),
-            $(`<td>`).text("Patient birthday"),$(`<td>`).text("Patient contact"),
+            $(`<td>`).text("Patient contact"),
             $(`<td>`).text("Doctor_name"),
             $(`<td>`).append("View"));
             $("table").append(header);
@@ -104,7 +104,7 @@ function render_details(data){
             $(`<td>`).text(i+1),
             $(`<td>`).text(data[i].Seat_no),$(`<td>`).text(data[i].Date),
             $(`<td>`).text(data[i].time),$(`<td>`).text(data[i].f_name.concat(" ",data[i].l_name)),
-            $(`<td>`).text(data[i].birthday),$(`<td>`).text(data[i].contact_no),
+            $(`<td>`).text(data[i].contact_no),
             $(`<td>`).text(data[i].doctor_fname.concat(" ",data[i].doctor_lname)),
             $(`<td>`).append(View));
             $("table").append(row);

@@ -16,6 +16,7 @@
         public function add_test(){
             $model= $this->load('models','PatientTest_Manage');
 
+            $p_id = $_POST['pid'];
             $id = $_POST['id'];
             $name = $_POST['name'];
             $gender = $_POST['gender'];
@@ -25,7 +26,7 @@
             $test_list = $_POST['test_list'];
             $lab_id = $_SESSION['id'];
 
-            $result = $model->add_patient_test($name,$gender,$age,$contact,$cost,$id,$lab_id,$test_list);
+            $result = $model->add_patient_test($name,$gender,$age,$contact,$cost,$id,$lab_id,$p_id,$test_list);
             /*if($result == TRUE){
                 $last_test = ($model->get_lastid())['id'];
                 foreach($test_list as $test){

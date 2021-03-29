@@ -791,6 +791,8 @@ button {
     margin: 5px;
     padding: 0px;
     justify-content: space-around;
+    width: -webkit-fill-available;
+    border-top: var(--border-line)
 }
 
 table>thead, table>tbody {

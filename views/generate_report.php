@@ -33,6 +33,9 @@
                                 <option value="appointment_overview">Appointment Overview</option>
                                 <option value="inventory_overview">Inventory Overview</option>
                             <?php endif; ?>
+                            <?php if ($_SESSION['user_cat'] == 'doctor') : ?>
+                                <option value="doctor_appointment_overview">Appointment Overview</option>
+                            <?php endif; ?>
                             <?php if ($_SESSION['user_cat'] == 'pharmacist') : ?>
                                 <option value="sales_overview">Sales Overview</option>
                                 <option value="inventory_overview">Inventory Overview</option>

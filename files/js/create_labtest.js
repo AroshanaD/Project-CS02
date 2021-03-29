@@ -39,8 +39,10 @@ $(document).ready(function () {
                 $("#id").val(data[0]['NIC']);
                 $("#p_name").val(data[0]['f_name'].concat(" ",data[0]['l_name']));
                 $("#contact").val(data[0]['contact_no']);
-                p_email = email;
+                p_email = data[0]['email'];
                 p_id = data[0]['id'];
+                //console.log(p_id);
+                //console.log(data[0]);
             }
         })
     })
@@ -53,7 +55,7 @@ $(document).ready(function () {
         var gender = $("#gender").val();
         var age = $("#age").val();
         var contact = $("#contact").val();
-        var email = $("email").val();
+        var email = $("#email").val();
         var submit = $(".btn").val();
 
         var valid = true;
@@ -71,6 +73,8 @@ $(document).ready(function () {
         if (contact_val(contact) == false) { valid = false; }
 
         if (valid == true) {
+            console.log(email);
+            console.log(p_email);
             if(email == p_email){
                 var pid = p_id;
             }
@@ -78,6 +82,7 @@ $(document).ready(function () {
                 var pid = null;
             }
             if (selected_list.length >= 1) {
+                console.log(pid);
                 $.ajax({
                     url: '../../index.php/PatientTest/add_test',
                     data: {
@@ -100,7 +105,7 @@ $(document).ready(function () {
                 })
             }
             else {
-                $("#form-message").text("Please Select 1 Test Or More");
+                alert("Please Select 1 Test Or More");
             }
         }
 
@@ -124,13 +129,12 @@ function render_table(data) {
             $(`<td>`).text("No"),
             $(`<td>`).text("Test ID"),
             $(`<td>`).text("Test Name"),
-            $(`<td>`).text("Description"),
             $(`<td>`).text("Unit Price"),
             $(`<td>`).text("Select"));
         $("#select-tb").append(header);
     }
 
-    const no_rows = 3;
+    const no_rows = 12;
     var page = 1;
     var tot_rows = data.length;
 
@@ -169,7 +173,6 @@ function render_table(data) {
                 $(`<td>`).text(i + 1),
                 $(`<td>`).text(data[i].id),
                 $(`<td>`).text(data[i].name),
-                $(`<td>`).text(data[i].description),
                 $(`<td>`).text(data[i].unit_cost),
                 $(`<td>`).append(select));
             $("#select-tb").append(row);

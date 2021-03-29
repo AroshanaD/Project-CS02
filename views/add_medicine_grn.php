@@ -37,7 +37,7 @@
                     </div>
                     <div class="input">
                         <select name="vendors" id="vendors" required>
-
+                            <option value="" disabled selected hidden>Select Vendor</option>
                         </select>
                     </div>
                     <div class="label">

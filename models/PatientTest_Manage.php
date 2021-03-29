@@ -51,7 +51,7 @@ class PatientTest_Manage extends Models
         return $result;
     }*/
 
-    public function add_patient_test($name, $gender, $age, $contact, $cost, $id, $lab_id, $test_list)
+    public function add_patient_test($name, $gender, $age, $contact, $cost, $id, $lab_id, $p_id, $test_list)
     {
         try {
             $connect = new Database();
@@ -63,9 +63,13 @@ class PatientTest_Manage extends Models
             $stmt = $pdo->prepare($query);
             $stmt->execute();
 
-            $query = "INSERT INTO `lab_test`(patient_name,patient_gender,patient_age,patient_contact,cost,patient_id,lab_id) VALUES(?,?,?,?,?,?,?)";
+            if($p_id == NULL){
+                $p_id = 0;
+            }
+
+            $query = "INSERT INTO `lab_test`(patient_name,patient_gender,patient_age,patient_contact,cost,NIC,p_id,lab_id) VALUES(?,?,?,?,?,?,?,?)";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$name, $gender, $age, $contact, $cost, $id, $lab_id]);
+            $stmt->execute([$name, $gender, $age, $contact, $cost, $id, $p_id, $lab_id]);
 
             $lab_test = $this->get_lastid()['id'] + 1;
 
@@ -146,7 +150,7 @@ class PatientTest_Manage extends Models
     public function user_details($email){
         $connect = new Database();
         $pdo = $connect->connect();
-        $query = "SELECT id,f_name,l_name,NIC,contact_no FROM patient WHERE email=? AND verified=1";
+        $query = "SELECT id,f_name,l_name,NIC,contact_no,email FROM patient WHERE email=? AND verified=1";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$email]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
