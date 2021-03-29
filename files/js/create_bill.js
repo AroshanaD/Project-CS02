@@ -130,7 +130,7 @@ function render_details(data) {
 
     render_header();
 
-    const no_rows = 12;
+    const no_rows = 8;
     var page = 1;
     var tot_rows = data.length;
 
