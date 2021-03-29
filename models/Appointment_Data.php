@@ -229,7 +229,7 @@
             }
         }
 
-        public function receipt($id,$patient_id){
+        public function receipt($id,$patient_id,$seat){
             $connect = new Database();
             $pdo = $connect->connect();
 
@@ -237,9 +237,10 @@
             doctor.l_name AS 'doctor_lname',doctor.fee,specialization.name AS 'specialization', patient_appointment.Seat_no
              FROM patient JOIN patient_appointment ON patient.id=patient_appointment.patient_Id JOIN appointment ON 
              patient_appointment.doctor_appointmentId=appointment.appointment_id JOIN doctor ON doctor.id=appointment.Doctor_id 
-             JOIN specialization ON doctor.specialization_id=specialization.id WHERE patient_appointment.doctor_appointmentId=? AND patient_appointment.patient_Id=?";
+             JOIN specialization ON doctor.specialization_id=specialization.id WHERE patient_appointment.doctor_appointmentId=? AND
+             patient_appointment.Seat_no=? AND patient_appointment.patient_Id=?";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$id,$patient_id]);
+            $stmt->execute([$id,$seat,$patient_id]);
             $result = $stmt->fetch();
             return $result;
         }
@@ -255,13 +256,13 @@
                 $stmt->execute();
 
                 if($seat!=1){
-                    $query1 = "UPDATE appointment SET CurrentSeat_no=? WHERE Date=?";
+                    $query1 = "UPDATE appointment SET CurrentSeat_no=? WHERE Date=? AND schedule_id=? AND Doctor_Id=? ";
                     $stmt = $pdo->prepare($query1);
-                    $stmt->execute([$seat,$date]);
+                    $stmt->execute([$seat,$date,$schedule_id,$doc_id]);
 
-                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=?";
+                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=? AND schedule_id=? AND Doctor_Id=?";
                     $stmt = $pdo->prepare($query2);
-                    $stmt->execute([$date]);
+                    $stmt->execute([$date,$schedule_id,$doc_id]);
                     $result2 = $stmt->fetch();
                     $appointment_id=$result2['appointment_Id'];
 
@@ -286,9 +287,9 @@
                     $stmt = $pdo->prepare($query1);
                     $stmt->execute([$date,$schedule_id,$doc_id,$seat]);
 
-                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=?";
+                    $query2= "SELECT appointment_Id FROM appointment WHERE Date=? AND schedule_id=? AND Doctor_Id=?";
                     $stmt = $pdo->prepare($query2);
-                    $stmt->execute([$date]);
+                    $stmt->execute([$date,$schedule_id,$doc_id]);
                     $result2 = $stmt->fetch();
                     $appointment_id=$result2['appointment_Id'];
 

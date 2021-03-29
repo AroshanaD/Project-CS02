@@ -94,8 +94,8 @@
             $model = $this->load('models','Appointment_Data');
             $patient_id=$_GET['id'];
             $id=$_SESSION['appointment']['appointmentID'];
-
-            $result = $model->receipt($id,$patient_id);
+            $seat=$_SESSION['appointment']['seat_no']+1;
+            $result = $model->receipt($id,$patient_id,$seat);
             $_POST['details']=$result;
             $this->load('views','appointment_receipt');
         }
@@ -245,7 +245,8 @@
             $model=$this->load('models','Appointment_Data');
             $patient_id=$_SESSION['id'];
             $id=$_SESSION['appointment']['appointmentID'];
-            $result = $model->receipt($id,$patient_id);
+            $seat=$_SESSION['appointment']['seat_no']+1;
+            $result = $model->receipt($id,$patient_id,$seat);
             $_POST['details']=$result;
             $this->load('views','appointment_receipt');
 
