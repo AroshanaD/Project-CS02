@@ -9,6 +9,10 @@ $(document).ready(function(){
         }
     })
 
+
+
+$("#print").click(function(){
+    window.print();
 })
 
 function render_details(data){
@@ -26,8 +30,8 @@ function render_details(data){
             /*SELECT COUNT(drug_name) FROM stock where unitary_unit='tablet'*/
         ),
         $(`<tr id=${"report-tr"} >`).append(
-            $(`<td id=${"report-td-1"}>`).append("Number of various sirup "),
-            $(`<td id=${"report-td-2"}>`).append(data['sirup_count'])
+            $(`<td id=${"report-td-1"}>`).append("Number of various Syrup "),
+            $(`<td id=${"report-td-2"}>`).append(data['Syrup_count'])
             /*SELECT COUNT(drug_name) FROM stock where unitary_unit='sirup'*/
         ),
 
@@ -71,7 +75,7 @@ function render_details(data){
 
         
 
-    )
+    )/*
     $('#day').append(
         $(`<tr id=${"report-tr"} >`).append(
             $(`<td id=${"report-td-3"} style="font-weight:bold;border: 1px black solid">`).append("br_id"),
@@ -91,6 +95,47 @@ for(i=0;i<data['drug_details'].length;i++){
             $(`<td id=${"report-td-7"} style="border: 1px black solid">`).append((data['drug_details'][i]['drugIncome']-data['drug_details'][i]['drugExpense']).toFixed(2)),    
         ),
     )
-}
+}*/
+    var header = $(`<tr id=${"head_row"}>`).append(
+        $(`<th>`).text("br_id"),
+        $(`<th>`).text("drug_name"),
+        $(`<th>`).text("Selling price"),
+        $(`<th>`).text("quantity"),
+        $(`<th>`).append("profit"));
+    $("#manu").append(header);
+
+    for(i=0;i<data['drug_details'].length;i++){
+        var row = $(`<tr>`).append(
+            $(`<td>`).text(data['drug_details'][i]['br_id']),
+            $(`<td>`).text(data['drug_details'][i]['drug_name']),
+            $(`<td>`).text(data['drug_details'][i]['selling_price']),
+            $(`<td>`).text(data['drug_details'][i]['quantity']),
+            $(`<td>`).text((data['drug_details'][i]['drugIncome']-data['drug_details'][i]['drugExpense']).toFixed(2)));
+        $("#manu").append(row);
+    }
+
+    if(data['expire_drug_details'].length !=0){
+        var header = $(`<tr id=${"head_row"}>`).append(
+            $(`<th>`).text("br_id"),
+            $(`<th>`).text("drug_name"),
+            $(`<th>`).text("Selling price"),
+            $(`<th>`).text("quantity"));
+        $("#expire").append(header);
+    
+        for(i=0;i<data['expire_drug_details'].length;i++){
+            var row = $(`<tr>`).append(
+                $(`<td>`).text(data['expire_drug_details'][i]['br_id']),
+                $(`<td>`).text(data['expire_drug_details'][i]['drug_name']),
+                $(`<td>`).text(data['expire_drug_details'][i]['selling_price']),
+                $(`<td>`).text(data['expire_drug_details'][i]['quantity']));
+            $("#expire").append(row);
+        }
+    }
+    else{
+        var row = $(`<tr>`).append(
+            $(`<td>`).text("Note: No drugs which are expired."));
+            $("#expire").append(row);
+    }
     
 }
+})
