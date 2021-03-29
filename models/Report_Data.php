@@ -304,13 +304,23 @@
                 $data = $stmt->fetch();
                 $result['female_test'] = $data['female_test'];
 
-                $query = "SELECT SUM(cost) AS 'tot_income'";
+                $query = "SELECT SUM(cost) AS 'tot_income' from lab_test ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['tot_income'] = $data['tot_income'];
 
-                
+                $query = "SELECT COUNT(id) AS 'different_tests' from lab_test ";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $data = $stmt->fetch();
+                $result['diff_test'] = $data['diff_test'];
+
+                $query = "SELECT COUNT(test_id) AS 'Most LabTest' from test_is ";
+                $stmt = $pdo->prepare($query);
+                $stmt->execute();
+                $data = $stmt->fetch();
+                $result['most_lab'] = $data['most_lab'];
         }
     }
 
