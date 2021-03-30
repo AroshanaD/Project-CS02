@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?> type="text/css" media="screen">
+    <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/print.css' ?> type="text/css" media="print">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script src="<?php echo Router::base_url() . '/files/js/jquery-3.5.1.js' ?>"></script>
+    <script src=<?php echo Router::base_url() . '/files/js/appointment_invoice.js' ?> type="text/javascript"></script>
 </head>
 
 <body>
@@ -77,7 +79,8 @@
                     <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['fee']+ 250?></label>
                     </div><br>
-                    <button href="<?php echo Router::site_url().'/appointment/index'?>" class="btn">OK</button>
+                    <button href="<?php echo Router::site_url().'/appointment/index'?>" class="btn">Finish</button><br>
+                    <div style="margin-top:10px"><button class="btn" id="invoice">Invoice</button></div>
                     <div id="form-message"></div>
                 </div>
             </div>

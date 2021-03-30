@@ -39,7 +39,7 @@
         public function inventory_overview()
         {
             $model = $this->load('models','report_Data');
-            $result = $model->inventory_data();
+            $result = $model->inventory_data($_SESSION['from_date'],$_SESSION['to_date']);
             header('Content-Type: application/json');
             echo json_encode($result);
         }

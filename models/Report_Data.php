@@ -201,7 +201,7 @@
             return $result;
         }
 
-        public function inventory_data(){
+        public function inventory_data($from,$to){
             $connect = new Database();
             $pdo = $connect ->connect();
 
@@ -220,12 +220,12 @@
 
             $result['tablet_count']=$tabletcount['count_tablet'];
 
-            $query = "SELECT COUNT(drug_name) AS 'sirup_count' FROM stock where unitary_unit='sirup';";
+            $query = "SELECT COUNT(drug_name) AS 'Syrup_count' FROM stock where unitary_unit='Syrup';";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
-            $sirupcount=$stmt->fetch();
+            $Syrupcount=$stmt->fetch();
 
-            $result['sirup_count']=$sirupcount['sirup_count'];
+            $result['Syrup_count']=$Syrupcount['Syrup_count'];
 
             $query = "SELECT COUNT(DISTINCT vendor_id) AS 'count_vendor' FROM medicine_grn";
             $stmt = $pdo->prepare($query);
@@ -259,13 +259,34 @@
             
             $result['count_expire']=$count_expire['count_expire'];
 
-            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense',
+            /*$query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense',
             selling_price*quantity AS 'drugIncome', expire_date FROM stock ";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
             $drug_details=$stmt->fetchAll();
 
+            $result['drug_details']=$drug_details;*/
+
+            $query ="SELECT MONTH(CURRENT_TIMESTAMP) AS 'month';";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute();
+            $current_month=$stmt->fetch();
+            $month = $current_month['month'];
+
+            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense',
+            selling_price*quantity AS 'drugIncome' FROM stock WHERE (SELECT EXTRACT(MONTH FROM manufacture_date))=? ";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$month]);
+            $drug_details=$stmt->fetchAll();
+
             $result['drug_details']=$drug_details;
+
+            $query ="SELECT br_id, drug_name,selling_price, quantity, expire_date FROM stock WHERE (SELECT EXTRACT(MONTH FROM expire_date))=? ";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$month]);
+            $expire_drug_details=$stmt->fetchAll();
+
+            $result['expire_drug_details']=$expire_drug_details;
 
             if($result!=NULL)
                 return $result;
