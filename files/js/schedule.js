@@ -26,53 +26,61 @@ $(document).ready(function(){
     })
 })
 
-function render_table(data){
-    $("table").empty();
+function render_table(data) {
 
-    var header = $(`<tr id=${"head_row"}>`).append(
-    $(`<td>`).text("No"),
-    $(`<td>`).text("ID"),$(`<td>`).text("Doctor Name"),
-    $(`<td>`).text("Specialization"),
-    $(`<td>`).text("Date"),$(`<td>`).text("Time"),
-    $(`<td>`).text("Update"),
-    $(`<td>`).append("Delete"));
-    $("table").append(header);
-
-
-    for(var i=0; i<data.length; i++){
-
-        console.log(data[i].first_name)
-
-        var get_details = data[i]['id'];
-        var update = "<a href=../schedules/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
-        var dele = "<a href=../schedules/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
-        var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).text(i+1),
-        $(`<td>`).text(data[i].id),
-        $(`<td>`).text(data[i].first_name.concat(" ",data[i].last_name)),
-        $(`<td>`).text(data[i].specialization),
-        $(`<td>`).text(data[i].date),$(`<td>`).text(data[i].time),
-        $(`<td>`).append(update),
-        $(`<td>`).append(dele));
-        $("table").append(row);
+    function render_header(){
+        var header = $(`<tr id=${"head_row"}>`).append(
+        $(`<td>`).text("No"),
+        $(`<td>`).text("ID"),$(`<td>`).text("Doctor Name"),
+        $(`<td>`).text("Specialization"),
+        $(`<td>`).text("Date"),$(`<td>`).text("Time"),
+        $(`<td>`).text("Update"),
+        $(`<td>`).append("Delete"));
+        $("table").append(header);
     }
-}
 
-function selectfunc(i,row_id){
-    console.log(row_id);
-    var idd = "#".concat(i);
-    var row_id = "#".concat(row_id);
-    console.log(row_id);
-    if($(idd).is(':checked')){
-        console.log($(idd).val());
-        $(row_id).css("background-color","red");
-    }
-    else{
-        if(i%2==0){
-            $(row_id).css("background-color","#69f0ae");
+    render_header();
+
+    const no_rows = 10;
+    var page = 1;
+    var tot_rows = data.length;
+
+    render_page();
+
+    $(".pagination").css("display", "flex");
+
+    $("#next").click(function () {
+        if (page * no_rows < tot_rows) {
+            page = page + 1;
+            render_page();
         }
-        else{
-            $(row_id).css("background-color","white");
+    });
+
+    $("#previous").click(function () {
+        if (page > 1) {
+            page = page - 1;
+            render_page();
+        }
+    })
+
+    function render_page() {
+        let first_row = (page - 1) * no_rows;
+        let last_row = (first_row + no_rows > tot_rows) ? tot_rows : first_row + no_rows;
+        $("table").empty();
+        render_header();
+        for (let i = first_row; i < last_row; i++) {
+            var get_details = data[i]['id'];
+            var update = "<a href=../schedules/update?id=".concat(get_details,"><button class='tb-btn'>Update</button></a>");
+            var dele = "<a href=../schedules/delete?id=".concat(get_details,"><button class='tb-btn'>Delete</button></a>");
+            var row = $(`<tr id=${data[i].id}>`).append($(`<td>`).text(i+1),
+            $(`<td>`).text(data[i].id),
+            $(`<td>`).text(data[i].first_name.concat(" ",data[i].last_name)),
+            $(`<td>`).text(data[i].specialization),
+            $(`<td>`).text(data[i].date),$(`<td>`).text(data[i].time),
+            $(`<td>`).append(update),
+            $(`<td>`).append(dele));
+            $("table").append(row);
         }
     }
-    
+
 }

@@ -184,4 +184,15 @@ class PatientTest_Manage extends Models
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $result;
     }
+
+    public function patient_email($id){
+        $connect = new Database;
+        $pdo = $connect->connect();
+
+        $query = "SELECT patient.email AS 'email' FROM patient LEFT JOIN lab_test ON patient.id = lab_test.p_id WHERE lab_test.id = ?";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+        $result = $stmt->fetch(PDO::FETCH_ASSOC);
+        return $result;
+    }
 }

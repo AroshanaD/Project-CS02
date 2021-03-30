@@ -41,7 +41,7 @@ $(document).ready(function(){
         if(email_val(email) == false){valid = false;}
         if(text_val(qualification) == false){valid = false;}
 
-        console.log(id);
+        //console.log(id);
 
         if(valid == true){
             $.ajax({

@@ -51,9 +51,15 @@
 
         public function search(){
             $model = $this->load('models','PatientTest_Manage');
-            $id = $_POST['id'];
-            $name = $_POST['name'];
-            $date = $_POST['date'];
+            if(isset($_POST['id'])){
+                $id = $_POST['id'];
+            }
+            if(isset($_POST['name'])){
+                $name = $_POST['name'];
+            }
+            if(isset($_POST['date'])){
+                $date = $_POST['date'];
+            }
             $availability = $_POST['availability'];
             $result = $model->search($id,$name,$date,$availability);
             header('Content-Type: application/json');
@@ -72,6 +78,20 @@
                 $result = $model->update($id,$availability);
 
                 if($result == TRUE){
+                    $res = $model->patient_email($id);
+                    if($res != NULL){
+                        $email = $res['email'];
+                        $subject = 'Lab Test Available';
+                        $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
+                                box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
+                                <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
+                                <h4 style='text-decoration: underline'>Lab Test</h4>
+                                <p> Your lab test is available.</p>";
+
+                        $to = $email;
+                        $mail = new mail_authentication();
+                        $status = $mail->send_mail($subject,$body,$to);
+                    }
                     $URL= Router::site_url()."/patientTest/view?successfully updated availability";
                     echo "<script>location.href='$URL'</script>";
                 }

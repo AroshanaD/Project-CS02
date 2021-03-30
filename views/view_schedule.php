@@ -50,6 +50,10 @@
             <table>
 
             </table>
+            <div class="pagination">
+                <button class="next-btn" id="previous">Previous</button>
+                <button class="next-btn" id="next">Next</button>
+            </div>
         </div>
 
         <div class="footer">All rights are reserved</div>

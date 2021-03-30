@@ -24,7 +24,7 @@
                     <input type="text" placeholder="Test Id" name="id" id="id">
                 </div>
                 <div class="site-search">
-                    <input type="text" placeholder="Patient Name" name="testname" id="testname">
+                    <input type="text" placeholder="Patient Name" name="testname" id="name">
                 </div>
                 <div class="site-search">
                     <input type="Date" placeholder="Test Date" name="date" id="date">
