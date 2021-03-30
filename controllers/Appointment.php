@@ -188,6 +188,7 @@
             $name_oncard = $_POST['name'];
             $token = $_POST['stripeToken'];
             $email = $_POST['email'];
+            $_SESSION['appointment']['email'] = $email;
             
             $customer = \Stripe\Customer::create(array(
                 "email" => $email,
@@ -205,8 +206,6 @@
                 $this->create_appointment();
             }
 
-            
-
         }
 
         public function create_appointment(){
@@ -221,16 +220,16 @@
             $result=$model->create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id,$payment_id);
 
             if($result== TRUE){
-               /* $subject = 'Appointment Booking Email';
+                $subject = 'Appointment Booking Email';
                 $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                         <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
                         <h4 style='text-decoration: underline'> Make Appointment</h4>
                         <p> Your have maked your appointment successfully.</p>";
 
-                $to = $email;
+                $to = $_SESSION['appointment']['email'];
                 $mail = new mail_authentication();
-                $status = $mail->send_mail($subject,$body,$to);*/
+                $status = $mail->send_mail($subject,$body,$to);
                 $URL = Router::site_url() . "/appointment/patient_receipt?successfull";
                 echo "<script>location.href='$URL'</script>";
             }
