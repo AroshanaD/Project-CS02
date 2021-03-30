@@ -76,6 +76,9 @@ $(document).ready(function () {
                         $("#gender").val(data.gender);
                         
                     }
+                    else{
+                        patient_id = 0; 
+                    }
                 }
             })
         }
@@ -93,7 +96,6 @@ $(document).ready(function () {
     $("form").submit(function(event){
         event.preventDefault();
 
-        var id=patient_id;
         var fname=$("#f_name").val();
         var lname=$("#l_name").val();
         var birthday=$("#birthday").val();
@@ -125,7 +127,7 @@ $(document).ready(function () {
 
             $.ajax({
                 url: '../../index.php/appointment/make_appointment',
-                data: {id:id,f_name:fname,l_name:lname,birthday:birthday, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
+                data: {id:patient_id,f_name:fname,l_name:lname,birthday:birthday, contact:contact,email:email,address:address,gender:gender,date:date, seatno: seatno, schedule_id: schedule_id,doctor_id:doctor_id},
                 type: 'post',
                 success: function (data) {
                     if(data!=false){
@@ -133,6 +135,7 @@ $(document).ready(function () {
                         location.href = "../../index.php/appointment/receipt?id=".concat(id) ;
                     }
                     else{
+                        console.log(data);
                         $("#form-message").text("Appointment is not Successfull");
                     }
                 }

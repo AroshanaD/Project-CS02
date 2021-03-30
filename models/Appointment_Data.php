@@ -148,8 +148,8 @@
                 $result = $stmt->fetch();*/
                 
 
-                if($id==null){
-                    $query1 = "INSERT INTO `patient`(`f_name`,`l_name`,`birthday`,`gender`,`address`,`contact_no`,`email`,`online`) VALUES(?,?,?,?,?,?,?,0)";
+                if($id == 0){
+                    $query1 = "INSERT INTO `patient`(`f_name`,`l_name`,`birthday`,`gender`,`address`,`contact_no`,`email`) VALUES(?,?,?,?,?,?,?)";
                     $stmt = $pdo->prepare($query1);
                     $stmt->execute([$fname,$lname,$birthday,$gender,$address,$contact,$email]);
 

@@ -251,4 +251,14 @@
             $this->load('views','appointment_receipt');
 
         }
+
+        public function invoice(){
+            $model=$this->load('models','Appointment_Data');
+            $patient_id=$_SESSION['id'];
+            $id=$_SESSION['appointment']['appointmentID'];
+            $seat=$_SESSION['appointment']['seat_no']+1;
+            $result = $model->receipt($id,$patient_id,$seat);
+            header('Content-Type:application/json');
+            echo json_encode($result);
+        }
     }
