@@ -98,6 +98,7 @@
             $seat=$_SESSION['appointment']['seat_no']+1;
             $result = $model->receipt($id,$patient_id,$seat);
             $_POST['details']=$result;
+            $_SESSION['appointment']['details'] = $result;
             $this->load('views','appointment_receipt');
         }
         
