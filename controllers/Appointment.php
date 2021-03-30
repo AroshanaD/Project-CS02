@@ -6,6 +6,7 @@
         }
 
         public function index(){
+            $_SESSION['appointment'] = NULL;
             if($_SESSION['user_cat'] == 'patient'){
                 $this->search_doctor();
             }
@@ -167,8 +168,8 @@
                 $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                         <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
-                        <h4 style='text-decoration: underline'> Make Appointment</h4>
-                        <p> Your have maked your appointment successfully.</p>";
+                        <h4 style='text-decoration: underline'>Appointment</h4>
+                        <p> Your appointment is successful.</p>";
 
                 $to = $email;
                 $mail = new mail_authentication();
@@ -180,6 +181,10 @@
     
         public function payment()
         {
+            if($_SESSION['appointment'] == NULL){
+                $URL = Router::site_url() . "/appointment/index";
+                echo "<script>location.href='$URL'</script>";
+            }
             $this->load('views', 'payment_page');
         }
 
@@ -209,6 +214,10 @@
         }
 
         public function create_appointment(){
+            if($_SESSION['appointment'] == NULL){
+                $URL = Router::site_url() . "/appointment/index";
+                echo "<script>location.href='$URL'</script>";
+            }
             $id=$_SESSION['id'];
             $doc_id=$_SESSION['appointment']['doctor_id'];
             $date=$_SESSION['appointment']['select_date'];
@@ -224,8 +233,8 @@
                 $body = "<body style='background-color: white; padding: 50px; font-size: 16px;
                         box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8); height:fit-content'>
                         <h3 style='padding: 20px; background-color: #9097c0'>Medcaid Hospital</h3>
-                        <h4 style='text-decoration: underline'> Make Appointment</h4>
-                        <p> Your have maked your appointment successfully.</p>";
+                        <h4 style='text-decoration: underline'>Appointment</h4>
+                        <p> Your appointment is successful.</p>";
 
                 $to = $_SESSION['appointment']['email'];
                 $mail = new mail_authentication();
@@ -233,30 +242,30 @@
                 $URL = Router::site_url() . "/appointment/patient_receipt?successfull";
                 echo "<script>location.href='$URL'</script>";
             }
-            else{
-                
+            else{ 
                 $URL = Router::site_url() . "/appointment/search_doctor?unsuccessfull";
                 echo "<script>location.href='$URL'</script>";
             }
         }
 
         public function patient_receipt(){
+            if($_SESSION['appointment'] == NULL){
+                $URL = Router::site_url() . "/appointment/index";
+                echo "<script>location.href='$URL'</script>";
+            }
             $model=$this->load('models','Appointment_Data');
             $patient_id=$_SESSION['id'];
             $id=$_SESSION['appointment']['appointmentID'];
             $seat=$_SESSION['appointment']['seat_no']+1;
             $result = $model->receipt($id,$patient_id,$seat);
             $_POST['details']=$result;
+            $_SESSION['appointment']['details'] = $result;
             $this->load('views','appointment_receipt');
-
         }
 
         public function invoice(){
-            $model=$this->load('models','Appointment_Data');
-            $patient_id=$_SESSION['id'];
-            $id=$_SESSION['appointment']['appointmentID'];
-            $seat=$_SESSION['appointment']['seat_no']+1;
-            $result = $model->receipt($id,$patient_id,$seat);
+            $result = $_SESSION['appointment']['details'];
+            $_SESSION['appointment'] = NULL;
             header('Content-Type:application/json');
             echo json_encode($result);
         }

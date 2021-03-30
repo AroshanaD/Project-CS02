@@ -20,7 +20,7 @@
 
         <?php $path=$_SESSION['user_cat']."_sidebar.php"; include $path; ?>
         
-        <form class="form">
+        <div class="form">
             <div class="form-container">
                 <div id="form-img">
                 </div>
@@ -56,7 +56,7 @@
                         <label>Specialization</label>
                     </div>
                     <div class="input" style="font-size: 14px;">
-                        <label><?php echo $_POST['details']['specialization']?></label>
+                        <label ><?php echo $_POST['details']['specialization']?></label>
                     </div>
                 </div>
                 <div id="form-2">
@@ -79,12 +79,13 @@
                     <div class="input" style="font-size: 14px;">
                         <label><?php echo $_POST['details']['fee']+ 250?></label>
                     </div><br>
-                    <button href="<?php echo Router::site_url().'/appointment/index'?>" class="btn">Finish</button><br>
-                    <div style="margin-top:10px"><button class="btn" id="invoice">Invoice</button></div>
-                    <div id="form-message"></div>
                 </div>
             </div>
-        </form>
+            <div style="width:100%; text-align:center">
+                <button id="finish" class="btn">Finish</button>
+                <button class="btn" id="invoice">Invoice</button>
+            </div>
+        </div>
         <div class="footer">All rights are reserved</div>
     </div>
 </body>
