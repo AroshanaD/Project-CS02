@@ -6,6 +6,15 @@
 
         }
 
+        public function index(){
+            if($_SESSION['user_cat'] == 'patient'){
+                $this->patient_appointmentView();
+            }
+            if($_SESSION['user_cat'] == 'receptionist'){
+                $this->recept_appointmentView();
+            }
+        }
+
         public function patient_appointmentView(){
             $this->load('views','patient_appointment');
         }
