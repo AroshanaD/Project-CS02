@@ -63,7 +63,7 @@
         include $path; ?>
         <div class="form">
             <form id="selectdate-form">
-                <div class="title" style="width:100%; text-align: center;font-size:17px">
+                <div class="topic" style="width:100%; text-align: center;font-size:17px">
                     <label for="date">Appointment Date</label>
                 </div>
                 <div class="form-container1" style="margin-bottom:0px">
