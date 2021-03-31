@@ -124,22 +124,6 @@ $(document).ready(function () {
         var schedule_id=details[index].id;
         var doctor_id= $("#doctor").val();
 
-        /*var valid = true;
-        $(".error-message").remove();
-        $("#form-message").empty();
-
-        var id_list = ["#f_name","#l_name","#gender","#birthday","#contact","#address","#email"];
-
-        id_list.forEach(element => {
-            $(element).removeClass("input-error");
-        });
-        if(name_val("fname",fname) == false){valid = false;}
-        if(name_val("lname",lname) == false){valid = false;}
-        if(contact_val(contact) == false){valid = false;}
-        if(address_val(address) == false){valid = false;}
-        if(email_val(email) == false){valid = false;}
-        if(bday_val(birthday) == false){valid = false;}
-        console.log(valid);*/
 
             $.ajax({
                 url: '../../index.php/appointment/make_appointment',
