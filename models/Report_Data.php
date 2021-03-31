@@ -266,6 +266,12 @@
             $drug_details=$stmt->fetchAll();
 
             $result['drug_details']=$drug_details;*/
+            $query = "SELECT COUNT(sales_id) AS 'count_sales' FROM `medicine_sales` WHERE 
+            (SELECT DATE(sales_date_time)) > ? AND (SELECT DATE(sales_date_time)) < ? ";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to]);
+            $count_sales=$stmt->fetch();
+            $result['count_sales']=$count_sales['count_sales'];
 
             $query ="SELECT MONTH(CURRENT_TIMESTAMP) AS 'month';";
             $stmt = $pdo->prepare($query);
@@ -273,10 +279,17 @@
             $current_month=$stmt->fetch();
             $month = $current_month['month'];
 
-            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense',
-            selling_price*quantity AS 'drugIncome' FROM stock WHERE (SELECT EXTRACT(MONTH FROM manufacture_date))=? ";
+            $query ="SELECT YEAR(CURRENT_TIMESTAMP) AS 'year';";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$month]);
+            $stmt->execute();
+            $current_year=$stmt->fetch();
+            $year = $current_year['year'];
+
+            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense', selling_price*quantity AS 'drugIncome'
+             FROM stock JOIN medicine_grn ON stock.grn_id=medicine_grn.grn_id WHERE 
+             (SELECT EXTRACT(YEAR FROM medicine_grn.received_date_time))=? AND (SELECT EXTRACT(MONTH FROM medicine_grn.received_date_time))=?;";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$year,$month]);
             $drug_details=$stmt->fetchAll();
 
             $result['drug_details']=$drug_details;
@@ -311,14 +324,14 @@
                 $patient_count=$stmt->fetch();
                 $result['test_count']=$patient_count['test_count'];
 
-                $query = "SELECT COUNT(patient_name) AS 'male' FROM lab_test
+                $query = "SELECT COUNT(patient_name) AS 'male_test' FROM lab_test
                     WHERE patient_gender = 'male'";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['male_test'] = $data['male_test'];
 
-                $query = "SELECT COUNT(patient_name) AS 'female' FROM lab_test
+                $query = "SELECT COUNT(patient_name) AS 'female_test' FROM lab_test
                     WHERE patient_gender = 'female'";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
@@ -331,17 +344,22 @@
                 $data = $stmt->fetch();
                 $result['tot_income'] = $data['tot_income'];
 
-                $query = "SELECT COUNT(id) AS 'different_tests' from lab_test ";
+                $query = "SELECT COUNT(id) AS 'diff_test' from lab_test ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['diff_test'] = $data['diff_test'];
 
-                $query = "SELECT COUNT(test_id) AS 'Most LabTest' from test_is ";
+                $query = "SELECT COUNT(test_id) AS 'most_lab' from test_is ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['most_lab'] = $data['most_lab'];
+
+                if($result!=NULL)
+                        return $result;
+                else
+                        return false;
         }
     }
 
