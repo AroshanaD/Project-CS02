@@ -24,13 +24,13 @@
               <div id="dashboard-title" style="color:black">Dashboard</div>
             </div>
             <div class="databoard-1">
-                <div id="databord-title">Appointments</div>
-                <div id="databord-value">76</div>
+                <div id="databord-title">Up Coming Appointment Date</div><br>
+                <div id="databord-value" style="font-size:20px;font-weight:bold">2021/04/10</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
             </div>
             <div class="databoard-2">
-                <div id="databord-title">Doctors</div>
-                <div id="databord-value">128</div>
+                <div id="databord-title">Up Coming Appointment time </div><br>
+                <div id="databord-value" style="font-size:20px;font-weight:bold">10.00 a.m</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             
@@ -40,23 +40,26 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
             </div>
             <div class="taskboard">
-              <a href=<?php echo Router::site_url().'/patient_Appointment/patient_appointmentView'?> class="task-large">Appointments
+              <a href=<?php echo Router::site_url().'/appointment/search_doctor'?> class="task-large">Appointments
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
-                  your appointment details<br>
+                  your appointment details<br><br>
+                  <b>make your appointment here!!</b>
                 </p>
               </a>
               <a href=<?php echo Router::site_url().'/doctor_Schedule/index'?> class="task-large">Doctor Schedules
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find your <br>
-                  scheduled appointment details<br>
+                  scheduled appointment details<br><br>
+                  <b>Find doctor schedules here!!</b>
                 </p>
               </a>
               <a href=<?php echo Router::site_url().'/patientTest/patientResult_View' ?> class="task-large">Lab Tests
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   your lab test <br>
-                  availability details!!
+                  availability details!!<br><br>
+                  <b>View your available labtests!!</b>
                 </p>
               </a>
             </div>

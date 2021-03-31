@@ -33,9 +33,9 @@ function render_table(data){
     function render_header(){
         $("table").empty();
         var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
-            $(`<td>`).text("No"),
-            $(`<td>`).text("Appointment No"),$(`<td>`).text("Appointment date"),
+            $(`<td>`).text("No"),$(`<td>`).text("Appointment date"),
             $(`<td>`).text("Appointment time"),
+            $(`<td>`).text("Appointment No"),
             $(`<td>`).text("Doctor_name"),
             $(`<td>`).append("View"));
             $("table").append(header);
@@ -78,9 +78,9 @@ function render_table(data){
 
             var View = "<a href=../patient_Appointment/view_Appoint?id=".concat(getDetails,"><button class='tb-btn'>View</button></a>");
             var row = $(`<tr id=${data[i].Seat_no}>>`).append($(`<td>`).append($(`<input type=${"checkbox"} id=${i+1} value=1 onchange=${func}> `)),
-            $(`<td>`).text(i+1),
-            $(`<td>`).text(data[i].Seat_no),$(`<td>`).text(data[i].Date),
+            $(`<td>`).text(i+1),$(`<td>`).text(data[i].Date),
             $(`<td>`).text(data[i].time),
+            $(`<td>`).text(data[i].Seat_no),
             $(`<td>`).text(data[i].doctor_fname.concat(" ",data[i].doctor_lname)),
             $(`<td>`).append(View));
             $("table").append(row);

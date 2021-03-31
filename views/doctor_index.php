@@ -43,6 +43,7 @@
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/patient_Appointment/view_recept' ?> class="task-large">Appointments
                 <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                <b>View your appointments!!</b><br><br>
                   Here you can find <br>
                   appointment details<br>
                   of your patient!!
@@ -57,6 +58,7 @@
               </a>
               <a href=<?php echo Router::site_url()."/statistics/report" ?> class="task-large">Generate Reports
                 <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+                <b>Generate appointments reports!!</b><br><br>
                   Here you can get a<br>
                   complete report<br>
                   of your patients and appointments!!

@@ -5,7 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href=<?php echo Router::base_url() . '/files/style1.css' ?>>
-    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script type="text/javascript" src="/project-cs02/files/js/autofill_vendors.js"></script>
     <script type="text/javascript" src="/project-cs02/files/js/validation.js"></script>
     <script type="text/javascript" src="/project-cs02/files/js/medicine_validate.js"></script>

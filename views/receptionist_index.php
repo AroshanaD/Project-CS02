@@ -24,7 +24,7 @@
               <div id="dashboard-title">Dashboard</div>
             </div>
             <div class="databoard-1">
-                <div id="databord-title">Appointments</div>
+                <div id="databord-title">Today's Appointments</div>
                 <div id="databord-value">76</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
             </div>
@@ -42,13 +42,15 @@
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/appointment/onpremise'?> class="task-large">Make Appointment
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
+                <b>create appointment here!!</b><br><br>
                   Here you can create <br>
                   appointments for doctors<br>
-                  based on the request of patient!!
+                  based on the request of patient!! 
                 </p>
                 </a>
-              <a href=<?php echo Router::site_url().'/appointment/view_details'?> class="task-large">View Appointment
+              <a href=<?php echo Router::site_url().'/patient_Appointment/recept_appointmentView'?> class="task-large">View Appointment
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
+                <b>Find all the appointments here!!</b><br><br>
                   Here you can view <br>
                   the appointment details<br>
                   of relevant patient!!
@@ -56,9 +58,11 @@
                 </a>  
               <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task-large">Doctor Schedules
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
+                <b>Find the week days <br>
+                  your doctor is available!!</b><br><br>
                   Here you can find <br>
                   scheduled details<br>
-                  of doctors!!
+                  of doctors!! 
                 </p>
                 </a>
             </div>

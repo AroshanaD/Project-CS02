@@ -12,7 +12,7 @@ class Appointment_patient extends Models{
         patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
         patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
         doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id WHERE patient_appointment.patient_Id=? 
-        ORDER BY Date ASC";
+        ORDER BY Date DESC";
 
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);
@@ -28,7 +28,7 @@ class Appointment_patient extends Models{
         patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
         patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
         doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id WHERE 
-        appointment.Date LIKE ? AND patient_appointment.patient_Id=? ORDER BY Date,appointment_Id ASC ";
+        appointment.Date LIKE ? AND patient_appointment.patient_Id=? ORDER BY appointment_Id ASC ";
 
         $stmt = $pdo->prepare($query);
         $stmt->execute([$date,$id]);
@@ -61,7 +61,7 @@ class Appointment_patient extends Models{
             $query="SELECT patient_appointment.appointment_Id,patient_appointment.Seat_no,appointment.Date, patient.f_name, patient.l_name,patient.birthday, 
             patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
             patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
-            doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id  WHERE appointment.Availability= 1 ORDER BY Date,appointment_Id ASC";
+            doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id  WHERE appointment.Availability= 1 ORDER BY Date DESC";
             $stmt = $pdo->prepare($query);
             $stmt->execute();
         }
@@ -70,7 +70,7 @@ class Appointment_patient extends Models{
            $query="SELECT patient_appointment.appointment_Id,patient_appointment.Seat_no,appointment.Date, patient.f_name, patient.l_name,patient.birthday, 
            patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
            patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
-           doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id  WHERE doctor.specialization_id=? ORDER BY Date,appointment_Id ASC"; 
+           doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id  WHERE doctor.specialization_id=? ORDER BY Date DESC"; 
             $stmt = $pdo->prepare($query);
             $stmt->execute([$specialization]);
         }
@@ -110,7 +110,7 @@ class Appointment_patient extends Models{
             patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
             patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
             doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id WHERE doctor.f_name LIKE ? 
-            OR doctor.l_name LIKE ? ORDER BY Date,appointment_Id ASC";
+            OR doctor.l_name LIKE ? ORDER BY appointment_Id ASC";
             $stmt = $pdo->prepare($query);
             $stmt->execute([$fname,$lname]);
             $result = $stmt->fetchAll();
@@ -122,7 +122,7 @@ class Appointment_patient extends Models{
             patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
             patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
             doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id WHERE appointment.Date LIKE ? AND( doctor.f_name LIKE ? 
-            OR doctor.l_name LIKE ?) ORDER BY Date,appointment_Id ASC";
+            OR doctor.l_name LIKE ?) ORDER BY appointment_Id ASC";
 
             $stmt = $pdo->prepare($query);
             $stmt->execute([$date,$fname,$lname]);
@@ -140,7 +140,7 @@ class Appointment_patient extends Models{
         $query="SELECT patient_appointment.appointment_Id,patient_appointment.Seat_no,appointment.Date, patient.f_name, patient.l_name,patient.birthday, 
         patient.contact_no,doctor.f_name AS 'doctor_fname', doctor.l_name AS 'doctor_lname', schedule.time from patient JOIN patient_appointment ON 
         patient.id= patient_appointment.patient_Id JOIN appointment ON appointment.appointment_id = patient_appointment.doctor_appointmentId JOIN 
-        doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id WHERE appointment.Doctor_Id=? ORDER BY Date,appointment_Id ASC";
+        doctor ON appointment.Doctor_Id= doctor.id JOIN schedule ON appointment.schedule_id=schedule.id WHERE appointment.Doctor_Id=? ORDER BY Date DESC";
 
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id]);

@@ -7,7 +7,7 @@
     <link rel="stylesheet" href=<?php echo Router::base_url().'/files/style1.css' ?>>
     <script src="<?php echo Router::base_url().'/files/js/jquery-3.5.1.js' ?>"></script>
     <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
     <script rel="text/javascript" src=<?php echo Router::base_url().'/files/js/staff_validate.js'?>></script>
     <script rel="text/javascript" src=<?php echo Router::base_url().'/files/js/validation.js'?>></script>
 </head>

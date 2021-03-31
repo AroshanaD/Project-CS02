@@ -137,9 +137,7 @@ class Inventory extends Controllers
         $model = $this->load('models', 'Inventory_manage');
         $result = $model->displayVendor($id);
         $_POST['details'] = $result;
-        $this->load('views', 'header');
         $this->load('views', 'delete_vendor');
-        $this->load('views', 'footer');
 
         if (isset($_POST['Delete'])) {
             $status = $model->delete_vendor($id);
