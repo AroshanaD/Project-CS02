@@ -35,7 +35,7 @@
             </div>
             <div class="report-paper">
                 <div class="content">
-                    <div class="heading">Medicines manufacture in this month</div><br>
+                    <div class="heading">Medicines arrives in this month</div><br>
                     <table class="report-tb" id="manu">
 
                     </table>

@@ -266,6 +266,12 @@
             $drug_details=$stmt->fetchAll();
 
             $result['drug_details']=$drug_details;*/
+            $query = "SELECT COUNT(sales_id) AS 'count_sales' FROM `medicine_sales` WHERE 
+            (SELECT DATE(sales_date_time)) > ? AND (SELECT DATE(sales_date_time)) < ? ";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$from,$to]);
+            $count_sales=$stmt->fetch();
+            $result['count_sales']=$count_sales['count_sales'];
 
             $query ="SELECT MONTH(CURRENT_TIMESTAMP) AS 'month';";
             $stmt = $pdo->prepare($query);
@@ -273,10 +279,17 @@
             $current_month=$stmt->fetch();
             $month = $current_month['month'];
 
-            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense',
-            selling_price*quantity AS 'drugIncome' FROM stock WHERE (SELECT EXTRACT(MONTH FROM manufacture_date))=? ";
+            $query ="SELECT YEAR(CURRENT_TIMESTAMP) AS 'year';";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$month]);
+            $stmt->execute();
+            $current_year=$stmt->fetch();
+            $year = $current_year['year'];
+
+            $query ="SELECT br_id, drug_name,selling_price, quantity, unitary_price*quantity AS 'drugExpense', selling_price*quantity AS 'drugIncome'
+             FROM stock JOIN medicine_grn ON stock.grn_id=medicine_grn.grn_id WHERE 
+             (SELECT EXTRACT(YEAR FROM medicine_grn.received_date_time))=? AND (SELECT EXTRACT(MONTH FROM medicine_grn.received_date_time))=?;";
+            $stmt = $pdo->prepare($query);
+            $stmt->execute([$year,$month]);
             $drug_details=$stmt->fetchAll();
 
             $result['drug_details']=$drug_details;

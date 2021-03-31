@@ -21,10 +21,11 @@
         include $path; ?>
 
         <form class="form" method="post" action="<?php echo Router::$site_url . '/reports/view_report' ?>">
-            <div class="form-container1">
+            <div class="form-container1" style="width:500px">
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                <div class="topic">Generate reports</div>
                     <div class="label">
                         <label for="staff">Report Type</label>
                     </div>
@@ -57,7 +58,7 @@
                     </div>
                     <div class="input" id="id_f">
                         <input type="date" name="to_date" id="to_date" required>
-                    </div>
+                    </div><br>
                     <input type="submit" name="Add" value="Generate" class="btn">
                     <div id="form-message"></div>
                 </div>
