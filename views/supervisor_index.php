@@ -20,25 +20,37 @@
 
     <div class="dashboard">
       <div id="welcome-board">
-        <div id="welcome-txt">Welcome, Dasun!</div>
+        <div id="welcome-txt">Welcome, <?php echo $_SESSION['f_name']?></div>
       </div>
       <div id="dashboard-title">Dashboard</div>
     </div>
     <div class="databoard-1">
-      <div id="databord-title">Appointments</div>
-      <div id="databord-value">76</div>
+      <div id="databord-title">No.of Appointments</div><br>
+      <div id="databord-value" style="font-size:20px;font-weight:bold"> <?php if ($_SESSION['user_stat']) {
+                                                                          echo $_SESSION['user_stat']['appointments'];
+                                                                        } else {
+                                                                          echo "---";
+                                                                        } ?></div>
       <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
     </div>
     <div class="databoard-2">
-      <div id="databord-title">Doctors</div>
-      <div id="databord-value">128</div>
+      <div id="databord-title">No.of Sessions</div><br>
+      <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if ($_SESSION['user_stat']) {
+                                                                          echo $_SESSION['user_stat']['sessions'];
+                                                                        } else {
+                                                                          echo "---";
+                                                                        } ?></div>
       <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
     </div>
 
     <div class="databoard-3">
-      <div id="databord-title">Vendors</div>
-      <div id="databord-value">30</div>
-      <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
+      <div id="databord-title">No.of Doctors</div>
+      <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if ($_SESSION['user_stat']) {
+                                                                          echo $_SESSION['user_stat']['doctors'];
+                                                                        } else {
+                                                                          echo "---";
+                                                                        } ?></div>
+      <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
     </div>
     <div class="taskboard">
       <a href=<?php echo Router::site_url() . "/staff/view" ?> class="task">Manage Staff

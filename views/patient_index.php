@@ -25,19 +25,22 @@
             </div>
             <div class="databoard-1">
                 <div id="databord-title">Up Coming Appointment Date</div><br>
-                <div id="databord-value" style="font-size:20px;font-weight:bold">2021/04/10</div>
+                <div id="databord-value" style="font-size:20px;font-weight:bold"> <?php if($_SESSION['user_stat']){echo $_SESSION['user_stat']['date'];}
+                else{echo "---";}?></div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
             </div>
             <div class="databoard-2">
                 <div id="databord-title">Up Coming Appointment time </div><br>
-                <div id="databord-value" style="font-size:20px;font-weight:bold">10.00 a.m</div>
+                <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if($_SESSION['user_stat']){echo $_SESSION['user_stat']['time'];}
+                else{echo "---";}?></div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
-                <div id="databord-title">Lab Tests</div>
-                <div id="databord-value">30</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
+                <div id="databord-title">Up Coming Appointment Doctor</div>
+                <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if($_SESSION['user_stat']){echo "Dr.".$_SESSION['user_stat']['f_name']." ".$_SESSION['user_stat']['l_name'];}
+                else{echo "---";}?></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/appointment/search_doctor'?> class="task-large">Appointments

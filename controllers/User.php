@@ -77,8 +77,28 @@ class User extends Controllers
 
     public function dashboard()
     {
+        $model = $this->load('models', 'Dashboard_Data');
         if (isset($_SESSION['id'])) {
-            /*$this->load('views','header');*/
+            switch($_SESSION['user_cat']){
+                case 'patient' :
+                    $_SESSION['user_stat'] = $model->patient_stat($_SESSION['id']);
+                break;
+                case 'supervisor' :
+                    $_SESSION['user_stat'] = $model->supervisor_stat();
+                break;
+                case 'doctor' :
+                    $_SESSION['user_stat'] = $model->doctor_stat($_SESSION['id']);
+                break;
+                case 'receptionist' :
+                    $_SESSION['user_stat'] = $model->supervisor_stat();
+                break;
+                case 'pharmacist' :
+                    $_SESSION['user_stat'] = $model->pharmacist_stat();
+                break;
+                case 'lab_technician' :
+                    $_SESSION['user_stat'] = $model->lab_stat();
+                break;
+            }
             $this->load('views', $_SESSION['user_cat'] . "_index");
             /* $this->load('views','footer');*/
         } else {

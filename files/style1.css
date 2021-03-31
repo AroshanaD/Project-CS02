@@ -506,7 +506,7 @@ a {
     background-color: white;
     border-top: var(--border-line);
     border-left: var(--border-line);
-    border-rightfor: var(--border-line);
+    border-right: var(--border-line);
     padding: 0;
 }
 
