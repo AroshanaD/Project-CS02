@@ -47,13 +47,35 @@ class Schedules_manage extends Models{
         else{
             $name = '%';
         }
-        $query="SELECT schedule.id, schedule.date, schedule.time, doctor.f_name AS 'first_name', doctor.l_name AS 'last_name', specialization.name As 'specialization'
+        if($id !=null & $specialization!=null ){
+            $query="SELECT schedule.id, schedule.date, schedule.time, doctor.f_name AS 'first_name', doctor.l_name AS 'last_name', specialization.name As 'specialization'
+        from schedule join doctor on schedule.doctor_id=doctor.id JOIN specialization 
+        ON doctor.specialization_id=specialization.id where schedule.doctor_id = ? AND (doctor.f_name LIKE ? OR doctor.l_name LIKE ?) AND specialization.name= ? AND schedule.deleted='0'";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id,$name,$name,$specialization]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+        }
+        else if($id!=null){
+            $query="SELECT schedule.id, schedule.date, schedule.time, doctor.f_name AS 'first_name', doctor.l_name AS 'last_name', specialization.name As 'specialization'
+        from schedule join doctor on schedule.doctor_id=doctor.id JOIN specialization 
+        ON doctor.specialization_id=specialization.id where schedule.doctor_id = ? AND schedule.deleted='0'";
+        $stmt = $pdo->prepare($query);
+        $stmt->execute([$id]);
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $result;
+        }
+
+        else{
+           $query="SELECT schedule.id, schedule.date, schedule.time, doctor.f_name AS 'first_name', doctor.l_name AS 'last_name', specialization.name As 'specialization'
         from schedule join doctor on schedule.doctor_id=doctor.id JOIN specialization 
         ON doctor.specialization_id=specialization.id where (schedule.doctor_id = ? OR doctor.f_name LIKE ? OR doctor.l_name LIKE ? OR specialization.name Like ?) AND schedule.deleted='0'";
         $stmt = $pdo->prepare($query);
         $stmt->execute([$id,$name,$name,$specialization]);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        return $result;
+        return $result; 
+        }
+        
     }
 
     public function get_details($sche_id){
