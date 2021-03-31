@@ -311,14 +311,14 @@
                 $patient_count=$stmt->fetch();
                 $result['test_count']=$patient_count['test_count'];
 
-                $query = "SELECT COUNT(patient_name) AS 'male' FROM lab_test
+                $query = "SELECT COUNT(patient_name) AS 'male_test' FROM lab_test
                     WHERE patient_gender = 'male'";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['male_test'] = $data['male_test'];
 
-                $query = "SELECT COUNT(patient_name) AS 'female' FROM lab_test
+                $query = "SELECT COUNT(patient_name) AS 'female_test' FROM lab_test
                     WHERE patient_gender = 'female'";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
@@ -331,17 +331,22 @@
                 $data = $stmt->fetch();
                 $result['tot_income'] = $data['tot_income'];
 
-                $query = "SELECT COUNT(id) AS 'different_tests' from lab_test ";
+                $query = "SELECT COUNT(id) AS 'diff_test' from lab_test ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['diff_test'] = $data['diff_test'];
 
-                $query = "SELECT COUNT(test_id) AS 'Most LabTest' from test_is ";
+                $query = "SELECT COUNT(test_id) AS 'most_lab' from test_is ";
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
                 $data = $stmt->fetch();
                 $result['most_lab'] = $data['most_lab'];
+
+                if($result!=NULL)
+                        return $result;
+                else
+                        return false;
         }
     }
 
