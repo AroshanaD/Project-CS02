@@ -24,7 +24,7 @@
                 </div>
                 <div id="form-1">
                     <div class="label">
-                        <label for="staff">Report type</label>
+                        <label for="staff">Report Type</label>
                     </div>
                     <div class="input">
                         <select name="category" id="category" required>

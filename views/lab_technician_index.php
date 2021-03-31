@@ -55,7 +55,7 @@
                   lab tests of patient!!
                 </p>
               </a>
-              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task-large">Lab tests
+              <a href=<?php echo Router::site_url()."/labtest/view" ?> class="task-large">Lab Tests
               <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can findout <br>
                   various labtest details<br>

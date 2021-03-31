@@ -42,13 +42,13 @@
                         <input type="text" name="id" id="id" value="<?php echo $_POST['details']['id'] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="f_name">First name</label>
+                        <label for="f_name">First Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="f_name" id="fname" value="<?php echo $_POST['details']['f_name'] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="l_name">Last name</label>
+                        <label for="l_name">Last Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="l_name" id="lname" value="<?php echo $_POST['details']['l_name'] ?>" disabled required>

@@ -47,7 +47,7 @@
                             <p style="font-size: 28px;">9876</p>
                         </div>
                         <div class="stat-card" style="background-color: #CF6AFF;">
-                            <p>Total income</p>
+                            <p>Total Income</p>
                             <p style="font-size: 28px;">3452</p>
                         </div>
                         
@@ -61,7 +61,7 @@
                             <p style="font-size: 28px;">Panadol</p>
                         </div>
                         <div class="stat-card" style="background-color: #CF6AFF;">
-                            <p>No of vendors</p>
+                            <p>No of Vendors</p>
                             <p style="font-size: 28px;">30</p>
                         </div>
 

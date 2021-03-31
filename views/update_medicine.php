@@ -32,7 +32,7 @@
                         <input type="text" name="med_id" value="<?php echo $_POST['medicine']['id']; ?>" disabled>
                     </div>
                     <div class="label">
-                        <label for="med_name">Medicine name</label>
+                        <label for="med_name">Medicine Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="med_name" value="<?php echo ucwords($_POST['medicine']['name']); ?>" disabled>

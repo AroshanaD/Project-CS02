@@ -33,7 +33,7 @@
                         <select name="category" id="category" required>
                             <option value="" disabled hidden selected> Select Category </option>
                             <option value="pharmacist">Pharmacist</option>
-                            <option value="lab_technician">Lab technician</option>
+                            <option value="lab_technician">Lab Technician</option>
                             <option value="receptionist">Receptionist</option>
                             <option value="supervisor">Supervisor</option>
                         </select>
@@ -45,13 +45,13 @@
                         <input type="text" name="id" id="id" selected disabled required>
                     </div>
                     <div class="label">
-                        <label for="f_name">First name</label>
+                        <label for="f_name">First Name</label>
                     </div>
                     <div class="input" id="fname_f">
                         <input type="text" id=fname name="fname" required>
                     </div>
                     <div class="label">
-                        <label for="l_name">Last name</label>
+                        <label for="l_name">Last Name</label>
                     </div>
                     <div class="input" id="lname_f">
                         <input type="text" id="lname" name="lname" required>

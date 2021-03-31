@@ -30,13 +30,13 @@
                         <input type="text" name="doc_id" value="<?php echo $_POST['details']['doctor_id'] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="doc_fname">First name</label>
+                        <label for="doc_fname">First Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="doc_fname" value="<?php echo $_POST['details']['first_name'] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="doc_lname">Last name</label>
+                        <label for="doc_lname">Last Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="doc_lname" value="<?php echo $_POST['details']['last_name'] ?>" disabled required>

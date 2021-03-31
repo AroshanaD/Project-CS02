@@ -54,7 +54,7 @@
                   of vedndors!!
                 </p>
                 </a>
-              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create bills
+              <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create Bills
               <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can create <br>
                   pharmacy bills<br>

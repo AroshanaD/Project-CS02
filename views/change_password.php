@@ -36,7 +36,7 @@
                         <input type="password" name="new-password" minlength="8" maxlength="12" required>
                     </div>
                     <div class="label">
-                        <label for="phar_repw">Re-Enter password </label>
+                        <label for="phar_repw">Re-Enter Password </label>
                     </div>
                     <div class="input">
                         <input type="password" name="re-password" minlength="8" maxlength="12" required>

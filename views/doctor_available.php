@@ -23,8 +23,8 @@
             </div>      <!--search-bar-->  
             
                     <tr>
-                        <th>Appointment date</th>
-                        <th>Appiontment details</th>
+                        <th>Appointment Date</th>
+                        <th>Appiontment Details</th>
                         <th><input type="button" id = "view-button" name = "viewButton" value="View"></th>
                         <th><input type="button" id = "cancel-button" name = "cancelButton" value="Cancel"></th>
                     </tr>

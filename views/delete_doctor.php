@@ -29,13 +29,13 @@
                         <input type="text" value="<?php echo $_POST['details']['id'] ?>" name="id" disabled>
                     </div>
                     <div class="label">
-                        <label for="f_name">First name</label>
+                        <label for="f_name">First Name</label>
                     </div>
                     <div class="input">
                         <input type="text" value="<?php echo $_POST['details']['f_name'] ?>" name="f_name" disabled>
                     </div>
                     <div class="label">
-                        <label for="l_name">Last name</label>
+                        <label for="l_name">Last Name</label>
                     </div>
                     <div class="input">
                         <input type="text" value="<?php echo $_POST['details']['l_name'] ?>" name="l_name" disabled>

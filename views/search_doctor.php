@@ -25,7 +25,7 @@
                     <div id="form-1">
                     <div class="topic">Search Doctor</div>
                     <div class="label">
-                        <label for="doctor">Doctor name</label>
+                        <label for="doctor">Doctor Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="doctor">

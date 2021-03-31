@@ -54,7 +54,7 @@
                   of relevant patient!!
                 </p>
                 </a>  
-              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task-large">Doctor schedules
+              <a href=<?php echo Router::site_url().'/doctor_Schedule/index' ?> class="task-large">Doctor Schedules
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   scheduled details<br>

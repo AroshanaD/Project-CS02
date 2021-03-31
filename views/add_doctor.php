@@ -32,13 +32,13 @@
                         <input type="text" name="id" id="id" selected disabled required>
                     </div>
                     <div class="label">
-                        <label for="f_name">First name</label>
+                        <label for="f_name">First Name</label>
                     </div>
                     <div class="input" id="fname_f">
                         <input type="text" id=fname name="f_name" required>
                     </div>
                     <div class="label">
-                        <label for="l_name">Last name</label>
+                        <label for="l_name">Last Name</label>
                     </div>
                     <div class="input" id="lname_f">
                         <input type="text" id="lname" name="l_name" required>

@@ -23,7 +23,7 @@
                 <select name="specialization" id="staff">
                     <option value="" disabled selected hidden>Select Category</option>
                     <option value="pharmacist">Pharmacist</option>
-                    <option value="lab_technician ">Lab technician</option>
+                    <option value="lab_technician ">Lab Technician</option>
                     <option value="receptionist">Receptionist</option>
                     <option value="supervisor">Supervisor</option>
                 </select>

@@ -55,7 +55,7 @@
                 </div>
                 <div id="form-2">
                     <div class="label">
-                        <label for="appoint_no">Appointment no</label>
+                        <label for="appoint_no">Appointment No</label>
                     </div>
                     <div class="input">
                         <input style="background-color:#d0cde1" type="float" id="d_charges" name="d_charges" value="<?php echo ($_SESSION['appointment']['seat_no']+ 1) ?>" disabled>

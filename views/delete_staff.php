@@ -28,7 +28,7 @@
                     <div class="input">
                         <select name="staff" disabled>
                             <option value="pharmacist">Pharmacist</option>
-                            <option value="lab_technician ">Lab technician</option>
+                            <option value="lab_technician ">Lab Technician</option>
                             <option value="receptionist">Receptionist</option>
                             <option value="supervisor">Supervisor</option>
                         </select>
@@ -40,13 +40,13 @@
                         <input type="text" name="id" value="<?php echo $_POST['details']['id'] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="f_name">First name</label>
+                        <label for="f_name">First Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="f_name" value="<?php echo $_POST['details']['f_name'] ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="l_name">Last name</label>
+                        <label for="l_name">Last Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="l_name" value="<?php echo $_POST['details']['l_name'] ?>" disabled required>

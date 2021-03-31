@@ -49,7 +49,7 @@
                     </div><br>
                     <div class="topic-small" style="float:left; color:black"><u>Doctor Details</u></div><br>
                     <div class="label" style="margin-top:20px">
-                        <label>Doctor name</label>
+                        <label>Doctor Name</label>
                     </div>
 
                     <div class="label" style="color:black">
@@ -83,7 +83,7 @@
                     </div>
 
                     <div class="label" style="margin-top:20px">
-                        <label>Appointment date</label>
+                        <label>Appointment Date</label>
                     </div>
 
                     <div class="label" style="color:black">
@@ -91,7 +91,7 @@
                     </div>
 
                     <div class="label" style="margin-top:20px">
-                        <label>Appointment time</label>
+                        <label>Appointment Time</label>
                     </div>
 
                     <div class="label" style="color:black">

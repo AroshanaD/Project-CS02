@@ -55,7 +55,7 @@
                   Patients details!!
                 </p>
               </a>
-              <a href=<?php echo Router::site_url()."/statistics/report" ?> class="task-large">generate reports
+              <a href=<?php echo Router::site_url()."/statistics/report" ?> class="task-large">Generate Reports
                 <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can get a<br>
                   complete report<br>

@@ -29,7 +29,7 @@
                         <input type="text" name="test_id" value="<?php echo ($_POST['test']['id']); ?>" disabled required>
                     </div>
                     <div class="label">
-                        <label for="test_name">Test name</label>
+                        <label for="test_name">Test Name</label>
                     </div>
                     <div class="input">
                         <input type="text" name="test_name" value="<?php echo ($_POST['test']['name']); ?>" disabled required>

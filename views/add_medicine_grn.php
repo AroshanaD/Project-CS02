@@ -53,7 +53,7 @@
                         <input type="number" name="grn_value" id="grn_value" disabled required>
                     </div>
                     <div class="label">
-                        <label for="receiver_id" id="receiver_id_f">Reciver Id</label>
+                        <label for="receiver_id" id="receiver_id_f">Receiver Id</label>
                     </div>
                     <div class="input">
                         <input type="text" name="receiver_id" id="receiver_id" value="<?php echo $_SESSION["id"] ?>" disabled required>

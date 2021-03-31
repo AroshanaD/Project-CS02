@@ -25,7 +25,7 @@
                 <div id="form-1">
                 <div class="topic">Add Tests</div>
                     <div class="label">
-                        <label for="test_name" id="name_f">Test name</label>
+                        <label for="test_name" id="name_f">Test Name</label>
                     </div>
                     <div class="input">
                         <input type="text" id="name" name="test_name" required>

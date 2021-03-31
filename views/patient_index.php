@@ -35,7 +35,7 @@
             </div>
             
             <div class="databoard-3">
-                <div id="databord-title">Lab tests</div>
+                <div id="databord-title">Lab Tests</div>
                 <div id="databord-value">30</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
             </div>
@@ -52,7 +52,7 @@
                   scheduled appointment details<br>
                 </p>
               </a>
-              <a href=<?php echo Router::site_url().'/patientTest/patientResult_View' ?> class="task-large">Lab tests
+              <a href=<?php echo Router::site_url().'/patientTest/patientResult_View' ?> class="task-large">Lab Tests
               <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can find <br>
                   your lab test <br>

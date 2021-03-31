@@ -37,9 +37,9 @@
                 <div id="form-2" style="padding:0">
                     <div class="input">
                         <select name="gender" id="gender" required>
-                            <option value="any">Select gender</option>
+                            <option value="any">Select Gender</option>
                             <option value="male">Male</option>
-                            <option value="female">female</option>
+                            <option value="female">Female</option>
                             <option value="other">Other</option>
                         </select>
                     </div>

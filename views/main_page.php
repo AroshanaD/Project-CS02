@@ -237,7 +237,7 @@
                 </div>
                 <div class="slide">
                     <div><img src=<?php echo Router::base_url()."/files/icons/privacy.svg" ?>></div>
-                    <div>Data Privacy</div>
+                    <div>Your Data is Protected</div>
                 </div>
             </div>
        </div>

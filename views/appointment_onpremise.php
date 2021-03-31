@@ -39,7 +39,7 @@
                 <div id="form-2" style="background-color:transparent;padding:0">
                     <div class="input" >
                         <select style="background-color:white" name="doctor" id="doctor" required>
-                            <option value="" hidden selected>Select doctor</option>
+                            <option value="" hidden selected>Select Doctor</option>
                         </select>
                     </div>
                     <div class="input" >
@@ -74,7 +74,7 @@
                         <input type="email" name="email" id="email">
                     </div>
                     <div class="label">
-                        <label for="appoint_no">Appointment no</label>
+                        <label for="appoint_no">Appointment No</label>
                     </div>
                     <div class="input">
                         <input type="float" id="appoint_no" name="appoint_no" disabled>
