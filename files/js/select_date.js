@@ -29,6 +29,10 @@ $(document).ready(function(){
         }
     })
 
+    $("#back").click(function(){
+        location.href = '/project-cs02/index.php/appointment/search_doctor'
+    })
+
     $("#selectdate-form").submit(function(event){
         event.preventDefault();
 
@@ -86,40 +90,27 @@ function render_details(details){
 
     $("table").empty();
 
-    var head = $(`<tr id=${"head_row"}>`).append(
-    $(`<td>`).text("Weekday"),
-    $(`<td>`).text("Time"));
-    $("table").append(head);
+    $("table").append($(`<tr id=${"app_day"} style=${"background-color:var(--databoard-color)"}>`));
+    $("#app_day").append($(`<td id=${"large-td"}>`),
+    $(`<td id=${"large-td"}>`).text("Sunday"),$(`<td id=${"large-td"}>`).text("Monday"),
+    $(`<td id=${"large-td"}>`).text("Tuesday"),$(`<td id=${"large-td"}>`).text("Wednesday"),
+    $(`<td id=${"large-td"}>`).text("Thursday"),$(`<td id=${"large-td"}>`).text("Friday"),
+    $(`<td id=${"large-td"}>`).text("Saturday"));
 
+    $("table").append($(`<tr id=${"app_avail"} style=${"background-color:white"}>`));
+    $("#app_avail").append($(`<td id=${"large-td"}>`).text("Time"));
 
     for (var j=0;j<7;j++){
         for(var i=0;i<details.length;i++){
             if(week[j]==details[i].date){
-                var row = $(`<tr>`).append(
-                $(`<td>`).text(details[i].date),
-                $(`<td>`).text(details[i].time));
-                $("table").append(row);
+                $("#app_avail").append($(`<td id=${"large-td"} style=${"background-color:aliceblue"} >`).text(details[i].time));
                 break;
             }
             else if(i==details.length-1){
-                var row = $(`<tr>`).append(
-                $(`<td>`).text(week[j]),
-                $(`<td>`).text("Not available"));
-                $("table").append(row);
+                $("#app_avail").append($(`<td id=${"large-td"} style=${"text-align:center"}>`).text("-"));
             }
         }
     }
-    /**for(var i=0; i<details.length; i++){
-        var select = "<a href='../appointment/fill_form?date=".concat(i,"'><button class='tb-btn'>Select</button><a>");
-
-        var row = $(`<tr id=${details[i].id}>`).append(
-        $(`<td id=${"calendar-avatar"}>`).append(),
-        $(`<td id=${"td-large"}>`).text(details[i].date),
-        $(`<td id=${"td-large"}>`).text(details[i].time),
-        $(`<td id=${"td-large"}>`).text(details[i].seat_no),
-        $(`<td id=${"td-large"}>`).append(select));
-        $("table").append(row);
-    }**/
 }
 
 

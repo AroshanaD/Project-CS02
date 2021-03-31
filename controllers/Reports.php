@@ -38,7 +38,7 @@
 
         public function inventory_overview()
         {
-            $model = $this->load('models','report_Data');
+            $model = $this->load('models','Report_Data');
             $result = $model->inventory_data($_SESSION['from_date'],$_SESSION['to_date']);
             header('Content-Type: application/json');
             echo json_encode($result);
@@ -46,7 +46,7 @@
 
         public function labtest_overview()
         {
-            $model = $this->load('models','report_Data');
+            $model = $this->load('models','Report_Data');
             $result = $model->labtest_data();
             header('Content-Type: application/json');
             echo json_encode($result);

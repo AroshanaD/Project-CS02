@@ -20,6 +20,7 @@
         include $path; ?>
 
         <div class="form">
+            <div class="topic" style="margin:0;width:100%;text-align:center">Payment Details</div>
             <div class="form-container1" style="width: 800px; box-shadow: var(--box-shadow);">
                 <div id="form-img" style="background-image: url(<?php echo Router::base_url() . '/files/icons/credit_card.svg' ?>); background-size:cover; background-color:white"></div>
                 <div id="form-1" style="background-color: #fbfaff; border: var(--border-line)">
@@ -47,6 +48,14 @@
                     </form>
                 </div>
             </div>
+            <div style="width:100%;text-align:center">
+                <button class="btn" id="back">Cancel</button>
+            </div>
+            <script>
+                $("#back").click(function(){
+                    location.href = '/project-cs02/index.php/appointment/search_doctor'
+                })
+            </script>
         </div>
         <div class="footer">All rights are reserved</div>
     </div>

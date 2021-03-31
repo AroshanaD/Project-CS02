@@ -32,6 +32,7 @@
         </div>
 
         <div class="table">
+        <div class="topic">Lab Tests</div>
             <table>
 
             </table>

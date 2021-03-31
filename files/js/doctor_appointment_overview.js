@@ -12,6 +12,9 @@ $(document).ready(function(){
     $("#print").click(function(){
         window.print();
     })
+    $("#back").click(function(){
+        location.href = '/project-cs02/index.php/user/dashboard';
+    })
 
     function render_data(data){
         $("#app").append(

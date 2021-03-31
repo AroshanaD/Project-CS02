@@ -15,6 +15,10 @@ $(document).ready(function(){
         }
     })
 
+    $("#back").click(function(){
+        location.href = '/project-cs02/index.php/appointment/search_doctor'
+    })
+
 })
 
 function render_details(details){

@@ -42,6 +42,8 @@
         </div>
 
         <div class="table">
+        <div class="topic">Doctors</div>
+
             <table>
 
             </table>

@@ -30,7 +30,7 @@ function render_table(data) {
 
     function render_header(){
 
-        var header = $(`<tr id=${"head_row"}>`).append($(`<td>`),
+        var header = $(`<tr id=${"head_row"}>`).append(
         $(`<td>`).text("No"),
         $(`<td>`).text("ID"),$(`<td>`).text("Name"),
         $(`<td>`).text("Address"),$(`<td>`).text("Contact"),

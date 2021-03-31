@@ -14,6 +14,9 @@ $(document).ready(function(){
                 $("#print").click(function(){
                     window.print();
                 })
+                $("#back").click(function(){
+                    location.href = '/project-cs02/index.php/patient_Appointment/index'
+                })
             }
         })
     })
@@ -43,11 +46,12 @@ $(document).ready(function(){
         $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Apoointment no"),$(`<td>`).text(data.Seat_no)));
         $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Doctor name"),$(`<td>`).text(data.doctor_fname.concat(" ",data.doctor_lname))));
         $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("Specilization"),$(`<td>`).text(data.specialization)));
-        $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("fee"),$(`<td>`).text(data.fee + 250)));
+        $(".report-tb").append($(`<tr style=${"background-color:white"}>`).append($(`<td>`).text("fee"),$(`<td>`).text(parseFloat(data.fee + 250).toFixed(2))));
         $(".content").append($(`</br>`));
         $(".content").append($(`<table class=${"report-tb"} id=${"app"}>`));
 
-        $(".report").append($(`<div style=${"width:100%;text-align:center;margin-top:0px"}>`).append($(`<button class="btn" id=${"print"}>`).text("Print")));
+        $(".report").append($(`<div style=${"width:100%;text-align:center;margin-top:0px"}>`).append($(`<button class="btn" id=${"back"}>`).text("Back"),
+        $(`<button class="btn" id=${"print"}> style=${"margin-left:10px"}`).text("Print")));
 
     }
 

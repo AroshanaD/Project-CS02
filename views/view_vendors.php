@@ -37,6 +37,7 @@
             <!--search-bar-->
         </div>
         <div class="table">
+        <div class="topic">Medicine Vendors</div>
             <table>
 
 

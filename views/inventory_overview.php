@@ -52,7 +52,8 @@
 
             </div>
             <div style="width:100%;text-align:center">
-                <button class="btn" id="print">Print</button>
+                <button class="btn" id="back">Back</button>
+                <button class="btn" id="print" style="margin-left:10px">Print</button>
             </div>
         </div>
 

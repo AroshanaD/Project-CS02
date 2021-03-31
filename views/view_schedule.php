@@ -49,6 +49,7 @@
         </div>
 
         <div class="table">
+        <div class="topic">Doctor Schedules</div>
             <table>
 
             </table>

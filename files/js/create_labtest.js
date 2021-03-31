@@ -134,7 +134,7 @@ function render_table(data) {
         $("#select-tb").append(header);
     }
 
-    const no_rows = 12;
+    const no_rows = 10;
     var page = 1;
     var tot_rows = data.length;
 
@@ -196,7 +196,7 @@ function select_func(i) {
     var row = $(`<tr class=${"bill-tb-tr"} id=${details[i].id}>`).append(
         $(`<td>`).text(details[i].id),
         $(`<td>`).text(details[i].name),
-        $(`<td>`).text(details[i].unit_cost),
+        $(`<td>`).text(parseFloat(details[i].unit_cost).toFixed(2)),
         $(`<td>`).append(remove));
     $("#test-tb").append(row);
 
@@ -205,7 +205,7 @@ function select_func(i) {
     let tot_row = $(`<tr id=${"total-tr"}>`).append(
         $(`<td>`),
         $(`<td>`).text("Total"),
-        $(`<td>`).text(total_cost),
+        $(`<td>`).text(parseFloat(total_cost).toFixed(2)),
         $(`<td>`)
     );
     $("#test-tb").append(tot_row);
@@ -229,7 +229,7 @@ function remove_func(i) {
     let tot_row = $(`<tr id=${"total-tr"}>`).append(
         $(`<td>`),
         $(`<td>`).text("Total"),
-        $(`<td>`).text(total_cost),
+        $(`<td>`).text(parseFloat(total_cost).toFixed(2)),
         $(`<td>`)
     );
     $("#test-tb").append(tot_row);
@@ -245,8 +245,8 @@ function render_bill(id, name, gender, age, contact) {
     $(".form").remove();
     $(".container-8").css("grid-template-areas", "'nav nav nav' 'sidebar report report' 'sidebar report report' 'footer footer footer'")
     $(".container-8").append(`<div class=${"report"}>`);
-    $(".report").append(`<div class=${"report-paper"} style=${"height:500px"}>`);
-    $(".report-paper").append(`<div class=${"content"} style=${"height:400px"}>`);
+    $(".report").append(`<div class=${"report-paper"} style=${"height:fit-content"}>`);
+    $(".report-paper").append(`<div class=${"content"} style=${"height:fit-content"}>`);
     $(".content").append($(`<div>`).text("MedCaid Hospital"));
     $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 010"));
     $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 050"));
@@ -272,16 +272,21 @@ function render_bill(id, name, gender, age, contact) {
     selected_list_details.forEach(element => {
         var row = $(`<tr id=${element[0]}>`).append(
             $(`<td>`).text(element[0]), $(`<td>`).text(element[1]),
-            $(`<td>`).text(element[2]));
+            $(`<td>`).text(parseFloat(element[2]).toFixed(2)));
         $("#app").append(row);
     });
     total = $(`<tr>`).append(
         $(`<td>`), $(`<td>`).text("Total"),
-        $(`<td>`).text(total_cost));
+        $(`<td>`).text(parseFloat(total_cost).toFixed(2)));
     $("#app").append(total);
 
-    $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"print"}>`).text("Print")));
+    $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"back"}>`).text("Back"),
+    $(`<button class="btn" id=${"print"} style=${"margin-left:10px"}>`).text("Print")));
+
     $("#print").click(function(){
         window.print();
+    })
+    $("#back").click(function(){
+        location.href = '/project-cs02/index.php/patientTest/create_test'
     })
 }

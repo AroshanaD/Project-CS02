@@ -130,7 +130,7 @@ function render_details(data) {
 
     render_header();
 
-    const no_rows = 7;
+    const no_rows = 9;
     var page = 1;
     var tot_rows = data.length;
 
@@ -237,7 +237,7 @@ function select_func(i) {
                     $(`<td>`).text(details[i].selling_price),
                     $(`<td>`).text(medicine_quantity),
                     $(`<td>`).text(medicine_note),
-                    $(`<td>`).text(medicine_total),
+                    $(`<td>`).text(parseFloat(medicine_total).toFixed(2)),
                     $(`<td>`).append(remove));
                 $("#test-tb").append(row);
 
@@ -249,7 +249,7 @@ function select_func(i) {
                     $(`<td>`),
                     $(`<td>`),
                     $(`<td>`).text("Total"),
-                    $(`<td>`).text(total_cost),
+                    $(`<td>`).text(parseFloat(total_cost).toFixed(2)),
                     $(`<td>`)
                 );
                 $("#test-tb").append(tot_row);
@@ -281,7 +281,7 @@ function remove_func(i, medicine_quantity) {
         $(`<td>`),
         $(`<td>`),
         $(`<td>`).text("Total"),
-        $(`<td>`).text(total_cost),
+        $(`<td>`).text(parseFloat(total_cost).toFixed(2)),
         $(`<td>`)
     );
     $("#test-tb").append(tot_row);
@@ -297,8 +297,8 @@ function render_bill(id, name, age) {
     $(".form").remove();
     $(".container-8").css("grid-template-areas", "'nav nav nav' 'sidebar report report' 'sidebar report report' 'footer footer footer'")
     $(".container-8").append(`<div class=${"report"}>`);
-    $(".report").append(`<div class=${"report-paper"} style=${"height:500px"}>`);
-    $(".report-paper").append(`<div class=${"content"} style=${"height:400px"}>`);
+    $(".report").append(`<div class=${"report-paper"} style=${"height:fit-content"}>`);
+    $(".report-paper").append(`<div class=${"content"} style=${"height:fit-content"}>`);
     $(".content").append($(`<div>`).text("MedCaid Hospital"));
     $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 010"));
     $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 050"));
@@ -328,7 +328,7 @@ function render_bill(id, name, age) {
             $(`<td>`).text(element[1]),
             $(`<td>`).text(element[2]),
             $(`<td>`).text(element[4]),
-            $(`<td>`).text(element[3]));
+            $(`<td>`).text(parseFloat(element[3]).toFixed(2)));
         $("#app").append(row);
     });
     total = $(`<tr>`).append(
@@ -336,12 +336,16 @@ function render_bill(id, name, age) {
         $(`<td>`),
         $(`<td>`),
         $(`<td>`).text("Total"),
-        $(`<td>`).text(total_cost));
+        $(`<td>`).text(parseFloat(total_cost).toFixed(2)));
     $("#app").append(total);
 
-    $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"print"}>`).text("Print")));
+    $(".report").append($(`<div style=${"width:100%;text-align:center;"}>`).append($(`<button class="btn" id=${"back"}>`).text("Back"),
+    $(`<button class="btn" id=${"print"} style=${"margin-left:10px"}>`).text("Print")));
 
     $("#print").click(function(){
         window.print();
+    })
+    $("#back").click(function(){
+        location.href = '/project-cs02/index.php/inventory/create_bill'
     })
 }

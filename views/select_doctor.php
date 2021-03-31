@@ -21,10 +21,14 @@
 
             <div>
                 <div class="table" >
+                    <div class="topic" style="margin:0;width:100%;text-align:center">Select Doctor</div>
                     <table>
                     
                     </table>
                 </div><!--container-2-->
+                <div style="width:100%;text-align:center">
+                    <button class="btn" id="back">Back</button>
+                </div>
             </div>
             <div class="footer">All rights are reserved</div>
         </div>

@@ -96,9 +96,9 @@ body {
 }
 
 .container-10 {
-    grid-template-columns: 0.15fr 0.5fr 0.4fr;
+    grid-template-columns: 0.15fr 0.4fr 0.5fr;
     grid-template-rows: 0.15fr 0.6fr 1.1fr 0.1fr;
-    grid-template-areas: "nav nav nav" "sidebar form form" "sidebar details table" "footer footer footer";
+    grid-template-areas: "nav nav nav" "sidebar form details" "sidebar table table" "footer footer footer";
 }
 
 .container-11 {
@@ -431,14 +431,11 @@ a {
 
 #selection {
     grid-area: selection;
-    border-right:1px rgb(255, 255, 255) solid;
-    
-    
+    border-right:1px rgb(255, 255, 255) solid; 
 }
 
 .details {
     border-radius: var(--main-border-radius);
-    margin: var(--large-margin);
     padding: var(--large-padding);
     background-color: white;
     font-family: 'Poppins', sans-serif;
@@ -447,6 +444,9 @@ a {
     grid-template-rows: 1fr;
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "details-div1 details-div2";
+    border-top: var(--border-line);
+    border-bottom: var(--border-line);
+    border-left: var(--border-line);
 }
 
 [class*="details-div"] {
@@ -829,6 +829,11 @@ td, th {
     font-family: 'Poppins', sans-serif;
 }
 
+#large-td{
+    padding: 20px;
+    font-size: 16px;
+}
+
 tr:nth-child(1) {
     background-color: #ffffff;
 }
@@ -866,11 +871,13 @@ td>a {
     flex-wrap: wrap;
     height: fit-content;
     margin: 20px;
+    margin-top: 10px;
     overflow-x: auto;
     overflow-y: auto;
     grid-area: table;
     font-family: 'Poppins', sans-serif;
     padding: var(--large-padding);
+    padding-top: 0;
     justify-content: center;
 }
 
@@ -947,7 +954,8 @@ td>a {
 
 .site-search>button {
     background-color:var(--databoard-color);
-    height: inherit;
+    height: 36px;
+    width: 100px;    
     color: rgb(21, 21, 21);
     padding: 5px 5px;
     margin-top: 10px;
@@ -985,7 +993,7 @@ td>a {
     width: 100%;
     display: none;
     flex-wrap: wrap;
-    justify-content:flex-start;
+    justify-content: center;
     padding-top: var(--main-padding);
     align-items: center;
 }
@@ -1785,6 +1793,7 @@ tr:nth-child(even) {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
+    overflow-y: auto;
 }
 
 .report-paper {

@@ -42,6 +42,7 @@
                     <div id="form-message"></div> 
                     </div>
                 </div>
+                
             </form> 
             <div class="footer">All rights are reserved</div>
           </div>

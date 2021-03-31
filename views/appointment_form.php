@@ -21,6 +21,7 @@
                 <div id="form-img">
                 </div>
                 <div id="form-1">
+                    <div class="topic" style="margin:0;width:100%;text-align:center">Patient Details</div>
                     <div class="label">
                         <label for="id">NIC</label>
                     </div>
@@ -86,6 +87,14 @@
                     <div id="form-message"></div>
                 </div>
             </div>
+            <div style="width:100%;text-align:center">
+                <button class="btn" id="back">Back</button>
+            </div>
+            <script>
+                $("#back").click(function(){
+                    location.href = '/project-cs02/index.php/appointment/search_doctor'
+                })
+            </script>
         </form>
         <div class="footer">All rights are reserved</div>
     </div>

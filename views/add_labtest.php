@@ -26,8 +26,8 @@
         <div style="padding-top:15px"><div class="topic" style="margin:0">Patient Details</div></div>
             <form class="form-container3" id="bill-form">
                 <div id="form-1" style="padding:0">
-                    <div class="input" id="id_f">
-                        <input type="text" name="id" id="id" placeholder="Customer NIC">
+                    <div class="input" id="email_f">
+                        <input type="email" id="email" name="email" placeholder="Customer Email">
                     </div>
                     <div class="input" id="name_f">
                         <input type="text" id="p_name" name="full_name" placeholder="Customer Name" required>
@@ -48,8 +48,8 @@
                     <div class="input" id="contact_f">
                         <input type="tel" id="contact" name="contact" placeholder="Customer Contact">
                     </div>
-                    <div class="input" id="email_f">
-                        <input type="email" id="email" name="email" placeholder="Customer Email">
+                    <div class="input" id="id_f">
+                        <input type="text" name="id" id="id" placeholder="Customer NIC">
                     </div>
                     <div style="align-text: center"><input type="submit" value="Add Test" class="btn"></div>
                     <div id="form-message"></div>

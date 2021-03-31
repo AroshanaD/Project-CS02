@@ -33,6 +33,7 @@
         </div>
 
         <div class="table">
+        <div class="topic">Medicine Stock</div>
             <table>
 
             </table>

@@ -45,6 +45,7 @@
         </div>
 
         <div class="table">
+        <div class="topic">Patient Lab Tests</div>
             <table>
 
             </table>
