@@ -65,10 +65,9 @@
             </div>
         </div>
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
+            <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  Generate Reports</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url()."/statistics/pharmacy" ?>>Pharmacy Stat</a>
-                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate Reports</a>  
+                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Inventory Reports</a>  
             </div>
         </div>
 
