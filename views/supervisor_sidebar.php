@@ -42,42 +42,42 @@
             </div>
         </div>
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-users"></i> Manage staff</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-users"></i> Manage Staff</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/staff/add" ?>>Add staff</a>
-                <a href=<?php echo Router::site_url() . "/staff/view" ?>>View staff</a>
+                <a href=<?php echo Router::site_url() . "/staff/add" ?>>Add Staff</a>
+                <a href=<?php echo Router::site_url() . "/staff/view" ?>>View Staff</a>
             </div>
         </div>
 
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="fas fa-user-md"></i> Manage Doctors</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/doctors/add" ?>>Add doctors</a>
-                <a href=<?php echo Router::site_url() . "/doctors/view" ?>>View doctors</a>
+                <a href=<?php echo Router::site_url() . "/doctors/add" ?>>Add Doctors</a>
+                <a href=<?php echo Router::site_url() . "/doctors/view" ?>>View Doctors</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-dolly-flatbed"></i> Manage inventory</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-dolly-flatbed"></i> Manage Inventory</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . "/inventory/add_grn" ?>>Add GRN</a>
-                <a href=<?php echo Router::site_url() . "/inventory/view_stock" ?>>View medicine</a>
+                <a href=<?php echo Router::site_url() . "/inventory/view_stock" ?>>View Medicine</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-user-tie"></i> Manage vendors</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-user-tie"></i> Manage Vendors</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/inventory/add_vendor" ?>>Add vendors</a>
-                <a href=<?php echo Router::site_url() . "/inventory/view_vendor" ?>>View vendors</a>
+                <a href=<?php echo Router::site_url() . "/inventory/add_vendor" ?>>Add Vendors</a>
+                <a href=<?php echo Router::site_url() . "/inventory/view_vendor" ?>>View Vendors</a>
             </div>
         </div>
 
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="fas fa-calendar-alt" style="padding: 0"></i> Manage Schedules</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/doctors/view" ?>>Add schedules</a>
-                <a href=<?php echo Router::site_url() . "/schedules/view" ?>>view schedules</a>
+                <a href=<?php echo Router::site_url() . "/doctors/view" ?>>Add Schedules</a>
+                <a href=<?php echo Router::site_url() . "/schedules/view" ?>>View Schedules</a>
             </div>
         </div>
 
@@ -85,7 +85,7 @@
             <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i> View Statistics</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . "/statistics/appointment" ?>>Appointment Stat</a>
-                <a href=<?php echo Router::site_url() . "/statistics/report" ?>>Generate reports</a>
+                <a href=<?php echo Router::site_url() . "/statistics/report" ?>>Generate Reports</a>
             </div>
         </div>
 

@@ -43,7 +43,7 @@
         </div>
             
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-vials"></i>  Patient lab test</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-vials"></i>  Patient Lab Test</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url().'/patientTest/create_test' ?>> Create Test</a>
                 <a href=<?php echo Router::site_url().'/patientTest/view' ?>> View Test</a>   
@@ -51,7 +51,7 @@
         </div>
                     
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-flask"></i>  Lab test</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-flask"></i>  Lab Test</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url()."/labtest/add" ?>>Add Test</a>
                 <a href=<?php echo Router::site_url()."/labtest/view" ?>>View Test</a>
@@ -61,7 +61,7 @@
             <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url()."/statistics/lab" ?>>Lab Stat</a>
-                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
+                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate Reports</a>  
             </div>
         </div>
                 

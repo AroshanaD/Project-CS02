@@ -43,7 +43,7 @@
         </div>
 
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-dolly-flatbed"></i> Manage inventory</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-dolly-flatbed"></i> Manage Inventory</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . "/Inventory/add_grn" ?>>Add GRN</a>
                 <a href=<?php echo Router::site_url() . "/Inventory/view_stock" ?>>View Stock</a>
@@ -51,7 +51,7 @@
         </div>
 
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-user-tie"></i> Manage venodrs</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-user-tie"></i> Manage Venodrs</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . "/inventory/add_vendor" ?>>Add Vendors</a>
                 <a href=<?php echo Router::site_url() . "/inventory/view_vendor" ?>>View Vendors</a>
@@ -61,14 +61,14 @@
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="fas fa-file-invoice-dollar"></i> Bills</div>
             <div class="dropdown-content">
-                <a href=<?php echo Router::site_url() . "/Inventory/create_bill" ?>>create bills</a>
+                <a href=<?php echo Router::site_url() . "/Inventory/create_bill" ?>>Create Bills</a>
             </div>
         </div>
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url()."/statistics/pharmacy" ?>>Pharmacy Stat</a>
-                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
+                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate Reports</a>  
             </div>
         </div>
 

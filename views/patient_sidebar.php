@@ -51,7 +51,7 @@
         </div>
 
         <div class="dropdown">
-            <div style="margin: var(--large-margin);"><i class="fas fa-flask"></i> Lab test</div>
+            <div style="margin: var(--large-margin);"><i class="fas fa-flask"></i> Lab Test</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url() . '/patientTest/patientResult_View' ?>>Lab Test Results</a>
             </div>

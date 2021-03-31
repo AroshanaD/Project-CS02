@@ -43,14 +43,14 @@
         <div class="dropdown">
             <div style="margin: var(--large-margin);">
             <i class="far fa-calendar-check" style="padding: 0;"></i>
-                <a href=<?php echo Router::site_url().'/patient_Appointment/doctor_appointmentView' ?>>View appointment</a>
+                <a href=<?php echo Router::site_url().'/patient_Appointment/doctor_appointmentView' ?>>View Appointment</a>
             </div>
         </div>
         <div class="dropdown">
             <div style="margin: var(--large-margin);"><i class="far fa-chart-bar"></i>  View Statistics</div>
             <div class="dropdown-content">
                 <a href=<?php echo Router::site_url()."/statistics/appointment" ?>>Appointment Stat</a>
-                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate reports</a>  
+                <a href=<?php echo Router::site_url()."/statistics/report" ?>>Generate Reports</a>  
             </div>
         </div>      
 </div>
