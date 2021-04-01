@@ -1793,7 +1793,6 @@ tr:nth-child(even) {
     justify-content: center;
     align-content: center;
     flex-wrap: wrap;
-    overflow-y: auto;
 }
 
 .report-paper {
