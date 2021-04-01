@@ -19,43 +19,43 @@
 
             <div class="dashboard">
               <div id="welcome-board">
-                <div id="welcome-txt">Welcome, Dasun!</div>
+                <div id="welcome-txt">Welcome, <?php echo $_SESSION['f_name']?></div>
               </div>
               <div id="dashboard-title">Dashboard</div>
             </div>
             <div class="databoard-1">
-                <div id="databord-title">Medicines</div>
-                <div id="databord-value">76</div>
+                <div id="databord-title">Medicine Stock</div>
+                <div id="databord-value">7600</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-capsules fa-5x"></i></div>
             </div>
             <div class="databoard-2">
-                <div id="databord-title">Doctors</div>
-                <div id="databord-value">128</div>
+                <div id="databord-title">Vendors</div>
+                <div id="databord-value">12</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
-                <div id="databord-title">Vendors</div>
-                <div id="databord-value">30</div>
+                <div id="databord-title">Today Sales</div>
+                <div id="databord-value">12</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory
-              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+              <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can manage<br>
                   inventory details<br>
                   of medicines!!
                 </p>
                 </a>
               <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Vendors
-              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+              <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                    Here you can manage<br>
                   vendor details<br>
                   of vedndors!!
                 </p>
                 </a>
               <a href=<?php echo Router::site_url()."/Inventory/create_bill"?> class="task-large">Create Bills
-              <p style="algin:center; color:grey; font-weight:normal ; font-size:14px">
+              <p style="text-align:center; color:grey; font-weight:normal ; font-size:14px">
                   Here you can create <br>
                   pharmacy bills<br>
                 </p>

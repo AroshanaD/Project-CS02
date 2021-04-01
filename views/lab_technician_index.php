@@ -20,24 +20,24 @@
 
             <div class="dashboard">
               <div id="welcome-board">
-                <div id="welcome-txt">Welcome, Dasun!</div>
+                <div id="welcome-txt">Welcome, <?php echo $_SESSION['f_name']?></div>
               </div>
               <div id="dashboard-title">Dashboard</div>
             </div>
             <div class="databoard-1">
                 <div id="databord-title">Lab tests</div>
-                <div id="databord-value">76</div>
+                <div id="databord-value">23</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-flask fa-5x"></i></div>
             </div>
             <div class="databoard-2">
-                <div id="databord-title">Patients</div>
-                <div id="databord-value">128</div>
+                <div id="databord-title">Today Lab Tests</div>
+                <div id="databord-value">11</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-hospital-user fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
-                <div id="databord-title">Doctors</div>
-                <div id="databord-value">30</div>
+                <div id="databord-title">Lab Reports To Be Delivered</div>
+                <div id="databord-value">43</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             <div class="taskboard">
