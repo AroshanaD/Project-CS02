@@ -19,7 +19,7 @@
 
             <div class="dashboard">
               <div id="welcome-board">
-                <div id="welcome-txt" style="color:black">Welcome, <?php echo $_SESSION['f_name']?>!</div>
+                <div id="welcome-txt" style="color:black">Welcome, <?php echo $_SESSION['f_name']?></div>
               </div>
               <div id="dashboard-title" style="color:black">Dashboard</div>
             </div>
@@ -30,7 +30,7 @@
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-calendar-check fa-5x "></i></div>
             </div>
             <div class="databoard-2">
-                <div id="databord-title">Up Coming Appointment time </div><br>
+                <div id="databord-title">Up Coming Appointment Time </div><br>
                 <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if($_SESSION['user_stat']){echo $_SESSION['user_stat']['time'];}
                 else{echo "---";}?></div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
