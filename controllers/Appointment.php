@@ -108,17 +108,7 @@
 
         public function onpremise(){
             $this->load('views','appointment_onpremise');
-            /*if(isset($_POST['submit'])){
-                $model = $this->load('models','Appointment_Data');
-                $id=$_POST['id'];
-                $name=$_POST['name'];
-                $age=$_POST['age'];
-                $contact=$_POST['contact'];
-                $email=$_POST['email'];
-                $schedule_id=$_POST['schedule_id'];
-
-                $result=$model->make_appointment($id,$name,$age,$contact,$email,$schedule_id);
-            }*/
+            
         }
 
       

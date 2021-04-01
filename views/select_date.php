@@ -26,7 +26,7 @@
                     Select Appointment Date
                 </div>
                 <div class="form-container1" style="margin-bottom:0px">
-                    <div id="form-img" style="background-image: url(<?php echo Router::base_url() . '/files/icons/calendar.svg' ?>); width: 250px; height: 150px; background-size:cover"></div>
+                    <div id="form-img" style="background-image: url(<?php echo Router::base_url() . '/files/icons/calendar.svg' ?>); width: 200px; height: 150px; background-size:cover"></div>
                     <div id="form-1" style="width: 250px">
                         <div class="input">
                             <input type="date" name="date" id="date" required>    

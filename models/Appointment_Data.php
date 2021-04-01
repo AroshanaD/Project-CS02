@@ -141,11 +141,7 @@
                 $stmt = $pdo->prepare($query);
                 $stmt->execute();
 
-                /*$patientid;
-                $query = "SELECT id FROM patient WHERE email=?";
-                $stmt = $pdo->prepare($query);
-                $stmt->execute([$email]);
-                $result = $stmt->fetch();*/
+                
                 
 
                 if($id == 0){
@@ -160,9 +156,7 @@
                     $id = $result['id'];
 
                 }
-                /*else{
-                    $patientid = $result['id'];
-                }*/
+                
                 
 
                 if($seatno!=1){
@@ -187,11 +181,7 @@
                     $pdo->commit();
                     return $id;
 
-                    /*if ($status == TRUE) {
-                        return $patientid;
-                    } else {
-                        return FALSE;
-                    }*/
+                    
                 }
 
                 else if($seatno ==1){
@@ -216,11 +206,7 @@
                     $pdo->commit();
                     return $id;
 
-                    /*if ($status == TRUE) {
-                        return $patientid;
-                    } else {
-                        return FALSE;
-                    }*/
+                    
                 }
             }
             catch (PDOException $e) {
@@ -312,7 +298,7 @@
             catch (PDOException $e) {
                 $pdo->rollBack();
                 return false;
-                /*create_patientAppointment($id,$doc_id,$date,$seat,$schedule_id);*/
+                
             }
         }
 
