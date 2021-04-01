@@ -245,7 +245,7 @@ function render_bill(id, name, gender, age, contact) {
     $(".form").remove();
     $(".container-8").css("grid-template-areas", "'nav nav nav' 'sidebar report report' 'sidebar report report' 'footer footer footer'")
     $(".container-8").append(`<div class=${"report"}>`);
-    $(".report").append(`<div class=${"report-paper"} style=${"height:fit-content"}>`);
+    $(".report").append(`<div class=${"report-paper"} style=${"height:fit-content;overflow-y:auto;"}>`);
     $(".report-paper").append(`<div class=${"content"} style=${"height:fit-content"}>`);
     $(".content").append($(`<div>`).text("MedCaid Hospital"));
     $(".content").append($(`<div style=${"text-align:right"}>`).text("+94 (0)11 2140 010"));
