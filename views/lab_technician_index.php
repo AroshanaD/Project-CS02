@@ -32,13 +32,13 @@
             <div class="databoard-2">
                 <div id="databord-title">Today Lab Tests</div>
                 <div id="databord-value">11</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-hospital-user fa-5x"></i></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-vial fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
                 <div id="databord-title">Lab Reports To Be Delivered</div>
                 <div id="databord-value">43</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="far fa-file-alt fa-5x"></i></div>
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/patientTest/create_test' ?> class="task-large">Create Test

@@ -25,19 +25,19 @@
             </div>
             <div class="databoard-1">
                 <div id="databord-title">Medicine Stock</div>
-                <div id="databord-value">7600</div>
+                <div id="databord-value">30</div>
                 <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-capsules fa-5x"></i></div>
             </div>
             <div class="databoard-2">
                 <div id="databord-title">Vendors</div>
                 <div id="databord-value">12</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
                 <div id="databord-title">Today Sales</div>
                 <div id="databord-value">12</div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-tie fa-5x"></i></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-file-invoice fa-5x"></i></div>
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url()."/inventory/view" ?> class="task-large">Manage Inventory
