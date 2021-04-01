@@ -33,14 +33,14 @@
                 <div id="databord-title">Up Coming Appointment time </div><br>
                 <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if($_SESSION['user_stat']){echo $_SESSION['user_stat']['time'];}
                 else{echo "---";}?></div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-clock fa-5x"></i></div>
             </div>
             
             <div class="databoard-3">
                 <div id="databord-title">Up Coming Appointment Doctor</div>
                 <div id="databord-value" style="font-size:20px;font-weight:bold"><?php if($_SESSION['user_stat']){echo "Dr.".$_SESSION['user_stat']['f_name']." ".$_SESSION['user_stat']['l_name'];}
                 else{echo "---";}?></div>
-                <div style="float:right; margin-right:60px; color: #5e60ce"><i class="fas fa-user-md fa-5x"></i></div>
+                <div style="float:right; margin-right:60px; color: #5e60ce;"><i class="fas fa-user-md fa-5x"></i></div>
             </div>
             <div class="taskboard">
               <a href=<?php echo Router::site_url().'/appointment/search_doctor'?> class="task-large">Appointments
